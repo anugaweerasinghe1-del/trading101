@@ -1,0 +1,97 @@
+{
+  "capturedAtUTC": "2026-11-17T09:20:55.295Z",
+  "url": "https://www.thetradehq.com/courses",
+  "states": [
+    {
+      "state": "desktop-initial",
+      "capturedAtUTC": "2026-11-17T09:20:34.676Z",
+      "blocks": 594,
+      "textSHA256": "c853132a8ea636a43ab9e5eef0f65408f55cce0b42b336d2554fac188bda15c3",
+      "characters": 17667
+    },
+    {
+      "state": "desktop-details-expanded",
+      "capturedAtUTC": "2026-11-17T09:20:35.501Z",
+      "blocks": 588,
+      "textSHA256": "0b37257c604b6c69326b097fd24bd48fd69b3c1d1b8aa02adb90878964ea8525",
+      "characters": 19062
+    },
+    {
+      "state": "desktop-expanded",
+      "capturedAtUTC": "2026-11-17T09:20:35.585Z",
+      "blocks": 588,
+      "textSHA256": "0b37257c604b6c69326b097fd24bd48fd69b3c1d1b8aa02adb90878964ea8525",
+      "characters": 19062
+    },
+    {
+      "state": "desktop-more-menu",
+      "capturedAtUTC": "2026-11-17T09:20:35.784Z",
+      "blocks": 608,
+      "textSHA256": "75e313c7aaf7909a86af92741ee9cb7570887446a918ca9285ec3eddbc095559",
+      "characters": 19284
+    },
+    {
+      "state": "mobile-initial",
+      "capturedAtUTC": "2026-11-17T09:20:53.523Z",
+      "blocks": 580,
+      "textSHA256": "c3d950dfc4e4fd20dd9d2353cb3ecd5253870f84ced84ba84327a3ec35de6924",
+      "characters": 17458
+    },
+    {
+      "state": "mobile-details-expanded",
+      "capturedAtUTC": "2026-11-17T09:20:54.475Z",
+      "blocks": 574,
+      "textSHA256": "a638bc4012b6e3481abf5baf1cb91871fcf262d9f5db9435881ed6bb5871fedc",
+      "characters": 18853
+    },
+    {
+      "state": "mobile-expanded",
+      "capturedAtUTC": "2026-11-17T09:20:54.568Z",
+      "blocks": 574,
+      "textSHA256": "a638bc4012b6e3481abf5baf1cb91871fcf262d9f5db9435881ed6bb5871fedc",
+      "characters": 18853
+    },
+    {
+      "state": "mobile-mobile-menu",
+      "capturedAtUTC": "2026-11-17T09:20:54.686Z",
+      "blocks": 574,
+      "textSHA256": "0570665148da6e9a06889ce9504162cb7c6a9bec1763465d0c0b18d424d49376",
+      "characters": 18872
+    },
+    {
+      "state": "mobile-consent-reopened",
+      "capturedAtUTC": "2026-11-17T09:20:54.800Z",
+      "blocks": 580,
+      "textSHA256": "ff2bc2dc697556aaae01f312027f08e3dfb5dcaa10c6f86af87960e235ce5dd3",
+      "characters": 19037
+    },
+    {
+      "state": "mobile-light-theme",
+      "capturedAtUTC": "2026-11-17T09:20:54.918Z",
+      "blocks": 580,
+      "textSHA256": "28380eac4e0b0628b454cff66841a543ad01800326b3fb427826cba3a14caca1",
+      "characters": 18994
+    },
+    {
+      "state": "mobile-dark-restored",
+      "capturedAtUTC": "2026-11-17T09:20:55.163Z",
+      "blocks": 580,
+      "textSHA256": "28380eac4e0b0628b454cff66841a543ad01800326b3fb427826cba3a14caca1",
+      "characters": 18994
+    }
+  ],
+  "blocks": 721,
+  "requests": [
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    },
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    }
+  ],
+  "scope": "Fresh guest desktop/mobile initial and FAQ-expanded DOM, metadata, attributes. Conditional/source-authored states still to enumerate."
+}

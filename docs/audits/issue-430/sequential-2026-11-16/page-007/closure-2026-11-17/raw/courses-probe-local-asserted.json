@@ -1,0 +1,289 @@
+{
+  "observedAtUTC": "2026-11-17T08:35:57.225Z",
+  "url": "http://127.0.0.1:4178/courses",
+  "cards": [
+    "Intermediate Est. 44 min readingOptions Trading FundamentalsA structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator. If you are new, start with basic spot-market order practice first.Syllabus› What Is an Option? Calls & Puts Explained› The Greeks — Delta, Gamma, Theta & Vega› Defined-Risk Spreads — Verticals & Iron Condors+ 2 more lessons0% completeExplore course ",
+    "Intermediate Est. 40 min readingFutures & DerivativesA ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator. If you are new, start with basic spot-market order practice first.Syllabus› What Is a Futures Contract?› Margin & Leverage in Futures› Contango & Backwardation — Term Structure Explained+ 2 more lessons0% completeExplore course ",
+    "Intermediate Est. 40 min readingMacro Reading for TradersAn introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.Syllabus› Reading CPI and Inflation Data› The Fed & FOMC Cycle — How Rates Get Set› The Yield Curve and Recession-Risk Research+ 2 more lessons0% completeExplore course ",
+    "Beginner Est. 41 min readingTrading Decisions and BehaviourThis educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.Syllabus› Cognitive Biases in Trading Decisions› Revenge Trading & Tilt — Recognising Unplanned Decisions› A Trading Journal: Observations and Limits+ 2 more lessons0% completeExplore course ",
+    "Intermediate Est. 24 min readingUnderstanding Cryptocurrency Price Feeds and Portfolio ValuationExplore the mechanics behind cryptocurrency price feeds, from raw exchange tickers and volume-weighted averages to data aggregation methodologies, API delays, and paper-portfolio valuation techniques.Syllabus› Exchange Tickers and Price Aggregation Foundations› API Delays and Portfolio Valuation Mechanics› Portfolio Rebalancing and Cash Drag Dynamics0% completeExplore course ",
+    "Beginner Est. 18 min readingBitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio ReviewThree progressive lessons on virtual Bitcoin trading: snapshots, hypothetical market buy/sell mechanics, fees and honest performance analysis. No live exchange orders or personal recommendations.Syllabus› Setting Up Your Bitcoin Simulator Environment› Executing Spot Trades in the Simulator› Evaluating Performance and Managing Drawdowns0% completeExplore course ",
+    "Beginner Est. 15 min readingDiversification and Position Sizing for Spot Paper TradingLearn how to build balanced spot portfolios, manage concentration risk, calculate percentage weights, and systematically rebalance assets using TradeHQ's paper trading simulator.Syllabus› Foundations of Asset Allocation and Position Sizing› Managing Concentration Risk and Portfolio Drift› Executing Rebalancing with Virtual Cash0% completeExplore course "
+  ],
+  "schemas": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Options Trading Fundamentals",
+      "description": "A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Intermediate",
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 44 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Futures & Derivatives",
+      "description": "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Intermediate",
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 40 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Macro Reading for Traders",
+      "description": "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Intermediate",
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 40 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Trading Decisions and Behaviour",
+      "description": "This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Beginner",
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 41 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Understanding Cryptocurrency Price Feeds and Portfolio Valuation",
+      "description": "Explore the mechanics behind cryptocurrency price feeds, from raw exchange tickers and volume-weighted averages to data aggregation methodologies, API delays, and paper-portfolio valuation techniques.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Intermediate",
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 24 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "TradeHQ"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review",
+      "description": "Three progressive lessons on virtual Bitcoin trading: snapshots, hypothetical market buy/sell mechanics, fees and honest performance analysis. No live exchange orders or personal recommendations.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Beginner",
+      "url": "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 18 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "TradeHQ"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diversification and Position Sizing for Spot Paper Trading",
+      "description": "Learn how to build balanced spot portfolios, manage concentration risk, calculate percentage weights, and systematically rebalance assets using TradeHQ's paper trading simulator.",
+      "provider": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalLevel": "Beginner",
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "Estimated reading: 15 minutes; quizzes and worksheet exercises take additional time."
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "TradeHQ"
+      }
+    }
+  ],
+  "captures": [
+    {
+      "label": "Derivatives note",
+      "text": "Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator. If you are new, start with basic spot-market order practice first.",
+      "color": "rgb(146, 64, 14)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "A",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(245, 247, 250)"
+        }
+      ],
+      "rootBackground": "210 30% 97%"
+    },
+    {
+      "label": "Risk heading",
+      "text": " Important risk information",
+      "color": "rgb(146, 64, 14)",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "ancestors": [
+        {
+          "tag": "H2",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(245, 158, 11, 0.03)"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(245, 247, 250)"
+        }
+      ],
+      "rootBackground": "210 30% 97%"
+    },
+    {
+      "label": "Course title hover",
+      "text": "Options Trading Fundamentals",
+      "color": "rgb(23, 30, 43)",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "ancestors": [
+        {
+          "tag": "H3",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "A",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(245, 247, 250)"
+        }
+      ],
+      "rootBackground": "210 30% 97%"
+    },
+    {
+      "label": "Explore course",
+      "text": "Explore course ",
+      "color": "rgb(4, 120, 87)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "ancestors": [
+        {
+          "tag": "SPAN",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tag": "BODY",
+          "color": "rgb(245, 247, 250)"
+        }
+      ],
+      "rootBackground": "210 30% 97%"
+    }
+  ]
+}
