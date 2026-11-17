@@ -1,0 +1,158 @@
+[
+  {
+    "path": "captured-block-index.json",
+    "kind": "evidence",
+    "sha256": "ae804fbce4696763bbc843d3e484171abdd27b1c3e238f491ac22ccaa84f4076",
+    "bytes": 477004
+  },
+  {
+    "path": "raw/authored-interactive-text.json",
+    "kind": "authored-interactive-text",
+    "sha256": "e3aff99786a40acfdc678439c944d5da0adf6880a858a3b903f8e0212d4e13ee",
+    "bytes": 57087
+  },
+  {
+    "path": "raw/blocks-captured.json",
+    "kind": "evidence",
+    "sha256": "5d9a1a8185ae1c27eaddeadaf78ecb3eb422d461bb316e976f83b7584db9deea",
+    "bytes": 338740
+  },
+  {
+    "path": "raw/capture-manifest.json",
+    "kind": "evidence",
+    "sha256": "4ed39fcb7ed33e2af9490f8f3ea716f082bb203dc7a265a8b5fe51ae06a18e50",
+    "bytes": 3563
+  },
+  {
+    "path": "raw/cloudflare-beacon-probe.json",
+    "kind": "evidence",
+    "sha256": "5b19b8fe7d9597c1d7c83598d5a851597eb2412b7df4eee39af76c399765e2b1",
+    "bytes": 3530
+  },
+  {
+    "path": "raw/deployed-private-boundaries.json",
+    "kind": "evidence",
+    "sha256": "7d14e0e81a9ada33f4f9677010293f99610b7d193c4023cefcbf1bc9ac3e3488",
+    "bytes": 2543
+  },
+  {
+    "path": "raw/deployed-public-trade-projection.json",
+    "kind": "evidence",
+    "sha256": "6ae689d103070d6de6b5620a7be30b126d1fe59f385e5699f764e3e122285e80",
+    "bytes": 1071
+  },
+  {
+    "path": "raw/deployed-sharing-defaults.json",
+    "kind": "evidence",
+    "sha256": "8a63e387801ee4e2609e20ef694b1cc3b039bf43262c65c045864ca43286a42e",
+    "bytes": 579
+  },
+  {
+    "path": "raw/deployed-signup-defaults.json",
+    "kind": "evidence",
+    "sha256": "68b4af3464346dfd90ed1e14830af7a4af504b286cf740b087a5b228bf931d30",
+    "bytes": 994
+  },
+  {
+    "path": "raw/desktop-expanded.txt",
+    "kind": "evidence",
+    "sha256": "9fb142a7b6f0a09e08051d6fdace5b600cf84ab35f2cc53b397ace79d32665c9",
+    "bytes": 44158
+  },
+  {
+    "path": "raw/desktop-initial.txt",
+    "kind": "rendered-text",
+    "sha256": "7fc42587d9f8bb45399b6a8980dc8bc83120ff7560509614d0aafb664de3478c",
+    "bytes": 42961
+  },
+  {
+    "path": "raw/live-control-verification.json",
+    "kind": "evidence",
+    "sha256": "066066e5630aa53101d1af91307697820bd72b8e7c29ec192e51d7663a2dd536",
+    "bytes": 313
+  },
+  {
+    "path": "raw/local-sdk-final-pass.json",
+    "kind": "evidence",
+    "sha256": "bed517d6dbac22d57ce6e0e51a8676a089c02ab975e4f9e6e6ba028b85b04332",
+    "bytes": 1387
+  },
+  {
+    "path": "raw/mobile-expanded.txt",
+    "kind": "evidence",
+    "sha256": "85113a3d8da3543393e0f708ae2d3b4343690d05584aca0c17b9f0fd26c1f852",
+    "bytes": 43949
+  },
+  {
+    "path": "raw/native-production-receipt.json",
+    "kind": "evidence",
+    "sha256": "2ad52e0e1f567d50efd9877ab834e1cba0750ce06e699e7aa6408cad1e078179",
+    "bytes": 962
+  },
+  {
+    "path": "raw/native.html",
+    "kind": "native-html",
+    "sha256": "8897d713b0b6707dd8ae484569396de8a8272f934da74e174937bccb91961b87",
+    "bytes": 53063
+  },
+  {
+    "path": "raw/nojs-privacy-current-blocks.json",
+    "kind": "evidence",
+    "sha256": "faf352f18406cd3355eef877ade5b917505e087974ff81db801ac699c7239c09",
+    "bytes": 81183
+  },
+  {
+    "path": "raw/nojs-privacy-current-manifest.json",
+    "kind": "evidence",
+    "sha256": "716676e107fac4d8d2e3116128b5c04ae04c2c27b7a552a067ff2b4b351fe6d2",
+    "bytes": 160
+  },
+  {
+    "path": "raw/nojs-privacy-current.txt",
+    "kind": "evidence",
+    "sha256": "8a5caa1d7935213539de5168f74edbb8c8106decbaad8e70ddc50380cb2b12e4",
+    "bytes": 21237
+  },
+  {
+    "path": "raw/observed-state-limits.json",
+    "kind": "evidence",
+    "sha256": "505241fc7ba6b77c2cd24ae1d2ed47ab882346da4b1cfa89e238e9712e025ec8",
+    "bytes": 2213
+  },
+  {
+    "path": "raw/policy-matrix.json",
+    "kind": "evidence",
+    "sha256": "d2aef99bbfbf896039d3320c793f7fde26cda7a40c892369a3377f40e3666a05",
+    "bytes": 7052
+  },
+  {
+    "path": "raw/production447-sdk-runtime.json",
+    "kind": "evidence",
+    "sha256": "963c6fc93dabc2076fffc8bda6dac712b7b695468764c06947d88825a3e56b9b",
+    "bytes": 1559
+  },
+  {
+    "path": "raw/privacy-presentation.json",
+    "kind": "evidence",
+    "sha256": "f4f863ecc723a45481547639c2c1dacfb9b13b0ababafe53c6e1631ed91da723",
+    "bytes": 1065
+  },
+  {
+    "path": "raw/provider-current-receipts.json",
+    "kind": "evidence",
+    "sha256": "37d646b375f7d3dcdb2af2563ea00cb5ee04f52a6f070de6ba2d8a53cc1ab69b",
+    "bytes": 495
+  },
+  {
+    "path": "raw/email-gate-safe-receipt.json",
+    "kind": "evidence",
+    "sha256": "95e57ab6353f5ced441ee3648816b3bbcd6d3865ad351741b732ac2bd8ef69af",
+    "bytes": 532
+  },
+  {
+    "path": "raw/policy-source-refresh.json",
+    "kind": "evidence",
+    "sha256": "b02bce696d3904d21b51caabcc647dbe06fad0aea6271bf537c21379e9d12e14",
+    "bytes": 5957
+  }
+]

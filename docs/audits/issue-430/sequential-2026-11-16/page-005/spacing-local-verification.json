@@ -1,0 +1,64 @@
+{
+  "finding": "STRICT-CONTACT-002",
+  "recordedAtUTC": "2026-11-17T01:38:09.974660+00:00",
+  "sourceBase": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
+  "change": "Two explicit JSX spaces around existing Gmail link; destination and form behavior retained",
+  "buildCloudflare": "PASS complete retry, including existing postbuild verification suite and Cloudflare canonical checks",
+  "initialBuild": "FAILED native Node24 V8 Check failed: jit_page.has_value() after certificate checks; retained local log. No application assertion failed.",
+  "investigation": "Immediate isolated verify-verified-account-recovery.ts passed; complete build retry passed. Node24 native allocation crash did not reproduce. No checks removed or protections bypassed.",
+  "typescriptApp": "PASS --noEmit -p tsconfig.app.json",
+  "contactAPIRegression": "PASS existing isolated fixtures, no real email",
+  "compiledBrowser": {
+    "observedAtUTC": "2026-11-17T01:37:28.333Z",
+    "compiledDesktopAndMobile": "PASS",
+    "cases": [
+      {
+        "width": 1440,
+        "innerText": "These two draft options never send a message automatically. Open your email app, or copy the draft into Gmail or your preferred webmail service, then press Send there. TradeHQ does not store this message.",
+        "textContent": "These two draft options never send a message automatically. Open your email app, or copy the draft into Gmail or your preferred webmail service, then press Send there. TradeHQ does not store this message.",
+        "existingDestinationPreserved": true
+      },
+      {
+        "width": 390,
+        "innerText": "These two draft options never send a message automatically. Open your email app, or copy the draft into Gmail or your preferred webmail service, then press Send there. TradeHQ does not store this message.",
+        "textContent": "These two draft options never send a message automatically. Open your email app, or copy the draft into Gmail or your preferred webmail service, then press Send there. TradeHQ does not store this message.",
+        "existingDestinationPreserved": true
+      }
+    ],
+    "externalRequests": "All blocked; no sends or account mutation"
+  },
+  "preFixProductionControls": {
+    "observedAtUTC": "2026-11-17T01:33:20.553Z",
+    "url": "https://www.thetradehq.com/contact",
+    "callsOrEmailsSent": 0,
+    "mutationsBlocked": [
+      "/cdn-cgi/rum"
+    ],
+    "cases": [
+      {
+        "javaScript": true,
+        "actualMailtoMatchesAlreadyPublishedSource": true,
+        "actualTelephoneMatchesAlreadyPublishedSource": true,
+        "emailProtectionPathAbsent": true
+      },
+      {
+        "javaScript": false,
+        "actualMailtoMatchesAlreadyPublishedSource": true,
+        "actualTelephoneMatchesAlreadyPublishedSource": true,
+        "emailProtectionPathAbsent": true
+      }
+    ],
+    "directDelivery": {
+      "http": 200,
+      "enabled": false,
+      "actualSend": "NOT EXERCISED"
+    },
+    "localValidationAndSelectableFallback": true
+  },
+  "closure": "Pending exact-head hosted checks, normal merge, exact native Cloudflare production SHA and fresh deployed reread. Contact is not counted complete.",
+  "additionalFinding": "STRICT-CONTACT-003",
+  "finalBuildCloudflare": "PASS complete suite after four inclusive-limit text corrections",
+  "finalTypeScript": "PASS",
+  "validationBoundsChanged": false,
+  "latestSourceOnlyWordingInventory": 40
+}

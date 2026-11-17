@@ -1,0 +1,134 @@
+{
+  "observedAtUTC": "2026-11-16T14:58:44.696Z",
+  "scope": "Fresh anonymous live Privacy pages, unset/rejected optional Amplitude choice; inspect outbound field names without delivering posts. No declaration of actual provider storage or legal consent exemptions.",
+  "cases": [
+    {
+      "initialChoice": "unset",
+      "cloudflareScripts": [
+        {
+          "src": "https://static.cloudflareinsights.com/beacon.min.js",
+          "configKeys": [
+            "token"
+          ]
+        }
+      ],
+      "externalReadRequests": [
+        {
+          "host": "fonts.googleapis.com",
+          "resourceType": "stylesheet"
+        },
+        {
+          "host": "static.cloudflareinsights.com",
+          "resourceType": "script"
+        },
+        {
+          "host": "fonts.gstatic.com",
+          "resourceType": "font"
+        },
+        {
+          "host": "cbdktpjgczhthflspqjb.supabase.co",
+          "resourceType": "fetch"
+        }
+      ],
+      "beaconAttempts": [
+        {
+          "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+          "method": "POST",
+          "delivery": "BLOCKED-BY-AUDIT-ROUTE",
+          "topLevelKeys": [
+            "startTime",
+            "pageloadId",
+            "eventType",
+            "nt",
+            "location",
+            "versions",
+            "bi",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2",
+            "siteToken",
+            "st"
+          ],
+          "pageLocation": "https://www.thetradehq.com/privacy",
+          "referrer": null,
+          "eventType": 1,
+          "performanceFields": [
+            "startTime",
+            "pageloadId",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2"
+          ]
+        }
+      ],
+      "amplitudeScripts": 0,
+      "actualExternalPostsDelivered": 0
+    },
+    {
+      "initialChoice": "rejected",
+      "cloudflareScripts": [
+        {
+          "src": "https://static.cloudflareinsights.com/beacon.min.js",
+          "configKeys": [
+            "token"
+          ]
+        }
+      ],
+      "externalReadRequests": [
+        {
+          "host": "fonts.googleapis.com",
+          "resourceType": "stylesheet"
+        },
+        {
+          "host": "static.cloudflareinsights.com",
+          "resourceType": "script"
+        },
+        {
+          "host": "fonts.gstatic.com",
+          "resourceType": "font"
+        },
+        {
+          "host": "cbdktpjgczhthflspqjb.supabase.co",
+          "resourceType": "fetch"
+        }
+      ],
+      "beaconAttempts": [
+        {
+          "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+          "method": "POST",
+          "delivery": "BLOCKED-BY-AUDIT-ROUTE",
+          "topLevelKeys": [
+            "startTime",
+            "pageloadId",
+            "eventType",
+            "nt",
+            "location",
+            "versions",
+            "bi",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2",
+            "siteToken",
+            "st"
+          ],
+          "pageLocation": "https://www.thetradehq.com/privacy",
+          "referrer": null,
+          "eventType": 1,
+          "performanceFields": [
+            "startTime",
+            "pageloadId",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2"
+          ]
+        }
+      ],
+      "amplitudeScripts": 0,
+      "actualExternalPostsDelivered": 0
+    }
+  ]
+}

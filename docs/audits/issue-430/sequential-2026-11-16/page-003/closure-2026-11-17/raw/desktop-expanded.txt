@@ -1,0 +1,378 @@
+Home
+Learn
+Trade
+Portfolio
+Newsletter
+More
+Daily
+Sign in
+Privacy Policy
+
+This policy describes the data flows used by the current TradeHQ website, including optional analytics and advertising.
+
+Last Updated: November 16, 2026
+
+Privacy at a Glance
+✓
+Core simulator features can be used without creating an account.
+✓
+Guest portfolios stay in your browser; account cash, positions and server-recorded trades restore from Supabase.
+✓
+Optional accounts and community features can store data with Supabase.
+✓
+Optional Arena and leaderboard-to-registration analytics require fresh adult opt-in; session replay and automatic interaction capture are disabled. Google advertising has separate privacy choices.
+✓
+Cloudflare performance measurement and Google Fonts requests are separate from the optional Amplitude choice and can run before a choice or after rejection.
+✓
+No real-money deposit or brokerage account is required for simulated trading.
+Information TradeHQ Handles
+TradeHQ can be used without creating an account. The data handled depends on the features you choose.
+
+• Guest simulator data: practice cash, positions and trade history are stored in your browser with a separate browser-local recovery copy. You can download or explicitly restore a portable practice backup JSON file containing trading history and any private journal notes. The backup feature does not upload this file. Backup formats can be manually edited: TradeHQ validates file structure and arithmetic but does not certify authenticity, investment performance or leaderboard ranking. An imported guest file remains unverified. Guest learning-journey progress, course progress, streaks and related settings remain browser-stored. For signed-in users, lesson completion, unfinished quiz answers, reading position and first-trade journey progress may also be saved privately in Supabase and synchronized across devices when online. New beginner-journey reflection text stays on the device. Older reflections already synchronized remain private in the account. Streaks and unrelated browser preferences are not part of this account sync.
+• Signed-in portfolio data: Supabase stores account cash, positions and server-recorded practice orders, including asset, quantity, execution price, fees, time and simulated result. These account records restore across devices when the service is available. Signed-in users can also download a server-signed current-cycle historical practice export and verify its integrity against their authenticated account. This file may contain account identifiers and private transaction details; it is not publicly shared or accepted as an upload that replaces ranked trades. A first-time browser import stores cash and positions as an unranked portfolio; earlier guest trade history stays in its original browser. Starting a fresh ranked practice cycle archives the previous account snapshot privately. Journals remain browser-held; signed-in lesson and beginner-journey progress can sync privately and are not used to determine public trading ranks.
+• Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio.
+• Community data: signed-in features can store selected practice statistics, public-profile settings, reviews and duel/challenge records. A separate setting, OFF by default, lets a member voluntarily disclose up to 20 current-cycle server-recorded simulated trade entries on an otherwise public profile: asset, buy/sell, quantity, execution price, fee and date. The public data response also includes trade total, simulated realised profit/loss where recorded, and price-source information, even when a visible profile row shows fewer fields. Private journals, reflections, past cycles and browser-only records are never shared by this feature. These are simulated results, not brokerage statements or verified real-money performance.
+• Review interactions: likes are stored with your account ID and the review ID to enforce one like per account. Public pages show totals, not individual liker identities. Owner replies are public. Reviews removed from public view remain in the private admin panel for restoration.
+• Optional TradeHQ Newsletter: if you explicitly request the educational newsletter, TradeHQ stores your email address, consent/confirmation status, the date and source of signup, unsubscribe status, and delivery receipts in private Supabase records. Resend handles email delivery and receives your address for confirmations and issues. We never add prior contact records to the mailing list without permission. Every newsletter provides an unsubscribe link, and you may use the contact page to request deletion.
+• Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings.
+• Technical data: hosting, authentication, security and abuse-prevention services can receive normal request information such as IP address, browser/device information and server logs.
+• Website performance: current pages load Cloudflare Web Analytics to measure page loading and performance. Its browser beacon can send the page URL, a page-load identifier, timing and browser performance measurements to Cloudflare, separately from optional Amplitude events. These performance requests can run before an analytics choice and after Amplitude is rejected. Cloudflare states that its Web Analytics usage metrics do not use cookies, local storage or fingerprinting to track individuals. This does not mean that network requests contain no connection information or that every jurisdiction exempts this processing from privacy requirements.
+• Font delivery: pages request stylesheets and font files from Google Fonts. Google receives the connecting IP address, the requested resource URL and request headers, which can include browser/operating-system information and the referring page according to browser settings. These requests are separate from Amplitude consent and may occur before a choice or after rejection. Google states that its Fonts API does not set or log cookies and does not use Fonts information to create end-user profiles or for targeted advertising.
+• Optional analytics and advertising data: TradeHQ offers a newly scoped analytics choice only to visitors affirmatively confirming they are at least 18. This confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. If accepted, Amplitude can receive limited Practice Arena milestone events and two leaderboard registration-flow events (an eligible signed-out leaderboard visit, and a newly created account subsequently authenticated in that same browser within seven days), along with its pseudonymous browser identity and ordinary network metadata. The two leaderboard custom events contain no email, account ID, username, profile details, portfolio data, transaction information, or form content. The temporary seven-day same-browser attribution marker stores only a visit timestamp and is cleared on consent rejection or successful attribution. No custom Amplitude events are sent when optional analytics is declined; the website does not claim visitor identity is anonymous. Amplitude's automatic page, click, form, network and attribution collection and session replay are disabled; the two explicitly triggered attribution events are the only leaderboard funnel measurement. Earlier v1/v2 analytics permissions are not reused. Google AdSense has separate advertising choices and may use cookies or similar identifiers for ad delivery, measurement and, where applicable, personalisation.
+• Practice Arena research: exercise decisions, private written reasons, closing reflections and history stay in your browser and are not automatically submitted to a research database. An optional, adult-only research questionnaire keeps answers on the open page and only prepares an email if you deliberately choose to do so; you must send that email yourself. Sending an email reveals your sender address and may include other email-provider metadata. Answers are not anonymous once linked with a sender or identifying comments. If you accept Amplitude analytics, TradeHQ may record Arena view/start/finish/resume milestones, scenario ID and difficulty, and whether this browser returned on a later day. Custom Arena events do not include trading choices, portfolio values, account IDs, written notes or questionnaire answers. This opt-in measurement uses the existing Amplitude service's consented visitor identity; it does not create a separate TradeHQ research identifier. Declining analytics disables those custom milestones. A same-browser return event does not prove a person learned or voluntarily returned.
+
+TradeHQ does not require a payment card, bank account or brokerage account to place simulated trades.
+How Information Is Used
+TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, delivering a voluntarily confirmed TradeHQ Newsletter subscription, diagnosing problems and improving the service.
+
+Amplitude is used for limited, explicitly triggered Arena and leaderboard-to-new-account registration analytics after renewed adult opt-in. TradeHQ measures only consenting eligible visitors and same-browser new-account confirmations within seven days; email-link confirmations in another browser and visitors who reject analytics are not included, so any conversion rate is an incomplete proxy, not a claim about all visitors. This site's Amplitude configuration disables session replay, automatic page and click capture, form interactions, network tracking and remote automatic-enablement settings. We do not claim that disabling those features makes Amplitude's pseudonymous identifiers or request metadata anonymous.
+
+Ad-serving scripts and placements are currently disabled on TradeHQ, including newly published courses, account pages and error screens. The publisher verification meta tag and ads.txt do not enable ad serving. Before advertising can be enabled, TradeHQ must verify Google site approval, suitable reviewed inventory, placement controls and applicable consent configuration. If advertising is enabled, Google and its partners may place or read cookies and use similar technologies, web beacons, IP addresses and other identifiers to deliver and measure ads. Third parties may collect information as a result of ad serving. Advertising cookies can reflect prior visits to TradeHQ or other sites and, where consent and law permit, support personalised ads. These uses remain subject to the applicable privacy choices. Advertising may be personalized, non-personalized or limited depending on consent, location and Google settings.
+
+TradeHQ does not sell simulated portfolio data to brokers or financial institutions and does not execute real-money trades.
+Storage, Visibility & Retention
+Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing all site data also removes browser-local recovery copies; download a portfolio backup to preserve it separately. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.
+
+Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. Newsletter consent records and delivery receipts are retained while relevant to operating the requested subscription, unsubscribe suppression, and compliance; contact TradeHQ to request deletion or information. New accounts start with a private profile. You may explicitly make your profile public later; only then can chosen profile fields and selected simulated statistics appear on public pages. Existing members retain their chosen visibility, and public trade-history sharing remains a separate off-by-default permission.
+
+Scored educational trophy challenges are optional for registered users. TradeHQ stores the minimal account-linked challenge ID, source version, pass/miss and score receipt, and the resulting permanent trophy ID and issue date. It does not store the answer choices you selected, your written Arena notes or a copy of each Daily case in the trophy award record. Existing device-only learning progress is not used to create server-verified public awards. Account deletion removes the separate trophy records.
+
+Trophy display is disabled by default even for a public trader profile, including older profiles that were historically public by default. After an account is confirmed and its profile is deliberately public, the owner may separately enable display of one earned trophy flair and up to three earned pinned trophies. Only the chosen trophy names/icons are shown publicly; scores, assessment dates, balances, trades, contacts and private learning history are not included. You may withdraw this permission in My Trophy Cabinet, or hide the entire profile; both actions stop the optional trophy display.
+
+The optional leaderboard attribution marker contains only a local visit timestamp and is eligible for matching for no more than seven days. If the person does not return, the expired timestamp may remain in browser storage until the next relevant page access, consent withdrawal or site-data clearing; it is then discarded or replaced. A successful attributed registration also clears the marker. Analytics and advertising data at external providers are retained according to their settings and policies; TradeHQ does not state a fixed provider retention period where it cannot verify one.
+
+TradeHQ uses hosted infrastructure and access controls intended to protect stored data, but no online service can guarantee absolute security.
+Age and Optional Features
+The core simulator works without an account. The optional account flow does not ask for age, so TradeHQ does not determine a visitor's age from that form.
+
+Public profiles and community features can publish the information and simulated statistics you choose to share. Avoid including private or sensitive information in public fields. A parent or guardian can use the contact page to raise a privacy concern involving a young user. Optional Amplitude Arena and leaderboard registration-flow analytics are unavailable unless the visitor confirms they are at least 18 and affirmatively accepts the updated permission. This declaration is not verified age assurance and does not resolve every jurisdiction's child-safety requirements. Visitors under 18 should reject analytics; the core simulator remains available.
+
+An advertising consent choice alone does not determine age or replace age-specific advertising protections where they apply.
+Service Providers, Cookies & Your Choices
+TradeHQ relies on third parties including Cloudflare Pages for hosting and Cloudflare Web Analytics for page-performance measurement, Google Fonts for stylesheet and font delivery, Supabase for optional authentication/database features, Resend for explicitly requested newsletter emails and contact messages, Amplitude for optional adult-consented Arena and leaderboard-to-registration analytics without session replay, and, if advertising is enabled in a future reviewed release, Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.
+
+Optional Amplitude scripts are blocked unless a visitor expressly confirms they are at least 18 and accepts the newly expanded analytics choice. Prior v1 and v2 choices are not carried forward. Accepting stores a pseudonymous Amplitude browser identifier locally to support consented Arena measurement and the limited same-browser leaderboard registration funnel. You can reject analytics or withdraw a previous choice from this privacy page; withdrawal stops new custom events but does not automatically erase historical events already held by a provider. Contact TradeHQ for a privacy or deletion request. The Amplitude choice does not control the Cloudflare performance or Google Fonts requests described above. Analytics acceptance does not grant advertising consent.
+
+Before any future advertising release, TradeHQ must verify the applicable Google-certified consent-management configuration for regional advertising choices in the EEA, United Kingdom and Switzerland. Availability of the published message depends on Google's configuration and the visitor's region; an unavailable message does not constitute consent. The Google message lets you consent, decline or manage individual options. When it applies, use Advertising privacy choices on this page or in the footer to change or withdraw your decision.
+
+In supported US states, Google's Do Not Sell or Share My Personal Information link lets you opt out of the sale or sharing of personal information for advertising. Google applies restricted data processing to applicable opt-out requests. These regional messages manage Google's advertising partners; optional Amplitude analytics are controlled separately.
+
+You can also clear browser storage/cookies, use browser privacy controls and manage ad personalization through Google Ads Settings. When the Google message is available, its partner list describes the vendors and purposes covered by your advertising choices.
+
+Depending on where you live, privacy law may give you rights to access, correct, delete, restrict or object to certain processing. Use the TradeHQ contact page for a privacy request. The exact rights available depend on your jurisdiction.
+Provider privacy information and advertising opt-outs
+Cloudflare Web Analytics privacy information
+How Cloudflare measures website performance
+Google Fonts privacy and request data
+How Google uses information from sites and apps that use its services
+Google advertising personalisation controls
+Participating third-party advertising opt-outs
+Change analytics choices
+Contact Us
+
+For privacy questions or rights requests, use the contact page and identify the message as privacy-related.
+
+Contact TradeHQ
+
+Home
+Privacy Policy
+Frequently Asked Questions
+Do I need an account to use TradeHQ?
+Where is my simulated portfolio stored?
+
+Guest portfolios are stored in your browser. Account cash, positions and server-recorded trades are stored with Supabase and restore across devices when available. Earlier guest trading history and journals remain browser-held; signed-in lesson and beginner-journey progress may also be saved to your private account and synchronized between devices.
+
+Does TradeHQ use analytics or advertising cookies?
+
+Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The 18+ confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. Amplitude replay and automatic interaction capture are disabled. Cloudflare Web Analytics performance beacons and Google Fonts requests are separate from that choice and can run before a choice or after rejection; the policy above describes their data. Ad-serving scripts are currently disabled. Before any future advertising release, Google regional messages and controls must be verified. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.
+
+Trade All Markets
+TOP CRYPTO
+BTC
+Bitcoin
+ETH
+Ethereum
+SOL
+Solana
+XRP
+XRP
+BNB
+BNB
+ADA
+Cardano
+AI & TECH STOCKS
+NVDA
+NVIDIA
+MSFT
+Microsoft
+GOOGL
+Alphabet
+AAPL
+Apple
+META
+Meta
+AMZN
+Amazon
+POPULAR ETFS
+SPY
+S&P 500 ETF
+QQQ
+Nasdaq ETF
+DIA
+Dow Jones ETF
+ARKK
+ARK Innovation
+FOREX PAIRS
+EUR/USD
+Euro/Dollar
+GBP/USD
+Pound/Dollar
+USD/JPY
+Dollar/Yen
+COMMODITIES
+XAU
+Gold
+XAG
+Silver
+WTI
+Crude Oil
+Trading Glossary
+Short Squeeze
+Golden Cross
+Death Cross
+Liquidation Cascade
+Fibonacci Retracement
+RSI Divergence
+MACD Histogram
+Bollinger Band Squeeze
+Order Block
+Fair Value Gap (FVG)
+Bull Trap
+Bear Trap
+Whale Manipulation
+Support and Resistance
+Candlestick Patterns
+Head and Shoulders
+Double Bottom
+Moving Average Convergence Divergence
+Limit Order vs Market Order
+Stop Loss Hunting
+Leverage Trading
+FOMO (Fear of Missing Out)
+FUD (Fear, Uncertainty, Doubt)
+HODL Strategy
+Satoshi Nakamoto
+Margin Call
+Liquidation Price
+Dollar Cost Averaging
+Swing Trading
+Day Trading
+Scalping
+Volume Profile
+VWAP
+Ichimoku Cloud
+Elliott Wave Theory
+Wyckoff Method
+Market Maker
+Dark Pool
+Slippage
+Impermanent Loss
+Yield Farming
+Flash Crash
+Circuit Breaker
+Pump and Dump
+Paper Trading
+Risk-Reward Ratio
+Drawdown
+Backtesting
+Correlation Trading
+
+An educational paper trading simulator. Practice with $100K virtual capital and study stocks, crypto, forex, and commodities without spending real money.
+
+Contact TradeHQ
+[contact value withheld]
+[telephone withheld]
+
+FOLLOW TRADEHQ
+
+[public handle withheld]
+
+FOUNDER · PERSONAL ACCOUNTS
+
+Instagram
+Bluesky
+PLATFORM
+Trading Simulator
+Markets Hub
+Portfolio Tracker
+Optional analytics settings
+LEARN
+All Courses
+Structured Tracks
+Options Fundamentals
+Futures & Derivatives
+Macro Reading
+Trading Psychology
+Trading Guide
+Learning Mentor
+COMPANY
+About
+Contact
+What’s New
+Roadmap
+Privacy Policy
+Terms of Service
+Disclaimer
+TRUST & SECURITY
+
+Virtual Cash Only
+
+No real money is traded
+
+Educational Simulator
+
+Practice trading skills
+
+170 Assets
+
+Stocks, crypto, ETFs, forex
+
+TRADEHQ NEWSLETTER
+Understand money, one useful idea at a time.
+
+A free, original, beginner-friendly financial lesson each week. Real examples, simple explanations, no trading jargon or hype. No account required.
+
+Your email address
+Subscribe free
+Leave blank
+I agree to receive the free weekly TradeHQ Newsletter. I'll confirm my email and can unsubscribe anytime. See the Privacy Policy.
+
+One educational email per week after editorial review. No promotions or account needed.
+
+Contact TradeHQ
+Privacy Policy
+|
+Terms of Service
+
+TradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.
+
+© 2026 TradeHQ · Built by Anuga Weerasinghe · Educational Use Only
+
+Music: Long Road Ahead by Kevin MacLeod (incompetech.com) · Creative Commons Attribution 4.0.
+
+Learning notes: Privacy Policy
+
+Guest simulator records stay in your browser. Account cash, positions and server-recorded trades are stored with Supabase; account, community and consented analytics features also involve provider processing. See the full policy for details.
+
+Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.
+
+Policy update
+
+Last Updated: November 16, 2026
+
+Information TradeHQ Handles
+
+TradeHQ can be used without creating an account. The data handled depends on the features you choose.
+
+• Guest simulator data: practice cash, positions and trade history are stored in your browser with a separate browser-local recovery copy. You can download or explicitly restore a portable practice backup JSON file containing trading history and any private journal notes. The backup feature does not upload this file. Backup formats can be manually edited: TradeHQ validates file structure and arithmetic but does not certify authenticity, investment performance or leaderboard ranking. An imported guest file remains unverified. Guest learning-journey progress, course progress, streaks and related settings remain browser-stored. For signed-in users, lesson completion, unfinished quiz answers, reading position and first-trade journey progress may also be saved privately in Supabase and synchronized across devices when online. New beginner-journey reflection text stays on the device. Older reflections already synchronized remain private in the account. Streaks and unrelated browser preferences are not part of this account sync. • Signed-in portfolio data: Supabase stores account cash, positions and server-recorded practice orders, including asset, quantity, execution price, fees, time and simulated result. These account records restore across devices when the service is available. Signed-in users can also download a server-signed current-cycle historical practice export and verify its integrity against their authenticated account. This file may contain account identifiers and private transaction details; it is not publicly shared or accepted as an upload that replaces ranked trades. A first-time browser import stores cash and positions as an unranked portfolio; earlier guest trade history stays in its original browser. Starting a fresh ranked practice cycle archives the previous account snapshot privately. Journals remain browser-held; signed-in lesson and beginner-journey progress can sync privately and are not used to determine public trading ranks. • Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio. • Community data: signed-in features can store selected practice statistics, public-profile settings, reviews and duel/challenge records. A separate setting, OFF by default, lets a member voluntarily disclose up to 20 current-cycle server-recorded simulated trade entries on an otherwise public profile: asset, buy/sell, quantity, execution price, fee and date. The public data response also includes trade total, simulated realised profit/loss where recorded, and price-source information, even when a visible profile row shows fewer fields. Private journals, reflections, past cycles and browser-only records are never shared by this feature. These are simulated results, not brokerage statements or verified real-money performance. • Review interactions: likes are stored with your account ID and the review ID to enforce one like per account. Public pages show totals, not individual liker identities. Owner replies are public. Reviews removed from public view remain in the private admin panel for restoration. • Optional TradeHQ Newsletter: if you explicitly request the educational newsletter, TradeHQ stores your email address, consent/confirmation status, the date and source of signup, unsubscribe status, and delivery receipts in private Supabase records. Resend handles email delivery and receives your address for confirmations and issues. We never add prior contact records to the mailing list without permission. Every newsletter provides an unsubscribe link, and you may use the contact page to request deletion. • Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings. • Technical data: hosting, authentication, security and abuse-prevention services can receive normal request information such as IP address, browser/device information and server logs. • Website performance: current pages load Cloudflare Web Analytics to measure page loading and performance. Its browser beacon can send the page URL, a page-load identifier, timing and browser performance measurements to Cloudflare, separately from optional Amplitude events. These performance requests can run before an analytics choice and after Amplitude is rejected. Cloudflare states that its Web Analytics usage metrics do not use cookies, local storage or fingerprinting to track individuals. This does not mean that network requests contain no connection information or that every jurisdiction exempts this processing from privacy requirements. • Font delivery: pages request stylesheets and font files from Google Fonts. Google receives the connecting IP address, the requested resource URL and request headers, which can include browser/operating-system information and the referring page according to browser settings. These requests are separate from Amplitude consent and may occur before a choice or after rejection. Google states that its Fonts API does not set or log cookies and does not use Fonts information to create end-user profiles or for targeted advertising. • Optional analytics and advertising data: TradeHQ offers a newly scoped analytics choice only to visitors affirmatively confirming they are at least 18. This confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. If accepted, Amplitude can receive limited Practice Arena milestone events and two leaderboard registration-flow events (an eligible signed-out leaderboard visit, and a newly created account subsequently authenticated in that same browser within seven days), along with its pseudonymous browser identity and ordinary network metadata. The two leaderboard custom events contain no email, account ID, username, profile details, portfolio data, transaction information, or form content. The temporary seven-day same-browser attribution marker stores only a visit timestamp and is cleared on consent rejection or successful attribution. No custom Amplitude events are sent when optional analytics is declined; the website does not claim visitor identity is anonymous. Amplitude's automatic page, click, form, network and attribution collection and session replay are disabled; the two explicitly triggered attribution events are the only leaderboard funnel measurement. Earlier v1/v2 analytics permissions are not reused. Google AdSense has separate advertising choices and may use cookies or similar identifiers for ad delivery, measurement and, where applicable, personalisation. • Practice Arena research: exercise decisions, private written reasons, closing reflections and history stay in your browser and are not automatically submitted to a research database. An optional, adult-only research questionnaire keeps answers on the open page and only prepares an email if you deliberately choose to do so; you must send that email yourself. Sending an email reveals your sender address and may include other email-provider metadata. Answers are not anonymous once linked with a sender or identifying comments. If you accept Amplitude analytics, TradeHQ may record Arena view/start/finish/resume milestones, scenario ID and difficulty, and whether this browser returned on a later day. Custom Arena events do not include trading choices, portfolio values, account IDs, written notes or questionnaire answers. This opt-in measurement uses the existing Amplitude service's consented visitor identity; it does not create a separate TradeHQ research identifier. Declining analytics disables those custom milestones. A same-browser return event does not prove a person learned or voluntarily returned.
+
+TradeHQ does not require a payment card, bank account or brokerage account to place simulated trades.
+
+How Information Is Used
+
+TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, delivering a voluntarily confirmed TradeHQ Newsletter subscription, diagnosing problems and improving the service.
+
+Amplitude is used for limited, explicitly triggered Arena and leaderboard-to-new-account registration analytics after renewed adult opt-in. TradeHQ measures only consenting eligible visitors and same-browser new-account confirmations within seven days; email-link confirmations in another browser and visitors who reject analytics are not included, so any conversion rate is an incomplete proxy, not a claim about all visitors. This site's Amplitude configuration disables session replay, automatic page and click capture, form interactions, network tracking and remote automatic-enablement settings. We do not claim that disabling those features makes Amplitude's pseudonymous identifiers or request metadata anonymous.
+
+Ad-serving scripts and placements are currently disabled on TradeHQ, including newly published courses, account pages and error screens. The publisher verification meta tag and ads.txt do not enable ad serving. Before advertising can be enabled, TradeHQ must verify Google site approval, suitable reviewed inventory, placement controls and applicable consent configuration. If advertising is enabled, Google and its partners may place or read cookies and use similar technologies, web beacons, IP addresses and other identifiers to deliver and measure ads. Third parties may collect information as a result of ad serving. Advertising cookies can reflect prior visits to TradeHQ or other sites and, where consent and law permit, support personalised ads. These uses remain subject to the applicable privacy choices. Advertising may be personalized, non-personalized or limited depending on consent, location and Google settings.
+
+TradeHQ does not sell simulated portfolio data to brokers or financial institutions and does not execute real-money trades.
+
+Storage, Visibility & Retention
+
+Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing all site data also removes browser-local recovery copies; download a portfolio backup to preserve it separately. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.
+
+Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. Newsletter consent records and delivery receipts are retained while relevant to operating the requested subscription, unsubscribe suppression, and compliance; contact TradeHQ to request deletion or information. New accounts start with a private profile. You may explicitly make your profile public later; only then can chosen profile fields and selected simulated statistics appear on public pages. Existing members retain their chosen visibility, and public trade-history sharing remains a separate off-by-default permission.
+
+Scored educational trophy challenges are optional for registered users. TradeHQ stores the minimal account-linked challenge ID, source version, pass/miss and score receipt, and the resulting permanent trophy ID and issue date. It does not store the answer choices you selected, your written Arena notes or a copy of each Daily case in the trophy award record. Existing device-only learning progress is not used to create server-verified public awards. Account deletion removes the separate trophy records.
+
+Trophy display is disabled by default even for a public trader profile, including older profiles that were historically public by default. After an account is confirmed and its profile is deliberately public, the owner may separately enable display of one earned trophy flair and up to three earned pinned trophies. Only the chosen trophy names/icons are shown publicly; scores, assessment dates, balances, trades, contacts and private learning history are not included. You may withdraw this permission in My Trophy Cabinet, or hide the entire profile; both actions stop the optional trophy display.
+
+The optional leaderboard attribution marker contains only a local visit timestamp and is eligible for matching for no more than seven days. If the person does not return, the expired timestamp may remain in browser storage until the next relevant page access, consent withdrawal or site-data clearing; it is then discarded or replaced. A successful attributed registration also clears the marker. Analytics and advertising data at external providers are retained according to their settings and policies; TradeHQ does not state a fixed provider retention period where it cannot verify one.
+
+TradeHQ uses hosted infrastructure and access controls intended to protect stored data, but no online service can guarantee absolute security.
+
+Age and Optional Features
+
+The core simulator works without an account. The optional account flow does not ask for age, so TradeHQ does not determine a visitor's age from that form.
+
+Public profiles and community features can publish the information and simulated statistics you choose to share. Avoid including private or sensitive information in public fields. A parent or guardian can use the contact page to raise a privacy concern involving a young user. Optional Amplitude Arena and leaderboard registration-flow analytics are unavailable unless the visitor confirms they are at least 18 and affirmatively accepts the updated permission. This declaration is not verified age assurance and does not resolve every jurisdiction's child-safety requirements. Visitors under 18 should reject analytics; the core simulator remains available.
+
+An advertising consent choice alone does not determine age or replace age-specific advertising protections where they apply.
+
+Service Providers, Cookies & Your Choices
+
+TradeHQ relies on third parties including Cloudflare Pages for hosting and Cloudflare Web Analytics for page-performance measurement, Google Fonts for stylesheet and font delivery, Supabase for optional authentication/database features, Resend for explicitly requested newsletter emails and contact messages, Amplitude for optional adult-consented Arena and leaderboard-to-registration analytics without session replay, and, if advertising is enabled in a future reviewed release, Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.
+
+Optional Amplitude scripts are blocked unless a visitor expressly confirms they are at least 18 and accepts the newly expanded analytics choice. Prior v1 and v2 choices are not carried forward. Accepting stores a pseudonymous Amplitude browser identifier locally to support consented Arena measurement and the limited same-browser leaderboard registration funnel. You can reject analytics or withdraw a previous choice from this privacy page; withdrawal stops new custom events but does not automatically erase historical events already held by a provider. Contact TradeHQ for a privacy or deletion request. The Amplitude choice does not control the Cloudflare performance or Google Fonts requests described above. Analytics acceptance does not grant advertising consent.
+
+Before any future advertising release, TradeHQ must verify the applicable Google-certified consent-management configuration for regional advertising choices in the EEA, United Kingdom and Switzerland. Availability of the published message depends on Google's configuration and the visitor's region; an unavailable message does not constitute consent. The Google message lets you consent, decline or manage individual options. When it applies, use Advertising privacy choices on this page or in the footer to change or withdraw your decision.
+
+In supported US states, Google's Do Not Sell or Share My Personal Information link lets you opt out of the sale or sharing of personal information for advertising. Google applies restricted data processing to applicable opt-out requests. These regional messages manage Google's advertising partners; optional Amplitude analytics are controlled separately.
+
+You can also clear browser storage/cookies, use browser privacy controls and manage ad personalization through Google Ads Settings. When the Google message is available, its partner list describes the vendors and purposes covered by your advertising choices.
+
+Depending on where you live, privacy law may give you rights to access, correct, delete, restrict or object to certain processing. Use the TradeHQ contact page for a privacy request. The exact rights available depend on your jurisdiction.
+
+Cookies and analytics
+
+TradeHQ stores guest practice records in local browser storage. Account cash, positions and server-recorded trades are stored with Supabase. Optional analytics and advertising services can use cookies or similar identifiers after the applicable consent choice; the privacy policy explains those providers and controls.
+
+Only after a visitor confirms they are 18 or older and explicitly accepts the renewed optional analytics choice, the Practice Arena can send limited Amplitude events recording exercises viewed, started, completed or resumed, plus a same-browser day-to-day return proxy. The website disables analytics session replay and automatic click, page and form capture. These custom event properties do not include virtual account balances, trading decisions, notes or questionnaire answers. Declining analytics blocks the events. A separate, voluntary five-minute user test prepares feedback only if the participant chooses to share it by email.
+
+Data you can send us, and what happens to it
+Contact messages: kept only as long as needed to answer you.
+Reviews: published with your chosen display name, and removable on request.
+Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes and Daily reflections remain browser-specific; signed-in lessons and beginner-journey progress can sync privately between devices when online.
+Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start private; you can make your profile public from your profile page.
+Children and jurisdiction
+
+The core simulator works without an account, and optional signup does not collect age. Advertising availability depends on provider approval, settings and applicable consent choices; advertising consent is not an age check. Parents or guardians can raise privacy concerns through the contact page. TradeHQ holds no funds and executes no real trades. This policy does not determine the legal classification of the service or certify compliance in every jurisdiction.
+
+Changes and contact
+
+TradeHQ does not sell simulated portfolio data to brokers. Optional analytics and advertising are separate third-party services described in the privacy policy and are subject to the user's applicable consent choices.
+
+If this policy changes materially, the updated text appears on this page. Questions about what is stored, requests for a copy of account data, and deletion requests all go through the contact page and are handled by the person who maintains the site rather than an automated system.
+
+References and related pages
+Cloudflare Web Analytics privacy information
+How Cloudflare measures website performance
+Google Fonts privacy and request data
+How Google uses information from sites and apps that use its services
+Google advertising personalisation controls
+Participating third-party advertising opt-outs
+Terms of service
+Contact TradeHQ
+
+Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.

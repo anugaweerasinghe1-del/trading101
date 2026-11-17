@@ -22,22 +22,22 @@ const contactSchema = z.object({
     .string()
     .trim()
     .min(1, "Please enter your name")
-    .max(100, "Name must be under 100 characters"),
+    .max(100, "Name must be 100 characters or fewer"),
   email: z
     .string()
     .trim()
     .email("Please enter a valid email address")
-    .max(255, "Email must be under 255 characters"),
+    .max(255, "Email must be 255 characters or fewer"),
   subject: z
     .string()
     .trim()
     .min(3, "Subject must be at least 3 characters")
-    .max(150, "Subject must be under 150 characters"),
+    .max(150, "Subject must be 150 characters or fewer"),
   message: z
     .string()
     .trim()
     .min(10, "Message must be at least 10 characters")
-    .max(2000, "Message must be under 2000 characters"),
+    .max(2000, "Message must be 2000 characters or fewer"),
 });
 
 export default function Contact() {
@@ -285,8 +285,8 @@ export default function Contact() {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                These two draft options never send a message automatically. Open your email app, or copy the draft into
-                <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>
+                These two draft options never send a message automatically. Open your email app, or copy the draft into{" "}
+                <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>{" "}
                 or your preferred webmail service, then press Send there. TradeHQ does not store this message.
               </p>
               <DirectContactOption values={form} validate={() => Boolean(prepareDraft())} />

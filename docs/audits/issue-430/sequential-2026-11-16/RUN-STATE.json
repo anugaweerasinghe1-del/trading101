@@ -1,13 +1,13 @@
 {
-  "updatedAtUTC": "2026-11-16T15:47:45.322578+00:00",
-  "phase": "PRIVACY-SDK-HARDENING-IN-PROGRESS",
-  "currentPage": "https://www.thetradehq.com/privacy",
-  "newAuditCompletedPages": 2,
+  "updatedAtUTC": "2026-11-17T01:46:54.936069+00:00",
+  "phase": "CONTACT-COPY-FIX-PR452",
+  "currentPage": "https://www.thetradehq.com/contact",
+  "newAuditCompletedPages": 3,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 161,
+  "publisherPagesStillQueued": 160,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
-  "priorRemediation": "18/19; Diversification draft6/published3 remains normal owner-publication pending.",
+  "priorRemediation": "Last metadata observed Nov16 16:02: Bitcoin9/9, PriceFeeds5/5; Diversification draft6/published3 pending normal owner review. Not refreshed Nov17.",
   "homepageFindings": {
     "confirmed": 5,
     "qualityRisks": 3,
@@ -16,23 +16,75 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "d012adbf-9216-4cb3-acd9-ee6e20878aad",
+  "nativeCloudflareId": "5b0b82bb-619f-4ac4-b7d4-d85352bb60fc",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify pinned core SDK runtime in isolated no-delivery fixtures; PR/merge/native production/live reread before closing Privacy and moving to Terms.",
+  "nextStep": "Wait for all five required checks on the updated PR452 head, merge normally, verify native exact production SHA and actual live Contact words/controls. Then close Contact and begin Learn.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 13,
-  "latestClosedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/47282297d515a53f61f8df838bbf2c957b14d035/docs/audits/issue-430/sequential-2026-11-16/page-002/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "710bb67d8b4440004d63deaf894af9ed9977c98c",
+  "freshReviewTotalClosedCases": 17,
+  "latestClosedPageRecord": "page-003/closure-2026-11-17/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
     "qualityRisks": 1,
-    "qualityRisksOpen": 1,
-    "closed": 2
+    "qualityRisksOpen": 0,
+    "closed": 3
+  },
+  "production": {
+    "mergeSHA": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
+    "deploymentPullRequest": 450,
+    "originalRepairPullRequests": [
+      446,
+      447
+    ],
+    "nativeCloudflare": {
+      "id": "5b0b82bb-619f-4ac4-b7d4-d85352bb60fc",
+      "sha": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-16T19:07:02.670532Z"
+    },
+    "nativeObservedAtUTC": "2026-11-17T00:56:25.293Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43935936061/job/133733363289",
+    "liveRereadAtUTC": "2026-11-17T01:17:50.650681+00:00",
+    "liveRereadTimestampBasis": "Completion attestation recorded after the actual complete live/native reread and source/context assessment, not a per-word timing measurement."
+  },
+  "resumeRestrictions": [
+    "Ad serving disabled",
+    "No course draft publication or independent-review bypass",
+    "No paid API requests/model calls",
+    "Private operations/account/CMP/owner legal gates remain separate"
+  ],
+  "latestPR": {
+    "number": 452,
+    "status": "OPEN; updated exact-head CI required",
+    "branch": "issue-430-resume-20261117"
+  },
+  "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
+  "termsFindings": {
+    "confirmed": 3,
+    "fixedRechecked": 3,
+    "ownerReviewOpen": 1,
+    "pageStatus": "BLOCKED"
+  },
+  "blockers": [
+    {
+      "id": "STRICT-TERMS-004",
+      "scope": "Owner legal eligibility decision; keep current access, no invented universal18+ rule"
+    },
+    {
+      "scope": "Original Terms full byte capture/event timing not recovered; exact original quoted defects/source revision retained"
+    }
+  ],
+  "contactFindings": {
+    "001": "Native contact targets verified in current production; preserve one case across449/450",
+    "002": "Word spaces corrected; compiled and preview desktop/mobile passed; release pending",
+    "003": "Four inclusive-limit messages corrected; numeric bounds unchanged; final build/type/API checks pass; release pending"
   }
 }

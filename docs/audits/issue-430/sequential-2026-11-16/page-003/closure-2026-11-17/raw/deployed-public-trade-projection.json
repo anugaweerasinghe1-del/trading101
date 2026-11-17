@@ -1,0 +1,5 @@
+{
+  "observedAtUTC": "2026-11-16T15:18:36.969Z",
+  "scope": "Read-only function definition; no member/trade records queried or sharing changed",
+  "public_trade_definition": "CREATE OR REPLACE FUNCTION public.get_public_practice_trades(p_username text, p_limit integer DEFAULT 20)\n RETURNS TABLE(asset_id text, side text, quantity numeric, price numeric, fee numeric, total numeric, realized_pnl numeric, price_source text, created_at timestamp with time zone)\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  SELECT t.asset_id, t.side, t.quantity, t.price, t.fee,\n         t.total, t.realized_pnl, t.price_source, t.created_at\n    FROM public.profiles AS pf\n    JOIN public.practice_portfolios AS pp ON pp.user_id = pf.id\n    JOIN public.practice_trades AS t ON t.user_id = pf.id AND t.cycle_id = pp.cycle_id\n   WHERE pf.username = p_username\n     AND pf.is_public IS TRUE\n     AND pf.show_public_trades IS TRUE\n   ORDER BY t.created_at DESC, t.id DESC\n   LIMIT GREATEST(1, LEAST(COALESCE(p_limit, 20), 20));\n$function$\n"
+}
