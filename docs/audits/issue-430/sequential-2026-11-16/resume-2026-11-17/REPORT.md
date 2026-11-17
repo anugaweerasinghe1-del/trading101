@@ -57,3 +57,11 @@ The dedicated rejected/tool-artifact ledger preserves the170-versus177 count dis
 5. Terms still requires the recorded owner/legal decision. Prior source-publication remediation was last recorded18/19; this session did not freshly query or publish private drafts. AdSense applicant/site approval, regional CMP/account configuration, private operational behavior and license contracts remain external/unverified gates.
 
 No advertising activation, AdSense application, account/CMP change, protected publication, real-money transaction, production user-record mutation, newsletter/social sending or paid standalone generation/review occurred. Guest browser-only progress and synthetic date fixtures are explicitly identified. This checkpoint does not predict Google approval or establish project-wide readiness. The issue remains open; no background reviewer continues after the session ends.
+
+## Continued P08 controls review after checkpoint
+
+The explicit clipboard-denial fixture exposed STRICT-GUIDE-004: the notification dismiss button had no programmatic name (source, DOM and Chromium accessibility tree agree). Added the default name “Dismiss notification”; caller overrides remain available. This is a product accessibility error, not a confirmed Google policy violation.
+
+The Guide-only footer also omitted the verified music creator/source/license links already corrected under STRICT-HOME-001. The Guide extension reuses the exact existing attribution. This is an existing-root visibility quality-risk occurrence, adds zero unique root defects, and does not establish copyright infringement. Both findings were logged on issue 430 before source edits (comments 6955841776 and 6955623270). Older open PR file inventories and PR23 branding patch were checked; no overlapping source work was overwritten.
+
+Combined Cloudflare build/postbuild and TypeScript checks passed. Four local browser cases (1440/390 × light/dark) verified both credit links and keyboard dismissal through the named button, with no horizontal overflow or runtime errors. Release verification remains pending. Existing three product fixes retain their earlier receipts. Six publisher pages remain strictly closed; P08 remains partial. Additional control-state captures are raw reconciliation evidence and confer no closure credit.
