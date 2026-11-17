@@ -77,11 +77,11 @@ export default function Daily() {
     <>
       <Helmet>
         <title>Daily Trading Challenge — Build Your Streak | TradeHQ</title>
-        <meta name="description" content="A quick daily scenario plus a 8–12 minute case study with calculations, visuals and worked answers. Practise from 50 rotating cases and build your streak for free." />
+        <meta name="description" content="A quick fictional scenario and an optional ten-question case study with calculations, labelled visuals and worked answers. Practise from 50 rotating cases and build your streak for free." />
         <link rel="canonical" href="https://www.thetradehq.com/daily" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Daily Trading Challenge — TradeHQ" />
-        <meta property="og:description" content="One new trading scenario per day. Build your streak. Free." />
+        <meta property="og:description" content="A fictional trading scenario from a rotating bank each day. Build your streak through educational practice. Free." />
         <meta property="og:url" content="https://www.thetradehq.com/daily" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
@@ -339,7 +339,7 @@ export default function Daily() {
               )}
 
               <p className="text-[10px] text-foreground/45 text-center mt-6">
-                Educational simulation only — not financial advice. Come back tomorrow for a new challenge.
+                Educational simulation only — not financial advice. Return another day for another rotating practice scenario.
               </p>
             </article>
 
