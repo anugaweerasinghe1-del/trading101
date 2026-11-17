@@ -1,0 +1,100 @@
+{
+  "page": "https://737c1685.tradehq-preview.pages.dev/learn-trading-guide",
+  "status": 200,
+  "atUTC": "2026-11-17T16:15:46.946078+00:00",
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Beginner Trading Practice Guide",
+    "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
+    "author": {
+      "@type": "Organization",
+      "name": "TradeHQ"
+    },
+    "image": "https://www.thetradehq.com/tradehq-preview-2026.png"
+  },
+  "canonical": "https://www.thetradehq.com/learn-trading-guide",
+  "schemas": [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe",
+        "url": "https://www.thetradehq.com/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Beginner Trading Practice Guide",
+      "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
+      "author": {
+        "@type": "Organization",
+        "name": "TradeHQ"
+      },
+      "image": "https://www.thetradehq.com/tradehq-preview-2026.png"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I start trading with no money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One learning exercise is to use a simulator such as TradeHQ to study order entry and portfolio changes with $100,000 in virtual cash. Practice outcomes do not establish readiness for real trading."
+          }
+        }
+      ]
+    }
+  ],
+  "image": {
+    "url": "https://www.thetradehq.com/tradehq-preview-2026.png",
+    "status": 200,
+    "bytes": 1691003,
+    "sha256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a"
+  }
+}
