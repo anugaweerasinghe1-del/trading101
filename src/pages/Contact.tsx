@@ -285,8 +285,8 @@ export default function Contact() {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                These two draft options never send a message automatically. Open your email app, or copy the draft into
-                <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>
+                These two draft options never send a message automatically. Open your email app, or copy the draft into{" "}
+                <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>{" "}
                 or your preferred webmail service, then press Send there. TradeHQ does not store this message.
               </p>
               <DirectContactOption values={form} validate={() => Boolean(prepareDraft())} />

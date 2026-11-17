@@ -1,7 +1,7 @@
 {
-  "updatedAtUTC": "2026-11-17T01:27:46.790399+00:00",
-  "phase": "TERMS-RESUMPTION",
-  "currentPage": "https://www.thetradehq.com/terms",
+  "updatedAtUTC": "2026-11-17T01:38:09.974660+00:00",
+  "phase": "CONTACT-TEXT-FIX-READY-FOR-PR",
+  "currentPage": "https://www.thetradehq.com/contact",
   "newAuditCompletedPages": 3,
   "publisherPageBaseline": 163,
   "publisherPagesStillQueued": 160,
@@ -19,13 +19,13 @@
   "nativeCloudflareId": "5b0b82bb-619f-4ac4-b7d4-d85352bb60fc",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Freshly reread Terms in deployed JS/native/mobile states, verify PR448 fixes and preserve owner eligibility gate; then Contact, Learn, existing PR451.",
+  "nextStep": "Create PR for Contact text spacing plus recovered audit checkpoint; validate exact head all required CI; merge normally and verify native exact production SHA, reread Contact before Learn.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 14,
+  "freshReviewTotalClosedCases": 17,
   "latestClosedPageRecord": "page-003/closure-2026-11-17/PAGE-RECORD.json",
   "latestCodeMergeSHA": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
   "privacyFindings": {
@@ -67,5 +67,24 @@
     "head": "7cf019991785123899077161db82f5cbdabfcee1",
     "requiredChecks": "5/5 success at recovery; reviews0"
   },
-  "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged."
+  "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
+  "termsFindings": {
+    "confirmed": 3,
+    "fixedRechecked": 3,
+    "ownerReviewOpen": 1,
+    "pageStatus": "BLOCKED"
+  },
+  "blockers": [
+    {
+      "id": "STRICT-TERMS-004",
+      "scope": "Owner legal eligibility decision; keep current access, no invented universal18+ rule"
+    },
+    {
+      "scope": "Original Terms full byte capture/event timing not recovered; exact original quoted defects/source revision retained"
+    }
+  ],
+  "contactFindings": {
+    "existingNativeFix": "Live custom-domain JS/no-JS targets verified; closure evidence pending new release",
+    "newTextBoundaryDefect": "STRICT-CONTACT-002 confirmed, fixed locally; release/live reread pending"
+  }
 }
