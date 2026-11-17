@@ -12,3 +12,9 @@ Date 2026-11-17 UTC. Source baseline main `5cafdd01bba8aa942a2aa3904a7825153f557
 - Release gate: exact-head checks -> protected PR merge -> native Cloudflare exact merge commit deployment -> fresh head-meta and hydrated readback. Merely changing React code did not update the pre-rendered HTML, so both layers must be checked.
 
 Owner-required strict completion counts are **unaffected** by this small follow-up.
+
+### CI regression caught after first patch, BEFORE repairing test
+- First PR #457 head `34aea4942c238cad95fc9ad4869320be7807953d` failed the required `TradeHQ Cloudflare compatibility / Cloudflare build and SEO` check at GitHub job `134128073168`, recorded 2026-11-17T14:58:13Z.
+- Build/prerender succeeded for 357 routes. The later `scripts/verify-sitewide-readiness.ts:101` assertion failed with exactly `AssertionError [ERR_ASSERTION]: Daily count must match the authored bank`.
+- Root cause confirmed by reading source: the test previously required **both** the static Daily description and static Daily summary to include the exact phrase `${questionCount} linked questions`. The correctly revised description now states `${questionCount}-question case study`; the summary still includes `linked questions`. Counts are unchanged, but old test is too string-specific for two legitimate phrasings.
+- Intended source-based fix to test, not bypass: retain independent uniform question count check; check description for the actual ten-question-case-study phrase AND 50-exercise count; check summary separately for the existing linked-question phrase AND 50-exercise count. No blanket exception, skipped gate or weak unconditional pass. Validate again on exact updated head and record outcome.
