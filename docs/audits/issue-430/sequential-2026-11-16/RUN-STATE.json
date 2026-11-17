@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T09:28:08.914818+00:00",
-  "phase": "COURSES-CLOSED-TRADING-GUIDE-NEXT",
+  "updatedAtUTC": "2026-11-17T15:58:32.056414+00:00",
+  "phase": "GUIDE-STRICT-GUIDE-001-LOCAL-PASS-RELEASE-PENDING",
   "currentPage": "https://www.thetradehq.com/learn-trading-guide",
   "newAuditCompletedPages": 6,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Fresh page8 Trading Guide entire rendered/native/head/source/image review and skeptical pass; record/fix any confirmed safe defects immediately, then protected release/native/final coverage. Do not redo closed pages.",
+  "nextStep": "Open exact-head PR for scoped calculator colour correction and recovered Courses evidence; verify protected checks/merge/native production/live correction; continue P08 missing full second pass and source/media/state mapping. Never mark P08 complete from this checkpoint.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -104,12 +104,35 @@
     "closed": 3,
     "record": "page-006/closure-2026-11-17/PAGE-RECORD.json"
   },
-  "candidatePullRequestBranch": "issue-430-courses-closure-20261117",
+  "candidatePullRequestBranch": "audit/issue430-resume-20261117",
   "coursesFindings": {
     "confirmed": 2,
     "qualityRisks": 1,
     "fixedRechecked": 3,
     "closed": 3,
     "record": "page-007/closure-2026-11-17/PAGE-RECORD.json"
+  },
+  "activeAssignment": {
+    "session": "audit/issue430-resume-20261117",
+    "page": "STRICT-0008",
+    "planComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6953065810"
+  },
+  "guideCoverage": {
+    "publisherPages": 163,
+    "widerDiscoveryURLs": 480,
+    "historicalClosuresRecovered": 6,
+    "newStrictClosuresThisSession": 0,
+    "currentPage": "STRICT-0008",
+    "extractedCapturedTextOccurrences": 407,
+    "pass1ReviewedCapturedOccurrences": 407,
+    "pass2ReviewedCapturedOccurrences": 0,
+    "pageStatus": "PARTIAL-REVIEW",
+    "limitations": [
+      "Counts include overlapping text/version/location occurrences; not unique paragraphs.",
+      "Source references are component-level mappings; exact line/block mapping remains incomplete.",
+      "Every rotating glossary snippet, menus/metadata, social image, extra input extremes and signed-in navigation not yet exhausted.",
+      "Capture equality alone cannot close this page.",
+      "One product defect corrected locally, awaiting exact-head PR/merge/native deployment/live verification."
+    ]
   }
 }

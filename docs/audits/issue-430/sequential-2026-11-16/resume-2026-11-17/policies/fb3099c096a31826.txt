@@ -1,0 +1,44 @@
+GDPR overview and guidance
+Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for publishers)
+Next: Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for CMPs)
+
+This help center article is for publishers looking for more information on certified CMPs.
+
+If you are an advertiser or CMP for advertisers, please find more information here for advertisers.
+
+To comply with the EU User Consent Policy, partners using our publisher products—Google AdSense, Ad Manager, or AdMob—are required to use a consent management platform (CMP) that has been certified by Google and integrates with the IAB's Transparency and Consent Framework (TCF) when serving personalized ads to users in the following regions:
+
+EEA and UK: As of 16 January 2024, a certified CMP integrated with the TCF is required when serving personalized ads to users in the EEA and UK.
+Switzerland: As of 31 July 2024, a certified CMP integrated with the TCF is required when serving personalized ads to users in Switzerland.
+
+Learn about these requirements.
+
+Note: Publishers should review the list of certified CMPs and decide which CMP is most suitable for them taking into account the location of their traffic and the functionality offered by each CMP.
+IAB TCF requirement
+
+Publishers will need to ensure they are working with a certified CMP when serving personalized ads to users in the EEA, the UK, or Switzerland. Certified CMPs are assessed by Google against certification criteria focused on TCF compliance. If publishers using the TCF also work with ad technology providers that are not registered with the TCF, Google supports that today—through our Additional Consent specification—and will continue to do so. Our CMP assessments will check that CMPs supporting our Additional Consent specification can do so correctly. Successful review of a CMP against the Google certification criteria will make that CMP available in our list of certified CMPs. Google does not check CMPs for full compliance with the TCF or applicable privacy laws.
+
+Additionally, please note the following:
+
+Certified CMP traffic: Only traffic from a certified CMP is eligible for personalized ads. Traffic from a certified CMP will continue to be eligible for personalized ads, non-personalized ads, and limited ads (including programmatic limited ads) where supported.
+
+Traffic from a non-certified CMP: Traffic from a non-certified CMP may be eligible for non-personalized ads or limited ads (including programmatic limited ads) where supported. 
+
+CTV inventory: Earlier this year, we shared that a certified CMP would also be required for CTV inventory, with enforcement planned for July 2024.
+
+In light of publisher feedback about the challenges of implementing the TCF in a CTV environment, we are granting an enforcement extension until July 2025. Please note that regulatory requirements around privacy and consent frequently develop, so we may need to revisit this extension prior to July 2025 if necessary. As such, we continue to encourage our CTV partners to adopt a certified CMP as soon as they are able.
+
+If you work with an existing CMP that is not included on the following list of certified CMPs, please contact your CMP to understand if they intend to be certified.
+
+In 2020, we integrated our ads systems with the TCF. You can learn more about IAB TCF and AdSense’s integration in our publisher integration help center article. The IAB TCF requirement is a continuation of our 2020 commitment to support industry efforts aimed at managing user transparency and consent through a standardized framework.
+Certified CMPs
+Consent management requirements for Search Ads publishers (AFS/AFD/ProSE)
+Next steps
+Publishers already working with a CMP:  If you work with an existing CMP that is not included on the list of certified CMPs, please contact your CMP to understand if they intend to be certified.
+Publishers with their own CMP: Publishers who have their own CMPs can register their interest in completing certification for their CMP. Learn more about CMP certification
+Publishers who need to find a CMP: For publishers seeking a new CMP partner, they can consider the list of certified CMPs above. We will regularly add other CMPs as they become certified.
+Publishers using Google’s Privacy & messaging European regulations messages: We encourage publishers to consider which CMP solution is best for them. To support publishers, the European regulations message available to Ad Manager, AdSense, and AdMob publishers in the "Privacy & messaging" tab are certified in accordance with the new TCF requirement. Learn more about Privacy & Messaging GDPR support and integration with TCF
+App publishers: In addition to the features above, Google offers app publishers the User Messaging Platform (UMP) SDK. Learn more about adding the Google User Messaging Platform (UMP) SDK to your apps (Ad Manager, AdMob) and creating a European regulations message for apps (Ad Manager, AdMob).
+Give feedback about this article
+Next: Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for CMPs)
+Was this helpful?YesNo

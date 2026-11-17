@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
+
+    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
+    <title>Beginner Trading Practice Guide | TradeHQ</title>
+    <meta data-static-head name="description" content="Study simulated market orders, fees, price observations and record-keeping, with $100,000 in virtual practice funds. Not a complete investing course." />
+
+    <meta name="author" content="TradeHQ" />
+    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />
+    <!-- Advertising requests are disabled pending verified site approval and a
+         reviewed inventory/consent/placement release. The account meta above
+         verifies ownership without executing ad code. Publication of a course
+         never enables ads. Optional analytics consent is a separate choice. -->
+    <meta data-static-head name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />
+    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />
+
+    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).
+         Homepage canonical is added by the prerender pass; do NOT hardcode
+         here or every subroute inherits it and dedupes to the homepage. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <meta name="theme-color" content="#0A0A0F" />
+
+    <!-- OPEN GRAPH (maximum shares) -->
+    <meta data-static-head property="og:type" content="website" />
+    <meta data-static-head property="og:site_name" content="TradeHQ" />
+    <meta data-static-head property="og:url" content="https://www.thetradehq.com/learn-trading-guide" />
+    <meta data-static-head property="og:title" content="Beginner Trading Practice Guide | TradeHQ" />
+    <meta data-static-head property="og:description" content="Study simulated market orders, fees, price observations and record-keeping, with $100,000 in virtual practice funds. Not a complete investing course." />
+    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+    <meta data-static-head property="og:locale" content="en_US" />
+
+    <!-- TWITTER CARD -->
+    <meta data-static-head name="twitter:card" content="summary_large_image" />
+    <meta data-static-head name="twitter:title" content="Beginner Trading Practice Guide | TradeHQ" />
+    <meta data-static-head name="twitter:description" content="Study simulated market orders, fees, price observations and record-keeping, with $100,000 in virtual practice funds. Not a complete investing course." />
+    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+
+    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->
+
+    <!-- SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": "https://www.thetradehq.com/about" },
+      "publisher": { "@type": "Organization", "name": "TradeHQ", "url": "https://www.thetradehq.com/" }
+    }
+    </script>
+
+    <!-- EducationalOrganization (kept — gives Google rich education cards) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-BABz9bie.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DllA4li1.css">
+    <link rel="canonical" href="https://www.thetradehq.com/learn-trading-guide" data-static-head />
+  </head>
+
+  <body>
+    <div id="root"><div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
+    <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/" style="color:#00E396;">Home</a></li><li><a href="/markets" style="color:#00E396;">Markets</a></li><li><a href="/trade" style="color:#00E396;">Practice desk</a></li><li><a href="/courses" style="color:#00E396;">Courses</a></li><li><a href="/learn" style="color:#00E396;">Learn</a></li><li><a href="/wiki" style="color:#00E396;">Glossary</a></li><li><a href="/how-to-trade" style="color:#00E396;">Asset guides</a></li><li><a href="/strategy" style="color:#00E396;">Strategies</a></li><li><a href="/compare" style="color:#00E396;">Comparisons</a></li><li><a href="/about" style="color:#00E396;">About</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li></ul></nav>
+    <main><h1>Beginner Trading Practice Guide</h1><article data-publisher-notes="/learn-trading-guide" aria-label="Learning and reference notes" style="max-width:820px;margin:0 auto;padding:40px 24px 100px;color:hsl(var(--foreground, 220 10% 80%));line-height:1.7;overflow-wrap:anywhere"><h2 style="font-size:1.6rem;color:hsl(var(--foreground, 220 10% 96%))">Learning notes: Beginner Trading Practice Guide</h2><p>An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.</p><p style="font-size:0.875rem">Published by TradeHQ, created by Anuga Weerasinghe. <a href="/about" style="text-decoration:underline">Publisher background and editorial approach</a>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">What this page actually provides</h3><p>This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Four checks for a virtual practice exercise</h3><ul style="padding-left:24px"><li>Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.</li><li>Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.</li><li>Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.</li><li>Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Worked example: virtual shares, fees and two outcomes</h3><p>Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.</p><p>For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">What this simulator cannot teach by itself</h3><p>TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.</p><p>Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">The vocabulary you need before anything else</h3><ul style="padding-left:24px"><li>Bid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.</li><li>Liquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.</li><li>Volatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.</li><li>Leverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.</li><li>Expectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">A first-month plan</h3><ul style="padding-left:24px"><li>Week one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.</li><li>Week two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.</li><li>Week three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.</li><li>Week four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.</li></ul></section><nav aria-label="Learning notes references"><h3 style="font-size:1.2rem;margin-top:28px">References and related pages</h3><ul style="padding-left:24px"><li><a href="/courses" style="color:inherit;text-decoration:underline">Structured courses and quizzes</a></li><li><a href="/wiki" style="color:inherit;text-decoration:underline">Glossary: order terms and market mechanics</a></li><li><a href="/strategy" style="color:inherit;text-decoration:underline">Strategy concepts and limits</a></li><li><a href="/trade" style="color:inherit;text-decoration:underline">Virtual practice desk</a></li></ul></nav><p style="font-size:0.875rem;margin-top:28px">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p></article></main>
+    <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/about" style="color:#00E396;">About TradeHQ</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li><li><a href="/privacy" style="color:#00E396;">Privacy policy</a></li><li><a href="/terms" style="color:#00E396;">Terms of service</a></li><li><a href="/whats-new" style="color:#00E396;">What’s New</a></li><li><a href="/roadmap" style="color:#00E396;">Roadmap</a></li><li><a href="/learn/country" style="color:#00E396;">Country guides</a></li></ul></footer>
+  </div></div>
+  <script id="publisher-notes-data" type="application/json">{"path":"/learn-trading-guide","heading":"Beginner Trading Practice Guide","summary":"An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.","sections":[{"h":"What this page actually provides","p":["This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy."]},{"h":"Four checks for a virtual practice exercise","list":["Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.","Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.","Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.","Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage."]},{"h":"Worked example: virtual shares, fees and two outcomes","p":["Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.","For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here."]},{"h":"What this simulator cannot teach by itself","p":["TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.","Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results."]},{"h":"The vocabulary you need before anything else","list":["Bid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.","Liquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.","Volatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.","Leverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.","Expectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage."]},{"h":"A first-month plan","list":["Week one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.","Week two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.","Week three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.","Week four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test."]}],"links":[{"href":"/courses","label":"Structured courses and quizzes"},{"href":"/wiki","label":"Glossary: order terms and market mechanics"},{"href":"/strategy","label":"Strategy concepts and limits"},{"href":"/trade","label":"Virtual practice desk"}]}</script><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1d431bc5969944b4b6489c3d4c788298"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

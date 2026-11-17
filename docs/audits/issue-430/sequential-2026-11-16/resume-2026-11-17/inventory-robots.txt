@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Allow: /api/og/
+Disallow: /admin/
+Disallow: /admin$
+
+Sitemap: https://www.thetradehq.com/sitemap.xml
+Sitemap: https://www.thetradehq.com/course-sitemap.xml
