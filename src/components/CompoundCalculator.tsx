@@ -142,16 +142,16 @@ export function CompoundCalculator() {
         </div>
 
         {/* Results */}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <div className="p-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-lg">
             <p className="text-[11px] uppercase font-bold text-slate-400 mb-1">Final Value</p>
-            <p className="text-lg font-bold text-emerald-400 tabular-nums tracking-tighter truncate">
+            <p className="text-lg font-bold text-emerald-400 tabular-nums tracking-tighter break-words">
               {formatCurrency(result.finalValue)}
             </p>
           </div>
           <div className="p-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-lg">
             <p className="text-[11px] uppercase font-bold text-slate-400 mb-1">Illustrative net gain</p>
-            <p className="text-lg font-bold text-emerald-500 tabular-nums tracking-tighter truncate">
+            <p className="text-lg font-bold text-emerald-500 tabular-nums tracking-tighter break-words">
               {result.netProfit >= 0 ? "+" : "−"}{formatCurrency(Math.abs(result.netProfit))}
             </p>
           </div>

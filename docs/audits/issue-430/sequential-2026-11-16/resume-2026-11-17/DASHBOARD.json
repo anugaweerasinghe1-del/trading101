@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-17T17:05:52.801822+00:00",
+  "updatedAtUTC": "2026-11-17T17:56:50.777309+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -25,16 +25,31 @@
         "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
         "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
         "No unqualified closure claim; product fix release independent of page closure.",
-        "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure."
+        "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
+        "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification."
       ],
       "extractedSourceOnlyAlternatives": 49,
-      "totalRecordedBlocks": 822,
+      "totalRecordedBlocks": 845,
       "pass1ReviewedSourceOnlyAlternatives": 49,
       "pass1ReviewedMetadataBlocks": 60,
       "pass2ReviewedSourceOnlyAlternatives": 49,
       "pass2ReviewedMetadataBlocks": 60,
-      "totalPass2Reviewed": 822,
-      "pendingSecondPass": 0
+      "totalPass2Reviewed": 840,
+      "pendingSecondPass": 5,
+      "totalPass1Reviewed": 845,
+      "selectableCardsCapturedAndReadTwice": 48,
+      "sourceOnlyUnselectableCards": 1,
+      "controlRecords": 143,
+      "controlPass1Reviewed": 143,
+      "controlPass2Reviewed": 143,
+      "mediaRecords": 6,
+      "mediaPass1Reviewed": 6,
+      "mediaPass2Reviewed": 6,
+      "dateFixturePasses": {
+        "eachPass": 18,
+        "labelsCovered": 5,
+        "fixtureOnly": true
+      }
     },
     "remainingNotStrictClosed": 157
   },
@@ -59,17 +74,23 @@
   },
   "newFindingsThisSession": {
     "confirmedPolicyIssues": 0,
-    "confirmedProductErrors": 3,
+    "confirmedProductErrors": 5,
     "qualityRisksLogged": 0,
     "fixesMergedAndProductionVerified": 3,
-    "fixesAwaitingFinalHeadChecksMergeDeployment": 0,
+    "fixesAwaitingFinalHeadChecksMergeDeployment": 2,
     "pr": 459,
     "finalSourceHead": "f2c886c5f1318e45e70f14a24e066f390fa01b5f",
-    "pendingPR": null,
-    "pendingHead": null,
-    "pendingMerge": null,
+    "pendingPR": 462,
+    "pendingHead": "debf817aee2e2a5417e63c69533511761c5ef05b",
+    "pendingMerge": "c7a56b923038d38a76b9b7b1ac203f0adc0ac879",
     "lastCodePR": 460,
-    "lastVerifiedCodeMerge": "d3b21b84695465321987a660c496b50dae75bcc4"
+    "lastVerifiedCodeMerge": "d3b21b84695465321987a660c496b50dae75bcc4",
+    "additionalSourceFix": "STRICT-GUIDE-005; local validation in progress",
+    "existingRootQualityExtension": {
+      "root": "STRICT-HOME-001",
+      "guideOccurrence": "release462 pending",
+      "newUniqueRootCount": 0
+    }
   },
   "ownerProviderGates": [
     "Terms account-eligibility/legal wording",
