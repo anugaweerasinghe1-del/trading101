@@ -80,13 +80,13 @@ const LEARNING_PATH = [
 /** Explains the difference between /courses (structured) and /learn (quick reads). */
 const FORMAT_GUIDE = [
   { label: "Full Courses", where: "/courses", detail: "Multi-lesson tracks with quizzes, saved progress and completion badges. Best if you want to learn in order, start to finish." },
-  { label: "Quick Reads", where: "this page", detail: "Standalone 12–22 minute explainers, guides and glossary terms. Best if you want one specific topic answered right now." },
+  { label: "Quick Reads", where: "this page", detail: "Standalone topic explainers, plus featured guides and glossary links. Choose one topic at a time; reading estimates appear on the relevant cards." },
 ];
 
 const difficultyColors: Record<string, string> = {
-  Beginner: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  Intermediate: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  Advanced: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  Beginner: "bg-emerald-500/10 text-emerald-400 [.light_&]:text-emerald-800 [.light_&]:bg-emerald-50 border-emerald-500/20",
+  Intermediate: "bg-blue-500/10 text-blue-400 [.light_&]:text-blue-800 [.light_&]:bg-blue-50 border-blue-500/20",
+  Advanced: "bg-amber-500/10 text-amber-400 [.light_&]:text-amber-800 [.light_&]:bg-amber-50 border-amber-500/20",
 };
 
 export default function Learn() {
@@ -170,13 +170,13 @@ export default function Learn() {
             <section className="mb-14" aria-label="Structured Courses">
               <div className="flex items-end justify-between gap-3 mb-5 flex-wrap">
                 <div>
-                  <div className="text-[10px] uppercase tracking-widest text-emerald-400 mb-1">Full courses</div>
+                  <div className="text-[10px] uppercase tracking-widest text-emerald-400 [.light_&]:text-emerald-800 mb-1">Full courses</div>
                   <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
-                    <GraduationCap className="w-6 h-6 text-emerald-400" /> Structured Trading Courses
+                    <GraduationCap className="w-6 h-6 text-emerald-400 [.light_&]:text-emerald-800" /> Structured Trading Courses
                   </h2>
                   <p className="text-sm text-muted-foreground mt-1">Explore {tracks.length} available structured tracks and {courseLessonCount} lessons, with quizzes and completion badges — 100% free. This is the guided, in-order way to learn.</p>
                 </div>
-                <Link to="/courses" className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
+                <Link to="/courses" className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-400 hover:text-emerald-300 [.light_&]:text-emerald-800 [.light_&]:hover:text-emerald-900">
                   View all courses <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -189,7 +189,7 @@ export default function Learn() {
                       </div>
                       <div className="p-4">
                         <Badge variant="outline" className="text-[9px] uppercase tracking-widest mb-2">{t.level}</Badge>
-                        <h3 className="text-sm font-semibold group-hover:text-emerald-300 transition-colors leading-snug">{t.title}</h3>
+                        <h3 className="text-sm font-semibold group-hover:text-emerald-300 [.light_&]:group-hover:text-emerald-800 transition-colors leading-snug">{t.title}</h3>
                         <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{t.tagline}</p>
                       </div>
                     </Card>
@@ -211,7 +211,7 @@ export default function Learn() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground mt-3">Same material, two formats — the courses go deeper and track your progress; the quick reads below are self-contained. Educational simulation only — not financial advice.</p>
+              <p className="text-xs text-muted-foreground mt-3">Choose a sequenced course for guided study, or use quick reads and guides for individual topics. Educational simulation only — not financial advice.</p>
             </section>
 
             {/* Country guides */}
@@ -305,7 +305,7 @@ export default function Learn() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Want the full, progress-tracked version instead? <Link to="/courses" className="text-emerald-400 hover:underline">Take a course</Link>.</p>
+              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Want the full, progress-tracked version instead? <Link to="/courses" className="text-emerald-400 [.light_&]:text-emerald-800 hover:underline">Take a course</Link>.</p>
             </section>
 
             {/* Start Here CTA */}
@@ -386,7 +386,7 @@ export default function Learn() {
                               <img src={lesson.image} alt={`${lesson.title} course - TradeHQ`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                               <div className="absolute top-4 left-4 flex items-center gap-2">
-                                <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm border-0 text-xs px-3 py-1">{lesson.category}</Badge>
+                                <Badge variant="secondary" className="bg-background/80 [.light_&]:text-foreground backdrop-blur-sm border-0 text-xs px-3 py-1">{lesson.category}</Badge>
                                 <Badge variant="outline" className={`text-xs px-2 py-0.5 ${difficultyColors[lesson.difficulty]}`}>{lesson.difficulty}</Badge>
                               </div>
                             </div>

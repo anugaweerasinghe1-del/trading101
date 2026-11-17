@@ -1,0 +1,125 @@
+{
+  "capturedAtUTC": "2026-11-17T01:28:51.829Z",
+  "url": "https://www.thetradehq.com/terms",
+  "states": [
+    {
+      "state": "desktop-initial",
+      "capturedAtUTC": "2026-11-17T01:28:27.000Z",
+      "blocks": 328,
+      "textSHA256": "b236a94f466c2b96eb050f87f9eb5a145d2cc9cce0d642fad623658df7c9b733",
+      "characters": 11259
+    },
+    {
+      "state": "desktop-faq-1",
+      "capturedAtUTC": "2026-11-17T01:28:27.415Z",
+      "blocks": 323,
+      "textSHA256": "b5766ece5158fc39b662933e27f1f49c9c121487c2c995a2ee0f74c94bd32dfa",
+      "characters": 11319
+    },
+    {
+      "state": "desktop-faq-2",
+      "capturedAtUTC": "2026-11-17T01:28:28.559Z",
+      "blocks": 324,
+      "textSHA256": "c872ab6c2e1e4960453f9ad4b90a675fd36adcdeb368f4671b26efb5521b085b",
+      "characters": 11542
+    },
+    {
+      "state": "desktop-faq-3",
+      "capturedAtUTC": "2026-11-17T01:28:28.704Z",
+      "blocks": 325,
+      "textSHA256": "5771d6c5068a8725aa6d3a2b8c565e56df1b0819c7edd75c0bd618b859ac6ebf",
+      "characters": 11764
+    },
+    {
+      "state": "desktop-faq-4",
+      "capturedAtUTC": "2026-11-17T01:28:28.896Z",
+      "blocks": 325,
+      "textSHA256": "8d50feb652e77025ad39b9ede39d00e88679eb374642fc729e852ba59786534e",
+      "characters": 11740
+    },
+    {
+      "state": "desktop-expanded",
+      "capturedAtUTC": "2026-11-17T01:28:28.967Z",
+      "blocks": 325,
+      "textSHA256": "8d50feb652e77025ad39b9ede39d00e88679eb374642fc729e852ba59786534e",
+      "characters": 11740
+    },
+    {
+      "state": "desktop-more-menu",
+      "capturedAtUTC": "2026-11-17T01:28:29.162Z",
+      "blocks": 344,
+      "textSHA256": "c3040efbdb3cc6df958836544d6a72e02deb666e12f33ab9765096d7b6ac816f",
+      "characters": 11739
+    },
+    {
+      "state": "mobile-initial",
+      "capturedAtUTC": "2026-11-17T01:28:46.823Z",
+      "blocks": 328,
+      "textSHA256": "efc52ac6e326d23973b6774234a91d7e43c8ee39b0036e3f1892aafe415ed0dd",
+      "characters": 11050
+    },
+    {
+      "state": "mobile-faq-1",
+      "capturedAtUTC": "2026-11-17T01:28:46.982Z",
+      "blocks": 323,
+      "textSHA256": "c6ea8f437d1bf0515cd9a1e519497d46732bcef5f801a6b472f5944e85187754",
+      "characters": 11110
+    },
+    {
+      "state": "mobile-faq-2",
+      "capturedAtUTC": "2026-11-17T01:28:48.452Z",
+      "blocks": 324,
+      "textSHA256": "45aa11094397ec3cfe0c1ebf6b890a3c96437b2e49e3fa93e5e5227403fc191f",
+      "characters": 11333
+    },
+    {
+      "state": "mobile-faq-3",
+      "capturedAtUTC": "2026-11-17T01:28:49.916Z",
+      "blocks": 324,
+      "textSHA256": "4be7841422197b1c6248305b6f1ef1b059688ed9c943e6875061481cbbcaaab5",
+      "characters": 11354
+    },
+    {
+      "state": "mobile-faq-4",
+      "capturedAtUTC": "2026-11-17T01:28:51.344Z",
+      "blocks": 324,
+      "textSHA256": "a150acbd8fc047a9e6a8eebb0d7c8f2b23dc4e8848e55a0726f2302368e4893e",
+      "characters": 11308
+    },
+    {
+      "state": "mobile-expanded",
+      "capturedAtUTC": "2026-11-17T01:28:51.379Z",
+      "blocks": 324,
+      "textSHA256": "a150acbd8fc047a9e6a8eebb0d7c8f2b23dc4e8848e55a0726f2302368e4893e",
+      "characters": 11308
+    },
+    {
+      "state": "mobile-mobile-menu",
+      "capturedAtUTC": "2026-11-17T01:28:51.459Z",
+      "blocks": 324,
+      "textSHA256": "6967bf7331ce3fc07291f0683e8a8548c48750dfcca4461dbf78544d03bcc134",
+      "characters": 11327
+    },
+    {
+      "state": "mobile-consent-reopened",
+      "capturedAtUTC": "2026-11-17T01:28:51.668Z",
+      "blocks": 329,
+      "textSHA256": "e8053876e24c69ac92bae9ee20bfee7a04cdf0c901a2ec94a1ba73c141096745",
+      "characters": 11227
+    }
+  ],
+  "blocks": 353,
+  "requests": [
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    },
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    }
+  ],
+  "scope": "Fresh guest desktop/mobile initial and FAQ-expanded DOM, metadata, attributes. Conditional/source-authored states still to enumerate."
+}

@@ -1,0 +1,24 @@
+{
+  "observedAtUTC": "2026-11-16T15:19:26.335Z",
+  "scope": "Read-only schema defaults; no user records read or settings changed",
+  "columns": [
+    {
+      "table_name": "profiles",
+      "column_name": "is_public",
+      "column_default": "false",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "profiles",
+      "column_name": "show_public_trades",
+      "column_default": "false",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "trophy_share_v1",
+      "column_name": "enabled",
+      "column_default": "false",
+      "is_nullable": "NO"
+    }
+  ]
+}

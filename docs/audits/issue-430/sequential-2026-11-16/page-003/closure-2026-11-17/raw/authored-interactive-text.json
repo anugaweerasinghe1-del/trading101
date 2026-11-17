@@ -1,0 +1,347 @@
+[
+  {
+    "id": "PRIVACY-PARAGRAPH-001",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-1",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ can be used without creating an account. The data handled depends on the features you choose.",
+    "contextText": "Information TradeHQ Handles: TradeHQ can be used without creating an account. The data handled depends on the features you choose.",
+    "sha256": "0066ebac333154e351caded9f8f8653c2dbc65fa664bab1bee7e8c85c48e53c5",
+    "manualAssessment": "Guest mode is actually available without signup; optional features are distinguished, not represented as zero processing."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-002",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-2",
+    "kind": "authored-policy-paragraph",
+    "text": "• Guest simulator data: practice cash, positions and trade history are stored in your browser with a separate browser-local recovery copy. You can download or explicitly restore a portable practice backup JSON file containing trading history and any private journal notes. The backup feature does not upload this file. Backup formats can be manually edited: TradeHQ validates file structure and arithmetic but does not certify authenticity, investment performance or leaderboard ranking. An imported guest file remains unverified. Guest learning-journey progress, course progress, streaks and related settings remain browser-stored. For signed-in users, lesson completion, unfinished quiz answers, reading position and first-trade journey progress may also be saved privately in Supabase and synchronized across devices when online. New beginner-journey reflection text stays on the device. Older reflections already synchronized remain private in the account. Streaks and unrelated browser preferences are not part of this account sync.",
+    "contextText": "Information TradeHQ Handles: • Guest simulator data: practice cash, positions and trade history are stored in your browser with a separate browser-local recovery copy. You can download or explicitly restore a portable practice backup JSON file containing trading history and any private journal notes. The backup feature does not upload this file. Backup formats can be manually edited: TradeHQ validates file structure and arithmetic but does not certify authenticity, investment performance or leaderboard ranking. An imported guest file remains unverified. Guest learning-journey progress, course progress, streaks and related settings remain browser-stored. For signed-in users, lesson completion, unfinished quiz answers, reading position and first-trade journey progress may also be saved privately in Supabase and synchronized across devices when online. New beginner-journey reflection text stays on the device. Older reflections already synchronized remain private in the account. Streaks and unrelated browser preferences are not part of this account sync.",
+    "sha256": "4bf2e360b9e5579a49ca29883529675617ffb0c4557381ee96c8d5e9e25170a6",
+    "manualAssessment": "Local backup/import is explicitly unverified and browser-specific, and account lesson sync is separately qualified. Source recovery/cloud-portfolio boundaries corroborate the distinction; no personal backup was uploaded or restored."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-003",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-3",
+    "kind": "authored-policy-paragraph",
+    "text": "• Signed-in portfolio data: Supabase stores account cash, positions and server-recorded practice orders, including asset, quantity, execution price, fees, time and simulated result. These account records restore across devices when the service is available. Signed-in users can also download a server-signed current-cycle historical practice export and verify its integrity against their authenticated account. This file may contain account identifiers and private transaction details; it is not publicly shared or accepted as an upload that replaces ranked trades. A first-time browser import stores cash and positions as an unranked portfolio; earlier guest trade history stays in its original browser. Starting a fresh ranked practice cycle archives the previous account snapshot privately. Journals remain browser-held; signed-in lesson and beginner-journey progress can sync privately and are not used to determine public trading ranks.",
+    "contextText": "Information TradeHQ Handles: • Signed-in portfolio data: Supabase stores account cash, positions and server-recorded practice orders, including asset, quantity, execution price, fees, time and simulated result. These account records restore across devices when the service is available. Signed-in users can also download a server-signed current-cycle historical practice export and verify its integrity against their authenticated account. This file may contain account identifiers and private transaction details; it is not publicly shared or accepted as an upload that replaces ranked trades. A first-time browser import stores cash and positions as an unranked portfolio; earlier guest trade history stays in its original browser. Starting a fresh ranked practice cycle archives the previous account snapshot privately. Journals remain browser-held; signed-in lesson and beginner-journey progress can sync privately and are not used to determine public trading ranks.",
+    "sha256": "699639691a462110697b264ec13765b5bb9e6d708929b78947d5c2f266983954",
+    "manualAssessment": "Account records are distinguished from local journals and prior guest history. Signed exports are integrity evidence, not verified investment performance or replacement ranked trades. Actual private account export/deletion was not exercised."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-004",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-4",
+    "kind": "authored-policy-paragraph",
+    "text": "• Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio.",
+    "contextText": "Information TradeHQ Handles: • Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio.",
+    "sha256": "ef9227ca1b0c85958a8574ab0774fca7767f13fa9839639347437e4b9dfe6589",
+    "manualAssessment": "Email/provider identity and optional profile fields are ordinary account data, not anonymous data. No suggestion that optional signup excludes minors."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-005",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-5",
+    "kind": "authored-policy-paragraph",
+    "text": "• Community data: signed-in features can store selected practice statistics, public-profile settings, reviews and duel/challenge records. A separate setting, OFF by default, lets a member voluntarily disclose up to 20 current-cycle server-recorded simulated trade entries on an otherwise public profile: asset, buy/sell, quantity, execution price, fee and date. The public data response also includes trade total, simulated realised profit/loss where recorded, and price-source information, even when a visible profile row shows fewer fields. Private journals, reflections, past cycles and browser-only records are never shared by this feature. These are simulated results, not brokerage statements or verified real-money performance.",
+    "contextText": "Information TradeHQ Handles: • Community data: signed-in features can store selected practice statistics, public-profile settings, reviews and duel/challenge records. A separate setting, OFF by default, lets a member voluntarily disclose up to 20 current-cycle server-recorded simulated trade entries on an otherwise public profile: asset, buy/sell, quantity, execution price, fee and date. The public data response also includes trade total, simulated realised profit/loss where recorded, and price-source information, even when a visible profile row shows fewer fields. Private journals, reflections, past cycles and browser-only records are never shared by this feature. These are simulated results, not brokerage statements or verified real-money performance.",
+    "sha256": "3ece730b819a176274c65bfe5f0e1b7cbddd8a529b88094445559211134fe26d",
+    "manualAssessment": "Live read-only function confirms public response also exposes total, simulated realised profit/loss and price-source metadata; PRIVACY002 now names them. Public simulated trade disclosure is separately off by default and limited; notes/past cycles are excluded. Public trading figures are not real brokerage performance. Private owner runtime remains unexercised."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-006",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-6",
+    "kind": "authored-policy-paragraph",
+    "text": "• Review interactions: likes are stored with your account ID and the review ID to enforce one like per account. Public pages show totals, not individual liker identities. Owner replies are public. Reviews removed from public view remain in the private admin panel for restoration.",
+    "contextText": "Information TradeHQ Handles: • Review interactions: likes are stored with your account ID and the review ID to enforce one like per account. Public pages show totals, not individual liker identities. Owner replies are public. Reviews removed from public view remain in the private admin panel for restoration.",
+    "sha256": "71f39c64879db6458baed175dceac4ba25afc7f7e7b50e9cf5fd70367925168b",
+    "manualAssessment": "Fresh live metadata denies anonymous table SELECT and restricts authenticated like SELECT to own visible likes; source aggregate publishes totals. Likes use account identifiers while public totals do not disclose individual likers; removed public reviews remain administratively restorable. This is not a promise of immediate erasure."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-007",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-7",
+    "kind": "authored-policy-paragraph",
+    "text": "• Optional TradeHQ Newsletter: if you explicitly request the educational newsletter, TradeHQ stores your email address, consent/confirmation status, the date and source of signup, unsubscribe status, and delivery receipts in private Supabase records. Resend handles email delivery and receives your address for confirmations and issues. We never add prior contact records to the mailing list without permission. Every newsletter provides an unsubscribe link, and you may use the contact page to request deletion.",
+    "contextText": "Information TradeHQ Handles: • Optional TradeHQ Newsletter: if you explicitly request the educational newsletter, TradeHQ stores your email address, consent/confirmation status, the date and source of signup, unsubscribe status, and delivery receipts in private Supabase records. Resend handles email delivery and receives your address for confirmations and issues. We never add prior contact records to the mailing list without permission. Every newsletter provides an unsubscribe link, and you may use the contact page to request deletion.",
+    "sha256": "425bb2024586f877140d21c77d89e4b34b9b3d943f0fd27d7645525e71a592d2",
+    "manualAssessment": "Newsletter signup, confirmation, unsubscribe and delivery records are described separately from contact records. Resend receives addresses. Fresh live metadata denies anonymous SELECT on newsletter contacts/deliveries. Actual signup/delivery and private retention operations were not exercised."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-008",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-8",
+    "kind": "authored-policy-paragraph",
+    "text": "• Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings.",
+    "contextText": "Information TradeHQ Handles: • Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings.",
+    "sha256": "ece4d47ac27e4be7a7c0c058d8d2a72d8c12595e76ef0e11633b656d7c9322ef",
+    "manualAssessment": "Default contact is an intentional email draft; optional direct-send requires configured Turnstile/Resend. Current handler source corroborates this and has no application DB write of message bodies. No real message was sent."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-009",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-9",
+    "kind": "authored-policy-paragraph",
+    "text": "• Technical data: hosting, authentication, security and abuse-prevention services can receive normal request information such as IP address, browser/device information and server logs.",
+    "contextText": "Information TradeHQ Handles: • Technical data: hosting, authentication, security and abuse-prevention services can receive normal request information such as IP address, browser/device information and server logs.",
+    "sha256": "f64ef59d62df56465ab77673a2ef07507ce0842fa65fe447b1287171dc72316b",
+    "manualAssessment": "Normal connection metadata is acknowledged; this generic paragraph alone was insufficient to explain the separate live client performance and font services, addressed in PRIVACY001."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-010",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-10",
+    "kind": "authored-policy-paragraph",
+    "text": "• Website performance: current pages load Cloudflare Web Analytics to measure page loading and performance. Its browser beacon can send the page URL, a page-load identifier, timing and browser performance measurements to Cloudflare, separately from optional Amplitude events. These performance requests can run before an analytics choice and after Amplitude is rejected. Cloudflare states that its Web Analytics usage metrics do not use cookies, local storage or fingerprinting to track individuals. This does not mean that network requests contain no connection information or that every jurisdiction exempts this processing from privacy requirements.",
+    "contextText": "Information TradeHQ Handles: • Website performance: current pages load Cloudflare Web Analytics to measure page loading and performance. Its browser beacon can send the page URL, a page-load identifier, timing and browser performance measurements to Cloudflare, separately from optional Amplitude events. These performance requests can run before an analytics choice and after Amplitude is rejected. Cloudflare states that its Web Analytics usage metrics do not use cookies, local storage or fingerprinting to track individuals. This does not mean that network requests contain no connection information or that every jurisdiction exempts this processing from privacy requirements.",
+    "sha256": "29a27e56e8be2ccc8aa6df1b7697fd0418102fac01d4dccd6dbabe770df1abd0",
+    "manualAssessment": "Actual live unset/rejected states attempted Cloudflare performance beacons. URL/page-load identifier/timings match inspected field names; posts were blocked in the audit. No-cookie/no-fingerprint statement is attributed to fresh official vendor documentation, without inferring legal exemption or absence of connection data."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-011",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-11",
+    "kind": "authored-policy-paragraph",
+    "text": "• Font delivery: pages request stylesheets and font files from Google Fonts. Google receives the connecting IP address, the requested resource URL and request headers, which can include browser/operating-system information and the referring page according to browser settings. These requests are separate from Amplitude consent and may occur before a choice or after rejection. Google states that its Fonts API does not set or log cookies and does not use Fonts information to create end-user profiles or for targeted advertising.",
+    "contextText": "Information TradeHQ Handles: • Font delivery: pages request stylesheets and font files from Google Fonts. Google receives the connecting IP address, the requested resource URL and request headers, which can include browser/operating-system information and the referring page according to browser settings. These requests are separate from Amplitude consent and may occur before a choice or after rejection. Google states that its Fonts API does not set or log cookies and does not use Fonts information to create end-user profiles or for targeted advertising.",
+    "sha256": "b3972bc279ae97e432315cae384e22cfc6d2ee6c9f50b856905e4d5c6b84904f",
+    "manualAssessment": "Actual Google Fonts stylesheet/font GETs match index markup. Fresh official Fonts privacy FAQ specifies IP, requested resource and browser/referrer headers, no Fonts cookies or targeted-ad profiles. Browser settings qualify referrer; Fonts is not called AdSense."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-012",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-12",
+    "kind": "authored-policy-paragraph",
+    "text": "• Optional analytics and advertising data: TradeHQ offers a newly scoped analytics choice only to visitors affirmatively confirming they are at least 18. This confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. If accepted, Amplitude can receive limited Practice Arena milestone events and two leaderboard registration-flow events (an eligible signed-out leaderboard visit, and a newly created account subsequently authenticated in that same browser within seven days), along with its pseudonymous browser identity and ordinary network metadata. The two leaderboard custom events contain no email, account ID, username, profile details, portfolio data, transaction information, or form content. The temporary seven-day same-browser attribution marker stores only a visit timestamp and is cleared on consent rejection or successful attribution. No custom Amplitude events are sent when optional analytics is declined; the website does not claim visitor identity is anonymous. Amplitude's automatic page, click, form, network and attribution collection and session replay are disabled; the two explicitly triggered attribution events are the only leaderboard funnel measurement. Earlier v1/v2 analytics permissions are not reused. Google AdSense has separate advertising choices and may use cookies or similar identifiers for ad delivery, measurement and, where applicable, personalisation.",
+    "contextText": "Information TradeHQ Handles: • Optional analytics and advertising data: TradeHQ offers a newly scoped analytics choice only to visitors affirmatively confirming they are at least 18. This confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. If accepted, Amplitude can receive limited Practice Arena milestone events and two leaderboard registration-flow events (an eligible signed-out leaderboard visit, and a newly created account subsequently authenticated in that same browser within seven days), along with its pseudonymous browser identity and ordinary network metadata. The two leaderboard custom events contain no email, account ID, username, profile details, portfolio data, transaction information, or form content. The temporary seven-day same-browser attribution marker stores only a visit timestamp and is cleared on consent rejection or successful attribution. No custom Amplitude events are sent when optional analytics is declined; the website does not claim visitor identity is anonymous. Amplitude's automatic page, click, form, network and attribution collection and session replay are disabled; the two explicitly triggered attribution events are the only leaderboard funnel measurement. Earlier v1/v2 analytics permissions are not reused. Google AdSense has separate advertising choices and may use cookies or similar identifiers for ad delivery, measurement and, where applicable, personalisation.",
+    "sha256": "6566263e4fb6590463d0ea360f6e82caecc08a91ae80c52d363a72cfae7a4742",
+    "manualAssessment": "Consent v3/Amplitude source matches adult opt-in, no inherited v1/v2 permission, disabled autocapture/replay and narrow custom events. New wording scopes rejection to Amplitude, not all network traffic. Account age/access is unchanged; no real visitor consent or external telemetry delivery was exercised; accepted fixture state was separately tested with actual SDK bytes and all external requests intercepted."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-013",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-13",
+    "kind": "authored-policy-paragraph",
+    "text": "• Practice Arena research: exercise decisions, private written reasons, closing reflections and history stay in your browser and are not automatically submitted to a research database. An optional, adult-only research questionnaire keeps answers on the open page and only prepares an email if you deliberately choose to do so; you must send that email yourself. Sending an email reveals your sender address and may include other email-provider metadata. Answers are not anonymous once linked with a sender or identifying comments. If you accept Amplitude analytics, TradeHQ may record Arena view/start/finish/resume milestones, scenario ID and difficulty, and whether this browser returned on a later day. Custom Arena events do not include trading choices, portfolio values, account IDs, written notes or questionnaire answers. This opt-in measurement uses the existing Amplitude service's consented visitor identity; it does not create a separate TradeHQ research identifier. Declining analytics disables those custom milestones. A same-browser return event does not prove a person learned or voluntarily returned.",
+    "contextText": "Information TradeHQ Handles: • Practice Arena research: exercise decisions, private written reasons, closing reflections and history stay in your browser and are not automatically submitted to a research database. An optional, adult-only research questionnaire keeps answers on the open page and only prepares an email if you deliberately choose to do so; you must send that email yourself. Sending an email reveals your sender address and may include other email-provider metadata. Answers are not anonymous once linked with a sender or identifying comments. If you accept Amplitude analytics, TradeHQ may record Arena view/start/finish/resume milestones, scenario ID and difficulty, and whether this browser returned on a later day. Custom Arena events do not include trading choices, portfolio values, account IDs, written notes or questionnaire answers. This opt-in measurement uses the existing Amplitude service's consented visitor identity; it does not create a separate TradeHQ research identifier. Declining analytics disables those custom milestones. A same-browser return event does not prove a person learned or voluntarily returned.",
+    "sha256": "246f244fcfc73ffa39cfaf8f0d05f8a444c9b5cf2b85576f33ab30c822988f5d",
+    "manualAssessment": "Arena source separates local decisions/reflections from whitelisted event properties and an intentionally sent email questionnaire. Pseudonymous identity is not called anonymous; return is explicitly a proxy, not learning proof."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-014",
+    "location": "src/lib/privacyCopy.ts/Information TradeHQ Handles/paragraph-14",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ does not require a payment card, bank account or brokerage account to place simulated trades.",
+    "contextText": "Information TradeHQ Handles: TradeHQ does not require a payment card, bank account or brokerage account to place simulated trades.",
+    "sha256": "5fb1936cb6fa91873c61bec08fa86c61be158f9219a70c5d79e141efcdd08ed3",
+    "manualAssessment": "Virtual orders require no payment card, bank or brokerage account. This is a product access statement, not an assertion that external infrastructure receives no data."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-015",
+    "location": "src/lib/privacyCopy.ts/How Information Is Used/paragraph-1",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, delivering a voluntarily confirmed TradeHQ Newsletter subscription, diagnosing problems and improving the service.",
+    "contextText": "How Information Is Used: TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, delivering a voluntarily confirmed TradeHQ Newsletter subscription, diagnosing problems and improving the service.",
+    "sha256": "dcf45e321fdfa9ab637f9ef2014ace9bf7adc76c877650f8367ee646b9735ebd",
+    "manualAssessment": "Purposes are tied to features, including security/diagnosis/improvement; not a claim that every processor is absent in guest mode. Private downstream provider operations are not independently audited."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-016",
+    "location": "src/lib/privacyCopy.ts/How Information Is Used/paragraph-2",
+    "kind": "authored-policy-paragraph",
+    "text": "Amplitude is used for limited, explicitly triggered Arena and leaderboard-to-new-account registration analytics after renewed adult opt-in. TradeHQ measures only consenting eligible visitors and same-browser new-account confirmations within seven days; email-link confirmations in another browser and visitors who reject analytics are not included, so any conversion rate is an incomplete proxy, not a claim about all visitors. This site's Amplitude configuration disables session replay, automatic page and click capture, form interactions, network tracking and remote automatic-enablement settings. We do not claim that disabling those features makes Amplitude's pseudonymous identifiers or request metadata anonymous.",
+    "contextText": "How Information Is Used: Amplitude is used for limited, explicitly triggered Arena and leaderboard-to-new-account registration analytics after renewed adult opt-in. TradeHQ measures only consenting eligible visitors and same-browser new-account confirmations within seven days; email-link confirmations in another browser and visitors who reject analytics are not included, so any conversion rate is an incomplete proxy, not a claim about all visitors. This site's Amplitude configuration disables session replay, automatic page and click capture, form interactions, network tracking and remote automatic-enablement settings. We do not claim that disabling those features makes Amplitude's pseudonymous identifiers or request metadata anonymous.",
+    "sha256": "95ccaf604f5f8d78b1fb6ce4a2ac43ba3e9896ff0b8ac859a7bd2d77a2182a42",
+    "manualAssessment": "Funnel source enforces same-browser seven-day new-account criteria, deduplication and no PII event properties. Opt-in sample and cross-browser omissions limit conversion interpretation; no invented whole-audience metric."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-017",
+    "location": "src/lib/privacyCopy.ts/How Information Is Used/paragraph-3",
+    "kind": "authored-policy-paragraph",
+    "text": "Ad-serving scripts and placements are currently disabled on TradeHQ, including newly published courses, account pages and error screens. The publisher verification meta tag and ads.txt do not enable ad serving. Before advertising can be enabled, TradeHQ must verify Google site approval, suitable reviewed inventory, placement controls and applicable consent configuration. If advertising is enabled, Google and its partners may place or read cookies and use similar technologies, web beacons, IP addresses and other identifiers to deliver and measure ads. Third parties may collect information as a result of ad serving. Advertising cookies can reflect prior visits to TradeHQ or other sites and, where consent and law permit, support personalised ads. These uses remain subject to the applicable privacy choices. Advertising may be personalized, non-personalized or limited depending on consent, location and Google settings.",
+    "contextText": "How Information Is Used: Ad-serving scripts and placements are currently disabled on TradeHQ, including newly published courses, account pages and error screens. The publisher verification meta tag and ads.txt do not enable ad serving. Before advertising can be enabled, TradeHQ must verify Google site approval, suitable reviewed inventory, placement controls and applicable consent configuration. If advertising is enabled, Google and its partners may place or read cookies and use similar technologies, web beacons, IP addresses and other identifiers to deliver and measure ads. Third parties may collect information as a result of ad serving. Advertising cookies can reflect prior visits to TradeHQ or other sites and, where consent and law permit, support personalised ads. These uses remain subject to the applicable privacy choices. Advertising may be personalized, non-personalized or limited depending on consent, location and Google settings.",
+    "sha256": "4622380c55ea6e32b17881dd38f92cc8851e1e06949e499697cf9bb9ba3d5222",
+    "manualAssessment": "Observed page has no active ad inventory; verification meta/ads.txt are not approval. Future Google cookies, third-party collection, prior-visit targeting and regional choices are conditional disclosures, not assertions that a live certified CMP is currently verified."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-018",
+    "location": "src/lib/privacyCopy.ts/How Information Is Used/paragraph-4",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ does not sell simulated portfolio data to brokers or financial institutions and does not execute real-money trades.",
+    "contextText": "How Information Is Used: TradeHQ does not sell simulated portfolio data to brokers or financial institutions and does not execute real-money trades.",
+    "sha256": "44dae0e6d1b45e36f1a4c705f6e16d2f19098843cec4ed33aea4b4fb7351bdc5",
+    "manualAssessment": "No real trades is consistent with virtual product behavior. No-sale statement is publisher self-description; private commercial contracts cannot be independently verified here."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-019",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-1",
+    "kind": "authored-policy-paragraph",
+    "text": "Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing all site data also removes browser-local recovery copies; download a portfolio backup to preserve it separately. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.",
+    "contextText": "Storage, Visibility & Retention: Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing all site data also removes browser-local recovery copies; download a portfolio backup to preserve it separately. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.",
+    "sha256": "b1ee876692a1d1bc3f46699e621c5b5071df3886447c960b51a849aab9de4536",
+    "manualAssessment": "Deleting browser data and signed-in cloud data are correctly separated; download preservation is optional. No destructive clear/reset/delete was performed."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-020",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-2",
+    "kind": "authored-policy-paragraph",
+    "text": "Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. Newsletter consent records and delivery receipts are retained while relevant to operating the requested subscription, unsubscribe suppression, and compliance; contact TradeHQ to request deletion or information. New accounts start with a private profile. You may explicitly make your profile public later; only then can chosen profile fields and selected simulated statistics appear on public pages. Existing members retain their chosen visibility, and public trade-history sharing remains a separate off-by-default permission.",
+    "contextText": "Storage, Visibility & Retention: Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. Newsletter consent records and delivery receipts are retained while relevant to operating the requested subscription, unsubscribe suppression, and compliance; contact TradeHQ to request deletion or information. New accounts start with a private profile. You may explicitly make your profile public later; only then can chosen profile fields and selected simulated statistics appear on public pages. Existing members retain their chosen visibility, and public trade-history sharing remains a separate off-by-default permission.",
+    "sha256": "1218488c7e1a64fb7bedcd31fbe89adc36ea6a3528a7f5c47e6692f0531204a9",
+    "manualAssessment": "Fresh read-only deployed signup trigger forces new profiles private; historical users retain choices. Newsletter suppression/retention is purpose-qualified, not an invented fixed deletion guarantee. Private lifecycle performance is not certified."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-021",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-3",
+    "kind": "authored-policy-paragraph",
+    "text": "Scored educational trophy challenges are optional for registered users. TradeHQ stores the minimal account-linked challenge ID, source version, pass/miss and score receipt, and the resulting permanent trophy ID and issue date. It does not store the answer choices you selected, your written Arena notes or a copy of each Daily case in the trophy award record. Existing device-only learning progress is not used to create server-verified public awards. Account deletion removes the separate trophy records.",
+    "contextText": "Storage, Visibility & Retention: Scored educational trophy challenges are optional for registered users. TradeHQ stores the minimal account-linked challenge ID, source version, pass/miss and score receipt, and the resulting permanent trophy ID and issue date. It does not store the answer choices you selected, your written Arena notes or a copy of each Daily case in the trophy award record. Existing device-only learning progress is not used to create server-verified public awards. Account deletion removes the separate trophy records.",
+    "sha256": "7ce79802d00fb98be3316998c8e891510e88a655abb37075b659ded51866b63c",
+    "manualAssessment": "Trophy schema/source stores challenge/version/result and award receipts, not chosen answers in award records. Account deletion cascade is a configured behavior, not an actual deletion tested against a user."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-022",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-4",
+    "kind": "authored-policy-paragraph",
+    "text": "Trophy display is disabled by default even for a public trader profile, including older profiles that were historically public by default. After an account is confirmed and its profile is deliberately public, the owner may separately enable display of one earned trophy flair and up to three earned pinned trophies. Only the chosen trophy names/icons are shown publicly; scores, assessment dates, balances, trades, contacts and private learning history are not included. You may withdraw this permission in My Trophy Cabinet, or hide the entire profile; both actions stop the optional trophy display.",
+    "contextText": "Storage, Visibility & Retention: Trophy display is disabled by default even for a public trader profile, including older profiles that were historically public by default. After an account is confirmed and its profile is deliberately public, the owner may separately enable display of one earned trophy flair and up to three earned pinned trophies. Only the chosen trophy names/icons are shown publicly; scores, assessment dates, balances, trades, contacts and private learning history are not included. You may withdraw this permission in My Trophy Cabinet, or hide the entire profile; both actions stop the optional trophy display.",
+    "sha256": "1f2cf308764139dc09681ef2e37ab4fdadd9cba03b92f3da062ffd6df5a64728",
+    "manualAssessment": "Trophy sharing requires a separate explicit choice even for public profiles. Source schema starts disabled; selected flair/pins exclude scores/private history. No real visibility was changed."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-023",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-5",
+    "kind": "authored-policy-paragraph",
+    "text": "The optional leaderboard attribution marker contains only a local visit timestamp and is eligible for matching for no more than seven days. If the person does not return, the expired timestamp may remain in browser storage until the next relevant page access, consent withdrawal or site-data clearing; it is then discarded or replaced. A successful attributed registration also clears the marker. Analytics and advertising data at external providers are retained according to their settings and policies; TradeHQ does not state a fixed provider retention period where it cannot verify one.",
+    "contextText": "Storage, Visibility & Retention: The optional leaderboard attribution marker contains only a local visit timestamp and is eligible for matching for no more than seven days. If the person does not return, the expired timestamp may remain in browser storage until the next relevant page access, consent withdrawal or site-data clearing; it is then discarded or replaced. A successful attributed registration also clears the marker. Analytics and advertising data at external providers are retained according to their settings and policies; TradeHQ does not state a fixed provider retention period where it cannot verify one.",
+    "sha256": "2e0ce31ae5d9f45738e6f05b99a29b0b1309bbcbd930c80cf077ecba13e2425b",
+    "manualAssessment": "Actual funnel code rejects expired/future markers and removes on relevant access or successful match; text distinguishes matching window from physical persistence if browser never returns. No unverifiable provider retention period is invented."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-024",
+    "location": "src/lib/privacyCopy.ts/Storage, Visibility & Retention/paragraph-6",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ uses hosted infrastructure and access controls intended to protect stored data, but no online service can guarantee absolute security.",
+    "contextText": "Storage, Visibility & Retention: TradeHQ uses hosted infrastructure and access controls intended to protect stored data, but no online service can guarantee absolute security.",
+    "sha256": "bffbd3c99324d19e90aef82d1094828e78710f702fca8042f1c09d2dd4ba5337",
+    "manualAssessment": "Hosted protection is a goal with explicit no absolute-security promise; a public editorial read is not a security audit or proof of all access controls."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-025",
+    "location": "src/lib/privacyCopy.ts/Age and Optional Features/paragraph-1",
+    "kind": "authored-policy-paragraph",
+    "text": "The core simulator works without an account. The optional account flow does not ask for age, so TradeHQ does not determine a visitor's age from that form.",
+    "contextText": "Age and Optional Features: The core simulator works without an account. The optional account flow does not ask for age, so TradeHQ does not determine a visitor's age from that form.",
+    "sha256": "857948bd1baada01177ce6a406bbe270a887884b73de8cffb4b67fe8751b9b59",
+    "manualAssessment": "Signup does not collect age; guest mode exists. The paragraph does not invent an AdSense requirement that signed-in visitors be18+."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-026",
+    "location": "src/lib/privacyCopy.ts/Age and Optional Features/paragraph-2",
+    "kind": "authored-policy-paragraph",
+    "text": "Public profiles and community features can publish the information and simulated statistics you choose to share. Avoid including private or sensitive information in public fields. A parent or guardian can use the contact page to raise a privacy concern involving a young user. Optional Amplitude Arena and leaderboard registration-flow analytics are unavailable unless the visitor confirms they are at least 18 and affirmatively accepts the updated permission. This declaration is not verified age assurance and does not resolve every jurisdiction's child-safety requirements. Visitors under 18 should reject analytics; the core simulator remains available.",
+    "contextText": "Age and Optional Features: Public profiles and community features can publish the information and simulated statistics you choose to share. Avoid including private or sensitive information in public fields. A parent or guardian can use the contact page to raise a privacy concern involving a young user. Optional Amplitude Arena and leaderboard registration-flow analytics are unavailable unless the visitor confirms they are at least 18 and affirmatively accepts the updated permission. This declaration is not verified age assurance and does not resolve every jurisdiction's child-safety requirements. Visitors under 18 should reject analytics; the core simulator remains available.",
+    "sha256": "5a8264a7e6e8088c7f8388bf541c68bade37ec16f50036dd372940bb19fac68b",
+    "manualAssessment": "Public field caution and guardian contact route are limited privacy information. Adult analytics self-declaration is explicitly not verified age assurance or universal child-safety compliance; under18 core access stays available."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-027",
+    "location": "src/lib/privacyCopy.ts/Age and Optional Features/paragraph-3",
+    "kind": "authored-policy-paragraph",
+    "text": "An advertising consent choice alone does not determine age or replace age-specific advertising protections where they apply.",
+    "contextText": "Age and Optional Features: An advertising consent choice alone does not determine age or replace age-specific advertising protections where they apply.",
+    "sha256": "d8e5c4e5632f657275522a617599e9039c348d5de7ab6dcefd8346186edca43a",
+    "manualAssessment": "Ad consent and age assurance are separate. No live child-directed ad configuration is inferred while advertising is disabled."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-028",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-1",
+    "kind": "authored-policy-paragraph",
+    "text": "TradeHQ relies on third parties including Cloudflare Pages for hosting and Cloudflare Web Analytics for page-performance measurement, Google Fonts for stylesheet and font delivery, Supabase for optional authentication/database features, Resend for explicitly requested newsletter emails and contact messages, Amplitude for optional adult-consented Arena and leaderboard-to-registration analytics without session replay, and, if advertising is enabled in a future reviewed release, Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.",
+    "contextText": "Service Providers, Cookies & Your Choices: TradeHQ relies on third parties including Cloudflare Pages for hosting and Cloudflare Web Analytics for page-performance measurement, Google Fonts for stylesheet and font delivery, Supabase for optional authentication/database features, Resend for explicitly requested newsletter emails and contact messages, Amplitude for optional adult-consented Arena and leaderboard-to-registration analytics without session replay, and, if advertising is enabled in a future reviewed release, Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.",
+    "sha256": "41b4d4ec0f8b00b8778f7915812f54beb1b3612a676622fff9ef109ddf875c4b",
+    "manualAssessment": "Provider list now includes current Cloudflare performance measurement and Google Fonts alongside hosting/Auth/DB/Resend/optional Amplitude and future AdSense. Cross-border processing is disclosed generally; no private contract/legal adequacy finding is claimed."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-029",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-2",
+    "kind": "authored-policy-paragraph",
+    "text": "Optional Amplitude scripts are blocked unless a visitor expressly confirms they are at least 18 and accepts the newly expanded analytics choice. Prior v1 and v2 choices are not carried forward. Accepting stores a pseudonymous Amplitude browser identifier locally to support consented Arena measurement and the limited same-browser leaderboard registration funnel. You can reject analytics or withdraw a previous choice from this privacy page; withdrawal stops new custom events but does not automatically erase historical events already held by a provider. Contact TradeHQ for a privacy or deletion request. The Amplitude choice does not control the Cloudflare performance or Google Fonts requests described above. Analytics acceptance does not grant advertising consent.",
+    "contextText": "Service Providers, Cookies & Your Choices: Optional Amplitude scripts are blocked unless a visitor expressly confirms they are at least 18 and accepts the newly expanded analytics choice. Prior v1 and v2 choices are not carried forward. Accepting stores a pseudonymous Amplitude browser identifier locally to support consented Arena measurement and the limited same-browser leaderboard registration funnel. You can reject analytics or withdraw a previous choice from this privacy page; withdrawal stops new custom events but does not automatically erase historical events already held by a provider. Contact TradeHQ for a privacy or deletion request. The Amplitude choice does not control the Cloudflare performance or Google Fonts requests described above. Analytics acceptance does not grant advertising consent.",
+    "sha256": "288677e090758a13813942c6ca396b711d4a7606e487ef70692d07f842b658ac",
+    "manualAssessment": "Reject/reopen/reject controls were exercised without accepting analytics; Amplitude stayed absent. Source sets opt-out and reloads on withdrawing prior acceptance. Historical provider data is not falsely promised to vanish; Cloudflare/Fonts are clearly separate."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-030",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-3",
+    "kind": "authored-policy-paragraph",
+    "text": "Before any future advertising release, TradeHQ must verify the applicable Google-certified consent-management configuration for regional advertising choices in the EEA, United Kingdom and Switzerland. Availability of the published message depends on Google's configuration and the visitor's region; an unavailable message does not constitute consent. The Google message lets you consent, decline or manage individual options. When it applies, use Advertising privacy choices on this page or in the footer to change or withdraw your decision.",
+    "contextText": "Service Providers, Cookies & Your Choices: Before any future advertising release, TradeHQ must verify the applicable Google-certified consent-management configuration for regional advertising choices in the EEA, United Kingdom and Switzerland. Availability of the published message depends on Google's configuration and the visitor's region; an unavailable message does not constitute consent. The Google message lets you consent, decline or manage individual options. When it applies, use Advertising privacy choices on this page or in the footer to change or withdraw your decision.",
+    "sha256": "40aa3948eaa92151d542c24348ba0120ee1a46dd2ad024a32af3993cc2fc9968",
+    "manualAssessment": "EEA/UK/Swiss certified-CMP requirement is grounded in official Google guidance and written as a prerequisite to future ad activation. Missing message is not consent; private Google configuration is unavailable."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-031",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-4",
+    "kind": "authored-policy-paragraph",
+    "text": "In supported US states, Google's Do Not Sell or Share My Personal Information link lets you opt out of the sale or sharing of personal information for advertising. Google applies restricted data processing to applicable opt-out requests. These regional messages manage Google's advertising partners; optional Amplitude analytics are controlled separately.",
+    "contextText": "Service Providers, Cookies & Your Choices: In supported US states, Google's Do Not Sell or Share My Personal Information link lets you opt out of the sale or sharing of personal information for advertising. Google applies restricted data processing to applicable opt-out requests. These regional messages manage Google's advertising partners; optional Amplitude analytics are controlled separately.",
+    "sha256": "bb67503be09588f0adb65dffafe0b0066ccb03c56169771f0483cc8e2187713d",
+    "manualAssessment": "US-state opt-out/restricted-processing language concerns Google advertising partners, separately from Amplitude. No actual regional message or universal legal entitlement is claimed verified."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-032",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-5",
+    "kind": "authored-policy-paragraph",
+    "text": "You can also clear browser storage/cookies, use browser privacy controls and manage ad personalization through Google Ads Settings. When the Google message is available, its partner list describes the vendors and purposes covered by your advertising choices.",
+    "contextText": "Service Providers, Cookies & Your Choices: You can also clear browser storage/cookies, use browser privacy controls and manage ad personalization through Google Ads Settings. When the Google message is available, its partner list describes the vendors and purposes covered by your advertising choices.",
+    "sha256": "90c1fee4f739c58c0d611bc5d17c75c9e6fac1718249233017feed660daa1f12",
+    "manualAssessment": "Browser clearing/privacy controls and Google personalization link are information, not automatically performed destructive operations. Partner-list availability is conditional on a Google message."
+  },
+  {
+    "id": "PRIVACY-PARAGRAPH-033",
+    "location": "src/lib/privacyCopy.ts/Service Providers, Cookies & Your Choices/paragraph-6",
+    "kind": "authored-policy-paragraph",
+    "text": "Depending on where you live, privacy law may give you rights to access, correct, delete, restrict or object to certain processing. Use the TradeHQ contact page for a privacy request. The exact rights available depend on your jurisdiction.",
+    "contextText": "Service Providers, Cookies & Your Choices: Depending on where you live, privacy law may give you rights to access, correct, delete, restrict or object to certain processing. Use the TradeHQ contact page for a privacy request. The exact rights available depend on your jurisdiction.",
+    "sha256": "0cafc532509d4fd3cdfce50caafe94f0acb1786c957db45fcf53fd40f9d74947",
+    "manualAssessment": "Rights are jurisdiction-dependent and use the existing contact route; no universal legal outcome or automated deletion service is promised."
+  },
+  {
+    "id": "PRIVACY-SOURCE-001",
+    "location": "profile/sharing-permission/source-only",
+    "kind": "source-only-copy",
+    "text": "Separate optional permission, off by default. With a public profile enabled, the most recent 20 current-cycle server-recorded practice orders can show asset, buy/sell, quantity, simulated execution price, fee and time. The public data response also exposes trade total, simulated realised profit/loss where recorded, and price-source information, even when the visible row shows fewer fields. Private journal notes, older cycles and browser-only guest history are never shared. Turning your profile private hides this history too.",
+    "contextText": "Separate optional permission, off by default. With a public profile enabled, the most recent 20 current-cycle server-recorded practice orders can show asset, buy/sell, quantity, simulated execution price, fee and time. The public data response also exposes trade total, simulated realised profit/loss where recorded, and price-source information, even when the visible row shows fewer fields. Private journal notes, older cycles and browser-only guest history are never shared. Turning your profile private hides this history too.",
+    "sha256": "1d383d79504fe9395842909397ccc3e07f589ed64656faae1e24cfbd7b24f32b"
+  },
+  {
+    "id": "PRIVACY-SOURCE-002",
+    "location": "consent/states",
+    "kind": "source-only-copy",
+    "text": "Reject; I'm 18+ · Accept analytics; I confirm I am 18 or older and consent to optional analytics; Change analytics choices",
+    "contextText": "Reject; I'm 18+ · Accept analytics; I confirm I am 18 or older and consent to optional analytics; Change analytics choices",
+    "sha256": "25a6e40a8178ec88bb063ae0ea7bc4f7baba14bb32f004341d7484a97c012da9"
+  },
+  {
+    "id": "PRIVACY-SOURCE-003",
+    "location": "newsletter/status",
+    "kind": "source-only-copy",
+    "text": "Submitting…; Unable to sign up right now.; Check your inbox for a confirmation email.; Please try again later.",
+    "contextText": "Submitting…; Unable to sign up right now.; Check your inbox for a confirmation email.; Please try again later.",
+    "sha256": "993ecd010238449a3334c757ed61a9b99ead668e18dab84307b4ba1b77747bad"
+  },
+  {
+    "id": "PRIVACY-SOURCE-004",
+    "location": "auth/source-only",
+    "kind": "source-only-copy",
+    "text": "Account menu; Profile; My profile; Signing out…; Sign out; Signed out on this device.; Could not sign out. Please try again.",
+    "contextText": "Account menu; Profile; My profile; Signing out…; Sign out; Signed out on this device.; Could not sign out. Please try again.",
+    "sha256": "e7f02d1660c3ad98af971a37b941268b8fa85215988f25cc2980519ecaacdb29"
+  },
+  {
+    "id": "PRIVACY-SOURCE-005",
+    "location": "music/theme/source-only",
+    "kind": "source-only-copy",
+    "text": "Play background music; Mute background music; Play ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0); Mute ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0); Switch to light theme; Switch to dark theme",
+    "contextText": "Play background music; Mute background music; Play ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0); Mute ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0); Switch to light theme; Switch to dark theme",
+    "sha256": "f12788a9006cad4f358599a7f46dd2db04832df40a513ccc1aa3ff3b763860b0"
+  },
+  {
+    "id": "PRIVACY-MEDIA-001",
+    "location": "native-head/shared-og-image",
+    "kind": "visually-reread-media",
+    "text": "TradeHQ; Learn Trading.; Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface · Virtual money only",
+    "contextText": "Actual shared image words freshly visually read for Privacy; example/illustrative captions qualify the virtual chart.",
+    "sha256": "8e924a1a4e63ec0b7155d253439f0d2478fc201b1e4cc27d864de0462ad8ebe3"
+  }
+]

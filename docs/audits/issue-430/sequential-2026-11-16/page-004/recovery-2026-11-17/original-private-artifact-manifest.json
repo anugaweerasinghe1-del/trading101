@@ -1,0 +1,74 @@
+[
+  {
+    "path": "captured-block-index.json",
+    "kind": "evidence",
+    "sha256": "9ed5fa6bd751a54582bafd375e45ac5e22eaab0111a8b1c7147e9c8a37f6ebab",
+    "bytes": 325666
+  },
+  {
+    "path": "raw/capture-manifest.json",
+    "kind": "evidence",
+    "sha256": "71a608f8759a6e2fb2fb4be6d19f94bf9bb210fec33ad8103954f41566ed3dce",
+    "bytes": 4022
+  },
+  {
+    "path": "raw/desktop-initial.txt",
+    "kind": "rendered-text",
+    "sha256": "b236a94f466c2b96eb050f87f9eb5a145d2cc9cce0d642fad623658df7c9b733",
+    "bytes": 11315
+  },
+  {
+    "path": "raw/native.html",
+    "kind": "native-html",
+    "sha256": "741c3113943562e80b862cf4c8fa2e034f6a743beec285e3ff78fc023a7ae6ae",
+    "bytes": 16461
+  },
+  {
+    "path": "raw/mobile-expanded.txt",
+    "kind": "evidence",
+    "sha256": "a150acbd8fc047a9e6a8eebb0d7c8f2b23dc4e8848e55a0726f2302368e4893e",
+    "bytes": 11363
+  },
+  {
+    "path": "raw/terms-presentation.json",
+    "kind": "evidence",
+    "sha256": "050b88a835226b411f717f461f784dfcd7f9761049241e08c24b3250c2ad7a66",
+    "bytes": 1055
+  },
+  {
+    "path": "raw/desktop-expanded.txt",
+    "kind": "evidence",
+    "sha256": "8d50feb652e77025ad39b9ede39d00e88679eb374642fc729e852ba59786534e",
+    "bytes": 11799
+  },
+  {
+    "path": "raw/native-production-receipt.json",
+    "kind": "evidence",
+    "sha256": "2ad52e0e1f567d50efd9877ab834e1cba0750ce06e699e7aa6408cad1e078179",
+    "bytes": 962
+  },
+  {
+    "path": "raw/nojs-terms-current.txt",
+    "kind": "evidence",
+    "sha256": "8b737f39fd89eff0e9e69bea57eb8ee3ff3108aa602cfc813fe2c2aa28c951b5",
+    "bytes": 3759
+  },
+  {
+    "path": "raw/authored-interactive-text.json",
+    "kind": "authored-interactive-text",
+    "sha256": "fcb3cc0aface491a4b098daa4c68bbc0033e0c335f9da4c8a7714b23c4bd988d",
+    "bytes": 15368
+  },
+  {
+    "path": "raw/nojs-terms-current-blocks.json",
+    "kind": "evidence",
+    "sha256": "1bf6a27db5808f97ffa428d33f8d38c374e37f854770523ee1d867016e6a9106",
+    "bytes": 38606
+  },
+  {
+    "path": "raw/terms-leverage-primary-source-receipt.json",
+    "kind": "evidence",
+    "sha256": "3b23658f92b7d47142a89985765256c537c26404fb409a15ce7aaaeb62f60dde",
+    "bytes": 1081
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "observedAtUTC": "2026-11-16T15:26:56.366Z",
+  "scope": "Read-only configured RLS/grants metadata; no likes, learning, contact or delivery records queried",
+  "configured_boundaries": {
+    "policies": [
+      {
+        "name": "Like visible reviews as yourself",
+        "qual": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "review_likes",
+        "command": "INSERT",
+        "with_check": "((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1\n   FROM reviews r\n  WHERE ((r.id = review_likes.review_id) AND r.is_visible AND (r.deleted_at IS NULL)))))"
+      },
+      {
+        "name": "Read own visible review likes",
+        "qual": "((( SELECT auth.uid() AS uid) = user_id) AND (EXISTS ( SELECT 1\n   FROM reviews r\n  WHERE ((r.id = review_likes.review_id) AND r.is_visible AND (r.deleted_at IS NULL)))))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "review_likes",
+        "command": "SELECT",
+        "with_check": null
+      },
+      {
+        "name": "Remove your own review likes",
+        "qual": "(( SELECT auth.uid() AS uid) = user_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "review_likes",
+        "command": "DELETE",
+        "with_check": null
+      },
+      {
+        "name": "Create own educational progress",
+        "qual": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "user_learning_progress",
+        "command": "INSERT",
+        "with_check": "(( SELECT auth.uid() AS uid) = user_id)"
+      },
+      {
+        "name": "Read own educational progress",
+        "qual": "(( SELECT auth.uid() AS uid) = user_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "user_learning_progress",
+        "command": "SELECT",
+        "with_check": null
+      },
+      {
+        "name": "Update own educational progress",
+        "qual": "(( SELECT auth.uid() AS uid) = user_id)",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "user_learning_progress",
+        "command": "UPDATE",
+        "with_check": "(( SELECT auth.uid() AS uid) = user_id)"
+      }
+    ],
+    "anonymous_select_grants": [
+      {
+        "table": "review_likes",
+        "allowed": false
+      },
+      {
+        "table": "user_learning_progress",
+        "allowed": false
+      },
+      {
+        "table": "newsletter_contacts",
+        "allowed": false
+      },
+      {
+        "table": "newsletter_deliveries",
+        "allowed": false
+      }
+    ]
+  }
+}

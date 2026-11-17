@@ -1,13 +1,13 @@
 {
-  "updatedAtUTC": "2026-11-16T15:47:45.322578+00:00",
-  "phase": "PRIVACY-SDK-HARDENING-IN-PROGRESS",
-  "currentPage": "https://www.thetradehq.com/privacy",
-  "newAuditCompletedPages": 2,
+  "updatedAtUTC": "2026-11-17T03:26:32.683713+00:00",
+  "phase": "LEARN-FIXES-LOCAL-VERIFIED-PR-READY",
+  "currentPage": "https://www.thetradehq.com/learn",
+  "newAuditCompletedPages": 4,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 161,
+  "publisherPagesStillQueued": 159,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
-  "priorRemediation": "18/19; Diversification draft6/published3 remains normal owner-publication pending.",
+  "priorRemediation": "18/19; Diversification draft6/public3 remains normal owner publication pending. Not19/19.",
   "homepageFindings": {
     "confirmed": 5,
     "qualityRisks": 3,
@@ -16,23 +16,93 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "d012adbf-9216-4cb3-acd9-ee6e20878aad",
+  "nativeCloudflareId": "f1ffac7b-f461-4462-ae63-2fc0fb483de5",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify pinned core SDK runtime in isolated no-delivery fixtures; PR/merge/native production/live reread before closing Privacy and moving to Terms.",
+  "nextStep": "Create/complete Learn repair PR; require exact-head5/5 CI and normal merge, native exact production SHA, live final complete word/media skeptical reread and coverage before closing Learn. Then finish existing Courses PR451.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 13,
-  "latestClosedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/47282297d515a53f61f8df838bbf2c957b14d035/docs/audits/issue-430/sequential-2026-11-16/page-002/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "710bb67d8b4440004d63deaf894af9ed9977c98c",
+  "freshReviewTotalClosedCases": 20,
+  "latestClosedPageRecord": "page-005/closure-2026-11-17/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "c7ec39d6dad1717c241d604e0282b51c654ce229",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
     "qualityRisks": 1,
-    "qualityRisksOpen": 1,
-    "closed": 2
-  }
+    "qualityRisksOpen": 0,
+    "closed": 3
+  },
+  "production": {
+    "mergeSHA": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+    "nativeCloudflare": {
+      "id": "f1ffac7b-f461-4462-ae63-2fc0fb483de5",
+      "sha": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-17T01:58:29.097747Z"
+    },
+    "nativeObservedAtUTC": "2026-11-17T02:09:16.545Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43999535367/job/133764146159",
+    "liveRereadAtUTC": "2026-11-17T02:24:04.927011+00:00"
+  },
+  "resumeRestrictions": [
+    "Ad serving disabled",
+    "No course draft publication or independent-review bypass",
+    "No paid API requests/model calls",
+    "Private operations/account/CMP/owner legal gates remain separate"
+  ],
+  "latestPR": {
+    "number": 452,
+    "status": "MERGED",
+    "head": "fef36780f1a6bf377d8362936ddf37476a5f6e7f",
+    "merge": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+    "requiredChecks": "5/5 SUCCESS",
+    "mainReleaseWorkflow": "SUCCESS"
+  },
+  "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
+  "termsFindings": {
+    "confirmed": 3,
+    "fixedRechecked": 3,
+    "ownerReviewOpen": 1,
+    "pageStatus": "BLOCKED"
+  },
+  "blockers": [
+    {
+      "id": "STRICT-TERMS-004",
+      "scope": "Owner legal account-eligibility wording; preserve current access and analytics-only18+ preference"
+    },
+    {
+      "id": "LEGACY-COURSE-PUBLICATION",
+      "scope": "Read-only Nov17 metadata: Diversification draft6/public3; normal owner review/publication pending. No19/19 claim."
+    }
+  ],
+  "contactFindings": {
+    "confirmed": 3,
+    "fixedRechecked": 3,
+    "pageStatus": "FIXED-RECHECKED"
+  },
+  "publisherPagesRemaining": 159,
+  "caseTotals": {
+    "confirmedFixedRechecked": 13,
+    "qualityRisksFixedRechecked": 6,
+    "auxiliaryFixedRechecked": 1,
+    "ownerDecisionOpen": 1,
+    "newCasesImplementedThisResume": 2
+  },
+  "limitations": [
+    "Original Terms historical raw full-body/event timing not recovered; exact pre-edit quotes/source revision retained; not invented.",
+    "Private Google/CMP/provider/inbox/retention operations unverified."
+  ],
+  "learnFindings": {
+    "confirmed": 2,
+    "qualityRisks": 1,
+    "fixedLocally": 3,
+    "closed": 0,
+    "record": "page-006/WORKING.md"
+  },
+  "candidatePullRequestBranch": "issue-430-contact-closure-20261117"
 }

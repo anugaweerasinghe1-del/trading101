@@ -1,0 +1,122 @@
+[
+  {
+    "path": "captured-block-index.json",
+    "kind": "evidence",
+    "sha256": "a736e1d6448ed1cac001cb3a8aaff8fb259d759a5acf9f114153ec015ae0aba1",
+    "bytes": 329925
+  },
+  {
+    "path": "raw/authored-interactive-text.json",
+    "kind": "authored-interactive-text",
+    "sha256": "5ef1993b48ddf47395840c778bee039ef5af40892dcee0d50b55115a7bf1df66",
+    "bytes": 29890
+  },
+  {
+    "path": "raw/before-blocks-captured.json",
+    "kind": "evidence",
+    "sha256": "7410047c9b3114c4393236d32d3c003185ff9b587ff3e1753ba038ddc56e8b6d",
+    "bytes": 260472
+  },
+  {
+    "path": "raw/before-desktop-initial.txt",
+    "kind": "evidence",
+    "sha256": "f4b05a1496858cda96ee15a3e227d784150bc4456ce48bcabba94d0437601ef3",
+    "bytes": 10540
+  },
+  {
+    "path": "raw/before-native.html",
+    "kind": "evidence",
+    "sha256": "97045d792caca1afc2ded7cf58b79202e2cafdcf80c4d51defd6dfc1df5b2221",
+    "bytes": 16425
+  },
+  {
+    "path": "raw/capture-manifest.json",
+    "kind": "evidence",
+    "sha256": "61a21d37c220c8d40382d3a0f577ea31c8650844cc40ee0b3e4d8ca7f147a86a",
+    "bytes": 3563
+  },
+  {
+    "path": "raw/contact-authored-source.json",
+    "kind": "evidence",
+    "sha256": "5ef1993b48ddf47395840c778bee039ef5af40892dcee0d50b55115a7bf1df66",
+    "bytes": 29890
+  },
+  {
+    "path": "raw/contact-capability-source-receipts.json",
+    "kind": "evidence",
+    "sha256": "75480cf982d93a83d54e43cef07d7356aa17b30f1cbaeca2cff3c76371c2fd2d",
+    "bytes": 1465
+  },
+  {
+    "path": "raw/contact-final-controls.json",
+    "kind": "evidence",
+    "sha256": "db38959194405c8d9e5064691f825791f25ee442d5d029ad43eef12beb5090c4",
+    "bytes": 729
+  },
+  {
+    "path": "raw/contact-final-presentation.json",
+    "kind": "evidence",
+    "sha256": "571122db9a22e49da644132442936be608000a91631d45a126f39d9c6d55df9a",
+    "bytes": 1065
+  },
+  {
+    "path": "raw/contact-final-review-attestation.json",
+    "kind": "evidence",
+    "sha256": "b3f58989041dd985e9c1c6e5039dbcc6721578f1b787dac117420ddbff521cbe",
+    "bytes": 863
+  },
+  {
+    "path": "raw/contact-production452-limits.json",
+    "kind": "evidence",
+    "sha256": "ee40b1668a4a734e39d8b8e16f4f0a1594dbc3abb3a181202f26d9fe9aa96532",
+    "bytes": 945
+  },
+  {
+    "path": "raw/contact-production452-spacing.json",
+    "kind": "evidence",
+    "sha256": "5f8d220647c6df88f1536c07dfabfca91d8840e48884a047abf576ad404bb576",
+    "bytes": 1237
+  },
+  {
+    "path": "raw/desktop-expanded.txt",
+    "kind": "evidence",
+    "sha256": "aad4bf14efe0bfa7dd687e5afa305004aa01e72ba2968ffab133e3d9269244dc",
+    "bytes": 10658
+  },
+  {
+    "path": "raw/desktop-initial.txt",
+    "kind": "rendered-text",
+    "sha256": "e128063f79476a74e74f7c7550d53803d8138746dd215e364de9e5504c82f6fc",
+    "bytes": 10542
+  },
+  {
+    "path": "raw/mobile-expanded.txt",
+    "kind": "evidence",
+    "sha256": "5b4cd298a365956f828a349764434a2f35ba094e7ca9a53680012e1933a469d2",
+    "bytes": 10449
+  },
+  {
+    "path": "raw/native-production452-receipt.json",
+    "kind": "evidence",
+    "sha256": "2b6ec5ec266aca865bd2b220e12876c0ac3b0f3d470370965de29bac830172bf",
+    "bytes": 954
+  },
+  {
+    "path": "raw/native.html",
+    "kind": "native-html",
+    "sha256": "855e9071a593ce78df294acfec9be56f15a112fe4b60449b270fb55f7cff38a7",
+    "bytes": 16425
+  },
+  {
+    "path": "raw/nojs-contact-final-blocks.json",
+    "kind": "evidence",
+    "sha256": "8f28f102d04595435dd68f9c5938792aded736b2f685133664649974da30baaf",
+    "bytes": 39594
+  },
+  {
+    "path": "raw/nojs-contact-final.txt",
+    "kind": "evidence",
+    "sha256": "5f313e745730f2784be1740f8054576e275df73c9b644118e26d3339cab05477",
+    "bytes": 3572
+  }
+]
