@@ -91,7 +91,7 @@ const FAQ = [
   },
   {
     q: "Where does the content come from?",
-    a: "Courses are maintained by TradeHQ creator Anuga Weerasinghe. New AI-assisted courses require editorial review before publication and show their reviewer and review date. Every lesson lists its sources.",
+    a: "Courses are maintained by TradeHQ creator Anuga Weerasinghe. New AI-assisted courses require editorial review before publication and show their reviewer and review date on lesson pages. Every lesson lists its sources.",
   },
   {
     q: "Will you cover crypto, forex or DeFi in depth?",
@@ -405,7 +405,7 @@ export default function Courses() {
                 explore market concepts through hypothetical examples.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                AI-assisted additions identify their preparation and owner publication review on the course page.
+                AI-assisted additions identify their preparation and owner publication review on their lesson pages.
                 This review does not imply independent financial-professional verification. Lessons link their
                 public sources for the scope described. If you spot an error, please <Link to="/contact" className="text-emerald-400 hover:underline">contact us</Link> — reported corrections are reviewed before publication.
               </p>
