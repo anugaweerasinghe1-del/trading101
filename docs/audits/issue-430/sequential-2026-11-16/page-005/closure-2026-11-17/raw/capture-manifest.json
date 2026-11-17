@@ -1,0 +1,111 @@
+{
+  "capturedAtUTC": "2026-11-17T02:10:39.966Z",
+  "url": "https://www.thetradehq.com/contact",
+  "states": [
+    {
+      "state": "desktop-initial",
+      "capturedAtUTC": "2026-11-17T02:10:16.118Z",
+      "blocks": 336,
+      "textSHA256": "e128063f79476a74e74f7c7550d53803d8138746dd215e364de9e5504c82f6fc",
+      "characters": 10508
+    },
+    {
+      "state": "desktop-faq-1",
+      "capturedAtUTC": "2026-11-17T02:10:16.334Z",
+      "blocks": 331,
+      "textSHA256": "0674c6395a992877cc9a7901ae316cf635b1c3eee65dd8b03e11f3b4822a8ab0",
+      "characters": 10457
+    },
+    {
+      "state": "desktop-faq-2",
+      "capturedAtUTC": "2026-11-17T02:10:17.408Z",
+      "blocks": 332,
+      "textSHA256": "da5604be74fe56a6361dabf16f23ff29ca1142900669466a0955d4eee4608cf9",
+      "characters": 10604
+    },
+    {
+      "state": "desktop-faq-3",
+      "capturedAtUTC": "2026-11-17T02:10:18.432Z",
+      "blocks": 332,
+      "textSHA256": "aad4bf14efe0bfa7dd687e5afa305004aa01e72ba2968ffab133e3d9269244dc",
+      "characters": 10623
+    },
+    {
+      "state": "desktop-expanded",
+      "capturedAtUTC": "2026-11-17T02:10:18.486Z",
+      "blocks": 332,
+      "textSHA256": "aad4bf14efe0bfa7dd687e5afa305004aa01e72ba2968ffab133e3d9269244dc",
+      "characters": 10623
+    },
+    {
+      "state": "desktop-more-menu",
+      "capturedAtUTC": "2026-11-17T02:10:18.658Z",
+      "blocks": 351,
+      "textSHA256": "869fa5fd178e7a8daeac57cc3b7a5883050a2f763c17fae0485130ef7dd43fb5",
+      "characters": 10698
+    },
+    {
+      "state": "mobile-initial",
+      "capturedAtUTC": "2026-11-17T02:10:36.252Z",
+      "blocks": 336,
+      "textSHA256": "a52420fee74aa3b235f72c87ed860303c8d6a2a26a930c75e7b1a033ba7fb9ca",
+      "characters": 10299
+    },
+    {
+      "state": "mobile-faq-1",
+      "capturedAtUTC": "2026-11-17T02:10:36.509Z",
+      "blocks": 331,
+      "textSHA256": "39c186db2d2a7af137336a867b44e9ac5c33a3bfd3bc86d96c189199f65467b7",
+      "characters": 10248
+    },
+    {
+      "state": "mobile-faq-2",
+      "capturedAtUTC": "2026-11-17T02:10:38.105Z",
+      "blocks": 332,
+      "textSHA256": "ad7dde9a3d0087100488b65cac78643dd9a4bf3160dd84124bb23789b1854000",
+      "characters": 10395
+    },
+    {
+      "state": "mobile-faq-3",
+      "capturedAtUTC": "2026-11-17T02:10:39.606Z",
+      "blocks": 332,
+      "textSHA256": "5b4cd298a365956f828a349764434a2f35ba094e7ca9a53680012e1933a469d2",
+      "characters": 10414
+    },
+    {
+      "state": "mobile-expanded",
+      "capturedAtUTC": "2026-11-17T02:10:39.641Z",
+      "blocks": 332,
+      "textSHA256": "5b4cd298a365956f828a349764434a2f35ba094e7ca9a53680012e1933a469d2",
+      "characters": 10414
+    },
+    {
+      "state": "mobile-mobile-menu",
+      "capturedAtUTC": "2026-11-17T02:10:39.728Z",
+      "blocks": 332,
+      "textSHA256": "b8989549261c19511260d046cb93a58010c3dece550d2f816c0ab583ffe652b4",
+      "characters": 10433
+    },
+    {
+      "state": "mobile-consent-reopened",
+      "capturedAtUTC": "2026-11-17T02:10:39.819Z",
+      "blocks": 337,
+      "textSHA256": "e5853f10ef72524f824d592bbe0023f7adbd57f58a4aca7ab3c1bf4aee32e655",
+      "characters": 10408
+    }
+  ],
+  "blocks": 360,
+  "requests": [
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    },
+    {
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "method": "POST",
+      "blocked": true
+    }
+  ],
+  "scope": "Fresh guest desktop/mobile initial and FAQ-expanded DOM, metadata, attributes. Conditional/source-authored states still to enumerate."
+}

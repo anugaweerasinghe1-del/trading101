@@ -1,0 +1,29 @@
+{
+  "observedAtUTC": "2026-11-17 02:00:31 UTC",
+  "scope": "Read-only SELECT of three course revision/status fields; no draft body, owner identity, generation, publication or mutation.",
+  "rows": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "published_revision": 9,
+      "draft_revision": 9,
+      "status": "published",
+      "published_at": "2026-11-15 11:28:21.242577+00"
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "published_revision": 5,
+      "draft_revision": 5,
+      "status": "published",
+      "published_at": "2026-11-15 11:35:40.193477+00"
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "published_revision": 3,
+      "draft_revision": 6,
+      "status": "draft",
+      "published_at": "2026-10-09 15:45:01.003475+00"
+    }
+  ],
+  "legacyRemediation": "18/19; Diversification draft6/public3 remains normal owner publication pending. Not19/19.",
+  "standaloneModelCalls": 0
+}
