@@ -1,0 +1,400 @@
+[
+  {
+    "id": "COURSES-SOURCE-001",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Continue where you left off",
+    "contextText": "Continue where you left off",
+    "sha256": "dfbc51e01e82f72bfe8a3d00dadcd30d7627a0a5a5166c2de010e71d737531a5",
+    "assessment": "Authored heading when an unfinished published lesson exists; no automatic navigation or orders."
+  },
+  {
+    "id": "COURSES-SOURCE-002",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Recommended next lesson",
+    "contextText": "Recommended next lesson",
+    "sha256": "8ecb4a43530295414d34593864eab11ea59fa0ffc0a9add521a7907b22e2cbc0",
+    "assessment": "Conditional heading for next available published lesson; study suggestion, not financial competence."
+  },
+  {
+    "id": "COURSES-SOURCE-003",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Resume lesson",
+    "contextText": "Resume lesson",
+    "sha256": "80e2c7859f978e141472b420d3b31bb7cb99c006c706827f1edf808f92adbd86",
+    "assessment": "Return to approved unfinished lesson rather than stale/draft slug."
+  },
+  {
+    "id": "COURSES-SOURCE-004",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Take next lesson",
+    "contextText": "Take next lesson",
+    "sha256": "ce98539400e0359671aa204644be956f422c94933a275ad8799fdf85691dcc52",
+    "assessment": "Optional link to approved next lesson; not a forced trade or guaranteed proficiency."
+  },
+  {
+    "id": "COURSES-SOURCE-005",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Review course",
+    "contextText": "Review course",
+    "sha256": "cac134ea3d20755f25c8b76b081d6613d7515b00565471fd7bd00481cfd49363",
+    "assessment": "100% known lesson progress; private milestone, not credential."
+  },
+  {
+    "id": "COURSES-SOURCE-006",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Continue course",
+    "contextText": "Continue course",
+    "sha256": "e700eeea125de6a6cc5c6278c27eb6bee242ffae5dea36a771be6bd45b62c842",
+    "assessment": "Partial known lesson progress; browser-held with optional private sync."
+  },
+  {
+    "id": "COURSES-SOURCE-007",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "${pct}% complete",
+    "contextText": "${pct}% complete",
+    "sha256": "8fa220b3d343ee0c60a2d2514364365fd00bcc5ece3b8d0a4a4c6a53173589c0",
+    "assessment": "Computed finite course completion percentage from current approved lesson slugs, not investment performance."
+  },
+  {
+    "id": "COURSES-SOURCE-008",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "What Is an Option? Calls & Puts Explained",
+    "contextText": "What Is an Option? Calls & Puts Explained",
+    "sha256": "21e0b724eb22be7cd6dbeaf8491b5d5eac4da0d82a777a28d5641d9428ee96f3",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-009",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "The Greeks — Delta, Gamma, Theta & Vega",
+    "contextText": "The Greeks — Delta, Gamma, Theta & Vega",
+    "sha256": "17251be74e011e187b0e6c549c5225eb7bdaaa9345e2c2b6c04a6b593c97c1a6",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-010",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Defined-Risk Spreads — Verticals & Iron Condors",
+    "contextText": "Defined-Risk Spreads — Verticals & Iron Condors",
+    "sha256": "903e0f28fcdb3fccd066eb9c4a56e4fda41a18b49dfee18cb05b84ba0241e510",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-011",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Implied Volatility & Trading Around Earnings",
+    "contextText": "Implied Volatility & Trading Around Earnings",
+    "sha256": "05cf4032b04bddcaf37ce94e7148b09ec778777e20cfd4128542cbc3633be63f",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-012",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Options Risk Management — Sizing, Rolling & Cutting Losses",
+    "contextText": "Options Risk Management — Sizing, Rolling & Cutting Losses",
+    "sha256": "c1cef7f571dd0006105db65a7f637fe6a76c0c8edcbe985a1441c90d39d2fd9b",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-013",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "What Is a Futures Contract?",
+    "contextText": "What Is a Futures Contract?",
+    "sha256": "c3381a2c8bf775ff6565315a8f07e6eab460f16b726bb0f4bb3f9eaf6dfa62b9",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-014",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Margin & Leverage in Futures",
+    "contextText": "Margin & Leverage in Futures",
+    "sha256": "031b9f1f2d4abf07d80c26dfa7953f50a1852395f8aa0a138c9906ec69060083",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-015",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Contango & Backwardation — Term Structure Explained",
+    "contextText": "Contango & Backwardation — Term Structure Explained",
+    "sha256": "ea6396a5f5722a71b53ce58b361fe798e1b9aa51efaa10f6107159cd1ac178ef",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-016",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Hedging with Futures — The Original Use Case",
+    "contextText": "Hedging with Futures — The Original Use Case",
+    "sha256": "e39870a3b066c7a819b4574f042fc0b69c2b9b78348a7369883b009befdb8609",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-017",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Micro Futures — Contract Size and Risk",
+    "contextText": "Micro Futures — Contract Size and Risk",
+    "sha256": "2c05278f506f0834d8762eba6ff573ee1aecce77738d06492f7d48d951a1283e",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-018",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Reading CPI and Inflation Data",
+    "contextText": "Reading CPI and Inflation Data",
+    "sha256": "32197901c710f8fdb04b71c213cc36e75fcbdda92abab20a4a60bc40644a1bcf",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-019",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "The Fed & FOMC Cycle — How Rates Get Set",
+    "contextText": "The Fed & FOMC Cycle — How Rates Get Set",
+    "sha256": "127e288574790c43497dec05043acf38c088df6bf0a83b919345674bdd9c0162",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-020",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "The Yield Curve and Recession-Risk Research",
+    "contextText": "The Yield Curve and Recession-Risk Research",
+    "sha256": "e924e8db01398d9902680053d8ad73f58e4134493789c1e7fe3c0e1f53947e8e",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-021",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "The Dollar Index (DXY) — Reading Currency Context",
+    "contextText": "The Dollar Index (DXY) — Reading Currency Context",
+    "sha256": "85e4231cc0fe4b40cdcf47c6f5e9d8be5de09136ec46fcc170f6ccf333e558c7",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-022",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Putting It Together — A Macro Dashboard for Traders",
+    "contextText": "Putting It Together — A Macro Dashboard for Traders",
+    "sha256": "3a002ee53b75ae8a4836918487249f59b47e7f936c62b6818bddf9f66dfa9d98",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-023",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Cognitive Biases in Trading Decisions",
+    "contextText": "Cognitive Biases in Trading Decisions",
+    "sha256": "50d88e5f6537c164830a7ca36edab6024666324abd6ce3d3ae34de69c30908c8",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-024",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Revenge Trading & Tilt — Recognising Unplanned Decisions",
+    "contextText": "Revenge Trading & Tilt — Recognising Unplanned Decisions",
+    "sha256": "0c3678d2e4cdf9253ad921365b6171f015617d02aaae1a236ef94f8a8e622ff1",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-025",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "A Trading Journal: Observations and Limits",
+    "contextText": "A Trading Journal: Observations and Limits",
+    "sha256": "b268ae6d79c8c86f8ccbabc4a2bd6b328035d15aafa0cf89178e197a294efd71",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-026",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Optional Checklists for Practice Sessions",
+    "contextText": "Optional Checklists for Practice Sessions",
+    "sha256": "be947c4652f1b33b23ec9dca9924643ceb957aa63edf9a16908b9d7effcae7d4",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-027",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Understanding Drawdowns in a Simulation",
+    "contextText": "Understanding Drawdowns in a Simulation",
+    "sha256": "9e8eefa5e861c33b8e54b5e0ffa09ade197c8227b54087ecfb222b6ece6c3b3a",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-028",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Setting Up Your Bitcoin Simulator Environment",
+    "contextText": "Setting Up Your Bitcoin Simulator Environment",
+    "sha256": "9b2338a52fbe3908fb23f386b5aa8ba6c305a8170409b754323fd76609cf7353",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-029",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Executing Spot Trades in the Simulator",
+    "contextText": "Executing Spot Trades in the Simulator",
+    "sha256": "3e2a89974b7c2534cbd031caedae80ad9d0ce423d1ba3563769c23446603422e",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-030",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Evaluating Performance and Managing Drawdowns",
+    "contextText": "Evaluating Performance and Managing Drawdowns",
+    "sha256": "32c8482f3bb495b6503ae557339efe2d2ee1c5eb390d4adffc5fbca09d8c1bcc",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-031",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Exchange Tickers and Price Aggregation Foundations",
+    "contextText": "Exchange Tickers and Price Aggregation Foundations",
+    "sha256": "a811a9575bfcd1f41d5e24af58df1df80f874aac3e66218a8ee1a1860b87c7c6",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-032",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "API Delays and Portfolio Valuation Mechanics",
+    "contextText": "API Delays and Portfolio Valuation Mechanics",
+    "sha256": "89aa77d0e8fdd405a5fc651b7485172e608bc79a5961a8b714e3b00a0f280db3",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-033",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Portfolio Rebalancing and Cash Drag Dynamics",
+    "contextText": "Portfolio Rebalancing and Cash Drag Dynamics",
+    "sha256": "b46c800ec3fec0546ceca7a03e565c68f6aab1376b5219ad3aba741fa9cc7316",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-034",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Foundations of Asset Allocation and Position Sizing",
+    "contextText": "Foundations of Asset Allocation and Position Sizing",
+    "sha256": "eb8c8a0da99bc2069b458e5ecd30b02968f14f95b4e802a6d8844ee2c3d38651",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-035",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Managing Concentration Risk and Portfolio Drift",
+    "contextText": "Managing Concentration Risk and Portfolio Drift",
+    "sha256": "81e05b06bbbbbf03eec3c60f46b8b3f37a26a9e1c892197bf22204e4d3af39b5",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-036",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Executing Rebalancing with Virtual Cash",
+    "contextText": "Executing Rebalancing with Virtual Cash",
+    "sha256": "fe6a0e765164722f395012bc39fe2b61f4537f594236d634a5efe92dd2a036ca",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-037",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Unable to sign up right now.",
+    "contextText": "Unable to sign up right now.",
+    "sha256": "08c75e0cdbe24c7c72581951964c40ad9fce5e67590bd193b6a130c916fcb1a7",
+    "assessment": "Source-only generic error; no successful subscription or provider acceptance inferred. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-038",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Check your inbox for a confirmation email.",
+    "contextText": "Check your inbox for a confirmation email.",
+    "sha256": "bee8ebbd82bf039c40631a6a62bbbea90cb2374e6bcd401de6270168142cf9a3",
+    "assessment": "Conditional fallback confirmation instruction; signup still needs separate user confirmation. No actual email sent in this audit. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-039",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Please try again later.",
+    "contextText": "Please try again later.",
+    "sha256": "386b9144ee2242027568f26dd82e080a231e52f011e15ddef4b0b3f85a678ccd",
+    "assessment": "Source-only transport/error fallback; real provider lifecycle not exercised. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-040",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Submitting…",
+    "contextText": "Submitting…",
+    "sha256": "49195f559e4a9f5b08de63a11b91827883385c819ddd46b0d6f0ec9df8b5e4b0",
+    "assessment": "In-progress request label, not a success claim. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-041",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Mute background music",
+    "contextText": "Mute background music",
+    "sha256": "7ab70b1caee4c6e9d8673f86568612f4df8108cc7e593eeb54d08bb05eedd6d1",
+    "assessment": "Actual authored playing-state control label; no invented Pause label. Source read, playback not exercised here. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-SOURCE-042",
+    "kind": "source-only-conditional-text",
+    "location": "src/pages/Courses.tsx and current approved catalog/shared controls",
+    "text": "Mute ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0)",
+    "contextText": "Mute ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0)",
+    "sha256": "1b9c0f44f3742b67c07cba478cf1c54f7a3b131ecced81b7fca9cd38353fbbf7",
+    "assessment": "Actual authored playing-state title/attribution. Existing shared music provenance retains its own date. Courses context: metadata/title or shared source-only variant, not destination body/quiz or real provider operation."
+  },
+  {
+    "id": "COURSES-IMAGE-WORDS-001",
+    "kind": "manual-image-text",
+    "location": "https://www.thetradehq.com/assets/macro-hero-BIhE6gYh.jpg",
+    "text": "Macro Economics",
+    "contextText": "Macro Economics",
+    "sha256": "782655b750c152ec1b75e30afa2bb201083acbb0904468a3ccf0de3539599360",
+    "imageSHA256": "99703532b588ca1a25b70b1d3d16e12979c81dcd3be13aa000ce306d45ff1dac",
+    "readingBasis": "Actual visual inspection, manually transcribed legible words; not OCR or inferred garbled glyphs."
+  },
+  {
+    "id": "COURSES-IMAGE-WORDS-002",
+    "kind": "manual-image-text",
+    "location": "https://www.thetradehq.com/tradehq-preview-2026.png",
+    "text": "TradeHQ; Learn Trading. Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface · Virtual money only.",
+    "contextText": "TradeHQ; Learn Trading. Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface · Virtual money only.",
+    "sha256": "1dac3fd75fdffd5bb754bb61d563890864aed1eaf3402b1fc519414ced543121",
+    "imageSHA256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+    "readingBasis": "Actual visual inspection, manually transcribed legible words; not OCR or inferred garbled glyphs."
+  }
+]

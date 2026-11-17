@@ -1,0 +1,7 @@
+{
+  "atUTC": "2026-11-17T09:22:56.788499+00:00",
+  "result": "FAIL; NOT CREDITED AS PASS",
+  "assertion": "Expected7cards, actual4",
+  "context": "Other actual final capture records4bundled before published-catalog completion then7tracks/29lessons. Initial probe waited for H1 but did not explicitly wait for asynchronous published catalog. Distinguish timing from API failure using actual response/readiness; no application defect assumed.",
+  "remedy": "Probe waits actual7card readiness with bounded30s and records public-catalog response status. Original721-block capture retained, including transitional state; no omission to shrink coverage."
+}

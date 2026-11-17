@@ -1,0 +1,78 @@
+{
+  "observedAtUTC": "2026-11-17 08:39:45 UTC",
+  "scope": "Read-only published_courses metadata SELECT; no private draft/body/answer text or user data. Browser catalog RPC intentionally omits sources/quizzes, so its zero-length fields do not represent missing lesson content.",
+  "rows": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "lesson_slug": "evaluating-performance-and-managing-drawdowns",
+      "lesson_title": "Evaluating Performance and Managing Drawdowns",
+      "reading_minutes": 6,
+      "quiz_questions": 4,
+      "sources_count": 3
+    },
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "lesson_slug": "executing-spot-trades-in-the-simulator",
+      "lesson_title": "Executing Spot Trades in the Simulator",
+      "reading_minutes": 6,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "lesson_slug": "setting-up-your-bitcoin-simulator-environment",
+      "lesson_title": "Setting Up Your Bitcoin Simulator Environment",
+      "reading_minutes": 6,
+      "quiz_questions": 4,
+      "sources_count": 3
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "lesson_slug": "api-delays-and-portfolio-valuation",
+      "lesson_title": "API Delays and Portfolio Valuation Mechanics",
+      "reading_minutes": 8,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "lesson_slug": "exchange-tickers-and-price-aggregation",
+      "lesson_title": "Exchange Tickers and Price Aggregation Foundations",
+      "reading_minutes": 8,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "lesson_slug": "portfolio-rebalancing-and-cash-drag",
+      "lesson_title": "Portfolio Rebalancing and Cash Drag Dynamics",
+      "reading_minutes": 8,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "lesson_slug": "executing-rebalancing-virtual-cash",
+      "lesson_title": "Executing Rebalancing with Virtual Cash",
+      "reading_minutes": 5,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "lesson_slug": "foundations-of-asset-allocation",
+      "lesson_title": "Foundations of Asset Allocation and Position Sizing",
+      "reading_minutes": 5,
+      "quiz_questions": 4,
+      "sources_count": 2
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "lesson_slug": "managing-concentration-risk",
+      "lesson_title": "Managing Concentration Risk and Portfolio Drift",
+      "reading_minutes": 5,
+      "quiz_questions": 4,
+      "sources_count": 2
+    }
+  ]
+}
