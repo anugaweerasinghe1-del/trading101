@@ -97,9 +97,18 @@ for (const track of data.courseTracks) for (const lesson of track.lessons) for (
 assert.ok(content.get("/learn")?.sections.length);
 const questionCount = starterPracticeBank.exercises[0].questions.length;
 assert.ok(starterPracticeBank.exercises.every(exercise => exercise.questions.length === questionCount), "Daily metadata requires a uniform authored question count");
-for (const copy of [manifest.get("/daily")!.description, manifest.get("/daily")!.summary]) {
-  assert.ok(copy.includes(`${questionCount} linked questions`) && copy.includes(String(starterPracticeBank.exercises.length)), "Daily count must match the authored bank");
-}
+const dailyMetadata = manifest.get("/daily")!;
+const dailyExerciseCount = String(starterPracticeBank.exercises.length);
+assert.ok(
+  dailyMetadata.description.includes(`${questionCount}-question case study`) &&
+  dailyMetadata.description.includes(dailyExerciseCount),
+  "Daily description must use the authored question and exercise counts",
+);
+assert.ok(
+  dailyMetadata.summary.includes(`${questionCount} linked questions`) &&
+  dailyMetadata.summary.includes(dailyExerciseCount),
+  "Daily summary must use the authored question and exercise counts",
+);
 assert.ok(readFileSync("scripts/routes.ts", "utf8").includes("${tradingGlossary.length}-term"), "Glossary count must derive from data");
 const result = { routes: routes.length, sitemapURLs: urls.length, intentionallyNoindex: routes.length - urls.length, internalLinks, worksheets: data.tradingGlossary.length, calculations: 9, checks: "PASS", scope: "compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof" };
 if (process.env.TRADEHQ_VERIFICATION_OUTPUT) writeFileSync(process.env.TRADEHQ_VERIFICATION_OUTPUT, JSON.stringify(result, null, 2));
