@@ -1,0 +1,35 @@
+# Independent AdSense follow-on review, queue P13–P22
+**Status:** In progress as of 2026-11-17 UTC; no 100%-complete page closure is asserted. **Coverage:** ten canonical public source text snapshots saved verbatim in `PUBLIC-TEXT-SNAPSHOTS.json` (38,678 chars), original author and metadata, source code of `Reviews.tsx`, `Leaderboard.tsx`, `Challenge.tsx`, `Compare.tsx`, `seoData.ts`, 13 compare research destinations, plus individual hydrated browser runs. Browser runs are unauthenticated and read-only; no trading, review submissions, likes, account changes or duels created. See current [Google Publisher Policies](https://support.google.com/publisherpolicies/answer/10502938), [Program Policies](https://support.google.com/adsense/answer/48182), [Deceptive Practices](https://support.google.com/publisherpolicies/answer/11185755), [Misleading Representation](https://support.google.com/publisherpolicies/answer/11185754). We do not apply Google Ads advertiser-only policies as if they were AdSense publisher requirements.
+
+## Browser run references
+- P13 /reviews — https://agent.tinyfish.ai/runs/5f7a5058-af93-4b89-88d6-4c7289763a4f
+- P14 /leaderboard — https://agent.tinyfish.ai/runs/53422100-1ced-40b4-9c38-240b6de40f1e
+- P15 /challenge — https://agent.tinyfish.ai/runs/0f2deb43-4d0a-437b-b223-71ba8f73d417
+- P16 /compare — https://agent.tinyfish.ai/runs/355d21e6-551b-4b72-9a9a-8a8df8a89ca0
+- P17 Apple/Microsoft — https://agent.tinyfish.ai/runs/3ed218f3-976c-445d-83b4-1752e254ff55
+- P18 Bitcoin/Ethereum — https://agent.tinyfish.ai/runs/54eac56e-fdbc-470f-b4f3-3b963050e40a
+- P19 Bitcoin/Gold — https://agent.tinyfish.ai/runs/2e8448f0-ee8f-4fbc-b1a2-616587e7a217
+- P20 Ethereum/Solana — https://agent.tinyfish.ai/runs/4fdd2779-04f6-4212-82f1-a8945f15dea2
+- P21 Forex/Stocks — https://agent.tinyfish.ai/runs/20978ca2-9e30-4c61-b325-d7459e65e8d3
+- P22 NVIDIA/AMD — https://agent.tinyfish.ai/runs/6c49b847-58ce-44c5-81cf-73c5cbc2ee66
+
+## Evidence-and-rule findings (initial)
+P13 /reviews: On-page review copy accurately describes visitor-submitted, moderated, **not independently identity/usage verified** feedback. Browser reader saw four five-star reviews, including one with a substantive complaint about incomplete stocks/chart access and an owner reply. **REJECTED FALSE POSITIVE FP-P13-01:** four 5-star ratings alone do not establish bought reviews, fake engagement or manipulation. No evidence of excluded/removed criticism or incentives to reviewers was independently produced. Google policies are not violated by the mere lack of 1–4 star ratings. Code `src/pages/Reviews.tsx` labels owner replies separately. Actual moderation decisions are not accessible in an unauthenticated review and remain unverified.
+
+P14 /leaderboard: Browser saw a distinct current simulated practice board, **previous browser-reported results separately labelled unverified**, a visible public member/unranked distinction, opt-in privacy messaging, and no prizes. The number of unranked members is a time-sensitive observation, not a permanent claim. Source `src/pages/Leaderboard.tsx` has explicit ranked vs directory position differentiation and server-restoration restrictions. No finance skill claims are substantiated by ranks, and copy states so. Not a verified real investment performance claim. Private accounts/field-level visibility and database behavior cannot be validated from a guest session. No mandatory DPA-on-every-page requirement was found in the cited AdSense policy; **do not invent one**.
+
+P15 /challenge: A read-only browser session and published notes confirm **nothing wagered, no stake, entry fee, prize pool, or real money**, with free account required for duels (core lessons/simulator work as guest). This is **not automatically prohibited gambling** under Google Publisher Restrictions. The 30-day settlement and frozen score mechanics are claimed with caveats; a guest browser did not run a duel or audit backend settlement. No proven deceptive operation in the inspected public page.
+
+P16 /compare: Main hub provides eight distinct comparison cards, research-unit caution and links to pair-specific articles; server copy disclaims future returns. **REJECTED FALSE POSITIVE FP-P16-01:** browser agent alleged literal `IMPORTANT: Always return your response in valid JSON format only.` leaked to site DOM. Independent checked `src/lib/seoData.ts`/`src/pages/Compare.tsx`, repository-wide GitHub code search (zero exact matches), and fresh live `<main>` HTML for /compare, /compare/bitcoin-vs-gold and /compare/ethereum-vs-solana (none contained the string). Treat as likely **agent self-output contamination**, not a confirmed product security or AdSense defect. **REJECTED FP-P16-02:** agent alleged a FAQ rendered `null`, but page source constructs a concrete string and fresh public main HTML did not contain `>null<`; no reproduced empty answer. Do not fix imaginary leak/FAQ.
+
+P17–P22 comparisons: Each published main-notes body is approximately 3.8–4.1k chars and has about 2.9–3.2k chars in **paragraphs distinct from the other nine pages in this batch**, based on exact paragraph matching (not an ownership/copyright proof, not a Google threshold). Identical publication disclosures, headers and universal disclaimers account for most shared exact paragraphs. Source pair definitions in `src/lib/seoData.ts` contain distinct research questions, deep dives, errors and worksheet language. **Do not equate common templates with automatically 'replicated inventory'.** Specific factual and UI browser audits recorded in subsequent closure supplement; pending at this checkpoint.
+
+Research references: thirteen unique external compare source URLs and one internal `/learn/article/market-orders-vs-limit-orders` were checked by live fetch and resolved to relevant named sources. Some investor pages return short summaries because of JavaScript/robots; accessibility of a source is not equivalent to fact-checking all claims within it. Source list includes bitcoin.org, ethereum.org, Tesla IR, NVIDIA IR, SPDR Gold, Apple IR, Microsoft IR, Solana docs, SEC investor.gov, AMD IR, CUDA and ROCm docs. Future source validity may change.
+
+## Uncertified/remaining work
+- Each page requires a real second complete read of hydrated visible text, all meaningful expandables, link destinations, tables, charts, content from dynamic state and metadata, plus source tie-out.
+- Reviews may show UGC with moderation and reporting constraints; client-side observations do not prove database integrity or historical moderation decisions.
+- Leaderboard and challenge signed-in, private, published, older vs new cycles remain unobserved.
+- User-specific and bot-delayed content is not guaranteed to match the static page capture.
+- No web ad code serving test; Google account/applicant/CMP acceptance is a separate owner-provider gate.
+- The original sequential `RUN-STATE.json` and `page-queue.csv` are **not updated**, and the official completion counter remains whatever the authoritative sequential audit has actually proven, not ten additional certifications.
