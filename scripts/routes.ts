@@ -273,7 +273,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/daily",
     title: "Daily Trading Challenge — Build Your Streak | TradeHQ",
-    description: `A quick daily scenario plus 8–12 minute case study with visuals, ${starterPracticeBank.exercises[0].questions.length} linked questions and worked answers. Learn from ${starterPracticeBank.exercises.length} rotating exercises for free.`,
+    description: `A fictional daily scenario plus an optional ${starterPracticeBank.exercises[0].questions.length}-question case study with labelled visuals and worked explanations. ${starterPracticeBank.exercises.length} exercises rotate and may repeat. Free educational practice.`,
     h1: "Daily Trading Challenge",
     summary: `Practise a quick scenario or go deeper with a hypothetical case, labelled visual, ${starterPracticeBank.exercises[0].questions.length} linked questions and worked explanations. ${starterPracticeBank.exercises.length} exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser.`,
     priority: "0.9",
