@@ -91,7 +91,7 @@ const FAQ = [
   },
   {
     q: "Where does the content come from?",
-    a: "Courses are maintained by TradeHQ creator Anuga Weerasinghe. New AI-assisted courses require editorial review before publication and show their reviewer and review date. Every lesson lists its sources.",
+    a: "Courses are maintained by TradeHQ creator Anuga Weerasinghe. New AI-assisted courses require editorial review before publication and show their reviewer and review date on lesson pages. Every lesson lists its sources.",
   },
   {
     q: "Will you cover crypto, forex or DeFi in depth?",
@@ -143,7 +143,7 @@ export default function Courses() {
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "online",
-      courseWorkload: `PT${t.lessons.length * 15}M`,
+      courseWorkload: `Estimated reading: ${t.lessons.reduce((minutes, lesson) => minutes + lesson.readingMinutes, 0)} minutes; quizzes and worksheet exercises take additional time.`,
     },
     author: t.editorial ? { "@type": "Organization", name: "TradeHQ" } : { "@type": "Person", name: "Anuga Weerasinghe" },
   }));
@@ -295,17 +295,17 @@ export default function Courses() {
                             {track.level}
                           </Badge>
                           <span className="text-xs text-muted-foreground inline-flex items-center gap-1">
-                            <Clock className="w-3 h-3" /> {track.lessons.length * 12}–{track.lessons.length * 15} min
+                            <Clock className="w-3 h-3" /> Est. {track.lessons.reduce((minutes, lesson) => minutes + lesson.readingMinutes, 0)} min reading
                           </span>
                         </div>
-                        <h3 className="text-xl font-semibold mb-1 group-hover:text-emerald-300 transition-colors">
+                        <h3 className="text-xl font-semibold mb-1 group-hover:text-emerald-300 [.light_&]:group-hover:text-emerald-800 transition-colors">
                           {track.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                           {track.description || track.tagline}
                         </p>
                         {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
-                          <p className="text-xs font-medium text-amber-300 mb-4" role="note">
+                          <p className="text-xs font-medium text-amber-300 [.light_&]:text-amber-800 mb-4" role="note">
                             Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator.
                             If you are new, start with basic spot-market order practice first.
                           </p>
@@ -405,7 +405,7 @@ export default function Courses() {
                 explore market concepts through hypothetical examples.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                AI-assisted additions identify their preparation and owner publication review on the course page.
+                AI-assisted additions identify their preparation and owner publication review on their lesson pages.
                 This review does not imply independent financial-professional verification. Lessons link their
                 public sources for the scope described. If you spot an error, please <Link to="/contact" className="text-emerald-400 hover:underline">contact us</Link> — reported corrections are reviewed before publication.
               </p>
@@ -415,7 +415,7 @@ export default function Courses() {
           {/* Risk warning — critical for AdSense YMYL */}
           <section className="mb-16" aria-labelledby="risk">
             <Card className="p-6 border-amber-500/30 bg-amber-500/[0.03]">
-              <h2 id="risk" className="text-lg font-bold mb-3 flex items-center gap-2 text-amber-300">
+              <h2 id="risk" className="text-lg font-bold mb-3 flex items-center gap-2 text-amber-300 [.light_&]:text-amber-800">
                 <AlertTriangle className="w-5 h-5" /> Important risk information
               </h2>
               <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
