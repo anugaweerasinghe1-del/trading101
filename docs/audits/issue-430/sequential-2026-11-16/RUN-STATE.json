@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T08:28:01.597261+00:00",
-  "phase": "LEARN-CLOSED-COURSES-NEXT",
+  "updatedAtUTC": "2026-11-17T08:35:57.307775+00:00",
+  "phase": "COURSES-PR451-UPDATED-LOCAL-PASS",
   "currentPage": "https://www.thetradehq.com/courses",
   "newAuditCompletedPages": 5,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "bd423e6b-e8ca-4aee-9f1a-a7032b987720",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Inspect current existing PR451 and Courses full editorial evidence; finish repair through exact-head CI/protected merge/native production/live reread/coverage. Do not duplicate PR.",
+  "nextStep": "Push existing PR451 updated head; verify all required CI and actual preview, merge normally, verify exact native Cloudflare production, reread and validate full coverage before closing Courses.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -56,12 +56,8 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 453,
-    "status": "MERGED",
-    "head": "54d0c201c0f63e22847d65b10981f36b0fdb764a",
-    "merge": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
-    "requiredChecks": "5/5 SUCCESS",
-    "mainReleaseWorkflow": "SUCCESS"
+    "number": 451,
+    "status": "OPEN; updated head local checks passed"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -104,5 +100,10 @@
     "closed": 3,
     "record": "page-006/closure-2026-11-17/PAGE-RECORD.json"
   },
-  "candidatePullRequestBranch": "issue-430-courses-reading-time-20261116"
+  "candidatePullRequestBranch": "issue-430-courses-reading-time-20261116",
+  "coursesFindings": {
+    "confirmed": 2,
+    "fixedLocally": 2,
+    "closed": 0
+  }
 }

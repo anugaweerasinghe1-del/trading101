@@ -305,7 +305,7 @@ export default function Courses() {
                           {track.description || track.tagline}
                         </p>
                         {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
-                          <p className="text-xs font-medium text-amber-300 mb-4" role="note">
+                          <p className="text-xs font-medium text-amber-300 [.light_&]:text-amber-800 mb-4" role="note">
                             Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator.
                             If you are new, start with basic spot-market order practice first.
                           </p>
@@ -415,7 +415,7 @@ export default function Courses() {
           {/* Risk warning — critical for AdSense YMYL */}
           <section className="mb-16" aria-labelledby="risk">
             <Card className="p-6 border-amber-500/30 bg-amber-500/[0.03]">
-              <h2 id="risk" className="text-lg font-bold mb-3 flex items-center gap-2 text-amber-300">
+              <h2 id="risk" className="text-lg font-bold mb-3 flex items-center gap-2 text-amber-300 [.light_&]:text-amber-800">
                 <AlertTriangle className="w-5 h-5" /> Important risk information
               </h2>
               <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
