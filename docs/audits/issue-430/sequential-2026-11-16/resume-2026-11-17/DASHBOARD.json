@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-17T16:21:42.732695+00:00",
+  "updatedAtUTC": "2026-11-17T16:37:51.113634+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -54,12 +54,14 @@
   },
   "newFindingsThisSession": {
     "confirmedPolicyIssues": 0,
-    "confirmedProductErrors": 2,
+    "confirmedProductErrors": 3,
     "qualityRisksLogged": 0,
-    "fixesMergedAndProductionVerified": 0,
-    "fixesAwaitingFinalHeadChecksMergeDeployment": 2,
+    "fixesMergedAndProductionVerified": 2,
+    "fixesAwaitingFinalHeadChecksMergeDeployment": 1,
     "pr": 459,
-    "finalSourceHead": "f2c886c5f1318e45e70f14a24e066f390fa01b5f"
+    "finalSourceHead": "f2c886c5f1318e45e70f14a24e066f390fa01b5f",
+    "pendingPR": 460,
+    "pendingHead": "8de4e617fda8e1041748178102b7806a31be477d"
   },
   "ownerProviderGates": [
     "Terms account-eligibility/legal wording",

@@ -1,0 +1,43 @@
+{
+  "pullRequest": 459,
+  "branch": "audit/issue430-resume-20261117",
+  "finalHeadSHA": "f2c886c5f1318e45e70f14a24e066f390fa01b5f",
+  "requiredChecks": "5/5 exact-head success; pr459-final-head-checks.json",
+  "mergeSHA": "95c328db6cf8375c3aae21f248a80343b328adcf",
+  "mergedTreeEqualsFinalHeadTree": "581e188446279312908d209003a984de1da3377b",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-17T16:35:08.634Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "52060974-1000-4b8f-9187-d18d454ea2bc",
+      "sha": "95c328db6cf8375c3aae21f248a80343b328adcf",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-17T16:24:12.488096Z"
+    },
+    "sourceGitHubRun": 44125354022,
+    "sourceGitHubJob": 134194809229,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44125354022/job/134194809229",
+    "note": "Native Cloudflare account read in authenticated CI; subscriptions, usage and unrelated provider data omitted."
+  },
+  "productionURL": "https://www.thetradehq.com/learn-trading-guide",
+  "liveRereadAtUTC": "2026-11-17T16:37:04.986693+00:00",
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    {
+      "id": "STRICT-GUIDE-001",
+      "before": "Light-mode green rgb14,124,104 ~3.989:1; red223,32,32 ~4.245:1 on fixed dark panel.",
+      "after": "Green52,211,153 ~10.624:1; red248,113,113 ~7.384:1. Four production width/theme views pass."
+    },
+    {
+      "id": "STRICT-GUIDE-002",
+      "before": "TechArticle image /og-image.jpg returns404 twice.",
+      "after": "TechArticle image /tradehq-preview-2026.png returns200 image/png and expected SHA2569f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a."
+    }
+  ],
+  "pageClosure": false,
+  "remaining": "Separate confirmed layout003 in460; complete Guide second-pass/source/state coverage still pending."
+}
