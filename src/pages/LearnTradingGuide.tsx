@@ -212,7 +212,7 @@ const LearnTradingGuide = () => {
             </section>
 
             {/* Right: Compound Calculator Tool (60%) */}
-            <section className="lg:col-span-7">
+            <section className="lg:col-span-7 flex flex-col">
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2">
                   <LineChart className="text-emerald-500 w-4 h-4" />
@@ -221,7 +221,7 @@ const LearnTradingGuide = () => {
                 <h3 className="text-xl font-bold text-foreground tracking-tight">Compound Growth Simulator</h3>
               </div>
               
-              <div className="p-1 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent border border-border/70 shadow-2xl h-full">
+              <div className="p-1 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent border border-border/70 shadow-2xl flex-1 min-h-0">
                 <div className="bg-card rounded-xl overflow-hidden p-2 md:p-5 h-full">
                   <CompoundCalculator />
                 </div>
