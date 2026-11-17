@@ -1,0 +1,28 @@
+{
+  "observedAtUTC": "2026-11-17T02:09:58.843Z",
+  "url": "https://www.thetradehq.com/contact",
+  "callsOrEmailsSent": 0,
+  "mutationsBlocked": [
+    "/cdn-cgi/rum"
+  ],
+  "cases": [
+    {
+      "javaScript": true,
+      "actualMailtoMatchesAlreadyPublishedSource": true,
+      "actualTelephoneMatchesAlreadyPublishedSource": true,
+      "emailProtectionPathAbsent": true
+    },
+    {
+      "javaScript": false,
+      "actualMailtoMatchesAlreadyPublishedSource": true,
+      "actualTelephoneMatchesAlreadyPublishedSource": true,
+      "emailProtectionPathAbsent": true
+    }
+  ],
+  "directDelivery": {
+    "http": 200,
+    "enabled": false,
+    "actualSend": "NOT EXERCISED"
+  },
+  "localValidationAndSelectableFallback": true
+}

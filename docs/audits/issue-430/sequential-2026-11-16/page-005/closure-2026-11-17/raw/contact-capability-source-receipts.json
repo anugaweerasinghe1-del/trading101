@@ -1,0 +1,40 @@
+{
+  "observedAtUTC": "2026-11-17T02:03:12.329963+00:00",
+  "scope": "Source corroboration after actual reading; no database/user lifecycle simulation claimed",
+  "assetCatalog": {
+    "assets": 170,
+    "virtualStartingCash": 100000
+  },
+  "files": [
+    {
+      "path": "src/lib/assets.ts",
+      "sha256": "ad0ec056e7656d24aa32636f4f6b8b0b875232b1f981b745d404b16f939b2ada"
+    },
+    {
+      "path": "src/lib/courseProgress.ts",
+      "sha256": "7bb35ad68bf299fe98f1fb9c5fe1c5fa49b1b2a9d14c140f731a98260ddf6cef"
+    },
+    {
+      "path": "src/lib/learningCloudConvergence.ts",
+      "sha256": "b28f889912eea52f7fd2e5b603dae6a16efff7f7cc8b5080be9b31dd204b0c1d"
+    },
+    {
+      "path": "src/lib/cloudPortfolio.ts",
+      "sha256": "5e43c4f73e5b93c850dd3ec2e5d7bea48eded6656f1aadf348c8954137bd4f56"
+    },
+    {
+      "path": "src/pages/Contact.tsx",
+      "sha256": "a93b8ed30f9f703c43b4c2c004d8883d124e280589b84689f2fc4a1bff31f1d2"
+    },
+    {
+      "path": "src/components/DirectContactOption.tsx",
+      "sha256": "3c36314a9232d7c6f00fd3bf093ed940d8776dd1e92577b7cbf83245a033de0c"
+    },
+    {
+      "path": "functions/api/contact.ts",
+      "sha256": "4a2172eb6cca2676ecd2b221c3d3dc18424d95e2a1a5e5d24c3b30b5eb07e432"
+    }
+  ],
+  "existingFullBuildRegressions": "Passed account learning progress/concurrency, guest/order/recovery, owner isolation, newsletter and contact isolated fixtures; no real providers",
+  "privateUserOperations": "NOT EXERCISED"
+}

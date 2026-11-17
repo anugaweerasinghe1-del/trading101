@@ -1,13 +1,13 @@
 {
-  "updatedAtUTC": "2026-11-17T01:46:54.936069+00:00",
-  "phase": "CONTACT-COPY-FIX-PR452",
-  "currentPage": "https://www.thetradehq.com/contact",
-  "newAuditCompletedPages": 3,
+  "updatedAtUTC": "2026-11-17T03:26:32.683713+00:00",
+  "phase": "LEARN-FIXES-LOCAL-VERIFIED-PR-READY",
+  "currentPage": "https://www.thetradehq.com/learn",
+  "newAuditCompletedPages": 4,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 160,
+  "publisherPagesStillQueued": 159,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
-  "priorRemediation": "Last metadata observed Nov16 16:02: Bitcoin9/9, PriceFeeds5/5; Diversification draft6/published3 pending normal owner review. Not refreshed Nov17.",
+  "priorRemediation": "18/19; Diversification draft6/public3 remains normal owner publication pending. Not19/19.",
   "homepageFindings": {
     "confirmed": 5,
     "qualityRisks": 3,
@@ -16,18 +16,18 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "5b0b82bb-619f-4ac4-b7d4-d85352bb60fc",
+  "nativeCloudflareId": "f1ffac7b-f461-4462-ae63-2fc0fb483de5",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Wait for all five required checks on the updated PR452 head, merge normally, verify native exact production SHA and actual live Contact words/controls. Then close Contact and begin Learn.",
+  "nextStep": "Create/complete Learn repair PR; require exact-head5/5 CI and normal merge, native exact production SHA, live final complete word/media skeptical reread and coverage before closing Learn. Then finish existing Courses PR451.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 17,
-  "latestClosedPageRecord": "page-003/closure-2026-11-17/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
+  "freshReviewTotalClosedCases": 20,
+  "latestClosedPageRecord": "page-005/closure-2026-11-17/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "c7ec39d6dad1717c241d604e0282b51c654ce229",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -36,24 +36,18 @@
     "closed": 3
   },
   "production": {
-    "mergeSHA": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
-    "deploymentPullRequest": 450,
-    "originalRepairPullRequests": [
-      446,
-      447
-    ],
+    "mergeSHA": "c7ec39d6dad1717c241d604e0282b51c654ce229",
     "nativeCloudflare": {
-      "id": "5b0b82bb-619f-4ac4-b7d4-d85352bb60fc",
-      "sha": "f4fb39cc247d2cad421991baf12fb5f861ad0e96",
+      "id": "f1ffac7b-f461-4462-ae63-2fc0fb483de5",
+      "sha": "c7ec39d6dad1717c241d604e0282b51c654ce229",
       "environment": "production",
       "branch": "main",
       "status": "success",
-      "createdAt": "2026-11-16T19:07:02.670532Z"
+      "createdAt": "2026-11-17T01:58:29.097747Z"
     },
-    "nativeObservedAtUTC": "2026-11-17T00:56:25.293Z",
-    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43935936061/job/133733363289",
-    "liveRereadAtUTC": "2026-11-17T01:17:50.650681+00:00",
-    "liveRereadTimestampBasis": "Completion attestation recorded after the actual complete live/native reread and source/context assessment, not a per-word timing measurement."
+    "nativeObservedAtUTC": "2026-11-17T02:09:16.545Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43999535367/job/133764146159",
+    "liveRereadAtUTC": "2026-11-17T02:24:04.927011+00:00"
   },
   "resumeRestrictions": [
     "Ad serving disabled",
@@ -63,8 +57,11 @@
   ],
   "latestPR": {
     "number": 452,
-    "status": "OPEN; updated exact-head CI required",
-    "branch": "issue-430-resume-20261117"
+    "status": "MERGED",
+    "head": "fef36780f1a6bf377d8362936ddf37476a5f6e7f",
+    "merge": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+    "requiredChecks": "5/5 SUCCESS",
+    "mainReleaseWorkflow": "SUCCESS"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -76,15 +73,36 @@
   "blockers": [
     {
       "id": "STRICT-TERMS-004",
-      "scope": "Owner legal eligibility decision; keep current access, no invented universal18+ rule"
+      "scope": "Owner legal account-eligibility wording; preserve current access and analytics-only18+ preference"
     },
     {
-      "scope": "Original Terms full byte capture/event timing not recovered; exact original quoted defects/source revision retained"
+      "id": "LEGACY-COURSE-PUBLICATION",
+      "scope": "Read-only Nov17 metadata: Diversification draft6/public3; normal owner review/publication pending. No19/19 claim."
     }
   ],
   "contactFindings": {
-    "001": "Native contact targets verified in current production; preserve one case across449/450",
-    "002": "Word spaces corrected; compiled and preview desktop/mobile passed; release pending",
-    "003": "Four inclusive-limit messages corrected; numeric bounds unchanged; final build/type/API checks pass; release pending"
-  }
+    "confirmed": 3,
+    "fixedRechecked": 3,
+    "pageStatus": "FIXED-RECHECKED"
+  },
+  "publisherPagesRemaining": 159,
+  "caseTotals": {
+    "confirmedFixedRechecked": 13,
+    "qualityRisksFixedRechecked": 6,
+    "auxiliaryFixedRechecked": 1,
+    "ownerDecisionOpen": 1,
+    "newCasesImplementedThisResume": 2
+  },
+  "limitations": [
+    "Original Terms historical raw full-body/event timing not recovered; exact pre-edit quotes/source revision retained; not invented.",
+    "Private Google/CMP/provider/inbox/retention operations unverified."
+  ],
+  "learnFindings": {
+    "confirmed": 2,
+    "qualityRisks": 1,
+    "fixedLocally": 3,
+    "closed": 0,
+    "record": "page-006/WORKING.md"
+  },
+  "candidatePullRequestBranch": "issue-430-contact-closure-20261117"
 }

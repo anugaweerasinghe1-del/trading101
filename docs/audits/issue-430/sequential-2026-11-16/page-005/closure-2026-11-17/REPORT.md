@@ -1,0 +1,21 @@
+# Contact closure — November 17, 2026
+
+FIXED-RECHECKED for the public publisher page. **4/163 completed**,159 remain, including blocked Terms. Reviewer: Codex assistant; prior contributor, not a human or Google reviewer.
+
+Fresh actual rendered/native wording, all three opened FAQ answers, metadata/schema, attributes and menu/consent text were read before correction and reread on the exact deployed release.40 explicitly typed authored source states/variants were also read and assessed. Coverage is531/531 in both passes:360 guest occurrences,131 native occurrences and40 source-only states. These overlap and are not531 unique paragraphs. Private and contact-redacted public records pass the completeness validator; all six negative controls reject omissions/corruption. A validator does not establish editorial truth.
+
+Three confirmed cases are closed:
+
+- STRICT-CONTACT-001: native contact actions were missing, then production Cloudflare obfuscation still broke no-JS email after PR449. PR450 narrowly excluded that already-public native Contact copy from obfuscation. Actual custom-domain JS and no-JS targets now match the existing public source, with no decoder-dependent email-protection URL. Count one case across both PRs.
+- STRICT-CONTACT-002: actual paragraph text joined words as intoGmailor. PR452 adds literal spaces around the existing link, preserving its destination/behavior.
+- STRICT-CONTACT-003: four conditional messages said under N despite inclusive max(N)/maxlength=N. PR452 says N characters or fewer; numeric limits remain100,255,150,2000. All four messages and acceptance at exactly N were verified against deployed code in an ephemeral browser fixture. Only HTML maxlength was removed to reach conditional errors; application source was unchanged. Clipboard was denied to keep the synthetic accepted draft local. This is not an unmodified end-user flow or a real delivery test.
+
+No case is labeled a proven AdSense violation. Initial contact-boundary quote hash naming was corrected in an append-only provenance event; the final record retains the original field and separately hashes the complete original quote. The four old validation messages are a composite source inventory, not a fabricated single rendered paragraph.
+
+PR452 final head fef36780f1a6bf377d8362936ddf37476a5f6e7f passed all five required checks before normal protected squash merge. Main release workflow43999535367, including native signals and strict readiness, also passed. Native Cloudflare production/main deployment f1ffac7b-f461-4462-ae63-2fc0fb483de5 is success at **c7ec39d6dad1717c241d604e0282b51c654ce229**, observed02:09:16.545Z. The complete final reread and tests followed that native observation. The spacing helper retains its old compiledDesktopAndMobile label, but the production invocation/actual captured live paragraph and manifest identify the real site; the label is not a claim of another local build.
+
+Four desktop/mobile × JS/no-JS presentation cases pass with no overflow/runtime exceptions. Current direct-delivery GET returns disabled, and ordinary local validation/selectable draft fallback works. No email, phone call, real provider POST, paid model generation, account change, reset/deletion or protected course publication occurred. Isolated contact API regressions and the full build/postbuild/TypeScript checks pass. The initial native V8 build crash and successful investigation/retries remain recorded in spacing-local-verification.json; no gate was bypassed.
+
+Public projection redacts8 contact occurrences and supporting files, retains separate original block/review/artifact hashes, and excludes screenshots/mail identifiers. Full originals stay local. Public text hashes describe sanitized copies, not website byte equality. Original private record SHA256: `18b29d12f8365ddfbf30f47e67de513a66728563ae72c96cae5263f43103645d`.
+
+Private inbox/response history, provider retention/deletion/contracts, actual downstream delivery and private Google account/CMP settings remain UNVERIFIED. Shared music/image/source checks retain their dates and are not duplicate new findings. Ads remain disabled. The accepted old notification criterion is supported by the actual PR450 preview-success email plus separate native production proof; the email is not relabeled production. No AdSense approval is promised.

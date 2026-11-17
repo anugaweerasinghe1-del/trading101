@@ -1,0 +1,25 @@
+{
+  "observedAtUTC": "2026-11-17T02:10:04.534Z",
+  "url": "https://www.thetradehq.com/contact",
+  "renderedUpperLimitMessages": [
+    "Name must be 100 characters or fewer",
+    "Email must be 255 characters or fewer",
+    "Subject must be 150 characters or fewer",
+    "Message must be 2000 characters or fewer"
+  ],
+  "numericBounds": {
+    "name": 100,
+    "email": 255,
+    "subject": 150,
+    "message": 2000
+  },
+  "originalHTMLMaxLength": {
+    "name": "100",
+    "email": "255",
+    "subject": "150",
+    "message": "2000"
+  },
+  "exactBoundaryAcceptedByActualValidator": true,
+  "fixtureScope": "Ephemeral browser only: remove HTML maxlength to reach conditional Zod upper-limit messages; clipboard denied to keep the accepted synthetic boundary draft selectable locally. Application source unmodified. All external mutations blocked; zero real messages, emails, clipboard writes or user records.",
+  "unmodifiedUserFlowClaim": false
+}

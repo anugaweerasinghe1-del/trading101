@@ -1,0 +1,326 @@
+{
+  "recordedAtUTC": "2026-11-17T03:26:32.683713+00:00",
+  "sourceBase": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+  "status": "LOCAL-VERIFIED-RELEASE-PENDING",
+  "findings": [
+    "STRICT-LEARN-001",
+    "STRICT-LEARN-002",
+    "STRICT-LEARN-003"
+  ],
+  "buildCloudflare": "PASS complete release build and existing postbuild verification suite",
+  "typescriptApp": "PASS --noEmit",
+  "lightMode": {
+    "observedAtUTC": "2026-11-17T03:14:03.944Z",
+    "scope": "Eight targeted small-text cases; not a whole-page WCAG certification. Loaded artwork awaited. Category plate bound uses any possible underlying image.",
+    "cases": [
+      {
+        "label": "Quick-read category",
+        "foregroundRGB": [
+          23.0,
+          30.0,
+          43.0
+        ],
+        "backgroundForComparisonRGB": [
+          196.0,
+          197.60000000000002,
+          200.0
+        ],
+        "ratio": 9.723188222661229,
+        "basis": "Conservative minimum composited light plate over any darker image",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Take a course",
+        "foregroundRGB": [
+          6.0,
+          95.0,
+          70.0
+        ],
+        "backgroundForComparisonRGB": [
+          245,
+          247,
+          250
+        ],
+        "ratio": 7.15944047573032,
+        "basis": "base light background comparison",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Full courses eyebrow",
+        "foregroundRGB": [
+          6.0,
+          95.0,
+          70.0
+        ],
+        "backgroundForComparisonRGB": [
+          245,
+          247,
+          250
+        ],
+        "ratio": 7.15944047573032,
+        "basis": "base light background comparison",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "View all courses",
+        "foregroundRGB": [
+          6.0,
+          95.0,
+          70.0
+        ],
+        "backgroundForComparisonRGB": [
+          245,
+          247,
+          250
+        ],
+        "ratio": 7.15944047573032,
+        "basis": "base light background comparison",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Quick-read beginner badge",
+        "foregroundRGB": [
+          6.0,
+          95.0,
+          70.0
+        ],
+        "backgroundForComparisonRGB": [
+          236.0,
+          253.0,
+          245.0
+        ],
+        "ratio": 7.2940778946897025,
+        "basis": "Actual opaque badge background",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Quick-read intermediate badge",
+        "foregroundRGB": [
+          30.0,
+          64.0,
+          175.0
+        ],
+        "backgroundForComparisonRGB": [
+          239.0,
+          246.0,
+          255.0
+        ],
+        "ratio": 8.014836919642203,
+        "basis": "Actual opaque badge background",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Quick-read advanced badge",
+        "foregroundRGB": [
+          146.0,
+          64.0,
+          14.0
+        ],
+        "backgroundForComparisonRGB": [
+          255.0,
+          251.0,
+          235.0
+        ],
+        "ratio": 6.837002380367332,
+        "basis": "Actual opaque badge background",
+        "meetsScoped45Goal": true
+      },
+      {
+        "label": "Course title on hover",
+        "foregroundRGB": [
+          6.0,
+          95.0,
+          70.0
+        ],
+        "backgroundForComparisonRGB": [
+          245,
+          247,
+          250
+        ],
+        "ratio": 7.15944047573032,
+        "basis": "base light background comparison",
+        "meetsScoped45Goal": true
+      }
+    ]
+  },
+  "localProbeProvenance": {
+    "recordedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+    "scope": "Explicit provenance clarification; original helper receipts kept unchanged. Candidate source files unchanged since the successful release build and loaded-state probe. Final preview/production probes must receive their exact SHA explicitly.",
+    "receipts": [
+      {
+        "artifact": "learn-light-local-after.json",
+        "originalArtifactSHA256": "577d216702c7294c6e67db2cefc722d20f9ea30f6ea138a5506d7a5abf7596cb",
+        "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+        "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+        "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+        "candidateSourceHashes": {
+          "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+          "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+        }
+      },
+      {
+        "artifact": "learn-light-local-final.json",
+        "originalArtifactSHA256": "b10512c4989aab5972899a3ff3e091dca5c0810c7e91828f2e1b1c64fff4fc6c",
+        "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+        "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+        "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+        "candidateSourceHashes": {
+          "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+          "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+        }
+      },
+      {
+        "artifact": "learn-light-local-loaded-final.json",
+        "originalArtifactSHA256": "49c8d2632c4e950002d9829a65fa3d023f72f141546bca3626df3c3dfce1301a",
+        "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+        "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+        "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+        "candidateSourceHashes": {
+          "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+          "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+        }
+      }
+    ]
+  },
+  "sharedImageVerification": {
+    "observedAtUTC": "2026-11-17T03:02:31.620Z",
+    "origin": "http://127.0.0.1:4178",
+    "rows": [
+      {
+        "url": "http://127.0.0.1:4178/learn",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "https://www.thetradehq.com/tradehq-preview-2026.png"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals/what-is-an-option",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals/defined-risk-spreads",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      },
+      {
+        "url": "http://127.0.0.1:4178/courses/options-trading-fundamentals/options-risk-management",
+        "http": 200,
+        "oldImageReferencesAbsent": true,
+        "replacementImageSHA256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f",
+        "metadataImageValues": [
+          "/assets/futures-hero-DsjhfM9Q.jpg"
+        ],
+        "imageEditorialScope": "Existing inspected text-free illustration; decorative chart is not a payoff example or market forecast."
+      }
+    ],
+    "scope": "Only affected shared illustration and image metadata verified. No full-page editorial credit for these routes. No model call, email or account mutation."
+  },
+  "metaImageVerification": {
+    "observedAtUTC": "2026-11-17T03:13:44.049Z",
+    "rows": [
+      {
+        "url": "https://www.thetradehq.com/tradehq-preview-2026.png",
+        "status": 200,
+        "sha256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+        "width": 1731,
+        "height": 909,
+        "matchesActualInspectedFile": true
+      },
+      {
+        "url": "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116",
+        "status": 200,
+        "sha256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+        "width": 1731,
+        "height": 909,
+        "matchesActualInspectedFile": true
+      }
+    ],
+    "visibleWords": "TradeHQ; Learn Trading. Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface \u00b7 Virtual money only.",
+    "scope": "Fresh image words read from actual matching file; no fake live screenshot or guaranteed performance inferred. Original copyright/provider contracts unverified."
+  },
+  "financialCapabilityCorroboration": {
+    "verificationRecordedAtUTC": "2026-11-17T03:07:53.528092+00:00",
+    "scope": "Read-only deployed function metadata and current source; no user rows, orders, account change or generation",
+    "project": "cbdktpjgczhthflspqjb",
+    "databaseFunction": "tradehq_private.record_trade",
+    "deployedExtractedFeeRate": "0.001",
+    "guestSource": "src/lib/portfolio.ts",
+    "guestFeeFormula": "total * 0.001",
+    "percentConversion": "0.001 * 100 = 0.1%",
+    "glossaryEntries": 49,
+    "visibleLearnWikiLinks": 21,
+    "availableStructuredTracks": 7,
+    "availableStructuredLessons": 29,
+    "numericExercise": "The native text asks the reader to calculate rather than giving a forecast or fixed profit. Fee rate corroborated without placing any order."
+  },
+  "firstPassScope": {
+    "capturedGuestOccurrences": 580,
+    "capturedNativeOccurrences": 128,
+    "sourceOnlyStatesAndTitleInputs": 55,
+    "mainImageOccurrencesInspected": 13,
+    "originalDistinctImageBytesInspected": 10,
+    "sharedOGImageInspected": true,
+    "linkedLessonBodiesAndQuizzesCredited": 0
+  },
+  "limits": [
+    "Scope is accessible publisher copy plus explicitly typed source-only states; no real signed-in lifecycle or private account data tested.",
+    "Actual private asset ownership/license/provider contracts not independently verified; repository assets and visible attributions inspected, no infringement inferred.",
+    "Existing W3C alternate-presentation allowance considered; targeted light readability repair is not a claim of whole-site WCAG/AdSense failure.",
+    "Unrelated long daily-seed search output was truncated and excluded; no Daily question/page receives review credit.",
+    "Final exact-head CI, protected merge, native production SHA, live complete skeptical reread and coverage closure still pending."
+  ],
+  "standaloneModelCalls": 0,
+  "emailsCallsOrdersOrUserDataDeletion": 0
+}
