@@ -1,0 +1,20 @@
+{
+  "atUTC": "2026-11-17T16:04:52.926437+00:00",
+  "build": "npm run build:cloudflare PASS, all existing postbuild checks",
+  "typescript": "npx tsc --noEmit -p tsconfig.app.json PASS",
+  "appearance": "guide/local-appearance.json four width/theme views PASS",
+  "preview": "guide/preview459-appearance.json four real Cloudflare preview views PASS",
+  "arithmetic": {
+    "zero": "0",
+    "noGrowth": "7000",
+    "nominal12NoContributions": "3300.3868945736685",
+    "defaultWithDeduction": "9440.536479341283"
+  },
+  "renderedRoundingAssertions": "PASS independently recomputed final values match four rounded rendered results",
+  "inputRangeScope": "Four cases only; not every possible numerical input",
+  "quizScope": "Allthree authored patterns with correct/wrong outcome in isolated guest contexts using controlled dates",
+  "progressScope": "Allsix locally self-reported completion states and reload; no certification or real learner record",
+  "links": "All29 actual Chromium target navigation responses200; request-client IPv6 failures retained separately",
+  "initialToolFailures": "false-positive-ledger.jsonl",
+  "fullAuditClaim": false
+}

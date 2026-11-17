@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T15:58:32.056414+00:00",
-  "phase": "GUIDE-STRICT-GUIDE-001-LOCAL-PASS-RELEASE-PENDING",
+  "updatedAtUTC": "2026-11-17T16:10:32.937997+00:00",
+  "phase": "GUIDE-TWO-PRODUCT-DEFECTS-FINAL-HEAD-VALIDATION-PENDING",
   "currentPage": "https://www.thetradehq.com/learn-trading-guide",
   "newAuditCompletedPages": 6,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Open exact-head PR for scoped calculator colour correction and recovered Courses evidence; verify protected checks/merge/native production/live correction; continue P08 missing full second pass and source/media/state mapping. Never mark P08 complete from this checkpoint.",
+  "nextStep": "PR459 now includes missing schema-image fix. Validate exact updated final head, protected merge, native merged-SHA deployment and fresh live correction checks. P08 remains partial; complete all pending block/source/state/metadata passes before next page.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -56,12 +56,8 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 451,
-    "status": "MERGED",
-    "head": "7e807b56fd6e52cd1f104df88cfef54d0942887d",
-    "merge": "fa0b70c0d49db541bf5f87fd5305e8bf8f9bb6f1",
-    "requiredChecks": "5/5 SUCCESS",
-    "mainReleaseWorkflow": "SUCCESS"
+    "number": 459,
+    "status": "OPEN; updated source requires fresh exact-head checks"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -123,16 +119,19 @@
     "historicalClosuresRecovered": 6,
     "newStrictClosuresThisSession": 0,
     "currentPage": "STRICT-0008",
-    "extractedCapturedTextOccurrences": 407,
-    "pass1ReviewedCapturedOccurrences": 407,
-    "pass2ReviewedCapturedOccurrences": 0,
+    "extractedCapturedTextOccurrences": 713,
+    "pass1ReviewedCapturedOccurrences": 713,
+    "pass2ReviewedCapturedOccurrences": 284,
     "pageStatus": "PARTIAL-REVIEW",
     "limitations": [
-      "Counts include overlapping text/version/location occurrences; not unique paragraphs.",
-      "Source references are component-level mappings; exact line/block mapping remains incomplete.",
-      "Every rotating glossary snippet, menus/metadata, social image, extra input extremes and signed-in navigation not yet exhausted.",
-      "Capture equality alone cannot close this page.",
-      "One product defect corrected locally, awaiting exact-head PR/merge/native deployment/live verification."
-    ]
+      "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
+      "Fresh second pass covers only exactly matched current body occurrences; other menu/quiz/progress/source alternatives remain pending.",
+      "Metadata values were read but have not been fully integrated into this block manifest.",
+      "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
+      "No unqualified closure claim; product fix release independent of page closure."
+    ],
+    "extractedSourceOnlyAlternatives": 49,
+    "totalRecordedBlocks": 762,
+    "pass1ReviewedSourceOnlyAlternatives": 49
   }
 }

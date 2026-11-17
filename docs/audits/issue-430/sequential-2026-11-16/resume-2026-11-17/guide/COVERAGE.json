@@ -4,15 +4,18 @@
   "historicalClosuresRecovered": 6,
   "newStrictClosuresThisSession": 0,
   "currentPage": "STRICT-0008",
-  "extractedCapturedTextOccurrences": 407,
-  "pass1ReviewedCapturedOccurrences": 407,
-  "pass2ReviewedCapturedOccurrences": 0,
+  "extractedCapturedTextOccurrences": 713,
+  "pass1ReviewedCapturedOccurrences": 713,
+  "pass2ReviewedCapturedOccurrences": 284,
   "pageStatus": "PARTIAL-REVIEW",
   "limitations": [
-    "Counts include overlapping text/version/location occurrences; not unique paragraphs.",
-    "Source references are component-level mappings; exact line/block mapping remains incomplete.",
-    "Every rotating glossary snippet, menus/metadata, social image, extra input extremes and signed-in navigation not yet exhausted.",
-    "Capture equality alone cannot close this page.",
-    "One product defect corrected locally, awaiting exact-head PR/merge/native deployment/live verification."
-  ]
+    "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
+    "Fresh second pass covers only exactly matched current body occurrences; other menu/quiz/progress/source alternatives remain pending.",
+    "Metadata values were read but have not been fully integrated into this block manifest.",
+    "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
+    "No unqualified closure claim; product fix release independent of page closure."
+  ],
+  "extractedSourceOnlyAlternatives": 49,
+  "totalRecordedBlocks": 762,
+  "pass1ReviewedSourceOnlyAlternatives": 49
 }

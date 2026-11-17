@@ -70,7 +70,7 @@ const LearnTradingGuide = () => {
     "headline": "Beginner Trading Practice Guide",
     "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
     "author": { "@type": "Organization", "name": "TradeHQ" },
-    "image": `${DOMAIN}/og-image.jpg`
+    "image": `${DOMAIN}/tradehq-preview-2026.png`
   };
 
   const faqSchema = {
