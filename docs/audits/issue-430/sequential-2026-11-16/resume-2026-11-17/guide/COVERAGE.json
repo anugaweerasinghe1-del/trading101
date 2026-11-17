@@ -6,17 +6,22 @@
   "currentPage": "STRICT-0008",
   "extractedCapturedTextOccurrences": 713,
   "pass1ReviewedCapturedOccurrences": 713,
-  "pass2ReviewedCapturedOccurrences": 284,
-  "pageStatus": "PARTIAL-REVIEW",
+  "pass2ReviewedCapturedOccurrences": 713,
+  "pageStatus": "PARTIAL-REVIEW-EXTRACTION-RECONCILIATION-PENDING",
   "limitations": [
     "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
-    "Fresh second pass covers only exactly matched current body occurrences; other menu/quiz/progress/source alternatives remain pending.",
-    "Metadata values read and integrated as separate leaf records; fresh complete second metadata pass remains pending.",
+    "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
+    "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
     "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
-    "No unqualified closure claim; product fix release independent of page closure."
+    "No unqualified closure claim; product fix release independent of page closure.",
+    "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure."
   ],
   "extractedSourceOnlyAlternatives": 49,
-  "totalRecordedBlocks": 821,
+  "totalRecordedBlocks": 822,
   "pass1ReviewedSourceOnlyAlternatives": 49,
-  "pass1ReviewedMetadataBlocks": 59
+  "pass1ReviewedMetadataBlocks": 60,
+  "pass2ReviewedSourceOnlyAlternatives": 49,
+  "pass2ReviewedMetadataBlocks": 60,
+  "totalPass2Reviewed": 822,
+  "pendingSecondPass": 0
 }
