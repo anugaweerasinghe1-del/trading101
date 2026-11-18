@@ -1,0 +1,221 @@
+{
+  "scope": "Current Portfolio guest HTML. Two widths and two isolated portfolio states. All off-site calls blocked.",
+  "rows": [
+    {
+      "width": 390,
+      "holding": false,
+      "atUTC": "2026-11-18T10:34:34.349594+00:00",
+      "initialDialog": "- dialog \"Portfolio review mentor\":\n  - img\n  - heading \"Educational Trading Mentor\" [level=3]\n  - paragraph: Curated knowledge engine\n  - button \"Close portfolio review mentor\":\n    - img\n  - img\n  - paragraph: Hi! I'm your educational trading mentor. I can use your simulated portfolio context to explain positions, P&L and risk concepts.\n  - textbox \"Question for the portfolio review mentor\":\n    - /placeholder: Ask about trading strategies...\n  - button \"Send portfolio review question\" [disabled]:\n    - img",
+      "observations": [
+        {
+          "id": "portfolio",
+          "prompt": "portfolio summary",
+          "response": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $100.0K (100% of book)\n• Positions: 0\n• Trades executed: 0\n• Realized win rate: unavailable in this snapshot\n\nObservation: You're sitting on heavy cash (100%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "risk",
+          "prompt": "risk review",
+          "response": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "history",
+          "prompt": "trade history",
+          "response": "Built-in educational response:\n\nNo recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "asset",
+          "prompt": "analyze this asset",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "assumptions",
+          "prompt": "review practice assumptions",
+          "response": "Built-in educational response:\n\nPractice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "advice",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "fallback",
+          "prompt": "unclassified fixture question zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "topic",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)"
+        }
+      ],
+      "escapeReturnsFocus": true
+    },
+    {
+      "width": 390,
+      "holding": true,
+      "atUTC": "2026-11-18T10:34:36.736072+00:00",
+      "initialDialog": "- dialog \"Portfolio review mentor\":\n  - img\n  - heading \"Educational Trading Mentor\" [level=3]\n  - paragraph: Curated knowledge engine\n  - button \"Close portfolio review mentor\":\n    - img\n  - img\n  - paragraph: Hi! I'm your educational trading mentor. I can use your simulated portfolio context to explain positions, P&L and risk concepts.\n  - textbox \"Question for the portfolio review mentor\":\n    - /placeholder: Ask about trading strategies...\n  - button \"Send portfolio review question\" [disabled]:\n    - img",
+      "observations": [
+        {
+          "id": "portfolio",
+          "prompt": "portfolio summary",
+          "response": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $99.5K (99% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 1% of book, P&L -0.10%\n\nObservation: You're sitting on heavy cash (99%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "risk",
+          "prompt": "risk review",
+          "response": "Built-in educational response:\n\nRisk review:\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "history",
+          "prompt": "trade history",
+          "response": "Built-in educational response:\n\nTrade history review (1 recorded trade):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "asset",
+          "prompt": "analyze this asset",
+          "response": "Built-in educational response:\n\nAAPL — Snapshot percentage change: +1.37%. Check the displayed quote source and observation window; this is not a forecast.\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "assumptions",
+          "prompt": "review practice assumptions",
+          "response": "Built-in educational response:\n\nPractice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "advice",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "fallback",
+          "prompt": "unclassified fixture question zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "topic",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)"
+        }
+      ],
+      "escapeReturnsFocus": true
+    },
+    {
+      "width": 1440,
+      "holding": false,
+      "atUTC": "2026-11-18T10:34:34.748124+00:00",
+      "initialDialog": "- dialog \"Portfolio review mentor\":\n  - img\n  - heading \"Educational Trading Mentor\" [level=3]\n  - paragraph: Curated knowledge engine\n  - button \"Close portfolio review mentor\":\n    - img\n  - img\n  - paragraph: Hi! I'm your educational trading mentor. I can use your simulated portfolio context to explain positions, P&L and risk concepts.\n  - textbox \"Question for the portfolio review mentor\":\n    - /placeholder: Ask about trading strategies...\n  - button \"Send portfolio review question\" [disabled]:\n    - img",
+      "observations": [
+        {
+          "id": "portfolio",
+          "prompt": "portfolio summary",
+          "response": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $100.0K (100% of book)\n• Positions: 0\n• Trades executed: 0\n• Realized win rate: unavailable in this snapshot\n\nObservation: You're sitting on heavy cash (100%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "risk",
+          "prompt": "risk review",
+          "response": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "history",
+          "prompt": "trade history",
+          "response": "Built-in educational response:\n\nNo recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "asset",
+          "prompt": "analyze this asset",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "assumptions",
+          "prompt": "review practice assumptions",
+          "response": "Built-in educational response:\n\nPractice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "advice",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "fallback",
+          "prompt": "unclassified fixture question zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "topic",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)"
+        }
+      ],
+      "escapeReturnsFocus": true
+    },
+    {
+      "width": 1440,
+      "holding": true,
+      "atUTC": "2026-11-18T10:34:36.774481+00:00",
+      "initialDialog": "- dialog \"Portfolio review mentor\":\n  - img\n  - heading \"Educational Trading Mentor\" [level=3]\n  - paragraph: Curated knowledge engine\n  - button \"Close portfolio review mentor\":\n    - img\n  - img\n  - paragraph: Hi! I'm your educational trading mentor. I can use your simulated portfolio context to explain positions, P&L and risk concepts.\n  - textbox \"Question for the portfolio review mentor\":\n    - /placeholder: Ask about trading strategies...\n  - button \"Send portfolio review question\" [disabled]:\n    - img",
+      "observations": [
+        {
+          "id": "portfolio",
+          "prompt": "portfolio summary",
+          "response": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $99.5K (99% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 1% of book, P&L -0.10%\n\nObservation: You're sitting on heavy cash (99%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "risk",
+          "prompt": "risk review",
+          "response": "Built-in educational response:\n\nRisk review:\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "history",
+          "prompt": "trade history",
+          "response": "Built-in educational response:\n\nTrade history review (1 recorded trade):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "asset",
+          "prompt": "analyze this asset",
+          "response": "Built-in educational response:\n\nAAPL — Snapshot percentage change: +1.37%. Check the displayed quote source and observation window; this is not a forecast.\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "assumptions",
+          "prompt": "review practice assumptions",
+          "response": "Built-in educational response:\n\nPractice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "advice",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "fallback",
+          "prompt": "unclassified fixture question zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)"
+        },
+        {
+          "id": "topic",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)"
+        }
+      ],
+      "escapeReturnsFocus": true
+    }
+  ]
+}

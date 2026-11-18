@@ -654,7 +654,12 @@
       "reason": "Both compiled widths display the applied 365-day or 1-day horizon in narrative, figure and ending chart tick. Each explains the original request and resulting limit."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The 400-day and zero-day requests explain their applied bounds, 365 and one day. Chart endpoints, visible captions and narratives match at both widths. The ordinary three-day control still works.",
+      "reviewer": "Codex assistant, separate public production reread",
+      "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+      "contentReference": "production479-final-scenario.json",
+      "contentSHA256": "1fdec4182b83d948ec1686163d4d4ce712770503a52b685747d16aa2baa05e43"
     },
     "findingId": "STRICT-PORTFOLIO-003"
   },
@@ -690,7 +695,12 @@
       "reason": "The displayed $2.55 is the rounded $255.25 times 1%. The -99.0% row and narrative agree with the applied loss floor on both widths."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The requested −150% shock is explicitly limited to −99%. The resulting $2.55 per-asset price matches 1% of the original $255.25. Both layout variants report the same bound without a negative price.",
+      "reviewer": "Codex assistant, separate public production reread",
+      "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+      "contentReference": "production479-final-scenario.json",
+      "contentSHA256": "1fdec4182b83d948ec1686163d4d4ce712770503a52b685747d16aa2baa05e43"
     },
     "findingId": "STRICT-PORTFOLIO-004"
   },
@@ -1080,5 +1090,319 @@
       "reason": "The source deliberately accepts snapshots at least 20 hours old and discards the selected timestamp. The 22-hour and 168-hour browser baselines receive identical time labels. This is incorrect interval labelling.",
       "reviewer": "Codex assistant, separate browser and source comparison"
     }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0058",
+    "findingId": "STRICT-PORTFOLIO-005",
+    "text": "Practice price ticker | Stop price ticker motion | Start price ticker motion | Scroll practice prices",
+    "sha256": "10f5981b04d3c82ae14ff9371edac13d2f179443fcf781f98fdc31034aee428f",
+    "source": "src/components/PriceTicker.tsx",
+    "sourceRevision": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "contentReference": "local-final480-ticker.json",
+    "contentSHA256": "8737fa9d2b8524716eacbfababaa209bf5c096544a8af8758486fd0717127492",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Four compiled width and motion-preference combinations offer start and stop. Reduced motion starts stationary, keyboard arrows scroll the static list, and only one set of rows is exposed while stopped."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0059",
+    "findingId": "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
+    "text": "Play background music | Open portfolio review mentor",
+    "sha256": "dac2b9c32ea8b34e59d4b515838e2b1bb7221ed71dfec2df0acda698856375a6",
+    "source": "src/components/AIAssistant.tsx; src/components/BackgroundMusic.tsx",
+    "sourceRevision": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "contentReference": "local-final480-ticker.json",
+    "contentSHA256": "8737fa9d2b8524716eacbfababaa209bf5c096544a8af8758486fd0717127492",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Every settled compiled music and mentor center resolves to its own button. The desktop geometry control remains individually clickable."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0060",
+    "findingId": "STRICT-TRADE-019-PORTFOLIO-EXTENSION",
+    "text": "Practice portfolio history chart | Portfolio scenario chart",
+    "sha256": "bcdc4f0db5d646c97ede8e204e8ab85d8502cc945215f182f4bef3286c14a050",
+    "source": "src/components/PortfolioChart.tsx; src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "contentReference": "local-final480-chart-access.json",
+    "contentSHA256": "4f5cf4c37b7bded636673f6a36bc2295cba816351d166951d37f85b27a30404b",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "On both compiled widths the named graph surfaces receive keyboard focus. Consecutive arrow presses reveal different saved dates or scenario-day data, while the pointer remains supported."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0061",
+    "findingId": "STRICT-PORTFOLIO-006",
+    "text": "Total Value | since the actual saved observation",
+    "sha256": "a897ae880a9215e1311e46b6bf8550748a8a5bdfca0a335dd2d20519fd0d8c91",
+    "source": "src/lib/portfolio.ts; src/pages/Portfolio.tsx",
+    "sourceRevision": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "contentReference": "local-final480-baseline.json",
+    "contentSHA256": "824da1bc1814572a3a8e671a830e79ac6d5b46663c9c674c596a7a6ba9fac7d3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both widths keep the $10,000 and 11.11% arithmetic. Each public-shaped card names its saved date and exposes the exact ISO time. The FAQ describes a comparison against a saved snapshot."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0062",
+    "text": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $100.0K (100% of book)\n• Positions: 0\n• Trades executed: 0\n• Realized win rate: unavailable in this snapshot\n\nObservation: You're sitting on heavy cash (100%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "b26663140a4422a7cf0bfe406c999d0f027643d1d125697de8df8a6297e0110c",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/portfolio",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cash-only context displays $100,000, zero positions and zero trades."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The high cash comment is conditional and uses a hypothetical comparison. No win rate or requirement to buy is inferred.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0063",
+    "text": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $99.5K (99% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 1% of book, P&L -0.10%\n\nObservation: You're sitting on heavy cash (99%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "109ca322548f521cd6cbc30375e63ad18619c7d4b393e63a086b5b30c9e9c804",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=True/portfolio",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "One AAPL holding and one trade appear in the populated summary, alongside approximate cash and marked open P&L."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source uses current holding value divided by total modeled equity, rounded to whole percent. The total is abbreviated. Current open loss and absent realized rate remain distinct.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0064",
+    "text": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "a3e70f283bef7ba597e05c3387fc7f0fbdc356ecbba873a69fa7d040b38febec",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/risk",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The empty or broad risk branch describes weights, liquidity, correlation and varied outcome tests."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The no-position context does not invent an exposure or a universal position-size threshold.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0065",
+    "text": "Built-in educational response:\n\nRisk review:\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "4085a05884b1e4ff2692a5d3875a197c99e6d06a0df641a4c0ed3f2d01c3b276",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=True/risk",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The response explicitly ties the invested portion to one holding and keeps existing cash separate."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This correctly limits the concentration claim to the invested part. No suitability inference is attached.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0066",
+    "text": "Built-in educational response:\n\nNo recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "a7202532d03b3a6a811653650635c246e83cb1bde93bbd21c739d1890608218b",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/history",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "No recorded trade projections are claimed in an empty guest view."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The text suggests an assumption before a hypothetical exercise and avoids setting a guaranteed sample size.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0067",
+    "text": "Built-in educational response:\n\nTrade history review (1 recorded trade):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "56a5ef1dfc0876f802a12650ad6bddc2a91a6ca17e8c2e6318fbf570cbc16a40",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=True/history",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "One recorded trade uses singular wording. A buy alone has no realized win rate."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The hypothetical examples calculate 0.40 times 3R minus 0.60 times 1R equals 0.60R and 0.60 times 1R minus 0.40 times 1R equals 0.20R. Both examples name gross or before-cost assumptions.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0068",
+    "text": "Built-in educational response:\n\nAAPL — Snapshot percentage change: +1.37%. Check the displayed quote source and observation window; this is not a forecast.\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "161bae1fad0f0e06d75f2636aa9ff690c14145bdee352e114e563745131f2863",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=True/asset",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The condition explains the AAPL seeded movement with the quote-source and interval caveats."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source passes the most prominent held movement. The fixture gives no actual provider data and the answer makes no forecast.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0069",
+    "text": "Built-in educational response:\n\nPractice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "a41d71b92fc2d61dcb283359fd756a6a8374581e03707c6301e985d03740015f",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/assumptions",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The response quotes two units at $50 and 0.1% virtual fees."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The exact gross $100 yields $0.10 per side, $100.10 purchase cost and $99.90 sale proceeds. Fill and estimated input remain separate.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0070",
+    "text": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "fcec44d19b7a17cfe614a08e9ab5c2e877150d046f68f4ccb95245dd3c213792",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/advice",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The built-in answer declines specific asset calls and gives a recordable simulation procedure."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The answer leaves risk limits to the learner and flags actual fill uncertainty. It does not tell a learner to place a real trade.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0071",
+    "text": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "a256a67cc9b60967b1dbdde91e76caa5f617adc0c5cb1bb16aae77eb6dfbaff0",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/greeting",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The shared portfolio-surface greeting points to typing a recognized topic."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The response text agrees with the already reviewed shared engine after P09. It does not send a reader to a missing list of quick prompts.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0072",
+    "text": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "67af8251529661aecaea6053219fc5c2948903e5bad21ff1d9c0e56633a9a1b4",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/fallback",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The exact unknown question returns the same curated fallback seen with no selected asset."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "It makes the knowledge scope clear, offers topic examples and avoids making up an answer.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0073",
+    "text": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)",
+    "sha256": "9561ca8af74d2ac1ecf303c0705c1c3e26939e058711667a20df02e7e3069ef9",
+    "source": "src/components/AIAssistant.tsx; src/lib/smartMentor.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json#holding=False/topic",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The market-order lesson compares a market fill with a limit order that might not fill."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The $50/$51 distinction matches the previously reviewed shared educational response. The answer identifies the virtual order type available in the current simulator.",
+      "reviewer": "Codex assistant, separate source and responsive reading"
+    },
+    "disposition": "NO ISSUE IN THE REVIEWED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0074",
+    "text": "Open portfolio review mentor | Send portfolio review question | Close portfolio review mentor",
+    "sha256": "9edf6689a5da6b9dd06affa56289fbbc42c6a42a896e7f2cba360df8f8b65ba7",
+    "source": "src/components/AIAssistant.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-mentor.json",
+    "contentSHA256": "ca4d624351dd8916df24500979badc16ae70823c4e5e6b97313e5dfb6d28fff7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both responsive launchers expose a named dialog, labelled controls and no enabled blank send."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The four contexts restore focus to the launcher after Escape and permit typed prompts. The separate mobile pointer-overlap finding still gates production verification."
+    },
+    "disposition": "CONTROL CONTENT REVIEWED"
   }
 ]

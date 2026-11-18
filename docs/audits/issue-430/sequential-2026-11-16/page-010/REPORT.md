@@ -17,3 +17,7 @@ Two public guest sessions completed an isolated buy and sale, validated fixed fe
 # Exact alert and refresh release
 
 #478 has an exact native production receipt and four later public browser contexts. The alerts honor the persisted opt-out. The new refresh wording clearly distinguishes the guest and signed-in cases. The two findings are production-verified. P10 remains partial. [Exact #478 receipt](RELEASE-478.json)
+
+# Scenario release, chart and controls, and mentor readback
+
+The exact #479 native production release passed eight fresh scenario cases across both responsive layouts. The revised #480 candidate passes ten compiled browser contexts and awaits exact hosted checks. Two shared issues extend existing roots. The request-triggered Portfolio mentor now has twelve response-state records plus a separate control projection. Portfolio remains partial at 74 first-pass and 70 second-pass records, with four of its six confirmed defects production-verified. [Exact #479 receipt](RELEASE-479.json) · [Current coverage](COVERAGE.json)

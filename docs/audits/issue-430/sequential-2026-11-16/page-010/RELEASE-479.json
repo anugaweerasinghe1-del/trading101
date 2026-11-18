@@ -1,0 +1,75 @@
+{
+  "pr": 479,
+  "finalHeadSHA": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+  "mergeSHA": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+  "mergedTreeEqualsFinalHeadTree": "5ce7ccc87dec03b482ed387335bdca4e2fc54cb7",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44283343978/job/134735403148",
+      "head_sha": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+      "id": 134735403148,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/30a11869-c327-49cb-abfb-10cf095fdf92",
+      "head_sha": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+      "id": 134729834824,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44283343978/job/134729533895",
+      "head_sha": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+      "id": 134729533895,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44283343978/job/134729532914",
+      "head_sha": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+      "id": 134729532914,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44283343912/job/134729532304",
+      "head_sha": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+      "id": 134729532304,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    }
+  ],
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T10:36:23.512Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "4ca30ad9-adff-4822-82e3-395a6167179d",
+      "sha": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T10:26:06.770558Z"
+    },
+    "sourceGitHubRun": 44285375247,
+    "sourceGitHubJob": 134741969358,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44285375247/job/134741969358"
+  },
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-PORTFOLIO-003",
+    "STRICT-PORTFOLIO-004"
+  ],
+  "productionURL": "https://www.thetradehq.com/portfolio",
+  "liveEvidence": "production479-final-scenario.json",
+  "liveEvidenceSHA256": "1fdec4182b83d948ec1686163d4d4ce712770503a52b685747d16aa2baa05e43",
+  "liveRereadAtUTC": "2026-11-18T10:38:16.249475+00:00",
+  "scope": "Two responsive public guest contexts, four scenarios each. The holdings are isolated virtual browser records."
+}

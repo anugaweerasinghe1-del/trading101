@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 57,
-  "secondPass": 55,
+  "firstPass": 74,
+  "secondPass": 70,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -68,8 +68,8 @@
     "STRICT-PORTFOLIO-006"
   ],
   "confirmedProductDefectsReproduced": 6,
-  "confirmedProductDefectsProductionVerified": 2,
-  "nextAction": "Obtain exact #479 native receipt and replay 0035 and 0037. Complete the revised #480 responsive browser and exact-head checks. Continue the Portfolio block coverage from 0058.",
+  "confirmedProductDefectsProductionVerified": 4,
+  "nextAction": "Verify the exact final #480 head, run all fixed-state hosted checks, then complete protected merge, native deployment and readback of 0058–0061. Continue the remaining Portfolio source, view and control coverage.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -119,28 +119,48 @@
   "scenarioPR": {
     "number": 479,
     "headSHA": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
-    "status": "MERGED; exact native and custom-domain readback pending",
+    "status": "FIXED-RECHECKED",
     "previewURL": "https://30a11869.tradehq-preview.pages.dev",
     "hostedEvidence": "exact-preview479-scenario.json",
     "mergeSHA": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
-    "mainWorkflow": 44285375247
+    "mainWorkflow": 44285375247,
+    "receipt": "RELEASE-479.json"
   },
   "guestAndAccountFixtureEvidence": [
     "production-current-guest-recovery.json",
     "local-signed-portfolio.json"
   ],
-  "latestApplicationRelease": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+  "latestApplicationRelease": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
   "existingRootExtensions": [
     "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
     "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
   ],
   "controlsPR": {
     "number": 480,
-    "status": "OPEN; revised candidate being validated for 0054–0057",
+    "status": "OPEN; exact final-head hosted and production checks pending",
     "beforeEditComments": [
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975934096"
+    ],
+    "headSHA": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "requiredWorkflow": 44287163060,
+    "localEvidence": [
+      "local-final480-ticker.json",
+      "local-final480-ticker.json",
+      "local-final480-chart-access.json",
+      "local-final480-baseline.json"
+    ],
+    "pendingBlocks": [
+      "STRICT-0010-BLOCK-0058",
+      "STRICT-0010-BLOCK-0059",
+      "STRICT-0010-BLOCK-0060",
+      "STRICT-0010-BLOCK-0061"
     ]
+  },
+  "mentorScope": {
+    "fullyReadRecords": 13,
+    "evidence": "production-current-mentor.json",
+    "sharedTopicSource": "The unchanged fallback topic library retains the previously reviewed P09 word-level evidence."
   }
 }
