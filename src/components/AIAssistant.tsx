@@ -100,7 +100,7 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
           ref={launcherRef}
           aria-label="Open portfolio review mentor"
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-20 right-4 w-14 h-14 rounded-full shadow-gold bg-primary hover:bg-primary/90 z-50"
+          className="fixed bottom-20 right-[4.75rem] w-14 h-14 rounded-full shadow-gold bg-primary hover:bg-primary/90 z-50 md:right-4"
           size="icon"
         >
           <Bot className="w-7 h-7" />
