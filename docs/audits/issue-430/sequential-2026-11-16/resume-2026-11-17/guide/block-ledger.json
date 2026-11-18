@@ -32341,8 +32341,10 @@
       "reason": "Actual metrics and screenshot inspected; independent closed form matches complete results. Mobile readable full values; desktop stays two columns. Formula and inputs unchanged."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh final release reread pending."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "After the native release observation, the exact 30% values remain $2,681,254,727 and +$2,461,254,727 in the mobile screenshot. DOM measurements on all 12 cases corroborate no lost digits; input labels and calculation source are unchanged.",
+      "evidence": "guide/production463-final-number-readability.json"
     }
   },
   {
@@ -32414,7 +32416,8 @@
       "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
     },
     "captures": [
-      "guide/after-ticker.json"
+      "guide/after-ticker.json",
+      "guide/production464-final-readback.json"
     ],
     "findingIds": [
       "STRICT-GUIDE-006"
@@ -32424,8 +32427,10 @@
       "reason": "All seven symbols and values match source, occur once as list items, and are visible in the tested viewport without continuous movement or clipping."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh final-release reread pending."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "Fresh production reread verifies every existing symbol and percentage as a unique list item. The negative signs and non-live description remain in both theme screenshots. All six width/theme views fit without ticker motion; the post-receipt run confirms the same live list.",
+      "evidence": "guide/production464-appearance.json"
     }
   },
   {
@@ -32441,7 +32446,8 @@
       "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
     },
     "captures": [
-      "guide/after-quiz-status.json"
+      "guide/after-quiz-status.json",
+      "guide/production464-final-readback.json"
     ],
     "findingIds": [
       "STRICT-GUIDE-007"
@@ -32451,8 +32457,478 @@
       "reason": "Six correctly selected fixture outcomes preserve visible wording, disable options and put feedback inside the persistent status region. Actual accessibility tree confirms the status semantics."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh final-release reread pending."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "Production reread of every answer option for all three authored patterns confirms the same three wrong-result names and the correct feedback. The AX tree exposes status semantics. In the post-receipt keyboard run the visible result was again inside the already mounted status.",
+      "evidence": "guide/production464-all-quiz-status.json"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0851",
+    "text": "Loading your page",
+    "sha256": "3cf00b2bf40064568755f218a15c6a9084a48231873d74a9f7c44706870dd602",
+    "location": "src/App.tsx",
+    "componentSourceFiles": [
+      "src/App.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "bf4db89c6af7921d8a7a22e29c000ff1a3969c55"
+    },
+    "captures": [
+      "guide/local-conditional.json",
+      "guide/production464-fixtures-conditional.json"
+    ],
+    "scope": "Controlled browser chunk delay",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Locally rendered H1 describes the temporary route loading state and appears under role=status.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Fresh custom-domain held-chunk capture shows the same H1 inside aria-busy main; the fallback clears on real hydration.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0852",
+    "text": "Your TradeHQ page is on its way. Please wait a moment while we get it ready.",
+    "sha256": "f09252ebe3d459ff623163f9bcbe31d4169ab326593f6886d46c3e49e6209c24",
+    "location": "src/App.tsx",
+    "componentSourceFiles": [
+      "src/App.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "bf4db89c6af7921d8a7a22e29c000ff1a3969c55"
+    },
+    "captures": [
+      "guide/local-conditional.json",
+      "guide/production464-fixtures-conditional.json"
+    ],
+    "scope": "Controlled browser chunk delay",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Temporary plain-language explanatory text accompanies the actual local busy status.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "On the custom domain the same text disappears when the chunk is released. The test delays a request rather than measuring normal page performance.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0853",
+    "text": "Return to TradeHQ home",
+    "sha256": "d022c5d3da830636a0d573eede3caec2c2970e539e3e55d1d9e80f190c554ba5",
+    "location": "src/App.tsx",
+    "componentSourceFiles": [
+      "src/App.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "bf4db89c6af7921d8a7a22e29c000ff1a3969c55"
+    },
+    "captures": [
+      "guide/local-conditional.json",
+      "guide/production464-fixtures-conditional.json"
+    ],
+    "scope": "Controlled browser chunk delay",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The fallback names its destination and resolves to /.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Custom-domain AX role is link and href remains /. A readable escape route is available while loading.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0854",
+    "text": "Understanding Cryptocurrency Price Feeds and Portfolio Valuation",
+    "sha256": "d7be7e7eb634be62ac77c80fb890e0966f516b2643e6a05ae9994390c0aacc61",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Public-course title identifies introductory price feeds and valuation. It has no return promise.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Both widths expose the exact title, and the price-feed course route is indexed in the canonical queue. This is a title in the public feed; destination content remains queued.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0855",
+    "text": "Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review",
+    "sha256": "1c6b214635985e4ebd3e61a0429efcb779e52c66dc0926895c42426a69a03cc7",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Public-course title identifies paper trading, price snapshots and virtual orders.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Desktop and mobile agree. The wording specifies paper trading and virtual orders; the title supplies no claim of a live brokerage or real-money outcome.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0856",
+    "text": "Daily cases now revisit topics you missed",
+    "sha256": "9cd724a0d7efc412b0b67c555115c789a419adfe10c643be1b8d7f25606114ff",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Authored title points to topic selection based on missed cases.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Exact copy agrees with the approved release change and guest context fixture. The notice points to updates. The Daily feature itself is a separate P11 audit.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0857",
+    "text": "Review missed answers and discover the newest course updates",
+    "sha256": "9bba6f6337f71d7aeb34fb60cb410d2eb4511b9135852bdfbd9a030567cd2ad1",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Authored notice names review of missed answers and course announcements.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Observed desktop title, mobile title and empty-feed fallback agree with the approved release entry. No universal guarantee of fresh courses is stated.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0858",
+    "text": "Your next learning step, with a clearer route to rewards",
+    "sha256": "eff5551a8d82eac1d1eb81f878441606cb523376383afb77102ae84fe388e0e2",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Authored title describes next learning steps and rewards.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The approved source and both public widths agree. The title makes no promise of prizes or monetary rewards.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0859",
+    "text": "See What\u2019s New",
+    "sha256": "fd4b064d97b8f42356ea5f3a45587e03f918d05f7ed2aa6a1a409c6bde1fb0a7",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The CTA has a meaningful destination name and points to /whats-new.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The same href appears in every desktop and mobile capture and in the authored fixture. No destination-page closure credit.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0860",
+    "text": "Dismiss release announcement",
+    "sha256": "79648e42cbd96b7179dc30641cb29ffa2537eed5427497cf61e1447d7cd766e8",
+    "location": "src/components/ReleaseNotices.tsx",
+    "componentSourceFiles": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37"
+    },
+    "captures": [
+      "guide/production464-expanded-live-states.json",
+      "guide/local-conditional.json"
+    ],
+    "scope": "Current public announcement",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Named dismiss button exposes a supported keyboard action in the AX tree.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Enter closes each observed notice and the next eligible title can appear. Decorative SVG is hidden from the accessibility tree.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0861",
+    "text": "My profile",
+    "sha256": "271c62fa2debe2d239cfed40bca3d49c597278684e7fe16618e863b7fc161c89",
+    "location": "src/components/Navigation.tsx",
+    "componentSourceFiles": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4"
+    },
+    "captures": [
+      "guide/local-account-fixture.json"
+    ],
+    "scope": "Signed-in local simulation",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Compiled desktop account menu renders a named /trader/me link.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The independent mobile context exposes the same profile destination. Actual profile contents are outside this fixture.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0862",
+    "text": "Sign out",
+    "sha256": "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0",
+    "location": "src/components/Navigation.tsx",
+    "componentSourceFiles": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4"
+    },
+    "captures": [
+      "guide/local-account-fixture.json"
+    ],
+    "scope": "Signed-in local simulation",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The synthetic signed-in menu exposes an action separate from My profile.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Both widths have the expected role for their menu design. Async results exercised with separate mocked outcomes.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0863",
+    "text": "Signing out\u2026",
+    "sha256": "08c6bd357b7d7b819903c4d32cf8875a2f8bb02dd2e85aa7602e3d82d4f69c45",
+    "location": "src/components/Navigation.tsx",
+    "componentSourceFiles": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4"
+    },
+    "captures": [
+      "guide/local-account-fixture.json"
+    ],
+    "scope": "Signed-in local simulation",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The mobile pending state describes an in-progress action in the successful fixture.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The failed mobile fixture independently exposes the same pending wording before a different result. Source uses the same signingOut expression for desktop.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0864",
+    "text": "Signed out on this device.",
+    "sha256": "c8f3860d7156402c97c1edc2021e15685474a4ef1f61bead64812f1c585fb382",
+    "location": "src/components/Navigation.tsx",
+    "componentSourceFiles": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4"
+    },
+    "captures": [
+      "guide/local-account-fixture.json"
+    ],
+    "scope": "Signed-in local simulation",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Successful simulated operation tells the user the scope of the outcome.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Both widths expose this wording, matching source's local sign-out scope. No real production account was used.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0865",
+    "text": "Could not sign out. Please try again.",
+    "sha256": "27ae196c23b9b6e8ae54fe593b4d2ecfbcba3b0b344f305aa9ec0c8f44c0999a",
+    "location": "src/components/Navigation.tsx",
+    "componentSourceFiles": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4"
+    },
+    "captures": [
+      "guide/local-account-fixture.json"
+    ],
+    "scope": "Signed-in local simulation",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "503 fixture creates clear retry feedback.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separate desktop and mobile contexts show identical wording and no success announcement. This is a forced response, without an allegation of a live backend error.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0866",
+    "text": "TradeHQ. Learn Trading. Use Virtual Cash. Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money. Start Trading Free. Explore Platform. Example interface. Practice portfolio. Market-order practice. Buy. Sell. Virtual cash $100,000. Practice assets 170. Illustrative interface \u00b7 Virtual money only.",
+    "sha256": "9593440aa5886e46f5d20689e4ba2a7e3f73c778f22fab8e68ae6b673d2b747f",
+    "location": "public/tradehq-preview-2026.png",
+    "componentSourceFiles": [
+      "public/tradehq-preview-2026.png"
+    ],
+    "sourceVersions": {
+      "productionMerge": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "sourceGitBlob": "769363dc5da22195ad06b67fe427159243bdfed2"
+    },
+    "captures": [
+      "guide/SOURCE-RECONCILIATION-2026-11-18.md"
+    ],
+    "scope": "Image text in public metadata",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Public PNG was opened and visually read. The virtual-balance language, market-order labels and practice asset count match the Guide's reviewed claims.",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Source, tagged social URL and direct public URL yield identical bytes. On visual cross-check the device shows an explicitly illustrative interface, including the chart and Buy/Sell labels, with no claim of observed gains.",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "outcome": "NO-ISSUE-IN-CAPTURED-SCOPE"
     }
   }
 ]

@@ -1,0 +1,75 @@
+{
+  "pullRequest": 464,
+  "finalHeadSHA": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44212873278/job/134499682899",
+      "head_sha": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+      "id": 134499682899,
+      "name": "TradeHQ Required validation"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/4343bc0a-ed9f-4f76-a752-47b2b98cd4bc",
+      "head_sha": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+      "id": 134495739869,
+      "name": "Cloudflare Pages"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44212873278/job/134495353549",
+      "head_sha": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+      "id": 134495353549,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44212873278/job/134495353038",
+      "head_sha": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+      "id": 134495353038,
+      "name": "TradeHQ Phase 3 tests"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44212873179/job/134495352019",
+      "head_sha": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+      "id": 134495352019,
+      "name": "TradeHQ Disposable PostgreSQL controls"
+    }
+  ],
+  "mergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "mergedTreeEqualsFinalHeadTree": "2c678cc3915846cef517d31e56ae74cf11bcf9fa",
+  "previewURL": "https://4343bc0a.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T01:25:12.955Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "02f521be-a85b-4df9-bda4-e017afaf319e",
+      "sha": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T01:14:19.715302Z"
+    },
+    "sourceGitHubRun": 44214239194,
+    "sourceGitHubJob": 134504647438,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44214239194/job/134504647438"
+  },
+  "productionURL": "https://www.thetradehq.com/learn-trading-guide",
+  "liveRereadAtUTC": "2026-11-18T01:26:22.398150+00:00",
+  "liveEvidence": [
+    "guide/production464-appearance.json",
+    "guide/production464-all-quiz-status.json",
+    "guide/production464-final-readback.json"
+  ],
+  "findings": [
+    "STRICT-GUIDE-006",
+    "STRICT-GUIDE-007"
+  ],
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": false,
+  "scopeNote": "This is a defect-release receipt. The consolidated page closeout has its own Guide PAGE-RECORD."
+}

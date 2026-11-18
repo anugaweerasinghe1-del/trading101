@@ -1,8 +1,8 @@
 {
-  "atUTC": "2026-11-18T01:03:09.662177+00:00",
+  "atUTC": "2026-11-18T01:29:57.170241+00:00",
   "canonicalCount": 163,
   "technicalRows": 480,
-  "strictClosedRows": 6,
+  "strictClosedRows": 7,
   "sitemaps": {
     "sitemap.xml": {
       "routeCount": 151,
@@ -14,18 +14,67 @@
     }
   },
   "sitemapQueueExactURLSetMatch": true,
-  "textVersionRecords": 850,
-  "firstPassReviewed": 850,
-  "secondPassReviewed": 847,
-  "secondPassPending": [
-    "STRICT-0008-BLOCK-0846",
-    "STRICT-0008-BLOCK-0849",
-    "STRICT-0008-BLOCK-0850"
-  ],
+  "textVersionRecords": 866,
+  "firstPassReviewed": 866,
+  "secondPassReviewed": 866,
+  "secondPassPending": [],
   "earlier822TextRecordsUnchanged": true,
   "allLedgerHashesAndIDsVerified": true,
   "separateExistingControlProjections": 143,
   "separateExistingMediaRecords": 6,
-  "strictPageClosureAllowed": false,
-  "reason": "Final release, full expression/state tie-out and strict current coverage are separate requirements."
+  "strictPageClosureAllowed": true,
+  "reason": "Applicable content and states, exact hashes, two judgments and native release receipts reconcile. Unobserved private operations are expressly scoped out.",
+  "defaultTextProjections": [
+    {
+      "width": 390,
+      "js": true,
+      "atUTC": "2026-11-18T01:18:50.318825+00:00",
+      "status": 200,
+      "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+      "occurrenceCount": 244,
+      "exactLedgerMatchedOccurrences": 240,
+      "matchedCompositeBlock": "STRICT-0008-BLOCK-0825",
+      "compositeLeaves": [
+        ".",
+        "Creative Commons Attribution 4.0",
+        "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+        "Music:"
+      ],
+      "occurrencesSHA256": "545c4bc4319ad83630bd0b77f570c20abaecfb414e75061b761b5596a23e53f7"
+    },
+    {
+      "width": 1440,
+      "js": true,
+      "atUTC": "2026-11-18T01:18:50.308352+00:00",
+      "status": 200,
+      "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+      "occurrenceCount": 244,
+      "exactLedgerMatchedOccurrences": 240,
+      "matchedCompositeBlock": "STRICT-0008-BLOCK-0825",
+      "compositeLeaves": [
+        ".",
+        "Creative Commons Attribution 4.0",
+        "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+        "Music:"
+      ],
+      "occurrencesSHA256": "e9ee955ad5ab2f2c164997b7dc69811496b55db8a1a359cdf10e9c4aef543ec8"
+    },
+    {
+      "width": 390,
+      "js": false,
+      "atUTC": "2026-11-18T01:18:49.399443+00:00",
+      "status": 200,
+      "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+      "occurrenceCount": 54,
+      "exactLedgerMatchedOccurrences": 54,
+      "matchedCompositeBlock": null,
+      "compositeLeaves": [],
+      "occurrencesSHA256": "8d0938e29aa0aa9f533f240123d28f74dfe11535e4ee75d18c511c1454896ed7"
+    }
+  ],
+  "controlProjections": 155,
+  "mediaRecords": 7,
+  "sourceExpressionRecord": "guide/SOURCE-RECONCILIATION-2026-11-18.md",
+  "productionVerifiedRelease": 464,
+  "pageRecord": "PAGE-RECORD.json"
 }

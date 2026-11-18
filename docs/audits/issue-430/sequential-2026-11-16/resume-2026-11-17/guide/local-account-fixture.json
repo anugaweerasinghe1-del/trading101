@@ -1,0 +1,38 @@
+[
+  {
+    "width": 390,
+    "atUTC": "2026-11-18T01:16:46.995429+00:00",
+    "profileHref": "/trader/me",
+    "navigationAX": "- dialog \"Site menu\":\n  - img \"TradeHQ\"\n  - button \"Close menu\":\n    - img\n  - link \"Home\":\n    - /url: /\n    - img\n    - text: Home\n  - link \"Learn\":\n    - /url: /learn\n    - img\n    - text: Learn\n  - link \"Trade\":\n    - /url: /trade\n    - img\n    - text: Trade\n  - link \"Portfolio\":\n    - /url: /portfolio\n    - img\n    - text: Portfolio\n  - link \"Newsletter\":\n    - /url: /newsletter\n    - img\n    - text: Newsletter\n  - button \"More\":\n    - img\n    - text: More\n    - img\n  - link \"My profile\":\n    - /url: /trader/me\n    - img\n    - text: My profile\n  - button \"Sign out\":\n    - img\n    - text: Sign out",
+    "signoutSimulation": "success",
+    "message": "Signed out on this device.",
+    "runtimeScope": "Isolated local compiled UI with synthetic session; provider requests intercepted or aborted."
+  },
+  {
+    "width": 390,
+    "atUTC": "2026-11-18T01:16:49.194427+00:00",
+    "profileHref": "/trader/me",
+    "navigationAX": "- dialog \"Site menu\":\n  - img \"TradeHQ\"\n  - button \"Close menu\":\n    - img\n  - link \"My profile\":\n    - /url: /trader/me\n    - img\n    - text: My profile\n  - button \"Sign out\":\n    - img\n    - text: Sign out",
+    "signoutSimulation": "failure",
+    "message": "Could not sign out. Please try again.",
+    "runtimeScope": "Isolated local compiled UI with synthetic session; provider requests intercepted or aborted."
+  },
+  {
+    "width": 1440,
+    "atUTC": "2026-11-18T01:16:51.158208+00:00",
+    "profileHref": "/trader/me",
+    "navigationAX": "- menu \"Account menu\":\n  - menuitem \"My profile\"\n  - menuitem \"Sign out\":\n    - img\n    - text: Sign out",
+    "signoutSimulation": "success",
+    "message": "Signed out on this device.",
+    "runtimeScope": "Isolated local compiled UI with synthetic session; provider requests intercepted or aborted."
+  },
+  {
+    "width": 1440,
+    "atUTC": "2026-11-18T01:16:53.237775+00:00",
+    "profileHref": "/trader/me",
+    "navigationAX": "- menu \"Account menu\":\n  - menuitem \"My profile\"\n  - menuitem \"Sign out\":\n    - img\n    - text: Sign out",
+    "signoutSimulation": "failure",
+    "message": "Could not sign out. Please try again.",
+    "runtimeScope": "Isolated local compiled UI with synthetic session; provider requests intercepted or aborted."
+  }
+]

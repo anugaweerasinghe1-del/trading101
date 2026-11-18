@@ -1,0 +1,48 @@
+{
+  "atUTC": "2026-11-18T01:26:22.398150+00:00",
+  "tickerRows": 7,
+  "quizRoleStatus": true,
+  "allDisabled": true,
+  "cases": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T01:26:22.244936+00:00",
+      "ticker": {
+        "items": [
+          "BTC\nsample move\n+2.4%",
+          "ETH\nsample move\n+1.8%",
+          "SOL\nsample move\n-0.6%",
+          "NVDA\nsample move\n+3.1%",
+          "SPY\nsample move\n+0.4%",
+          "GOLD\nsample move\n+0.9%",
+          "EUR/USD\nsample move\n-0.2%"
+        ],
+        "animationCount": 0
+      },
+      "quiz": "- status:\n  - paragraph: \"❌ The correct answer was: Double Bottom\"",
+      "allDisabled": true,
+      "fixtureDate": "2026-11-18T12:00:00Z",
+      "htmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T01:26:22.398150+00:00",
+      "ticker": {
+        "items": [
+          "BTC\nsample move\n+2.4%",
+          "ETH\nsample move\n+1.8%",
+          "SOL\nsample move\n-0.6%",
+          "NVDA\nsample move\n+3.1%",
+          "SPY\nsample move\n+0.4%",
+          "GOLD\nsample move\n+0.9%",
+          "EUR/USD\nsample move\n-0.2%"
+        ],
+        "animationCount": 0
+      },
+      "quiz": "- status:\n  - paragraph: 🎉 Correct! You identified the pattern.",
+      "allDisabled": true,
+      "fixtureDate": "2026-11-18T12:00:00Z",
+      "htmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb"
+    }
+  ]
+}

@@ -1,50 +1,47 @@
 {
-  "updatedAtUTC": "2026-11-18T01:03:09.662177+00:00",
+  "updatedAtUTC": "2026-11-18T01:29:57.170241+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
     "ownerBlockedTerms": 1,
     "supplementaryP08toP22": 15,
     "supplementaryStrictClosureCredit": 0,
-    "newStrictClosuresThisSession": 0,
+    "newStrictClosuresThisSession": 1,
     "canonicalPageFreshlyEditoriallyExaminedThisSession": 1,
-    "activePage": "STRICT-0008",
+    "activePage": "STRICT-0009",
     "activeCoverage": {
+      "status": "STRICT-PENDING; supplemental evidence retained"
+    },
+    "remainingNotStrictClosed": 156,
+    "partiallyReviewedCanonicalPages": 14,
+    "partiallyReviewedScope": "P09\u2013P22 supplementary inspections, no strict closure credit; Terms owner-blocked separately.",
+    "strictClosedCurrent": 7,
+    "latestClosedGuideCoverage": {
       "publisherPages": 163,
       "widerDiscoveryURLs": 480,
       "historicalClosuresRecovered": 6,
-      "newStrictClosuresThisSession": 0,
+      "newStrictClosuresThisSession": 1,
       "currentPage": "STRICT-0008",
       "extractedCapturedTextOccurrences": 713,
       "pass1ReviewedCapturedOccurrences": 713,
       "pass2ReviewedCapturedOccurrences": 713,
-      "pageStatus": "PARTIAL-REVIEW-EXTRACTION-RECONCILIATION-PENDING",
-      "limitations": [
-        "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
-        "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
-        "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
-        "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
-        "No unqualified closure claim; product fix release independent of page closure.",
-        "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
-        "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
-        "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed."
-      ],
-      "totalRecordedBlocks": 850,
+      "pageStatus": "FIXED-RECHECKED",
+      "totalRecordedBlocks": 866,
       "pass1ReviewedSourceOnlyAlternatives": 49,
       "pass1ReviewedMetadataBlocks": 60,
       "pass2ReviewedSourceOnlyAlternatives": 49,
       "pass2ReviewedMetadataBlocks": 60,
-      "totalPass2Reviewed": 847,
-      "pendingSecondPass": 3,
-      "totalPass1Reviewed": 850,
+      "totalPass2Reviewed": 866,
+      "pendingSecondPass": 0,
+      "totalPass1Reviewed": 866,
       "selectableCardsCapturedAndReadTwice": 48,
       "sourceOnlyUnselectableCards": 1,
-      "controlRecords": 143,
-      "controlPass1Reviewed": 143,
-      "controlPass2Reviewed": 143,
-      "mediaRecords": 6,
-      "mediaPass1Reviewed": 6,
-      "mediaPass2Reviewed": 6,
+      "controlRecords": 155,
+      "controlPass1Reviewed": 155,
+      "controlPass2Reviewed": 155,
+      "mediaRecords": 7,
+      "mediaPass1Reviewed": 7,
+      "mediaPass2Reviewed": 7,
       "dateFixturePasses": {
         "eachPass": 18,
         "labelsCovered": 5,
@@ -52,15 +49,26 @@
       },
       "historicalSourceProjectionRecords": 49,
       "currentSourceOnlyUnselectableCardRecords": 1,
-      "pendingSecondPassIDs": [
-        "STRICT-0008-BLOCK-0846",
-        "STRICT-0008-BLOCK-0849",
-        "STRICT-0008-BLOCK-0850"
-      ]
-    },
-    "remainingNotStrictClosed": 157,
-    "partiallyReviewedCanonicalPages": 15,
-    "partiallyReviewedScope": "P08\u2013P22 inclusive; Terms tracked separately as owner-blocked."
+      "pendingSecondPassIDs": [],
+      "historicalLimitations": [
+        "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
+        "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
+        "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
+        "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
+        "No unqualified closure claim; product fix release independent of page closure.",
+        "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
+        "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
+        "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed.",
+        "The default public DOM and no-JavaScript projections reconcile. Controlled requests and synthetic account and consent states are separately labelled. A production account session and unrestricted provider outcomes remain unobserved. Final page-wide applicability review is outstanding."
+      ],
+      "limitations": [
+        "Real private production account records and provider operations unavailable; the Guide's signed-in navigation and sign-out outcomes are covered by source and loopback fixtures. This gives no production account verification credit.",
+        "Linked destination bodies retain their own queue positions. Time-selected public previews and current release notice titles are reviewed in the Guide, not as separate page closures.",
+        "Terms eligibility wording, Diversification publication, underlying provider contracts and Google account approval/consent operations retain their separate gates."
+      ],
+      "closureRecord": "PAGE-RECORD.json",
+      "strictPageClosure": true
+    }
   },
   "technicalInventory": {
     "capturedInitialHTML": 480,
@@ -81,7 +89,23 @@
     "intentional404": "https://www.thetradehq.com/missing-adsense-audit-probe",
     "redirectedURLs": 7
   },
-  "newFindingsThisSession": {
+  "ownerProviderGates": [
+    "Terms account-eligibility/legal wording",
+    "Diversification source publication remains prior18/19 remediation gate",
+    "Private authenticated/account/Google site approval/CMP/license operations not verified"
+  ],
+  "noApprovalPrediction": true,
+  "currentGuideFindings": {
+    "confirmedProductDefects": 7,
+    "confirmedPolicyIssues": 0,
+    "newUniqueQualityRisks": 0,
+    "existingQualityRiskOccurrenceFixed": 1,
+    "productFixesMergedAndProductionVerified": 7,
+    "productFixesMergedAwaitingNativeReceipt": 0,
+    "productFixesLocalAwaitingRelease": 0
+  },
+  "currentBlock": "STRICT-0009 initial HTML/metadata, guest Trade UI and source",
+  "historicalNovember17CheckpointFindings": {
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 5,
     "qualityRisksLogged": 0,
@@ -100,21 +124,5 @@
       "guideOccurrence": "release462 pending",
       "newUniqueRootCount": 0
     }
-  },
-  "ownerProviderGates": [
-    "Terms account-eligibility/legal wording",
-    "Diversification source publication remains prior18/19 remediation gate",
-    "Private authenticated/account/Google site approval/CMP/license operations not verified"
-  ],
-  "noApprovalPrediction": true,
-  "currentGuideFindings": {
-    "confirmedProductDefects": 7,
-    "confirmedPolicyIssues": 0,
-    "newUniqueQualityRisks": 0,
-    "existingQualityRiskOccurrenceFixed": 1,
-    "productFixesMergedAndProductionVerified": 4,
-    "productFixesMergedAwaitingNativeReceipt": 1,
-    "productFixesLocalAwaitingRelease": 2
-  },
-  "currentBlock": "STRICT-0008-BLOCK-0846"
+  }
 }

@@ -43,7 +43,7 @@
   },
   "STRICT-GUIDE-005": {
     "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-    "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
+    "status": "FIXED-RECHECKED",
     "policyViolation": false,
     "finding": "Accepted maximum-input monetary results visually ellipsized on small screens; complete DOM text retained.",
     "beforeEditIssueComment": 6956311244,
@@ -56,11 +56,12 @@
     "finalHeadSHA": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
     "mergeSHA": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
     "previewEvidence": "guide/preview463-number-readability.json",
-    "preliminaryLiveEvidence": "guide/production463-number-readability.json"
+    "preliminaryLiveEvidence": "guide/production463-number-readability.json",
+    "receipt": "RELEASE-463.json"
   },
   "STRICT-GUIDE-006": {
     "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "status": "FIXED-RECHECKED",
     "policyViolation": false,
     "finding": "Sample quotes move automatically and indefinitely at the default motion setting. No pause, stop or hide control is available.",
     "page": "https://www.thetradehq.com/learn-trading-guide",
@@ -74,11 +75,15 @@
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
       "retrievedUTC": "2026-11-18"
     },
-    "remedy": "Render the seven sample quotes once in a static wrapping list with the existing non-live disclosure."
+    "remedy": "Render the seven sample quotes once in a static wrapping list with the existing non-live disclosure.",
+    "receipt": "RELEASE-464.json",
+    "pullRequest": 464,
+    "finalHeadSHA": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+    "mergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf"
   },
   "STRICT-GUIDE-007": {
     "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "status": "FIXED-RECHECKED",
     "policyViolation": false,
     "finding": "The keyboard-triggered quiz feedback has no programmatic status semantics and focus returns to the body after option buttons disable.",
     "page": "https://www.thetradehq.com/learn-trading-guide",
@@ -92,6 +97,10 @@
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
       "retrievedUTC": "2026-11-18"
     },
-    "remedy": "Keep an initially empty status region mounted and populate it with the existing feedback. Keep decorative celebration outside that region and hide it from AT."
+    "remedy": "Keep an initially empty status region mounted and populate it with the existing feedback. Keep decorative celebration outside that region and hide it from AT.",
+    "receipt": "RELEASE-464.json",
+    "pullRequest": 464,
+    "finalHeadSHA": "f77a9df9bfe56a0e42b91ae0482156b852e48221",
+    "mergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf"
   }
 }

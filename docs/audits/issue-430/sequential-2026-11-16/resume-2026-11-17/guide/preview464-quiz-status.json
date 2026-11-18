@@ -1,0 +1,92 @@
+[
+  {
+    "fixtureDate": "2026-11-18",
+    "answer": "Double Bottom",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-emerald-400\" style=\"opacity: 0; transform: none;\">🎉 Correct! You identified the pattern.</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price drops to $42,100, bounces to $43,800, drops again to $42,150, then breaks above $43,800 with increasing volume.\n- button \"Head and Shoulders\" [disabled]\n- button \"Double Bottom\" [disabled]\n- button \"Bull Flag\" [disabled]\n- status:\n  - paragraph: 🎉 Correct! You identified the pattern.",
+    "atUTC": "2026-11-18T01:05:50.843699+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-18",
+    "answer": "Bull Flag",
+    "expected": "❌ The correct answer was: Double Bottom",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "❌ The correct answer was: Double Bottom",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-red-400\" style=\"opacity: 0; transform: translateY(3.31263px);\">❌ The correct answer was: Double Bottom</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price drops to $42,100, bounces to $43,800, drops again to $42,150, then breaks above $43,800 with increasing volume.\n- button \"Head and Shoulders\" [disabled]\n- button \"Double Bottom\" [disabled]\n- button \"Bull Flag\" [disabled]\n- status:\n  - paragraph: \"❌ The correct answer was: Double Bottom\"",
+    "atUTC": "2026-11-18T01:05:53.155799+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-16",
+    "answer": "Golden Cross",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-emerald-400\" style=\"opacity: 0; transform: translateY(4.9108px);\">🎉 Correct! You identified the pattern.</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: The 50-day moving average crosses above the 200-day moving average while price trades above both lines with rising volume.\n- button \"Death Cross\" [disabled]\n- button \"Bollinger Squeeze\" [disabled]\n- button \"Golden Cross\" [disabled]\n- status:\n  - paragraph: 🎉 Correct! You identified the pattern.",
+    "atUTC": "2026-11-18T01:05:54.695295+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-16",
+    "answer": "Death Cross",
+    "expected": "❌ The correct answer was: Golden Cross",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "❌ The correct answer was: Golden Cross",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-red-400\" style=\"opacity: 0; transform: translateY(4.20722px);\">❌ The correct answer was: Golden Cross</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: The 50-day moving average crosses above the 200-day moving average while price trades above both lines with rising volume.\n- button \"Death Cross\" [disabled]\n- button \"Bollinger Squeeze\" [disabled]\n- button \"Golden Cross\" [disabled]\n- status:\n  - paragraph: \"❌ The correct answer was: Golden Cross\"",
+    "atUTC": "2026-11-18T01:05:55.826956+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-17",
+    "answer": "Bear Trap",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-emerald-400\" style=\"opacity: 0; transform: translateY(4.07197px);\">🎉 Correct! You identified the pattern.</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price briefly breaks below key support at $2,800, triggering stop losses, then reverses sharply to close at $2,950 within the same candle.\n- button \"Bear Trap\" [disabled]\n- button \"Liquidation Cascade\" [disabled]\n- button \"Short Squeeze\" [disabled]\n- status:\n  - paragraph: 🎉 Correct! You identified the pattern.",
+    "atUTC": "2026-11-18T01:05:56.966935+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-17",
+    "answer": "Short Squeeze",
+    "expected": "❌ The correct answer was: Bear Trap",
+    "httpStatus": 200,
+    "beforeStatuses": 1,
+    "result": {
+      "feedback": "❌ The correct answer was: Bear Trap",
+      "closestLive": "<div role=\"status\" aria-atomic=\"true\"><p class=\"mt-3 text-xs font-bold text-red-400\" style=\"opacity: 0; transform: translateY(4.27423px);\">❌ The correct answer was: Bear Trap</p></div>",
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price briefly breaks below key support at $2,800, triggering stop losses, then reverses sharply to close at $2,950 within the same candle.\n- button \"Bear Trap\" [disabled]\n- button \"Liquidation Cascade\" [disabled]\n- button \"Short Squeeze\" [disabled]\n- status:\n  - paragraph: \"❌ The correct answer was: Bear Trap\"",
+    "atUTC": "2026-11-18T01:05:57.995504+00:00"
+  }
+]
