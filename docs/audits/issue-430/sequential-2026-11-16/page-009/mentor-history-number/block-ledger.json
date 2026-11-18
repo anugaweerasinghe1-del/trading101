@@ -6,7 +6,7 @@
     "sha256": "1420a6f55e746846f44c0538eef4fd65ab2d0bd64d013545ca3d9969ded9b37d",
     "source": "src/lib/smartMentor.ts",
     "scope": "compiled candidate and associated public before-edit contrast",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
     "beforeBlock": "STRICT-0009-BLOCK-0319",
     "captures": [
       {
@@ -23,7 +23,12 @@
       "reason": "Compiled fixture reports 1 recorded trade. Exact comparison across all twelve projections found only this singular adjustment."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "All twelve current public guest response variants exactly match the intended compiled replies. The single-record case reads 1 recorded trade and the plural remains intact."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production473-final-mentor-state-matrix.json",
+    "productionEvidenceSHA256": "f130a67188d5ebb09e3e167cfd8f9a309fe7ea09ddc5a8a4f777bafd4e2eaa2e",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-473.json"
   }
 ]

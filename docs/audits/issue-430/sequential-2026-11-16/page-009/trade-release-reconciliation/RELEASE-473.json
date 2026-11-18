@@ -1,0 +1,78 @@
+{
+  "pullRequest": 473,
+  "finalHeadSHA": "4aab686f6c5d296cd28808b289155722ede49cb0",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44231359033/job/134561183365",
+      "head_sha": "4aab686f6c5d296cd28808b289155722ede49cb0",
+      "id": 134561183365,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/15fa030e-b078-456f-9859-c1309f944141",
+      "head_sha": "4aab686f6c5d296cd28808b289155722ede49cb0",
+      "id": 134557385653,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44231359033/job/134556927176",
+      "head_sha": "4aab686f6c5d296cd28808b289155722ede49cb0",
+      "id": 134556927176,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44231359033/job/134556926907",
+      "head_sha": "4aab686f6c5d296cd28808b289155722ede49cb0",
+      "id": 134556926907,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44231358888/job/134556925874",
+      "head_sha": "4aab686f6c5d296cd28808b289155722ede49cb0",
+      "id": 134556925874,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    }
+  ],
+  "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+  "mergedTreeEqualsFinalHeadTree": "ee54440c4c763837d168e46cb87a967cd0f2aa89",
+  "previewURL": "https://15fa030e.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T03:58:26.483Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "86f085cc-79a7-4e0d-9fd7-2f8971b3f23c",
+      "sha": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T03:47:05.436316Z"
+    },
+    "sourceGitHubRun": 44232816996,
+    "sourceGitHubJob": 134565738866,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44232816996/job/134565738866"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveRereadAtUTC": "2026-11-18T03:59:01.554596+00:00",
+  "liveEvidence": [
+    "production473-final-candle-small-price.json",
+    "production473-final-mentor-state-matrix.json"
+  ],
+  "findings": [
+    "STRICT-TRADE-013",
+    "STRICT-TRADE-014"
+  ],
+  "status": "FIXED-RECHECKED",
+  "pageClosureCredit": 0
+}

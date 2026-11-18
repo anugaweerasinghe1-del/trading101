@@ -6,7 +6,7 @@
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
   "textRecords": 461,
   "firstPass": 461,
-  "secondPass": 459,
+  "secondPass": 461,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -175,16 +175,35 @@
       ],
       "policyViolation": false,
       "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-013",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 473,
+      "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+      "receipt": "trade-release-reconciliation/RELEASE-473.json",
+      "block": "STRICT-0009-BLOCK-0316",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-014",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 473,
+      "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+      "receipt": "trade-release-reconciliation/RELEASE-473.json",
+      "block": "STRICT-0009-BLOCK-0329",
+      "policyViolation": false,
+      "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Verify active native #473 and reread 0316 and 0329. Verify all required checks and immutable browser tests on the new #474 exact head, then preserve #473 evidence before merging. The next content scope is the remaining chart keyboard/data access, guided and order conditional states, and occurrence-to-projection reconciliation.",
+  "nextAction": "Confirm exact #474 requirements and its immutable hosted checks, then protected merge and active native rereads at 0453, 0455, 0457, 0459 and 0470–0475. Complete local and hosted validation of the line-chart keyboard and candlestick data alternative findings. Keep occurrence reconciliation, residual chart/order states and privacy/provider limits explicit.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
-  "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0316",
-    "STRICT-0009-BLOCK-0329"
-  ],
+  "pendingSecondPass": [],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
@@ -221,8 +240,8 @@
     "trade-release-reconciliation/current-default-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
-  "confirmedProductDefectsProductionVerified": 12,
-  "latestApplicationRelease": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+  "confirmedProductDefectsProductionVerified": 14,
+  "latestApplicationRelease": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
   "qualityRisks": [
     {
       "id": "STRICT-TRADE-RISK-001",
@@ -240,18 +259,12 @@
       "record": "trade-release-reconciliation/catalog-quote-provenance-risk.json"
     }
   ],
-  "confirmedProductDefectsReproduced": 18,
+  "confirmedProductDefectsReproduced": 20,
   "unresolvedStateNotes": [
     "Mentor greeting suggests quick prompts after the embedded component has already hidden them. Capture visual and keyboard state.",
     "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use."
   ],
-  "nextExactContentState": "Chart keyboard/data access and transient tooltip alternatives, guided conditional and explicit order state reconciliation, then full default/conditional projection tie-out.",
-  "mergedAwaitingNative": {
-    "pr": 473,
-    "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
-    "run": 44232816996,
-    "record": "trade-release-reconciliation/RELEASE-473-PENDING.json"
-  },
+  "nextExactContentState": "Line and candle keyboard/data alternatives 019/020, followed by guided/order conditional scope and default occurrence tie-out.",
   "activeSeparateCandidate": {
     "pr": 474,
     "head": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
@@ -263,7 +276,7 @@
       "STRICT-TRADE-018"
     ],
     "existingRootExtension": "STRICT-TRADE-008 revised learning-note occurrences; mobile #470 remains independently verified",
-    "status": "OPEN; exact final head local checks passed; new immutable preview and required checks pending",
+    "status": "OPEN; all four exact immutable hosted browser suites passed; remaining required GitHub checks pending",
     "firstPassAdditional": 14,
     "secondPassAdditional": 4,
     "pendingReadbackBlocks": [
@@ -277,7 +290,17 @@
       "STRICT-0009-BLOCK-0473",
       "STRICT-0009-BLOCK-0474",
       "STRICT-0009-BLOCK-0475"
-    ]
+    ],
+    "previewURL": "https://043619a1.tradehq-preview.pages.dev"
   },
-  "rawCurrentCensus": "trade-release-reconciliation/current-default-census/MANIFEST.json; browser raw occurrence counts and hashes. No per-occurrence closure credit."
+  "rawCurrentCensus": "trade-release-reconciliation/current-default-census/MANIFEST.json; browser raw occurrence counts and hashes. No per-occurrence closure credit.",
+  "queuedFollowup": {
+    "branch": "audit/issue430-trade-chart-access-20261118",
+    "findings": [
+      "STRICT-TRADE-019",
+      "STRICT-TRADE-020"
+    ],
+    "status": "Before-edit evidence published; local validation underway",
+    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968611993"
+  }
 }

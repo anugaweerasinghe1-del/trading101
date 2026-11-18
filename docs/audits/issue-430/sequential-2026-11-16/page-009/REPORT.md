@@ -71,3 +71,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Exact release and source census
 
 #473 protected-merged with the same tree after all five checks. #474 includes the remaining six estimate wording occurrences under STRICT-TRADE-008 and the separate confirmed overlapping launchers. Four raw default/guided captures preserve source hashes and the newest body and control census. The social and audio assets hash-match repository bytes. P09 remains partial. [Active continuation](COVERAGE.json)
+
+# Small-price and history production readback
+
+#473 has its exact native receipt and six fresh custom-domain cases. Both corrections are verified, bringing P09 to 461 durable two-pass records and fourteen production-verified fixes. The final #474 head passed its four hosted suites. A further controlled browser comparison reproduced two chart keyboard/data gaps and their before-edit records are intact. [Exact #473 receipt](trade-release-reconciliation/RELEASE-473.json)
