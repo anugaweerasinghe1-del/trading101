@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T08:35:04.794252+00:00",
+  "updatedAtUTC": "2026-11-18T08:38:21.374838+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -121,7 +121,7 @@
       "STRICT-0009-BLOCK-0483",
       "STRICT-0009-BLOCK-0485"
     ],
-    "nextExactContentState": "Line and candle keyboard/data alternatives 019/020, followed by guided/order conditional scope and default occurrence tie-out."
+    "nextExactContentState": "Historical release notice group 185 needs an independent payload reference. Finish #475 exact reviews and conditional control inventory. The 247 default raw fragment groups now have an explicit disposition."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -199,9 +199,9 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 482,
-    "firstPass": 482,
-    "secondPass": 482,
+    "textRecords": 485,
+    "firstPass": 485,
+    "secondPass": 485,
     "separateCandidateRecords": 10,
     "separateCandidateSecondPass": 5,
     "pickerRowsTwoPass": 170,
@@ -216,7 +216,9 @@
     "footerLinksTwoPass": 102,
     "footerStateAndIntervalTwoPass": 13,
     "quoteWidgetStateProjectionsTwoPass": 7,
-    "navigationStatesTwoPass": 7
+    "navigationStatesTwoPass": 7,
+    "rawResidualGroupsMapped": 247,
+    "openHistoricalNoticeGroup": 185
   },
   "partiallyReviewedPublisherPages": 14
 }

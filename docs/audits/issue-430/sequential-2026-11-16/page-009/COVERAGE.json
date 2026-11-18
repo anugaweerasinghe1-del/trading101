@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 482,
-  "firstPass": 482,
-  "secondPass": 482,
+  "textRecords": 485,
+  "firstPass": 485,
+  "secondPass": 485,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -283,7 +283,8 @@
     "mentor-history-number/block-ledger.json",
     "trade-release-reconciliation/current-default-ledger.json",
     "disclosures-and-attribution/block-ledger.json",
-    "trade-release-reconciliation/navigation-state-ledger.json"
+    "trade-release-reconciliation/navigation-state-ledger.json",
+    "trade-release-reconciliation/line-chart-source-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
   "confirmedProductDefectsProductionVerified": 18,
@@ -310,7 +311,7 @@
     "Mentor greeting suggests quick prompts after the embedded component has already hidden them. Capture visual and keyboard state.",
     "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use."
   ],
-  "nextExactContentState": "Line and candle keyboard/data alternatives 019/020, followed by guided/order conditional scope and default occurrence tie-out.",
+  "nextExactContentState": "Historical release notice group 185 needs an independent payload reference. Finish #475 exact reviews and conditional control inventory. The 247 default raw fragment groups now have an explicit disposition.",
   "rawCurrentCensus": "trade-release-reconciliation/current-default-census/MANIFEST.json; browser raw occurrence counts and hashes. No per-occurrence closure credit.",
   "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json",
   "activeSeparateCandidate": {
@@ -326,7 +327,7 @@
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968611993",
     "orderEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968677691",
     "pr": 475,
-    "head": "4cfe13e",
+    "head": "4cfe13eb59db5b3b7db7a5ec2baed7936015740c",
     "firstPassAdditional": 10,
     "secondPassAdditional": 5,
     "pendingReadbackBlocks": [
@@ -344,5 +345,17 @@
       "receipt": "trade-release-reconciliation/RELEASE-474.json",
       "scope": "Six learning-note revisions; zero added distinct defects"
     }
-  ]
+  ],
+  "rawOccurrenceGroupTieOut": {
+    "record": "trade-release-reconciliation/current-default-census/GROUP-TIE-OUT.json",
+    "counts": {
+      "TIED-TO-REVIEWED-PROJECTION": 214,
+      "REVIEWED-LABELS; CONTROL-RELEASE-PENDING": 2,
+      "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING": 10,
+      "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING": 7,
+      "OPEN-DYNAMIC-NOTICE-PAYLOAD": 1,
+      "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING": 12,
+      "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
+    }
+  }
 }

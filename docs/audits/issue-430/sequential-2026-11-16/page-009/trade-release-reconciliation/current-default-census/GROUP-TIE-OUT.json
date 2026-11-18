@@ -1,0 +1,3592 @@
+{
+  "rawSource": "RAW-RECONCILIATION.json",
+  "scope": "Individual raw-fragment linkage for the existing 247 residual groups, using semantic source and existing reviewed evidence. No added two-pass credit for repeated fragments.",
+  "counts": {
+    "TIED-TO-REVIEWED-PROJECTION": 214,
+    "REVIEWED-LABELS; CONTROL-RELEASE-PENDING": 2,
+    "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING": 10,
+    "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING": 7,
+    "OPEN-DYNAMIC-NOTICE-PAYLOAD": 1,
+    "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING": 12,
+    "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
+  },
+  "groups": [
+    {
+      "group": 0,
+      "text": "Home",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0001",
+        "STRICT-0009-CENSUS-02-0003",
+        "STRICT-0009-CENSUS-03-0003"
+      ],
+      "textSHA256": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 1,
+      "text": "Markets",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0002"
+      ],
+      "textSHA256": "97f5c16fcbfb4d9df3b735796322796e4d35d142e8fa80a2a290a20a0a9c9006",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 2,
+      "text": "Practice desk",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0003"
+      ],
+      "textSHA256": "eed408deb2093c9e9332a3df065424a534f8a7f9a092d5b740146a42262e3381",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 3,
+      "text": "Courses",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0004"
+      ],
+      "textSHA256": "aaad9d92e6b47727da806339397a8c7082a5c3dda2728dc7db2b7ff93d039369",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 4,
+      "text": "Learn",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0005",
+        "STRICT-0009-CENSUS-02-0004",
+        "STRICT-0009-CENSUS-03-0004"
+      ],
+      "textSHA256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 5,
+      "text": "Glossary",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0006"
+      ],
+      "textSHA256": "4c4e436f9a453c776dbf011f98d932d615988bb08bddec6051625340e88d012f",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 6,
+      "text": "Asset guides",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0007"
+      ],
+      "textSHA256": "308915f0086aa58fc7e2e57685f160c1aaa6ba59286e66f195b4353eccca03a2",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 7,
+      "text": "Strategies",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0008"
+      ],
+      "textSHA256": "a959c466fafe0d9846f2249d7cde3959ecbf698bc41b985d5c98018202d8d580",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 8,
+      "text": "Comparisons",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0009"
+      ],
+      "textSHA256": "3f7ad4a6c1e529136bcfae4a65f2338d3c42de79bd3caf7d36d031b26d7aa8d8",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The nine no-JavaScript links are projections of the recorded static route list."
+    },
+    {
+      "group": 9,
+      "text": "Published by TradeHQ, created by Anuga Weerasinghe.",
+      "tag": "p",
+      "area": "article",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0015",
+        "STRICT-0009-CENSUS-01-0402",
+        "STRICT-0009-CENSUS-02-0408",
+        "STRICT-0009-CENSUS-03-0412"
+      ],
+      "textSHA256": "d5e45f328baf67d8bde71795a0d037b90c2a3d35b95cb7418160201aaa2e3f07",
+      "reference": "0003",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The adjacent article nodes compose the previously reviewed publisher byline and source-check qualification."
+    },
+    {
+      "group": 10,
+      "text": "Publisher background and editorial approach",
+      "tag": "a",
+      "area": "article",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0016",
+        "STRICT-0009-CENSUS-01-0403",
+        "STRICT-0009-CENSUS-02-0409",
+        "STRICT-0009-CENSUS-03-0413"
+      ],
+      "textSHA256": "509bf6c9d15f52f6967569a6cc75bca66c9840a7203851469a7240a7d8f5621c",
+      "reference": "0003",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The adjacent article nodes compose the previously reviewed publisher byline and source-check qualification."
+    },
+    {
+      "group": 11,
+      "text": ". No independent professional review is claimed; any recorded source-check scope appears on the page.",
+      "tag": "p",
+      "area": "article",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0017",
+        "STRICT-0009-CENSUS-01-0404",
+        "STRICT-0009-CENSUS-02-0410",
+        "STRICT-0009-CENSUS-03-0414"
+      ],
+      "textSHA256": "06f074cbc0a63bfae80c79e35475eec0274f7f344699cd1df1b9625159eb7ad1",
+      "reference": "0003",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The adjacent article nodes compose the previously reviewed publisher byline and source-check qualification."
+    },
+    {
+      "group": 12,
+      "text": "About TradeHQ",
+      "tag": "a",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0041"
+      ],
+      "textSHA256": "6f9dcf465718ac6f003426dce896299042e2a257a6fbc2da26aadb6159a9c0d0",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These static footer destinations match the original no-JavaScript link projection."
+    },
+    {
+      "group": 13,
+      "text": "Country guides",
+      "tag": "a",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-00-0047"
+      ],
+      "textSHA256": "bcba501273d870ba555bf9da9188596bba1ff934d4d5654dae95646c3ed0ef2a",
+      "reference": "0486",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These static footer destinations match the original no-JavaScript link projection."
+    },
+    {
+      "group": 14,
+      "text": "Home",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0001",
+        "STRICT-0009-CENSUS-01-0433",
+        "STRICT-0009-CENSUS-02-0439",
+        "STRICT-0009-CENSUS-03-0443"
+      ],
+      "textSHA256": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 15,
+      "text": "Learn",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0002",
+        "STRICT-0009-CENSUS-01-0434",
+        "STRICT-0009-CENSUS-02-0440",
+        "STRICT-0009-CENSUS-03-0444"
+      ],
+      "textSHA256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 16,
+      "text": "Trade",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0003",
+        "STRICT-0009-CENSUS-01-0435",
+        "STRICT-0009-CENSUS-02-0441",
+        "STRICT-0009-CENSUS-03-0445"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 17,
+      "text": "Portfolio",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0004",
+        "STRICT-0009-CENSUS-01-0436",
+        "STRICT-0009-CENSUS-02-0442",
+        "STRICT-0009-CENSUS-03-0446"
+      ],
+      "textSHA256": "1853eb2e9e5ed2bcc1d03b5a49cf407f2e43851363a8ffd0ce5ab7aa37ca8309",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 18,
+      "text": "Newsletter",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0005",
+        "STRICT-0009-CENSUS-01-0437",
+        "STRICT-0009-CENSUS-02-0443",
+        "STRICT-0009-CENSUS-03-0447"
+      ],
+      "textSHA256": "f84ca2e7716bec9404f8a2806a17f3eda404f5cf33a4228f226b25a602c2e2e4",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 19,
+      "text": "More",
+      "tag": "button",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0006",
+        "STRICT-0009-CENSUS-01-0438",
+        "STRICT-0009-CENSUS-02-0444",
+        "STRICT-0009-CENSUS-03-0448"
+      ],
+      "textSHA256": "d47d7cb0e4f8fd2be5ee07826694c18917d83ca77d0a01698582d05f432db996",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 20,
+      "text": "Daily",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0007",
+        "STRICT-0009-CENSUS-02-0011",
+        "STRICT-0009-CENSUS-03-0011"
+      ],
+      "textSHA256": "b36c2611dcdfa190ede846948d9aba8f39581de0177cbd98586506019f979b75",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 21,
+      "text": "Sign in",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0008"
+      ],
+      "textSHA256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 22,
+      "text": "Daily",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0009",
+        "STRICT-0009-CENSUS-02-0009",
+        "STRICT-0009-CENSUS-03-0009"
+      ],
+      "textSHA256": "b36c2611dcdfa190ede846948d9aba8f39581de0177cbd98586506019f979b75",
+      "reference": "0487–0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Shared navigation labels and guest sign-in are tied to the section-specific Trade snapshots."
+    },
+    {
+      "group": 23,
+      "text": "Practice Trading Terminal",
+      "tag": "h1",
+      "area": "header",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0010",
+        "STRICT-0009-CENSUS-02-0012",
+        "STRICT-0009-CENSUS-03-0015"
+      ],
+      "textSHA256": "3fab23cc680f5068e3bc917fcde344b909323312c888d1f58fae66f09aea3be8",
+      "reference": "0461",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These two heading text nodes compose the current terminal and selected asset heading."
+    },
+    {
+      "group": 24,
+      "text": "— USD Coin (USDC)",
+      "tag": "h1",
+      "area": "header",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0011",
+        "STRICT-0009-CENSUS-02-0013"
+      ],
+      "textSHA256": "ef196d3973ee88234152cca083e96038150097b7942b9f82e1688b558ffb8f0a",
+      "reference": "0461",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These two heading text nodes compose the current terminal and selected asset heading."
+    },
+    {
+      "group": 25,
+      "text": "Total Value",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0013",
+        "STRICT-0009-CENSUS-02-0015",
+        "STRICT-0009-CENSUS-03-0018"
+      ],
+      "textSHA256": "b021529967df1284d34481e72747414a555dfd94dd90122d7df328a2b98d5d28",
+      "reference": "0092–0095; 0452–0453",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The portfolio summary fields and named Details control are reviewed in closed, open and exact-label states."
+    },
+    {
+      "group": 26,
+      "text": "Available Cash",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0016",
+        "STRICT-0009-CENSUS-02-0018",
+        "STRICT-0009-CENSUS-03-0021"
+      ],
+      "textSHA256": "182a03226a1e618d105c32126a3c2ebf9106ef521843138caa15f91ceb3e7a43",
+      "reference": "0092–0095; 0452–0453",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The portfolio summary fields and named Details control are reviewed in closed, open and exact-label states."
+    },
+    {
+      "group": 27,
+      "text": "Details",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0019",
+        "STRICT-0009-CENSUS-02-0021",
+        "STRICT-0009-CENSUS-03-0024"
+      ],
+      "textSHA256": "45989de49fb7f66dfe17a8fc26f3a02c7abcd74f7e8e6cf9f39fa0e3775780df",
+      "reference": "0092–0095; 0452–0453",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The portfolio summary fields and named Details control are reviewed in closed, open and exact-label states."
+    },
+    {
+      "group": 28,
+      "text": "U",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0020",
+        "STRICT-0009-CENSUS-01-0039",
+        "STRICT-0009-CENSUS-02-0022",
+        "STRICT-0009-CENSUS-02-0041"
+      ],
+      "textSHA256": "a25513c7e0f6eaa80a3337ee18081b9e2ed09e00af8531c8f7bb2542764027e7",
+      "reference": "0096; 0461",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The asset avatar initial, symbol and name identify the default USDC selection. The initial is structural."
+    },
+    {
+      "group": 29,
+      "text": "USDC",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0021",
+        "STRICT-0009-CENSUS-02-0023"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0096; 0461",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The asset avatar initial, symbol and name identify the default USDC selection. The initial is structural."
+    },
+    {
+      "group": 30,
+      "text": "USD Coin",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0022",
+        "STRICT-0009-CENSUS-01-0042",
+        "STRICT-0009-CENSUS-02-0024",
+        "STRICT-0009-CENSUS-02-0044"
+      ],
+      "textSHA256": "4551f5a5957e4cb87d60aa260b61c8ed5256649a489ced68fe078c16d6558b8b",
+      "reference": "0096; 0461",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The asset avatar initial, symbol and name identify the default USDC selection. The initial is structural."
+    },
+    {
+      "group": 31,
+      "text": "Price service is temporarily unavailable. Refresh will resume automatically.",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0024",
+        "STRICT-0009-CENSUS-02-0026",
+        "STRICT-0009-CENSUS-03-0029"
+      ],
+      "textSHA256": "aaa54259552b744db144b13c44f321b866a64e3def5990a4dedb20d397a05eb7",
+      "reference": "0449",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The unavailable quote message matches the public controlled retry and status projection."
+    },
+    {
+      "group": 32,
+      "text": "USD Coin",
+      "tag": "h2",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0025",
+        "STRICT-0009-CENSUS-02-0027"
+      ],
+      "textSHA256": "4551f5a5957e4cb87d60aa260b61c8ed5256649a489ced68fe078c16d6558b8b",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 33,
+      "text": "USDC",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0027",
+        "STRICT-0009-CENSUS-02-0029"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 34,
+      "text": "What you're trading",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0032",
+        "STRICT-0009-CENSUS-02-0034",
+        "STRICT-0009-CENSUS-03-0037"
+      ],
+      "textSHA256": "c48da3b4d0f9d5a35b50f5138344fbf73e8a5dedd2a671c7c3ba9e41d07098aa",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 35,
+      "text": "· Simulated market practice",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0034",
+        "STRICT-0009-CENSUS-02-0036",
+        "STRICT-0009-CENSUS-03-0039"
+      ],
+      "textSHA256": "1aab0a8c8dc55eed06fbab967d28f44cc3e909783d6325b8af5660136feb2b9b",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 36,
+      "text": "Asset-class context",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0035",
+        "STRICT-0009-CENSUS-02-0037",
+        "STRICT-0009-CENSUS-03-0040"
+      ],
+      "textSHA256": "4de99cb4b60e39c512160add6a9ab4d88d5736fc72c0ada3860715850916d1bb",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 37,
+      "text": "Network, custody and price risks vary by token",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0036",
+        "STRICT-0009-CENSUS-02-0038"
+      ],
+      "textSHA256": "42c155ec3af7c6b66dbb831106dc00446078d3e6a766d6100b079eb6f2a2ff92",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 38,
+      "text": "Practice move bucket",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0037",
+        "STRICT-0009-CENSUS-02-0039",
+        "STRICT-0009-CENSUS-03-0042"
+      ],
+      "textSHA256": "6d068639f1555255e63dd48514b81472e9454c9cc3ceedeabc2fe20248d6301e",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 39,
+      "text": "Inside ±2%",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0038",
+        "STRICT-0009-CENSUS-01-0081",
+        "STRICT-0009-CENSUS-02-0040",
+        "STRICT-0009-CENSUS-02-0088",
+        "STRICT-0009-CENSUS-03-0043",
+        "STRICT-0009-CENSUS-03-0091"
+      ],
+      "textSHA256": "dbd8ddf17a183c2a6bd5a428785231dac86357d8f6a7a91c64cea8ff648ac212",
+      "reference": "0071",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These fragments make up the observed Crypto context for USDC, including its bounded practice-move label."
+    },
+    {
+      "group": 40,
+      "text": "USDC",
+      "tag": "h2",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0040",
+        "STRICT-0009-CENSUS-02-0042"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The instrument and unit fragments form the observed line-chart input and simulated indicator."
+    },
+    {
+      "group": 41,
+      "text": "SIMULATED",
+      "tag": "div",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0041",
+        "STRICT-0009-CENSUS-02-0043",
+        "STRICT-0009-CENSUS-03-0046"
+      ],
+      "textSHA256": "31d66da02662cf08e78d4363a8580e71f5fe36053e68e801de523df4a07e8bc4",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The instrument and unit fragments form the observed line-chart input and simulated indicator."
+    },
+    {
+      "group": 42,
+      "text": "Chart input ·",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0043",
+        "STRICT-0009-CENSUS-02-0045",
+        "STRICT-0009-CENSUS-03-0048"
+      ],
+      "textSHA256": "ed62298f6ecd711ca2563dd4326f3dfaf071967da1d2fe23d1c50874237853f4",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The instrument and unit fragments form the observed line-chart input and simulated indicator."
+    },
+    {
+      "group": 43,
+      "text": "USD per unit",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0044",
+        "STRICT-0009-CENSUS-02-0046",
+        "STRICT-0009-CENSUS-03-0049"
+      ],
+      "textSHA256": "847d535348a3367c57873959795c2380ef11243c323d3770386fed8c325a0115",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The instrument and unit fragments form the observed line-chart input and simulated indicator."
+    },
+    {
+      "group": 44,
+      "text": "1H",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0052",
+        "STRICT-0009-CENSUS-02-0054",
+        "STRICT-0009-CENSUS-03-0057"
+      ],
+      "textSHA256": "0166c7ec13e72cdd14ad7a02182f00119378abed713338f2e22e6202ff77b34f",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 45,
+      "text": "4H",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0053",
+        "STRICT-0009-CENSUS-02-0055",
+        "STRICT-0009-CENSUS-03-0058"
+      ],
+      "textSHA256": "32fdc9be120c6eaa8636d9e160f4e170d846217e121472c3375c86471bfc3b8e",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 46,
+      "text": "1D",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0054",
+        "STRICT-0009-CENSUS-01-0119",
+        "STRICT-0009-CENSUS-02-0056",
+        "STRICT-0009-CENSUS-02-0126",
+        "STRICT-0009-CENSUS-03-0059",
+        "STRICT-0009-CENSUS-03-0129"
+      ],
+      "textSHA256": "065387c9635840b850255bbca50faa931fbc6e68cb69af08b8146eadafccbd25",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 47,
+      "text": "1W",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0055",
+        "STRICT-0009-CENSUS-01-0120",
+        "STRICT-0009-CENSUS-02-0057",
+        "STRICT-0009-CENSUS-02-0127",
+        "STRICT-0009-CENSUS-03-0060",
+        "STRICT-0009-CENSUS-03-0130"
+      ],
+      "textSHA256": "a548780b897ddc15bc959f7bb6e813aa60129580971f66581463bb0e8086ac7e",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 48,
+      "text": "1H",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0056",
+        "STRICT-0009-CENSUS-02-0058",
+        "STRICT-0009-CENSUS-03-0061"
+      ],
+      "textSHA256": "0166c7ec13e72cdd14ad7a02182f00119378abed713338f2e22e6202ff77b34f",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 49,
+      "text": "window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0057",
+        "STRICT-0009-CENSUS-02-0059",
+        "STRICT-0009-CENSUS-03-0062"
+      ],
+      "textSHA256": "30e1fa034cf8d246e3cbb299b34411d085592f12f7d8bbcf4cebc0f8448175e0",
+      "reference": "0065–0068",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The range labels, selected range and time-window notice compose the four previously reviewed line-chart states."
+    },
+    {
+      "group": 50,
+      "text": "03:01 AM",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0065"
+      ],
+      "textSHA256": "e5593f8d6bff4bcb1bd743a27a1df20e2a46d52fb33fde8ce862876fb956f582",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "This timestamp is a generated plot projection. Its meaning and source are normalized by the line-chart review."
+    },
+    {
+      "group": 51,
+      "text": "Headline:",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0066",
+        "STRICT-0009-CENSUS-02-0073",
+        "STRICT-0009-CENSUS-03-0076"
+      ],
+      "textSHA256": "656667ab6ffb138763a8fe56641baf5659082b2fe34c1a4bdabd8c2b12182aaf",
+      "reference": "0493–0495",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The chart headline and no-provider-time wording compose the audited current controlled projection."
+    },
+    {
+      "group": 52,
+      "text": "latest chart point",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0067",
+        "STRICT-0009-CENSUS-02-0074",
+        "STRICT-0009-CENSUS-03-0077"
+      ],
+      "textSHA256": "8a2355b7e46c818147760432450862a8e06d4d57045bddbe83396ed9cf26eda8",
+      "reference": "0493–0495",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The chart headline and no-provider-time wording compose the audited current controlled projection."
+    },
+    {
+      "group": 53,
+      "text": ". The order panel uses its own virtual execution input.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0068",
+        "STRICT-0009-CENSUS-02-0075",
+        "STRICT-0009-CENSUS-03-0078"
+      ],
+      "textSHA256": "0eaa21eeaa2b0aec017578aa8ca01675a562d2d215f5d8030be2e2577ed331a4",
+      "reference": "0493–0495",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The chart headline and no-provider-time wording compose the audited current controlled projection."
+    },
+    {
+      "group": 54,
+      "text": "No provider quote observation time supplied.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0069",
+        "STRICT-0009-CENSUS-02-0076",
+        "STRICT-0009-CENSUS-03-0079"
+      ],
+      "textSHA256": "9ca8001ee2fc4a5e9d02cba70f284ca53435efba1cb4eeef3750c3a1ebcde37f",
+      "reference": "0493–0495",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The chart headline and no-provider-time wording compose the audited current controlled projection."
+    },
+    {
+      "group": 55,
+      "text": "Data status: simulated",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0070",
+        "STRICT-0009-CENSUS-02-0077",
+        "STRICT-0009-CENSUS-03-0080"
+      ],
+      "textSHA256": "eb58634e95f9167e55709b4cdcdfc58735cf49d0980c60f8430b28217f770ef9",
+      "reference": "0493–0495",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The chart headline and no-provider-time wording compose the audited current controlled projection."
+    },
+    {
+      "group": 56,
+      "text": "Market Insight",
+      "tag": "h3",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0072",
+        "STRICT-0009-CENSUS-02-0079",
+        "STRICT-0009-CENSUS-03-0082"
+      ],
+      "textSHA256": "800aeea919409c861043fd5769b029299d5996371d0d8ef22a77d930ff2484e3",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 57,
+      "text": "Educational estimate · not financial advice",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0073",
+        "STRICT-0009-CENSUS-02-0080",
+        "STRICT-0009-CENSUS-03-0083"
+      ],
+      "textSHA256": "6267570716b7c9dd1dee75a06066a1c9097763cb7b36fb19188f8b17f606747f",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 58,
+      "text": "Recent Move",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0074",
+        "STRICT-0009-CENSUS-02-0081",
+        "STRICT-0009-CENSUS-03-0084"
+      ],
+      "textSHA256": "790e4093afd1b3615493189a67b9172e6e062b796f8432907692cbec468281aa",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 59,
+      "text": "Near flat",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0075",
+        "STRICT-0009-CENSUS-02-0082",
+        "STRICT-0009-CENSUS-03-0085"
+      ],
+      "textSHA256": "b068aebc501279880acd369fd2767c1d98b541b4bb6c647c75e82df220368d67",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 60,
+      "text": "+0.00% · descriptive only",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0076",
+        "STRICT-0009-CENSUS-02-0083"
+      ],
+      "textSHA256": "5460d81bb19dd5a13b48025a51d6e0ed10077e6f3b75a17c948a0cbd0de31773",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 61,
+      "text": "Move Size Bucket",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0077",
+        "STRICT-0009-CENSUS-02-0084",
+        "STRICT-0009-CENSUS-03-0087"
+      ],
+      "textSHA256": "e43c5f75fd17222da0054c2f11b3b1ed81dfa5d9528bdd042ae3471c36ba687c",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 62,
+      "text": "Low",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0078",
+        "STRICT-0009-CENSUS-02-0085"
+      ],
+      "textSHA256": "f793de205ead5ac302c4a1627829dea41f176b1068b993a32373fc869918374b",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 63,
+      "text": "0.0% practice move · heuristic",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0079",
+        "STRICT-0009-CENSUS-02-0086"
+      ],
+      "textSHA256": "dc78402cfdc5d877bfcad3ff2e66b1aba0361168c21989313fe68054e6277fb1",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 64,
+      "text": "Move Heuristic",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0080",
+        "STRICT-0009-CENSUS-02-0087",
+        "STRICT-0009-CENSUS-03-0090"
+      ],
+      "textSHA256": "f56df66f4ced34222bdb3fb0e5cf744e5aafa86271f141fea36f00d103d57f45",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 65,
+      "text": "Simple ±2% practice bucket · not a market signal",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0082",
+        "STRICT-0009-CENSUS-02-0089",
+        "STRICT-0009-CENSUS-03-0092"
+      ],
+      "textSHA256": "c28fc1270227bac211f4ecb715714a1f320504479fdac5733350e2b035718abf",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 66,
+      "text": "Practice Range",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0083",
+        "STRICT-0009-CENSUS-02-0090",
+        "STRICT-0009-CENSUS-03-0093"
+      ],
+      "textSHA256": "b03a7a0001240bfb37b24146847930dea7ca140d62c253884139865da3266fc8",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 67,
+      "text": "Lower: 0.9597",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0084",
+        "STRICT-0009-CENSUS-02-0091"
+      ],
+      "textSHA256": "6d19c673793ac618c0ca8c3032a302c8b39142cf436349b253e57a1f23ddfb36",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 68,
+      "text": "Upper: 1.04 · fixed ±4.0% band",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0085",
+        "STRICT-0009-CENSUS-02-0092"
+      ],
+      "textSHA256": "8857bd7a046eee0b6ff6974bb3c83313945684e2078bfc56ec7162d3c78baa81",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 69,
+      "text": "Beginner Tip",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0086",
+        "STRICT-0009-CENSUS-02-0093",
+        "STRICT-0009-CENSUS-03-0096"
+      ],
+      "textSHA256": "d8dc31504fe34d4b933fdd36476f3c66064d34cd3b9124b3b406d4f36f8d3dd6",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 70,
+      "text": "Compare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0087",
+        "STRICT-0009-CENSUS-02-0094",
+        "STRICT-0009-CENSUS-03-0097"
+      ],
+      "textSHA256": "23bbfaebe4c80b7bca645eed34be17f677d382c046859c7f752f87db3ac493c2",
+      "reference": "0072",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The USDC heuristic text is the previously reviewed condition. The current 0% sample and ±4% band are tied to the fixed 0.999718 quote and displayed as 0.9597 and 1.04."
+    },
+    {
+      "group": 71,
+      "text": "Buy",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0088",
+        "STRICT-0009-CENSUS-01-0115"
+      ],
+      "textSHA256": "64e3cb0e4960ba69298843d481376d1ce7b92cd43cf70e61a982da651c0335f3",
+      "reference": "0081–0084; #475 0480–0481",
+      "status": "REVIEWED-LABELS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "Mode labels are reviewed. Programmatic pressed-state remediation remains independently pending."
+    },
+    {
+      "group": 72,
+      "text": "Sell",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0089"
+      ],
+      "textSHA256": "2ec1e28159466f2a82a3d778394486baba97f065f20073206788bcfdc7f6d2ec",
+      "reference": "0081–0084; #475 0480–0481",
+      "status": "REVIEWED-LABELS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "Mode labels are reviewed. Programmatic pressed-state remediation remains independently pending."
+    },
+    {
+      "group": 73,
+      "text": "Amount",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0090"
+      ],
+      "textSHA256": "49e96d7cdf58069cc793555324e2226642f2f7f8bfff4cebe0c11a61eecef60a",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 74,
+      "text": "Max:",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0091"
+      ],
+      "textSHA256": "ef2840cc402ef4925678f8baecf915ed5b99bbee975b65ba799a5f521cddb0da",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 75,
+      "text": "USDC",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0093",
+        "STRICT-0009-CENSUS-01-0094",
+        "STRICT-0009-CENSUS-02-0134"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 76,
+      "text": "Ghost Journal",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0103"
+      ],
+      "textSHA256": "b883dfa7a8ffcec8c28c702d3b3dc4dab140adc873bee32eea61e9d1d5c39258",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 77,
+      "text": "Virtual execution input · USD per simulator unit",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0104"
+      ],
+      "textSHA256": "bc83442d702be3f82d48ff7d8b51aae74f2b27165ab29d732a886ee8faba2e8b",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 78,
+      "text": "Price (USD/unit)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0105"
+      ],
+      "textSHA256": "26bbc393dc97173fae8e093d096c30f9563abd7dbe2065f38feddd958b04cf51",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 79,
+      "text": "Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0108"
+      ],
+      "textSHA256": "fdeb0db57ecb9a2f7575112586090233f8a5c06836ebebe42c9b07b3b683035b",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 80,
+      "text": "Fee (0.1%)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0109"
+      ],
+      "textSHA256": "81197093b876191a1b19a6d4926e7b25acb03dfe5093b21151266fed2f9c16d1",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 81,
+      "text": "Total (USD)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0112"
+      ],
+      "textSHA256": "47f5142e2418561d565a645a5f4cf742ce03d9442f72d3b1afa56edd2739ed39",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 82,
+      "text": "USDC",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0116"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0081–0086; 0089–0090; 0112–0114; #475 0484–0485",
+      "status": "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING",
+      "rereadReason": "These order-form fragments are reviewed in amount, fee, order total, included-fee failure, journal and estimate contexts. The desktop maximum defect remains separately pending."
+    },
+    {
+      "group": 83,
+      "text": "USDC/USD",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0117",
+        "STRICT-0009-CENSUS-02-0124"
+      ],
+      "textSHA256": "948a65653650ee6b5cafa29719af774c61d27631da4a2faef02ccf2692bce380",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 84,
+      "text": "● Simulated",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0118",
+        "STRICT-0009-CENSUS-02-0125",
+        "STRICT-0009-CENSUS-03-0128"
+      ],
+      "textSHA256": "f7199c4e81d3d26d93d08abd399e872577fbce20704fd96bed7dc9788663a43c",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 85,
+      "text": "1M",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0121",
+        "STRICT-0009-CENSUS-02-0128",
+        "STRICT-0009-CENSUS-03-0131"
+      ],
+      "textSHA256": "c04d86ca1b234dae2539f44a3ea605b8ed59fb65ec5ded09937ebacbfa100264",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 86,
+      "text": "1Y",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0122",
+        "STRICT-0009-CENSUS-02-0129",
+        "STRICT-0009-CENSUS-03-0132"
+      ],
+      "textSHA256": "6cf96a82e80af72d8d6e0d86011f0ec570228c9d6f44b1a0fad0eb18556b2136",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 87,
+      "text": "5Y",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0123",
+        "STRICT-0009-CENSUS-02-0130",
+        "STRICT-0009-CENSUS-03-0133"
+      ],
+      "textSHA256": "2ecdeb6dba8a1c93240d424595a1065cc71a8c57924ccaf61b6bb8e72dc28544",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 88,
+      "text": "Lower illustrative band −3%",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0124",
+        "STRICT-0009-CENSUS-02-0131",
+        "STRICT-0009-CENSUS-03-0134"
+      ],
+      "textSHA256": "4c0df8d997dfbac7f0edc6535dfcd7e17e534b38ae9fded9d2a0517158034259",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 89,
+      "text": "Upper illustrative band +3.5%",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0125",
+        "STRICT-0009-CENSUS-02-0132",
+        "STRICT-0009-CENSUS-03-0135"
+      ],
+      "textSHA256": "d2528a1bdb2b3ecc999f53037f56e8185efd46ff186cb4be2076775ab4d28212",
+      "reference": "0058–0059; 0270–0273; #475 0478–0479",
+      "status": "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "Candlestick symbol, source badge, range buttons and illustrative bands have separate reviews. Keyboard-readable values retain the #475 release gate."
+    },
+    {
+      "group": 90,
+      "text": "Trade",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0126"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0042–0046; 0112–0114",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Trade and USDC compose the named mobile drawer launcher. The hidden layout duplicate is separately located by the raw visibility bit."
+    },
+    {
+      "group": 91,
+      "text": "USDC",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0127",
+        "STRICT-0009-CENSUS-02-0100",
+        "STRICT-0009-CENSUS-02-0101"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0042–0046; 0112–0114",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Trade and USDC compose the named mobile drawer launcher. The hidden layout duplicate is separately located by the raw visibility bit."
+    },
+    {
+      "group": 92,
+      "text": "Explore Markets",
+      "tag": "h3",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0128",
+        "STRICT-0009-CENSUS-02-0135",
+        "STRICT-0009-CENSUS-03-0138"
+      ],
+      "textSHA256": "6f2b1df04b3675b12add5f6f0fac3e9f6cd09352ebf4e0b8ce555e85b9d50d08",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 93,
+      "text": "View All",
+      "tag": "a",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0129",
+        "STRICT-0009-CENSUS-02-0136",
+        "STRICT-0009-CENSUS-03-0139"
+      ],
+      "textSHA256": "ff5573a6f2874c404b2a4739f47889b7d3eeba4cf72dea30a2ef09e1a2520f93",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 94,
+      "text": "→",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0130",
+        "STRICT-0009-CENSUS-02-0137",
+        "STRICT-0009-CENSUS-03-0140"
+      ],
+      "textSHA256": "161660030aa6c9e32470cc1c023dab32dc748d80b0e61882b368cb775d12638e",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 95,
+      "text": "USDT",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0131",
+        "STRICT-0009-CENSUS-02-0138",
+        "STRICT-0009-CENSUS-03-0149"
+      ],
+      "textSHA256": "ca9006bd3fb03d355daeeff93b24be90afaa6e3ca0073ff5720f8a852c933278",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 96,
+      "text": "Tether",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0135",
+        "STRICT-0009-CENSUS-02-0142",
+        "STRICT-0009-CENSUS-03-0153"
+      ],
+      "textSHA256": "b1b7a97b12fa83d8ad7403634b839f8252a33e7b33ad202ad3208730f1c53c86",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 97,
+      "text": "FIXED",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0138",
+        "STRICT-0009-CENSUS-01-0146",
+        "STRICT-0009-CENSUS-01-0154",
+        "STRICT-0009-CENSUS-01-0162",
+        "STRICT-0009-CENSUS-01-0170",
+        "STRICT-0009-CENSUS-01-0178",
+        "STRICT-0009-CENSUS-01-0186",
+        "STRICT-0009-CENSUS-01-0194",
+        "STRICT-0009-CENSUS-01-0202",
+        "STRICT-0009-CENSUS-01-0210",
+        "STRICT-0009-CENSUS-01-0218",
+        "STRICT-0009-CENSUS-01-0226",
+        "STRICT-0009-CENSUS-02-0145",
+        "STRICT-0009-CENSUS-02-0153",
+        "STRICT-0009-CENSUS-02-0161",
+        "STRICT-0009-CENSUS-02-0169",
+        "STRICT-0009-CENSUS-02-0177",
+        "STRICT-0009-CENSUS-02-0185",
+        "STRICT-0009-CENSUS-02-0193",
+        "STRICT-0009-CENSUS-02-0201",
+        "STRICT-0009-CENSUS-02-0209",
+        "STRICT-0009-CENSUS-02-0217",
+        "STRICT-0009-CENSUS-02-0225",
+        "STRICT-0009-CENSUS-02-0233",
+        "STRICT-0009-CENSUS-03-0148",
+        "STRICT-0009-CENSUS-03-0156",
+        "STRICT-0009-CENSUS-03-0164",
+        "STRICT-0009-CENSUS-03-0172",
+        "STRICT-0009-CENSUS-03-0180",
+        "STRICT-0009-CENSUS-03-0188",
+        "STRICT-0009-CENSUS-03-0196",
+        "STRICT-0009-CENSUS-03-0204",
+        "STRICT-0009-CENSUS-03-0212",
+        "STRICT-0009-CENSUS-03-0220",
+        "STRICT-0009-CENSUS-03-0228",
+        "STRICT-0009-CENSUS-03-0236"
+      ],
+      "textSHA256": "f28b69013846df29ac968c37082616f60dc2f7b2bad65f746021c1da3a2ce943",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 98,
+      "text": "DAI",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0139",
+        "STRICT-0009-CENSUS-02-0146",
+        "STRICT-0009-CENSUS-03-0157"
+      ],
+      "textSHA256": "bbeab13af26280e72d04c5794aa71659b1a1a31897d37797ca4d58039ade0833",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 99,
+      "text": "Dai",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0143",
+        "STRICT-0009-CENSUS-02-0150",
+        "STRICT-0009-CENSUS-03-0161"
+      ],
+      "textSHA256": "91e4461dd1fb65e549546270153d3f8dd65feb08627abdc05297c5d40938f4a6",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 100,
+      "text": "TRX",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0147",
+        "STRICT-0009-CENSUS-02-0154",
+        "STRICT-0009-CENSUS-03-0165"
+      ],
+      "textSHA256": "6c9c28597512ebf0ecb2dff22c2254d74a2096d81afae4b468ef9c6356347b3b",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 101,
+      "text": "TRON",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0151",
+        "STRICT-0009-CENSUS-02-0158",
+        "STRICT-0009-CENSUS-03-0169"
+      ],
+      "textSHA256": "dca34edb9dd20f4f1e8c5daa1df5deb7db32b2dff98e6515647016ae501be4dc",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 102,
+      "text": "BCH",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0155",
+        "STRICT-0009-CENSUS-02-0162",
+        "STRICT-0009-CENSUS-03-0173"
+      ],
+      "textSHA256": "5424cb881e62854b33ad8b390dddb205904568b81cdbbf8a0874c7abddb59796",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 103,
+      "text": "Bitcoin Cash",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0159",
+        "STRICT-0009-CENSUS-02-0166",
+        "STRICT-0009-CENSUS-03-0177"
+      ],
+      "textSHA256": "8a9851255d671c4e0ac3ad525ad0ff595cb31a1ad85327a77df3d15129b0a245",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 104,
+      "text": "TON",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0163",
+        "STRICT-0009-CENSUS-02-0170",
+        "STRICT-0009-CENSUS-03-0181"
+      ],
+      "textSHA256": "1a4219fe5e60d63af2a3cc7dce6fec69b45c6b5718497a6148e7c232ac87bd8a",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 105,
+      "text": "Toncoin",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0167",
+        "STRICT-0009-CENSUS-02-0174",
+        "STRICT-0009-CENSUS-03-0185"
+      ],
+      "textSHA256": "c0e3b28b316dd3a305362badac78c217be6192ce8be7d92d3248cf75ba5a0bd1",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 106,
+      "text": "ETC",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0171",
+        "STRICT-0009-CENSUS-02-0178",
+        "STRICT-0009-CENSUS-03-0189"
+      ],
+      "textSHA256": "1cb0c4c80152b0c0b7a5ef8762c5338ef28ce26c8a9cad1d70847a39fface131",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 107,
+      "text": "Ethereum Classic",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0175",
+        "STRICT-0009-CENSUS-02-0182",
+        "STRICT-0009-CENSUS-03-0193"
+      ],
+      "textSHA256": "af99be4d285dabc1e7fc1b9a723c36eec79adaa14ca5404251210175bcccc311",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 108,
+      "text": "XMR",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0179",
+        "STRICT-0009-CENSUS-02-0186",
+        "STRICT-0009-CENSUS-03-0197"
+      ],
+      "textSHA256": "60a9db8ddb0be6ddc707a9acf19c088519f98a006b496f4843de2f8f595608ba",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 109,
+      "text": "Monero",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0183",
+        "STRICT-0009-CENSUS-02-0190",
+        "STRICT-0009-CENSUS-03-0201"
+      ],
+      "textSHA256": "089fe32a531466cab21f0f705e6c7d0a6fc332869a9a7e059c2d5d522f4129af",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 110,
+      "text": "AAVE",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0187",
+        "STRICT-0009-CENSUS-02-0194",
+        "STRICT-0009-CENSUS-03-0205"
+      ],
+      "textSHA256": "0c06973c8181d842b496fc46dd9cf16545726b0f4fe493365145ac82fbe12b61",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 111,
+      "text": "Aave",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0191",
+        "STRICT-0009-CENSUS-02-0198",
+        "STRICT-0009-CENSUS-03-0209"
+      ],
+      "textSHA256": "0bc98152ae5ee0735b359b45749f19c5f27ccc877aa113a676100174748ea8e4",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 112,
+      "text": "GRT",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0195",
+        "STRICT-0009-CENSUS-02-0202",
+        "STRICT-0009-CENSUS-03-0213"
+      ],
+      "textSHA256": "19a5b6e9e13bdf2ba93543a8d17f368e90457a2566c14a80e5cc0e8030fbb758",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 113,
+      "text": "The Graph",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0199",
+        "STRICT-0009-CENSUS-02-0206",
+        "STRICT-0009-CENSUS-03-0217"
+      ],
+      "textSHA256": "74b6ee67bee24c6107b0f667e2a3403165dafc505c660614a9ec3ed83506a21f",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 114,
+      "text": "LDO",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0203",
+        "STRICT-0009-CENSUS-02-0210",
+        "STRICT-0009-CENSUS-03-0221"
+      ],
+      "textSHA256": "735099be2bbaa8d30cd38fef0015f7bab4485433bfbf925e02e0340d5f733c57",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 115,
+      "text": "Lido DAO",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0207",
+        "STRICT-0009-CENSUS-02-0214",
+        "STRICT-0009-CENSUS-03-0225"
+      ],
+      "textSHA256": "4f84216c86551e6db479cf5ac0987d0571da6c06e5a744e17f837bf2b9221a2c",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 116,
+      "text": "RUNE",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0211",
+        "STRICT-0009-CENSUS-02-0218",
+        "STRICT-0009-CENSUS-03-0229"
+      ],
+      "textSHA256": "47d195d01ccdc8870bdad90647c0fc253716bdbf35e7ad0de5a6d1507f2a1631",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 117,
+      "text": "THORChain",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0215",
+        "STRICT-0009-CENSUS-02-0222",
+        "STRICT-0009-CENSUS-03-0233"
+      ],
+      "textSHA256": "472c04e25cebc5b69b5d20669e358bc2636bf6f0b6b4d9b353a5027fcd0e0462",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 118,
+      "text": "KAS",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0219",
+        "STRICT-0009-CENSUS-02-0226"
+      ],
+      "textSHA256": "0e7ea7b4df80d6824805f69c1c95012b11fb85911992c319458c81d99c5b2bb7",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 119,
+      "text": "Kaspa",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0223",
+        "STRICT-0009-CENSUS-02-0230"
+      ],
+      "textSHA256": "46d79b6244e1263a61af7d460e98247ea3e57551ab214011f563bb913346b21d",
+      "reference": "0301–0314; 0295–0296",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These visible fragments are part of the Explore heading and audited card/link projections, including source badge and structural icon."
+    },
+    {
+      "group": 120,
+      "text": "Home",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0227",
+        "STRICT-0009-CENSUS-01-0428",
+        "STRICT-0009-CENSUS-02-0234",
+        "STRICT-0009-CENSUS-03-0237"
+      ],
+      "textSHA256": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "reference": "0063–0064; 0027–0036",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The breadcrumb and FAQ header are paired with their reviewed published route and answer projections."
+    },
+    {
+      "group": 121,
+      "text": "Trade Simulator",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0228",
+        "STRICT-0009-CENSUS-02-0235",
+        "STRICT-0009-CENSUS-03-0238"
+      ],
+      "textSHA256": "76a28e12cd5a5ba3d1a3fc373c91c0f8392291fe7932ec0051dfcb425233cfd6",
+      "reference": "0063–0064; 0027–0036",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The breadcrumb and FAQ header are paired with their reviewed published route and answer projections."
+    },
+    {
+      "group": 122,
+      "text": "Frequently Asked Questions",
+      "tag": "h3",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0229",
+        "STRICT-0009-CENSUS-02-0236",
+        "STRICT-0009-CENSUS-03-0239"
+      ],
+      "textSHA256": "a3d458e1bd1eda066018d8db2dd5537c9e742f02f68401457c01553e77f57403",
+      "reference": "0063–0064; 0027–0036",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The breadcrumb and FAQ header are paired with their reviewed published route and answer projections."
+    },
+    {
+      "group": 123,
+      "text": "Trade All Markets",
+      "tag": "h2",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0237",
+        "STRICT-0009-CENSUS-02-0243",
+        "STRICT-0009-CENSUS-03-0247"
+      ],
+      "textSHA256": "e66bb21177d3cec7c99f80be8caef9e0607475be9dffe1a1a0642a15b3e55a3f",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 124,
+      "text": "Top Crypto",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0238",
+        "STRICT-0009-CENSUS-02-0244",
+        "STRICT-0009-CENSUS-03-0248"
+      ],
+      "textSHA256": "20563e3d33d85d1f0e6ecfe91f19824872cb4f2d935ebd796fb778dcbd4b3b54",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 125,
+      "text": "Bitcoin",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0240"
+      ],
+      "textSHA256": "b4056df6691f8dc72e56302ddad345d65fead3ead9299609a826e2344eb63aa4",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 126,
+      "text": "Ethereum",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0242"
+      ],
+      "textSHA256": "a13bebeb57e1ea699bd4d2d9ac7e58399644e884b8a8783d96f6d146083f2430",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 127,
+      "text": "Solana",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0244"
+      ],
+      "textSHA256": "be4b0c384393cc429273174b28eac42c83a693537b42a87d440da614d4b346a9",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 128,
+      "text": "Cardano",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0250"
+      ],
+      "textSHA256": "27df28946736beecaa21e2ff7c3af8258a51aba084f1318a332ec22fd4f00ab1",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 129,
+      "text": "AI & Tech Stocks",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0251",
+        "STRICT-0009-CENSUS-02-0257",
+        "STRICT-0009-CENSUS-03-0261"
+      ],
+      "textSHA256": "ec2a2db0dbba18baf454ba45bf1783e227a84af4d3b8b2a441aa2067c1dbbfcf",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 130,
+      "text": "NVIDIA",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0253"
+      ],
+      "textSHA256": "0890f456684a70f1a9f1dbcee40c1fe847b76f338581a9a1d9202c76b1c175f4",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 131,
+      "text": "Microsoft",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0255"
+      ],
+      "textSHA256": "c7bac46904be785cd0c965bf5659610044f0cdb4cbb02d2ec398dc56648988fd",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 132,
+      "text": "Alphabet",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0257"
+      ],
+      "textSHA256": "ac57b0e667bf3ec1bd0f1fb7b94b25e1f6923674068b37b0ea39e169075d370b",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 133,
+      "text": "Apple",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0259"
+      ],
+      "textSHA256": "f223faa96f22916294922b171a2696d868fd1f9129302eb41a45b2a2ea2ebbfd",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 134,
+      "text": "Amazon",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0263"
+      ],
+      "textSHA256": "49d2dc07acd9eff540ded01867adfbcbc4139f5fd7cb0eed6c717edb10ffa8fd",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 135,
+      "text": "Popular ETFs",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0264",
+        "STRICT-0009-CENSUS-02-0270",
+        "STRICT-0009-CENSUS-03-0274"
+      ],
+      "textSHA256": "0258398d88cee9f9083a7b59b3c0d87416ec42515f6350b88181d6f5a1e31e94",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 136,
+      "text": "S&P 500 ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0266"
+      ],
+      "textSHA256": "6cc9f8cca5db8e2f47a32cdbceca2eeb498bf3d24423af2cdd073f998dc49a6a",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 137,
+      "text": "Nasdaq ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0268"
+      ],
+      "textSHA256": "99a12e483b3c5f652159755bab09c21b04528919d8ea20abeae7f8932561d9af",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 138,
+      "text": "Dow Jones ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0270"
+      ],
+      "textSHA256": "c902177de6506f3778c3934daf5ce1b404ea347e81e754f0c906db7cef2464c6",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 139,
+      "text": "ARK Innovation",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0272"
+      ],
+      "textSHA256": "c63989e0f6662faeb7f535811a3331fc25f79db1fa9cdaeb66d486414764a1bd",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 140,
+      "text": "Forex Pairs",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0273",
+        "STRICT-0009-CENSUS-02-0279",
+        "STRICT-0009-CENSUS-03-0283"
+      ],
+      "textSHA256": "ef8d060148912e22093c51af06f4612f3e7d7ab97d60e862d639be4a8498d0cb",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 141,
+      "text": "Euro/Dollar",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0275"
+      ],
+      "textSHA256": "9aa84d7299c82495fa7086317dba75ee118d2c4706f7d6dca1684b6ea6664ab6",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 142,
+      "text": "Pound/Dollar",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0277"
+      ],
+      "textSHA256": "c7c19da79442606515d50348af517ca0cca05841555131706e937289e92b04b1",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 143,
+      "text": "Dollar/Yen",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0279"
+      ],
+      "textSHA256": "02855aa29743525b5f9936cbb1cab1883c2896edadc5be8a187caa8dd2c44a09",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 144,
+      "text": "Gold",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0282"
+      ],
+      "textSHA256": "6249df4367d0a2e088c8eb1117ef59430f0d7dad4bf0fcf8a01d7f0415f4d511",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 145,
+      "text": "Silver",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0284"
+      ],
+      "textSHA256": "a0b43df06f52085e62ab592a6adc991e32fadfa13f51c7692ba1c1720b5663d2",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 146,
+      "text": "Crude Oil",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0286"
+      ],
+      "textSHA256": "04826b42f7528e0de17d20adb13030610782494d9ea52be189eb547f1a9f9a0a",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 147,
+      "text": "Trading Glossary",
+      "tag": "h2",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0287",
+        "STRICT-0009-CENSUS-02-0293",
+        "STRICT-0009-CENSUS-03-0297"
+      ],
+      "textSHA256": "9e2b060aef0a22d325267a22b9d868d2b307e27bdbbe5e06814b63abcfb2375d",
+      "reference": "0330–0400; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These footer headings and label fragments are contained in the cross-width link ledger and all market category projections."
+    },
+    {
+      "group": 148,
+      "text": "Follow TradeHQ",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0341",
+        "STRICT-0009-CENSUS-02-0347",
+        "STRICT-0009-CENSUS-03-0351"
+      ],
+      "textSHA256": "dd1edf1f86da4bea4d9b7b193a89b729184489437295c9b80fc434c66d008073",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 149,
+      "text": "@thetradehq_1",
+      "tag": "a",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0342",
+        "STRICT-0009-CENSUS-02-0348",
+        "STRICT-0009-CENSUS-03-0352"
+      ],
+      "textSHA256": "4434947496c56e8b5daacc156dd76d9e6ccfd29c24f170592ea0a6382ede9f9b",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 150,
+      "text": "Founder · personal accounts",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0343",
+        "STRICT-0009-CENSUS-02-0349",
+        "STRICT-0009-CENSUS-03-0353"
+      ],
+      "textSHA256": "f2a6aabcadf59b2cfb31af0ca4e5677a8dd122a8b59a9225f81c3425520d34cf",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 151,
+      "text": "Instagram",
+      "tag": "a",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0344",
+        "STRICT-0009-CENSUS-02-0350",
+        "STRICT-0009-CENSUS-03-0354"
+      ],
+      "textSHA256": "bad57ef7837c8e6bf99c2a5935cc9d6fe5324a53d88744ad5551db0e46b03cd6",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 152,
+      "text": "Bluesky",
+      "tag": "a",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0345",
+        "STRICT-0009-CENSUS-02-0351",
+        "STRICT-0009-CENSUS-03-0355"
+      ],
+      "textSHA256": "4ed485c7140118607118ad9ad616ab9c026bef5efa0b0218cbf312188959d451",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 153,
+      "text": "Platform",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0346",
+        "STRICT-0009-CENSUS-02-0352",
+        "STRICT-0009-CENSUS-03-0356"
+      ],
+      "textSHA256": "c78ffe19571018fbc93a78873969046fe1a80c3d21e5d20fbb2ca17c7c53a144",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 154,
+      "text": "Optional analytics settings",
+      "tag": "button",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0350",
+        "STRICT-0009-CENSUS-02-0356",
+        "STRICT-0009-CENSUS-03-0360"
+      ],
+      "textSHA256": "c7938e0862253fa5a45f77a631750e37547b9ddcc05108fad0fc1cedec5557a0",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 155,
+      "text": "Learn",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0351",
+        "STRICT-0009-CENSUS-02-0357",
+        "STRICT-0009-CENSUS-03-0361"
+      ],
+      "textSHA256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 156,
+      "text": "Company",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0360",
+        "STRICT-0009-CENSUS-02-0366",
+        "STRICT-0009-CENSUS-03-0370"
+      ],
+      "textSHA256": "de4743c879734dc38cb3e270ecefcae077c3c2e626f9298115d5a03c8613f89b",
+      "reference": "0401–0431; 0437",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The paired social labels, site sections and optional analytics action are covered by the retained guest footer evidence."
+    },
+    {
+      "group": 157,
+      "text": "Trust & Security",
+      "tag": "h3",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0368",
+        "STRICT-0009-CENSUS-02-0374",
+        "STRICT-0009-CENSUS-03-0378"
+      ],
+      "textSHA256": "655232fb6105b591e34914fcc4ea95a60cbb1af5454acb118e1b19e4aea7bef0",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 158,
+      "text": "Virtual Cash Only",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0369",
+        "STRICT-0009-CENSUS-02-0375",
+        "STRICT-0009-CENSUS-03-0379"
+      ],
+      "textSHA256": "ffb46adb4341304448a9899793a27b7436ffce3761af8ab76d4b405a8b81ab6b",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 159,
+      "text": "No real money is traded",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0370",
+        "STRICT-0009-CENSUS-02-0376",
+        "STRICT-0009-CENSUS-03-0380"
+      ],
+      "textSHA256": "a38157e0dd86d61a388dfc5fb349fc642a32c130007acc5ab08519f1b3013318",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 160,
+      "text": "Educational Simulator",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0371",
+        "STRICT-0009-CENSUS-02-0377",
+        "STRICT-0009-CENSUS-03-0381"
+      ],
+      "textSHA256": "090bc8bae208669bb33786c537dd5fc36757150c068d448b41df8ebe7d0e4252",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 161,
+      "text": "Practice trading skills",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0372",
+        "STRICT-0009-CENSUS-02-0378",
+        "STRICT-0009-CENSUS-03-0382"
+      ],
+      "textSHA256": "c485a16457e782264bedc7251fa678d348d7659a3f63f805909e4bb1717d9b72",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 162,
+      "text": "170 Assets",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0373",
+        "STRICT-0009-CENSUS-02-0379",
+        "STRICT-0009-CENSUS-03-0383"
+      ],
+      "textSHA256": "189988a04f250e94f40c85ffe5ae2f6faefad1c964c22f67a1142140abe164cb",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 163,
+      "text": "Stocks, crypto, ETFs, forex",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0374",
+        "STRICT-0009-CENSUS-02-0380",
+        "STRICT-0009-CENSUS-03-0384"
+      ],
+      "textSHA256": "8f270edd207bb6ab6602d45633531509e96147898720e2041f32685d00b5b057",
+      "reference": "0434",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These trust and educational claims form the independently reviewed footer descriptions."
+    },
+    {
+      "group": 164,
+      "text": "TradeHQ Newsletter",
+      "tag": "div",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0375",
+        "STRICT-0009-CENSUS-02-0381",
+        "STRICT-0009-CENSUS-03-0385"
+      ],
+      "textSHA256": "75785d2efb291c8ded408a79368eb2f705ec6c02e9d004e012413d942ee0ac39",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 165,
+      "text": "Understand money, one useful idea at a time.",
+      "tag": "h2",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0376",
+        "STRICT-0009-CENSUS-02-0382",
+        "STRICT-0009-CENSUS-03-0386"
+      ],
+      "textSHA256": "9c8b31d1e946045fb23b85d6f091473e25733d28c373eecdf2bd611ac5f04352",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 166,
+      "text": "A free, original, beginner-friendly financial lesson each week. Real examples, simple explanations, no trading jargon or hype. No account required.",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0377",
+        "STRICT-0009-CENSUS-02-0383",
+        "STRICT-0009-CENSUS-03-0387"
+      ],
+      "textSHA256": "f8cce1d274252cd0666f66ea84b735b5ab89b4ac0bbe7cf087dab31dd858b8bc",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 167,
+      "text": "Your email address",
+      "tag": "label",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0378",
+        "STRICT-0009-CENSUS-02-0384",
+        "STRICT-0009-CENSUS-03-0388"
+      ],
+      "textSHA256": "3fa7c5ef191f6fdd6bc02a51bd68a10b44f6775da45df613eca42831cd41e46b",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 168,
+      "text": "Subscribe free",
+      "tag": "button",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0379",
+        "STRICT-0009-CENSUS-02-0385",
+        "STRICT-0009-CENSUS-03-0389"
+      ],
+      "textSHA256": "97d2166e0ccc2f1b23ec009046cce6e6add61dbdfbe520c1bfb803926f2b6688",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 169,
+      "text": "Leave blank",
+      "tag": "label",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0380",
+        "STRICT-0009-CENSUS-02-0386",
+        "STRICT-0009-CENSUS-03-0390"
+      ],
+      "textSHA256": "461af94335e0cf26cc3bba199376c9dc95f148e2c4ec0e358b9fedac690041a1",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 170,
+      "text": "I agree to receive the free weekly TradeHQ Newsletter. I'll confirm my email and can unsubscribe anytime. See the",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0381",
+        "STRICT-0009-CENSUS-02-0387",
+        "STRICT-0009-CENSUS-03-0391"
+      ],
+      "textSHA256": "cdaf50ebc3b60a6dc052f15faa3ffc091d13bb2a62fc2abe3df77c378770701b",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 171,
+      "text": "One educational email per week after editorial review. No promotions or account needed.",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0384",
+        "STRICT-0009-CENSUS-02-0390",
+        "STRICT-0009-CENSUS-03-0394"
+      ],
+      "textSHA256": "0de608ffd2b6913535280d454aa6e3efef9aa7ca56fe6e2cc917ce2c362114f3",
+      "reference": "0439–0443",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The newsletter form fragments are accounted for by the default and synthetic request projections. Delivery remains outside the public capture."
+    },
+    {
+      "group": 172,
+      "text": "|",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0387",
+        "STRICT-0009-CENSUS-02-0393",
+        "STRICT-0009-CENSUS-03-0397"
+      ],
+      "textSHA256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 173,
+      "text": "TradeHQ is an educational paper trading simulator.",
+      "tag": "strong",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0389",
+        "STRICT-0009-CENSUS-02-0395",
+        "STRICT-0009-CENSUS-03-0399"
+      ],
+      "textSHA256": "4bb3cdbc9f77a1fcb476171587abbebc9c9c43c7c8343eafa99ea325c9bd5816",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 174,
+      "text": "No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0390",
+        "STRICT-0009-CENSUS-02-0396",
+        "STRICT-0009-CENSUS-03-0400"
+      ],
+      "textSHA256": "61508541490f133c8fedb99e9b72f0a89e87692a2eee6ba211dbed47359613f1",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 175,
+      "text": "©",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0391",
+        "STRICT-0009-CENSUS-02-0397",
+        "STRICT-0009-CENSUS-03-0401"
+      ],
+      "textSHA256": "0a79b0ca699d37228d3affd3b6d38b7f2731702f12fd1edd6cb9ac42a686e3a3",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 176,
+      "text": "TradeHQ · Built by Anuga Weerasinghe · Educational Use Only",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0393",
+        "STRICT-0009-CENSUS-02-0399",
+        "STRICT-0009-CENSUS-03-0403"
+      ],
+      "textSHA256": "90e3528607f2b3d6d5e52da80a59bba779e4d71d9bbe2e02cad0b4ad976399bc",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 177,
+      "text": "Music:",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0394",
+        "STRICT-0009-CENSUS-02-0400",
+        "STRICT-0009-CENSUS-03-0404"
+      ],
+      "textSHA256": "dd20d8ad3f2e6725459feb52993fb42640d59b90da8fd3891bd0af493e20fa74",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 178,
+      "text": "·",
+      "tag": "p",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0396",
+        "STRICT-0009-CENSUS-02-0402",
+        "STRICT-0009-CENSUS-03-0406"
+      ],
+      "textSHA256": "a137f17a19a09cbe511ba654931ed30fd9c52205140ec096fa6180f1a0577546",
+      "reference": "0435–0436; 0465",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "Separators, disclaimer, attribution and copyright form the existing reviewer-scoped footer and media records."
+    },
+    {
+      "group": 179,
+      "text": "Learning notes:",
+      "tag": "h2",
+      "area": "article",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0399",
+        "STRICT-0009-CENSUS-02-0405",
+        "STRICT-0009-CENSUS-03-0409"
+      ],
+      "textSHA256": "7a0c90cf9f9872cb4412d1591afa08d911aa76af3dc2cf61fb8bb7353dae5081",
+      "reference": "0001",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The short heading fragment composes the reviewed learning-notes heading."
+    },
+    {
+      "group": 180,
+      "text": "Trade",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0429"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0488; 0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These mobile navigation labels and optional sign-in compose the already reviewed mobile and hidden shared menu states."
+    },
+    {
+      "group": 181,
+      "text": "Markets",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0430"
+      ],
+      "textSHA256": "97f5c16fcbfb4d9df3b735796322796e4d35d142e8fa80a2a290a20a0a9c9006",
+      "reference": "0488; 0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These mobile navigation labels and optional sign-in compose the already reviewed mobile and hidden shared menu states."
+    },
+    {
+      "group": 182,
+      "text": "Portfolio",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0431"
+      ],
+      "textSHA256": "1853eb2e9e5ed2bcc1d03b5a49cf407f2e43851363a8ffd0ce5ab7aa37ca8309",
+      "reference": "0488; 0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These mobile navigation labels and optional sign-in compose the already reviewed mobile and hidden shared menu states."
+    },
+    {
+      "group": 183,
+      "text": "Learn",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0432"
+      ],
+      "textSHA256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "reference": "0488; 0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These mobile navigation labels and optional sign-in compose the already reviewed mobile and hidden shared menu states."
+    },
+    {
+      "group": 184,
+      "text": "Sign in (optional)",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-01-0439",
+        "STRICT-0009-CENSUS-02-0445",
+        "STRICT-0009-CENSUS-03-0449"
+      ],
+      "textSHA256": "279ade50b978ecb9ec88c0017b66f23f0074339e91cc158662973978fba93813",
+      "reference": "0488; 0490",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These mobile navigation labels and optional sign-in compose the already reviewed mobile and hidden shared menu states."
+    },
+    {
+      "group": 185,
+      "text": "Daily cases now revisit topics you missed",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0001",
+        "STRICT-0009-CENSUS-03-0001"
+      ],
+      "textSHA256": "9cd724a0d7efc412b0b67c555115c789a419adfe10c643be1b8d7f25606114ff",
+      "reference": "0491",
+      "status": "OPEN-DYNAMIC-NOTICE-PAYLOAD",
+      "rereadReason": "The dynamic notice mechanism and link were reviewed. This historical headline has no journaled content-source counterpart yet."
+    },
+    {
+      "group": 186,
+      "text": "See What’s New",
+      "tag": "a",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0002",
+        "STRICT-0009-CENSUS-03-0002"
+      ],
+      "textSHA256": "fd4b064d97b8f42356ea5f3a45587e03f918d05f7ed2aa6a1a409c6bde1fb0a7",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 187,
+      "text": "Trade",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0005",
+        "STRICT-0009-CENSUS-03-0005"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 188,
+      "text": "Portfolio",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0006",
+        "STRICT-0009-CENSUS-03-0006"
+      ],
+      "textSHA256": "1853eb2e9e5ed2bcc1d03b5a49cf407f2e43851363a8ffd0ce5ab7aa37ca8309",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 189,
+      "text": "Newsletter",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0007",
+        "STRICT-0009-CENSUS-03-0007"
+      ],
+      "textSHA256": "f84ca2e7716bec9404f8a2806a17f3eda404f5cf33a4228f226b25a602c2e2e4",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 190,
+      "text": "More",
+      "tag": "button",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0008",
+        "STRICT-0009-CENSUS-03-0008"
+      ],
+      "textSHA256": "d47d7cb0e4f8fd2be5ee07826694c18917d83ca77d0a01698582d05f432db996",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 191,
+      "text": "Sign in",
+      "tag": "a",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0010",
+        "STRICT-0009-CENSUS-03-0010"
+      ],
+      "textSHA256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f",
+      "reference": "0487–0491",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The route link and conditional notice dismissal are represented in the separate current navigation states."
+    },
+    {
+      "group": 192,
+      "text": "02:58 AM",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0072",
+        "STRICT-0009-CENSUS-03-0075"
+      ],
+      "textSHA256": "280ee32ce61ff947beb988c1fd35137a754e97ca2ccd93e20bdd917abef3be28",
+      "reference": "0493",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "This is a generated sample timestamp. Its scope is the selected chart window in the source review."
+    },
+    {
+      "group": 193,
+      "text": "Buy",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0095",
+        "STRICT-0009-CENSUS-02-0122",
+        "STRICT-0009-CENSUS-03-0098",
+        "STRICT-0009-CENSUS-03-0125"
+      ],
+      "textSHA256": "64e3cb0e4960ba69298843d481376d1ce7b92cd43cf70e61a982da651c0335f3",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 194,
+      "text": "Sell",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0096",
+        "STRICT-0009-CENSUS-03-0099"
+      ],
+      "textSHA256": "2ec1e28159466f2a82a3d778394486baba97f065f20073206788bcfdc7f6d2ec",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 195,
+      "text": "Amount",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0097",
+        "STRICT-0009-CENSUS-03-0100"
+      ],
+      "textSHA256": "49e96d7cdf58069cc793555324e2226642f2f7f8bfff4cebe0c11a61eecef60a",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 196,
+      "text": "Max:",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0098",
+        "STRICT-0009-CENSUS-03-0101"
+      ],
+      "textSHA256": "ef2840cc402ef4925678f8baecf915ed5b99bbee975b65ba799a5f521cddb0da",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 197,
+      "text": "Ghost Journal",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0110",
+        "STRICT-0009-CENSUS-03-0113"
+      ],
+      "textSHA256": "b883dfa7a8ffcec8c28c702d3b3dc4dab140adc873bee32eea61e9d1d5c39258",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 198,
+      "text": "Virtual execution input · USD per simulator unit",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0111",
+        "STRICT-0009-CENSUS-03-0114"
+      ],
+      "textSHA256": "bc83442d702be3f82d48ff7d8b51aae74f2b27165ab29d732a886ee8faba2e8b",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 199,
+      "text": "Price (USD/unit)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0112",
+        "STRICT-0009-CENSUS-03-0115"
+      ],
+      "textSHA256": "26bbc393dc97173fae8e093d096c30f9563abd7dbe2065f38feddd958b04cf51",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 200,
+      "text": "Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0115",
+        "STRICT-0009-CENSUS-03-0118"
+      ],
+      "textSHA256": "fdeb0db57ecb9a2f7575112586090233f8a5c06836ebebe42c9b07b3b683035b",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 201,
+      "text": "Fee (0.1%)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0116",
+        "STRICT-0009-CENSUS-03-0119"
+      ],
+      "textSHA256": "81197093b876191a1b19a6d4926e7b25acb03dfe5093b21151266fed2f9c16d1",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 202,
+      "text": "Total (USD)",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0119",
+        "STRICT-0009-CENSUS-03-0122"
+      ],
+      "textSHA256": "47f5142e2418561d565a645a5f4cf742ce03d9442f72d3b1afa56edd2739ed39",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 203,
+      "text": "USDC",
+      "tag": "button",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0123"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 204,
+      "text": "Trade",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0133",
+        "STRICT-0009-CENSUS-03-0136"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0081–0090; 0112–0114; #475 0481,0483,0485",
+      "status": "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING",
+      "rereadReason": "These responsive form and launcher fragments reuse form projections with explicit mode/heading and maximum action gates."
+    },
+    {
+      "group": 205,
+      "text": "Bitcoin",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0246",
+        "STRICT-0009-CENSUS-03-0250"
+      ],
+      "textSHA256": "b4056df6691f8dc72e56302ddad345d65fead3ead9299609a826e2344eb63aa4",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 206,
+      "text": "Ethereum",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0248",
+        "STRICT-0009-CENSUS-03-0252"
+      ],
+      "textSHA256": "a13bebeb57e1ea699bd4d2d9ac7e58399644e884b8a8783d96f6d146083f2430",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 207,
+      "text": "Solana",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0250",
+        "STRICT-0009-CENSUS-03-0254"
+      ],
+      "textSHA256": "be4b0c384393cc429273174b28eac42c83a693537b42a87d440da614d4b346a9",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 208,
+      "text": "Cardano",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0256",
+        "STRICT-0009-CENSUS-03-0260"
+      ],
+      "textSHA256": "27df28946736beecaa21e2ff7c3af8258a51aba084f1318a332ec22fd4f00ab1",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 209,
+      "text": "NVIDIA",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0259",
+        "STRICT-0009-CENSUS-03-0263"
+      ],
+      "textSHA256": "0890f456684a70f1a9f1dbcee40c1fe847b76f338581a9a1d9202c76b1c175f4",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 210,
+      "text": "Microsoft",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0261",
+        "STRICT-0009-CENSUS-03-0265"
+      ],
+      "textSHA256": "c7bac46904be785cd0c965bf5659610044f0cdb4cbb02d2ec398dc56648988fd",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 211,
+      "text": "Alphabet",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0263",
+        "STRICT-0009-CENSUS-03-0267"
+      ],
+      "textSHA256": "ac57b0e667bf3ec1bd0f1fb7b94b25e1f6923674068b37b0ea39e169075d370b",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 212,
+      "text": "Apple",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0265",
+        "STRICT-0009-CENSUS-03-0269"
+      ],
+      "textSHA256": "f223faa96f22916294922b171a2696d868fd1f9129302eb41a45b2a2ea2ebbfd",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 213,
+      "text": "Amazon",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0269",
+        "STRICT-0009-CENSUS-03-0273"
+      ],
+      "textSHA256": "49d2dc07acd9eff540ded01867adfbcbc4139f5fd7cb0eed6c717edb10ffa8fd",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 214,
+      "text": "S&P 500 ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0272",
+        "STRICT-0009-CENSUS-03-0276"
+      ],
+      "textSHA256": "6cc9f8cca5db8e2f47a32cdbceca2eeb498bf3d24423af2cdd073f998dc49a6a",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 215,
+      "text": "Nasdaq ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0274",
+        "STRICT-0009-CENSUS-03-0278"
+      ],
+      "textSHA256": "99a12e483b3c5f652159755bab09c21b04528919d8ea20abeae7f8932561d9af",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 216,
+      "text": "Dow Jones ETF",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0276",
+        "STRICT-0009-CENSUS-03-0280"
+      ],
+      "textSHA256": "c902177de6506f3778c3934daf5ce1b404ea347e81e754f0c906db7cef2464c6",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 217,
+      "text": "ARK Innovation",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0278",
+        "STRICT-0009-CENSUS-03-0282"
+      ],
+      "textSHA256": "c63989e0f6662faeb7f535811a3331fc25f79db1fa9cdaeb66d486414764a1bd",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 218,
+      "text": "Euro/Dollar",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0281",
+        "STRICT-0009-CENSUS-03-0285"
+      ],
+      "textSHA256": "9aa84d7299c82495fa7086317dba75ee118d2c4706f7d6dca1684b6ea6664ab6",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 219,
+      "text": "Pound/Dollar",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0283",
+        "STRICT-0009-CENSUS-03-0287"
+      ],
+      "textSHA256": "c7c19da79442606515d50348af517ca0cca05841555131706e937289e92b04b1",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 220,
+      "text": "Dollar/Yen",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0285",
+        "STRICT-0009-CENSUS-03-0289"
+      ],
+      "textSHA256": "02855aa29743525b5f9936cbb1cab1883c2896edadc5be8a187caa8dd2c44a09",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 221,
+      "text": "Gold",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0288",
+        "STRICT-0009-CENSUS-03-0292"
+      ],
+      "textSHA256": "6249df4367d0a2e088c8eb1117ef59430f0d7dad4bf0fcf8a01d7f0415f4d511",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 222,
+      "text": "Silver",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0290",
+        "STRICT-0009-CENSUS-03-0294"
+      ],
+      "textSHA256": "a0b43df06f52085e62ab592a6adc991e32fadfa13f51c7692ba1c1720b5663d2",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 223,
+      "text": "Crude Oil",
+      "tag": "span",
+      "area": "footer",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0292",
+        "STRICT-0009-CENSUS-03-0296"
+      ],
+      "textSHA256": "04826b42f7528e0de17d20adb13030610782494d9ea52be189eb547f1a9f9a0a",
+      "reference": "0330–0351; 0432",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The duplicate responsive footer fragments tie to their specific complete market links."
+    },
+    {
+      "group": 224,
+      "text": "Home",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0434",
+        "STRICT-0009-CENSUS-03-0438"
+      ],
+      "textSHA256": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "reference": "0488",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These hidden fragment labels match the active mobile navigation, with hidden state kept as captured."
+    },
+    {
+      "group": 225,
+      "text": "Trade",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0435",
+        "STRICT-0009-CENSUS-03-0439"
+      ],
+      "textSHA256": "9709653fc80ceb83ff874034ac132929f62898d352847637481cb96ac5cf2c76",
+      "reference": "0488",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These hidden fragment labels match the active mobile navigation, with hidden state kept as captured."
+    },
+    {
+      "group": 226,
+      "text": "Markets",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0436",
+        "STRICT-0009-CENSUS-03-0440"
+      ],
+      "textSHA256": "97f5c16fcbfb4d9df3b735796322796e4d35d142e8fa80a2a290a20a0a9c9006",
+      "reference": "0488",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These hidden fragment labels match the active mobile navigation, with hidden state kept as captured."
+    },
+    {
+      "group": 227,
+      "text": "Portfolio",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0437",
+        "STRICT-0009-CENSUS-03-0441"
+      ],
+      "textSHA256": "1853eb2e9e5ed2bcc1d03b5a49cf407f2e43851363a8ffd0ce5ab7aa37ca8309",
+      "reference": "0488",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These hidden fragment labels match the active mobile navigation, with hidden state kept as captured."
+    },
+    {
+      "group": 228,
+      "text": "Learn",
+      "tag": "span",
+      "area": null,
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-02-0438",
+        "STRICT-0009-CENSUS-03-0442"
+      ],
+      "textSHA256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd",
+      "reference": "0488",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "These hidden fragment labels match the active mobile navigation, with hidden state kept as captured."
+    },
+    {
+      "group": 229,
+      "text": "Beginner journey · guided virtual trade",
+      "tag": "strong",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0012"
+      ],
+      "textSHA256": "f686636997ba90d06ecc1fc8cea7517f3a9d47fb1fa5fc0fd8eb99e892992447",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 230,
+      "text": "AAPL is preselected as an example, not a recommendation. Review the quote source, quantity and costs. You decide whether to submit a practice order.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0013"
+      ],
+      "textSHA256": "68379a8d66630381bcdb1fab4cbb5778bf97c9e06c77ce3e0b1d0dd32c89f016",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 231,
+      "text": "Back to my journey",
+      "tag": "a",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0014"
+      ],
+      "textSHA256": "1cfa13335dad6814bdd2f3a7cd874455a30293710fc26090460a543b7411a672",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 232,
+      "text": "— Apple Inc. (AAPL)",
+      "tag": "h1",
+      "area": "header",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0016"
+      ],
+      "textSHA256": "8e11366b475aa0b3735ceaf31158183befebcff024202bde570dc773c18a8f26",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 233,
+      "text": "A",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0025",
+        "STRICT-0009-CENSUS-03-0044"
+      ],
+      "textSHA256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 234,
+      "text": "Apple Inc.",
+      "tag": "p",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0027",
+        "STRICT-0009-CENSUS-03-0047"
+      ],
+      "textSHA256": "02649c8a0b659e64874ac0d003eadf35d92aef432535b4f24750d6e9fc002cc1",
+      "reference": "0462; 0073; 0085",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided prompt, example-only wording, return control, selected asset heading and icon compose the separately tested practice transition."
+    },
+    {
+      "group": 235,
+      "text": "Apple Inc.",
+      "tag": "h2",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0030"
+      ],
+      "textSHA256": "02649c8a0b659e64874ac0d003eadf35d92aef432535b4f24750d6e9fc002cc1",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 236,
+      "text": "Stock",
+      "tag": "div",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0031"
+      ],
+      "textSHA256": "d5cade7ef31916901514fc80752478f5b1dcefe44aaaf49d7b99ab7ba2e50aa6",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 237,
+      "text": "Stock",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0038"
+      ],
+      "textSHA256": "d5cade7ef31916901514fc80752478f5b1dcefe44aaaf49d7b99ab7ba2e50aa6",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 238,
+      "text": "Company ownership exposure",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0041"
+      ],
+      "textSHA256": "ebbaff02f76981fc777365babbfdec5ec1b952f2f7587992ab35d57a7ad0b2ad",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 239,
+      "text": "+1.37% · descriptive only",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0086"
+      ],
+      "textSHA256": "fe6d621dcab8bddcad91f40f5d258e2ffba2ae3ce65f2ef93ce5cb46c4cc2686",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 240,
+      "text": "Moderate",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0088"
+      ],
+      "textSHA256": "5c42afc7a23018d32dcff346792b575bcdf63be118b98a61084b1afac32b93e9",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 241,
+      "text": "1.4% practice move · heuristic",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0089"
+      ],
+      "textSHA256": "e6379ef4fe36502d99a891b6458107c403abc8247042ae0f869c9b5a36fbb490",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 242,
+      "text": "Lower: 248.87",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0094"
+      ],
+      "textSHA256": "4580a7532b58c4352815b54586ce52adfd2ef1a4b93186d16526f4bf8f4f131b",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 243,
+      "text": "Upper: 261.63 · fixed ±2.5% band",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0095"
+      ],
+      "textSHA256": "946396efebfc8525394f796f0f0ea5bf578531ea765b61b188d3901024999f52",
+      "reference": "0073–0074",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The stock state ties its context and heuristic fragment labels to the AAPL projection. $255.25 × 0.975 and × 1.025 round to 248.87 and 261.63."
+    },
+    {
+      "group": 244,
+      "text": "AAPL/USD",
+      "tag": "span",
+      "area": "main",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0127"
+      ],
+      "textSHA256": "ed14239f492c7cb2a792267b629895fc4bc6e5dfadd688d21d233900568b58d6",
+      "reference": "0270–0273; #475 0479",
+      "status": "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING",
+      "rereadReason": "The USD candlestick heading is an asset-specific instance of the same covered renderer; the keyboard-readable table is tracked separately."
+    },
+    {
+      "group": 245,
+      "text": "USDC",
+      "tag": "span",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0141"
+      ],
+      "textSHA256": "8591ee9090c0c02ca1f103cb637131d8f358870aba145245ff083e138fdd705b",
+      "reference": "0302",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided example retains the USD Coin Explore link; the default USDC selection omits its own card."
+    },
+    {
+      "group": 246,
+      "text": "USD Coin",
+      "tag": "p",
+      "area": "section",
+      "rawOccurrences": [
+        "STRICT-0009-CENSUS-03-0145"
+      ],
+      "textSHA256": "4551f5a5957e4cb87d60aa260b61c8ed5256649a489ced68fe078c16d6558b8b",
+      "reference": "0302",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The guided example retains the USD Coin Explore link; the default USDC selection omits its own card."
+    }
+  ]
+}
