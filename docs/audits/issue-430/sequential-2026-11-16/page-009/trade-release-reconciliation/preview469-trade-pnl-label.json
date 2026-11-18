@@ -1,0 +1,44 @@
+{
+  "scope": "Explicit loopback-derived closed guest portfolio in disposable browser storage, all non-GET requests blocked",
+  "fixture": {
+    "cash": 99998.979,
+    "totalValue": 99998.979,
+    "positions": [],
+    "trades": [
+      {
+        "id": "audit-local-buy",
+        "assetId": "aapl",
+        "symbol": "AAPL",
+        "type": "buy",
+        "quantity": 2,
+        "price": 255.25,
+        "total": 511.0105,
+        "timestamp": "2026-11-18T00:00:00Z"
+      },
+      {
+        "id": "audit-local-sell",
+        "assetId": "aapl",
+        "symbol": "AAPL",
+        "type": "sell",
+        "quantity": 2,
+        "price": 255.25,
+        "total": 509.9895,
+        "timestamp": "2026-11-18T00:01:00Z"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T02:41:29.957346+00:00",
+      "status": 200,
+      "detailsAX": "- img\n- paragraph: Total Value\n- paragraph: $99,998.98\n- img\n- paragraph: Available Cash\n- paragraph: $99,998.98\n- button \"Details\":\n  - text: Details\n  - img\n- img\n- text: Open P&L\n- paragraph: +$0.00\n- paragraph: +0.00%\n- img\n- text: Positions\n- paragraph: \"0\"\n- paragraph: Active holdings\n- img\n- text: Invested\n- paragraph: $0\n- paragraph: In positions\n- img\n- text: Trades\n- paragraph: \"2\"\n- paragraph: Total executed"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T02:41:30.754634+00:00",
+      "status": 200,
+      "detailsAX": "- img\n- paragraph: Total Value\n- paragraph: $99,998.98\n- img\n- paragraph: Available Cash\n- paragraph: $99,998.98\n- button \"Details\":\n  - text: Details\n  - img\n- img\n- text: Open P&L\n- paragraph: +$0.00\n- paragraph: +0.00%\n- img\n- text: Positions\n- paragraph: \"0\"\n- paragraph: Active holdings\n- img\n- text: Invested\n- paragraph: $0\n- paragraph: In positions\n- img\n- text: Trades\n- paragraph: \"2\"\n- paragraph: Total executed"
+    }
+  ]
+}

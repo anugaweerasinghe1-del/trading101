@@ -1,0 +1,58 @@
+{
+  "scope": "Isolated guest browser, explicit trade fixture, all non-GET/external requests blocked",
+  "fixture": {
+    "cash": 99999.58,
+    "totalValue": 99999.58,
+    "positions": [],
+    "trades": [
+      {
+        "id": "audit-local-sell",
+        "assetId": "aapl",
+        "symbol": "AAPL",
+        "type": "sell",
+        "quantity": 2,
+        "price": 105,
+        "total": 209.79,
+        "timestamp": "2026-11-18T00:02:00Z"
+      },
+      {
+        "id": "audit-local-newer-buy",
+        "assetId": "aapl",
+        "symbol": "AAPL",
+        "type": "buy",
+        "quantity": 1,
+        "price": 110,
+        "total": 110.11,
+        "timestamp": "2026-11-18T00:01:00Z"
+      },
+      {
+        "id": "audit-local-older-buy",
+        "assetId": "aapl",
+        "symbol": "AAPL",
+        "type": "buy",
+        "quantity": 1,
+        "price": 100,
+        "total": 100.1,
+        "timestamp": "2026-11-18T00:00:00Z"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T02:41:31.924683+00:00",
+      "status": 200,
+      "programmaticView": "- dialog \"Portfolio educational mentor\":\n  - img\n  - heading \"Educational Mentor Study aid\" [level=3]\n  - paragraph: Client-reported practice snapshot\n  - button \"Close portfolio educational mentor\":\n    - img\n  - paragraph: Balance\n  - paragraph: $100.0k\n  - paragraph: Cash\n  - paragraph: $100.0k\n  - paragraph: Trades\n  - paragraph: \"3\"\n  - paragraph: Price-only sells\n  - paragraph: 0%\n  - paragraph: Price-only sells compares each sale with its latest earlier buy. It excludes fees and lot matching, so it is not a realized win rate.\n  - text: \"Viewing: BTC +1.99%\"\n  - img\n  - paragraph: I explain trading concepts using the practice snapshot supplied by this page. Responses use a built-in rule-based educational library; this chat does not call an AI service. Ask about quantities, fees or your recorded assumptions.\n  - paragraph: \"Ask me:\"\n  - button \"My portfolio\":\n    - img\n    - text: My portfolio\n  - button \"Analyze this asset\":\n    - img\n    - text: Analyze this asset\n  - button \"Risk assessment\":\n    - img\n    - text: Risk assessment\n  - button \"Trade history\":\n    - img\n    - text: Trade history\n  - button \"Review assumptions\":\n    - img\n    - text: Review assumptions\n  - textbox \"Question for the portfolio educational mentor\":\n    - /placeholder: Ask about your portfolio...\n  - button \"Send mentor question\" [disabled]:\n    - img\n  - paragraph: For educational purposes only. Not financial advice.",
+      "ratio": "0%",
+      "response": "Built-in educational response:\n\nTrade history review (3 recorded trades):\n\nRealized win rate: unavailable in this snapshot.\nPrice-only sell comparison: 0% of sales above their latest earlier buy; excludes fees and lot matching, not a realized win rate.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T02:41:32.053358+00:00",
+      "status": 200,
+      "programmaticView": "- dialog \"Portfolio educational mentor\":\n  - img\n  - heading \"Educational Mentor Study aid\" [level=3]\n  - paragraph: Client-reported practice snapshot\n  - button \"Close portfolio educational mentor\":\n    - img\n  - paragraph: Balance\n  - paragraph: $100.0k\n  - paragraph: Cash\n  - paragraph: $100.0k\n  - paragraph: Trades\n  - paragraph: \"3\"\n  - paragraph: Price-only sells\n  - paragraph: 0%\n  - paragraph: Price-only sells compares each sale with its latest earlier buy. It excludes fees and lot matching, so it is not a realized win rate.\n  - text: \"Viewing: BTC +1.99%\"\n  - img\n  - paragraph: I explain trading concepts using the practice snapshot supplied by this page. Responses use a built-in rule-based educational library; this chat does not call an AI service. Ask about quantities, fees or your recorded assumptions.\n  - paragraph: \"Ask me:\"\n  - button \"My portfolio\":\n    - img\n    - text: My portfolio\n  - button \"Analyze this asset\":\n    - img\n    - text: Analyze this asset\n  - button \"Risk assessment\":\n    - img\n    - text: Risk assessment\n  - button \"Trade history\":\n    - img\n    - text: Trade history\n  - button \"Review assumptions\":\n    - img\n    - text: Review assumptions\n  - textbox \"Question for the portfolio educational mentor\":\n    - /placeholder: Ask about your portfolio...\n  - button \"Send mentor question\" [disabled]:\n    - img\n  - paragraph: For educational purposes only. Not financial advice.",
+      "ratio": "0%",
+      "response": "Built-in educational response:\n\nTrade history review (3 recorded trades):\n\nRealized win rate: unavailable in this snapshot.\nPrice-only sell comparison: 0% of sales above their latest earlier buy; excludes fees and lot matching, not a realized win rate.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "pullRequest": 468,
+  "finalHeadSHA": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44222497603/job/134531732458",
+      "head_sha": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+      "id": 134531732458,
+      "name": "TradeHQ Required validation"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/f19a235c-15fc-49b1-96af-ff62c1aff468",
+      "head_sha": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+      "id": 134528231045,
+      "name": "Cloudflare Pages"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44222497676/job/134527549239",
+      "head_sha": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+      "id": 134527549239,
+      "name": "TradeHQ Disposable PostgreSQL controls"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44222497603/job/134527549187",
+      "head_sha": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+      "id": 134527549187,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44222497603/job/134527548999",
+      "head_sha": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+      "id": 134527548999,
+      "name": "TradeHQ Phase 3 tests"
+    }
+  ],
+  "mergeSHA": "8400ff251984500416dfc333c079881e555bbd6b",
+  "mergedTreeEqualsFinalHeadTree": "2fa03b9b7ff0158978d4a4c9b417ad4e2b11b9f5",
+  "previewURL": "https://f19a235c.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T02:41:34.013Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "02edb6da-214f-4f71-9bce-a0da088f9b52",
+      "sha": "8400ff251984500416dfc333c079881e555bbd6b",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T02:31:12.473087Z"
+    },
+    "sourceGitHubRun": 44223858733,
+    "sourceGitHubJob": 134536180284,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44223858733/job/134536180284"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveRereadAtUTC": "2026-11-18T02:42:27.658478+00:00",
+  "liveEvidence": [
+    "production468-final-cooldown.json"
+  ],
+  "findings": [
+    "STRICT-TRADE-005"
+  ],
+  "after": "Fresh 390px /trade and /trade/btc pointers reached Cancel Trade. The 430px guest Escape closed the named warning and restored focus. All three scenarios started with Proceed disabled and recorded zero trade submissions.",
+  "status": "FIXED-RECHECKED",
+  "pageClosureCredit": 0
+}
