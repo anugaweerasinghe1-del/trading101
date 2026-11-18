@@ -1,0 +1,47 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0058",
+    "text": "EUR/USD/USD",
+    "sha256": "43c1d24330c010a152f29d98ba8b87794e286bd8c3aced36859f7e4b1cac3770",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "beforeSourceRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
+    "version": "production before",
+    "captures": [
+      "before.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-003"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Observed actual scoped chart title while P09's selected symbol remained EUR/USD."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A separate viewport reproduces the redundant quote currency and the separate line chart labels units USD per EUR. Source uses asset.symbol plus a literal /USD.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0059",
+    "text": "EUR/USD | EUR/GBP | USD/JPY",
+    "sha256": "24b19bea92cbfc7517eaa3373afcca549fdcbd1f580249f937c50a14d068bb7e",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "beforeSourceRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
+    "version": "local candidate",
+    "captures": [
+      "local-after.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-003"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both local widths show the three exact pair labels, with an unchanged USDC/USD baseline and correct separate line quote units."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Native release and separate live reread required."
+    }
+  }
+]

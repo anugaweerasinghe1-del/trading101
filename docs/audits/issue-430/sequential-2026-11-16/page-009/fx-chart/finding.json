@@ -1,0 +1,15 @@
+{
+  "id": "STRICT-TRADE-003",
+  "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+  "beforeEditURL": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966526359",
+  "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+  "blockIds": [
+    "STRICT-0009-BLOCK-0058",
+    "STRICT-0009-BLOCK-0059"
+  ],
+  "source": "src/components/trading/NeuralPulseChart.tsx",
+  "policyViolation": false,
+  "localSourceSHA256": "1cdd5d581d827c9b58806695b844d3f4e277284b52d15ebacc3bb5393304049f",
+  "observedUTC": "2026-11-18T01:50:14.842388+00:00",
+  "pageClosureCredit": 0
+}
