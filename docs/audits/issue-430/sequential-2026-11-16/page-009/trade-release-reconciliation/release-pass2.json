@@ -22,5 +22,21 @@
     "evidence": "production466-final-btc-drawer.json",
     "reviewer": "same Codex assistant, separate skeptical reread",
     "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0059",
+    "status": "REVIEWED",
+    "reason": "The production title preserves each authored pair. EUR/USD, EUR/GBP and USD/JPY all agree with their independently checked line-chart units. The non-forex title remains USDC/USD.",
+    "evidence": "production467-final-fx-chart.json",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "reviewer": "same Codex assistant, separate skeptical reread"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0070",
+    "status": "REVIEWED",
+    "reason": "The second release pass verified the distinct Add and Remove names for the two legitimate ZS records. Each has its own pressed state in both public routes and mobile widths tested.",
+    "evidence": "production467-final-trade-favorite-names.json",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "reviewer": "same Codex assistant, separate skeptical reread"
   }
 ]

@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 70,
-  "firstPass": 70,
-  "secondPass": 65,
+  "textRecords": 87,
+  "firstPass": 87,
+  "secondPass": 87,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -26,8 +26,10 @@
       "source": "src/pages/Trade.tsx intro",
       "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966282274",
       "block": "STRICT-0009-BLOCK-0041",
-      "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
-      "policyViolation": false
+      "status": "FIXED-RECHECKED",
+      "policyViolation": false,
+      "receipt": "trade-release-reconciliation/RELEASE-466.json",
+      "mergeSHA": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     },
     {
       "id": "STRICT-TRADE-002",
@@ -37,7 +39,7 @@
         "STRICT-0009-BLOCK-0042",
         "STRICT-0009-BLOCK-0043"
       ],
-      "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
+      "status": "FIXED-RECHECKED",
       "policyViolation": false,
       "reference": {
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
@@ -48,13 +50,15 @@
       "localVerification": [
         "local-trade-drawer.json",
         "local-btc-drawer.json"
-      ]
+      ],
+      "receipt": "trade-release-reconciliation/RELEASE-466.json",
+      "mergeSHA": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     },
     {
       "id": "STRICT-TRADE-003",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
       "beforeEditURL": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966526359",
-      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "status": "FIXED-RECHECKED",
       "blockIds": [
         "STRICT-0009-BLOCK-0058",
         "STRICT-0009-BLOCK-0059"
@@ -63,39 +67,58 @@
       "policyViolation": false,
       "localSourceSHA256": "1cdd5d581d827c9b58806695b844d3f4e277284b52d15ebacc3bb5393304049f",
       "observedUTC": "2026-11-18T01:50:14.842388+00:00",
-      "pageClosureCredit": 0
+      "pageClosureCredit": 0,
+      "receipt": "trade-release-reconciliation/RELEASE-467.json",
+      "mergeSHA": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4"
     },
     {
       "id": "STRICT-TRADE-004",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
       "beforeEditURL": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966686815",
-      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "status": "FIXED-RECHECKED",
       "source": "src/components/trading/AssetSearchDropdown.tsx",
       "blockIds": [
         "STRICT-0009-BLOCK-0069",
         "STRICT-0009-BLOCK-0070"
       ],
-      "policyViolation": false
+      "policyViolation": false,
+      "receipt": "trade-release-reconciliation/RELEASE-467.json",
+      "mergeSHA": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4"
     }
   ],
-  "nextAction": "Review and reconcile the remaining supplied/hydrated metadata, responsive order drawer, asset picker, quote/cache/pause and candle states, path-specific chart labels, local journal and error/result states. Countercheck shown-price wording in note blocks 0006 and 0016 against the account execution RPC. Keep authenticated live operation separate.",
+  "nextAction": "Complete exact #468 checks, native receipt and public reread at 0088. Resume individual picker row/source matching and the remaining chart, quote and order UI branches. Countercheck the private execution estimate only in isolated fixture scope and retain unavailable production account evidence explicitly.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
-  "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0044",
-    "STRICT-0009-BLOCK-0045",
-    "STRICT-0009-BLOCK-0046",
-    "STRICT-0009-BLOCK-0059",
-    "STRICT-0009-BLOCK-0070"
-  ],
+  "pendingSecondPass": [],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
-  "merged466NativeStatus": "PENDING",
+  "merged466NativeStatus": "FIXED-RECHECKED",
   "continuationLedgers": [
     "fx-chart/block-ledger.json",
-    "continuation-2026-11-18/block-ledger.json"
+    "continuation-2026-11-18/block-ledger.json",
+    "trade-release-reconciliation/context-block-ledger.json",
+    "trade-release-reconciliation/order-block-ledger.json",
+    "trade-release-reconciliation/catalog-block-ledger.json"
   ],
-  "rawPickerInventory": "continuation-2026-11-18/inventory.json; no per-row strict reading credit"
+  "rawPickerInventory": "continuation-2026-11-18/inventory.json; no per-row strict reading credit",
+  "confirmedProductDefectsProductionVerified": 4,
+  "latestApplicationRelease": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+  "qualityRisks": [
+    {
+      "id": "STRICT-TRADE-RISK-001",
+      "status": "OPEN-LEGACY-IDENTIFIER-COUNTERCHECK",
+      "record": "trade-release-reconciliation/catalog-risk.json"
+    }
+  ],
+  "activeSeparateCandidate": {
+    "pr": 468,
+    "head": "1997e9dc464a7d223e4ffbdd69c0239dc206d70e",
+    "finding": "STRICT-TRADE-005",
+    "exactResumeBlock": "STRICT-0009-BLOCK-0088",
+    "status": "CANDIDATE; required release checks pending",
+    "firstPassAdditional": 4,
+    "secondPassAdditional": 3
+  }
 }

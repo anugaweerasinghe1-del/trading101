@@ -1011,8 +1011,12 @@
       "reason": "Local mobile and desktop use consistent labels and preserve both prior FAQ answers and the disclosure."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh native production confirmation and skeptical reread due."
+      "id": "STRICT-0009-BLOCK-0044",
+      "status": "REVIEWED",
+      "reason": "The mobile light and desktop dark production intro still describes real status categories accurately, preserves virtual cash and the disclaimer, and leaves the two exact #454 answers in the actual FAQ.",
+      "evidence": "trade-release-reconciliation/production466-final-intro.json",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     }
   },
   {
@@ -1034,8 +1038,12 @@
       "reason": "Local compiled AX exposes the name and Enter dismisses the panel on both routes and widths."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh native production confirmation and skeptical reread due."
+      "id": "STRICT-0009-BLOCK-0045",
+      "status": "REVIEWED",
+      "reason": "The fresh /trade and /trade/btc controls expose Close order panel and Enter dismisses the correct mobile dialog. The separate dialog-title association remains under review.",
+      "evidence": "trade-release-reconciliation/production466-final-trade-drawer.json",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     }
   },
   {
@@ -1057,8 +1065,12 @@
       "reason": "Local compiled Buy and Sell update the AX slider name with the correct sizing basis on both routes and widths."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh native production confirmation and skeptical reread due."
+      "id": "STRICT-0009-BLOCK-0046",
+      "status": "REVIEWED",
+      "reason": "Fresh production Buy and Sell selections expose different percentage sizing bases on both mobile widths. The amount input remains a separately named spinbutton.",
+      "evidence": "trade-release-reconciliation/production466-final-btc-drawer.json",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     }
   },
   {

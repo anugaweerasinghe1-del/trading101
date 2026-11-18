@@ -40,8 +40,12 @@
       "reason": "Both local widths show the three exact pair labels, with an unchanged USDC/USD baseline and correct separate line quote units."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Native release and separate live reread required."
+      "id": "STRICT-0009-BLOCK-0059",
+      "status": "REVIEWED",
+      "reason": "The production title preserves each authored pair. EUR/USD, EUR/GBP and USD/JPY all agree with their independently checked line-chart units. The non-forex title remains USDC/USD.",
+      "evidence": "trade-release-reconciliation/production467-final-fx-chart.json",
+      "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+      "reviewer": "same Codex assistant, separate skeptical reread"
     }
   }
 ]

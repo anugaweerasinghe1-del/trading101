@@ -236,8 +236,12 @@
       "reason": "Both routes and widths expose separate Add and Remove names and matching aria-pressed changes for the two legal ticker identities."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Waiting for exact native deployment and separate custom-domain reread."
+      "id": "STRICT-0009-BLOCK-0070",
+      "status": "REVIEWED",
+      "reason": "The second release pass verified the distinct Add and Remove names for the two legitimate ZS records. Each has its own pressed state in both public routes and mobile widths tested.",
+      "evidence": "trade-release-reconciliation/production467-final-trade-favorite-names.json",
+      "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+      "reviewer": "same Codex assistant, separate skeptical reread"
     },
     "sha256": "aba1f3bd7615bb8f9c79ce5c2d0fe1b1c23f9cf90dc073931f03d14e1901cb61"
   }
