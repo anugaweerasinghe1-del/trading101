@@ -1,0 +1,611 @@
+{
+  "scope": "Public guests; same-origin GET only; optional explicit price cache; no order or write",
+  "rows": [
+    {
+      "width": 390,
+      "theme": "dark",
+      "path": "/trade",
+      "fixtureSeeded": true,
+      "routeFixtures": [],
+      "atUTC": "2026-11-18T03:14:07.325535+00:00",
+      "cards": [
+        {
+          "href": "/markets",
+          "visible": [
+            "View All",
+            "→"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdt",
+          "visible": [
+            "USDT",
+            "-0.9%",
+            "Tether",
+            "$0.9897",
+            "SNAPSHOT"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/dai",
+          "visible": [
+            "DAI",
+            "+0.0%",
+            "Dai",
+            "$1.0000",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/trx",
+          "visible": [
+            "TRX",
+            "+0.0%",
+            "TRON",
+            "$0.3322",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/bch",
+          "visible": [
+            "BCH",
+            "+0.0%",
+            "Bitcoin Cash",
+            "$277.03",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ton",
+          "visible": [
+            "TON",
+            "+0.0%",
+            "Toncoin",
+            "$1.38",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/etc",
+          "visible": [
+            "ETC",
+            "+0.0%",
+            "Ethereum Classic",
+            "$8.11",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/xmr",
+          "visible": [
+            "XMR",
+            "+0.0%",
+            "Monero",
+            "$544.27",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/aave",
+          "visible": [
+            "AAVE",
+            "+0.0%",
+            "Aave",
+            "$165.18",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/grt",
+          "visible": [
+            "GRT",
+            "+0.0%",
+            "The Graph",
+            "$0.0262",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ldo",
+          "visible": [
+            "LDO",
+            "+0.0%",
+            "Lido DAO",
+            "$0.4120",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/rune",
+          "visible": [
+            "RUNE",
+            "+0.0%",
+            "THORChain",
+            "$0.6789",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/kas",
+          "visible": [
+            "KAS",
+            "+0.0%",
+            "Kaspa",
+            "$0.0393",
+            "FIXED"
+          ],
+          "nameVisible": true
+        }
+      ],
+      "accessibility": "- heading \"Explore Markets\" [level=3]\n- link \"View All\":\n  - /url: /markets\n- link \"USDT -0.9% Tether $0.9897 SNAPSHOT\":\n  - /url: /trade/usdt\n  - text: USDT -0.9%\n  - paragraph: Tether\n  - paragraph: $0.9897\n  - text: SNAPSHOT\n- link \"DAI +0.0% Dai $1.0000 FIXED\":\n  - /url: /trade/dai\n  - text: DAI +0.0%\n  - paragraph: Dai\n  - paragraph: $1.0000\n  - text: FIXED\n- link \"TRX +0.0% TRON $0.3322 FIXED\":\n  - /url: /trade/trx\n  - text: TRX +0.0%\n  - paragraph: TRON\n  - paragraph: $0.3322\n  - text: FIXED\n- link \"BCH +0.0% Bitcoin Cash $277.03 FIXED\":\n  - /url: /trade/bch\n  - text: BCH +0.0%\n  - paragraph: Bitcoin Cash\n  - paragraph: $277.03\n  - text: FIXED\n- link \"TON +0.0% Toncoin $1.38 FIXED\":\n  - /url: /trade/ton\n  - text: TON +0.0%\n  - paragraph: Toncoin\n  - paragraph: $1.38\n  - text: FIXED\n- link \"ETC +0.0% Ethereum Classic $8.11 FIXED\":\n  - /url: /trade/etc\n  - text: ETC +0.0%\n  - paragraph: Ethereum Classic\n  - paragraph: $8.11\n  - text: FIXED\n- link \"XMR +0.0% Monero $544.27 FIXED\":\n  - /url: /trade/xmr\n  - text: XMR +0.0%\n  - paragraph: Monero\n  - paragraph: $544.27\n  - text: FIXED\n- link \"AAVE +0.0% Aave $165.18 FIXED\":\n  - /url: /trade/aave\n  - text: AAVE +0.0%\n  - paragraph: Aave\n  - paragraph: $165.18\n  - text: FIXED\n- link \"GRT +0.0% The Graph $0.0262 FIXED\":\n  - /url: /trade/grt\n  - text: GRT +0.0%\n  - paragraph: The Graph\n  - paragraph: $0.0262\n  - text: FIXED\n- link \"LDO +0.0% Lido DAO $0.4120 FIXED\":\n  - /url: /trade/ldo\n  - text: LDO +0.0%\n  - paragraph: Lido DAO\n  - paragraph: $0.4120\n  - text: FIXED\n- link \"RUNE +0.0% THORChain $0.6789 FIXED\":\n  - /url: /trade/rune\n  - text: RUNE +0.0%\n  - paragraph: THORChain\n  - paragraph: $0.6789\n  - text: FIXED\n- link \"KAS +0.0% Kaspa $0.0393 FIXED\":\n  - /url: /trade/kas\n  - text: KAS +0.0%\n  - paragraph: Kaspa\n  - paragraph: $0.0393\n  - text: FIXED"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "path": "/trade?journey=1",
+      "fixtureSeeded": true,
+      "routeFixtures": [
+        "empty shared snapshot result"
+      ],
+      "atUTC": "2026-11-18T03:14:09.261186+00:00",
+      "cards": [
+        {
+          "href": "/markets",
+          "visible": [
+            "View All",
+            "→"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdc",
+          "visible": [
+            "USDC",
+            "+0.0%",
+            "USD Coin",
+            "$0.9997",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdt",
+          "visible": [
+            "USDT",
+            "-0.9%",
+            "Tether",
+            "$0.9897",
+            "SNAPSHOT"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/dai",
+          "visible": [
+            "DAI",
+            "+0.0%",
+            "Dai",
+            "$1.0000",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/trx",
+          "visible": [
+            "TRX",
+            "+0.0%",
+            "TRON",
+            "$0.3322",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/bch",
+          "visible": [
+            "BCH",
+            "+0.0%",
+            "Bitcoin Cash",
+            "$277.03",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ton",
+          "visible": [
+            "TON",
+            "+0.0%",
+            "Toncoin",
+            "$1.38",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/etc",
+          "visible": [
+            "ETC",
+            "+0.0%",
+            "Ethereum Classic",
+            "$8.11",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/xmr",
+          "visible": [
+            "XMR",
+            "+0.0%",
+            "Monero",
+            "$544.27",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/aave",
+          "visible": [
+            "AAVE",
+            "+0.0%",
+            "Aave",
+            "$165.18",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/grt",
+          "visible": [
+            "GRT",
+            "+0.0%",
+            "The Graph",
+            "$0.0262",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ldo",
+          "visible": [
+            "LDO",
+            "+0.0%",
+            "Lido DAO",
+            "$0.4120",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/rune",
+          "visible": [
+            "RUNE",
+            "+0.0%",
+            "THORChain",
+            "$0.6789",
+            "FIXED"
+          ],
+          "nameVisible": true
+        }
+      ],
+      "accessibility": "- heading \"Explore Markets\" [level=3]\n- link \"View All\":\n  - /url: /markets\n- link \"USDC +0.0% USD Coin $0.9997 FIXED\":\n  - /url: /trade/usdc\n  - text: USDC +0.0%\n  - paragraph: USD Coin\n  - paragraph: $0.9997\n  - text: FIXED\n- link \"USDT -0.9% Tether $0.9897 SNAPSHOT\":\n  - /url: /trade/usdt\n  - text: USDT -0.9%\n  - paragraph: Tether\n  - paragraph: $0.9897\n  - text: SNAPSHOT\n- link \"DAI +0.0% Dai $1.0000 FIXED\":\n  - /url: /trade/dai\n  - text: DAI +0.0%\n  - paragraph: Dai\n  - paragraph: $1.0000\n  - text: FIXED\n- link \"TRX +0.0% TRON $0.3322 FIXED\":\n  - /url: /trade/trx\n  - text: TRX +0.0%\n  - paragraph: TRON\n  - paragraph: $0.3322\n  - text: FIXED\n- link \"BCH +0.0% Bitcoin Cash $277.03 FIXED\":\n  - /url: /trade/bch\n  - text: BCH +0.0%\n  - paragraph: Bitcoin Cash\n  - paragraph: $277.03\n  - text: FIXED\n- link \"TON +0.0% Toncoin $1.38 FIXED\":\n  - /url: /trade/ton\n  - text: TON +0.0%\n  - paragraph: Toncoin\n  - paragraph: $1.38\n  - text: FIXED\n- link \"ETC +0.0% Ethereum Classic $8.11 FIXED\":\n  - /url: /trade/etc\n  - text: ETC +0.0%\n  - paragraph: Ethereum Classic\n  - paragraph: $8.11\n  - text: FIXED\n- link \"XMR +0.0% Monero $544.27 FIXED\":\n  - /url: /trade/xmr\n  - text: XMR +0.0%\n  - paragraph: Monero\n  - paragraph: $544.27\n  - text: FIXED\n- link \"AAVE +0.0% Aave $165.18 FIXED\":\n  - /url: /trade/aave\n  - text: AAVE +0.0%\n  - paragraph: Aave\n  - paragraph: $165.18\n  - text: FIXED\n- link \"GRT +0.0% The Graph $0.0262 FIXED\":\n  - /url: /trade/grt\n  - text: GRT +0.0%\n  - paragraph: The Graph\n  - paragraph: $0.0262\n  - text: FIXED\n- link \"LDO +0.0% Lido DAO $0.4120 FIXED\":\n  - /url: /trade/ldo\n  - text: LDO +0.0%\n  - paragraph: Lido DAO\n  - paragraph: $0.4120\n  - text: FIXED\n- link \"RUNE +0.0% THORChain $0.6789 FIXED\":\n  - /url: /trade/rune\n  - text: RUNE +0.0%\n  - paragraph: THORChain\n  - paragraph: $0.6789\n  - text: FIXED"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "path": "/trade?journey=1",
+      "fixtureSeeded": false,
+      "routeFixtures": [],
+      "atUTC": "2026-11-18T03:14:06.653312+00:00",
+      "cards": [
+        {
+          "href": "/markets",
+          "visible": [
+            "View All",
+            "→"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdc",
+          "visible": [
+            "USDC",
+            "+0.0%",
+            "USD Coin",
+            "$0.9997",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdt",
+          "visible": [
+            "USDT",
+            "+0.0%",
+            "Tether",
+            "$0.9995",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/dai",
+          "visible": [
+            "DAI",
+            "+0.0%",
+            "Dai",
+            "$1.0000",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/trx",
+          "visible": [
+            "TRX",
+            "+0.0%",
+            "TRON",
+            "$0.3322",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/bch",
+          "visible": [
+            "BCH",
+            "+0.0%",
+            "Bitcoin Cash",
+            "$277.03",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ton",
+          "visible": [
+            "TON",
+            "+0.0%",
+            "Toncoin",
+            "$1.38",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/etc",
+          "visible": [
+            "ETC",
+            "+0.0%",
+            "Ethereum Classic",
+            "$8.11",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/xmr",
+          "visible": [
+            "XMR",
+            "+0.0%",
+            "Monero",
+            "$544.27",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/aave",
+          "visible": [
+            "AAVE",
+            "+0.0%",
+            "Aave",
+            "$165.18",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/grt",
+          "visible": [
+            "GRT",
+            "+0.0%",
+            "The Graph",
+            "$0.0262",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ldo",
+          "visible": [
+            "LDO",
+            "+0.0%",
+            "Lido DAO",
+            "$0.4120",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/rune",
+          "visible": [
+            "RUNE",
+            "+0.0%",
+            "THORChain",
+            "$0.6789",
+            "FIXED"
+          ],
+          "nameVisible": true
+        }
+      ],
+      "accessibility": "- heading \"Explore Markets\" [level=3]\n- link \"View All\":\n  - /url: /markets\n- link \"USDC +0.0% USD Coin $0.9997 FIXED\":\n  - /url: /trade/usdc\n  - text: USDC +0.0%\n  - paragraph: USD Coin\n  - paragraph: $0.9997\n  - text: FIXED\n- link \"USDT +0.0% Tether $0.9995 FIXED\":\n  - /url: /trade/usdt\n  - text: USDT +0.0%\n  - paragraph: Tether\n  - paragraph: $0.9995\n  - text: FIXED\n- link \"DAI +0.0% Dai $1.0000 FIXED\":\n  - /url: /trade/dai\n  - text: DAI +0.0%\n  - paragraph: Dai\n  - paragraph: $1.0000\n  - text: FIXED\n- link \"TRX +0.0% TRON $0.3322 FIXED\":\n  - /url: /trade/trx\n  - text: TRX +0.0%\n  - paragraph: TRON\n  - paragraph: $0.3322\n  - text: FIXED\n- link \"BCH +0.0% Bitcoin Cash $277.03 FIXED\":\n  - /url: /trade/bch\n  - text: BCH +0.0%\n  - paragraph: Bitcoin Cash\n  - paragraph: $277.03\n  - text: FIXED\n- link \"TON +0.0% Toncoin $1.38 FIXED\":\n  - /url: /trade/ton\n  - text: TON +0.0%\n  - paragraph: Toncoin\n  - paragraph: $1.38\n  - text: FIXED\n- link \"ETC +0.0% Ethereum Classic $8.11 FIXED\":\n  - /url: /trade/etc\n  - text: ETC +0.0%\n  - paragraph: Ethereum Classic\n  - paragraph: $8.11\n  - text: FIXED\n- link \"XMR +0.0% Monero $544.27 FIXED\":\n  - /url: /trade/xmr\n  - text: XMR +0.0%\n  - paragraph: Monero\n  - paragraph: $544.27\n  - text: FIXED\n- link \"AAVE +0.0% Aave $165.18 FIXED\":\n  - /url: /trade/aave\n  - text: AAVE +0.0%\n  - paragraph: Aave\n  - paragraph: $165.18\n  - text: FIXED\n- link \"GRT +0.0% The Graph $0.0262 FIXED\":\n  - /url: /trade/grt\n  - text: GRT +0.0%\n  - paragraph: The Graph\n  - paragraph: $0.0262\n  - text: FIXED\n- link \"LDO +0.0% Lido DAO $0.4120 FIXED\":\n  - /url: /trade/ldo\n  - text: LDO +0.0%\n  - paragraph: Lido DAO\n  - paragraph: $0.4120\n  - text: FIXED\n- link \"RUNE +0.0% THORChain $0.6789 FIXED\":\n  - /url: /trade/rune\n  - text: RUNE +0.0%\n  - paragraph: THORChain\n  - paragraph: $0.6789\n  - text: FIXED"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "path": "/trade",
+      "fixtureSeeded": false,
+      "routeFixtures": [],
+      "atUTC": "2026-11-18T03:14:05.845675+00:00",
+      "cards": [
+        {
+          "href": "/markets",
+          "visible": [
+            "View All",
+            "→"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/usdt",
+          "visible": [
+            "USDT",
+            "+0.0%",
+            "Tether",
+            "$0.9995",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/dai",
+          "visible": [
+            "DAI",
+            "+0.0%",
+            "Dai",
+            "$1.0000",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/trx",
+          "visible": [
+            "TRX",
+            "+0.0%",
+            "TRON",
+            "$0.3322",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/bch",
+          "visible": [
+            "BCH",
+            "+0.0%",
+            "Bitcoin Cash",
+            "$277.03",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ton",
+          "visible": [
+            "TON",
+            "+0.0%",
+            "Toncoin",
+            "$1.38",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/etc",
+          "visible": [
+            "ETC",
+            "+0.0%",
+            "Ethereum Classic",
+            "$8.11",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/xmr",
+          "visible": [
+            "XMR",
+            "+0.0%",
+            "Monero",
+            "$544.27",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/aave",
+          "visible": [
+            "AAVE",
+            "+0.0%",
+            "Aave",
+            "$165.18",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/grt",
+          "visible": [
+            "GRT",
+            "+0.0%",
+            "The Graph",
+            "$0.0262",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/ldo",
+          "visible": [
+            "LDO",
+            "+0.0%",
+            "Lido DAO",
+            "$0.4120",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/rune",
+          "visible": [
+            "RUNE",
+            "+0.0%",
+            "THORChain",
+            "$0.6789",
+            "FIXED"
+          ],
+          "nameVisible": true
+        },
+        {
+          "href": "/trade/kas",
+          "visible": [
+            "KAS",
+            "+0.0%",
+            "Kaspa",
+            "$0.0393",
+            "FIXED"
+          ],
+          "nameVisible": true
+        }
+      ],
+      "accessibility": "- heading \"Explore Markets\" [level=3]\n- link \"View All\":\n  - /url: /markets\n- link \"USDT +0.0% Tether $0.9995 FIXED\":\n  - /url: /trade/usdt\n  - text: USDT +0.0%\n  - paragraph: Tether\n  - paragraph: $0.9995\n  - text: FIXED\n- link \"DAI +0.0% Dai $1.0000 FIXED\":\n  - /url: /trade/dai\n  - text: DAI +0.0%\n  - paragraph: Dai\n  - paragraph: $1.0000\n  - text: FIXED\n- link \"TRX +0.0% TRON $0.3322 FIXED\":\n  - /url: /trade/trx\n  - text: TRX +0.0%\n  - paragraph: TRON\n  - paragraph: $0.3322\n  - text: FIXED\n- link \"BCH +0.0% Bitcoin Cash $277.03 FIXED\":\n  - /url: /trade/bch\n  - text: BCH +0.0%\n  - paragraph: Bitcoin Cash\n  - paragraph: $277.03\n  - text: FIXED\n- link \"TON +0.0% Toncoin $1.38 FIXED\":\n  - /url: /trade/ton\n  - text: TON +0.0%\n  - paragraph: Toncoin\n  - paragraph: $1.38\n  - text: FIXED\n- link \"ETC +0.0% Ethereum Classic $8.11 FIXED\":\n  - /url: /trade/etc\n  - text: ETC +0.0%\n  - paragraph: Ethereum Classic\n  - paragraph: $8.11\n  - text: FIXED\n- link \"XMR +0.0% Monero $544.27 FIXED\":\n  - /url: /trade/xmr\n  - text: XMR +0.0%\n  - paragraph: Monero\n  - paragraph: $544.27\n  - text: FIXED\n- link \"AAVE +0.0% Aave $165.18 FIXED\":\n  - /url: /trade/aave\n  - text: AAVE +0.0%\n  - paragraph: Aave\n  - paragraph: $165.18\n  - text: FIXED\n- link \"GRT +0.0% The Graph $0.0262 FIXED\":\n  - /url: /trade/grt\n  - text: GRT +0.0%\n  - paragraph: The Graph\n  - paragraph: $0.0262\n  - text: FIXED\n- link \"LDO +0.0% Lido DAO $0.4120 FIXED\":\n  - /url: /trade/ldo\n  - text: LDO +0.0%\n  - paragraph: Lido DAO\n  - paragraph: $0.4120\n  - text: FIXED\n- link \"RUNE +0.0% THORChain $0.6789 FIXED\":\n  - /url: /trade/rune\n  - text: RUNE +0.0%\n  - paragraph: THORChain\n  - paragraph: $0.6789\n  - text: FIXED\n- link \"KAS +0.0% Kaspa $0.0393 FIXED\":\n  - /url: /trade/kas\n  - text: KAS +0.0%\n  - paragraph: Kaspa\n  - paragraph: $0.0393\n  - text: FIXED"
+    }
+  ]
+}
