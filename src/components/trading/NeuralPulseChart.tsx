@@ -282,6 +282,10 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
         </div>
       </div>
       <div ref={containerRef} className="w-full" />
+      <p className="px-4 py-2 text-xs text-muted-foreground">
+        TradingView Lightweight Charts™ · Copyright (с) 2023{" "}
+        <a className="underline hover:text-foreground" href="https://www.tradingview.com/">TradingView, Inc.</a>
+      </p>
     </div>
   );
 }
