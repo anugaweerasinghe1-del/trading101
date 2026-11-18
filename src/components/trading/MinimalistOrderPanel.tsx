@@ -135,6 +135,7 @@ export function MinimalistOrderPanel({
           <button
             type="button"
             onClick={() => setSide("buy")}
+            aria-pressed={side === "buy"}
             className={cn(
               "flex-1 rounded-lg py-2.5 text-sm font-semibold transition-all",
               side === "buy"
@@ -147,6 +148,7 @@ export function MinimalistOrderPanel({
           <button
             type="button"
             onClick={() => setSide("sell")}
+            aria-pressed={side === "sell"}
             className={cn(
               "flex-1 rounded-lg py-2.5 text-sm font-semibold transition-all",
               side === "sell"

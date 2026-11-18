@@ -1,0 +1,123 @@
+{
+  "scope": "Public compiled page with synthetic reserved endpoint responses, no provider or private network contacted",
+  "rows": [
+    {
+      "width": 390,
+      "columns": [
+        "Time",
+        "Open",
+        "High",
+        "Low",
+        "Close"
+      ],
+      "firstProviderRow": "2026-11-17 07:00 UTC\t$64,000.00\t$64,100.00\t$63,900.00\t$64,050.00",
+      "providerRows": 24,
+      "simulatedRows": 261,
+      "detailsRemovedAfterClose": true,
+      "atUTC": "2026-11-18T08:19:31.040876+00:00",
+      "responses": [
+        {
+          "days": 1,
+          "count": 24,
+          "first": {
+            "time": "2026-11-17T07:00:00+00:00",
+            "open": 64000,
+            "high": 64100,
+            "low": 63900,
+            "close": 64050,
+            "volume": 0
+          },
+          "last": {
+            "time": "2026-11-17T18:30:00+00:00",
+            "open": 64230,
+            "high": 64330,
+            "low": 64130,
+            "close": 64280,
+            "volume": 0
+          }
+        },
+        {
+          "days": 7,
+          "count": 12,
+          "first": {
+            "time": "2026-11-12T07:00:00+00:00",
+            "open": 64000,
+            "high": 64100,
+            "low": 63900,
+            "close": 64050,
+            "volume": 0
+          },
+          "last": {
+            "time": "2026-11-17T19:00:00+00:00",
+            "open": 64110,
+            "high": 64210,
+            "low": 64010,
+            "close": 64160,
+            "volume": 0
+          }
+        }
+      ],
+      "oneDayAX": "- text: BTC/USD ● Provider history\n- button \"1D\" [pressed]\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%",
+      "sevenDayAX": "- text: BTC/USD ● Provider history\n- button \"1D\"\n- button \"1W\" [pressed]\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+    },
+    {
+      "width": 1440,
+      "columns": [
+        "Time",
+        "Open",
+        "High",
+        "Low",
+        "Close"
+      ],
+      "firstProviderRow": "2026-11-17 07:00 UTC\t$64,000.00\t$64,100.00\t$63,900.00\t$64,050.00",
+      "providerRows": 24,
+      "simulatedRows": 261,
+      "detailsRemovedAfterClose": true,
+      "atUTC": "2026-11-18T08:19:30.551185+00:00",
+      "responses": [
+        {
+          "days": 1,
+          "count": 24,
+          "first": {
+            "time": "2026-11-17T07:00:00+00:00",
+            "open": 64000,
+            "high": 64100,
+            "low": 63900,
+            "close": 64050,
+            "volume": 0
+          },
+          "last": {
+            "time": "2026-11-17T18:30:00+00:00",
+            "open": 64230,
+            "high": 64330,
+            "low": 64130,
+            "close": 64280,
+            "volume": 0
+          }
+        },
+        {
+          "days": 7,
+          "count": 12,
+          "first": {
+            "time": "2026-11-12T07:00:00+00:00",
+            "open": 64000,
+            "high": 64100,
+            "low": 63900,
+            "close": 64050,
+            "volume": 0
+          },
+          "last": {
+            "time": "2026-11-17T19:00:00+00:00",
+            "open": 64110,
+            "high": 64210,
+            "low": 64010,
+            "close": 64160,
+            "volume": 0
+          }
+        }
+      ],
+      "oneDayAX": "- text: BTC/USD ● Provider history\n- button \"1D\" [pressed]\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%",
+      "sevenDayAX": "- text: BTC/USD ● Provider history\n- button \"1D\"\n- button \"1W\" [pressed]\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+    }
+  ]
+}
