@@ -64,6 +64,7 @@ export function MinimalistPortfolioBar({ portfolio }: MinimalistPortfolioBarProp
         {/* Toggle Details */}
         <button
           onClick={() => setShowDetails(!showDetails)}
+          aria-expanded={showDetails}
           className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-sm text-muted-foreground hover:text-foreground"
         >
           Details

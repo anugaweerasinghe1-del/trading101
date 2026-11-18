@@ -181,7 +181,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Paper Trade 170 Assets — Free Simulator | TradeHQ",
     description: `Buy and sell 170 stocks, crypto, ETFs, forex and commodities with ${BALANCE} in virtual cash. No signup or real-money trading. Educational simulation only.`,
     h1: "Paper Trade 170 Assets",
-    summary: `Choose from 170 simulated assets and place buy or sell orders instantly. Every account starts with ${BALANCE} in virtual cash. Educational simulation — no real money and no brokerage relationship.`,
+    summary: `Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with ${BALANCE} in virtual cash. Educational simulation — no real money and no brokerage relationship.`,
     priority: "0.9",
     changefreq: "daily",
   });
