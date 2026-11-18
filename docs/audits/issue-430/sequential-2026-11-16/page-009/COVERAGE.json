@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 308,
-  "firstPass": 308,
-  "secondPass": 306,
+  "textRecords": 320,
+  "firstPass": 320,
+  "secondPass": 318,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -161,7 +161,8 @@
     "mobile-order-price/block-ledger.json",
     "trade-release-reconciliation/mentor-library-ledger.json",
     "trade-release-reconciliation/explore-cards-ledger.json",
-    "candlestick-ranges/block-ledger.json"
+    "candlestick-ranges/block-ledger.json",
+    "trade-release-reconciliation/mentor-state-matrix-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
   "confirmedProductDefectsProductionVerified": 8,
@@ -183,11 +184,10 @@
       "record": "trade-release-reconciliation/catalog-quote-provenance-risk.json"
     }
   ],
-  "confirmedProductDefectsReproduced": 12,
+  "confirmedProductDefectsReproduced": 13,
   "unresolvedStateNotes": [
     "Mentor greeting suggests quick prompts after the embedded component has already hidden them. Capture visual and keyboard state.",
-    "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use.",
-    "Uncaptured mentor portfolio concentration, after-trade and conditional open-position responses remain distinct from the typed guest topic sweep."
+    "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use."
   ],
   "mergedAwaitingNative": {
     "pr": 471,
@@ -202,7 +202,7 @@
       "STRICT-TRADE-011",
       "STRICT-TRADE-012"
     ],
-    "status": "OPEN; local TypeScript, editorial UI, Cloudflare build and browser checks passed; hosted verification pending",
+    "status": "OPEN; exact immutable Cloudflare browser cases passed; required validation remains",
     "firstPassAdditional": 6,
     "secondPassAdditional": 3,
     "pendingReadbackBlocks": [
@@ -210,6 +210,18 @@
       "STRICT-0009-BLOCK-0298",
       "STRICT-0009-BLOCK-0300"
     ],
-    "pr": 472
+    "pr": 472,
+    "previewURL": "https://666fa476.tradehq-preview.pages.dev"
+  },
+  "queuedFollowup": {
+    "branch": "audit/issue430-candle-small-price-20261118",
+    "head": "91dd45b",
+    "finding": "STRICT-TRADE-013",
+    "status": "Local build, TypeScript, source replay and browser readbacks passed; queued behind #472",
+    "firstPassAdditional": 2,
+    "secondPassAdditional": 1,
+    "pendingReadbackBlocks": [
+      "STRICT-0009-BLOCK-0316"
+    ]
   }
 }

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0317",
+    "state": "single",
+    "projection": "summary",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "0a2d53f2865624fa90d241339bcaed3ad5915c940de63f977efa45a207719cfb",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.832647+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Low-cash and top-position copy render with one AAPL position."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "300×255.25 = 76,575; 1,000 cash makes 77,575. The rounded weights are 99% AAPL and 1% cash. 255.25 versus 250 cost is +2.10%."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0318",
+    "state": "single",
+    "projection": "risk",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "433c54e4e611cf23b10f1e0c218edda8038ec69556d567407316cf84f22f9c6e",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.832647+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The concentrated fixture produces both the upper-weight and one-position conditions."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "One position accounts for virtually all invested exposure. The 99% observation is supported and the answer gives no universal risk limit."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0319",
+    "state": "single",
+    "projection": "history",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "dfdde07888a9883cd2daf0863aecf5ffe81913273a810f3395fca66036700189",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.832647+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The one-trade branch says 1 recorded trades and includes a hypothetical expectancy example."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "0.4×3 − 0.6×1 = 0.6R; 0.6×1 − 0.4×1 = 0.2R. The plural wording is an exact text follow-up."
+    },
+    "disposition": "EXACT-TEXT-FOLLOW-UP"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0320",
+    "state": "many",
+    "projection": "summary",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "0f981c00e9dec2acc5955f512c4935be5ff947f9b7092bb2cecb7f205b8faff4",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.532992+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The sixteen-position fixture displays the portfolio and top-position observations."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "16×1,000 + 5,000 = 21,000. Cash rounds to 24% and one equal 1,000 holding rounds to 5%. A tied first result is possible and no unique-winner claim appears."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0321",
+    "state": "many",
+    "projection": "risk",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "8424303c77d0f39d4ca7a7df49ae95968133af6afd1fccba7ce6de0abbb6c6c7",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.532992+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The sixteen-position warning explains that count alone does not provide diversification."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "Weights and correlations are mentioned separately. The text does not certify this particular mixed crypto fixture as diversified."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0322",
+    "state": "many",
+    "projection": "history",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "423f45c37ba4232dbd855899ac13cd15011ab8f5aef9147f0e17c7131e2e036c",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.532992+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The sixteen-trade plural history opens with 16 recorded trades."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "The correct count is preserved. Realized win rate remains unavailable when the explicit fixture has buys and no sells."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0323",
+    "state": "zero",
+    "projection": "summary",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "7dbd82a6dcd3b90e6d0eefe53d41d2c0ad0844e1745ba6534ce724237607b087",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.633160+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A hypothetical $0 total prints $0 and cash percentage unavailable."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "The answer avoids a division-by-zero label, Infinity or a misleading 0% share. This is an explicitly synthetic zero state."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0324",
+    "state": "zero",
+    "projection": "risk",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "a3e70f283bef7ba597e05c3387fc7f0fbdc356ecbba873a69fa7d040b38febec",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.633160+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The value-zero fixture gets generic risk education."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "No allocation or percentage threshold is derived from unavailable values."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0325",
+    "state": "zero",
+    "projection": "history",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "a7202532d03b3a6a811653650635c246e83cb1bde93bbd21c739d1890608218b",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.633160+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The empty ledger gets a meaningful no-recorded-trades response."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "The response gives no universal minimum count or claim of a dependable pattern."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0326",
+    "state": "empty",
+    "projection": "summary",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "b26663140a4422a7cf0bfe406c999d0f027643d1d125697de8df8a6297e0110c",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.210991+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The $100,000 cash-only fixture gives 100% cash and the high-cash observation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "100,000 divided by 100,000 is 100%. The closing phrase expressly scopes the response to hypothetical weights."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0327",
+    "state": "empty",
+    "projection": "risk",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "a3e70f283bef7ba597e05c3387fc7f0fbdc356ecbba873a69fa7d040b38febec",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.210991+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The cash-only fixture gets generic student guidance."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "No invented position or diversification certainty appears."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0328",
+    "state": "empty",
+    "projection": "history",
+    "contentReference": "public-mentor-state-matrix.json",
+    "sha256": "a7202532d03b3a6a811653650635c246e83cb1bde93bbd21c739d1890608218b",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts; src/lib/portfolio.ts",
+    "sourceRevision": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "capturedAtUTC": "2026-11-18T03:27:07.210991+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "No recorded trades are listed."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate arithmetic and scope review",
+      "reason": "The same no-history text applies to different empty histories and the distinction from cash value is correct."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  }
+]
