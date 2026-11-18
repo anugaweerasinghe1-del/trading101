@@ -119,7 +119,9 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
                 <span className="text-sm text-muted-foreground ml-2">${formatPrice(asset.price, asset.type)} USD/unit</span>
               </div>
               <DrawerClose asChild>
-                <Button variant="ghost" size="icon"><ChevronDown className="w-5 h-5" /></Button>
+                <Button variant="ghost" size="icon" aria-label="Close order panel">
+                  <ChevronDown aria-hidden="true" className="w-5 h-5" />
+                </Button>
               </DrawerClose>
             </DrawerTitle>
           </DrawerHeader>
@@ -156,7 +158,14 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
             </div>
 
             <div className="py-3">
-              <Slider value={sliderValue} onValueChange={handleSliderChange} max={100} step={1} className={cn("[&_[role=slider]]:h-6 [&_[role=slider]]:w-6", side === 'buy' ? "[&_.bg-primary]:bg-profit" : "[&_.bg-primary]:bg-loss")} />
+              <Slider
+                aria-label={side === 'buy' ? "Order size as a percentage of available cash" : "Order size as a percentage of holdings"}
+                value={sliderValue}
+                onValueChange={handleSliderChange}
+                max={100}
+                step={1}
+                className={cn("[&_[role=slider]]:h-6 [&_[role=slider]]:w-6", side === 'buy' ? "[&_.bg-primary]:bg-profit" : "[&_.bg-primary]:bg-loss")}
+              />
             </div>
 
             <GhostJournalToggle journalEnabled={journalEnabled} onToggle={setJournalEnabled} rationale={rationale} onRationaleChange={setRationale} />
