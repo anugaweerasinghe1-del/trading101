@@ -1,0 +1,1503 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0240",
+    "pickerOrdinal": 141,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "EUR/USD",
+            "name": "Euro / US Dollar",
+            "price": "1.0892 USD",
+            "change": "+0.22%",
+            "favorite": "Add Euro / US Dollar (EUR/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "EUR/USD",
+            "name": "Euro / US Dollar",
+            "price": "1.0892 USD",
+            "change": "+0.22%",
+            "favorite": "Add Euro / US Dollar (EUR/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 141
+    },
+    "sha256": "7d1cd1849006afb2ec0577377ce2c5fa6d3567176363350e56b2e2327559a051",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Euro / US Dollar/EUR/USD row shows 1.0892 USD, +0.22% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 1.0892 USD and +0.22%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The EUR base and USD suffix agree with USD per euro; the full tuple remains consistent with the verified FX chart correction. Checked-in forex asset ID eurusd, with price 1.0892 and movement 0.0024. Those seed fields imply 0.22% at two decimals, versus the displayed source field 0.22%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0241",
+    "pickerOrdinal": 142,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "GBP/USD",
+            "name": "British Pound / US Dollar",
+            "price": "1.2685 USD",
+            "change": "-0.14%",
+            "favorite": "Add British Pound / US Dollar (GBP/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "GBP/USD",
+            "name": "British Pound / US Dollar",
+            "price": "1.2685 USD",
+            "change": "-0.14%",
+            "favorite": "Add British Pound / US Dollar (GBP/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 142
+    },
+    "sha256": "de4fc5ab2e7b2338cf32944b75f99275c43d6dad93f06c8a21a0eb33fff4676a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published British Pound / US Dollar/GBP/USD row shows 1.2685 USD, -0.14% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 1.2685 USD and -0.14%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The USD suffix marks dollars per pound and the negative movement matches the GBP/USD seed. Checked-in forex asset ID gbpusd, with price 1.2685 and movement -0.0018. Those seed fields imply -0.14% at two decimals, versus the displayed source field -0.14%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0242",
+    "pickerOrdinal": 143,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/JPY",
+            "name": "US Dollar / Japanese Yen",
+            "price": "148.5200 JPY",
+            "change": "+0.30%",
+            "favorite": "Add US Dollar / Japanese Yen (USD/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/JPY",
+            "name": "US Dollar / Japanese Yen",
+            "price": "148.5200 JPY",
+            "change": "+0.30%",
+            "favorite": "Add US Dollar / Japanese Yen (USD/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 143
+    },
+    "sha256": "f79e7e2e69fd0aea751363c3fb41fb914c2dc8d9d1535e45d3059c9d70185245",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Japanese Yen/USD/JPY row shows 148.5200 JPY, +0.30% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 148.5200 JPY and +0.30%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The JPY suffix correctly denotes yen per dollar and the source display has four decimals. Checked-in forex asset ID usdjpy, with price 148.52 and movement 0.45. Those seed fields imply 0.30% at two decimals, versus the displayed source field 0.30%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0243",
+    "pickerOrdinal": 144,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/CHF",
+            "name": "US Dollar / Swiss Franc",
+            "price": "0.8745 CHF",
+            "change": "-0.14%",
+            "favorite": "Add US Dollar / Swiss Franc (USD/CHF) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/CHF",
+            "name": "US Dollar / Swiss Franc",
+            "price": "0.8745 CHF",
+            "change": "-0.14%",
+            "favorite": "Add US Dollar / Swiss Franc (USD/CHF) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 144
+    },
+    "sha256": "12c2f8718a0ac763d928accc8b8190a653b3dfcef968bdad38c1740357dae9ba",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Swiss Franc/USD/CHF row shows 0.8745 CHF, -0.14% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 0.8745 CHF and -0.14%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The CHF suffix correctly marks Swiss francs per dollar and the direction is negative. Checked-in forex asset ID usdchf, with price 0.8745 and movement -0.0012. Those seed fields imply -0.14% at two decimals, versus the displayed source field -0.14%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0244",
+    "pickerOrdinal": 145,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AUD/USD",
+            "name": "Australian Dollar / US Dollar",
+            "price": "0.6582 USD",
+            "change": "+0.53%",
+            "favorite": "Add Australian Dollar / US Dollar (AUD/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AUD/USD",
+            "name": "Australian Dollar / US Dollar",
+            "price": "0.6582 USD",
+            "change": "+0.53%",
+            "favorite": "Add Australian Dollar / US Dollar (AUD/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 145
+    },
+    "sha256": "4feec9badcec2b32d8840915a27adedd99155a960fe4838cfbc93806e8aa0a40",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Australian Dollar / US Dollar/AUD/USD row shows 0.6582 USD, +0.53% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 0.6582 USD and +0.53%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The AUD base and USD suffix are consistent with the complete name and the source quote display. Checked-in forex asset ID audusd, with price 0.6582 and movement 0.0035. Those seed fields imply 0.53% at two decimals, versus the displayed source field 0.53%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0245",
+    "pickerOrdinal": 146,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/CAD",
+            "name": "US Dollar / Canadian Dollar",
+            "price": "1.3485 CAD",
+            "change": "+0.21%",
+            "favorite": "Add US Dollar / Canadian Dollar (USD/CAD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/CAD",
+            "name": "US Dollar / Canadian Dollar",
+            "price": "1.3485 CAD",
+            "change": "+0.21%",
+            "favorite": "Add US Dollar / Canadian Dollar (USD/CAD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 146
+    },
+    "sha256": "6bfc8db48e93b96107d2e2b38d7eb855eb258a6326c26837308fc75d239eabc8",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Canadian Dollar/USD/CAD row shows 1.3485 CAD, +0.21% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 1.3485 CAD and +0.21%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The CAD suffix belongs to the quote leg; displayed formatting shows four decimals. Checked-in forex asset ID usdcad, with price 1.3485 and movement 0.0028. Those seed fields imply 0.21% at two decimals, versus the displayed source field 0.21%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0246",
+    "pickerOrdinal": 147,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NZD/USD",
+            "name": "New Zealand Dollar / US Dollar",
+            "price": "0.6145 USD",
+            "change": "+0.29%",
+            "favorite": "Add New Zealand Dollar / US Dollar (NZD/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NZD/USD",
+            "name": "New Zealand Dollar / US Dollar",
+            "price": "0.6145 USD",
+            "change": "+0.29%",
+            "favorite": "Add New Zealand Dollar / US Dollar (NZD/USD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 147
+    },
+    "sha256": "c30155d47a449291d19999802a5a6a08690785740ff782783f45cfe3d7989881",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published New Zealand Dollar / US Dollar/NZD/USD row shows 0.6145 USD, +0.29% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 0.6145 USD and +0.29%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The row places NZD first and USD in the quote position, consistent with the suffix. Checked-in forex asset ID nzdusd, with price 0.6145 and movement 0.0018. Those seed fields imply 0.29% at two decimals, versus the displayed source field 0.29%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0247",
+    "pickerOrdinal": 148,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "EUR/GBP",
+            "name": "Euro / British Pound",
+            "price": "0.8585 GBP",
+            "change": "+0.14%",
+            "favorite": "Add Euro / British Pound (EUR/GBP) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "EUR/GBP",
+            "name": "Euro / British Pound",
+            "price": "0.8585 GBP",
+            "change": "+0.14%",
+            "favorite": "Add Euro / British Pound (EUR/GBP) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 148
+    },
+    "sha256": "ef73dcad834744d19b8a3c791e35854712e2e9bf6d15360e82ee9676a3d7823b",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Euro / British Pound/EUR/GBP row shows 0.8585 GBP, +0.14% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 0.8585 GBP and +0.14%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "GBP per euro is consistent with the pair name, suffix, and verified chart projection. Checked-in forex asset ID eurgbp, with price 0.8585 and movement 0.0012. Those seed fields imply 0.14% at two decimals, versus the displayed source field 0.14%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0248",
+    "pickerOrdinal": 149,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "EUR/JPY",
+            "name": "Euro / Japanese Yen",
+            "price": "161.8500 JPY",
+            "change": "+0.40%",
+            "favorite": "Add Euro / Japanese Yen (EUR/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "EUR/JPY",
+            "name": "Euro / Japanese Yen",
+            "price": "161.8500 JPY",
+            "change": "+0.40%",
+            "favorite": "Add Euro / Japanese Yen (EUR/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 149
+    },
+    "sha256": "45a9b39f04390053f5ee9502a4bdc17043a6e783196245c75abc956a9fea1d2d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Euro / Japanese Yen/EUR/JPY row shows 161.8500 JPY, +0.40% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 161.8500 JPY and +0.40%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The JPY suffix applies to an EUR base. The displayed 161.8500 preserves the expected precision. Checked-in forex asset ID eurjpy, with price 161.85 and movement 0.65. Those seed fields imply 0.40% at two decimals, versus the displayed source field 0.40%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0249",
+    "pickerOrdinal": 150,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "GBP/JPY",
+            "name": "British Pound / Japanese Yen",
+            "price": "188.4500 JPY",
+            "change": "+0.45%",
+            "favorite": "Add British Pound / Japanese Yen (GBP/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "GBP/JPY",
+            "name": "British Pound / Japanese Yen",
+            "price": "188.4500 JPY",
+            "change": "+0.45%",
+            "favorite": "Add British Pound / Japanese Yen (GBP/JPY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 150
+    },
+    "sha256": "685affac082f823f4bad4b2c2a9d368a4643e6028a4374c0b19a587e8d5f521a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published British Pound / Japanese Yen/GBP/JPY row shows 188.4500 JPY, +0.45% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 188.4500 JPY and +0.45%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The suffix changes with the actual quote leg while the base remains GBP. The named action preserves the full pair. Checked-in forex asset ID gbpjpy, with price 188.45 and movement 0.85. Those seed fields imply 0.45% at two decimals, versus the displayed source field 0.45%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0250",
+    "pickerOrdinal": 151,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/HKD",
+            "name": "US Dollar / Hong Kong Dollar",
+            "price": "7.8245 HKD",
+            "change": "+0.02%",
+            "favorite": "Add US Dollar / Hong Kong Dollar (USD/HKD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/HKD",
+            "name": "US Dollar / Hong Kong Dollar",
+            "price": "7.8245 HKD",
+            "change": "+0.02%",
+            "favorite": "Add US Dollar / Hong Kong Dollar (USD/HKD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 151
+    },
+    "sha256": "953677c25a7176deda0806163f385f0a915d892b45507643e1f1b1e9e7ab50cc",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Hong Kong Dollar/USD/HKD row shows 7.8245 HKD, +0.02% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 7.8245 HKD and +0.02%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "HKD per USD is consistent with the full name. The small nonzero movement remains visible. Checked-in forex asset ID usdhkd, with price 7.8245 and movement 0.0015. Those seed fields imply 0.02% at two decimals, versus the displayed source field 0.02%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0251",
+    "pickerOrdinal": 152,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/SGD",
+            "name": "US Dollar / Singapore Dollar",
+            "price": "1.3425 SGD",
+            "change": "+0.13%",
+            "favorite": "Add US Dollar / Singapore Dollar (USD/SGD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/SGD",
+            "name": "US Dollar / Singapore Dollar",
+            "price": "1.3425 SGD",
+            "change": "+0.13%",
+            "favorite": "Add US Dollar / Singapore Dollar (USD/SGD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 152
+    },
+    "sha256": "f0dc7367f412da0259b589a8d395c6b954c3bbdd3f15063294cd05a09798ea4d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Singapore Dollar/USD/SGD row shows 1.3425 SGD, +0.13% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 1.3425 SGD and +0.13%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The SGD suffix is consistent with the pair whose base is USD. Checked-in forex asset ID usdsgd, with price 1.3425 and movement 0.0018. Those seed fields imply 0.13% at two decimals, versus the displayed source field 0.13%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0252",
+    "pickerOrdinal": 153,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/MXN",
+            "name": "US Dollar / Mexican Peso",
+            "price": "17.2450 MXN",
+            "change": "-0.49%",
+            "favorite": "Add US Dollar / Mexican Peso (USD/MXN) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/MXN",
+            "name": "US Dollar / Mexican Peso",
+            "price": "17.2450 MXN",
+            "change": "-0.49%",
+            "favorite": "Add US Dollar / Mexican Peso (USD/MXN) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 153
+    },
+    "sha256": "f2843088a49e421c7c7c23ef61c96195736cafdff2f99cef744c5fee06afd3c6",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Mexican Peso/USD/MXN row shows 17.2450 MXN, -0.49% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 17.2450 MXN and -0.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The MXN quote suffix and negative seeded movement match their intended projection. Checked-in forex asset ID usdmxn, with price 17.2450 and movement -0.0850. Those seed fields imply -0.49% at two decimals, versus the displayed source field -0.49%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0253",
+    "pickerOrdinal": 154,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/ZAR",
+            "name": "US Dollar / South African Rand",
+            "price": "18.8540 ZAR",
+            "change": "+0.67%",
+            "favorite": "Add US Dollar / South African Rand (USD/ZAR) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/ZAR",
+            "name": "US Dollar / South African Rand",
+            "price": "18.8540 ZAR",
+            "change": "+0.67%",
+            "favorite": "Add US Dollar / South African Rand (USD/ZAR) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 154
+    },
+    "sha256": "2ab744fa73171486b764289e201d254866e9ffade4c4a1ba8c264246514ea8c5",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / South African Rand/USD/ZAR row shows 18.8540 ZAR, +0.67% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 18.8540 ZAR and +0.67%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The row gives ZAR per USD and preserves both members of the full pair in the favorite. Checked-in forex asset ID usdzar, with price 18.8540 and movement 0.1250. Those seed fields imply 0.67% at two decimals, versus the displayed source field 0.67%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0254",
+    "pickerOrdinal": 155,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USD/TRY",
+            "name": "US Dollar / Turkish Lira",
+            "price": "32.4850 TRY",
+            "change": "+0.57%",
+            "favorite": "Add US Dollar / Turkish Lira (USD/TRY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USD/TRY",
+            "name": "US Dollar / Turkish Lira",
+            "price": "32.4850 TRY",
+            "change": "+0.57%",
+            "favorite": "Add US Dollar / Turkish Lira (USD/TRY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 155
+    },
+    "sha256": "dabc94d84f12d4de4cacd46a060bce4cdadc44a71d9c92769b61e13bf9dab6ef",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published US Dollar / Turkish Lira/USD/TRY row shows 32.4850 TRY, +0.57% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows 32.4850 TRY and +0.57%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The TRY suffix is correct for the quote currency and four decimals are preserved. Checked-in forex asset ID usdtry, with price 32.4850 and movement 0.1850. Those seed fields imply 0.57% at two decimals, versus the displayed source field 0.57%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0255",
+    "pickerOrdinal": 156,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XAU",
+            "name": "Gold",
+            "price": "$2,024.50",
+            "change": "+0.64%",
+            "favorite": "Add Gold (XAU) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XAU",
+            "name": "Gold",
+            "price": "$2,024.50",
+            "change": "+0.64%",
+            "favorite": "Add Gold (XAU) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 156
+    },
+    "sha256": "8d6f29ca1c5545e0ef19330d094093218d1f3cd67b60e179795e726cd397922d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Gold/XAU row shows $2,024.50, +0.64% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $2,024.50 and +0.64%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The XAU commodity projection is distinct from the GLD fund entry. The observed value is a simulator input with no exchange-contract designation in this row. Checked-in commodity asset ID gold, with price 2024.50 and movement 12.80. Those seed fields imply 0.64% at two decimals, versus the displayed source field 0.64%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0256",
+    "pickerOrdinal": 157,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XAG",
+            "name": "Silver",
+            "price": "$23.45",
+            "change": "+1.21%",
+            "favorite": "Add Silver (XAG) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XAG",
+            "name": "Silver",
+            "price": "$23.45",
+            "change": "+1.21%",
+            "favorite": "Add Silver (XAG) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 157
+    },
+    "sha256": "f755e8c5c8f860779409f0a9ef00e46680710defad320eaa1b541ad87fcbe54e",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Silver/XAG row shows $23.45, +1.21% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $23.45 and +1.21%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The XAG asset and commodity identity distinguish this entry from the separate SLV fund. Checked-in commodity asset ID silver, with price 23.45 and movement 0.28. Those seed fields imply 1.21% at two decimals, versus the displayed source field 1.21%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0257",
+    "pickerOrdinal": 158,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "WTI",
+            "name": "Crude Oil WTI",
+            "price": "$78.25",
+            "change": "-1.82%",
+            "favorite": "Add Crude Oil WTI (WTI) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "WTI",
+            "name": "Crude Oil WTI",
+            "price": "$78.25",
+            "change": "-1.82%",
+            "favorite": "Add Crude Oil WTI (WTI) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 158
+    },
+    "sha256": "fe4c9c22c9daa161b61f91539cdb53738a0484aa8dbcbdd0dde322abe9fbb277",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Crude Oil WTI/WTI row shows $78.25, -1.82% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $78.25 and -1.82%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "WTI distinguishes this crude input from Brent and the USO fund. The negative seeded movement is explicit. Checked-in commodity asset ID oil, with price 78.25 and movement -1.45. Those seed fields imply -1.82% at two decimals, versus the displayed source field -1.82%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0258",
+    "pickerOrdinal": 159,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NG",
+            "name": "Natural Gas",
+            "price": "$2.85",
+            "change": "+2.89%",
+            "favorite": "Add Natural Gas (NG) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NG",
+            "name": "Natural Gas",
+            "price": "$2.85",
+            "change": "+2.89%",
+            "favorite": "Add Natural Gas (NG) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 159
+    },
+    "sha256": "c687745ab519f01f6bc12bd1d6f7afb37eed66e0145a0c1cf8e02fad882e0455",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Natural Gas/NG row shows $2.85, +2.89% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $2.85 and +2.89%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full Natural Gas label identifies the instrument. The row provides a simulator value and no contract-size detail. Checked-in commodity asset ID natgas, with price 2.85 and movement 0.08. Those seed fields imply 2.89% at two decimals, versus the displayed source field 2.89%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0259",
+    "pickerOrdinal": 160,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "HG",
+            "name": "Copper",
+            "price": "$3.82",
+            "change": "+1.06%",
+            "favorite": "Add Copper (HG) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "HG",
+            "name": "Copper",
+            "price": "$3.82",
+            "change": "+1.06%",
+            "favorite": "Add Copper (HG) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 160
+    },
+    "sha256": "2318d3d629320bff023e8168b427e2d67a84f7fd1689652b30961c66c0cbb874",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Copper/HG row shows $3.82, +1.06% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $3.82 and +1.06%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "HG and Copper agree with the catalog and the two-decimal simulator format. Checked-in commodity asset ID copper, with price 3.82 and movement 0.04. Those seed fields imply 1.06% at two decimals, versus the displayed source field 1.06%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0260",
+    "pickerOrdinal": 161,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XPT",
+            "name": "Platinum",
+            "price": "$985.40",
+            "change": "+0.87%",
+            "favorite": "Add Platinum (XPT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XPT",
+            "name": "Platinum",
+            "price": "$985.40",
+            "change": "+0.87%",
+            "favorite": "Add Platinum (XPT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 161
+    },
+    "sha256": "adda9011602f43320d5b746ea1d9957313b0ffc7886be7113252c87fee04c75a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Platinum/XPT row shows $985.40, +0.87% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $985.40 and +0.87%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "XPT and the full commodity name tie to the same named action. The picker does not identify a specific contract. Checked-in commodity asset ID platinum, with price 985.40 and movement 8.50. Those seed fields imply 0.87% at two decimals, versus the displayed source field 0.87%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0261",
+    "pickerOrdinal": 162,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XPD",
+            "name": "Palladium",
+            "price": "$1,025.80",
+            "change": "-1.48%",
+            "favorite": "Add Palladium (XPD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XPD",
+            "name": "Palladium",
+            "price": "$1,025.80",
+            "change": "-1.48%",
+            "favorite": "Add Palladium (XPD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 162
+    },
+    "sha256": "99bddd09206e3c1be235ea2d42ca6aace0639ce2af17a50b056df995252d6e3f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Palladium/XPD row shows $1,025.80, -1.48% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $1,025.80 and -1.48%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The submitted projection correctly matches Palladium/XPD, with the negative move and thousands formatting preserved. Checked-in commodity asset ID palladium, with price 1025.80 and movement -15.40. Those seed fields imply -1.48% at two decimals, versus the displayed source field -1.48%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0262",
+    "pickerOrdinal": 163,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "BRENT",
+            "name": "Brent Crude Oil",
+            "price": "$82.45",
+            "change": "-1.49%",
+            "favorite": "Add Brent Crude Oil (BRENT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "BRENT",
+            "name": "Brent Crude Oil",
+            "price": "$82.45",
+            "change": "-1.49%",
+            "favorite": "Add Brent Crude Oil (BRENT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 163
+    },
+    "sha256": "5c951f30fea50f8f3f5ddcc4e9a6a565e482f528eb0a4895f8e9794239a66696",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Brent Crude Oil/BRENT row shows $82.45, -1.49% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $82.45 and -1.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The longer named label preserves the grade distinction from WTI. The negative percent matches the source. Checked-in commodity asset ID brent, with price 82.45 and movement -1.25. Those seed fields imply -1.49% at two decimals, versus the displayed source field -1.49%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0263",
+    "pickerOrdinal": 164,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ZW",
+            "name": "Wheat",
+            "price": "$585.40",
+            "change": "+0.84%",
+            "favorite": "Add Wheat (ZW) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ZW",
+            "name": "Wheat",
+            "price": "$585.40",
+            "change": "+0.84%",
+            "favorite": "Add Wheat (ZW) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 164
+    },
+    "sha256": "92e18e2fc956435dda307842b1df584d91b6ad0a676484f5f1b52026f8942210",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Wheat/ZW row shows $585.40, +0.84% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $585.40 and +0.84%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The commodity and ZW label identify the instrument. No exchange standard or delivery lot is stated in this row. Checked-in commodity asset ID wheat, with price 585.40 and movement 4.85. Those seed fields imply 0.84% at two decimals, versus the displayed source field 0.84%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0264",
+    "pickerOrdinal": 165,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ZC",
+            "name": "Corn",
+            "price": "$445.80",
+            "change": "+0.55%",
+            "favorite": "Add Corn (ZC) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ZC",
+            "name": "Corn",
+            "price": "$445.80",
+            "change": "+0.55%",
+            "favorite": "Add Corn (ZC) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 165
+    },
+    "sha256": "67fe32be8655230d5939c9099bd9d775a9a2735c7abae6b61d51841f7aab46c2",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Corn/ZC row shows $445.80, +0.55% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $445.80 and +0.55%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The ZC token is accompanied by the common commodity name. The number represents a simulator input. Checked-in commodity asset ID corn, with price 445.80 and movement 2.45. Those seed fields imply 0.55% at two decimals, versus the displayed source field 0.55%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0265",
+    "pickerOrdinal": 166,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ZS",
+            "name": "Soybeans",
+            "price": "$1,185.40",
+            "change": "+0.72%",
+            "favorite": "Add Soybeans (ZS) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ZS",
+            "name": "Soybeans",
+            "price": "$1,185.40",
+            "change": "+0.72%",
+            "favorite": "Add Soybeans (ZS) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 166
+    },
+    "sha256": "39c5939d23a329dffeca29e47a95f7861c33540792b718a73a902f86d0873a09",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Soybeans/ZS row shows $1,185.40, +0.72% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $1,185.40 and +0.72%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The commodity asset ID is soybean. The label and named favorite distinguish it from Zscaler even though the two share ZS. Checked-in commodity asset ID soybean, with price 1185.40 and movement 8.50. Those seed fields imply 0.72% at two decimals, versus the displayed source field 0.72%."
+    },
+    "disposition": "EXISTING-VERIFIED-FAVORITE-FINDING-PRESERVED",
+    "existingFinding": "STRICT-TRADE-004"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0266",
+    "pickerOrdinal": 167,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "KC",
+            "name": "Coffee",
+            "price": "$185.40",
+            "change": "+2.12%",
+            "favorite": "Add Coffee (KC) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "KC",
+            "name": "Coffee",
+            "price": "$185.40",
+            "change": "+2.12%",
+            "favorite": "Add Coffee (KC) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 167
+    },
+    "sha256": "777d8da8d087897740fc204203d82c85118a770da808e81dc3726704858547ab",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Coffee/KC row shows $185.40, +2.12% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $185.40 and +2.12%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The KC label and name identify the coffee practice input without defining a real lot or physical quantity. Checked-in commodity asset ID coffee, with price 185.40 and movement 3.85. Those seed fields imply 2.12% at two decimals, versus the displayed source field 2.12%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0267",
+    "pickerOrdinal": 168,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SB",
+            "name": "Sugar",
+            "price": "$21.45",
+            "change": "+1.66%",
+            "favorite": "Add Sugar (SB) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SB",
+            "name": "Sugar",
+            "price": "$21.45",
+            "change": "+1.66%",
+            "favorite": "Add Sugar (SB) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 168
+    },
+    "sha256": "97b9fa01c12188b2db649fdf1e56f8f2b0d2730e5e53b91748bf3b136160109a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Sugar/SB row shows $21.45, +1.66% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $21.45 and +1.66%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The action identifies Sugar/SB and gives the source numeric projection. Physical price units are not inferred from this row alone. Checked-in commodity asset ID sugar, with price 21.45 and movement 0.35. Those seed fields imply 1.66% at two decimals, versus the displayed source field 1.66%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0268",
+    "pickerOrdinal": 169,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CT",
+            "name": "Cotton",
+            "price": "$78.25",
+            "change": "+1.10%",
+            "favorite": "Add Cotton (CT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CT",
+            "name": "Cotton",
+            "price": "$78.25",
+            "change": "+1.10%",
+            "favorite": "Add Cotton (CT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 169
+    },
+    "sha256": "1b061d1b46b90b1b5adcb3e14857f907889b79e80f0ac5188bca53257b0a7716",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Cotton/CT row shows $78.25, +1.10% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $78.25 and +1.10%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "Cotton/CT and the seeded percentage remain clear in the list. No statement about an exchange or delivery appears. Checked-in commodity asset ID cotton, with price 78.25 and movement 0.85. Those seed fields imply 1.10% at two decimals, versus the displayed source field 1.10%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0269",
+    "pickerOrdinal": 170,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ALI",
+            "name": "Aluminum",
+            "price": "$2,245.80",
+            "change": "+0.83%",
+            "favorite": "Add Aluminum (ALI) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ALI",
+            "name": "Aluminum",
+            "price": "$2,245.80",
+            "change": "+0.83%",
+            "favorite": "Add Aluminum (ALI) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 170
+    },
+    "sha256": "a4bbb3e7085cf9a346bc08793a78fe3cb4d8e7e9a55b9a3786be4881d1988306",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Aluminum/ALI row shows $2,245.80, +0.83% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $2,245.80 and +0.83%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full name and ALI identify the last catalog row; the source seed agrees with the comma-separated dollar display. Checked-in commodity asset ID aluminum, with price 2245.80 and movement 18.50. Those seed fields imply 0.83% at two decimals, versus the displayed source field 0.83%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  }
+]

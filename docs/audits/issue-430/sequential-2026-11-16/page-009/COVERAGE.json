@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 236,
-  "firstPass": 236,
-  "secondPass": 234,
+  "textRecords": 266,
+  "firstPass": 266,
+  "secondPass": 264,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -97,7 +97,7 @@
       "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Verify #469 native production at the exact merge and reread blocks 0093 and 0095. Verify #470 hosted preview and all checks, then merge through protection only after #469 native and live evidence is captured. Reread 0113 after #470 active production. Continue picker row 141 (EUR/USD) and shared quote provenance.",
+  "nextAction": "Verify #469 native production at the exact merge and reread blocks 0093 and 0095. Verify #470 hosted preview and all checks, then merge through protection only after #469 native and live evidence is captured. Reread 0113 after #470 active production. Continue remaining chart, quote and order-state coverage and shared quote provenance.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
@@ -125,9 +125,10 @@
     "trade-release-reconciliation/picker-quote-provenance-ledger.json",
     "trade-release-reconciliation/picker-rows-065-084-ledger.json",
     "trade-release-reconciliation/picker-rows-085-111-ledger.json",
-    "trade-release-reconciliation/picker-rows-112-140-ledger.json"
+    "trade-release-reconciliation/picker-rows-112-140-ledger.json",
+    "trade-release-reconciliation/picker-rows-141-170-ledger.json"
   ],
-  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–140 reviewed twice against controlled captures and source; ordinal 141 remains due.",
+  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
   "confirmedProductDefectsProductionVerified": 5,
   "latestApplicationRelease": "8400ff251984500416dfc333c079881e555bbd6b",
   "qualityRisks": [
