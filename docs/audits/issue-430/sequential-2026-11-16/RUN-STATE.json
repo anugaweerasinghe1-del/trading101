@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T03:37:07.533078+00:00",
+  "updatedAtUTC": "2026-11-18T03:37:57.535923+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -120,7 +120,8 @@
       "STRICT-0009-BLOCK-0300",
       "STRICT-0009-BLOCK-0316",
       "STRICT-0009-BLOCK-0329"
-    ]
+    ],
+    "nextExactContentState": "Default terminal controls and remaining quote/chart data states, then source/inventory reconciliation. Footer links, consent and newsletter fixture UI covered."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -198,9 +199,9 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 428,
-    "firstPass": 428,
-    "secondPass": 425,
+    "textRecords": 441,
+    "firstPass": 441,
+    "secondPass": 438,
     "separateCandidateRecords": 3,
     "separateCandidateSecondPass": 1,
     "pickerRowsTwoPass": 170,
@@ -216,7 +217,8 @@
     "mentorTopicResponsesTwoPass": 21,
     "exploreLinkProjectionsTwoPass": 14,
     "mentorPortfolioStateProjectionsTwoPass": 12,
-    "footerLinksTwoPass": 102
+    "footerLinksTwoPass": 102,
+    "footerStateAndIntervalTwoPass": 13
   },
   "partiallyReviewedPublisherPages": 14
 }

@@ -59,3 +59,7 @@ Four responsive/theme projections reconcile the Explore cards, leading to 14 dou
 # Candlestick production readback
 
 #471 now has an exact native receipt and five fresh custom-domain browser contexts. It verifies the one-day synthetic provider fixture and fifteen range selections. #472 subsequently protected-merged and awaits its native readback. #473 is open. [Exact #471 receipt](trade-release-reconciliation/RELEASE-471.json)
+
+# Footer and newsletter state review
+
+The two responsive footer captures preserve all 102 link occurrences. All 49 glossary links reuse exact title and slug evidence from the reviewed Guide, while their destination bodies remain in queue. Local response fixtures exercise explicit opt-in, invalid email, pending, confirmation and retry states. Actual subscription delivery and private CMP operations remain unverified. The checked-in chart polling minimum agrees with the visible five-minute candle check wording. [Footer state ledger](trade-release-reconciliation/footer-state-ledger.json)
