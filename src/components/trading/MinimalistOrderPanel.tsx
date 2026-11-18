@@ -58,9 +58,10 @@ export function MinimalistOrderPanel({
   const handleQuickAmount = useCallback(
     (percentage: number) => {
       if (maxActionQuantity <= 0) return;
-      setAmount((maxActionQuantity * percentage).toFixed(4));
+      const presetQuantity = maxActionQuantity * percentage;
+      setAmount(side === "sell" ? String(presetQuantity) : presetQuantity.toFixed(4));
     },
-    [maxActionQuantity],
+    [maxActionQuantity, side],
   );
 
   const executeTrade = useCallback(async () => {
@@ -165,7 +166,7 @@ export function MinimalistOrderPanel({
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span>Amount</span>
             <span>
-              Max: {maxActionQuantity.toFixed(4)} {asset.symbol}
+              Max: {side === "sell" ? maxSellQuantity : maxBuyAmount.toFixed(4)} {asset.symbol}
             </span>
           </div>
 
@@ -242,7 +243,7 @@ export function MinimalistOrderPanel({
               </div>
 
               <div className="rounded-lg border border-white/8 bg-white/[0.02] px-3 py-2 text-xs text-muted-foreground">
-                You are placing a market {side} for {quantity.toFixed(4)}{" "}
+                You are placing a market {side} for {quantity}{" "}
                 {asset.symbol} at approximately ${formatPrice(price, asset.type)} USD per simulator unit.
               </div>
             </>
