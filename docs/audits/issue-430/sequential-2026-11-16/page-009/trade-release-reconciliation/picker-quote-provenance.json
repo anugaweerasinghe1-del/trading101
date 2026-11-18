@@ -1,0 +1,53 @@
+{
+  "scope": "Published page with controlled same-origin GET only and explicit search; no order, account, or state mutation",
+  "views": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T02:54:23.120092+00:00",
+      "selectedSymbol": "USDC",
+      "selectedWidget": "Quote unavailable",
+      "entries": [
+        {
+          "symbol": "AAPL",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: AAPL\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Apple Inc. (AAPL) to favorites\":\n  - img\n- button \"AAPL Apple Inc. $255.25 +1.37%\":\n  - text: AAPL Apple Inc. $255.25\n  - img\n  - text: +1.37%"
+        },
+        {
+          "symbol": "BTC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: BTC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Bitcoin (BTC) to favorites\":\n  - img\n- button \"BTC Bitcoin $95,000.00 +1.99%\":\n  - text: BTC Bitcoin $95,000.00\n  - img\n  - text: +1.99%"
+        },
+        {
+          "symbol": "MATIC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: MATIC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Polygon (MATIC) to favorites\":\n  - img\n- button \"MATIC Polygon $0.8950 +4.92%\":\n  - text: MATIC Polygon $0.8950\n  - img\n  - text: +4.92%"
+        },
+        {
+          "symbol": "USDC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: USDC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add USD Coin (USDC) to favorites\":\n  - img\n- button \"USDC USD Coin $0.9997 +0.00%\":\n  - text: USDC USD Coin $0.9997\n  - img\n  - text: +0.00%"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T02:54:23.352076+00:00",
+      "selectedSymbol": "USDC",
+      "selectedWidget": "Quote unavailable",
+      "entries": [
+        {
+          "symbol": "AAPL",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: AAPL\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Apple Inc. (AAPL) to favorites\":\n  - img\n- button \"AAPL Apple Inc. $255.25 +1.37%\":\n  - text: AAPL Apple Inc. $255.25\n  - img\n  - text: +1.37%"
+        },
+        {
+          "symbol": "BTC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: BTC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Bitcoin (BTC) to favorites\":\n  - img\n- button \"BTC Bitcoin $95,000.00 +1.99%\":\n  - text: BTC Bitcoin $95,000.00\n  - img\n  - text: +1.99%"
+        },
+        {
+          "symbol": "MATIC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: MATIC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add Polygon (MATIC) to favorites\":\n  - img\n- button \"MATIC Polygon $0.8950 +4.92%\":\n  - text: MATIC Polygon $0.8950\n  - img\n  - text: +4.92%"
+        },
+        {
+          "symbol": "USDC",
+          "projection": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: USDC\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- button \"Add USD Coin (USDC) to favorites\":\n  - img\n- button \"USDC USD Coin $0.9997 +0.00%\":\n  - text: USDC USD Coin $0.9997\n  - img\n  - text: +0.00%"
+        }
+      ]
+    }
+  ]
+}

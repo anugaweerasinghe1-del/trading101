@@ -1,0 +1,26 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0091",
+    "text": "SQ | Block Inc.",
+    "sha256": "7df46bf64993f29e33e35ccba13fd3d7ac0df94d6d5f926fa88f93411d05a6e4",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "source": "src/lib/assets.ts; src/components/trading/AssetSearchDropdown.tsx",
+    "captures": [
+      "../continuation-2026-11-18/inventory.json",
+      "catalog-risk.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-RISK-001"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both real picker rows show a present-day company name with an unqualified SQ ticker."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh authoritative SEC submissions show NYSE XYZ. Source retains its practice identifier, so legacy semantics require separate reconciliation."
+    },
+    "disposition": "SUBSTANTIATED-QUALITY-RISK"
+  }
+]

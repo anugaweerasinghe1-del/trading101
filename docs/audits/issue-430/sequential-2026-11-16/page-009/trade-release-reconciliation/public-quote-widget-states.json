@@ -1,0 +1,109 @@
+{
+  "scope": "Compiled public guest quote widget with explicit synthetic market data states and blocked provider requests",
+  "rows": [
+    {
+      "width": 390,
+      "fixture": "provider",
+      "atUTC": "2026-11-18T03:41:57.047483+00:00",
+      "observations": [
+        {
+          "state": "loading",
+          "sequence": {
+            "text": "Loading quote…",
+            "disabled": false
+          }
+        },
+        {
+          "state": "provider",
+          "projection": "- button \"Provider snapshot\" [pressed]:\n  - img\n  - text: Provider snapshot\n- text: Example provider fixture\n- button \"Refresh quote\":\n  - img"
+        },
+        {
+          "state": "paused",
+          "projection": "- button \"Quote updates paused\":\n  - img\n  - text: Quote updates paused"
+        },
+        {
+          "state": "resumed",
+          "projection": "- button \"Provider snapshot\" [pressed]:\n  - img\n  - text: Provider snapshot\n- text: Example provider fixture\n- button \"Refresh quote\":\n  - img"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "fixture": "delayed",
+      "atUTC": "2026-11-18T03:41:56.840741+00:00",
+      "observations": [
+        {
+          "state": "loading",
+          "sequence": {
+            "text": "Loading quote…",
+            "disabled": false
+          }
+        },
+        {
+          "state": "delayed",
+          "projection": "- button \"Cached provider quote\" [pressed]:\n  - img\n  - text: Cached provider quote\n- text: Example provider fixture\n- img\n- text: Observed 3:19:49 AM\n- button \"Refresh quote\":\n  - img"
+        },
+        {
+          "state": "paused",
+          "projection": "- button \"Quote updates paused\":\n  - img\n  - text: Quote updates paused"
+        },
+        {
+          "state": "resumed",
+          "projection": "- button \"Cached provider quote\" [pressed]:\n  - img\n  - text: Cached provider quote\n- text: Example provider fixture\n- img\n- text: Observed 3:19:49 AM\n- button \"Refresh quote\":\n  - img"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "fixture": "simulated",
+      "atUTC": "2026-11-18T03:41:57.402545+00:00",
+      "observations": [
+        {
+          "state": "loading",
+          "sequence": {
+            "text": "Loading quote…",
+            "disabled": false
+          }
+        },
+        {
+          "state": "simulated",
+          "projection": "- button \"Fixed simulation quote\" [pressed]:\n  - img\n  - text: Fixed simulation quote\n- text: SIMULATION\n- button \"Refresh quote\":\n  - img"
+        },
+        {
+          "state": "paused",
+          "projection": "- button \"Quote updates paused\":\n  - img\n  - text: Quote updates paused"
+        },
+        {
+          "state": "resumed",
+          "projection": "- button \"Fixed simulation quote\" [pressed]:\n  - img\n  - text: Fixed simulation quote\n- text: SIMULATION\n- button \"Refresh quote\":\n  - img"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "fixture": "unavailable",
+      "atUTC": "2026-11-18T03:41:57.305418+00:00",
+      "observations": [
+        {
+          "state": "loading",
+          "sequence": {
+            "text": "Loading quote…",
+            "disabled": false
+          }
+        },
+        {
+          "state": "unavailable",
+          "projection": "- button \"Quote unavailable\" [pressed]:\n  - img\n  - text: Quote unavailable\n- button \"Refresh quote\":\n  - img\n- status: Price service is temporarily unavailable. Refresh will resume automatically."
+        },
+        {
+          "state": "paused",
+          "projection": "- button \"Quote updates paused\":\n  - img\n  - text: Quote updates paused"
+        },
+        {
+          "state": "resumed",
+          "projection": "- button \"Quote unavailable\" [pressed]:\n  - img\n  - text: Quote unavailable\n- button \"Refresh quote\":\n  - img\n- status: Price service is temporarily unavailable. Refresh will resume automatically."
+        }
+      ]
+    }
+  ]
+}

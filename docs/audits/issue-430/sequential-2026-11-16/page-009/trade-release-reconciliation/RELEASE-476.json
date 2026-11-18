@@ -1,0 +1,89 @@
+{
+  "pr": 476,
+  "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/476",
+  "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
+  "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "mergedAtUTC": "2026-11-18T09:21:09Z",
+  "mergedTreeEqualsFinalHeadTree": "d8598bf138cf8a5c5d9666277221858f2075c381",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134700750223",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134700750223,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/2ba5fd5b-0e36-4a7b-85cf-94ef4ffec1ba",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695635719,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273364776/job/134695252379",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695252379,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134695244892",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695244892,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134695244271",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695244271,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    }
+  ],
+  "previewURL": "https://2ba5fd5b.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T09:32:15.991Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "3243cf7f-990c-4bd5-9392-8cd8d99dc1b9",
+      "sha": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T09:21:11.584295Z"
+    },
+    "sourceGitHubRun": 44275108147,
+    "sourceGitHubJob": 134706873033,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44275108147/job/134706873033"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveEvidence": {
+    "production476-final-sell-execution.json": {
+      "sha256": "6019d434800de7e8c66ed0a6fc4988f39c944f107b07feba9575fba37516a10c",
+      "contexts": 4,
+      "latestUTC": "2026-11-18T09:33:12.708437+00:00"
+    },
+    "production476-final-max-buy.json": {
+      "sha256": "20c78fb59b4afbb65ba4c795949153875b2044d58f87946ffd57e8746601a879",
+      "contexts": 2,
+      "latestUTC": "2026-11-18T09:33:04.047261+00:00"
+    }
+  },
+  "liveRereadAtUTC": "2026-11-18T09:34:34.137569+00:00",
+  "status": "FIXED-RECHECKED",
+  "liveDefaultViews": "PRODUCTION-476-VIEWS.json",
+  "findings": [
+    "STRICT-TRADE-024",
+    "STRICT-TRADE-025"
+  ],
+  "scope": "Four checked fractional buy/sell round trips and two max-buy controls execute only in new guest browser local storage. No actual account or remote order is used."
+}

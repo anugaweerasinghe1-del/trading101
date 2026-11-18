@@ -1,0 +1,128 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0486",
+    "text": "No-JavaScript route links",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "current-default-census/reconciliation-471-473-capture-0.json",
+    "sha256": "25af3a6ddf80bff98718c2b0841ee42b29c56c1cdd05d9bab84e601b3491fb5d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published no-JavaScript body exposes the expected Home, Markets, Practice desk, Courses, Learn, Glossary, Asset guides, Strategies and Comparisons links. Footer and article navigation are present."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The static navigation targets match the current canonical queue and the publisher notes. The no-JavaScript body provides meaningful content independently of the interactive app.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0487",
+    "text": "Desktop primary navigation",
+    "source": "src/components/Navigation.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "f4f4e97da60fdae59788cf9b227b2ca09fb05b41a3448c9929cd2b56171f3563",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The desktop navigation presents the expected learning and practice routes and named More control."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The same component serves the reviewed Guide and the current Trade route. No sign-in is required to view the public navigation.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0488",
+    "text": "Mobile site menu and current Trade route",
+    "source": "src/components/Navigation.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "f11765a8848b5946dd73741aefb8748a362cb67092d2b66f21fa26cd4484da75",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The mobile trigger opens the named Site menu, which locks focus and exposes the current Trade link."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The menu and breakpoint source agree with the independently observed current-route state. Escape closes the menu and restores focus.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0489",
+    "text": "More site pages",
+    "source": "src/components/Navigation.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "b7ae80954900c85e9ec4d173623dea52771dcf4146a8049e2de4b3a6e3030189",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both responsive menus expose the same 15 distinct route links."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The exact labels and hrefs agree with the Explore, Community, Company, and Legal & Trust groups. Terms remains separately owner-blocked.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0490",
+    "text": "Sign in | Sign in (optional)",
+    "source": "src/components/Navigation.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "b0b715b36ab83644c33ef61182c4065f5d5fb1d3ea5186c4aa2e50eb492ac373",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The optional guest action points to the same /auth route in both views."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Private authentication and account operations are outside the captured public state. The control does not prevent guest practice.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0491",
+    "text": "See What’s New | Dismiss release announcement",
+    "source": "src/components/Navigation.tsx; src/App.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "d35b66b38b6dc846d5e95507069452a248724d265f240bf4a495a7dbc11d9d16",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Release navigation targets /whats-new and dismisses in both browser contexts."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The notice was present at capture and disappeared on keyboard dismissal. A time-selected notice headline is a shared dynamic projection, so no fixed headline is inferred.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0492",
+    "text": "Switch to light theme | Switch to dark theme",
+    "source": "src/components/ThemeToggle.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "public-trade-nav-states.json",
+    "sha256": "9749d682cc49fcd52b064507a21769d09b2ead4087e389ffa214b0892cda7e2d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both keyboard controls apply the browser-local theme class and reverse it."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The title changes according to the next available action. Neither the overlay nor the analytics rule interferes with these public tests.",
+      "reviewer": "Codex assistant, separate browser-state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PUBLIC-PROJECTION"
+  }
+]

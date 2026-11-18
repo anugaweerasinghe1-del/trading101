@@ -1,0 +1,56 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0493",
+    "text": "Line chart headline and simulation scope",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "current-default-census/reconciliation-471-473-capture-2.json",
+    "sha256": "d98a917b2e03be7da3fb8fb905d4c1853748851740858e7718d6b09b7b0097af",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The current controlled chart labels its input SIMULATED and states no provider observation time."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The latest plotted sample and the separate virtual order input are described as different data. USD per unit matches the selected USDC projection.",
+      "reviewer": "Codex assistant, separate published state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0494",
+    "text": "Line chart provider-backed historical projection",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "../capture-2.json",
+    "sha256": "4564be355745b8773b86f043c7af8618e3d3fe2c60751497a766bc00fa35ca4e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The earlier unrestricted capture retained the actual MARKET DATA indicator and distinct quote headline."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Candles and headline quote carry distinct inputs. The label promises no exact trade price or real-time candle status.",
+      "reviewer": "Codex assistant, separate published state and source review"
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0495",
+    "text": "Line chart LIVE and DELAYED source alternatives",
+    "source": "src/components/trading/MinimalistAreaChart.tsx; supabase/functions/live-market-data/index.ts",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "contentReference": "source expression",
+    "sha256": "ce2fb00fac1b85d3f81a0fdb76d74e442ec88543f6270a97985d86274054531f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The component declares LIVE and DELAYED as source branches. No actual production observation is credited."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The audited candle endpoint labels successful historical arrays provider, with a simulated fallback. This release scoped the declared realtime or delayed cases as source-only alternatives.",
+      "reviewer": "Codex assistant, separate published state and source review"
+    },
+    "disposition": "SOURCE-ONLY-ALTERNATIVES-REVIEWED"
+  }
+]

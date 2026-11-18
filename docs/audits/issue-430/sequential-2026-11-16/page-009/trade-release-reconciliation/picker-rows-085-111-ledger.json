@@ -1,0 +1,1353 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0184",
+    "pickerOrdinal": 85,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MDB",
+            "name": "MongoDB Inc.",
+            "price": "$385.20",
+            "change": "+3.35%",
+            "favorite": "Add MongoDB Inc. (MDB) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MDB",
+            "name": "MongoDB Inc.",
+            "price": "$385.20",
+            "change": "+3.35%",
+            "favorite": "Add MongoDB Inc. (MDB) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 85
+    },
+    "sha256": "b1e4d2d02b421ada2edc31f87495a313800c89e55e4d38201d4593309d0a1124",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published MongoDB Inc./MDB row shows $385.20, +3.35% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $385.20 and +3.35%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The exact MongoDB action and seeded positive movement match; the warm and controlled values agree. Checked-in stock asset ID mdb, with price 385.20 and movement 12.50. Those seed fields imply 3.35% at two decimals, versus the displayed source field 3.35%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0185",
+    "pickerOrdinal": 86,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CRWD",
+            "name": "CrowdStrike Holdings",
+            "price": "$285.40",
+            "change": "+3.07%",
+            "favorite": "Add CrowdStrike Holdings (CRWD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CRWD",
+            "name": "CrowdStrike Holdings",
+            "price": "$285.40",
+            "change": "+3.07%",
+            "favorite": "Add CrowdStrike Holdings (CRWD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 86
+    },
+    "sha256": "814099553106de42698febb794c81b725fe1c5b00a91bf09d460ce1371cb6f2f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published CrowdStrike Holdings/CRWD row shows $285.40, +3.07% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $285.40 and +3.07%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The CRWD row identifies the cybersecurity issuer and makes no assertion about its product performance. Checked-in stock asset ID crwd, with price 285.40 and movement 8.50. Those seed fields imply 3.07% at two decimals, versus the displayed source field 3.07%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0186",
+    "pickerOrdinal": 87,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ZS",
+            "name": "Zscaler Inc.",
+            "price": "$195.80",
+            "change": "+3.08%",
+            "favorite": "Add Zscaler Inc. (ZS) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ZS",
+            "name": "Zscaler Inc.",
+            "price": "$195.80",
+            "change": "+3.08%",
+            "favorite": "Add Zscaler Inc. (ZS) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 87
+    },
+    "sha256": "f9d7def7a61c822ee09b672a16de34f1d14f46cdb1a3734c9c669b2ddc1b37f5",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Zscaler Inc./ZS row shows $195.80, +3.08% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $195.80 and +3.08%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "Read against the Zscaler asset ID zs and the distinct soybean asset ID. The named favorite agrees with the exact post-467 browser check. Checked-in stock asset ID zs, with price 195.80 and movement 5.85. Those seed fields imply 3.08% at two decimals, versus the displayed source field 3.08%."
+    },
+    "disposition": "EXISTING-VERIFIED-FAVORITE-FINDING-PRESERVED",
+    "existingFinding": "STRICT-TRADE-004"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0187",
+    "pickerOrdinal": 88,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "PANW",
+            "name": "Palo Alto Networks",
+            "price": "$315.40",
+            "change": "+2.69%",
+            "favorite": "Add Palo Alto Networks (PANW) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "PANW",
+            "name": "Palo Alto Networks",
+            "price": "$315.40",
+            "change": "+2.69%",
+            "favorite": "Add Palo Alto Networks (PANW) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 88
+    },
+    "sha256": "975068265ab8cb15f3151441b32e67a4941b3b834d6a070206682b69321025be",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Palo Alto Networks/PANW row shows $315.40, +2.69% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $315.40 and +2.69%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The three-part issuer name and PANW ticker agree across the public and code projections. Checked-in stock asset ID panw, with price 315.40 and movement 8.25. Those seed fields imply 2.69% at two decimals, versus the displayed source field 2.69%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0188",
+    "pickerOrdinal": 89,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "OKTA",
+            "name": "Okta Inc.",
+            "price": "$98.50",
+            "change": "+2.98%",
+            "favorite": "Add Okta Inc. (OKTA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "OKTA",
+            "name": "Okta Inc.",
+            "price": "$98.50",
+            "change": "+2.98%",
+            "favorite": "Add Okta Inc. (OKTA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 89
+    },
+    "sha256": "bba03f63e52d16ea0b28ab744a8fbc03f97ea1235b8f0b5a4c8788d823ca11c9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Okta Inc./OKTA row shows $98.50, +2.98% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $98.50 and +2.98%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The selector exposes the issuer name and action even though several rows share the same 98.50 numeric magnitude. Checked-in stock asset ID okta, with price 98.50 and movement 2.85. Those seed fields imply 2.98% at two decimals, versus the displayed source field 2.98%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0189",
+    "pickerOrdinal": 90,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "WDAY",
+            "name": "Workday Inc.",
+            "price": "$265.80",
+            "change": "+2.09%",
+            "favorite": "Add Workday Inc. (WDAY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "WDAY",
+            "name": "Workday Inc.",
+            "price": "$265.80",
+            "change": "+2.09%",
+            "favorite": "Add Workday Inc. (WDAY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 90
+    },
+    "sha256": "42cf228118f4703b42c3414783bb34e9293fd020ced20b0374b318bfb1c6d2b0",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Workday Inc./WDAY row shows $265.80, +2.09% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $265.80 and +2.09%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full name disambiguates the WDAY ticker; this is a stock practice input. Checked-in stock asset ID wday, with price 265.80 and movement 5.45. Those seed fields imply 2.09% at two decimals, versus the displayed source field 2.09%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0190",
+    "pickerOrdinal": 91,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "VEEV",
+            "name": "Veeva Systems",
+            "price": "$195.40",
+            "change": "+2.01%",
+            "favorite": "Add Veeva Systems (VEEV) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "VEEV",
+            "name": "Veeva Systems",
+            "price": "$195.40",
+            "change": "+2.01%",
+            "favorite": "Add Veeva Systems (VEEV) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 91
+    },
+    "sha256": "99b553875bbd1909dc2172b82fbf91205e87691d0d898f0103f4c4b9e2df5b42",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Veeva Systems/VEEV row shows $195.40, +2.01% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $195.40 and +2.01%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "VEEV and the issuer name are consistent with the intended practice entry. Checked-in stock asset ID veev, with price 195.40 and movement 3.85. Those seed fields imply 2.01% at two decimals, versus the displayed source field 2.01%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0191",
+    "pickerOrdinal": 92,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "JPM",
+            "name": "JPMorgan Chase & Co.",
+            "price": "$172.45",
+            "change": "+1.08%",
+            "favorite": "Add JPMorgan Chase & Co. (JPM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "JPM",
+            "name": "JPMorgan Chase & Co.",
+            "price": "$172.45",
+            "change": "+1.08%",
+            "favorite": "Add JPMorgan Chase & Co. (JPM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 92
+    },
+    "sha256": "7214267b99accbe6f0bf77abe526ff6654201e75eba582dec71d0727f5b01995",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published JPMorgan Chase & Co./JPM row shows $172.45, +1.08% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $172.45 and +1.08%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The ampersand remains readable and the shown positive movement matches source. Checked-in stock asset ID jpm, with price 172.45 and movement 1.85. Those seed fields imply 1.08% at two decimals, versus the displayed source field 1.08%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0192",
+    "pickerOrdinal": 93,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "V",
+            "name": "Visa Inc.",
+            "price": "$275.80",
+            "change": "+0.79%",
+            "favorite": "Add Visa Inc. (V) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "V",
+            "name": "Visa Inc.",
+            "price": "$275.80",
+            "change": "+0.79%",
+            "favorite": "Add Visa Inc. (V) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 93
+    },
+    "sha256": "46a64a8406c7a8398b578af1671c699d5c0e485bb876776d72e6e4c65566890c",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Visa Inc./V row shows $275.80, +0.79% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $275.80 and +0.79%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full Visa name and favorite distinguish the single-character ticker from text controls. Checked-in stock asset ID v, with price 275.80 and movement 2.15. Those seed fields imply 0.79% at two decimals, versus the displayed source field 0.79%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0193",
+    "pickerOrdinal": 94,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MA",
+            "name": "Mastercard Incorporated",
+            "price": "$452.30",
+            "change": "+0.85%",
+            "favorite": "Add Mastercard Incorporated (MA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MA",
+            "name": "Mastercard Incorporated",
+            "price": "$452.30",
+            "change": "+0.85%",
+            "favorite": "Add Mastercard Incorporated (MA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 94
+    },
+    "sha256": "0d14731c083898606ea8a3219a029633977d7ded911399169f01a5f681941a47",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Mastercard Incorporated/MA row shows $452.30, +0.85% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $452.30 and +0.85%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The brand and MA ticker identify the stock; the quote conveys no payment or card functionality. Checked-in stock asset ID ma, with price 452.30 and movement 3.80. Those seed fields imply 0.85% at two decimals, versus the displayed source field 0.85%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0194",
+    "pickerOrdinal": 95,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "BAC",
+            "name": "Bank of America",
+            "price": "$35.45",
+            "change": "+1.29%",
+            "favorite": "Add Bank of America (BAC) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "BAC",
+            "name": "Bank of America",
+            "price": "$35.45",
+            "change": "+1.29%",
+            "favorite": "Add Bank of America (BAC) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 95
+    },
+    "sha256": "917b8da749e86238ca133fa8efe77b16850e05480eb0ea8e582f8bc79529b000",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Bank of America/BAC row shows $35.45, +1.29% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $35.45 and +1.29%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The issuer name and BAC action agree. The entry concerns stock rather than a deposit account. Checked-in stock asset ID bac, with price 35.45 and movement 0.45. Those seed fields imply 1.29% at two decimals, versus the displayed source field 1.29%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0195",
+    "pickerOrdinal": 96,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "WFC",
+            "name": "Wells Fargo & Co.",
+            "price": "$48.25",
+            "change": "+1.37%",
+            "favorite": "Add Wells Fargo & Co. (WFC) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "WFC",
+            "name": "Wells Fargo & Co.",
+            "price": "$48.25",
+            "change": "+1.37%",
+            "favorite": "Add Wells Fargo & Co. (WFC) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 96
+    },
+    "sha256": "5619e74c755095f32aedf501c8319974b457a25ca5a0a30dcd550a3af448b4e9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Wells Fargo & Co./WFC row shows $48.25, +1.37% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $48.25 and +1.37%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The abbreviated name preserves its identifying words and matches WFC. Checked-in stock asset ID wfc, with price 48.25 and movement 0.65. Those seed fields imply 1.37% at two decimals, versus the displayed source field 1.37%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0196",
+    "pickerOrdinal": 97,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "GS",
+            "name": "Goldman Sachs Group",
+            "price": "$385.40",
+            "change": "+1.54%",
+            "favorite": "Add Goldman Sachs Group (GS) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "GS",
+            "name": "Goldman Sachs Group",
+            "price": "$385.40",
+            "change": "+1.54%",
+            "favorite": "Add Goldman Sachs Group (GS) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 97
+    },
+    "sha256": "c54394a60939e896a71be0e0cc1554fd035a3d2f4e32803f4e381ca69f2a1c5b",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Goldman Sachs Group/GS row shows $385.40, +1.54% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $385.40 and +1.54%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The name and GS identify one issuer. No brokerage service claim appears in this projection. Checked-in stock asset ID gs, with price 385.40 and movement 5.85. Those seed fields imply 1.54% at two decimals, versus the displayed source field 1.54%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0197",
+    "pickerOrdinal": 98,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MS",
+            "name": "Morgan Stanley",
+            "price": "$92.50",
+            "change": "+1.37%",
+            "favorite": "Add Morgan Stanley (MS) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MS",
+            "name": "Morgan Stanley",
+            "price": "$92.50",
+            "change": "+1.37%",
+            "favorite": "Add Morgan Stanley (MS) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 98
+    },
+    "sha256": "bd0d764ebb05567c8effe7e84c2afe0ff520b84fd2439aba62c1297a657ceab1",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Morgan Stanley/MS row shows $92.50, +1.37% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $92.50 and +1.37%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The MS favorite and issuer name distinguish this entry from MSFT. Checked-in stock asset ID ms, with price 92.50 and movement 1.25. Those seed fields imply 1.37% at two decimals, versus the displayed source field 1.37%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0198",
+    "pickerOrdinal": 99,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "UNH",
+            "name": "UnitedHealth Group",
+            "price": "$528.40",
+            "change": "+0.93%",
+            "favorite": "Add UnitedHealth Group (UNH) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "UNH",
+            "name": "UnitedHealth Group",
+            "price": "$528.40",
+            "change": "+0.93%",
+            "favorite": "Add UnitedHealth Group (UNH) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 99
+    },
+    "sha256": "11b25090714562b3897ba46bfebbbe01479e33e62fad74ab73fe13e4b65e4e71",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published UnitedHealth Group/UNH row shows $528.40, +0.93% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $528.40 and +0.93%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The exact issuer name is preserved and the stock row makes no insurance claim. Checked-in stock asset ID unh, with price 528.40 and movement 4.85. Those seed fields imply 0.93% at two decimals, versus the displayed source field 0.93%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0199",
+    "pickerOrdinal": 100,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "JNJ",
+            "name": "Johnson & Johnson",
+            "price": "$158.25",
+            "change": "+0.92%",
+            "favorite": "Add Johnson & Johnson (JNJ) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "JNJ",
+            "name": "Johnson & Johnson",
+            "price": "$158.25",
+            "change": "+0.92%",
+            "favorite": "Add Johnson & Johnson (JNJ) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 100
+    },
+    "sha256": "24e8a4d5be09e941630aa12c910c1a2e3eca02eac99984805f9fc46b62507412",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Johnson & Johnson/JNJ row shows $158.25, +0.92% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $158.25 and +0.92%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The ampersand and full issuer label survive the rendered and accessibility projections. Checked-in stock asset ID jnj, with price 158.25 and movement 1.45. Those seed fields imply 0.92% at two decimals, versus the displayed source field 0.92%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0200",
+    "pickerOrdinal": 101,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "PFE",
+            "name": "Pfizer Inc.",
+            "price": "$28.45",
+            "change": "-1.22%",
+            "favorite": "Add Pfizer Inc. (PFE) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "PFE",
+            "name": "Pfizer Inc.",
+            "price": "$28.45",
+            "change": "-1.22%",
+            "favorite": "Add Pfizer Inc. (PFE) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 101
+    },
+    "sha256": "7257b8e4d0d928dbbf4b2d8b11e704d7599e392c157df8298a7f7cda95b5cd0f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Pfizer Inc./PFE row shows $28.45, -1.22% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $28.45 and -1.22%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The change remains negative at both sizes, matching its source move. Checked-in stock asset ID pfe, with price 28.45 and movement -0.35. Those seed fields imply -1.22% at two decimals, versus the displayed source field -1.22%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0201",
+    "pickerOrdinal": 102,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MRNA",
+            "name": "Moderna Inc.",
+            "price": "$98.50",
+            "change": "+4.07%",
+            "favorite": "Add Moderna Inc. (MRNA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MRNA",
+            "name": "Moderna Inc.",
+            "price": "$98.50",
+            "change": "+4.07%",
+            "favorite": "Add Moderna Inc. (MRNA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 102
+    },
+    "sha256": "df4bca21f89af1e8d74f62cc6a773f0936a6122ca962c8e24c114d296a4498f8",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Moderna Inc./MRNA row shows $98.50, +4.07% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $98.50 and +4.07%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The MRNA ticker and full name are consistent; the row makes no medical or product claim. Checked-in stock asset ID mrna, with price 98.50 and movement 3.85. Those seed fields imply 4.07% at two decimals, versus the displayed source field 4.07%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0202",
+    "pickerOrdinal": 103,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ABBV",
+            "name": "AbbVie Inc.",
+            "price": "$172.80",
+            "change": "+1.26%",
+            "favorite": "Add AbbVie Inc. (ABBV) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ABBV",
+            "name": "AbbVie Inc.",
+            "price": "$172.80",
+            "change": "+1.26%",
+            "favorite": "Add AbbVie Inc. (ABBV) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 103
+    },
+    "sha256": "3b5bffccf37c5ebe4c1ffcb317a9002e83bdab505828042c04f625b42a40db11",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published AbbVie Inc./ABBV row shows $172.80, +1.26% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $172.80 and +1.26%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The capitalization and ABBV label consistently identify AbbVie. Checked-in stock asset ID abbv, with price 172.80 and movement 2.15. Those seed fields imply 1.26% at two decimals, versus the displayed source field 1.26%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0203",
+    "pickerOrdinal": 104,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "LLY",
+            "name": "Eli Lilly & Co.",
+            "price": "$752.40",
+            "change": "+2.52%",
+            "favorite": "Add Eli Lilly & Co. (LLY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "LLY",
+            "name": "Eli Lilly & Co.",
+            "price": "$752.40",
+            "change": "+2.52%",
+            "favorite": "Add Eli Lilly & Co. (LLY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 104
+    },
+    "sha256": "c1bbca9b7acec3e669a21cb94807e4dfee8e13d5fb299fa46954ed9630ced4c0",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Eli Lilly & Co./LLY row shows $752.40, +2.52% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $752.40 and +2.52%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The compound issuer name is exposed with LLY and distinct from the other health stocks. Checked-in stock asset ID lly, with price 752.40 and movement 18.50. Those seed fields imply 2.52% at two decimals, versus the displayed source field 2.52%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0204",
+    "pickerOrdinal": 105,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "WMT",
+            "name": "Walmart Inc.",
+            "price": "$165.80",
+            "change": "+0.76%",
+            "favorite": "Add Walmart Inc. (WMT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "WMT",
+            "name": "Walmart Inc.",
+            "price": "$165.80",
+            "change": "+0.76%",
+            "favorite": "Add Walmart Inc. (WMT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 105
+    },
+    "sha256": "6a3defa813b434bc82e4dc679b38c75a7191deedb0f1f0b0b0b8c59a4ad55eab",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Walmart Inc./WMT row shows $165.80, +0.76% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $165.80 and +0.76%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The row matches the checked-in seed and no current exchange-price certification follows. Checked-in stock asset ID wmt, with price 165.80 and movement 1.25. Those seed fields imply 0.76% at two decimals, versus the displayed source field 0.76%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0205",
+    "pickerOrdinal": 106,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "COST",
+            "name": "Costco Wholesale",
+            "price": "$725.40",
+            "change": "+1.19%",
+            "favorite": "Add Costco Wholesale (COST) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "COST",
+            "name": "Costco Wholesale",
+            "price": "$725.40",
+            "change": "+1.19%",
+            "favorite": "Add Costco Wholesale (COST) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 106
+    },
+    "sha256": "41e5a20485fa4775a1386e633f8b1756da5247883ab9914914918d72584cd946",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Costco Wholesale/COST row shows $725.40, +1.19% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $725.40 and +1.19%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The whole issuer label appears in the favorite and uses the exact COST ticker. Checked-in stock asset ID cost, with price 725.40 and movement 8.50. Those seed fields imply 1.19% at two decimals, versus the displayed source field 1.19%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0206",
+    "pickerOrdinal": 107,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "HD",
+            "name": "Home Depot Inc.",
+            "price": "$358.25",
+            "change": "+1.37%",
+            "favorite": "Add Home Depot Inc. (HD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "HD",
+            "name": "Home Depot Inc.",
+            "price": "$358.25",
+            "change": "+1.37%",
+            "favorite": "Add Home Depot Inc. (HD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 107
+    },
+    "sha256": "bf362e5673e071edfe4869fd97ac287faa4326fceb07135f3f8dbfe8dc60f925",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Home Depot Inc./HD row shows $358.25, +1.37% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $358.25 and +1.37%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The abbreviated company name remains recognizable and matches both responsive views. Checked-in stock asset ID hd, with price 358.25 and movement 4.85. Those seed fields imply 1.37% at two decimals, versus the displayed source field 1.37%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0207",
+    "pickerOrdinal": 108,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "LOW",
+            "name": "Lowe's Companies",
+            "price": "$225.40",
+            "change": "+1.28%",
+            "favorite": "Add Lowe's Companies (LOW) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "LOW",
+            "name": "Lowe's Companies",
+            "price": "$225.40",
+            "change": "+1.28%",
+            "favorite": "Add Lowe's Companies (LOW) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 108
+    },
+    "sha256": "f33faff1aa48ca536886f01923f66f009f297aac6e771ac2915b6745cdc0d801",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Lowe's Companies/LOW row shows $225.40, +1.28% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $225.40 and +1.28%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The apostrophe is preserved and the whole label distinguishes the Lowe's asset. Checked-in stock asset ID low, with price 225.40 and movement 2.85. Those seed fields imply 1.28% at two decimals, versus the displayed source field 1.28%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0208",
+    "pickerOrdinal": 109,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TGT",
+            "name": "Target Corporation",
+            "price": "$142.80",
+            "change": "+1.03%",
+            "favorite": "Add Target Corporation (TGT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TGT",
+            "name": "Target Corporation",
+            "price": "$142.80",
+            "change": "+1.03%",
+            "favorite": "Add Target Corporation (TGT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 109
+    },
+    "sha256": "8b2c46ff2483d18d017d5c242a3d1c40572e97ada1e422bbff20ea5a393d58a2",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Target Corporation/TGT row shows $142.80, +1.03% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $142.80 and +1.03%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full company name distinguishes this row from other uses of the word target. Checked-in stock asset ID tgt, with price 142.80 and movement 1.45. Those seed fields imply 1.03% at two decimals, versus the displayed source field 1.03%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0209",
+    "pickerOrdinal": 110,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SBUX",
+            "name": "Starbucks Corporation",
+            "price": "$98.50",
+            "change": "+1.29%",
+            "favorite": "Add Starbucks Corporation (SBUX) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SBUX",
+            "name": "Starbucks Corporation",
+            "price": "$98.50",
+            "change": "+1.29%",
+            "favorite": "Add Starbucks Corporation (SBUX) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 110
+    },
+    "sha256": "f8632e08fc97986503964d6a1e31c076ecffc63f95eee4d5733c13c42dad0d73",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Starbucks Corporation/SBUX row shows $98.50, +1.29% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $98.50 and +1.29%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full name and SBUX action agree across widths and source. Checked-in stock asset ID sbux, with price 98.50 and movement 1.25. Those seed fields imply 1.29% at two decimals, versus the displayed source field 1.29%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0210",
+    "pickerOrdinal": 111,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MCD",
+            "name": "McDonald's Corporation",
+            "price": "$295.40",
+            "change": "+0.97%",
+            "favorite": "Add McDonald's Corporation (MCD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MCD",
+            "name": "McDonald's Corporation",
+            "price": "$295.40",
+            "change": "+0.97%",
+            "favorite": "Add McDonald's Corporation (MCD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 111
+    },
+    "sha256": "65168a2049901f1cfd0b71238a9adf21cc6ee5a77c3847f01e71d74e4ad60086",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published McDonald's Corporation/MCD row shows $295.40, +0.97% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $295.40 and +0.97%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The apostrophe and company name are preserved; the ticker labels the stock. Checked-in stock asset ID mcd, with price 295.40 and movement 2.85. Those seed fields imply 0.97% at two decimals, versus the displayed source field 0.97%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  }
+]

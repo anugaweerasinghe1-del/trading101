@@ -1,0 +1,58 @@
+{
+  "pullRequest": 470,
+  "finalHeadSHA": "fd407b606523c215c81571002eafc6bfc5e184c3",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44226299973/job/134544125479",
+      "head_sha": "fd407b606523c215c81571002eafc6bfc5e184c3",
+      "id": 134544125479,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/1483d354-0296-4710-a32e-f7dc5584637b",
+      "head_sha": "fd407b606523c215c81571002eafc6bfc5e184c3",
+      "id": 134542097660,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44226299973/job/134540172659",
+      "head_sha": "fd407b606523c215c81571002eafc6bfc5e184c3",
+      "id": 134540172659,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44226299973/job/134540172518",
+      "head_sha": "fd407b606523c215c81571002eafc6bfc5e184c3",
+      "id": 134540172518,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44226299884/job/134540171719",
+      "head_sha": "fd407b606523c215c81571002eafc6bfc5e184c3",
+      "id": 134540171719,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    }
+  ],
+  "mergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a",
+  "mergedTreeEqualsFinalHeadTree": "d58b722ce05b5f18ae927ed05b1d58f1d566fa99",
+  "previewURL": "https://1483d354.tradehq-preview.pages.dev",
+  "nativePending": true,
+  "nativeWorkflowRun": 44227979782,
+  "findings": [
+    "STRICT-TRADE-008"
+  ],
+  "pendingReadbackBlocks": [
+    "STRICT-0009-BLOCK-0113"
+  ],
+  "status": "MERGED; active native production and custom-domain reread required"
+}

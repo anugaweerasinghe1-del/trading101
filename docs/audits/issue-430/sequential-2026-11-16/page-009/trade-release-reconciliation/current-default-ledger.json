@@ -1,0 +1,285 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0460",
+    "text": "Paper Trade 170 Assets",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Current no-JavaScript response exposes the publisher learning notes and informative route title."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The rendered count agrees with the independently reviewed picker and canonical title. The raw and hydrated templates use different descriptive headings. The existing note-statement finding is preserved."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0461",
+    "text": "Practice Trading Terminal — USD Coin (USDC)",
+    "source": "src/pages/Trade.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both default hydrated views show the terminal and selected USDC."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "Default asset order and named picker control agree. Source defines the title from the actual selected asset, rather than an unqualified provider claim."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0462",
+    "text": "Beginner journey · guided virtual trade | Back to my journey",
+    "source": "src/pages/Trade.tsx; src/lib/beginnerJourney.ts",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guided query selects Apple Inc. and exposes a return action."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The query-specific header expressly scopes AAPL as an example. The prior guest practice result and completion banner are separately reviewed in block 0085."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0463",
+    "text": "Trade canonical and indexable metadata",
+    "source": "src/pages/Trade.tsx; scripts/routes.ts",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": [
+      "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+      "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+      "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+      "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+    ],
+    "sha256": "6a78da579bbba7dbfe53ab128ff3fc329ff6f131434c1f50c9e01f160f10066d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All four projections retain the /trade canonical, including the guided query."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The canonical target is unchanged and the earlier modality-specific titles and descriptions retain their own reviewed records. No additional publisher page is credited."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0464",
+    "text": "Trade social preview image",
+    "source": "public/tradehq-preview-2026.png",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": {
+      "local": "public/tradehq-preview-2026.png",
+      "urls": [
+        "https://www.thetradehq.com/tradehq-preview-2026.png",
+        "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116"
+      ],
+      "format": "PNG 1731 × 909",
+      "sourceSHA256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+      "bytes": 1691003
+    },
+    "sha256": "bbef0cce5680737ef5bb7cd3c032edaceb43e55a646534c0c791eb45c865cc47",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The static versioned social image and ordinary published URL both supply the declared image."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "Both HTTP outputs hash-match the repository PNG and its dimensions are 1731 × 909. Image origin outside recorded repo history was not inferred."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0465",
+    "text": "Play background music | Long Road Ahead",
+    "source": "src/components/BackgroundMusic.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": {
+      "local": "public/audio/long-road-ahead-kevin-macleod.mp3",
+      "urls": [
+        "https://www.thetradehq.com/audio/long-road-ahead-kevin-macleod.mp3"
+      ],
+      "format": "MP3 stereo 44.1 kHz",
+      "sourceSHA256": "91997574f6b18918a6e93e543c42b047ae7179d2643b2a4d706e5338ad75eef7",
+      "bytes": 5847166
+    },
+    "sha256": "4262ad56a73588efdf4fdb3412a4637a345f4d67a8ecce153e27817218998d0d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named control and byline refer to the local track. The outside P08 source record provides licensing context."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The published MP3 hashes to the same recorded local track. The preference is browser-local. The current mobile hit-testing issue remains separately linked."
+    },
+    "disposition": "PROJECTION-REVIEWED; OPEN-STATE-FOLLOWUP"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0466",
+    "text": "Refresh data",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The line chart has a distinct refresh button with a title."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The visible generic extraction omitted title metadata. The source assigns the tooltip and handler to refresh quote and candle inputs."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0467",
+    "text": "Chart visual canvas",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Seven canvas elements are captured in the chart view. Axis text was read with Canvas callbacks in separate states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "This projection identifies the component and current media structure. Full keyboard-equivalent access to price points and transient chart tooltips remains open."
+    },
+    "disposition": "PROJECTION-REVIEWED; OPEN-STATE-FOLLOWUP"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0468",
+    "text": "Release announcement and navigation shell",
+    "source": "src/components/Navigation.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b",
+    "sha256": "3b9be286123fa4f9a15bfb74f8551ad1faa92c32daa6ebf91f70e56dfbfccd11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The current notice exposes See What’s New and a dismiss action on the applicable layout."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The site footer preserves the separate release link. The shared navigation interactions from P08 can be reused where source and labels match; the conditional P09 state tie-out remains due."
+    },
+    "disposition": "PROJECTION-REVIEWED; OPEN-STATE-FOLLOWUP"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0469",
+    "text": "No horizontal overflow in captured default layouts",
+    "source": "src/pages/Trade.tsx",
+    "sourceRevision": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "sourceStatus": "Relevant files available at observed main tree; observations are independently timestamped.",
+    "contentReference": "current-default-census/MANIFEST.json",
+    "contentEvidence": [
+      {
+        "file": "reconciliation-471-473-capture-0.json",
+        "sha256": "2b8fe1ad20a8af2455a2b08c46b8d85147567d36baa6142391e480fb6b2d86a5",
+        "http": 200,
+        "width": 390,
+        "js": false,
+        "theme": "dark",
+        "atUTC": "2026-11-18T03:48:27.714423+00:00",
+        "href": "https://www.thetradehq.com/trade",
+        "textOccurrences": 47,
+        "controls": 0,
+        "visibleControls": 0,
+        "faqPanels": 0,
+        "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+      },
+      {
+        "file": "reconciliation-471-473-capture-1.json",
+        "sha256": "cab164bd92751e0a95128a12b96fd6737c3d590afe395b6dbb2e81b66b3dbb5f",
+        "http": 200,
+        "width": 390,
+        "js": true,
+        "theme": "light",
+        "atUTC": "2026-11-18T03:48:43.780006+00:00",
+        "href": "https://www.thetradehq.com/trade",
+        "textOccurrences": 440,
+        "controls": 43,
+        "visibleControls": 29,
+        "faqPanels": 5,
+        "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+      },
+      {
+        "file": "reconciliation-471-473-capture-2.json",
+        "sha256": "fa6c9f2445a5d044dc9266d05c579cbe917fb5c5ff1f8bcb10ab6c9eecf2cbaf",
+        "http": 200,
+        "width": 1440,
+        "js": true,
+        "theme": "dark",
+        "atUTC": "2026-11-18T03:48:35.022933+00:00",
+        "href": "https://www.thetradehq.com/trade",
+        "textOccurrences": 446,
+        "controls": 44,
+        "visibleControls": 38,
+        "faqPanels": 5,
+        "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+      },
+      {
+        "file": "reconciliation-471-473-capture-3.json",
+        "sha256": "e49d67607d06d8b60fd82ebe7a928d1162ad8fe0953cb13f73440bd4b26cf37b",
+        "http": 200,
+        "width": 1440,
+        "js": true,
+        "theme": "light",
+        "atUTC": "2026-11-18T03:48:34.852560+00:00",
+        "href": "https://www.thetradehq.com/trade?journey=1",
+        "textOccurrences": 450,
+        "controls": 44,
+        "visibleControls": 38,
+        "faqPanels": 5,
+        "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+      }
+    ],
+    "sha256": "566458002924b0a8006293d4b169da34550478540d0337def64a020d3835b60d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All four public projections load without overall horizontal overflow."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate asset/source and public projection review",
+      "reason": "The 390px mobile light and 1440px dark/guided light captures reproduce the shell and do not show uncaught page errors. This is a sampled result, with dynamic variants separately scoped."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-PROJECTION"
+  }
+]

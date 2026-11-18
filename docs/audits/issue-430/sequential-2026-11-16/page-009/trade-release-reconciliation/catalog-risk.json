@@ -1,0 +1,54 @@
+{
+  "id": "STRICT-TRADE-RISK-001",
+  "classification": "SUBSTANTIATED QUALITY RISK",
+  "pageClosureCredit": 0,
+  "beforeEditIssueComment": 6967099784,
+  "observedUTC": "2026-11-18T02:24:09.000433+00:00",
+  "observation": "Trade picker presents the Block Inc. practice instrument as SQ without an explicit legacy qualifier.",
+  "publicEvidence": {
+    "officialURL": "https://data.sec.gov/submissions/CIK0001512673.json",
+    "retrievedUTC": "2026-11-18",
+    "responseSHA256": "b94ca92319d55615138000e97417fd23f27c2933a5e2e73a9b5353e78d6282f8",
+    "relevantFields": {
+      "name": "Block, Inc.",
+      "tickers": [
+        "XYZ",
+        "BSQKZ"
+      ],
+      "exchanges": [
+        "NYSE",
+        "OTC"
+      ],
+      "formerNames": [
+        {
+          "name": "Square, Inc.",
+          "from": "2011-03-02T05:00:00.000Z",
+          "to": "2021-12-08T05:00:00.000Z"
+        }
+      ]
+    },
+    "browserRecords": [
+      {
+        "symbol": "SQ",
+        "name": "Block Inc.",
+        "price": "$68.25",
+        "change": "+3.25%",
+        "favorite": "Add SQ to favorites",
+        "favoritePressed": "false"
+      },
+      {
+        "symbol": "SQ",
+        "name": "Block Inc.",
+        "price": "$68.25",
+        "change": "+3.25%",
+        "favorite": "Add SQ to favorites",
+        "favoritePressed": "false"
+      }
+    ],
+    "browserEvidence": "../continuation-2026-11-18/inventory.json"
+  },
+  "determination": "Current public issuer ticker differs. Legacy modeling is possible. The ambiguity can mislead a novice who searches for the current issuer ticker.",
+  "policyViolation": false,
+  "status": "OPEN-LEGACY-IDENTIFIER-COUNTERCHECK",
+  "nextAction": "Confirm intended legacy data, provider aliasing and existing portfolio/route compatibility before changing the label or identifiers."
+}

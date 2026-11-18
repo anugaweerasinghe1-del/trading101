@@ -26,14 +26,19 @@
     "contentReference": "local-final-disclosures.json",
     "contentSHA256": "b5ea2bbf5048fe4fb5f81a0c153f81b2d4934209872b5baa5e4d6fadf4dd777f",
     "source": "src/components/trading/MinimalistPortfolioBar.tsx",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
     "pass1": {
       "status": "REVIEWED",
       "reason": "Both compiled layouts expose collapsed and expanded states and preserve the Open P&L contents."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Both fresh views expose the Details expanded state in both positions; the open P&L contents remain available."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production474-final-disclosures.json",
+    "productionEvidenceSHA256": "9f668640cb1bc25dc9cbed53646393da3179715f609972df3d120cf3698c3e2b",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0454",
@@ -62,14 +67,19 @@
     "contentReference": "local-final-disclosures.json",
     "contentSHA256": "b5ea2bbf5048fe4fb5f81a0c153f81b2d4934209872b5baa5e4d6fadf4dd777f",
     "source": "src/lib/smartMentor.ts",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
     "pass1": {
       "status": "REVIEWED",
       "reason": "The embedded greeting and unknown-topic variant give correct instructions. The standalone engine stays byte-identical on 98 inputs."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Both fresh embedded mentor replies describe the available dialogue. The standalone comparison remains documented."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production474-final-disclosures.json",
+    "productionEvidenceSHA256": "9f668640cb1bc25dc9cbed53646393da3179715f609972df3d120cf3698c3e2b",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0456",
@@ -98,14 +108,19 @@
     "contentReference": "local-final-chart-license.json",
     "contentSHA256": "a12b43ab8f3d8600cca9e01fa4270d7104f66c652a884bf3fda5aade890f01f9",
     "source": "src/components/trading/NeuralPulseChart.tsx",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
     "pass1": {
       "status": "REVIEWED",
       "reason": "Both layouts render the upstream attribution text and expose a stable vendor link. The existing chart link is preserved."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Both fresh views display the exact TradingView notice and appropriate link."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production474-final-chart-license.json",
+    "productionEvidenceSHA256": "f7221e101e22d976c94c3916fc0f42178e65c2079a6f57c9fc349afbb0ed10e0",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0458",
@@ -136,10 +151,16 @@
       "reason": "Both controls receive their own pointer at 320px, 390px, 430px and 1440px in the compiled terminal and asset projections."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Each of the four viewport and route cases separately hits its intended launcher and music control."
     },
     "contentSHA256": "95e5741a09a3966879041be3e8860167cfb56429fd470f73f0625f6d9a79341d",
-    "sha256": "e64aa83607a627bc442e78a9358f475490fb70dd89e6019e010af31545072c28"
+    "sha256": "e64aa83607a627bc442e78a9358f475490fb70dd89e6019e010af31545072c28",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-floating-controls.json",
+    "productionEvidenceSHA256": "d47f20d02325a3418648e55660188689ba8a97b63251ce649d35def4a8aaddc5",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0470",
@@ -156,10 +177,16 @@
       "reason": "The summary preserves the 170 instruments and virtual funds while replacing the unqualified instant timing."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The fetched publisher summary gives the correct 170-asset and virtual-funds scope and removes the instant timing assertion."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "645a85eb0e4d80915cfa231589fb7bb8b5a054bf85d3e0c26e733e3cf6f4ab25"
+    "sha256": "645a85eb0e4d80915cfa231589fb7bb8b5a054bf85d3e0c26e733e3cf6f4ab25",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0471",
@@ -176,10 +203,16 @@
       "reason": "The note distinguishes local browser execution inputs from the account RPC choice of eligible quote and preserves restoration wording."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "All four current note projections distinguish browser execution inputs and independently selected eligible server quotes."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "309f04a4d6b5b446d2cbee8803304fa6e617ed17cc3c498aaabbaaaf7e993fb1"
+    "sha256": "309f04a4d6b5b446d2cbee8803304fa6e617ed17cc3c498aaabbaaaf7e993fb1",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0472",
@@ -196,10 +229,16 @@
       "reason": "The market-only desk, unavailable-quote pause, glossary order examples and arithmetic learning scope now agree with the verified product state."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "All four current notes explain the market-only scope and the pause when an eligible quote is unavailable."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "f73a907a7084f3e6f21c411fc905d3c5440f4a4e8a1799611dd1903903282256"
+    "sha256": "f73a907a7084f3e6f21c411fc905d3c5440f4a4e8a1799611dd1903903282256",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0473",
@@ -216,10 +255,16 @@
       "reason": "The 0.1% fee, real-cost limitations and performance qualification remain. Simplified fills are described without implying an exact published price."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The current fee paragraph preserves the 0.1% amount and correctly describes the simplified fill model."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "4d048a5fde1585582491494072d86fe63f11250cc942db5ba842b544bcef70b1"
+    "sha256": "4d048a5fde1585582491494072d86fe63f11250cc942db5ba842b544bcef70b1",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0474",
@@ -236,10 +281,16 @@
       "reason": "The market practice order estimate and eligible account execution wording agree with the independent before-edit SQL fixture."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The current market note describes an estimate and preserves the real-market distinction."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "f4431504e1029367287eb5e162f4519f530f0eedb81cb8e4dd62bb7a99957c32"
+    "sha256": "f4431504e1029367287eb5e162f4519f530f0eedb81cb8e4dd62bb7a99957c32",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0475",
@@ -256,9 +307,15 @@
       "reason": "The current market-only scope remains. Removing the duplicate exact-fill claim keeps the educational limit-order distinction intact."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The limit-order note preserves market-only practice without repeating the exact-display assertion."
     },
     "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
-    "sha256": "30b8a1b93ab7c41af91ffae8d7e86fb1811c4bc5ec0be34356f116cbf930e24d"
+    "sha256": "30b8a1b93ab7c41af91ffae8d7e86fb1811c4bc5ec0be34356f116cbf930e24d",
+    "sourceVersion": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "productionEvidence": "../trade-release-reconciliation/production474-final-trade-note-price.json",
+    "productionEvidenceSHA256": "38c1b4587d4152e443bde9b701d59e28abe5be703629ed7b7134c7fc98fdbeac",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-474.json"
   }
 ]

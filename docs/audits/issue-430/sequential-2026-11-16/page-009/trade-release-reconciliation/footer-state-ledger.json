@@ -1,0 +1,236 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0432",
+    "text": "Trade All Markets / Top Crypto / AI & Tech Stocks / Popular ETFs / Forex Pairs / Commodities",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The five markets are legible under the named footer heading."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The headings match the source category links. The words refer to simulated markets and the category labels do not promise investment access."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0433",
+    "text": "An educational paper trading simulator. Practice with $100K virtual capital and study stocks, crypto, forex, and commodities without spending real money.",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The label explains virtual cash and the learning purpose."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The $100K figure reconciles with the clean $100,000 terminal fixture. The list is descriptive and does not exclude the separately labeled ETF category."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0434",
+    "text": "Trust & Security | Virtual Cash Only | Educational Simulator | 170 Assets",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The three blocks claim virtual money, educational practice and 170 asset records."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The complete picker records 170 assets. The section heading supplies no unsupported claim about audits, insurance, execution or safekeeping."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0435",
+    "text": "Educational disclaimer | No real money is traded | Past simulated performance does not predict future real-world performance",
+    "source": "src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The shared disclaimer is visible and exposed as a named note."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "Its financial, investment, legal and tax qualifications match the source. Existing account and Terms gates remain external."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0436",
+    "text": "© 2026 TradeHQ · Built by Anuga Weerasinghe · Educational Use Only",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The browser shows the current year and the build attribution."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The year is derived from the date in the source. It does not imply a publication date for any learning article."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0437",
+    "text": "Optional analytics settings | Optional analytics choices",
+    "source": "src/components/ConsentBanner.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#optionalAnalyticsAX",
+    "sha256": "a9a725d67b4fce3a802d2a17e4df1591eb174c8b0ff929cc571e5b651ff10c65",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The footer action reopens the optional analytics choices."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "Both contexts allow Reject and expose the separate adult opt-in control. The previously reviewed privacy component is unchanged. These observations give no private analytics or CMP verification credit."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-SCOPE; PRIVATE-GATE-RETAINED"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0438",
+    "text": "Advertising privacy choices condition",
+    "source": "src/components/AdvertisingPrivacyChoices.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#footerAX",
+    "sha256": "263d4ea860189cc8b806358eaedf5bdaed5e232cdce7384c4590f848eebc74d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The advertising privacy action is absent in both public guest captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "Source renders the button only when the Google CMP callback confirms gdprApplies. The prior scoped Guide fixture exercised the same source and no production CMP state was attempted."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-SCOPE; PRIVATE-GATE-RETAINED"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0439",
+    "text": "TradeHQ Newsletter | Free weekly newsletter | No account required",
+    "source": "src/components/NewsletterSignup.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#defaultNewsletterAX",
+    "sha256": "8e1958f24cc38c629013954ff16b79016cb58e3eb547447e4e4267a11fad45d3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both audiences can find the named form with required email and consent."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The consent dependency and email validity prevent dispatch before the fixture can proceed. Weekly delivery and editorial operations remain outside public browser verification."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-SCOPE; PRIVATE-GATE-RETAINED"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0440",
+    "text": "Leave blank | Newsletter honeypot",
+    "source": "src/components/NewsletterSignup.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#defaultNewsletterAX",
+    "sha256": "8e1958f24cc38c629013954ff16b79016cb58e3eb547447e4e4267a11fad45d3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Only the named email field appears among accessible textboxes."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The source honeypot is offscreen, aria-hidden and untabbable. The outgoing synthetic request confirms it remained empty."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0441",
+    "text": "Submitting…",
+    "source": "src/components/NewsletterSignup.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#busyAX",
+    "sha256": "0054d8922cc7ea0b1076d3f8d1240b9aa87bcc998bb4a2e205e638e3a2790b2c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The action changes to Submitting… and disables during the held fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "Both outcome fixtures enter a waiting state with the user inputs retained; the one intercepted request bears consent true."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0442",
+    "text": "Check your inbox for a confirmation email.",
+    "source": "src/components/NewsletterSignup.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#responseAX",
+    "sha256": "c02e17a472b14461bcd3291d55b5247c9461c155988a9a520aba74665d7f3d1d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The successful synthetic path displays the authored confirmation status."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The UI clears the email and consent and requests email confirmation. No actual email delivery was tested."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-SCOPE; PRIVATE-GATE-RETAINED"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0443",
+    "text": "Newsletter failure projection",
+    "source": "src/components/NewsletterSignup.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json#responseAX",
+    "sha256": "c02e17a472b14461bcd3291d55b5247c9461c155988a9a520aba74665d7f3d1d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The synthetic service failure appears as status while preserving the form values."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "The returned error text is supplied by the fixture. Busy resets and the user can retry. No actual failure of the newsletter service is claimed."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0444",
+    "text": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "capture-2.json",
+    "sha256": "581b57bc38b049327614ae6c3fb5eca51e8a3abc02ba1fe368c004a8b4adf49d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The line chart says checks rather than promises a new provider quote with each interval."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser-state and source review",
+      "reason": "Source requests 60000 for candles but the timer clamps that to a 300000 minimum. Quotes use a 30000 minimum. Browser visibility, cache and backoff can still limit updates."
+    },
+    "disposition": "NO-ISSUE-IN-CAPTURED-PROJECTION"
+  }
+]

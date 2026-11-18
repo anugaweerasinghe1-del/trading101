@@ -1,0 +1,83 @@
+{
+  "pullRequest": 474,
+  "finalHeadSHA": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44233714266/job/134569029498",
+      "head_sha": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+      "id": 134569029498,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/043619a1-886b-45e6-b046-402fc498c9fb",
+      "head_sha": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+      "id": 134565612300,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44233714266/job/134564667799",
+      "head_sha": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+      "id": 134564667799,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44233714176/job/134564667412",
+      "head_sha": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+      "id": 134564667412,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44233714266/job/134564667064",
+      "head_sha": "ee1484425b02ac18cf22253fb9eaf5e228244b98",
+      "id": 134564667064,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    }
+  ],
+  "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+  "mergedTreeEqualsFinalHeadTree": "09f17d3fdbc9501b78098ad0f2f3b3427baa696c",
+  "previewURL": "https://043619a1.tradehq-preview.pages.dev",
+  "findings": [
+    "STRICT-TRADE-015",
+    "STRICT-TRADE-016",
+    "STRICT-TRADE-017",
+    "STRICT-TRADE-018"
+  ],
+  "existingRootExtension": "STRICT-TRADE-008 revised learning-note occurrences; mobile #470 remains independently verified",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T08:27:38.273Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "bfb36bf9-fde0-4adf-a769-79330b730eac",
+      "sha": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T08:17:10.073012Z"
+    },
+    "sourceGitHubRun": 44265670752,
+    "sourceGitHubJob": 134674325039,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44265670752/job/134674325039"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveEvidence": [
+    "production474-final-disclosures.json",
+    "production474-final-chart-license.json",
+    "production474-final-floating-controls.json",
+    "production474-final-trade-note-price.json"
+  ],
+  "liveRereadAtUTC": "2026-11-18T08:32:44.804067+00:00",
+  "status": "FIXED-RECHECKED",
+  "pageClosureCredit": 0
+}

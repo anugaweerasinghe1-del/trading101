@@ -1,0 +1,97 @@
+{
+  "scope": "Disposable guest browser. Same-origin GET only. Bought two fractional holdings locally and inspected sale previews; no sell submitted.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T09:06:12.633333+00:00",
+      "stored": 2.00006,
+      "quickMaximum": {
+        "value": "2.0001",
+        "disabled": true,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,488.97\"\n  - spinbutton \"Amount in AAPL\": \"2.0001\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $510.01\n  - button \"Sell AAPL\" [disabled]"
+      },
+      "sliderMaximum": {
+        "value": "2.0001",
+        "disabled": true,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,488.97\"\n  - spinbutton \"Amount in AAPL\": \"2.0001\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $510.01\n  - button \"Sell AAPL\" [disabled]"
+      },
+      "quarter": {
+        "value": "0.5000",
+        "disabled": false,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,488.97\"\n  - spinbutton \"Amount in AAPL\": \"0.5000\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $127.50\n  - button \"Sell AAPL\""
+      },
+      "manualExact": {
+        "value": "2.00006",
+        "disabled": false,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,488.97\"\n  - spinbutton \"Amount in AAPL\": \"2.00006\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $510.00\n  - button \"Sell AAPL\""
+      }
+    },
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T09:06:12.883053+00:00",
+      "stored": 3e-05,
+      "quickMaximum": {
+        "value": "0.0000",
+        "disabled": true,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,999.99\"\n  - spinbutton \"Amount in AAPL\": \"0.0000\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Sell AAPL\" [disabled]"
+      },
+      "sliderMaximum": {
+        "value": "0.0000",
+        "disabled": true,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,999.99\"\n  - spinbutton \"Amount in AAPL\": \"0.0000\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Sell AAPL\" [disabled]"
+      },
+      "quarter": {
+        "value": "0.0000",
+        "disabled": true,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,999.99\"\n  - spinbutton \"Amount in AAPL\": \"0.0000\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Sell AAPL\" [disabled]"
+      },
+      "manualExact": {
+        "value": "0.00003",
+        "disabled": false,
+        "tree": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $99,999.99\"\n  - spinbutton \"Amount in AAPL\": \"0.00003\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.01\n  - button \"Sell AAPL\""
+      }
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T09:06:10.220008+00:00",
+      "stored": 2.00006,
+      "quickMaximum": {
+        "value": "2.0001",
+        "disabled": true,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 2.0001 AAPL\"\n- spinbutton \"Amount in AAPL\": \"2.0001\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.51 Total (USD) $510.01 Est. position value $510.53 You are placing a market sell for 2.0001 AAPL at approximately $255.25 USD per simulator unit.\n- paragraph: You cannot sell more than your current position in this simulator.\n- button \"Sell AAPL\" [disabled]"
+      },
+      "sliderMaximum": null,
+      "quarter": {
+        "value": "0.5000",
+        "disabled": false,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 2.0001 AAPL\"\n- spinbutton \"Amount in AAPL\": \"0.5000\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.13 Total (USD) $127.50 Est. position value $127.63 You are placing a market sell for 0.5000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Sell AAPL\""
+      },
+      "manualExact": {
+        "value": "2.00006",
+        "disabled": false,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 2.0001 AAPL\"\n- spinbutton \"Amount in AAPL\": \"2.00006\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.51 Total (USD) $510.00 Est. position value $510.52 You are placing a market sell for 2.0001 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Sell AAPL\""
+      }
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T09:06:10.408129+00:00",
+      "stored": 3e-05,
+      "quickMaximum": {
+        "value": "0.0000",
+        "disabled": true,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 0.0000 AAPL\"\n- spinbutton \"Amount in AAPL\": \"0.0000\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.00\n- button \"Sell AAPL\" [disabled]"
+      },
+      "sliderMaximum": null,
+      "quarter": {
+        "value": "0.0000",
+        "disabled": true,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 0.0000 AAPL\"\n- spinbutton \"Amount in AAPL\": \"0.0000\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.00\n- button \"Sell AAPL\" [disabled]"
+      },
+      "manualExact": {
+        "value": "0.00003",
+        "disabled": false,
+        "tree": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 0.0000 AAPL\"\n- spinbutton \"Amount in AAPL\": \"0.00003\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.01 Est. position value $0.01 You are placing a market sell for 0.0000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Sell AAPL\""
+      }
+    }
+  ]
+}

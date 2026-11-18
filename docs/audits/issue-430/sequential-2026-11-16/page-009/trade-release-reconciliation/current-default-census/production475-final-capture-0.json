@@ -1,0 +1,654 @@
+{
+  "body": "Home\nMarkets\nPractice desk\nCourses\nLearn\nGlossary\nAsset guides\nStrategies\nComparisons\nAbout\nContact\nPaper Trade 170 Assets\nLearning notes: Paper Trade 170 Assets\n\nChoose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nHow the practice trading desk works\n\nChoose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.\n\nThe desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.\n\nWhat to practise on the desk\nPosition sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.\nStop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.\nEntry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.\nConcentration: run a week with five positions and a week with one, and compare the drawdown.\nLimits of any simulator\n\nTradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.\n\nOrders supported by this simulator\nThe market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.\nLimit orders appear in the learning material. The current simulator supports market practice orders only.\nClosing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.\nA practice routine that actually builds skill\n\nChoose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.\n\nA sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.\n\nReferences and related pages\nChoose an instrument\nYour practice portfolio\nHow-to guides per asset\nStrategy walkthroughs\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nAbout TradeHQ\nContact\nPrivacy policy\nTerms of service\nWhat’s New\nRoadmap\nCountry guides",
+  "occurrences": [
+    {
+      "text": "Home",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Markets",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Practice desk",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Courses",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Learn",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Glossary",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Asset guides",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Strategies",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Comparisons",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "About",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Contact",
+      "tag": "a",
+      "visible": true,
+      "area": null
+    },
+    {
+      "text": "Paper Trade 170 Assets",
+      "tag": "h1",
+      "visible": true,
+      "area": "main"
+    },
+    {
+      "text": "Learning notes: Paper Trade 170 Assets",
+      "tag": "h2",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+      "tag": "p",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Published by TradeHQ, created by Anuga Weerasinghe.",
+      "tag": "p",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Publisher background and editorial approach",
+      "tag": "a",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": ". No independent professional review is claimed; any recorded source-check scope appears on the page.",
+      "tag": "p",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "How the practice trading desk works",
+      "tag": "h3",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+      "tag": "p",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+      "tag": "p",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "What to practise on the desk",
+      "tag": "h3",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Position sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Stop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Entry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Concentration: run a week with five positions and a week with one, and compare the drawdown.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Limits of any simulator",
+      "tag": "h3",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+      "tag": "p",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Orders supported by this simulator",
+      "tag": "h3",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Closing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.",
+      "tag": "li",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "A practice routine that actually builds skill",
+      "tag": "h3",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.",
+      "tag": "p",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "A sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.",
+      "tag": "p",
+      "visible": true,
+      "area": "section"
+    },
+    {
+      "text": "References and related pages",
+      "tag": "h3",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Choose an instrument",
+      "tag": "a",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Your practice portfolio",
+      "tag": "a",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "How-to guides per asset",
+      "tag": "a",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Strategy walkthroughs",
+      "tag": "a",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+      "tag": "p",
+      "visible": true,
+      "area": "article"
+    },
+    {
+      "text": "About TradeHQ",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "Contact",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "Privacy policy",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "Terms of service",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "What’s New",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "Roadmap",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    },
+    {
+      "text": "Country guides",
+      "tag": "a",
+      "visible": true,
+      "area": "footer"
+    }
+  ],
+  "title": "Paper Trade 170 Assets — Free Simulator | TradeHQ",
+  "canonical": "https://www.thetradehq.com/trade",
+  "meta": [
+    [
+      "viewport",
+      "width=device-width, initial-scale=1.0"
+    ],
+    [
+      "description",
+      "Buy and sell 170 stocks, crypto, ETFs, forex and commodities with $100,000 in virtual cash. No signup or real-money trading. Educational simulation only."
+    ],
+    [
+      "author",
+      "TradeHQ"
+    ],
+    [
+      "google-adsense-account",
+      "ca-pub-4160578126993254"
+    ],
+    [
+      "robots",
+      "index, follow, max-image-preview:large, max-snippet:-1"
+    ],
+    [
+      "google-site-verification",
+      "I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I"
+    ],
+    [
+      "google-site-verification",
+      "wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk"
+    ],
+    [
+      "theme-color",
+      "#0A0A0F"
+    ],
+    [
+      "og:type",
+      "website"
+    ],
+    [
+      "og:site_name",
+      "TradeHQ"
+    ],
+    [
+      "og:url",
+      "https://www.thetradehq.com/trade"
+    ],
+    [
+      "og:title",
+      "Paper Trade 170 Assets — Free Simulator | TradeHQ"
+    ],
+    [
+      "og:description",
+      "Buy and sell 170 stocks, crypto, ETFs, forex and commodities with $100,000 in virtual cash. No signup or real-money trading. Educational simulation only."
+    ],
+    [
+      "og:image",
+      "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116"
+    ],
+    [
+      "og:locale",
+      "en_US"
+    ],
+    [
+      "twitter:card",
+      "summary_large_image"
+    ],
+    [
+      "twitter:title",
+      "Paper Trade 170 Assets — Free Simulator | TradeHQ"
+    ],
+    [
+      "twitter:description",
+      "Buy and sell 170 stocks, crypto, ETFs, forex and commodities with $100,000 in virtual cash. No signup or real-money trading. Educational simulation only."
+    ],
+    [
+      "twitter:image",
+      "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116"
+    ]
+  ],
+  "schemas": [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": {
+        "@type": "Person",
+        "name": "Anuga Weerasinghe",
+        "url": "https://www.thetradehq.com/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TradeHQ",
+        "url": "https://www.thetradehq.com/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "tag": "h2",
+      "text": "Learning notes: Paper Trade 170 Assets"
+    },
+    {
+      "tag": "p",
+      "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship."
+    },
+    {
+      "tag": "p",
+      "text": "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page."
+    },
+    {
+      "tag": "h3",
+      "text": "How the practice trading desk works"
+    },
+    {
+      "tag": "p",
+      "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available."
+    },
+    {
+      "tag": "p",
+      "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management."
+    },
+    {
+      "tag": "h3",
+      "text": "What to practise on the desk"
+    },
+    {
+      "tag": "li",
+      "text": "Position sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders."
+    },
+    {
+      "tag": "li",
+      "text": "Stop discipline: decide the exit before entering, then check in the journal whether you actually honoured it."
+    },
+    {
+      "tag": "li",
+      "text": "Entry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal."
+    },
+    {
+      "tag": "li",
+      "text": "Concentration: run a week with five positions and a week with one, and compare the drawdown."
+    },
+    {
+      "tag": "h3",
+      "text": "Limits of any simulator"
+    },
+    {
+      "tag": "p",
+      "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance."
+    },
+    {
+      "tag": "h3",
+      "text": "Orders supported by this simulator"
+    },
+    {
+      "tag": "li",
+      "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions."
+    },
+    {
+      "tag": "li",
+      "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only."
+    },
+    {
+      "tag": "li",
+      "text": "Closing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history."
+    },
+    {
+      "tag": "h3",
+      "text": "A practice routine that actually builds skill"
+    },
+    {
+      "tag": "p",
+      "text": "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy."
+    },
+    {
+      "tag": "p",
+      "text": "A sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns."
+    },
+    {
+      "tag": "h3",
+      "text": "References and related pages"
+    },
+    {
+      "tag": "li",
+      "text": "Choose an instrument"
+    },
+    {
+      "tag": "li",
+      "text": "Your practice portfolio"
+    },
+    {
+      "tag": "li",
+      "text": "How-to guides per asset"
+    },
+    {
+      "tag": "li",
+      "text": "Strategy walkthroughs"
+    },
+    {
+      "tag": "p",
+      "text": "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+    }
+  ],
+  "links": [
+    {
+      "label": "Home",
+      "href": "/",
+      "visible": true
+    },
+    {
+      "label": "Markets",
+      "href": "/markets",
+      "visible": true
+    },
+    {
+      "label": "Practice desk",
+      "href": "/trade",
+      "visible": true
+    },
+    {
+      "label": "Courses",
+      "href": "/courses",
+      "visible": true
+    },
+    {
+      "label": "Learn",
+      "href": "/learn",
+      "visible": true
+    },
+    {
+      "label": "Glossary",
+      "href": "/wiki",
+      "visible": true
+    },
+    {
+      "label": "Asset guides",
+      "href": "/how-to-trade",
+      "visible": true
+    },
+    {
+      "label": "Strategies",
+      "href": "/strategy",
+      "visible": true
+    },
+    {
+      "label": "Comparisons",
+      "href": "/compare",
+      "visible": true
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "visible": true
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "visible": true
+    },
+    {
+      "label": "Publisher background and editorial approach",
+      "href": "/about",
+      "visible": true
+    },
+    {
+      "label": "Choose an instrument",
+      "href": "/markets",
+      "visible": true
+    },
+    {
+      "label": "Your practice portfolio",
+      "href": "/portfolio",
+      "visible": true
+    },
+    {
+      "label": "How-to guides per asset",
+      "href": "/how-to-trade",
+      "visible": true
+    },
+    {
+      "label": "Strategy walkthroughs",
+      "href": "/strategy",
+      "visible": true
+    },
+    {
+      "label": "About TradeHQ",
+      "href": "/about",
+      "visible": true
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "visible": true
+    },
+    {
+      "label": "Privacy policy",
+      "href": "/privacy",
+      "visible": true
+    },
+    {
+      "label": "Terms of service",
+      "href": "/terms",
+      "visible": true
+    },
+    {
+      "label": "What’s New",
+      "href": "/whats-new",
+      "visible": true
+    },
+    {
+      "label": "Roadmap",
+      "href": "/roadmap",
+      "visible": true
+    },
+    {
+      "label": "Country guides",
+      "href": "/learn/country",
+      "visible": true
+    }
+  ],
+  "images": [],
+  "controls": [],
+  "horizontalOverflow": false,
+  "url": "https://www.thetradehq.com/trade",
+  "width": 390,
+  "theme": "dark",
+  "js": false,
+  "faq": [],
+  "http": 200,
+  "atUTC": "2026-11-18T09:00:40.709484+00:00",
+  "responseSHA256": "7d8156d86562e1635e3d30ce381500d7596c3e60330913503475d6a7650b9afd",
+  "pageErrors": []
+}

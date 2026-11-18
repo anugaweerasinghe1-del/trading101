@@ -1,0 +1,381 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0129",
+    "pickerOrdinal": 31,
+    "content": {
+      "controlled": {
+        "symbol": "MATIC",
+        "name": "Polygon",
+        "price": "$0.8950",
+        "change": "+4.92%",
+        "favorite": "Add Polygon (MATIC) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "MATIC",
+          "name": "Polygon",
+          "price": "$0.8950",
+          "change": "+4.92%",
+          "favorite": "Add MATIC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "MATIC",
+          "name": "Polygon",
+          "price": "$0.8950",
+          "change": "+4.92%",
+          "favorite": "Add MATIC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "4f241417215b5ea236b0081f5b4d9f40c28f17b7d2f80135d0f866635a1004e9",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json",
+      "catalog-matic-risk.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both captures show the matching MATIC name Polygon, $0.8950 and +4.92%. The picker gives no legacy qualifier."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The catalog source keeps this row for account history and detail copy explains the distinction. Official Polygon docs call POL the native gas and staking token. The separate POL row and unqualified Polygon name create a bounded label risk."
+    },
+    "disposition": "SUBSTANTIATED-QUALITY-RISK"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0130",
+    "pickerOrdinal": 32,
+    "content": {
+      "controlled": {
+        "symbol": "LINK",
+        "name": "Chainlink",
+        "price": "$14.85",
+        "change": "+4.58%",
+        "favorite": "Add Chainlink (LINK) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "price": "$9.17",
+          "change": "+0.57%",
+          "favorite": "Add LINK to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "price": "$9.17",
+          "change": "+0.57%",
+          "favorite": "Add LINK to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "5041c56443b0fdbfedc5aa6eeb516aa0e92410ec1782638db0b2abac4e594f42",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Chainlink/LINK displayed $9.17 and +0.57% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $14.85 and +4.58% match the source entry. The selected asset identity and name remain clear; the shared fallback provenance remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0131",
+    "pickerOrdinal": 33,
+    "content": {
+      "controlled": {
+        "symbol": "LTC",
+        "name": "Litecoin",
+        "price": "$72.40",
+        "change": "-2.43%",
+        "favorite": "Add Litecoin (LTC) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "price": "$44.57",
+          "change": "-0.26%",
+          "favorite": "Add LTC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "price": "$44.57",
+          "change": "-0.26%",
+          "favorite": "Add LTC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "c0397744aa2811648ab2ecf97e2a4edc8009dda86d1d3127618a5d33eb338d1f",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Litecoin/LTC displayed $44.57 and -0.26%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $72.40 and -2.43% match the static Litecoin entry. The clear LTC control name is distinct from Bitcoin and Bitcoin Cash."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0132",
+    "pickerOrdinal": 34,
+    "content": {
+      "controlled": {
+        "symbol": "SHIB",
+        "name": "Shiba Inu",
+        "price": "$0.00001245",
+        "change": "+7.32%",
+        "favorite": "Add Shiba Inu (SHIB) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "SHIB",
+          "name": "Shiba Inu",
+          "price": "$0.00000385",
+          "change": "-0.22%",
+          "favorite": "Add SHIB to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SHIB",
+          "name": "Shiba Inu",
+          "price": "$0.00000385",
+          "change": "-0.22%",
+          "favorite": "Add SHIB to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "94742a26c04bb39e9c13be9ec522a805092fad3f3ddce7f59670f3e680110208",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Shiba Inu/SHIB displayed $0.00000385 and -0.22%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $0.00001245 and +7.32% match the source. The special small-price formatter retains the nonzero value."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0133",
+    "pickerOrdinal": 35,
+    "content": {
+      "controlled": {
+        "symbol": "UNI",
+        "name": "Uniswap",
+        "price": "$6.82",
+        "change": "+4.28%",
+        "favorite": "Add Uniswap (UNI) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "UNI",
+          "name": "Uniswap",
+          "price": "$5.21",
+          "change": "+1.06%",
+          "favorite": "Add UNI to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "UNI",
+          "name": "Uniswap",
+          "price": "$5.21",
+          "change": "+1.06%",
+          "favorite": "Add UNI to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "b9317e59712bdf9d6959ee62abb03b84247b7798165d343309d671b5da3b2dc0",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Uniswap/UNI displayed $5.21 and +1.06%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $6.82 and +4.28% match the seeded values. The row represents UNI and contains no liquidity provision or yield promise."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0134",
+    "pickerOrdinal": 36,
+    "content": {
+      "controlled": {
+        "symbol": "ATOM",
+        "name": "Cosmos",
+        "price": "$9.45",
+        "change": "+3.51%",
+        "favorite": "Add Cosmos (ATOM) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "ATOM",
+          "name": "Cosmos",
+          "price": "$1.32",
+          "change": "-0.93%",
+          "favorite": "Add ATOM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ATOM",
+          "name": "Cosmos",
+          "price": "$1.32",
+          "change": "-0.93%",
+          "favorite": "Add ATOM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "76dd7551809aa579034148ca50681651cc05d4c8925de118e12f19aa3ff1fef6",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cosmos/ATOM displayed $1.32 and -0.93%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $9.45 and +3.51% match the static ATOM record. The symbol gives the scope of this Cosmos quote."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0135",
+    "pickerOrdinal": 37,
+    "content": {
+      "controlled": {
+        "symbol": "ALGO",
+        "name": "Algorand",
+        "price": "$0.1890",
+        "change": "-3.32%",
+        "favorite": "Add Algorand (ALGO) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "ALGO",
+          "name": "Algorand",
+          "price": "$0.0791",
+          "change": "-0.51%",
+          "favorite": "Add ALGO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ALGO",
+          "name": "Algorand",
+          "price": "$0.0791",
+          "change": "-0.51%",
+          "favorite": "Add ALGO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "be2d8ae625b7478b9adbed84d72f411ca7ea2784c577ba972c3745fb7582a739",
+    "contentReferences": [
+      "picker-rows-031-037-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Algorand/ALGO displayed $0.0791 and -0.51%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $0.1890 and -3.32% match its asset entry. Four decimals preserve the quote display used for this row."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  }
+]

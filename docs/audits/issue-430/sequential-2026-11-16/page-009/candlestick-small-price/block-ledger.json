@@ -48,7 +48,13 @@
       "reason": "At both widths the corrected compiled chart paints multiple distinct positive labels below 0.0001. The four extracted comparisons preserve positive ordered OHLC and distinct times."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "After native confirmation the fresh 390px and 1440px public contexts paint multiple positive sub-$0.0001 prices in the PEPE simulation. The picker value is unchanged."
+    },
+    "sourceVersion": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+    "productionEvidence": "../trade-release-reconciliation/production473-final-candle-small-price.json",
+    "productionEvidenceSHA256": "d6269bf11d6a71e375c5fda4a105d77cda6c3ff674e0f7ba3f8e7924d91fbb25",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-473.json"
   }
 ]

@@ -1,0 +1,222 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0071",
+    "text": "USD Coin\nCRYPTO\n\nUSDC\n\n$0.9996\n\n-0.01%\n\nWHAT YOU'RE TRADING\n\nCrypto \u00b7 Simulated market practice\n\nASSET-CLASS CONTEXT\n\nNetwork, custody and price risks vary by token\n\nPRACTICE MOVE BUCKET\n\nInside \u00b12%",
+    "sha256": "1cc7e7948bd00ce8caf39af05808665783ef3c23243b9afcf35d7361f4806101",
+    "source": "src/components/trading/AssetContextCard.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "USDC asset context",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed USDC descriptor is Network, custody and price risks vary by token. It accompanies the simulated market label and separate price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Crypto label refers to the volatility and custody context of the practice asset. The $0.9996 observation is neither a $1 peg guarantee nor a return estimate."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0072",
+    "text": "Market Insight\n\nEducational estimate \u00b7 not financial advice\n\nRECENT MOVE\n\nNear flat\n\n-0.01% \u00b7 descriptive only\n\nMOVE SIZE BUCKET\n\nLow\n\n0.0% practice move \u00b7 heuristic\n\nMOVE HEURISTIC\n\nInside \u00b12%\n\nSimple \u00b12% practice bucket \u00b7 not a market signal\n\nPRACTICE RANGE\n\nLower: 0.9596\n\nUpper: 1.04 \u00b7 fixed \u00b14.0% band\n\nBEGINNER TIP\n\nCompare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+    "sha256": "24d818be0e7f85cac65a1e2bda42c8d488b1a5dace4030eaedf97acb888c53cc",
+    "source": "src/components/trading/MarketInsightPanel.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "USDC practice insight",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The captured panel names actual descriptive thresholds and gives a hypothetical practice-tip comparison. No forecast or recommendation is made."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A \u22120.01% input belongs to the near-flat and low buckets before display rounding, and the \u00b14% band is an explicit illustration. Independent arithmetic on the exact displayed 0.9996 input gives the recorded rounded bounds 0.9596 and 1.04."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0073",
+    "text": "Apple Inc.\nSTOCK\n\nAAPL\n\n$255.25\n\n+1.37%\n\nWHAT YOU'RE TRADING\n\nStock \u00b7 Simulated market practice\n\nASSET-CLASS CONTEXT\n\nCompany ownership exposure\n\nPRACTICE MOVE BUCKET\n\nInside \u00b12%",
+    "sha256": "22db00ee3e8b7f3e473376bf1ff24c6b378c37dfb52ee68a99eab2977c9f93ba",
+    "source": "src/components/trading/AssetContextCard.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "AAPL asset context",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed AAPL descriptor is Company ownership exposure. It accompanies the simulated market label and separate price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The context describes the real asset class. Adjacent copy qualifies the displayed purchase as simulated; no Apple equity is conveyed in the product."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0074",
+    "text": "Market Insight\n\nEducational estimate \u00b7 not financial advice\n\nRECENT MOVE\n\nNear flat\n\n+1.37% \u00b7 descriptive only\n\nMOVE SIZE BUCKET\n\nModerate\n\n1.4% practice move \u00b7 heuristic\n\nMOVE HEURISTIC\n\nInside \u00b12%\n\nSimple \u00b12% practice bucket \u00b7 not a market signal\n\nPRACTICE RANGE\n\nLower: 248.87\n\nUpper: 261.63 \u00b7 fixed \u00b12.5% band\n\nBEGINNER TIP\n\nCompare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+    "sha256": "009b1d343b217a2e5dab97d8971901bd9113577721c6ebf37b0d4a4f483770c9",
+    "source": "src/components/trading/MarketInsightPanel.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "AAPL practice insight",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The captured panel names actual descriptive thresholds and gives a hypothetical practice-tip comparison. No forecast or recommendation is made."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A +1.37% input is near flat on the \u00b11.5% threshold and moderate on the non-crypto move-size thresholds. Independent arithmetic on the exact displayed 255.25 input gives the recorded rounded bounds 248.87 and 261.63."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0075",
+    "text": "SPDR S&P 500 ETF\nETF\n\nSPY\n\n$478.25\n\n+0.60%\n\nWHAT YOU'RE TRADING\n\nETF \u00b7 Simulated market practice\n\nASSET-CLASS CONTEXT\n\nExposure depends on the fund holdings\n\nPRACTICE MOVE BUCKET\n\nInside \u00b12%",
+    "sha256": "26a03e2aa6578883f47175398604b91d7386ac13df04f5668c08e2b8c68422aa",
+    "source": "src/components/trading/AssetContextCard.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "SPY asset context",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed SPY descriptor is Exposure depends on the fund holdings. It accompanies the simulated market label and separate price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Holding-dependent exposure accurately frames the ETF educational topic. The shown SPY quote is a simulator input and the wording does not imply direct ownership of the entire index."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0076",
+    "text": "Market Insight\n\nEducational estimate \u00b7 not financial advice\n\nRECENT MOVE\n\nNear flat\n\n+0.60% \u00b7 descriptive only\n\nMOVE SIZE BUCKET\n\nLow\n\n0.6% practice move \u00b7 heuristic\n\nMOVE HEURISTIC\n\nInside \u00b12%\n\nSimple \u00b12% practice bucket \u00b7 not a market signal\n\nPRACTICE RANGE\n\nLower: 466.29\n\nUpper: 490.21 \u00b7 fixed \u00b12.5% band\n\nBEGINNER TIP\n\nCompare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+    "sha256": "5cef582744c48e999872f0dafcde63d7dff7af85a061fae95d6294b776aea665",
+    "source": "src/components/trading/MarketInsightPanel.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "SPY practice insight",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The captured panel names actual descriptive thresholds and gives a hypothetical practice-tip comparison. No forecast or recommendation is made."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A +0.60% input is below the non-crypto low threshold and remains inside \u00b12%. The two-sided practice band is an illustrative calculation. Independent arithmetic on the exact displayed 478.25 input gives the recorded rounded bounds 466.29 and 490.21."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0077",
+    "text": "Euro / US Dollar\nFOREX\n\nEUR/USD\n\n1.0892 USD\n\n+0.22%\n\nWHAT YOU'RE TRADING\n\nForex \u00b7 Simulated market practice\n\nASSET-CLASS CONTEXT\n\nCurrency-pair exposure\n\nPRACTICE MOVE BUCKET\n\nInside \u00b12%",
+    "sha256": "d54da9e23219e2d84f2f047b145a88eebca71f281b761330186d9d8699e37cf3",
+    "source": "src/components/trading/AssetContextCard.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "EUR/USD asset context",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed EUR/USD descriptor is Currency-pair exposure. It accompanies the simulated market label and separate price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The selected pair names Euro and US Dollar and shows the quote currency as USD. The context describes currency exposure without claiming conversion or real-FX order capability."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0078",
+    "text": "Market Insight\n\nEducational estimate \u00b7 not financial advice\n\nRECENT MOVE\n\nNear flat\n\n+0.22% \u00b7 descriptive only\n\nMOVE SIZE BUCKET\n\nLow\n\n0.2% practice move \u00b7 heuristic\n\nMOVE HEURISTIC\n\nInside \u00b12%\n\nSimple \u00b12% practice bucket \u00b7 not a market signal\n\nPRACTICE RANGE\n\nLower: 1.06\n\nUpper: 1.12 \u00b7 fixed \u00b12.5% band\n\nBEGINNER TIP\n\nCompare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+    "sha256": "40763680e3dd8e8ef056966fdf6fdde83a337bb110e077dcc5b9b03877a09bdf",
+    "source": "src/components/trading/MarketInsightPanel.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "EUR/USD practice insight",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The captured panel names actual descriptive thresholds and gives a hypothetical practice-tip comparison. No forecast or recommendation is made."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A +0.22% FX input is low and inside the \u00b12% heuristic. The quoted numeric pair range is rounded for display. Independent arithmetic on the exact displayed 1.0892 input gives the recorded rounded bounds 1.06 and 1.12."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0079",
+    "text": "Gold\nCOMMODITY\n\nXAU\n\n$2,024.50\n\n+0.64%\n\nWHAT YOU'RE TRADING\n\nCommodity \u00b7 Simulated market practice\n\nASSET-CLASS CONTEXT\n\nCommodity price exposure\n\nPRACTICE MOVE BUCKET\n\nInside \u00b12%",
+    "sha256": "3835592912fd4aae9ed11a025680724be836804f1a847be8bbcb4c52706ebfa3",
+    "source": "src/components/trading/AssetContextCard.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "XAU asset context",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed XAU descriptor is Commodity price exposure. It accompanies the simulated market label and separate price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Gold is a commodity reference example. The wording describes price exposure without claiming that the simulator transfers metal or offers a leveraged contract."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0080",
+    "text": "Market Insight\n\nEducational estimate \u00b7 not financial advice\n\nRECENT MOVE\n\nNear flat\n\n+0.64% \u00b7 descriptive only\n\nMOVE SIZE BUCKET\n\nLow\n\n0.6% practice move \u00b7 heuristic\n\nMOVE HEURISTIC\n\nInside \u00b12%\n\nSimple \u00b12% practice bucket \u00b7 not a market signal\n\nPRACTICE RANGE\n\nLower: 1,973.89\n\nUpper: 2,075.11 \u00b7 fixed \u00b12.5% band\n\nBEGINNER TIP\n\nCompare the percentage move with your chosen hypothetical position value. These buckets describe the practice snapshot; they do not measure future volatility or recommend an entry or size.",
+    "sha256": "4dd1c3dd1e456450a1b7dae7b9cda16ac10d92a4cb263603c657f369c618876b",
+    "source": "src/components/trading/MarketInsightPanel.tsx",
+    "sourceRevision": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "XAU practice insight",
+    "captures": [
+      "context-cards.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The captured panel names actual descriptive thresholds and gives a hypothetical practice-tip comparison. No forecast or recommendation is made."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A +0.64% commodity input is low and inside the heuristic range. Context from the card ties the two endpoints to the selected practice price. Independent arithmetic on the exact displayed 2024.50 input gives the recorded rounded bounds 1,973.89 and 2,075.11."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  }
+]

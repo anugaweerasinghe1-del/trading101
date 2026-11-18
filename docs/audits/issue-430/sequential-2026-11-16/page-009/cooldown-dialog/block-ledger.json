@@ -27,10 +27,13 @@
     "text": "Psychology Warning dialog: Cancel Trade, Wait... and Proceed Anyway",
     "sha256": "d44be3d32b0e29daad209c84a62892a05314d64a4443e0defeac9009c6285d94",
     "source": "src/components/trading/RevengeTradingBlocker.tsx",
-    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
-    "scope": "compiled candidate",
+    "sourceRevision": "8400ff251984500416dfc333c079881e555bbd6b",
+    "scope": "compiled candidate and post-native production fixture",
     "captures": [
-      "local-cooldown.json"
+      "local-cooldown.json",
+      "../trade-release-reconciliation/preview468-cooldown.json",
+      "../trade-release-reconciliation/production468-final-cooldown.json",
+      "../trade-release-reconciliation/RELEASE-468.json"
     ],
     "findingIds": [
       "STRICT-TRADE-005"
@@ -40,8 +43,9 @@
       "reason": "Four local cases verify the named modal and an initially disabled timer action; Tab containment, Cancel/Escape and deliberate after-cooldown proceed work."
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Exact native deployment and subsequent custom-domain reread due."
+      "status": "REVIEWED",
+      "reason": "Fresh 390px /trade and /trade/btc pointers reached Cancel Trade. The 430px guest Escape closed the named warning and restored focus. All three scenarios started with Proceed disabled and recorded zero trade submissions.",
+      "reviewer": "Codex assistant, separate custom-domain reread after exact native verification"
     }
   },
   {

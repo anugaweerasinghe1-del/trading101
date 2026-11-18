@@ -1,0 +1,66 @@
+{
+  "scope": "Ordered public guest snapshots; same-origin GET only, additional body text compared separately. These observations identify actual served HTML hashes without a claim of release closure.",
+  "captures": [
+    {
+      "file": "reconciliation-471-473-capture-0.json",
+      "sha256": "2b8fe1ad20a8af2455a2b08c46b8d85147567d36baa6142391e480fb6b2d86a5",
+      "http": 200,
+      "width": 390,
+      "js": false,
+      "theme": "dark",
+      "atUTC": "2026-11-18T03:48:27.714423+00:00",
+      "href": "https://www.thetradehq.com/trade",
+      "textOccurrences": 47,
+      "controls": 0,
+      "visibleControls": 0,
+      "faqPanels": 0,
+      "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+    },
+    {
+      "file": "reconciliation-471-473-capture-1.json",
+      "sha256": "cab164bd92751e0a95128a12b96fd6737c3d590afe395b6dbb2e81b66b3dbb5f",
+      "http": 200,
+      "width": 390,
+      "js": true,
+      "theme": "light",
+      "atUTC": "2026-11-18T03:48:43.780006+00:00",
+      "href": "https://www.thetradehq.com/trade",
+      "textOccurrences": 440,
+      "controls": 43,
+      "visibleControls": 29,
+      "faqPanels": 5,
+      "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+    },
+    {
+      "file": "reconciliation-471-473-capture-2.json",
+      "sha256": "fa6c9f2445a5d044dc9266d05c579cbe917fb5c5ff1f8bcb10ab6c9eecf2cbaf",
+      "http": 200,
+      "width": 1440,
+      "js": true,
+      "theme": "dark",
+      "atUTC": "2026-11-18T03:48:35.022933+00:00",
+      "href": "https://www.thetradehq.com/trade",
+      "textOccurrences": 446,
+      "controls": 44,
+      "visibleControls": 38,
+      "faqPanels": 5,
+      "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+    },
+    {
+      "file": "reconciliation-471-473-capture-3.json",
+      "sha256": "e49d67607d06d8b60fd82ebe7a928d1162ad8fe0953cb13f73440bd4b26cf37b",
+      "http": 200,
+      "width": 1440,
+      "js": true,
+      "theme": "light",
+      "atUTC": "2026-11-18T03:48:34.852560+00:00",
+      "href": "https://www.thetradehq.com/trade?journey=1",
+      "textOccurrences": 450,
+      "controls": 44,
+      "visibleControls": 38,
+      "faqPanels": 5,
+      "responseSHA256": "6d879bef662ebaab51eda35e2686437c5041503c43f36dc066b3d37bbe86d89b"
+    }
+  ],
+  "bodyReviewStatus": "Not fully reconciled. Exact outstanding control/title/media conditions remain separately tracked. No page closure credit."
+}

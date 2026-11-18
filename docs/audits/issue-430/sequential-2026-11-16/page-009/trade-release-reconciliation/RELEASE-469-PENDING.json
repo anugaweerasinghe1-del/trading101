@@ -1,0 +1,60 @@
+{
+  "pr": 469,
+  "finalHeadSHA": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44224890169/job/134539493283",
+      "head_sha": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+      "id": 134539493283,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/94a43206-f8e6-41cd-9b3c-7b3e20549169",
+      "head_sha": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+      "id": 134535899561,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44224890169/job/134535537440",
+      "head_sha": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+      "id": 134535537440,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44224890169/job/134535536987",
+      "head_sha": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+      "id": 134535536987,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44224890179/job/134535536891",
+      "head_sha": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
+      "id": 134535536891,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    }
+  ],
+  "mergeSHA": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+  "mergedTreeEqualsFinalHeadTree": "733b67b0587c59c0248b024273cae670a72e40f6",
+  "nativePending": true,
+  "nativeWorkflowRun": 44226262123,
+  "previewURL": "https://94a43206.tradehq-preview.pages.dev",
+  "findings": [
+    "STRICT-TRADE-006",
+    "STRICT-TRADE-007"
+  ],
+  "pendingReadbackBlocks": [
+    "STRICT-0009-BLOCK-0093",
+    "STRICT-0009-BLOCK-0095"
+  ],
+  "status": "MERGED; active native production and custom-domain rereads required"
+}

@@ -1,0 +1,66 @@
+{
+  "pr": 476,
+  "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/476",
+  "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
+  "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "mergedAtUTC": "2026-11-18T09:21:09Z",
+  "mergedTreeEqualsFinalHeadTree": "d8598bf138cf8a5c5d9666277221858f2075c381",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134700750223",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134700750223,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/2ba5fd5b-0e36-4a7b-85cf-94ef4ffec1ba",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695635719,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273364776/job/134695252379",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695252379,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134695244892",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695244892,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44273361508/job/134695244271",
+      "head_sha": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "id": 134695244271,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    }
+  ],
+  "previewURL": "https://2ba5fd5b.tradehq-preview.pages.dev",
+  "status": "MERGED; native production and custom-domain reread required",
+  "nativeWorkflowRun": 44275108147,
+  "readbackBlocks": [
+    "STRICT-0009-BLOCK-0502",
+    "STRICT-0009-BLOCK-0504"
+  ],
+  "findings": [
+    "STRICT-TRADE-024",
+    "STRICT-TRADE-025"
+  ],
+  "previewEvidence": [
+    "../fractional-sell/exact-preview476-sell-execution.json",
+    "../fractional-sell/exact-preview476-max-buy.json"
+  ],
+  "pageClosureCredit": 0
+}

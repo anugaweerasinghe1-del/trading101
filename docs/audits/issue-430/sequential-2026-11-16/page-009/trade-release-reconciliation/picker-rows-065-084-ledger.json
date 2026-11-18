@@ -1,0 +1,1367 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0164",
+    "pickerOrdinal": 65,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CSCO",
+            "name": "Cisco Systems Inc.",
+            "price": "$52.80",
+            "change": "+1.64%",
+            "favorite": "Add Cisco Systems Inc. (CSCO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CSCO",
+            "name": "Cisco Systems Inc.",
+            "price": "$52.80",
+            "change": "+1.64%",
+            "favorite": "Add Cisco Systems Inc. (CSCO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "CSCO",
+          "name": "Cisco Systems Inc.",
+          "price": "$52.80",
+          "change": "+1.64%",
+          "favorite": "Add CSCO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "CSCO",
+          "name": "Cisco Systems Inc.",
+          "price": "$52.80",
+          "change": "+1.64%",
+          "favorite": "Add CSCO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "caf6ca9545c2ded6f0219218291bb263115d64803aee3bc74153beedab346cfa",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cisco Systems Inc./CSCO displays $52.80 and +1.64% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 0.85 move over 51.95 yields 1.64%; the full label identifies the stock."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0165",
+    "pickerOrdinal": 66,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AVGO",
+            "name": "Broadcom Inc.",
+            "price": "$1,285.50",
+            "change": "+2.27%",
+            "favorite": "Add Broadcom Inc. (AVGO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AVGO",
+            "name": "Broadcom Inc.",
+            "price": "$1,285.50",
+            "change": "+2.27%",
+            "favorite": "Add Broadcom Inc. (AVGO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "AVGO",
+          "name": "Broadcom Inc.",
+          "price": "$1,285.50",
+          "change": "+2.27%",
+          "favorite": "Add AVGO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AVGO",
+          "name": "Broadcom Inc.",
+          "price": "$1,285.50",
+          "change": "+2.27%",
+          "favorite": "Add AVGO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "7d5f3711ab85e88bd56f44f2a6ae0915514b7a9488af117759b84d955f99e0ca",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Broadcom Inc./AVGO displays $1,285.50 and +2.27% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 28.50 move from 1,257.00 yields 2.27%; the thousands separator and decimals match source formatting."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0166",
+    "pickerOrdinal": 67,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TXN",
+            "name": "Texas Instruments",
+            "price": "$168.25",
+            "change": "+1.48%",
+            "favorite": "Add Texas Instruments (TXN) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TXN",
+            "name": "Texas Instruments",
+            "price": "$168.25",
+            "change": "+1.48%",
+            "favorite": "Add Texas Instruments (TXN) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "TXN",
+          "name": "Texas Instruments",
+          "price": "$168.25",
+          "change": "+1.48%",
+          "favorite": "Add TXN to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TXN",
+          "name": "Texas Instruments",
+          "price": "$168.25",
+          "change": "+1.48%",
+          "favorite": "Add TXN to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "6990eb9668246530936c7a5f4eef35c79da5f391623948225f834c11d7f2412b",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Texas Instruments/TXN displays $168.25 and +1.48% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.45 move over 165.80 yields 1.48%. The company label identifies the intended TXN entry."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0167",
+    "pickerOrdinal": 68,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "QCOM",
+            "name": "Qualcomm Inc.",
+            "price": "$145.80",
+            "change": "+2.24%",
+            "favorite": "Add Qualcomm Inc. (QCOM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "QCOM",
+            "name": "Qualcomm Inc.",
+            "price": "$145.80",
+            "change": "+2.24%",
+            "favorite": "Add Qualcomm Inc. (QCOM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "QCOM",
+          "name": "Qualcomm Inc.",
+          "price": "$145.80",
+          "change": "+2.24%",
+          "favorite": "Add QCOM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "QCOM",
+          "name": "Qualcomm Inc.",
+          "price": "$145.80",
+          "change": "+2.24%",
+          "favorite": "Add QCOM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f91529f1f71e61fccbd632cd549fb4d6c18f6539be22989ff4d95c47b71864a6",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Qualcomm Inc./QCOM displays $145.80 and +2.24% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 3.20 move from 142.60 yields 2.24%. The full name ties the favorite to QCOM."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0168",
+    "pickerOrdinal": 69,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NOW",
+            "name": "ServiceNow Inc.",
+            "price": "$742.50",
+            "change": "+1.75%",
+            "favorite": "Add ServiceNow Inc. (NOW) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NOW",
+            "name": "ServiceNow Inc.",
+            "price": "$742.50",
+            "change": "+1.75%",
+            "favorite": "Add ServiceNow Inc. (NOW) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "NOW",
+          "name": "ServiceNow Inc.",
+          "price": "$742.50",
+          "change": "+1.75%",
+          "favorite": "Add NOW to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "NOW",
+          "name": "ServiceNow Inc.",
+          "price": "$742.50",
+          "change": "+1.75%",
+          "favorite": "Add NOW to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "4ee919a17300543580ad984cd7f0a3b1317d0f72fb1e07e449982f5d772639c5",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "ServiceNow Inc./NOW displays $742.50 and +1.75% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 12.80 move from 729.70 yields 1.75%. The programmatic name distinguishes the symbol from ordinary text."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0169",
+    "pickerOrdinal": 70,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "IBM",
+            "name": "IBM Corporation",
+            "price": "$168.90",
+            "change": "+1.11%",
+            "favorite": "Add IBM Corporation (IBM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "IBM",
+            "name": "IBM Corporation",
+            "price": "$168.90",
+            "change": "+1.11%",
+            "favorite": "Add IBM Corporation (IBM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "IBM",
+          "name": "IBM Corporation",
+          "price": "$168.90",
+          "change": "+1.11%",
+          "favorite": "Add IBM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "IBM",
+          "name": "IBM Corporation",
+          "price": "$168.90",
+          "change": "+1.11%",
+          "favorite": "Add IBM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "32f5e1c8f6ab5c8e6291ddea60435d3ca7155fa1a8d18d13c2e74ef800a7b6ba",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "IBM Corporation/IBM displays $168.90 and +1.11% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.85 move over 167.05 yields 1.11%. The seeded values make no separate market-data freshness claim."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0170",
+    "pickerOrdinal": 71,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "UBER",
+            "name": "Uber Technologies",
+            "price": "$62.45",
+            "change": "+3.05%",
+            "favorite": "Add Uber Technologies (UBER) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "UBER",
+            "name": "Uber Technologies",
+            "price": "$62.45",
+            "change": "+3.05%",
+            "favorite": "Add Uber Technologies (UBER) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "UBER",
+          "name": "Uber Technologies",
+          "price": "$62.45",
+          "change": "+3.05%",
+          "favorite": "Add UBER to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "UBER",
+          "name": "Uber Technologies",
+          "price": "$62.45",
+          "change": "+3.05%",
+          "favorite": "Add UBER to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "93a6206a124fcb89381dcafca5f2cdd7098d8faeddc041469d8f5ba20862657f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Uber Technologies/UBER displays $62.45 and +3.05% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.85 move over 60.60 yields 3.05%. The abbreviated issuer name and ticker identify the same entry."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0171",
+    "pickerOrdinal": 72,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SHOP",
+            "name": "Shopify Inc.",
+            "price": "$78.50",
+            "change": "+3.77%",
+            "favorite": "Add Shopify Inc. (SHOP) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SHOP",
+            "name": "Shopify Inc.",
+            "price": "$78.50",
+            "change": "+3.77%",
+            "favorite": "Add Shopify Inc. (SHOP) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SHOP",
+          "name": "Shopify Inc.",
+          "price": "$78.50",
+          "change": "+3.77%",
+          "favorite": "Add SHOP to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SHOP",
+          "name": "Shopify Inc.",
+          "price": "$78.50",
+          "change": "+3.77%",
+          "favorite": "Add SHOP to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "3ab200373bccaa23703f57b1a4fe0078ad6688161ae0c06b535e722385db0a3d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Shopify Inc./SHOP displays $78.50 and +3.77% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.85 move over 75.65 yields 3.77%. The selected currency shown for this market input is USD."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0172",
+    "pickerOrdinal": 73,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SNOW",
+            "name": "Snowflake Inc.",
+            "price": "$165.20",
+            "change": "+2.80%",
+            "favorite": "Add Snowflake Inc. (SNOW) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SNOW",
+            "name": "Snowflake Inc.",
+            "price": "$165.20",
+            "change": "+2.80%",
+            "favorite": "Add Snowflake Inc. (SNOW) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SNOW",
+          "name": "Snowflake Inc.",
+          "price": "$165.20",
+          "change": "+2.80%",
+          "favorite": "Add SNOW to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SNOW",
+          "name": "Snowflake Inc.",
+          "price": "$165.20",
+          "change": "+2.80%",
+          "favorite": "Add SNOW to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "b4eba8f2ab18d5c2d074f319a3465b759f82ba867054cf7dd1892013f9acad70",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Snowflake Inc./SNOW displays $165.20 and +2.80% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 4.50 move over 160.70 yields 2.80%. The source matches the displayed quote projection."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0173",
+    "pickerOrdinal": 74,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "PLTR",
+            "name": "Palantir Technologies",
+            "price": "$21.85",
+            "change": "+4.54%",
+            "favorite": "Add Palantir Technologies (PLTR) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "PLTR",
+            "name": "Palantir Technologies",
+            "price": "$21.85",
+            "change": "+4.54%",
+            "favorite": "Add Palantir Technologies (PLTR) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "PLTR",
+          "name": "Palantir Technologies",
+          "price": "$21.85",
+          "change": "+4.54%",
+          "favorite": "Add PLTR to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "PLTR",
+          "name": "Palantir Technologies",
+          "price": "$21.85",
+          "change": "+4.54%",
+          "favorite": "Add PLTR to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "7968f59436a867528266d10bf814a31bb9a91414961e874f3a7690a10a50914a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Palantir Technologies/PLTR displays $21.85 and +4.54% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The literal values match both views. Recomputing from the rounded 0.95 delta and 20.90 reference would yield 4.55%. The panel does not display that delta or a calculation claim. Exact underlying seed precision is unknown."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0174",
+    "pickerOrdinal": 75,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "COIN",
+            "name": "Coinbase Global",
+            "price": "$148.50",
+            "change": "+6.07%",
+            "favorite": "Add Coinbase Global (COIN) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "COIN",
+            "name": "Coinbase Global",
+            "price": "$148.50",
+            "change": "+6.07%",
+            "favorite": "Add Coinbase Global (COIN) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "COIN",
+          "name": "Coinbase Global",
+          "price": "$148.50",
+          "change": "+6.07%",
+          "favorite": "Add COIN to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "COIN",
+          "name": "Coinbase Global",
+          "price": "$148.50",
+          "change": "+6.07%",
+          "favorite": "Add COIN to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "cb158f932f0b22fb011c07b9f30fea0ccec0c7864a559c7e723afc515029f848",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Coinbase Global/COIN displays $148.50 and +6.07% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 8.50 move over 140.00 yields 6.07%. The name identifies an issuer stock rather than a specific cryptocurrency."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0175",
+    "pickerOrdinal": 76,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SPOT",
+            "name": "Spotify Technology",
+            "price": "$285.40",
+            "change": "+2.09%",
+            "favorite": "Add Spotify Technology (SPOT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SPOT",
+            "name": "Spotify Technology",
+            "price": "$285.40",
+            "change": "+2.09%",
+            "favorite": "Add Spotify Technology (SPOT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SPOT",
+          "name": "Spotify Technology",
+          "price": "$285.40",
+          "change": "+2.09%",
+          "favorite": "Add SPOT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SPOT",
+          "name": "Spotify Technology",
+          "price": "$285.40",
+          "change": "+2.09%",
+          "favorite": "Add SPOT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "fc2db69784e2730366d2556fd418b022aee1cf38e727e19c4d864840c183a8bc",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Spotify Technology/SPOT displays $285.40 and +2.09% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 5.85 move over 279.55 yields 2.09%. The stock selector does not imply a service subscription."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0176",
+    "pickerOrdinal": 77,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SQ",
+            "name": "Block Inc.",
+            "price": "$68.25",
+            "change": "+3.25%",
+            "favorite": "Add Block Inc. (SQ) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SQ",
+            "name": "Block Inc.",
+            "price": "$68.25",
+            "change": "+3.25%",
+            "favorite": "Add Block Inc. (SQ) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SQ",
+          "name": "Block Inc.",
+          "price": "$68.25",
+          "change": "+3.25%",
+          "favorite": "Add SQ to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SQ",
+          "name": "Block Inc.",
+          "price": "$68.25",
+          "change": "+3.25%",
+          "favorite": "Add SQ to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "bcf1b06da40cc669a3dbcb42c5dcee4021df7084789668167af3224e25b9f025",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Block Inc./SQ displays $68.25 and +3.25% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.15 move over 66.10 yields 3.25%. The separate accepted legacy ticker risk is retained without a duplicate finding."
+    },
+    "disposition": "EXISTING-FINDING-PRESERVED",
+    "existingFinding": "STRICT-TRADE-RISK-001"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0177",
+    "pickerOrdinal": 78,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "PYPL",
+            "name": "PayPal Holdings",
+            "price": "$62.80",
+            "change": "+2.36%",
+            "favorite": "Add PayPal Holdings (PYPL) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "PYPL",
+            "name": "PayPal Holdings",
+            "price": "$62.80",
+            "change": "+2.36%",
+            "favorite": "Add PayPal Holdings (PYPL) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "PYPL",
+          "name": "PayPal Holdings",
+          "price": "$62.80",
+          "change": "+2.36%",
+          "favorite": "Add PYPL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "PYPL",
+          "name": "PayPal Holdings",
+          "price": "$62.80",
+          "change": "+2.36%",
+          "favorite": "Add PYPL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "e6cefe8933d27c811cbdfb1191a34f842631bfdb62d7815bb9b098bd72a28ad2",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "PayPal Holdings/PYPL displays $62.80 and +2.36% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.45 move over 61.35 yields 2.36%. The issuer and favorite names agree."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0178",
+    "pickerOrdinal": 79,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TWLO",
+            "name": "Twilio Inc.",
+            "price": "$68.50",
+            "change": "+2.78%",
+            "favorite": "Add Twilio Inc. (TWLO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TWLO",
+            "name": "Twilio Inc.",
+            "price": "$68.50",
+            "change": "+2.78%",
+            "favorite": "Add Twilio Inc. (TWLO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "TWLO",
+          "name": "Twilio Inc.",
+          "price": "$68.50",
+          "change": "+2.78%",
+          "favorite": "Add TWLO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TWLO",
+          "name": "Twilio Inc.",
+          "price": "$68.50",
+          "change": "+2.78%",
+          "favorite": "Add TWLO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "1ceb8d5c52978cd36e51599c59af1b9462b3eb7b6d615f92f998037a62e0003a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Twilio Inc./TWLO displays $68.50 and +2.78% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.85 move over 66.65 yields 2.78%. No distinct issue appears in this quote projection."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0179",
+    "pickerOrdinal": 80,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "DOCU",
+            "name": "DocuSign Inc.",
+            "price": "$58.25",
+            "change": "+2.19%",
+            "favorite": "Add DocuSign Inc. (DOCU) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "DOCU",
+            "name": "DocuSign Inc.",
+            "price": "$58.25",
+            "change": "+2.19%",
+            "favorite": "Add DocuSign Inc. (DOCU) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "DOCU",
+          "name": "DocuSign Inc.",
+          "price": "$58.25",
+          "change": "+2.19%",
+          "favorite": "Add DOCU to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "DOCU",
+          "name": "DocuSign Inc.",
+          "price": "$58.25",
+          "change": "+2.19%",
+          "favorite": "Add DOCU to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "9a8cf1940d5d3b2f9a3f85210b413c31306736729e260a41ab97d253c1a8fe62",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "DocuSign Inc./DOCU displays $58.25 and +2.19% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.25 move over 57.00 yields 2.19%. The selected symbol and action names agree."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0180",
+    "pickerOrdinal": 81,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ZM",
+            "name": "Zoom Video",
+            "price": "$68.40",
+            "change": "+1.71%",
+            "favorite": "Add Zoom Video (ZM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ZM",
+            "name": "Zoom Video",
+            "price": "$68.40",
+            "change": "+1.71%",
+            "favorite": "Add Zoom Video (ZM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ZM",
+          "name": "Zoom Video",
+          "price": "$68.40",
+          "change": "+1.71%",
+          "favorite": "Add ZM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ZM",
+          "name": "Zoom Video",
+          "price": "$68.40",
+          "change": "+1.71%",
+          "favorite": "Add ZM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "da11a461c1f0d8b348a1ddb5e08228433f9f88136992ea8444464f63a05be09b",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Zoom Video/ZM displays $68.40 and +1.71% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 1.15 move over 67.25 yields 1.71%. SEC records show the current issuer name is Zoom Communications, Inc. and the Nasdaq symbol remains ZM. The abbreviated row is a recognizable former brand and does not claim the name is the current legal entity name. Preserve the source for possible catalog editorial cleanup."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN",
+    "officialReference": {
+      "url": "https://data.sec.gov/submissions/CIK0001585521.json",
+      "retrievedUTC": "2026-11-18"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0181",
+    "pickerOrdinal": 82,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ROKU",
+            "name": "Roku Inc.",
+            "price": "$68.25",
+            "change": "+3.72%",
+            "favorite": "Add Roku Inc. (ROKU) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ROKU",
+            "name": "Roku Inc.",
+            "price": "$68.25",
+            "change": "+3.72%",
+            "favorite": "Add Roku Inc. (ROKU) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ROKU",
+          "name": "Roku Inc.",
+          "price": "$68.25",
+          "change": "+3.72%",
+          "favorite": "Add ROKU to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ROKU",
+          "name": "Roku Inc.",
+          "price": "$68.25",
+          "change": "+3.72%",
+          "favorite": "Add ROKU to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "c1d551b8c1cf0b3d721948fa0b0e91f4cb7b049fad93fdcea961332af39eaaa9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Roku Inc./ROKU displays $68.25 and +3.72% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.45 move over 65.80 yields 3.72%. The name and ticker distinguish this row from the different stock with the same current numeric projection."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0182",
+    "pickerOrdinal": 83,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NET",
+            "name": "Cloudflare Inc.",
+            "price": "$85.40",
+            "change": "+3.45%",
+            "favorite": "Add Cloudflare Inc. (NET) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NET",
+            "name": "Cloudflare Inc.",
+            "price": "$85.40",
+            "change": "+3.45%",
+            "favorite": "Add Cloudflare Inc. (NET) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "NET",
+          "name": "Cloudflare Inc.",
+          "price": "$85.40",
+          "change": "+3.45%",
+          "favorite": "Add NET to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "NET",
+          "name": "Cloudflare Inc.",
+          "price": "$85.40",
+          "change": "+3.45%",
+          "favorite": "Add NET to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f1e600805e187619331fd820b8a8fa8c9318af6ef8f37d3d570a6494fd9d4f4c",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cloudflare Inc./NET displays $85.40 and +3.45% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.85 move over 82.55 yields 3.45%. The name identifies the practice asset and makes no provider claim."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0183",
+    "pickerOrdinal": 84,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "DDOG",
+            "name": "Datadog Inc.",
+            "price": "$128.50",
+            "change": "+3.42%",
+            "favorite": "Add Datadog Inc. (DDOG) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "DDOG",
+            "name": "Datadog Inc.",
+            "price": "$128.50",
+            "change": "+3.42%",
+            "favorite": "Add Datadog Inc. (DDOG) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "DDOG",
+          "name": "Datadog Inc.",
+          "price": "$128.50",
+          "change": "+3.42%",
+          "favorite": "Add DDOG to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "DDOG",
+          "name": "Datadog Inc.",
+          "price": "$128.50",
+          "change": "+3.42%",
+          "favorite": "Add DDOG to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "e27ded67731a499629bfa951039cd312d7dc4a89d2ca5fe1fe2fdf9a650c1b5d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Datadog Inc./DDOG displays $128.50 and +3.42% in both viewports and input states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 4.25 move over 124.25 yields 3.42%. The stock name and labeled favorite match the source."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-PROJECTION; SHARED-PROVENANCE-FINDING-OPEN"
+  }
+]

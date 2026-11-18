@@ -1,14 +1,14 @@
 {
   "pageId": "STRICT-0009",
   "url": "https://www.thetradehq.com/trade",
-  "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
-  "pageStatus": "PARTIAL-REVIEW",
-  "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 70,
-  "firstPass": 70,
-  "secondPass": 65,
-  "partialCoverage": true,
-  "strictPageClosure": false,
+  "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "pageStatus": "FIXED-RECHECKED",
+  "scope": "Trade public page and applicable authored states in current and historical projections. Exact public states and separate loopback-only cases are identified in the crosswalk.",
+  "textRecords": 504,
+  "firstPass": 504,
+  "secondPass": 504,
+  "partialCoverage": false,
+  "strictPageClosure": true,
   "rawBodyOccurrences": [
     47,
     438,
@@ -26,8 +26,10 @@
       "source": "src/pages/Trade.tsx intro",
       "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966282274",
       "block": "STRICT-0009-BLOCK-0041",
-      "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
-      "policyViolation": false
+      "status": "FIXED-RECHECKED",
+      "policyViolation": false,
+      "receipt": "trade-release-reconciliation/RELEASE-466.json",
+      "mergeSHA": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     },
     {
       "id": "STRICT-TRADE-002",
@@ -37,7 +39,7 @@
         "STRICT-0009-BLOCK-0042",
         "STRICT-0009-BLOCK-0043"
       ],
-      "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
+      "status": "FIXED-RECHECKED",
       "policyViolation": false,
       "reference": {
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
@@ -48,13 +50,15 @@
       "localVerification": [
         "local-trade-drawer.json",
         "local-btc-drawer.json"
-      ]
+      ],
+      "receipt": "trade-release-reconciliation/RELEASE-466.json",
+      "mergeSHA": "b8401214c9da104f11b1da79d35fe2463a74c35d"
     },
     {
       "id": "STRICT-TRADE-003",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
       "beforeEditURL": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966526359",
-      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "status": "FIXED-RECHECKED",
       "blockIds": [
         "STRICT-0009-BLOCK-0058",
         "STRICT-0009-BLOCK-0059"
@@ -63,39 +67,364 @@
       "policyViolation": false,
       "localSourceSHA256": "1cdd5d581d827c9b58806695b844d3f4e277284b52d15ebacc3bb5393304049f",
       "observedUTC": "2026-11-18T01:50:14.842388+00:00",
-      "pageClosureCredit": 0
+      "pageClosureCredit": 0,
+      "receipt": "trade-release-reconciliation/RELEASE-467.json",
+      "mergeSHA": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4"
     },
     {
       "id": "STRICT-TRADE-004",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
       "beforeEditURL": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966686815",
-      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "status": "FIXED-RECHECKED",
       "source": "src/components/trading/AssetSearchDropdown.tsx",
       "blockIds": [
         "STRICT-0009-BLOCK-0069",
         "STRICT-0009-BLOCK-0070"
       ],
-      "policyViolation": false
+      "policyViolation": false,
+      "receipt": "trade-release-reconciliation/RELEASE-467.json",
+      "mergeSHA": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4"
+    },
+    {
+      "id": "STRICT-TRADE-005",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 468,
+      "receipt": "trade-release-reconciliation/RELEASE-468.json",
+      "mergeSHA": "8400ff251984500416dfc333c079881e555bbd6b",
+      "policyViolation": false,
+      "block": "STRICT-0009-BLOCK-0088",
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-006",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 469,
+      "mergeSHA": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+      "receipt": "trade-release-reconciliation/RELEASE-469.json",
+      "block": "STRICT-0009-BLOCK-0093",
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-007",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 469,
+      "mergeSHA": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+      "receipt": "trade-release-reconciliation/RELEASE-469.json",
+      "block": "STRICT-0009-BLOCK-0095",
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-008",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 470,
+      "mergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a",
+      "receipt": "trade-release-reconciliation/RELEASE-470.json",
+      "block": "STRICT-0009-BLOCK-0113",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-009",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 471,
+      "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+      "receipt": "trade-release-reconciliation/RELEASE-471.json",
+      "block": "STRICT-0009-BLOCK-0271",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-010",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 471,
+      "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+      "receipt": "trade-release-reconciliation/RELEASE-471.json",
+      "block": "STRICT-0009-BLOCK-0273",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-011",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 472,
+      "mergeSHA": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+      "receipt": "trade-release-reconciliation/RELEASE-472.json",
+      "blocks": [
+        "STRICT-0009-BLOCK-0296"
+      ],
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-012",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 472,
+      "mergeSHA": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+      "receipt": "trade-release-reconciliation/RELEASE-472.json",
+      "blocks": [
+        "STRICT-0009-BLOCK-0298",
+        "STRICT-0009-BLOCK-0300"
+      ],
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-013",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 473,
+      "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+      "receipt": "trade-release-reconciliation/RELEASE-473.json",
+      "block": "STRICT-0009-BLOCK-0316",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-014",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 473,
+      "mergeSHA": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+      "receipt": "trade-release-reconciliation/RELEASE-473.json",
+      "block": "STRICT-0009-BLOCK-0329",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-015",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0453",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-016",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0455",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-017",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0457",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-018",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0459",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-019",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 475,
+      "receipt": "trade-release-reconciliation/RELEASE-475.json",
+      "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "block": "STRICT-0009-BLOCK-0477",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-020",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 475,
+      "receipt": "trade-release-reconciliation/RELEASE-475.json",
+      "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "block": "STRICT-0009-BLOCK-0479",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-021",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 475,
+      "receipt": "trade-release-reconciliation/RELEASE-475.json",
+      "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "block": "STRICT-0009-BLOCK-0481",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-022",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 475,
+      "receipt": "trade-release-reconciliation/RELEASE-475.json",
+      "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "block": "STRICT-0009-BLOCK-0483",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-023",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 475,
+      "receipt": "trade-release-reconciliation/RELEASE-475.json",
+      "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "block": "STRICT-0009-BLOCK-0485",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-024",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 476,
+      "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "source": "src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx",
+      "blocks": [
+        "STRICT-0009-BLOCK-0501",
+        "STRICT-0009-BLOCK-0502"
+      ],
+      "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974007591",
+      "policyViolation": false,
+      "pageClosureCredit": 0,
+      "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json",
+      "receipt": "trade-release-reconciliation/RELEASE-476.json"
+    },
+    {
+      "id": "STRICT-TRADE-025",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 476,
+      "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
+      "source": "src/components/trading/MobileOrderDrawer.tsx",
+      "blocks": [
+        "STRICT-0009-BLOCK-0503",
+        "STRICT-0009-BLOCK-0504"
+      ],
+      "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974007591",
+      "policyViolation": false,
+      "pageClosureCredit": 0,
+      "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json",
+      "receipt": "trade-release-reconciliation/RELEASE-476.json"
     }
   ],
-  "nextAction": "Review and reconcile the remaining supplied/hydrated metadata, responsive order drawer, asset picker, quote/cache/pause and candle states, path-specific chart labels, local journal and error/result states. Countercheck shown-price wording in note blocks 0006 and 0016 against the account execution RPC. Keep authenticated live operation separate.",
-  "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "nextAction": "Proceed to P10 Portfolio in canonical queue order.",
+  "releaseBaseline": "Cloudflare production ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
-  "closureCredit": 0,
-  "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0044",
-    "STRICT-0009-BLOCK-0045",
-    "STRICT-0009-BLOCK-0046",
-    "STRICT-0009-BLOCK-0059",
-    "STRICT-0009-BLOCK-0070"
-  ],
+  "closureCredit": 1,
+  "pendingSecondPass": [],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
-  "merged466NativeStatus": "PENDING",
+  "merged466NativeStatus": "FIXED-RECHECKED",
   "continuationLedgers": [
     "fx-chart/block-ledger.json",
-    "continuation-2026-11-18/block-ledger.json"
+    "continuation-2026-11-18/block-ledger.json",
+    "trade-release-reconciliation/context-block-ledger.json",
+    "trade-release-reconciliation/order-block-ledger.json",
+    "trade-release-reconciliation/catalog-block-ledger.json",
+    "cooldown-dialog/block-ledger.json",
+    "trade-release-reconciliation/picker-rows-001-016-ledger.json",
+    "trade-release-reconciliation/picker-rows-017-030-ledger.json",
+    "trade-release-reconciliation/picker-rows-031-037-ledger.json",
+    "trade-release-reconciliation/picker-rows-038-048-ledger.json",
+    "portfolio-metric/block-ledger.json",
+    "trade-release-reconciliation/picker-rows-049-064-ledger.json",
+    "trade-release-reconciliation/picker-quote-provenance-ledger.json",
+    "trade-release-reconciliation/picker-rows-065-084-ledger.json",
+    "trade-release-reconciliation/picker-rows-085-111-ledger.json",
+    "trade-release-reconciliation/picker-rows-112-140-ledger.json",
+    "trade-release-reconciliation/picker-rows-141-170-ledger.json",
+    "mobile-order-price/block-ledger.json",
+    "trade-release-reconciliation/mentor-library-ledger.json",
+    "trade-release-reconciliation/explore-cards-ledger.json",
+    "candlestick-ranges/block-ledger.json",
+    "trade-release-reconciliation/mentor-state-matrix-ledger.json",
+    "explore-mentor-state/block-ledger.json",
+    "trade-release-reconciliation/footer-links-ledger.json",
+    "trade-release-reconciliation/footer-state-ledger.json",
+    "trade-release-reconciliation/quote-widget-state-ledger.json",
+    "candlestick-small-price/block-ledger.json",
+    "mentor-history-number/block-ledger.json",
+    "trade-release-reconciliation/current-default-ledger.json",
+    "disclosures-and-attribution/block-ledger.json",
+    "trade-release-reconciliation/navigation-state-ledger.json",
+    "trade-release-reconciliation/line-chart-source-ledger.json",
+    "trade-release-reconciliation/approved-notice-ledger.json",
+    "chart-order-access/block-ledger.json",
+    "trade-release-reconciliation/signed-order-state-ledger.json",
+    "fractional-sell/block-ledger.json"
   ],
-  "rawPickerInventory": "continuation-2026-11-18/inventory.json; no per-row strict reading credit"
+  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
+  "confirmedProductDefectsProductionVerified": 25,
+  "latestApplicationRelease": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "qualityRisks": [
+    {
+      "id": "STRICT-TRADE-RISK-001",
+      "status": "OPEN-LEGACY-IDENTIFIER-COUNTERCHECK",
+      "record": "trade-release-reconciliation/catalog-risk.json"
+    },
+    {
+      "id": "STRICT-TRADE-RISK-002",
+      "status": "OPEN",
+      "record": "trade-release-reconciliation/catalog-matic-risk.json"
+    },
+    {
+      "id": "STRICT-TRADE-RISK-003",
+      "status": "OPEN",
+      "record": "trade-release-reconciliation/catalog-quote-provenance-risk.json"
+    }
+  ],
+  "confirmedProductDefectsReproduced": 25,
+  "unresolvedStateNotes": [],
+  "nextExactContentState": null,
+  "rawCurrentCensus": "trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json",
+  "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json",
+  "closedRootExtensions": [
+    {
+      "id": "STRICT-TRADE-008",
+      "status": "FIXED-RECHECKED",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "scope": "Six learning-note revisions; zero added distinct defects"
+    }
+  ],
+  "rawOccurrenceGroupTieOut": {
+    "record": "trade-release-reconciliation/current-default-census/GROUP-TIE-OUT.json",
+    "counts": {
+      "TIED-TO-REVIEWED-PROJECTION": 215,
+      "REVIEWED-LABELS; CONTROL-RELEASE-PENDING": 2,
+      "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING": 10,
+      "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING": 7,
+      "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING": 12,
+      "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
+    }
+  },
+  "closedAtUTC": "2026-11-18T09:35:55.243741+00:00",
+  "finalRecord": "PAGE-RECORD.json"
 }

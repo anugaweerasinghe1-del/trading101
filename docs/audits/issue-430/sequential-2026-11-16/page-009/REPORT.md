@@ -13,3 +13,93 @@ The full Cloudflare build and postbuild verifiers and TypeScript passed. The two
 The note's real-market distinction is consistent with the SEC Investor.gov explanation that the last traded price need not be the market order's execution price. The simulator-specific wording about exact shown-price fills remains under review because the account RPC selects its own quote at execution. The code path requires an isolated countercheck before a new finding is logged. No production account order, quote write or provider certification is part of this checkpoint. [SEC Investor.gov types of orders, retrieved 18 November 2026](https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders)
 
 Two guest views separately verified the asset-picker search label, five asset-class filters and All filter, the empty-results message, the EUR/USD result and the local quote pause/resume affordance. Both snapshots counted 170 available choices after hydration. The count does not provide reading credit for all result rows. Search and selection changed the local view only. The open coverage list begins with the post-release candidate blocks and then the remaining quote, candle, order-preview, journal and result states.
+
+# Release reconciliation
+
+#466 and #467 now have exact native Cloudflare receipts and fresh public readback. The initial intro, two mobile drawer actions, FX title and distinct ZS favorites are production-verified. The four confirmed defects are closed. [Native release records](trade-release-reconciliation/)
+
+P09 has 87 reviewed text/version records in both passes reconciled on this evidence branch. A separate #468 adds four records, three with two readings, while its cooldown correction clears required release gates. The issuer-symbol ambiguity has one substantiated quality-risk entry. Individual picker rows, other quote/candle/UI branches and the account-execution estimate remain open. The strict publisher score stays seven of 163.
+
+## Continued review
+
+Picker ordinals 1–16 have two individual readings in the unrestricted capture, current controlled production capture and source. The new 16 records and four cooldown records bring durable P09 coverage to 107 first readings and 106 second readings. Three additional second readings are due across the native cooldown and current portfolio-correction releases, including two blocks on the #469 candidate branch. The next unsampled picker row is ordinal 17, PEPE. [Picker ledger](trade-release-reconciliation/picker-rows-001-016-ledger.json)
+
+# Cooldown production readback
+
+#468 now has the exact native Cloudflare production receipt and a subsequent public readback. All three cancellation scenarios exposed the named modal, disabled the early continuation and recorded zero trade submissions. P09 has 107 durable records with two passes. #469 has four additional candidate records, of which two await production reread. [Receipt](trade-release-reconciliation/RELEASE-468.json)
+
+The second picker chunk adds 14 individually read rows, bringing durable two-pass coverage to 121 block/version records. On several seeded fallback entries, price and change match the static catalog but no row-level source is displayed. The shared provenance question remains open for a focused review. The next picker row is MATIC at ordinal 31. [Rows 17–30](trade-release-reconciliation/picker-rows-017-030-ledger.json)
+
+An isolated, normal signed-in account fixture confirmed that an AAPL preview at $100 can be followed by a $101 recorded fill. The public mobile drawer describes the display as an exact immediate price. A candidate text-only correction passes local validation and is queued behind #469. [Before-edit finding](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344)
+
+Picker ordinals 31–37 have individual source and live readings. The unqualified MATIC label is a separate substantiated clarity risk. The Trade catalog retains MATIC for account history and its linked educational detail explains the migration. The remaining picker work resumes at ordinal 38, FTM. [Catalog risk](trade-release-reconciliation/catalog-matic-risk.json)
+
+## Latest release position
+
+#469 passed the five exact-head checks and protected-merged with the same tree. Its native production run is active and the post-release reviews of 0093 and 0095 are pending. #470 is open for the mobile price wording. The separately reconciled 48 picker rows bring the full P09 ledger to 143 first-pass records and 141 second-pass records. [Pending release record](trade-release-reconciliation/RELEASE-469-PENDING.json)
+
+The picker quote-origin follow-up is recorded once as a shared quality risk. Its row markup displays prices and percentages from inputs that can occupy different source states, while the adjacent source widget covers the selected instrument. The broader introduction already qualifies availability. [Focused evidence](trade-release-reconciliation/catalog-quote-provenance-risk.json)
+
+# Portfolio metrics production readback
+
+#469 now has exact native Cloudflare confirmation and eight subsequent browser cases on /trade and /trade/btc. Both corrections pass and remain fixture-scoped. #470 subsequently protected-merged with all five checks passed. The post-native mobile order reread remains due. All 170 picker rows now have two recorded individual readings. The page remains partial with 269 first-pass records and 268 second-pass records. [Exact #469 receipt](trade-release-reconciliation/RELEASE-469.json)
+
+The embedded mentor now has 21 typed-topic responses with individual two-pass notes. These include all reachable curated topics, the embedded risk branch, greeting, unknown topic and the refusal to give a specific trade. Five were independently replayed at the mobile width. Two follow-ups concern the greeting and fallback navigation. [Mentor response ledger](trade-release-reconciliation/mentor-library-ledger.json)
+
+# Order estimate production readback
+
+#470 now has its exact native production confirmation and later browser checks in two mobile drawers and the desktop comparison. The page has 290 durable records with both reads. Four candlestick and six Explore/mentor records remain on separate candidate branches with their production second readings still due. [Exact #470 receipt](trade-release-reconciliation/RELEASE-470.json)
+
+Four responsive/theme projections reconcile the Explore cards, leading to 14 double-reviewed link records. The 13 runtime-only assets all hydrate their exact practice headings after GET and expose the expected noindex, follow response. Their HEAD methods returned 404. The observed HEAD results do not establish broken user links and do not expand the publisher inventory. [Rejected false positive](trade-release-reconciliation/explore-route-observation.json)
+
+# Candlestick merge and open work
+
+#471 passed the five exact-head checks and protected-merged with the same tree. Its native production and custom-domain checks are pending. #472 is open and awaits hosted checks. P09 has 308 first-pass and 306 second-pass records. The active continuation begins at 0271 and 0273. [Pending candlestick release](trade-release-reconciliation/RELEASE-471-PENDING.json)
+
+# Candlestick production readback
+
+#471 now has an exact native receipt and five fresh custom-domain browser contexts. It verifies the one-day synthetic provider fixture and fifteen range selections. #472 subsequently protected-merged and awaits its native readback. #473 is open. [Exact #471 receipt](trade-release-reconciliation/RELEASE-471.json)
+
+# Footer and newsletter state review
+
+The two responsive footer captures preserve all 102 link occurrences. All 49 glossary links reuse exact title and slug evidence from the reviewed Guide, while their destination bodies remain in queue. Local response fixtures exercise explicit opt-in, invalid email, pending, confirmation and retry states. Actual subscription delivery and private CMP operations remain unverified. The checked-in chart polling minimum agrees with the visible five-minute candle check wording. [Footer state ledger](trade-release-reconciliation/footer-state-ledger.json)
+
+# Portfolio guidance and source badge production readback
+
+#472 now has its exact account-native receipt and fourteen fresh public guest test cases. The Explore and mentor fixes pass. The visible quote widget also has seven two-pass entries covering explicit provider, delayed, simulated, unavailable, loading, pause and resume states. No actual provider outage or private operation was inferred. #473 has passed its immutable Cloudflare preview browser cases and awaits required validation. [Exact #472 receipt](trade-release-reconciliation/RELEASE-472.json)
+
+# Exact release and source census
+
+#473 protected-merged with the same tree after all five checks. #474 includes the remaining six estimate wording occurrences under STRICT-TRADE-008 and the separate confirmed overlapping launchers. Four raw default/guided captures preserve source hashes and the newest body and control census. The social and audio assets hash-match repository bytes. P09 remains partial. [Active continuation](COVERAGE.json)
+
+# Small-price and history production readback
+
+#473 has its exact native receipt and six fresh custom-domain cases. Both corrections are verified, bringing P09 to 461 durable two-pass records and fourteen production-verified fixes. The final #474 head passed its four hosted suites. A further controlled browser comparison reproduced two chart keyboard/data gaps and their before-edit records are intact. [Exact #473 receipt](trade-release-reconciliation/RELEASE-473.json)
+
+# Disclosure release and raw occurrence reconciliation
+
+#474 passed the five exact final checks, the hosted browser suites and protected merge. Native production and separate custom-domain reviews remain due. The raw census preserves all 1,383 occurrence identities and an explicit 247-group residual list. Literal linkage candidates, generated values and raw occurrence counts do not confer editorial credit. [Raw reconciliation](trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json)
+
+# Disclosure and note production readback
+
+#474 has its exact native receipt and twelve fresh custom-domain cases. Four product fixes and six further revised learning notes passed. The notes extend the already verified mobile price wording under the same identified root. P09 has 482 durable two-pass records and remains partial. [Exact #474 receipt](trade-release-reconciliation/RELEASE-474.json)
+
+# Chart and order release position
+
+#475 protected-merged with the exact validated tree and awaits native confirmation and current public review. Four disposable signed-in projections separately reviewed the accepted server-shaped fill and safe stale-quote rejection. P09 has 500 first-pass and 495 second-pass records at this stage. [Pending release](trade-release-reconciliation/RELEASE-475-PENDING.json)
+
+# Chart and order production readback
+
+#475 has exact native production evidence and nine fresh browser contexts on the custom domain. The five corrections and two responsive controls passed. All 500 recorded block versions now have two reads, and all 23 distinct confirmed P09 defects are production-verified. Final public state reconciliation remains open. Both current sitemaps still match the 163-page publisher queue. [Exact receipt](trade-release-reconciliation/RELEASE-475.json) · [Live sitemap comparison](trade-release-reconciliation/current-default-census/SITEMAP-475.json)
+
+# Fractional Sell follow-up
+
+The final #475 public crosswalk accounted for four current default and guided views. Both embedded mentor follow-up observations were independently replayed with their corrected text. Two further simulator defects were separately reproduced before editing. Four public guest fixtures could purchase fractional holdings and enter an exact Sell amount manually, while the shortcuts entered an invalid larger amount or zero. Mobile Sell also showed cash under availability. The compiled candidate passed, and #476 awaits hosted testing, a protected merge and native readback. The page remains partial with 504 first-pass records, 502 second-pass records, 25 confirmed defects and 23 production-verified fixes. [Before-edit evidence](fractional-sell/BEFORE.md) · [Current public crosswalk](trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json)
+
+# Fractional Sell protected merge
+
+#476 passed all five checks on its final head. Four disposable hosted browser sessions sold the entire exact position and retained the two expected virtual fees. The normal protected merge has the identical source tree. Native and independent custom-domain verification remain due at 0502 and 0504. [Pending release record](trade-release-reconciliation/RELEASE-476-PENDING.json)
+
+# Strict closure
+
+Trade passes the applicable public page and authored state review. The final deployed default views reconcile to their reviewed parents. The complete fractional-sell cases and unchanged maximum Buy controls passed on the custom domain after the exact native #476 receipt. Both substantive reviews are recorded for all 504 overlapping records, including 170 individual picker rows and 102 footer link projections. All 25 distinct confirmed product defects have verified production receipts. Three substantiated quality risks remain open. Private operations and separate owner gates are documented. [Strict page record](PAGE-RECORD.json) · [Exact #476 receipt](trade-release-reconciliation/RELEASE-476.json)

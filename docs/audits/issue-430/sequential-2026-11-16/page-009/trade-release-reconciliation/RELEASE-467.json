@@ -1,0 +1,75 @@
+{
+  "pullRequest": 467,
+  "finalHeadSHA": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44220316719/job/134524236414",
+      "head_sha": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+      "id": 134524236414,
+      "name": "TradeHQ Required validation"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/554264d2-2e2c-4eb6-96f6-e9c4f30ecccb",
+      "head_sha": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+      "id": 134520754268,
+      "name": "Cloudflare Pages"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44220316719/job/134520245664",
+      "head_sha": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+      "id": 134520245664,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44220316719/job/134520245307",
+      "head_sha": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+      "id": 134520245307,
+      "name": "TradeHQ Phase 3 tests"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44220316675/job/134520245145",
+      "head_sha": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+      "id": 134520245145,
+      "name": "TradeHQ Disposable PostgreSQL controls"
+    }
+  ],
+  "mergeSHA": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+  "mergedTreeEqualsFinalHeadTree": "cfc3e892de1d931258a85bcaebf27c49c8b89b73",
+  "previewURL": "https://554264d2.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T02:24:21.996Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "e48ebf3c-baca-48ec-9df9-ad38a71db6a7",
+      "sha": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T02:13:25.378672Z"
+    },
+    "sourceGitHubRun": 44221647574,
+    "sourceGitHubJob": 134529145088,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44221647574/job/134529145088"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveRereadAtUTC": "2026-11-18T02:25:41.543620+00:00",
+  "liveEvidence": [
+    "production467-final-fx-chart.json",
+    "production467-final-trade-favorite-names.json",
+    "production467-final-btc-favorite-names.json"
+  ],
+  "findings": [
+    "STRICT-TRADE-003",
+    "STRICT-TRADE-004"
+  ],
+  "after": "Independent production contexts confirmed EUR/USD, EUR/GBP and USD/JPY title and line-chart units and retained USDC/USD. Both distinct ZS favorite actions and browser-local Add/Remove pressed states passed on /trade and /trade/btc.",
+  "status": "FIXED-RECHECKED",
+  "pageClosureCredit": 0
+}

@@ -26,7 +26,7 @@
     "text": "Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.",
     "sha256": "ddc59966f2e5bb39d6a19c557fc5559a94397b520ed7e7912d0a0592e08462c0",
     "source": "src/components/trading/MobileOrderDrawer.tsx",
-    "sourceRevision": "compiled candidate",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
     "sourceSHA256": "8a3686634b91cba849f33ccc8f00fdd4485264696e8c8f14525eb329bc932c9d",
     "capture": "local-order-wording.json",
     "captureSHA256": "c745674e066ed2a458f264d4012d9e7909e7a9c41beef56c92a01bcc5df0ebe8",
@@ -38,8 +38,13 @@
       "reason": "Local 390px /trade and 430px /trade/btc show the adjusted copy. Its claims match both the changing-quote and rejected stale-quote SQL cases."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The 390px /trade and 430px /trade/btc drawers expose estimate wording and explain changed or unavailable quotes. The 1440px estimate remains correct. No submission occurred."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production470-final-order-wording.json",
+    "productionEvidenceSHA256": "f8d28674c01f4dca180277ac3c2b4124542e947cafe2c3cc8dad04d31e3be88f",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-470.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0114",
