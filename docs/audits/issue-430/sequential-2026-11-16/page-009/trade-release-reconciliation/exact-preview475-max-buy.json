@@ -1,0 +1,21 @@
+{
+  "scope": "Synthetic browser-local guest using controlled AAPL input with external calls blocked. No order submitted.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T08:39:10.797305+00:00",
+      "quantity": "391.3813",
+      "feeInclusiveTotal": "99999.976901825",
+      "submitDisabled": false,
+      "snapshot": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\" [pressed]\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"391.3813\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $99999.98\n  - button \"Buy AAPL\""
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T08:39:11.136909+00:00",
+      "quantity": "391.3813",
+      "feeInclusiveTotal": "99999.976901825",
+      "submitDisabled": false,
+      "snapshot": "- button \"Buy\" [pressed]\n- button \"Sell\"\n- text: \"Amount Max: 391.3813 AAPL\"\n- spinbutton \"Amount in AAPL\": \"391.3813\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input \u00b7 USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $99.90 Total (USD) $99999.98 Est. position value $99900.08 You are placing a market buy for 391.3813 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Buy AAPL\""
+    }
+  ]
+}

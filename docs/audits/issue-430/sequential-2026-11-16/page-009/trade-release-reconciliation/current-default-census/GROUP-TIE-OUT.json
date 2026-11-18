@@ -2,11 +2,10 @@
   "rawSource": "RAW-RECONCILIATION.json",
   "scope": "Individual raw-fragment linkage for the existing 247 residual groups, using semantic source and existing reviewed evidence. No added two-pass credit for repeated fragments.",
   "counts": {
-    "TIED-TO-REVIEWED-PROJECTION": 214,
+    "TIED-TO-REVIEWED-PROJECTION": 215,
     "REVIEWED-LABELS; CONTROL-RELEASE-PENDING": 2,
     "REVIEWED-PROJECTIONS; MAXIMUM-RELEASE-PENDING": 10,
     "REVIEWED-PROJECTIONS; DATA-ACCESS-RELEASE-PENDING": 7,
-    "OPEN-DYNAMIC-NOTICE-PAYLOAD": 1,
     "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING": 12,
     "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
   },
@@ -2745,9 +2744,9 @@
         "STRICT-0009-CENSUS-03-0001"
       ],
       "textSHA256": "9cd724a0d7efc412b0b67c555115c789a419adfe10c643be1b8d7f25606114ff",
-      "reference": "0491",
-      "status": "OPEN-DYNAMIC-NOTICE-PAYLOAD",
-      "rereadReason": "The dynamic notice mechanism and link were reviewed. This historical headline has no journaled content-source counterpart yet."
+      "reference": "0496",
+      "status": "TIED-TO-REVIEWED-PROJECTION",
+      "rereadReason": "The exact headline resolves to the approved 13 November release and tested Daily Practice behavior."
     },
     {
       "group": 186,

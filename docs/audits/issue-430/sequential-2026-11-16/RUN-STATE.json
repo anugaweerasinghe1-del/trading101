@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T08:38:21.374838+00:00",
+  "updatedAtUTC": "2026-11-18T08:46:21.454575+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -121,7 +121,7 @@
       "STRICT-0009-BLOCK-0483",
       "STRICT-0009-BLOCK-0485"
     ],
-    "nextExactContentState": "Historical release notice group 185 needs an independent payload reference. Finish #475 exact reviews and conditional control inventory. The 247 default raw fragment groups now have an explicit disposition."
+    "nextExactContentState": "All 247 default fragment groups are now tied to evidence or an explicit #475 state gate. Final post-native P09 capture, conditional state validation and quality-risk/owner-scope decisions remain due."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -199,9 +199,9 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 485,
-    "firstPass": 485,
-    "secondPass": 485,
+    "textRecords": 486,
+    "firstPass": 486,
+    "secondPass": 486,
     "separateCandidateRecords": 10,
     "separateCandidateSecondPass": 5,
     "pickerRowsTwoPass": 170,
@@ -217,8 +217,7 @@
     "footerStateAndIntervalTwoPass": 13,
     "quoteWidgetStateProjectionsTwoPass": 7,
     "navigationStatesTwoPass": 7,
-    "rawResidualGroupsMapped": 247,
-    "openHistoricalNoticeGroup": 185
+    "rawResidualGroupsMapped": 247
   },
   "partiallyReviewedPublisherPages": 14
 }

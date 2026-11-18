@@ -1,0 +1,33 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0496",
+    "text": "Daily cases now revisit topics you missed",
+    "sha256": "9cd724a0d7efc412b0b67c555115c789a419adfe10c643be1b8d7f25606114ff",
+    "source": "src/content/releases/approved.json; src/components/ReleaseNotices.tsx; src/lib/dailyPracticeProgress.ts",
+    "sourceRevision": "a51634bf345d337455da317d06bf411bd8b4e275",
+    "sourcePayload": {
+      "id": "release-adaptive-reviewed-daily-20261113",
+      "date": "2026-11-13",
+      "category": "Learning",
+      "title": "Daily cases now revisit topics you missed",
+      "summary": "Completed case-study answers on this browser can guide the next reviewed Daily case toward a topic you missed. New learners keep the regular rotation; approved questions, saved answers and streaks remain unchanged.",
+      "href": "/daily",
+      "action": "Try Daily Practice",
+      "announce": true
+    },
+    "rawOccurrences": [
+      "STRICT-0009-CENSUS-02-0001",
+      "STRICT-0009-CENSUS-03-0001"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The historical headline is the exact approved learning release. Its notice leads to What’s New and the release content links to Daily Practice."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and existing verifier review",
+      "reason": "The case selection only uses recent completed browser history, reviewed bank content, and a category gap. The fallback serves the regular rotation. The existing verifier passes, matching the full qualified release summary."
+    },
+    "disposition": "NO-ISSUE-IN-HISTORICAL-PROJECTION"
+  }
+]
