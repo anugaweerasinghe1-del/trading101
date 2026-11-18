@@ -1,0 +1,134 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0081",
+    "name": "Buy order preview",
+    "text": "{\"desktop\": \"- button \\\"Buy\\\"\\n- button \\\"Sell\\\"\\n- text: \\\"Amount Max: 391.3814 AAPL\\\"\\n- spinbutton \\\"Amount in AAPL\\\": \\\"2\\\"\\n- text: AAPL\\n- button \\\"25%\\\"\\n- button \\\"50%\\\"\\n- button \\\"75%\\\"\\n- button \\\"100%\\\"\\n- img\\n- text: Ghost Journal\\n- switch \\\"Enable Ghost Journal\\\"\\n- paragraph: Virtual execution input \u00b7 USD per simulator unit\\n- text: Price (USD/unit) $255.25\\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\\n- text: Fee (0.1%) $0.51 Total (USD) $511.01 Est. position value $510.50 You are placing a market buy for 2.0000 AAPL at approximately $255.25 USD per simulator unit.\\n- button \\\"Buy AAPL\\\"\", \"mobile\": \"- dialog \\\"AAPL$255.25 USD/unit Close order panel\\\":\\n  - heading \\\"AAPL$255.25 USD/unit Close order panel\\\" [level=2]:\\n    - text: AAPL$255.25 USD/unit\\n    - button \\\"Close order panel\\\"\\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\\n  - button \\\"Buy\\\"\\n  - button \\\"Sell\\\"\\n  - paragraph: Market order \u2014 fills immediately at the shown simulator price.\\n  - text: \\\"Amount (AAPL) Available: $100,000\\\"\\n  - spinbutton \\\"Amount in AAPL\\\": \\\"2\\\"\\n  - button \\\"25%\\\"\\n  - button \\\"50%\\\"\\n  - button \\\"75%\\\"\\n  - button \\\"100%\\\"\\n  - slider \\\"Order size as a percentage of available cash\\\"\\n  - img\\n  - text: Ghost Journal\\n  - switch \\\"Enable Ghost Journal\\\"\\n  - text: Total (USD) $511.01\\n  - button \\\"Buy AAPL\\\"\"}",
+    "sha256": "d73752c3022990d89e5fbd343e12c9d2d9a091399015a089a387f1ff6d15249d",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile shows Total (USD) $511.01 for two practice units and available cash $100,000."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Desktop separately shows an approximate $255.25 per unit, $510.50 estimated position, $0.51 fee and the same $511.01 rounded total.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0082",
+    "name": "Sell order preview",
+    "text": "{\"desktop\": \"- button \\\"Buy\\\"\\n- button \\\"Sell\\\"\\n- text: \\\"Amount Max: 2.0000 AAPL\\\"\\n- spinbutton \\\"Amount in AAPL\\\": \\\"2\\\"\\n- text: AAPL\\n- button \\\"25%\\\"\\n- button \\\"50%\\\"\\n- button \\\"75%\\\"\\n- button \\\"100%\\\"\\n- img\\n- text: Ghost Journal\\n- switch \\\"Enable Ghost Journal\\\"\\n- paragraph: Virtual execution input \u00b7 USD per simulator unit\\n- text: Price (USD/unit) $255.25\\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\\n- text: Fee (0.1%) $0.51 Total (USD) $509.99 Est. position value $510.50 You are placing a market sell for 2.0000 AAPL at approximately $255.25 USD per simulator unit.\\n- button \\\"Sell AAPL\\\"\", \"mobile\": \"- dialog \\\"AAPL$255.25 USD/unit Close order panel\\\":\\n  - heading \\\"AAPL$255.25 USD/unit Close order panel\\\" [level=2]:\\n    - text: AAPL$255.25 USD/unit\\n    - button \\\"Close order panel\\\"\\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\\n  - button \\\"Buy\\\"\\n  - button \\\"Sell\\\"\\n  - paragraph: Market order \u2014 fills immediately at the shown simulator price.\\n  - text: \\\"Amount (AAPL) Available: $99,488.99\\\"\\n  - spinbutton \\\"Amount in AAPL\\\": \\\"2\\\"\\n  - button \\\"25%\\\"\\n  - button \\\"50%\\\"\\n  - button \\\"75%\\\"\\n  - button \\\"100%\\\"\\n  - slider \\\"Order size as a percentage of holdings\\\"\\n  - img\\n  - text: Ghost Journal\\n  - switch \\\"Enable Ghost Journal\\\"\\n  - text: Total (USD) $509.99\\n  - button \\\"Sell AAPL\\\"\"}",
+    "sha256": "0373334760a8deb2b1078d60b32266338cb40c17b75d6c3ffccd821e5e6d0715",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Closing two held units displays $509.99. The name refers to holdings percentage."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The desktop record separately shows two holdings, the same order price and correct fee subtraction. The browser-local portfolio ends flat.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0083",
+    "name": "Insufficient cash state",
+    "text": "{\"desktop\": \"- button \\\"Buy\\\"\\n- button \\\"Sell\\\"\\n- text: \\\"Amount Max: 391.3814 AAPL\\\"\\n- spinbutton \\\"Amount in AAPL\\\": \\\"5000\\\"\\n- text: AAPL\\n- button \\\"25%\\\"\\n- button \\\"50%\\\"\\n- button \\\"75%\\\"\\n- button \\\"100%\\\"\\n- img\\n- text: Ghost Journal\\n- switch \\\"Enable Ghost Journal\\\"\\n- paragraph: Virtual execution input \u00b7 USD per simulator unit\\n- text: Price (USD/unit) $255.25\\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\\n- text: Fee (0.1%) $1276.25 Total (USD) $1277526.25 Est. position value $1276250.00 You are placing a market buy for 5000.0000 AAPL at approximately $255.25 USD per simulator unit.\\n- paragraph: You do not have enough cash for this order including fees.\\n- button \\\"Buy AAPL\\\" [disabled]\", \"mobile\": \"- dialog \\\"AAPL$255.25 USD/unit Close order panel\\\":\\n  - heading \\\"AAPL$255.25 USD/unit Close order panel\\\" [level=2]:\\n    - text: AAPL$255.25 USD/unit\\n    - button \\\"Close order panel\\\"\\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\\n  - button \\\"Buy\\\"\\n  - button \\\"Sell\\\"\\n  - paragraph: Market order \u2014 fills immediately at the shown simulator price.\\n  - text: \\\"Amount (AAPL) Available: $100,000\\\"\\n  - spinbutton \\\"Amount in AAPL\\\": \\\"5000\\\"\\n  - button \\\"25%\\\"\\n  - button \\\"50%\\\"\\n  - button \\\"75%\\\"\\n  - button \\\"100%\\\"\\n  - slider \\\"Order size as a percentage of available cash\\\"\\n  - img\\n  - text: Ghost Journal\\n  - switch \\\"Enable Ghost Journal\\\"\\n  - text: Total (USD) $1277526.25\\n  - button \\\"Buy AAPL\\\" [disabled]\"}",
+    "sha256": "fb521ea831548782db05dac6c982a419e1413ff426421475994faa5ec73e2ad4",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The 5,000-unit fixed-price fixture disables Buy before submission."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Desktop explicitly explains that cash is insufficient including fees. The mobile case preserves the disabled action.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0084",
+    "name": "Oversell state",
+    "text": "{\"desktop\": \"- button \\\"Buy\\\"\\n- button \\\"Sell\\\"\\n- text: \\\"Amount Max: 2.0000 AAPL\\\"\\n- spinbutton \\\"Amount in AAPL\\\": \\\"3\\\"\\n- text: AAPL\\n- button \\\"25%\\\"\\n- button \\\"50%\\\"\\n- button \\\"75%\\\"\\n- button \\\"100%\\\"\\n- img\\n- text: Ghost Journal\\n- switch \\\"Enable Ghost Journal\\\"\\n- paragraph: Virtual execution input \u00b7 USD per simulator unit\\n- text: Price (USD/unit) $255.25\\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\\n- text: Fee (0.1%) $0.77 Total (USD) $764.98 Est. position value $765.75 You are placing a market sell for 3.0000 AAPL at approximately $255.25 USD per simulator unit.\\n- paragraph: You cannot sell more than your current position in this simulator.\\n- button \\\"Sell AAPL\\\" [disabled]\", \"mobile\": \"- dialog \\\"AAPL$255.25 USD/unit Close order panel\\\":\\n  - heading \\\"AAPL$255.25 USD/unit Close order panel\\\" [level=2]:\\n    - text: AAPL$255.25 USD/unit\\n    - button \\\"Close order panel\\\"\\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\\n  - button \\\"Buy\\\"\\n  - button \\\"Sell\\\"\\n  - paragraph: Market order \u2014 fills immediately at the shown simulator price.\\n  - text: \\\"Amount (AAPL) Available: $99,488.99\\\"\\n  - spinbutton \\\"Amount in AAPL\\\": \\\"3\\\"\\n  - button \\\"25%\\\"\\n  - button \\\"50%\\\"\\n  - button \\\"75%\\\"\\n  - button \\\"100%\\\"\\n  - slider \\\"Order size as a percentage of holdings\\\"\\n  - img\\n  - text: Ghost Journal\\n  - switch \\\"Enable Ghost Journal\\\"\\n  - text: Total (USD) $764.98\\n  - button \\\"Sell AAPL\\\" [disabled]\"}",
+    "sha256": "a6eb0c90509b5d933863c313c81f8e33c5270b0b6272fa498c0e0ef12d59d512",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Three requested units exceed the two-held position and disable Sell."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Desktop states the current-position constraint. The mobile case holds the disabled state. Closing exactly two units works.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0085",
+    "name": "Buy execution notification",
+    "text": "{\"desktop\": \"- region \\\"Notifications (F8)\\\":\\n  - list:\\n    - status:\\n      - text: \ud83d\udfe2 Order Executed Bought 2 AAPL\\n      - button \\\"Dismiss notification\\\"\", \"mobile\": \"- region \\\"Notifications (F8)\\\":\\n  - list:\\n    - status:\\n      - text: \ud83d\udfe2 Order Executed Bought 2 AAPL\\n      - button \\\"Dismiss notification\\\"\"}",
+    "sha256": "10c9afc523f8d339fce4bda557395630e29d9e9d38fe782f89435d96aa7685f5",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The mobile local transaction reports Bought 2 AAPL after a successful result."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The separate desktop result announces the same completed side and amount. The recorded guest cash equals 100000 minus 510.50 minus 0.5105.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0086",
+    "name": "Sell execution notification",
+    "text": "{\"desktop\": \"- region \\\"Notifications (F8)\\\":\\n  - list:\\n    - status:\\n      - text: \ud83d\udd34 Order Executed Sold 2 AAPL\\n      - button \\\"Dismiss notification\\\"\", \"mobile\": \"- region \\\"Notifications (F8)\\\":\\n  - list:\\n    - status:\\n      - text: \ud83d\udd34 Order Executed Sold 2 AAPL\\n      - button \\\"Dismiss notification\\\"\"}",
+    "sha256": "d9a0362fcec74abdd2b49138481c727f6a465ac8bdc8b2a7c5d79115367e0a0e",
+    "sourceRevision": "c6f5ed80c237f58ac84681c5e7722d35960bca17",
+    "source": "src/pages/Trade.tsx; src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx; src/lib/portfolio.ts",
+    "captures": [
+      "local-guest-order.json"
+    ],
+    "scope": "Disposable loopback guest only, production providers blocked",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The mobile local transaction reports Sold 2 AAPL after the separate sell."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The desktop result matches the side and amount. Final cash 99998.979 reflects only the two exact virtual fees as the fixture fixed the price.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  }
+]

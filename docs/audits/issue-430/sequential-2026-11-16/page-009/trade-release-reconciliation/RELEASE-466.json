@@ -1,0 +1,75 @@
+{
+  "pullRequest": 466,
+  "finalHeadSHA": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44218157001/job/134517412193",
+      "head_sha": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+      "id": 134517412193,
+      "name": "TradeHQ Required validation"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/2dbcd8a6-112a-427c-8d71-aeb5742d6911",
+      "head_sha": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+      "id": 134513746338,
+      "name": "Cloudflare Pages"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44218157001/job/134513094850",
+      "head_sha": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+      "id": 134513094850,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44218157043/job/134513094656",
+      "head_sha": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+      "id": 134513094656,
+      "name": "TradeHQ Disposable PostgreSQL controls"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44218157001/job/134513094562",
+      "head_sha": "848ce7aa4ff63a4e573d0dbe35a49f452f52a2a9",
+      "id": 134513094562,
+      "name": "TradeHQ Phase 3 tests"
+    }
+  ],
+  "mergeSHA": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+  "mergedTreeEqualsFinalHeadTree": "979f030586c7e588ee77c59601057428f30155a7",
+  "previewURL": "https://2dbcd8a6.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T02:07:32.305Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "3ba41b2a-5558-435a-9fd2-46126b50134e",
+      "sha": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T01:56:10.173956Z"
+    },
+    "sourceGitHubRun": 44219533781,
+    "sourceGitHubJob": 134522133912,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44219533781/job/134522133912"
+  },
+  "productionURL": "https://www.thetradehq.com/trade",
+  "liveRereadAtUTC": "2026-11-18T02:08:28.147364+00:00",
+  "liveEvidence": [
+    "production466-final-intro.json",
+    "production466-final-trade-drawer.json",
+    "production466-final-btc-drawer.json"
+  ],
+  "findings": [
+    "STRICT-TRADE-001",
+    "STRICT-TRADE-002"
+  ],
+  "after": "Fresh custom-domain mobile and desktop intro copy; both retained #454 answers; separate Buy/Sell slider labels and named dismiss action on two mobile widths for /trade and /trade/btc.",
+  "status": "FIXED-RECHECKED",
+  "pageClosureCredit": 0
+}
