@@ -1,0 +1,180 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0476",
+    "findingId": "STRICT-TRADE-019",
+    "text": "Line chart pointer tooltip with no keyboard focus",
+    "sha256": "62ac88596df1a5a7d2a509022e2db176c4e26b33f23c1f412a2c86fa005f2434",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "contentReference": "before-chart-keyboard.json",
+    "contentSHA256": "fdff02f48dcf194cbca8e7650e66d62ee9f9831fd867c663e685849871c6166d",
+    "sourceVersion": "pre-edit public observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public widths show price and time on pointer hover. The SVG is skipped in tab order."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The disabled Recharts accessibility layer explains the reproduced Tab difference.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0477",
+    "findingId": "STRICT-TRADE-019",
+    "text": "Line chart named keyboard exploration",
+    "sha256": "11d27b7367bf2d3bc35904b60c2ced5520ad9d8e317eaa39b1159e150df8be73",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "contentReference": "final475-local-chart-keyboard.json",
+    "contentSHA256": "8668e353886639cd01c99c361e79a21eceb097edc416c62563f05f5e64b1727e",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled widths focus the chart and render different time and price tooltips on successive arrow presses."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0478",
+    "findingId": "STRICT-TRADE-020",
+    "text": "Candlestick values visible in canvas only",
+    "sha256": "bc55b447771d4526f2d7eecab4ba535d4d9bd5542aaeeca6233e154bd2a51360",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "contentReference": "before-chart-keyboard.json",
+    "contentSHA256": "fdff02f48dcf194cbca8e7650e66d62ee9f9831fd867c663e685849871c6166d",
+    "sourceVersion": "pre-edit public observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public chart canvases are untabbable and expose no readable candle-data control."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The existing chart canvas renders ranges and values through graphics. Source supplies no OHLC text equivalent.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0479",
+    "findingId": "STRICT-TRADE-020",
+    "text": "View candlestick data | Time, Open, High, Low, Close",
+    "sha256": "4823d744e0eef38c9fe10ef37fd01732e7c4c3dbdaa13114bd535d5eb1d264f7",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "contentReference": "final475-local-accessible-candle-table.json",
+    "contentSHA256": "e144fb506f02a1eabf0d667b30deaf9a61ecba5710d907a4a83eb0d7fd3c18b5",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Keyboard disclosure exposes 24 provider-shaped and 261 simulated rows and formatted UTC, currency and captions. Closing removes table content."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0480",
+    "findingId": "STRICT-TRADE-021",
+    "text": "Buy and Sell with no selected mode attribute",
+    "sha256": "5262a7953acf8c40f9287047ba2ec984c2e64f5ad9f4022385504f75a03d582c",
+    "source": "src/components/trading/MobileOrderDrawer.tsx; MinimalistOrderPanel.tsx",
+    "contentReference": "before-trade-order-side-state.json",
+    "contentSHA256": "a127d3778c8af847ed6b49ae78eb79d337ec1502a809cab1100d8e71058f37bc",
+    "sourceVersion": "pre-edit public observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Three public layouts change their active Buy/Sell action with Enter while both pressed states are absent."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The order mode and active action change in source but neither set of buttons exposes it.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0481",
+    "findingId": "STRICT-TRADE-021",
+    "text": "Buy and Sell expose the selected mode",
+    "sha256": "9fa6ee33ee3c42ec7422caaf122a989b3ed448a21e2973c831ee411d7d1f94f4",
+    "source": "src/components/trading/MobileOrderDrawer.tsx; MinimalistOrderPanel.tsx",
+    "contentReference": "final475-local-trade-order-side-state.json",
+    "contentSHA256": "7f0a5ca8db1076b91b717a0f1c5ce33321cf13b4dfd8bc4b86df43fb9f2c97e3",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Three local browser layouts expose exactly one pressed state across nine mode transitions."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0482",
+    "findingId": "STRICT-TRADE-022",
+    "text": "Mobile order title includes the Close order panel action",
+    "sha256": "7c3b6639b25ee00cb66ed907610f0b32fe2aa1e91c8fcdfd0b54ccd201d663cd",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "contentReference": "before-trade-order-side-state.json",
+    "contentSHA256": "a127d3778c8af847ed6b49ae78eb79d337ec1502a809cab1100d8e71058f37bc",
+    "sourceVersion": "pre-edit public observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public mobile headings include the close action and concatenate the symbol and price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "DOM source nests the named button within DrawerTitle. The previous label correction remains independently verified.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0483",
+    "findingId": "STRICT-TRADE-022",
+    "text": "Mobile order title names the asset and price",
+    "sha256": "1931d4d6c6eec8933e23b71ffd6dbc296fc3c2f2d46f376bc8a9229eb4c5055f",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "contentReference": "final475-local-trade-order-side-state.json",
+    "contentSHA256": "7f0a5ca8db1076b91b717a0f1c5ce33321cf13b4dfd8bc4b86df43fb9f2c97e3",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled headings separate symbol and price. Close remains independently named and receives Enter."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0484",
+    "findingId": "STRICT-TRADE-023",
+    "text": "100% AAPL buy selects 391.3814 and exceeds cash",
+    "sha256": "6dbdcb0b05736c6f499d169f63b1182343a61f5491b38c2b2140f4251a6c0df9",
+    "source": "src/components/trading/MinimalistOrderPanel.tsx",
+    "contentReference": "before-max-buy.json",
+    "contentSHA256": "f6e347b403bd06522557cc00fe901ee40d518e4168096d0712c103b4c4512ffa",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The desktop maximum exceeded the $100,000 virtual balance after the fee and the buy action became disabled."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "391.3814 × 255.25 × 1.001 = 100000.00245235. A separately captured mobile view rounds down and remains enabled.",
+      "reviewer": "Codex assistant, separate arithmetic and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0485",
+    "findingId": "STRICT-TRADE-023",
+    "text": "100% AAPL buy selects 391.3813 and fits cash",
+    "sha256": "8e964c0a8f2d03cad1ec95053a42486e7c31ed8c2c39f2829c052b80ea64314b",
+    "source": "src/components/trading/MinimalistOrderPanel.tsx",
+    "contentReference": "final475-local-max-buy.json",
+    "contentSHA256": "8058fcaea0c4b8f3e880101b52b11110128b6e91838ae850c59be3b0c9566cbc",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The compiled desktop and mobile examples both choose an enabled fee-inclusive amount of 391.3813. No order was submitted."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]

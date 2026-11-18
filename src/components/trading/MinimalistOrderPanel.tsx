@@ -51,8 +51,9 @@ export function MinimalistOrderPanel({
   }, [asset, portfolio]);
 
   const maxBuyQuantity = price > 0 ? availableCash / (price * 1.001) : 0;
+  const maxBuyAmount = Math.floor(maxBuyQuantity * 10_000) / 10_000;
   const maxSellQuantity = currentPosition?.quantity ?? 0;
-  const maxActionQuantity = side === "buy" ? maxBuyQuantity : maxSellQuantity;
+  const maxActionQuantity = side === "buy" ? maxBuyAmount : maxSellQuantity;
 
   const handleQuickAmount = useCallback(
     (percentage: number) => {
@@ -135,6 +136,7 @@ export function MinimalistOrderPanel({
           <button
             type="button"
             onClick={() => setSide("buy")}
+            aria-pressed={side === "buy"}
             className={cn(
               "flex-1 rounded-lg py-2.5 text-sm font-semibold transition-all",
               side === "buy"
@@ -147,6 +149,7 @@ export function MinimalistOrderPanel({
           <button
             type="button"
             onClick={() => setSide("sell")}
+            aria-pressed={side === "sell"}
             className={cn(
               "flex-1 rounded-lg py-2.5 text-sm font-semibold transition-all",
               side === "sell"

@@ -4,6 +4,8 @@ import type { UTCTimestamp } from "lightweight-charts";
 import { Asset } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { marketRequests } from "@/lib/marketDataClient";
+import { formatPrice } from "@/lib/assets";
+import { quoteDisplay } from "@/lib/quoteDisplay";
 
 interface NeuralPulseChartProps {
   asset: Asset;
@@ -75,6 +77,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
   const [liveData, setLiveData] = useState<OHLCData[] | null>(null);
   const [dataSource, setDataSource] = useState<'provider' | 'simulated'>('simulated');
   const [isLoadingData, setIsLoadingData] = useState(false);
+  const [showData, setShowData] = useState(false);
 
   const config = RANGE_CONFIG[range];
 
@@ -282,6 +285,34 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
         </div>
       </div>
       <div ref={containerRef} className="w-full" />
+      <details className="px-4 py-2 text-sm" onToggle={event => setShowData(event.currentTarget.open)}>
+        <summary className="cursor-pointer">View candlestick data</summary>
+        {showData && (
+          <div role="region" aria-label="Candlestick data table" tabIndex={0} className="mt-2 max-h-72 overflow-auto">
+            <table className="w-full text-left text-xs tabular-nums">
+              <caption className="sr-only">{asset.symbol} {range} {dataSource === 'provider' ? 'provider history' : 'simulated'} candles</caption>
+              <thead>
+                <tr>
+                  <th scope="col" className="p-2">Time</th>
+                  {['Open', 'High', 'Low', 'Close'].map(label => <th key={label} scope="col" className="p-2">{label}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {chartData.map(candle => (
+                  <tr key={candle.time} className="border-t border-border/30">
+                    <th scope="row" className="whitespace-nowrap p-2 font-normal">
+                      {typeof candle.time === 'number' ? `${new Date(candle.time * 1000).toISOString().slice(0, 16).replace('T', ' ')} UTC` : candle.time}
+                    </th>
+                    {[candle.open, candle.high, candle.low, candle.close].map((price, index) => (
+                      <td key={index} className="p-2">{quoteDisplay(asset, formatPrice(price, asset.type))}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </details>
       <p className="px-4 py-2 text-xs text-muted-foreground">
         TradingView Lightweight Charts™ · Copyright (с) 2023{" "}
         <a className="underline hover:text-foreground" href="https://www.tradingview.com/">TradingView, Inc.</a>
