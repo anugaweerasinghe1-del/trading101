@@ -19,29 +19,31 @@
   },
   "STRICT-GUIDE-004": {
     "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "status": "FIXED-RECHECKED",
     "policyViolation": false,
     "finding": "Toast dismiss button lacked a programmatic name in source, DOM and Chromium accessibility tree.",
     "beforeEditIssueComment": 6955841776,
     "evidence": "guide/toast-close-countercheck.json",
     "remedy": "Default Dismiss notification name, caller override preserved; decorative X hidden from accessibility tree.",
-    "localVerification": "guide/local-credit-toast-credit-toast.json"
+    "localVerification": "guide/local-credit-toast-credit-toast.json",
+    "receipt": "RELEASE-462.json"
   },
   "STRICT-HOME-001-GUIDE-EXTENSION": {
     "rootCase": "STRICT-HOME-001",
     "classification": "SUBSTANTIATED QUALITY RISK",
-    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "status": "FIXED-RECHECKED",
     "newUniqueRootCase": false,
     "policyViolation": false,
     "finding": "Guide custom footer omitted existing verified music creator/source/license links. Credits elsewhere prevent an infringement conclusion.",
     "beforeEditIssueComment": 6955623270,
     "evidence": "guide/music-credit-extension-before.json",
     "remedy": "Reuse exact approved shared-footer attribution; no license decision or music bytes changed.",
-    "localVerification": "guide/local-credit-toast-credit-toast.json"
+    "localVerification": "guide/local-credit-toast-credit-toast.json",
+    "receipt": "RELEASE-462.json"
   },
   "STRICT-GUIDE-005": {
     "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-    "status": "FIXED-RELEASE-PENDING",
+    "status": "FIXED-MERGED-NATIVE-RECEIPT-PENDING",
     "policyViolation": false,
     "finding": "Accepted maximum-input monetary results visually ellipsized on small screens; complete DOM text retained.",
     "beforeEditIssueComment": 6956311244,
@@ -49,6 +51,47 @@
     "evidence": "guide/before005-number-readability.json",
     "remedy": "Stack result cards below sm and permit wrapping; preserve all formulas and bounds.",
     "coordination": "All8 open PR file lists checked; PR7 formula/deduction/copy patch inspected, no overlapping result-layout edits adopted or overwritten.",
-    "localVerification": "12 actual Chromium cases320/390/1440 \u00d7 light/dark \u00d75/30% nominal rate; complete visible values, independent closed-form matches, no overflow. Default result/layout4 cases pass; full build and TypeScript pass."
+    "localVerification": "12 actual Chromium cases320/390/1440 \u00d7 light/dark \u00d75/30% nominal rate; complete visible values, independent closed-form matches, no overflow. Default result/layout4 cases pass; full build and TypeScript pass.",
+    "pullRequest": 463,
+    "finalHeadSHA": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+    "mergeSHA": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+    "previewEvidence": "guide/preview463-number-readability.json",
+    "preliminaryLiveEvidence": "guide/production463-number-readability.json"
+  },
+  "STRICT-GUIDE-006": {
+    "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "policyViolation": false,
+    "finding": "Sample quotes move automatically and indefinitely at the default motion setting. No pause, stop or hide control is available.",
+    "page": "https://www.thetradehq.com/learn-trading-guide",
+    "beforeEditIssueComment": 6965658719,
+    "loggedBeforeFix": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6965658719",
+    "source": "src/pages/LearnTradingGuide.tsx",
+    "evidence": "guide/before-ticker.json",
+    "localVerification": "guide/after-ticker.json",
+    "reference": {
+      "name": "WCAG 2.2 SC 2.2.2",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
+      "retrievedUTC": "2026-11-18"
+    },
+    "remedy": "Render the seven sample quotes once in a static wrapping list with the existing non-live disclosure."
+  },
+  "STRICT-GUIDE-007": {
+    "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "policyViolation": false,
+    "finding": "The keyboard-triggered quiz feedback has no programmatic status semantics and focus returns to the body after option buttons disable.",
+    "page": "https://www.thetradehq.com/learn-trading-guide",
+    "beforeEditIssueComment": 6965713563,
+    "loggedBeforeFix": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6965713563",
+    "source": "src/pages/LearnTradingGuide.tsx",
+    "evidence": "guide/before-quiz-status.json",
+    "localVerification": "guide/after-quiz-status.json",
+    "reference": {
+      "name": "WCAG 2.2 SC 4.1.3",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "retrievedUTC": "2026-11-18"
+    },
+    "remedy": "Keep an initially empty status region mounted and populate it with the existing feedback. Keep decorative celebration outside that region and hide it from AT."
   }
 }

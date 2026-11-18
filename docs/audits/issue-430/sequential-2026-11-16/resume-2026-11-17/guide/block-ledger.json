@@ -31801,8 +31801,10 @@
       "reviewer": "same assistant"
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh post-release reread pending; before-state independent countercheck already retained."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "The original title identifies the track, creator and license. The original footer capture has zero direct credit destinations. The fresh linked attribution resolves discoverability. Existing attribution elsewhere remains relevant to any license interpretation.",
+      "evidence": "guide/music-credit-extension-before.json"
     }
   },
   {
@@ -31828,8 +31830,10 @@
       "reviewer": "same assistant"
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh post-release reread pending; before-state independent countercheck already retained."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "Original outerHTML and Chromium tree agree: the dismiss action is an unnamed button with an X image. The fixture merely exercises this UI. The new named action is independently verified.",
+      "evidence": "guide/toast-close-countercheck.json"
     }
   },
   {
@@ -31855,8 +31859,10 @@
       "reviewer": "same assistant"
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh post-release reread pending; before-state independent countercheck already retained."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "The visible credit names Long Road Ahead, Kevin MacLeod and CC BY 4.0. Both source and license links reproduce the existing approved credit on desktop and mobile. This does not create a new root finding.",
+      "evidence": "guide/production462-credit-toast.json"
     }
   },
   {
@@ -31882,8 +31888,10 @@
       "reviewer": "same assistant"
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh post-release reread pending; before-state independent countercheck already retained."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "The Chromium tree exposes a Dismiss notification button. Enter dismisses it on all four views, and the X image no longer appears separately in the tree.",
+      "evidence": "guide/production462-credit-toast.json"
     }
   },
   {
@@ -31909,8 +31917,10 @@
       "reviewer": "same assistant"
     },
     "pass2": {
-      "status": "PENDING",
-      "reason": "Fresh post-release reread pending; before-state independent countercheck already retained."
+      "status": "REVIEWED",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "reason": "The denial feedback clearly says the link was not copied and offers manual copying. It was induced in an isolated browser; no actual provider defect was observed.",
+      "evidence": "guide/production462-credit-toast.json"
     }
   },
   {
@@ -32333,6 +32343,116 @@
     "pass2": {
       "status": "PENDING",
       "reason": "Fresh final release reread pending."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0847",
+    "text": "Illustrative ticker examples \u2014 not live market data. Seven hypothetical quotes are duplicated in a continuously scrolling region.",
+    "sha256": "bdcca8523dd82532bdcd0035f7561c7366714215215b598a8b6a93f504483349",
+    "location": "src/pages/LearnTradingGuide.tsx",
+    "componentSourceFiles": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceVersions": {
+      "productionBaseline": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+      "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
+    },
+    "captures": [
+      "guide/before-ticker.json"
+    ],
+    "findingIds": [
+      "STRICT-GUIDE-006"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "At 390px the quote region keeps moving after 5.5 seconds with infinite 25-second CSS iterations and no controls."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separate 1440px context confirms motion despite full viewport width. Reduced-motion fixture suppresses CSS animation. Default users still lack a mechanism to stop the nonessential movement.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0848",
+    "text": "The quiz displays correct/incorrect feedback after keyboard submission, with no live/status ancestor.",
+    "sha256": "92a3693b4976ac78b540ad4bcd48a5bcc118d0c88b664922ee326d456d1e1dae",
+    "location": "src/pages/LearnTradingGuide.tsx",
+    "componentSourceFiles": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceVersions": {
+      "productionBaseline": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+      "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
+    },
+    "captures": [
+      "guide/before-quiz-status.json"
+    ],
+    "findingIds": [
+      "STRICT-GUIDE-007"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Wednesday Double Bottom gives the matching correct text; a wrong answer reveals Double Bottom. All buttons disable and focus returns to BODY. No local live region."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Reviewed separate Golden Cross and Bear Trap contexts and both branches of each. The wrong-result template inserts the actual selected pattern name from source. The global notifications region cannot announce the local paragraph.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0849",
+    "text": "Static quote list: BTC +2.4%, ETH +1.8%, SOL -0.6%, NVDA +3.1%, SPY +0.4%, GOLD +0.9%, EUR/USD -0.2%. All are sample moves and not live market data.",
+    "sha256": "5fc0ac881c68469e7bfdf92872f3772dacc69423cdb67503821b1f227c9f5dad",
+    "location": "src/pages/LearnTradingGuide.tsx",
+    "componentSourceFiles": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceVersions": {
+      "productionBaseline": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+      "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
+    },
+    "captures": [
+      "guide/after-ticker.json"
+    ],
+    "findingIds": [
+      "STRICT-GUIDE-006"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All seven symbols and values match source, occur once as list items, and are visible in the tested viewport without continuous movement or clipping."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Fresh final-release reread pending."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0850",
+    "text": "Daily Challenge result in a mounted status region: Correct! You identified the pattern. / The correct answer was: Double Bottom, Golden Cross or Bear Trap.",
+    "sha256": "43afdaf129f3696037d3dfc306d32aae47ad8406b6672777ef0380b15852553f",
+    "location": "src/pages/LearnTradingGuide.tsx",
+    "componentSourceFiles": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceVersions": {
+      "productionBaseline": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+      "candidateSourceSHA256": "e25a7d62cbd6982a56fd996202dfd19eecf5a437a7485b97b6ce139fd99e57ec"
+    },
+    "captures": [
+      "guide/after-quiz-status.json"
+    ],
+    "findingIds": [
+      "STRICT-GUIDE-007"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Six correctly selected fixture outcomes preserve visible wording, disable options and put feedback inside the persistent status region. Actual accessibility tree confirms the status semantics."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Fresh final-release reread pending."
     }
   }
 ]
