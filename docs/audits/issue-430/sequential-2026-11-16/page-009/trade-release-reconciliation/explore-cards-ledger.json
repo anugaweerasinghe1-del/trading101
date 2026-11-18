@@ -1,0 +1,310 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0301",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "f4b505bc3874c1952fbcd3336673d847a8e0191a31dce40d6cc9b682670cb1e7",
+    "path": "/markets",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "View All preserves its arrow as decoration and the CTA remains clear in the accessibility tree."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The link resolves with 200 for both methods. This records only the target route availability."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0302",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "f868c984f2e1b44ddb412e98f91513f100c8a3ae8070026c09b8549a0f4f8b08",
+    "path": "/trade/usdc",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guided variation includes USD Coin and the default excludes the currently selected USDC."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "$0.9997 and +0.0% reconcile to the named fixed input. The linked practice route hydrates USD Coin with the expected heading."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0303",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "2601c30f738d1b03ca28164a004ac0dcb9a52376e555a63bbd4dcef93e9e36c5",
+    "path": "/trade/usdt",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The clean variation shows Tether $0.9995 FIXED. The seeded delayed projection is tracked separately."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The visible link both navigates inside the SPA and hydrates on a direct GET. The known snapshot status error remains isolated as STRICT-TRADE-011."
+    },
+    "disposition": "EXISTING-STRICT-TRADE-011"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0304",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "f9fabdd314dc026073af95d8771839e9c2ea67dd21996a9a2541c3aaedd2c399",
+    "path": "/trade/dai",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Dai reads $1.0000 and FIXED even with the explicit simulated cache fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The actual price seed is slightly below 1 and rounds to the stated precision. This projection makes no peg parity promise."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0305",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "e59a95efa86439b0a94dae4beed419e695f235ef140c44a3dbd5581fbd3529ff",
+    "path": "/trade/trx",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TRON shows $0.3322 and zero before any provider refresh in these cases."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The card exposes the full uppercase TRON name and valid matching practice route."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0306",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "437fad3eb97f9272f50ae58f8c1221634e9d28d94546ece72741cdbae8ebacdd",
+    "path": "/trade/bch",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bitcoin Cash shows $277.03 in its separate card."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The route heading and label both retain Cash, distinguishing it from BTC."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0307",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "4a4927c9cec8e0fb6aa09e17cb7c16374668a8a3427eac6a83bb5606c7d17bf1",
+    "path": "/trade/ton",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Toncoin defaults to $1.38 despite an expired cache fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "A fresh direct GET hydrates Toncoin. The source expiry behavior prevents the seeded $999 fixture from appearing."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0308",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "4f18ec16170727b916c0e1d56fdd0940cbadac4d33f13dc94ff7c29915c370a4",
+    "path": "/trade/etc",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Ethereum Classic uses ETC, $8.11 and FIXED."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The complete Classic qualifier is readable at both widths and the linked heading preserves it."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0309",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "c27e03c877b332df65a7a9341f5e21303dfbd2f50ffbf87cbb1b73b0a8f990ee",
+    "path": "/trade/xmr",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Monero is the name paired with XMR and $544.27."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The simulated price and response route identity both match XMR."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0310",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "84905ebe5762e92ebda2957c37f97c9b221e8e727a8b75803dcdb87a61ab98f6",
+    "path": "/trade/aave",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Aave appears at $165.18 and FIXED in the controlled projections."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The AAVE card links to the Aave practice simulator and offers no yield claim."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0311",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "76d34c5c246b64da0b2cbb38967f993766961160424fd2c5699d6687f7bac74f",
+    "path": "/trade/grt",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Graph appears as GRT with $0.0262 and FIXED."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The sub-dollar formatting matches the checked-in value and the target heading uses the full project name."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0312",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "5197e80271804fb11cc291e04ef2978cd2148a4a9217c43be74ec383d788c142",
+    "path": "/trade/ldo",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Lido DAO is paired with LDO at $0.4120."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The link labels the practice token and makes no staking-services claim."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0313",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "332b020179dd7b65781d57b1ac1c1d0eb08d5786588bb1ca323f7b38c7908ece",
+    "path": "/trade/rune",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "THORChain shows $0.6789 and FIXED."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The RUNE identity and mixed-case project name are preserved in the route heading."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0314",
+    "contentReference": [
+      "before-explore-cards.json",
+      "explore-card-http.json",
+      "explore-card-browser-targets.json"
+    ],
+    "sha256": "10ff651b9ba86451902fc3fc4796f13e05d4c611bebfcfa4bf14060314a6ce14",
+    "path": "/trade/kas",
+    "source": "src/pages/Trade.tsx; src/lib/additionalCryptoAssets.ts; functions/[[path]].ts",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Kaspa appears as the last default card and is absent in the guided variation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate context and route review",
+      "reason": "The selection exclusion changes which 12 cards fit. The Kaspa link directly hydrates its expected heading."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-PROJECTION"
+  }
+]

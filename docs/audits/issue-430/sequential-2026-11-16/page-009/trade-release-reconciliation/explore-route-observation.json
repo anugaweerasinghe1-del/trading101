@@ -1,0 +1,14 @@
+{
+  "id": "FP-TRADE-EXPLORE-BROKEN-LINKS",
+  "classification": "REJECTED FALSE POSITIVE",
+  "scope": "Explore table and fixture projections",
+  "status": "REJECTED",
+  "reason": "All 13 linked asset routes return 200 for GET and hydrate their correct asset headings. The public /trade Tether click also works. HEAD alone returned 404, consistent with the explicitly GET-only app shell. These noindex, follow assets remain runtime-only routes.",
+  "evidence": [
+    "before-explore-cards.json",
+    "explore-card-http.json",
+    "explore-card-browser-targets.json"
+  ],
+  "pageClosureCredit": 0,
+  "technicalDenominatorChange": 0
+}
