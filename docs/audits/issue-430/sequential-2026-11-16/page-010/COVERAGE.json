@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 123,
-  "secondPass": 122,
+  "firstPass": 126,
+  "secondPass": 126,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -69,8 +69,8 @@
     "STRICT-PORTFOLIO-007"
   ],
   "confirmedProductDefectsReproduced": 7,
-  "confirmedProductDefectsProductionVerified": 6,
-  "nextAction": "Verify and release the quantity correction through its protected PR. Finish conditional source and default control reconciliation before strict P10 closure. Latest completed release is #480.",
+  "confirmedProductDefectsProductionVerified": 7,
+  "nextAction": "Finish P10 remainingReview. All seven confirmed product fixes and both existing-root extensions have verified production receipts. P11 remains queued.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -131,7 +131,7 @@
     "production-current-guest-recovery.json",
     "local-signed-portfolio.json"
   ],
-  "latestApplicationRelease": "232e7daa3162e949186709036ccda8a83826a342",
+  "latestApplicationRelease": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
   "existingRootExtensions": [
     "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
     "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
@@ -165,12 +165,18 @@
   "quantityPR": {
     "number": 481,
     "headSHA": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
-    "status": "MERGED-NATIVE-AND-PUBLIC-READBACK-PENDING",
+    "status": "FIXED-RECHECKED",
     "pendingBlock": "STRICT-0010-BLOCK-0093",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
     "localEvidence": "local-quantity-tiny-position.json",
-    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c"
+    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "receipt": "RELEASE-481.json"
   },
   "sourceOnlyRecoveryErrorRecords": 10,
-  "currentFragmentCrosswalk": "CURRENT-FRAGMENT-CROSSWALK.json"
+  "currentFragmentCrosswalk": "CURRENT-FRAGMENT-CROSSWALK.json",
+  "remainingReview": [
+    "Final source-expression and control applicability crosswalk, including source-only errors and inaccessible private states.",
+    "Record disposition of captured singular grammar in journal and account recovery, then consolidate any justified final copy fixes.",
+    "Run the final coverage validation and page-level skeptical eligibility decision."
+  ]
 }

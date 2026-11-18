@@ -3810,7 +3810,12 @@
       "reason": "Both compiled widths expose 0.00003 and no exact zero quantity label for the stored holding."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Both production responsive states retain the stored 0.00003 AAPL in the visible positions and trade history. The prior zero display no longer appears as an exact quantity label.",
+      "reviewer": "Codex assistant, separate post-native public readback",
+      "contentReference": "production481-final-tiny-position.json",
+      "sourceRevision": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+      "contentSHA256": "36c0e38e0bfc28341310823af469f9c6412088852ebfccd176fc2053ad8a4186"
     },
     "findingId": "STRICT-PORTFOLIO-007"
   },
@@ -4545,5 +4550,71 @@
       "reviewer": "Codex assistant, separate page-context source and existing evidence review"
     },
     "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0124",
+    "text": "Journal notes and emotion entries",
+    "content": [
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\" [selected]\n  - tab \"Emotions\"\n  - tab \"Summary\"\n- tabpanel \"Entries\":\n  - heading \"AAPL\" [level=3]\n  - text: BUY\n  - paragraph: 11/18/2026, 5:42:05 PM\n  - paragraph: $511.01\n  - paragraph: \"Emotions:\"\n  - text: Calm Anxious\n  - paragraph: \"Reasoning:\"\n  - paragraph: Compare the fixture position value and fixed fee before changing size.\n  - paragraph: \"Notes:\"\n  - paragraph: Synthetic private review note.",
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\" [selected]\n  - tab \"Emotions\"\n  - tab \"Summary\"\n- tabpanel \"Entries\":\n  - heading \"AAPL\" [level=3]\n  - text: BUY\n  - paragraph: 11/18/2026, 5:42:04 PM\n  - paragraph: $511.01\n  - paragraph: \"Emotions:\"\n  - text: Calm Anxious\n  - paragraph: \"Reasoning:\"\n  - paragraph: Compare the fixture position value and fixed fee before changing size.\n  - paragraph: \"Notes:\"\n  - paragraph: Synthetic private review note."
+    ],
+    "sha256": "f51116eb62518a1a2ff9548af04702d2c53db256b8798926d96cb5f03ed2cc6c",
+    "contentReference": "production-current-journal-tags.json",
+    "source": "src/components/TradingJournal.tsx; src/lib/tradingJournal.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both responsive entries expose the actual note, reasoning and two emotion tags for the synthetic guest trade."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The values are fixture strings in browser storage. They are rendered as text and provide no actual user-note or server evidence.",
+      "reviewer": "Codex assistant, separate source and responsive judgment"
+    },
+    "limitations": "The captured singular counts have minor grammatical inflection issues. This does not change their arithmetic."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0125",
+    "text": "Emotion breakdown",
+    "content": [
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\"\n  - tab \"Emotions\" [selected]\n  - tab \"Summary\"\n- tabpanel \"Emotions\":\n  - heading \"Emotional Breakdown\" [level=3]\n  - text: anxious 1 calm 1",
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\"\n  - tab \"Emotions\" [selected]\n  - tab \"Summary\"\n- tabpanel \"Emotions\":\n  - heading \"Emotional Breakdown\" [level=3]\n  - text: anxious 1 calm 1"
+    ],
+    "sha256": "811e93646ec0b9d24d6aa1efd0e558564eece9aeaef5cbcad7148957beed015b",
+    "contentReference": "production-current-journal-tags.json",
+    "source": "src/components/TradingJournal.tsx; src/lib/tradingJournal.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The one synthetic entry contributes one count to calm and one to anxious."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source trims and normalizes tags and counts each unique tag per entry. Two tags can belong to the same entry.",
+      "reviewer": "Codex assistant, separate source and responsive judgment"
+    },
+    "limitations": "The captured singular counts have minor grammatical inflection issues. This does not change their arithmetic."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0126",
+    "text": "Summary and retrospective questions",
+    "content": [
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\"\n  - tab \"Emotions\"\n  - tab \"Summary\" [selected]\n- tabpanel \"Summary\":\n  - heading \"Journal Summary\" [level=3]\n  - paragraph: This summary counts your current journal entries and emotion tags in this browser. It uses no AI and does not calculate returns or win rates by emotion.\n  - paragraph: 1 journal entries; 1 include emotion tags.\n  - list:\n    - listitem: anxious 1 of 1 entries\n    - listitem: calm 1 of 1 entries\n  - paragraph: An entry can include several emotions, so counts across tags can exceed the entry total. Frequency does not show whether an emotion caused a profitable or losing trade.\n  - heading \"Questions for your own review\" [level=4]\n  - list:\n    - listitem: How did the action you took compare with your written reason for the trade?\n    - listitem: Did you change your plan, and did you record why?\n    - listitem: What information would help you review the decision later?",
+      "- heading \"Trading Journal\" [level=2]\n- paragraph: 1 trades with journal entries\n- tablist:\n  - tab \"Entries\"\n  - tab \"Emotions\"\n  - tab \"Summary\" [selected]\n- tabpanel \"Summary\":\n  - heading \"Journal Summary\" [level=3]\n  - paragraph: This summary counts your current journal entries and emotion tags in this browser. It uses no AI and does not calculate returns or win rates by emotion.\n  - paragraph: 1 journal entries; 1 include emotion tags.\n  - list:\n    - listitem: anxious 1 of 1 entries\n    - listitem: calm 1 of 1 entries\n  - paragraph: An entry can include several emotions, so counts across tags can exceed the entry total. Frequency does not show whether an emotion caused a profitable or losing trade.\n  - heading \"Questions for your own review\" [level=4]\n  - list:\n    - listitem: How did the action you took compare with your written reason for the trade?\n    - listitem: Did you change your plan, and did you record why?\n    - listitem: What information would help you review the decision later?"
+    ],
+    "sha256": "03b7b1e175246244d7e8473bdf82a373b35149af704f7827a69f9bc6efca6e50",
+    "contentReference": "production-current-journal-tags.json",
+    "source": "src/components/TradingJournal.tsx; src/lib/tradingJournal.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The summary shows one tagged entry with both tag counts and explains its limits. The three review questions ask for reasoning, plan changes and needed evidence."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The text explicitly avoids asserting returns by emotion or causal profitability. The questions do not imply an ideal emotion, trading prescription or assured improvement.",
+      "reviewer": "Codex assistant, separate source and responsive judgment"
+    },
+    "limitations": "The captured singular counts have minor grammatical inflection issues. This does not change their arithmetic."
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T17:31:16.248924+00:00",
+  "updatedAtUTC": "2026-11-18T17:53:46.400058+00:00",
   "phase": "P10-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/portfolio",
   "newAuditCompletedPages": 8,
@@ -16,10 +16,10 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "f7c4e201-b75b-4914-a0bf-9456c9a74ad1",
+  "nativeCloudflareId": "d6310310-736a-42c0-8357-6debb10e2435",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify and release the quantity correction through its protected PR. Finish conditional source and default control reconciliation before strict P10 closure. Latest completed release is #480.",
+  "nextStep": "Finish P10 remainingReview. All seven confirmed product fixes and both existing-root extensions have verified production receipts. P11 remains queued.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -27,7 +27,7 @@
   },
   "freshReviewTotalClosedCases": 51,
   "latestClosedPageRecord": "page-009/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "232e7daa3162e949186709036ccda8a83826a342",
+  "latestCodeMergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -84,7 +84,7 @@
   },
   "publisherPagesRemaining": 155,
   "caseTotals": {
-    "confirmedFixedRechecked": 55,
+    "confirmedFixedRechecked": 56,
     "qualityRisksFixedRechecked": 8,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
@@ -112,7 +112,7 @@
   "activeAssignment": {
     "page": "STRICT-0010",
     "status": "PARTIAL-REVIEW",
-    "nextExactContentState": "Verify and release the quantity correction through its protected PR. Finish conditional source and default control reconciliation before strict P10 closure. Latest completed release is #480."
+    "nextExactContentState": "Finish P10 remainingReview. All seven confirmed product fixes and both existing-root extensions have verified production receipts. P11 remains queued."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -175,7 +175,7 @@
     "ownerDecisionOpen": 1,
     "newCasesImplementedThisResume": 7
   },
-  "latestCodeReleaseReceipt": "page-010/RELEASE-480.json",
+  "latestCodeReleaseReceipt": "page-010/RELEASE-481.json",
   "sessionCaseTotals": {
     "confirmedProductErrorsFixedRechecked": 7,
     "confirmedPolicyIssues": 0,
@@ -215,10 +215,10 @@
   "currentPortfolioCoverage": {
     "record": "page-010/COVERAGE.json",
     "status": "PARTIAL-REVIEW",
-    "firstPass": 123,
-    "secondPass": 122,
+    "firstPass": 126,
+    "secondPass": 126,
     "confirmedProductDefects": 7,
-    "productionVerified": 6,
+    "productionVerified": 7,
     "qualityRisksOpen": 2,
     "existingRootExtensionsOpen": 0
   },
@@ -279,11 +279,12 @@
   },
   "activePortfolioQuantityPR": {
     "number": 481,
-    "headSHA": "6a67ac2",
-    "status": "MERGED-NATIVE-AND-PUBLIC-READBACK-PENDING",
+    "headSHA": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+    "status": "FIXED-RECHECKED",
     "pendingBlock": "STRICT-0010-BLOCK-0093",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
     "localEvidence": "local-quantity-tiny-position.json",
-    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c"
+    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "receipt": "RELEASE-481.json"
   }
 }

@@ -33,3 +33,7 @@ Recovered main and the open Portfolio candidate, reopened tracking issue #430, a
 # Supported quantity display
 
 Two public guest browser cases reproduced a supported 0.00003 AAPL holding displayed as zero in positions and filled history. The narrow correction passes TypeScript, the Cloudflare build and both compiled layouts. PR #481 awaits hosted validation and the normal release loop. Current metadata, schemas, media and empty-state readings are recorded separately. Coverage is 98 first-pass and 97 second-pass records.
+
+# Quantity production verification
+
+#481 passed all five required checks and protected-merged. Exact native Cloudflare proof and later public mobile and desktop cases verify the stored fractional quantity throughout positions and trade history. All seven confirmed Portfolio defects are production-verified. The page remains partial pending final applicability reconciliation and disposition of the captured singular-count wording. [Exact receipt](RELEASE-481.json)
