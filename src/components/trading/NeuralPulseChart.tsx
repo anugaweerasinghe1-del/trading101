@@ -224,7 +224,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2">
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground tracking-tight-cyber">
-            {asset.symbol}/USD
+            {asset.type === "forex" ? asset.symbol : `${asset.symbol}/USD`}
           </span>
           <span className={cn(
             "text-xs px-2 py-0.5 rounded-full font-medium",

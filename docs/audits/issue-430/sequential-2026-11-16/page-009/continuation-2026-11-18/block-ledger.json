@@ -1,0 +1,244 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0060",
+    "name": "Initial and hydrated canonical",
+    "text": "https://www.thetradehq.com/trade",
+    "sha256": "03ab6c8314301305d46e34d152c3e0a2adecaa86dbf4a15cfb6e968481d8cc0e",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/prerender.ts; src/pages/Trade.tsx",
+    "captures": [
+      "../capture-0.json",
+      "../capture-1.json",
+      "../capture-2.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The initial paper simulator metadata names /trade as its canonical."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile and desktop hydration preserve the exact absolute canonical. The guest guided query variant also canonicalizes to /trade."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0061",
+    "name": "Software application schema",
+    "text": "{\"@context\": \"https://schema.org\", \"@type\": \"SoftwareApplication\", \"applicationCategory\": \"FinanceApplication\", \"author\": {\"@type\": \"Person\", \"name\": \"Anuga Weerasinghe\", \"url\": \"https://www.thetradehq.com/about\"}, \"description\": \"Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.\", \"featureList\": [\"$100,000 virtual trading capital\", \"170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)\", \"Rule-based educational mentor\", \"Portfolio performance tracking\", \"Leaderboard competition\", \"Technical analysis indicators\", \"market education hub\"], \"name\": \"TradeHQ\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"USD\"}, \"operatingSystem\": \"Web Browser\", \"publisher\": {\"@type\": \"Organization\", \"name\": \"TradeHQ\", \"url\": \"https://www.thetradehq.com/\"}, \"url\": \"https://www.thetradehq.com/\"}",
+    "sha256": "f87878938fcccb252896db8586537386658d5b4967c2f14939f0f2fd0e099c63",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "index.html; scripts/prerender.ts",
+    "captures": [
+      "../capture-0.json",
+      "../capture-2.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TradeHQ browser simulator describes a zero-dollar software offering and $100,000 virtual trading capital. Feature leaves name the asset inventory, rule-based mentor, portfolio, leaderboard, technical indicators and education hub. The author and publisher URLs identify the public source."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Hydrated metadata matches the initial object. The quoted zero price refers to the offering and coexists with a disclosed 0.1% virtual transaction fee. No reviewer score or actual investment-return claim appears."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0062",
+    "name": "Educational organization schema",
+    "text": "{\"@context\": \"https://schema.org\", \"@type\": \"EducationalOrganization\", \"areaServed\": \"Worldwide\", \"description\": \"Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.\", \"logo\": \"https://www.thetradehq.com/logo.png\", \"name\": \"TradeHQ\", \"teaches\": [\"Stock Trading\", \"Cryptocurrency Investment\", \"Technical Analysis\", \"Risk Management\", \"Portfolio Diversification\", \"Asset Class Allocation\"], \"url\": \"https://www.thetradehq.com/\"}",
+    "sha256": "2097b1fb3c619b49c9c8d880b226e5a3dd2dbc868dc4e0f3dd753a324ceb9418",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "index.html; scripts/prerender.ts",
+    "captures": [
+      "../capture-0.json",
+      "../capture-1.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Organization name and logo identify TradeHQ. Educational topics cover trading, investment, analysis, risk, allocation and diversification. Description qualifies the mechanism as simulation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Mobile browser preserves the initial organization data. Direct logo and homepage URLs resolve, and Worldwide is a targeting descriptor. Private licensing, access from individual regions and provider operations remain outside this observation."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0063",
+    "name": "Breadcrumb schema",
+    "text": "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"item\": \"https://www.thetradehq.com/\", \"name\": \"Home\", \"position\": 1}, {\"@type\": \"ListItem\", \"item\": \"https://www.thetradehq.com/trade\", \"name\": \"Trade Simulator\", \"position\": 2}]}",
+    "sha256": "270d991cb1f84d08b1f34e059775f52ad6d5a6c0e0559c304ce2bb5d154fd7b5",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/SEOSection.tsx; src/pages/Trade.tsx",
+    "captures": [
+      "../capture-2.json",
+      "../capture-1.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Home position 1 and Trade Simulator position 2 match the visible breadcrumb and /trade canonical."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile hydration reproduces the same structured destinations. The initial response omits the client breadcrumb schema, with no conflicting destination."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0064",
+    "name": "FAQ schema linkage",
+    "text": "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. TradeHQ lets guests practise with $100,000 in virtual cash without signup or a credit card. There are no real-money charges; simulated buy and sell orders include a 0.1% virtual transaction fee. (Educational simulation only \u2014 not financial advice.)\"}, \"name\": \"Is the TradeHQ trading simulator free to use?\"}, {\"@type\": \"Question\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Data availability differs by asset. TradeHQ may use live, cached, delayed or simulated quotes, and the interface labels the source when available. Treat all prices as educational rather than execution-quality brokerage data.\"}, \"name\": \"Are the prices on the trading simulator real?\"}, {\"@type\": \"Question\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"170 practice instruments across five asset classes: cryptocurrencies (BTC, ETH, SOL\u2026), US stocks (AAPL, NVDA, TSLA\u2026), ETFs (SPY, QQQ, VOO\u2026), major forex pairs and commodities like gold and oil \u2014 all in one simulated portfolio.\"}, \"name\": \"What can I trade on TradeHQ?\"}, {\"@type\": \"Question\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. Every trade uses virtual currency only \u2014 no real funds are ever at risk. TradeHQ is built purely for education and practice. (Educational simulation only \u2014 not financial advice.)\"}, \"name\": \"Can I lose real money on TradeHQ?\"}, {\"@type\": \"Question\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Choose an asset from the market cards or asset selector, set a virtual order size, then select Buy or Sell. Guest orders are stored in this browser; signed-in account orders and cash/positions are server-recorded when the service is available.\"}, \"name\": \"How do I start practice trading?\"}]}",
+    "sha256": "a9d624ee4e70856161e8937993900152a3b2c31064a66a17bcf456c5dd5291cc",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/SEOSection.tsx; src/pages/Trade.tsx",
+    "captures": [
+      "../capture-2.json",
+      "../capture-1.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Names and accepted answers map to the same five visible disclosures. Existing verified virtual-fee and storage copy appears here."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "All five expanded answer texts were compared again against their hydrated schema entries. The client state preserves question-to-answer associations, including the FAQ fee/storage fixes."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0065",
+    "name": "1H timeframe announcement",
+    "text": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.",
+    "sha256": "67ac8d833636c61cc468eed9a549576fefc87781f6f1b0d04b81c79d20567059",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "captures": [
+      "../fx-chart/before.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile keyboard selects 1H and exposes aria-pressed=true. Both available history and the distinct quote-change period are qualified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Independent desktop event selects 1H and shows the same window and qualifiers. The expression uses the selected timeframe and confers no claim of full provider history."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0066",
+    "name": "4H timeframe announcement",
+    "text": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.",
+    "sha256": "cd997f9e5839ed41d6adfbc3bc5c59960fc6274bfd834f8c5cf37a471e3b47ab",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "captures": [
+      "../fx-chart/before.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile keyboard selects 4H and exposes aria-pressed=true. Both available history and the distinct quote-change period are qualified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Independent desktop event selects 4H and shows the same window and qualifiers. The expression uses the selected timeframe and confers no claim of full provider history."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0067",
+    "name": "1D timeframe announcement",
+    "text": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.",
+    "sha256": "9f990a603a0187fb41d3be11de7cbe9ce589c217ca0b7764a53e59bdf91d8020",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "captures": [
+      "../fx-chart/before.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile keyboard selects 1D and exposes aria-pressed=true. Both available history and the distinct quote-change period are qualified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Independent desktop event selects 1D and shows the same window and qualifiers. The expression uses the selected timeframe and confers no claim of full provider history."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0068",
+    "name": "1W timeframe announcement",
+    "text": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.",
+    "sha256": "950ccd7ffe4501ba50e73c2165b17f88e5dd38bcf6b38d4ef0f577ce8a5d2762",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/MinimalistAreaChart.tsx",
+    "captures": [
+      "../fx-chart/before.json"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile keyboard selects 1W and exposes aria-pressed=true. Both available history and the distinct quote-change period are qualified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Independent desktop event selects 1W and shows the same window and qualifiers. The expression uses the selected timeframe and confers no claim of full provider history."
+    },
+    "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0069",
+    "text": "Add ZS to favorites (identical for Zscaler Inc. and Soybeans)",
+    "sourceVersion": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "actual production before",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "captures": [
+      "before-favorite-names.json",
+      "inventory.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-004"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile 390px AX tree contains two same-named Add ZS buttons for distinct adjacent asset choices."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Desktop tree independently distinguishes Zscaler and Soybeans as selection actions but not as favorites. The symbol collision in the catalog is legitimate."
+    },
+    "sha256": "578038547ce53f722c9954142326a82fbc87a7d80b03abb0a92c4eb77942f9ea"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0070",
+    "text": "Add or Remove Zscaler Inc. (ZS) and Soybeans (ZS) favorites",
+    "candidateSourceSHA256": "5a8ee85c5e74e6425f3e1c9d4fdbee9f8111c56ee624b1007ef90c14c4348c8a",
+    "scope": "compiled candidate",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "captures": [
+      "local-followup-trade-favorite-names.json",
+      "local-followup-btc-favorite-names.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-004"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both routes and widths expose separate Add and Remove names and matching aria-pressed changes for the two legal ticker identities."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Waiting for exact native deployment and separate custom-domain reread."
+    },
+    "sha256": "aba1f3bd7615bb8f9c79ce5c2d0fe1b1c23f9cf90dc073931f03d14e1901cb61"
+  }
+]
