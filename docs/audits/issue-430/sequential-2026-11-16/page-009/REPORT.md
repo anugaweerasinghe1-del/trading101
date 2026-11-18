@@ -55,3 +55,7 @@ Four responsive/theme projections reconcile the Explore cards, leading to 14 dou
 # Candlestick merge and open work
 
 #471 passed the five exact-head checks and protected-merged with the same tree. Its native production and custom-domain checks are pending. #472 is open and awaits hosted checks. P09 has 308 first-pass and 306 second-pass records. The active continuation begins at 0271 and 0273. [Pending candlestick release](trade-release-reconciliation/RELEASE-471-PENDING.json)
+
+# Candlestick production readback
+
+#471 now has an exact native receipt and five fresh custom-domain browser contexts. It verifies the one-day synthetic provider fixture and fifteen range selections. #472 subsequently protected-merged and awaits its native readback. #473 is open. [Exact #471 receipt](trade-release-reconciliation/RELEASE-471.json)

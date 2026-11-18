@@ -28,14 +28,19 @@
     "captureSHA256": "9a14a5320bc5784bd774b205dd7f12a593a929fd671395cf285afa709e096f89",
     "scope": "public controlled browser projections",
     "source": "src/components/trading/NeuralPulseChart.tsx",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "fb557fff9dd30f303c8d4f27c5401068037a166d",
     "pass1": {
       "status": "REVIEWED",
       "reason": "The candidate retains the synthetic one-day provider history at both widths and retains the seven-day provider indicator. The independently extracted fallback returns 97 points at 15-minute intervals."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Both post-native Chromium widths retained the one-day and week fixture provider histories. Scope is the browser behavior with explicitly synthetic endpoint inputs."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production471-final-candle-history.json",
+    "productionEvidenceSHA256": "4ebf46ecc3f0ad7ad43523f61d9db7a4cbb4aff104c66c8c487b91664ff279ee",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-471.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0272",
@@ -66,13 +71,18 @@
     "captureSHA256": "66b5521e90202b32aa50068d35f48ef0cce6607b2826833f4a35c86e75845ea3",
     "scope": "public controlled browser projections",
     "source": "src/components/trading/NeuralPulseChart.tsx",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "fb557fff9dd30f303c8d4f27c5401068037a166d",
     "pass1": {
       "status": "REVIEWED",
       "reason": "The compiled candidate exposes exactly one pressed choice for each of 15 keyboard state transitions, preserving labels and styled selection."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Three custom-domain contexts select each of five ranges with the keyboard. Each selection exposes exactly one pressed state and preserves the visible style."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production471-final-candle-control.json",
+    "productionEvidenceSHA256": "b4aebbd02a23dacd10784a34b1a1b4e4eec6b5f814b459c1b0c4a0d8479f4dc6",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-471.json"
   }
 ]

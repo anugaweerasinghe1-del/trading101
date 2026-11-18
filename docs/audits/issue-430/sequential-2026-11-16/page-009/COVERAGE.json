@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 320,
-  "firstPass": 320,
-  "secondPass": 318,
+  "textRecords": 326,
+  "firstPass": 326,
+  "secondPass": 323,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -126,15 +126,38 @@
       "block": "STRICT-0009-BLOCK-0113",
       "policyViolation": false,
       "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-009",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 471,
+      "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+      "receipt": "trade-release-reconciliation/RELEASE-471.json",
+      "block": "STRICT-0009-BLOCK-0271",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-010",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 471,
+      "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+      "receipt": "trade-release-reconciliation/RELEASE-471.json",
+      "block": "STRICT-0009-BLOCK-0273",
+      "policyViolation": false,
+      "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Verify active native #471 and reread 0271 and 0273. Check the exact #472 candidate and verify its immutable preview. Preserve the #471 production evidence before any #472 merge, then verify #472 production at 0296, 0298 and 0300. Continue P09 chart, order and mentor conditional states.",
+  "nextAction": "Verify native #472 and reread 0296, 0298 and 0300. Verify exact #473 hosted preview and required checks. Preserve #472 native and live evidence before the next protected merge, then reread 0316 and 0329. Continue the P09 shell, footer, remaining order and chart states.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
   "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0271",
-    "STRICT-0009-BLOCK-0273"
+    "STRICT-0009-BLOCK-0296",
+    "STRICT-0009-BLOCK-0298",
+    "STRICT-0009-BLOCK-0300"
   ],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
@@ -162,11 +185,12 @@
     "trade-release-reconciliation/mentor-library-ledger.json",
     "trade-release-reconciliation/explore-cards-ledger.json",
     "candlestick-ranges/block-ledger.json",
-    "trade-release-reconciliation/mentor-state-matrix-ledger.json"
+    "trade-release-reconciliation/mentor-state-matrix-ledger.json",
+    "explore-mentor-state/block-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
-  "confirmedProductDefectsProductionVerified": 8,
-  "latestApplicationRelease": "6327bffee9431df55d74f676acb09faab18c8d3a",
+  "confirmedProductDefectsProductionVerified": 10,
+  "latestApplicationRelease": "fb557fff9dd30f303c8d4f27c5401068037a166d",
   "qualityRisks": [
     {
       "id": "STRICT-TRADE-RISK-001",
@@ -184,44 +208,31 @@
       "record": "trade-release-reconciliation/catalog-quote-provenance-risk.json"
     }
   ],
-  "confirmedProductDefectsReproduced": 13,
+  "confirmedProductDefectsReproduced": 14,
   "unresolvedStateNotes": [
     "Mentor greeting suggests quick prompts after the embedded component has already hidden them. Capture visual and keyboard state.",
     "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use."
   ],
   "mergedAwaitingNative": {
-    "pr": 471,
-    "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
-    "run": 44229758753,
-    "record": "trade-release-reconciliation/RELEASE-471-PENDING.json"
+    "pr": 472,
+    "mergeSHA": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "run": 44231206314,
+    "record": "trade-release-reconciliation/RELEASE-472-PENDING.json"
   },
   "activeSeparateCandidate": {
-    "branch": "audit/issue430-explore-snapshot-20261118",
-    "head": "6d881c87526009b910bbdf987c4f3920ff9541af",
-    "findings": [
-      "STRICT-TRADE-011",
-      "STRICT-TRADE-012"
-    ],
-    "status": "OPEN; exact immutable Cloudflare browser cases passed; required validation remains",
-    "firstPassAdditional": 6,
-    "secondPassAdditional": 3,
-    "pendingReadbackBlocks": [
-      "STRICT-0009-BLOCK-0296",
-      "STRICT-0009-BLOCK-0298",
-      "STRICT-0009-BLOCK-0300"
-    ],
-    "pr": 472,
-    "previewURL": "https://666fa476.tradehq-preview.pages.dev"
-  },
-  "queuedFollowup": {
+    "pr": 473,
+    "head": "4aab686f6c5d296cd28808b289155722ede49cb0",
     "branch": "audit/issue430-candle-small-price-20261118",
-    "head": "91dd45b",
-    "finding": "STRICT-TRADE-013",
-    "status": "Local build, TypeScript, source replay and browser readbacks passed; queued behind #472",
-    "firstPassAdditional": 2,
+    "findings": [
+      "STRICT-TRADE-013",
+      "STRICT-TRADE-014"
+    ],
+    "status": "OPEN; compiled local checks passed; hosted and required checks pending",
+    "firstPassAdditional": 3,
     "secondPassAdditional": 1,
     "pendingReadbackBlocks": [
-      "STRICT-0009-BLOCK-0316"
+      "STRICT-0009-BLOCK-0316",
+      "STRICT-0009-BLOCK-0329"
     ]
   }
 }
