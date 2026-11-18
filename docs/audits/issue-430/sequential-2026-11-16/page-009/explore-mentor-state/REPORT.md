@@ -1,0 +1,6 @@
+# P09 Explore source label and mentor shortcut findings
+
+- **STRICT-TRADE-011**. Cached provider values in Explore Markets could be labeled FIXED. The candidate keeps the SNAPSHOT label while a displayed provider value is retained across hydration and partial refresh. Browser fixtures check both responsive layouts, both themes, and a successfully emptied refresh. True defaults, expired entries and simulated cache states retain the existing behavior. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967841291)
+- **STRICT-TRADE-012**. Two authored mentor shortcuts routed to a duplicate summary and generic unknown-topic response. Risk assessment uses the existing risk branch. Review assumptions gives a worked quantity and fee example and explains which details to record. Both widths return the intended responses. The other three shortcuts retain their exact captured replies. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967877249)
+
+TypeScript, the existing editorial UI verifier and complete Cloudflare build passed. No external provider, paid service or private account was used. Exact release checks, native deployment and public reread remain required. The candlestick candidate keeps the earlier release position.

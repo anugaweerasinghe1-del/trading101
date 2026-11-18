@@ -51,7 +51,7 @@ export default function Trade() {
   const isMounted = useRef(true);
   const isRefreshing = useRef(false);
   const assetsRef = useRef<Asset[]>([]);
-  const [liveAssetIds, setLiveAssetIds] = useState<Set<string>>(new Set());
+  const [snapshotAssetIds, setSnapshotAssetIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     assetsRef.current = assets;
@@ -66,7 +66,7 @@ export default function Trade() {
       if (isMounted.current) {
         setAssets(result.assets);
         setPortfolio(current => updatePositionPrices(current, result.assets));
-        setLiveAssetIds(result.providerIds);
+        setSnapshotAssetIds(previous => new Set([...previous, ...result.providerIds]));
       }
     } catch { /* Keep the last known prices without fabricating movement. */ }
     finally { isRefreshing.current = false; }
@@ -87,15 +87,19 @@ export default function Trade() {
 
     // Hydrate from persisted prices
     const cached = getPersistedPrices();
+    const cachedSnapshotIds = new Set<string>();
     const hydratedAssets = validAssets.map(a => {
       const p = cached[a.id];
-      return p && p.source !== 'simulated' ? { ...a, price: p.price, change: p.change, changePercent: p.changePercent } : a;
+      if (!p || p.source === 'simulated') return a;
+      cachedSnapshotIds.add(a.id);
+      return { ...a, price: p.price, change: p.change, changePercent: p.changePercent };
     });
 
     setTimeout(() => {
       if (!isMounted.current) return;
 
       setAssets(hydratedAssets);
+      setSnapshotAssetIds(cachedSnapshotIds);
       setPortfolio(updatePositionPrices(getPortfolio(), hydratedAssets));
 
       if (symbol) {
@@ -390,11 +394,11 @@ export default function Trade() {
                             {formatPrice(asset.price, asset.type)}
                           </p>
                           <span className={`text-[8px] font-medium px-1 py-0.5 rounded ${
-                            liveAssetIds.has(asset.id)
+                            snapshotAssetIds.has(asset.id)
                               ? 'bg-green-500/10 text-green-500'
                               : 'bg-muted/50 text-muted-foreground'
                           }`}>
-                            {liveAssetIds.has(asset.id) ? 'SNAPSHOT' : 'FIXED'}
+                            {snapshotAssetIds.has(asset.id) ? 'SNAPSHOT' : 'FIXED'}
                           </span>
                         </div>
                       </Link>

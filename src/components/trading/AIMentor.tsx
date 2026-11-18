@@ -28,9 +28,9 @@ interface AIMentorProps {
 const quickPrompts = [
   { icon: Wallet, text: "My portfolio", prompt: "Show me a full analysis of my portfolio — positions, P&L, and suggestions for improvement." },
   { icon: TrendingUp, text: "Analyze this asset", prompt: "Analyze the current market conditions for the asset I'm viewing right now." },
-  { icon: Shield, text: "Risk assessment", prompt: "What's the risk level of my current portfolio? Am I overexposed anywhere?" },
+  { icon: Shield, text: "Risk assessment", prompt: "Review concentration and risk in this practice snapshot." },
   { icon: BarChart3, text: "Trade history", prompt: "Review my recent trade history and tell me what patterns you see." },
-  { icon: Lightbulb, text: "Review assumptions", prompt: "Explain the quantities, fees and assumptions in this practice snapshot without recommending a trade." },
+  { icon: Lightbulb, text: "Review assumptions", prompt: "Review practice assumptions about quantity, fees and the shown quote." },
 ];
 
 export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {

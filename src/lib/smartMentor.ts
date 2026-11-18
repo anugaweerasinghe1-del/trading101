@@ -268,6 +268,10 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   const priceSummary = ctx.priceOnlySellComparisonPct != null && Number.isFinite(ctx.priceOnlySellComparisonPct)
     ? `Price-only sell comparison: ${ctx.priceOnlySellComparisonPct.toFixed(0)}% of sales above their latest earlier buy; excludes fees and lot matching, not a realized win rate.` : null;
 
+  if (text.startsWith("review practice assumptions")) {
+    return "Practice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order." + DISCLAIMER;
+  }
+
   // Portfolio analysis
   if (/portfolio|positions?|my (cash|balance|holdings?)|analy[sz]e my/.test(text)) {
     const lines = [
