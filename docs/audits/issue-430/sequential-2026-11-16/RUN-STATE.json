@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T08:19:54.889266+00:00",
+  "updatedAtUTC": "2026-11-18T08:33:27.310669+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -204,14 +204,14 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 475,
-    "firstPass": 475,
-    "secondPass": 465,
+    "textRecords": 482,
+    "firstPass": 482,
+    "secondPass": 472,
     "separateCandidateRecords": 0,
     "separateCandidateSecondPass": 0,
     "pickerRowsTwoPass": 170,
     "pickerRowsTotal": 170,
-    "confirmedProductDefects": 22,
+    "confirmedProductDefects": 23,
     "confirmedProductDefectsProductionVerified": 14,
     "substantiatedQualityRisksOpen": 3,
     "currentNativeVerificationBlock": [
@@ -231,7 +231,8 @@
     "mentorPortfolioStateProjectionsTwoPass": 12,
     "footerLinksTwoPass": 102,
     "footerStateAndIntervalTwoPass": 13,
-    "quoteWidgetStateProjectionsTwoPass": 7
+    "quoteWidgetStateProjectionsTwoPass": 7,
+    "navigationStatesTwoPass": 7
   },
   "partiallyReviewedPublisherPages": 14
 }
