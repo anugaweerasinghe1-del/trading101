@@ -621,5 +621,129 @@
       "reason": "The foreground guest route reads market quotes and computes local values, while the hosted scheduler selects from server-recorded practice_positions. Shared quote updates help guests in the current browser and can coincide with an asset tracked by accounts. They do not give the server knowledge of a guest portfolio. The immediate update and provider caveat remain accurate in scope."
     },
     "findingId": "STRICT-PORTFOLIO-002"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0034",
+    "text": "Modeled a -20% move on AAPL over 400 days. (Deterministic scenario — no AI required.)\nModeled a -20% move on AAPL over 0 days. (Deterministic scenario — no AI required.)",
+    "sha256": "82b1508074a12abef32078280d6044f32e86513cdf7edcd86d2e2b5cf8ef3518",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/lib/scenarioEngine.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "contentReference": "production-current-scenario.json",
+    "contentSHA256": "233ba0b19127e870c8885e8ef715038b1c665bba83afb7e286af4a942ab1b091",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The chart ends at day 365 for the 400-day label and at day 30 for the zero-day label on both public widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source caps the real simulation at 365, substitutes 30 for zero, and reports the parser value in its chart label, result narrative and summary. The three-day control agrees without bounds.",
+      "reviewer": "Codex assistant, separate browser/source countercheck"
+    },
+    "findingId": "STRICT-PORTFOLIO-003"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0035",
+    "text": "Modeled a -20% move on AAPL over 365 days. The requested 400-day horizon was limited to 365 days.\nModeled a -20% move on AAPL over 1 day. The requested 0-day horizon was limited to 1 day.",
+    "sha256": "71bcf5d3e4dad7c4c6fb51ba335ed297a90475bf39399c21887fa3037d71e55a",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/lib/scenarioEngine.ts",
+    "sourceRevision": "0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "contentReference": "local-scenario-scenario.json",
+    "contentSHA256": "2bbe11d4b7ab7cfcecaa5c358300638bf2c44744b0f44f569d97df3454d1ea4f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled widths display the applied 365-day or 1-day horizon in narrative, figure and ending chart tick. Each explains the original request and resulting limit."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-003"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0036",
+    "text": "Modeled a -150% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$-127.63\n-150.0%",
+    "sha256": "a2726015f5aa242ee30936703337479edd8aae9a8206bf48052c581e8f6e1309",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/lib/scenarioEngine.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "contentReference": "production-current-scenario.json",
+    "contentSHA256": "233ba0b19127e870c8885e8ef715038b1c665bba83afb7e286af4a942ab1b091",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The stated −99% bound conflicts with the -150.0% row and the negative expected price on both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The drift code bounds the loss, yet the per-asset calculation uses the unclamped ratio. Two virtual AAPL units confirm the arithmetic mismatch independently of the random paths.",
+      "reviewer": "Codex assistant, separate browser/source countercheck"
+    },
+    "findingId": "STRICT-PORTFOLIO-004"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0037",
+    "text": "Modeled a -99% move on AAPL over 3 days. The requested -150% move was limited to -99%.\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$2.55\n-99.0%",
+    "sha256": "e552449d41292c715886ea4d1e90bce8e880c457a08ed9113bcc1f9251b57a49",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/lib/scenarioEngine.ts",
+    "sourceRevision": "0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "contentReference": "local-scenario-scenario.json",
+    "contentSHA256": "2bbe11d4b7ab7cfcecaa5c358300638bf2c44744b0f44f569d97df3454d1ea4f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The displayed $2.55 is the rounded $255.25 times 1%. The -99.0% row and narrative agree with the applied loss floor on both widths."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-004"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0038",
+    "text": "Alerts\nAlerts On",
+    "sha256": "723afedae26fd83df6c4a79abbbaf862ee2e6ff855671d146360c99a87444e32",
+    "source": "src/pages/Portfolio.tsx; src/lib/notifications.ts",
+    "sourceRevision": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+    "contentReference": "exact-preview478-alerts.json",
+    "contentSHA256": "b7614d506290c209909b3897a1de9c1673b7ff28a8230c488ecd9ac50d921a26",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Hosted disabled checks suppress both notification channels and preserve the opt-out across reload. Milestone status still records. Enabled positive controls issue one toast and one captured browser alert."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-001"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0039",
+    "text": "Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+    "sha256": "b4ea963babca047a8a25c807f5e5a2525838d1854089539a61d2e89c5f81f33b",
+    "source": "src/pages/Portfolio.tsx",
+    "sourceRevision": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+    "contentReference": "exact-preview478-alerts.json",
+    "contentSHA256": "b7614d506290c209909b3897a1de9c1673b7ff28a8230c488ecd9ac50d921a26",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All four hosted fixtures scope guest holdings to the current browser and explicitly identify the account-only sync and offline scheduler."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-002"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0040",
+    "text": "Modeled a -20% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+    "sha256": "047120356a17541b105ba6cc3b9b62cf4f956c8df4799b7b24960541112207db",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/lib/scenarioEngine.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "contentReference": "production-current-scenario.json",
+    "contentSHA256": "233ba0b19127e870c8885e8ef715038b1c665bba83afb7e286af4a942ab1b091",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The ordinary three-day control uses the entered 20% loss, with $204.20 shown for an initial $255.25."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Both widths display three days and the chart ends at three. The expected deterministic price agrees with the multiplicative shock while the portfolio mean remains a random sample.",
+      "reviewer": "Codex assistant, separate browser/source countercheck"
+    }
   }
 ]
