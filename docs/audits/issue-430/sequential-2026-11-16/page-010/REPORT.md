@@ -13,3 +13,7 @@ The exact #478 Cloudflare preview passed all four focused browser cases. The ind
 # Populated guest and authored account checkpoints
 
 Two public guest sessions completed an isolated buy and sale, validated fixed fees, checked the journal and trade filters, and verified local backup preview, import and undo. Four compiled loopback cases exercised account loading, the first snapshot, initial unavailability and a subsequent failed refresh with a retained valuation. The private production service was outside those fixtures. #478 protected-merged, and exact native/readback remains due. The scenario candidate is open in #479. [Guest evidence](production-current-guest-recovery.json) · [Account fixture evidence](local-signed-portfolio.json)
+
+# Exact alert and refresh release
+
+#478 has an exact native production receipt and four later public browser contexts. The alerts honor the persisted opt-out. The new refresh wording clearly distinguishes the guest and signed-in cases. The two findings are production-verified. P10 remains partial. [Exact #478 receipt](RELEASE-478.json)

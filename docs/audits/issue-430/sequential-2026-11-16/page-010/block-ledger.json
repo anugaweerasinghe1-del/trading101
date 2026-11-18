@@ -707,7 +707,13 @@
       "reason": "Hosted disabled checks suppress both notification channels and preserve the opt-out across reload. Milestone status still records. Enabled positive controls issue one toast and one captured browser alert."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The two disabled responsive cases emit neither alert channel even though the milestone is still tracked. The preference stays off after reload and can be re-enabled. The two separate enabled cases each emit one toast and one notification stand-in call.",
+      "reviewer": "Codex assistant, production and source reread",
+      "sourceRevision": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+      "contentReference": "production478-final-alerts.json",
+      "contentSHA256": "b085dce8611cf154de421890a9f659d0b9aa0a9ef9a01b382893b44049cc58b7",
+      "readAtUTC": "2026-11-18T10:24:17.833325+00:00"
     },
     "findingId": "STRICT-PORTFOLIO-001"
   },
@@ -724,7 +730,13 @@
       "reason": "All four hosted fixtures scope guest holdings to the current browser and explicitly identify the account-only sync and offline scheduler."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "All four fresh public readings state that guest records remain in this browser. The same paragraph makes the account sync and server-held cadence belong specifically to signed-in account positions.",
+      "reviewer": "Codex assistant, production and source reread",
+      "sourceRevision": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+      "contentReference": "production478-final-alerts.json",
+      "contentSHA256": "b085dce8611cf154de421890a9f659d0b9aa0a9ef9a01b382893b44049cc58b7",
+      "readAtUTC": "2026-11-18T10:24:17.833325+00:00"
     },
     "findingId": "STRICT-PORTFOLIO-002"
   },
