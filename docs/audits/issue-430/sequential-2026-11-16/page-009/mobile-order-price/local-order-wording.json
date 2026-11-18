@@ -1,0 +1,23 @@
+{
+  "scope": "Public guest Chromium contexts, same-origin GET only with no submit action",
+  "rows": [
+    {
+      "width": 390,
+      "path": "/trade?journey=1",
+      "capturedAtUTC": "2026-11-18T02:46:09.260491+00:00",
+      "snapshot": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"2\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $511.01\n  - button \"Buy AAPL\""
+    },
+    {
+      "width": 430,
+      "path": "/trade/btc",
+      "capturedAtUTC": "2026-11-18T02:46:09.353899+00:00",
+      "snapshot": "- dialog \"BTC$95,000.00 USD/unit Close order panel\":\n  - heading \"BTC$95,000.00 USD/unit Close order panel\" [level=2]:\n    - text: BTC$95,000.00 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (BTC) Available: $100,000\"\n  - spinbutton \"Amount in BTC\": \"2\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $190190.00\n  - button \"Buy BTC\" [disabled]"
+    },
+    {
+      "width": 1440,
+      "path": "/trade?journey=1",
+      "capturedAtUTC": "2026-11-18T02:46:09.036572+00:00",
+      "snapshot": "- button \"Buy\"\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\": \"2\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.51 Total (USD) $511.01 Est. position value $510.50 You are placing a market buy for 2.0000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Buy AAPL\""
+    }
+  ]
+}
