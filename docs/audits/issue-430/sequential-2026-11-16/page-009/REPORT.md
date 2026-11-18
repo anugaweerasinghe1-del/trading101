@@ -33,3 +33,7 @@ The second picker chunk adds 14 individually read rows, bringing durable two-pas
 An isolated, normal signed-in account fixture confirmed that an AAPL preview at $100 can be followed by a $101 recorded fill. The public mobile drawer describes the display as an exact immediate price. A candidate text-only correction passes local validation and is queued behind #469. [Before-edit finding](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344)
 
 Picker ordinals 31–37 have individual source and live readings. The unqualified MATIC label is a separate substantiated clarity risk. The Trade catalog retains MATIC for account history and its linked educational detail explains the migration. The remaining picker work resumes at ordinal 38, FTM. [Catalog risk](trade-release-reconciliation/catalog-matic-risk.json)
+
+## Latest release position
+
+#469 passed the five exact-head checks and protected-merged with the same tree. Its native production run is active and the post-release reviews of 0093 and 0095 are pending. #470 is open for the mobile price wording. The separately reconciled 48 picker rows bring the full P09 ledger to 143 first-pass records and 141 second-pass records. [Pending release record](trade-release-reconciliation/RELEASE-469-PENDING.json)

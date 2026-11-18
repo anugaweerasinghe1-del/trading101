@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 139,
-  "firstPass": 139,
-  "secondPass": 139,
+  "textRecords": 143,
+  "firstPass": 143,
+  "secondPass": 141,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -97,11 +97,14 @@
       "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Complete #469 protected merge and exact native production rereads at 0093 and 0095. Publish and verify the mobile price correction at 0113. Continue picker ordinal 49 and shared quote provenance.",
+  "nextAction": "Verify #469 native production at the exact merge and reread blocks 0093 and 0095. Verify #470 hosted preview and all checks, then merge through protection only after #469 native and live evidence is captured. Reread 0113 after #470 active production. Continue picker row 49 and shared quote provenance.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
-  "pendingSecondPass": [],
+  "pendingSecondPass": [
+    "STRICT-0009-BLOCK-0093",
+    "STRICT-0009-BLOCK-0095"
+  ],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
@@ -116,7 +119,8 @@
     "trade-release-reconciliation/picker-rows-001-016-ledger.json",
     "trade-release-reconciliation/picker-rows-017-030-ledger.json",
     "trade-release-reconciliation/picker-rows-031-037-ledger.json",
-    "trade-release-reconciliation/picker-rows-038-048-ledger.json"
+    "trade-release-reconciliation/picker-rows-038-048-ledger.json",
+    "portfolio-metric/block-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–48 reviewed twice against controlled captures and source; ordinal 49 remains due. Shared quote provenance and named existing findings remain open.",
   "confirmedProductDefectsProductionVerified": 5,
@@ -133,23 +137,6 @@
       "record": "trade-release-reconciliation/catalog-matic-risk.json"
     }
   ],
-  "activeSeparateCandidate": {
-    "pr": 469,
-    "head": "6a14cfcaa13e7a68f2770ebfe9181e4900e45753",
-    "findings": [
-      "STRICT-TRADE-006",
-      "STRICT-TRADE-007"
-    ],
-    "exactResumeBlocks": [
-      "STRICT-0009-BLOCK-0093",
-      "STRICT-0009-BLOCK-0095"
-    ],
-    "status": "OPEN; local checks and immutable Cloudflare preview passed; exact required GitHub checks pending",
-    "firstPassAdditional": 4,
-    "secondPassAdditional": 2,
-    "record": "https://github.com/anugaweerasinghe1-del/trading101/tree/6a14cfcaa13e7a68f2770ebfe9181e4900e45753/docs/audits/issue-430/sequential-2026-11-16/page-009/portfolio-metric",
-    "previewURL": "https://94a43206.tradehq-preview.pages.dev"
-  },
   "confirmedProductDefectsReproduced": 8,
   "nextSeparateCandidate": {
     "branch": "audit/issue430-mobile-order-wording-20261118",
@@ -158,7 +145,15 @@
     "exactResumeBlock": "STRICT-0009-BLOCK-0113",
     "firstPassAdditional": 3,
     "secondPassAdditional": 2,
-    "status": "Local TypeScript, build and Chromium passed. Open PR after #469 protected merge.",
-    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344"
+    "status": "OPEN; local validation passed; hosted preview and exact GitHub checks pending",
+    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344",
+    "pr": 470,
+    "head": "fd407b606523c215c81571002eafc6bfc5e184c3"
+  },
+  "mergedAwaitingNative": {
+    "pr": 469,
+    "mergeSHA": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+    "run": 44226262123,
+    "record": "trade-release-reconciliation/RELEASE-469-PENDING.json"
   }
 }
