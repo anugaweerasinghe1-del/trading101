@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T03:20:17.047792+00:00",
+  "updatedAtUTC": "2026-11-18T03:22:37.065744+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Finish #471 exact checks, protected merge, native confirmation and custom-domain rereads for 0271 and 0273. Open the prepared Explore and mentor candidate on the merged base, verify 0296, 0298 and 0300, and continue the remaining interactive states, guest and conditional ledger reconciliation.",
+  "nextStep": "Verify active native #471 and reread 0271 and 0273. Check the exact #472 candidate and verify its immutable preview. Preserve the #471 production evidence before any #472 merge, then verify #472 production at 0296, 0298 and 0300. Continue P09 chart, order and mentor conditional states.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -27,7 +27,7 @@
   },
   "freshReviewTotalClosedCases": 41,
   "latestClosedPageRecord": "resume-2026-11-17/guide/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a",
+  "latestCodeMergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -56,9 +56,9 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 470,
-    "status": "MERGED; EXACT NATIVE PRODUCTION AND LIVE VERIFIED",
-    "mergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a"
+    "number": 471,
+    "status": "MERGED; active native and custom-domain verification pending",
+    "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -101,7 +101,7 @@
     "closed": 3,
     "record": "page-006/closure-2026-11-17/PAGE-RECORD.json"
   },
-  "candidatePullRequestBranch": "audit/issue430-candle-range-20261118",
+  "candidatePullRequestBranch": "audit/issue430-explore-snapshot-20261118",
   "coursesFindings": {
     "confirmed": 2,
     "qualityRisks": 1,
@@ -198,20 +198,21 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 304,
-    "firstPass": 304,
-    "secondPass": 304,
-    "separateCandidateRecords": 4,
-    "separateCandidateSecondPass": 2,
+    "textRecords": 308,
+    "firstPass": 308,
+    "secondPass": 306,
+    "separateCandidateRecords": 6,
+    "separateCandidateSecondPass": 3,
     "pickerRowsTwoPass": 170,
     "pickerRowsTotal": 170,
     "confirmedProductDefects": 12,
     "confirmedProductDefectsProductionVerified": 8,
     "substantiatedQualityRisksOpen": 3,
-    "currentNativeVerificationBlock": null,
+    "currentNativeVerificationBlock": [
+      "STRICT-0009-BLOCK-0271",
+      "STRICT-0009-BLOCK-0273"
+    ],
     "mentorTopicResponsesTwoPass": 21,
-    "queuedCandidateRecords": 6,
-    "queuedCandidateSecondPass": 3,
     "exploreLinkProjectionsTwoPass": 14
   },
   "partiallyReviewedPublisherPages": 14

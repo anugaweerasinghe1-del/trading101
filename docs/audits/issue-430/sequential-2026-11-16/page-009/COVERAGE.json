@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 304,
-  "firstPass": 304,
-  "secondPass": 304,
+  "textRecords": 308,
+  "firstPass": 308,
+  "secondPass": 306,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -128,11 +128,14 @@
       "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Finish #471 exact checks, protected merge, native confirmation and custom-domain rereads for 0271 and 0273. Open the prepared Explore and mentor candidate on the merged base, verify 0296, 0298 and 0300, and continue the remaining interactive states, guest and conditional ledger reconciliation.",
+  "nextAction": "Verify active native #471 and reread 0271 and 0273. Check the exact #472 candidate and verify its immutable preview. Preserve the #471 production evidence before any #472 merge, then verify #472 production at 0296, 0298 and 0300. Continue P09 chart, order and mentor conditional states.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
-  "pendingSecondPass": [],
+  "pendingSecondPass": [
+    "STRICT-0009-BLOCK-0271",
+    "STRICT-0009-BLOCK-0273"
+  ],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
@@ -157,7 +160,8 @@
     "trade-release-reconciliation/picker-rows-141-170-ledger.json",
     "mobile-order-price/block-ledger.json",
     "trade-release-reconciliation/mentor-library-ledger.json",
-    "trade-release-reconciliation/explore-cards-ledger.json"
+    "trade-release-reconciliation/explore-cards-ledger.json",
+    "candlestick-ranges/block-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
   "confirmedProductDefectsProductionVerified": 8,
@@ -185,36 +189,27 @@
     "Mentor generic fallback refers to a Learning Center link. Confirm which navigation the embedded reader can use.",
     "Uncaptured mentor portfolio concentration, after-trade and conditional open-position responses remain distinct from the typed guest topic sweep."
   ],
-  "activeSeparateCandidate": {
+  "mergedAwaitingNative": {
     "pr": 471,
-    "head": "d0e99a88f0632372d9269afddb85d94e4b035243",
-    "findings": [
-      "STRICT-TRADE-009",
-      "STRICT-TRADE-010"
-    ],
-    "status": "OPEN; compiled local and exact immutable Cloudflare preview browser checks passed; required validation remains",
-    "previewURL": "https://a02fc53f.tradehq-preview.pages.dev",
-    "pendingReadbackBlocks": [
-      "STRICT-0009-BLOCK-0271",
-      "STRICT-0009-BLOCK-0273"
-    ],
-    "firstPassAdditional": 4,
-    "secondPassAdditional": 2
+    "mergeSHA": "fb557fff9dd30f303c8d4f27c5401068037a166d",
+    "run": 44229758753,
+    "record": "trade-release-reconciliation/RELEASE-471-PENDING.json"
   },
-  "queuedFollowup": {
+  "activeSeparateCandidate": {
     "branch": "audit/issue430-explore-snapshot-20261118",
-    "head": "7d8252c",
+    "head": "6d881c87526009b910bbdf987c4f3920ff9541af",
     "findings": [
       "STRICT-TRADE-011",
       "STRICT-TRADE-012"
     ],
-    "status": "Local TypeScript, Cloudflare build, editorial UI verifier and compiled browser tests passed; open against the merged candlestick release",
+    "status": "OPEN; local TypeScript, editorial UI, Cloudflare build and browser checks passed; hosted verification pending",
     "firstPassAdditional": 6,
     "secondPassAdditional": 3,
     "pendingReadbackBlocks": [
       "STRICT-0009-BLOCK-0296",
       "STRICT-0009-BLOCK-0298",
       "STRICT-0009-BLOCK-0300"
-    ]
+    ],
+    "pr": 472
   }
 }

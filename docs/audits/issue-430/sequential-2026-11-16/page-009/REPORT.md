@@ -51,3 +51,7 @@ The embedded mentor now has 21 typed-topic responses with individual two-pass no
 #470 now has its exact native production confirmation and later browser checks in two mobile drawers and the desktop comparison. The page has 290 durable records with both reads. Four candlestick and six Explore/mentor records remain on separate candidate branches with their production second readings still due. [Exact #470 receipt](trade-release-reconciliation/RELEASE-470.json)
 
 Four responsive/theme projections reconcile the Explore cards, leading to 14 double-reviewed link records. The 13 runtime-only assets all hydrate their exact practice headings after GET and expose the expected noindex, follow response. Their HEAD methods returned 404. The observed HEAD results do not establish broken user links and do not expand the publisher inventory. [Rejected false positive](trade-release-reconciliation/explore-route-observation.json)
+
+# Candlestick merge and open work
+
+#471 passed the five exact-head checks and protected-merged with the same tree. Its native production and custom-domain checks are pending. #472 is open and awaits hosted checks. P09 has 308 first-pass and 306 second-pass records. The active continuation begins at 0271 and 0273. [Pending candlestick release](trade-release-reconciliation/RELEASE-471-PENDING.json)
