@@ -1,0 +1,764 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0136",
+    "pickerOrdinal": 38,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "FTM",
+            "name": "Fantom",
+            "price": "$0.4250",
+            "change": "+7.19%",
+            "favorite": "Add Fantom (FTM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "FTM",
+            "name": "Fantom",
+            "price": "$0.4250",
+            "change": "+7.19%",
+            "favorite": "Add Fantom (FTM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "FTM",
+          "name": "Fantom",
+          "price": "$0.0322",
+          "change": "+0.02%",
+          "favorite": "Add FTM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "FTM",
+          "name": "Fantom",
+          "price": "$0.0322",
+          "change": "+0.02%",
+          "favorite": "Add FTM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "64b269589a37cf5ef890a07e288ad949237bd0de65c1f08f2e4bf44938d545d9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": {
+      "url": "https://docs.soniclabs.com/migration/app-token-migration.md",
+      "retrievedUTC": "2026-11-18"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Fantom/FTM showed $0.0322 and +0.02% in the unrestricted captures. The row identifies the Fantom token without a Sonic label."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.4250 and +7.19% match the FTM seed. Sonic Labs documents a 1:1 FTM-to-S upgrade from Fantom Opera. These are distinct assets in that documentation, so migration alone does not invalidate the Fantom/FTM identity."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0137",
+    "pickerOrdinal": 39,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NEAR",
+            "name": "NEAR Protocol",
+            "price": "$3.85",
+            "change": "+6.06%",
+            "favorite": "Add NEAR Protocol (NEAR) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NEAR",
+            "name": "NEAR Protocol",
+            "price": "$3.85",
+            "change": "+6.06%",
+            "favorite": "Add NEAR Protocol (NEAR) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "NEAR",
+          "name": "NEAR Protocol",
+          "price": "$3.36",
+          "change": "+6.07%",
+          "favorite": "Add NEAR to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "NEAR",
+          "name": "NEAR Protocol",
+          "price": "$3.36",
+          "change": "+6.07%",
+          "favorite": "Add NEAR to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "2c42f3ed8068ffbd05378ecdc79e1187105b0a29d77239993057c01b0ae28edf",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "NEAR Protocol/NEAR showed $3.36 and +6.07%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $3.85 and +6.06% match the NEAR seed. Including Protocol in the name disambiguates the label from the English word."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0138",
+    "pickerOrdinal": 40,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ICP",
+            "name": "Internet Computer",
+            "price": "$12.45",
+            "change": "-6.39%",
+            "favorite": "Add Internet Computer (ICP) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ICP",
+            "name": "Internet Computer",
+            "price": "$12.45",
+            "change": "-6.39%",
+            "favorite": "Add Internet Computer (ICP) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ICP",
+          "name": "Internet Computer",
+          "price": "$2.28",
+          "change": "-7.41%",
+          "favorite": "Add ICP to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ICP",
+          "name": "Internet Computer",
+          "price": "$2.28",
+          "change": "-7.41%",
+          "favorite": "Add ICP to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "c360912a857c1d99fb22b230b289e1302b3d9d38b2b0b331b33e2baca684ff8c",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Internet Computer/ICP showed $2.28 and -7.41%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $12.45 and -6.39% match the ICP seed. The minus signs retain the respective snapshot directions."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0139",
+    "pickerOrdinal": 41,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XLM",
+            "name": "Stellar",
+            "price": "$0.1285",
+            "change": "+3.63%",
+            "favorite": "Add Stellar (XLM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XLM",
+            "name": "Stellar",
+            "price": "$0.1285",
+            "change": "+3.63%",
+            "favorite": "Add Stellar (XLM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "XLM",
+          "name": "Stellar",
+          "price": "$0.1400",
+          "change": "+1.83%",
+          "favorite": "Add XLM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "XLM",
+          "name": "Stellar",
+          "price": "$0.1400",
+          "change": "+1.83%",
+          "favorite": "Add XLM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f3744d6fc52004a98a920330b16dae2bf87ade6b14b60ec1237881809901df34",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Stellar/XLM showed $0.1400 and +1.83%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.1285 and +3.63% match. The label names XLM and does not imply that the row represents all Stellar assets."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0140",
+    "pickerOrdinal": 42,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "VET",
+            "name": "VeChain",
+            "price": "$0.0285",
+            "change": "+4.40%",
+            "favorite": "Add VeChain (VET) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "VET",
+            "name": "VeChain",
+            "price": "$0.0285",
+            "change": "+4.40%",
+            "favorite": "Add VeChain (VET) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "VET",
+          "name": "VeChain",
+          "price": "$0.0049",
+          "change": "+1.29%",
+          "favorite": "Add VET to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "VET",
+          "name": "VeChain",
+          "price": "$0.0049",
+          "change": "+1.29%",
+          "favorite": "Add VET to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "58194045eeb6f6dfa83ad256a8f864003186e0e27a0affa5817fdf9ae079dc8e",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "VeChain/VET showed $0.0049 and +1.29%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.0285 and +4.40% match their seed, and the explicit VET ticker identifies the instrument."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0141",
+    "pickerOrdinal": 43,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "FIL",
+            "name": "Filecoin",
+            "price": "$5.85",
+            "change": "+5.79%",
+            "favorite": "Add Filecoin (FIL) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "FIL",
+            "name": "Filecoin",
+            "price": "$5.85",
+            "change": "+5.79%",
+            "favorite": "Add Filecoin (FIL) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "FIL",
+          "name": "Filecoin",
+          "price": "$0.5966",
+          "change": "-1.10%",
+          "favorite": "Add FIL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "FIL",
+          "name": "Filecoin",
+          "price": "$0.5966",
+          "change": "-1.10%",
+          "favorite": "Add FIL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "ab07aea411be1b729814e86a0aaa15cc711b333083f6c0e70ddc6b500dead9d3",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Filecoin/FIL showed $0.5966 and -1.10%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $5.85 and +5.79% use the two-decimal above-dollar format and agree with the source. The snapshot directions differ because the source states differ."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0142",
+    "pickerOrdinal": 44,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "HBAR",
+            "name": "Hedera",
+            "price": "$0.0785",
+            "change": "+3.70%",
+            "favorite": "Add Hedera (HBAR) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "HBAR",
+            "name": "Hedera",
+            "price": "$0.0785",
+            "change": "+3.70%",
+            "favorite": "Add Hedera (HBAR) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "HBAR",
+          "name": "Hedera",
+          "price": "$0.0574",
+          "change": "+0.49%",
+          "favorite": "Add HBAR to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "HBAR",
+          "name": "Hedera",
+          "price": "$0.0574",
+          "change": "+0.49%",
+          "favorite": "Add HBAR to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f59187bbf7b4e67c087ca35b2278096fef24cca3bae3fdf6e05f4ac6e35df9cc",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Hedera/HBAR showed $0.0574 and +0.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.0785 and +3.70% match the seed. The label ties HBAR to the same named selection and favorite."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0143",
+    "pickerOrdinal": 45,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "APT",
+            "name": "Aptos",
+            "price": "$9.25",
+            "change": "+7.56%",
+            "favorite": "Add Aptos (APT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "APT",
+            "name": "Aptos",
+            "price": "$9.25",
+            "change": "+7.56%",
+            "favorite": "Add Aptos (APT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "APT",
+          "name": "Aptos",
+          "price": "$0.4431",
+          "change": "-1.86%",
+          "favorite": "Add APT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "APT",
+          "name": "Aptos",
+          "price": "$0.4431",
+          "change": "-1.86%",
+          "favorite": "Add APT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "ec08e223dce79ddc766db1dd1befdb1012d1d87cc276ca8b06d945bac3b80e09",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Aptos/APT showed $0.4431 and -1.86%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $9.25 and +7.56% match the static Aptos entry. The change in display precision follows the dollar threshold."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0144",
+    "pickerOrdinal": 46,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ARB",
+            "name": "Arbitrum",
+            "price": "$1.12",
+            "change": "+7.69%",
+            "favorite": "Add Arbitrum (ARB) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ARB",
+            "name": "Arbitrum",
+            "price": "$1.12",
+            "change": "+7.69%",
+            "favorite": "Add Arbitrum (ARB) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ARB",
+          "name": "Arbitrum",
+          "price": "$0.1308",
+          "change": "-1.07%",
+          "favorite": "Add ARB to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ARB",
+          "name": "Arbitrum",
+          "price": "$0.1308",
+          "change": "-1.07%",
+          "favorite": "Add ARB to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f4083278a5708ddd8b75666cfe492a1cbeac4ad45652a31bad307787e368c037",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Arbitrum/ARB showed $0.1308 and -1.07%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $1.12 and +7.69% match the ARB seed; the row identifies the token and makes no claim about chain fees."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0145",
+    "pickerOrdinal": 47,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "OP",
+            "name": "Optimism",
+            "price": "$2.45",
+            "change": "+7.93%",
+            "favorite": "Add Optimism (OP) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "OP",
+            "name": "Optimism",
+            "price": "$2.45",
+            "change": "+7.93%",
+            "favorite": "Add Optimism (OP) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "OP",
+          "name": "Optimism",
+          "price": "$0.0771",
+          "change": "-2.16%",
+          "favorite": "Add OP to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "OP",
+          "name": "Optimism",
+          "price": "$0.0771",
+          "change": "-2.16%",
+          "favorite": "Add OP to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "060d021d3bd7a6887934ee69cd3fdd6181affbf13740e9d9c40c8226fda6f706",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Optimism/OP showed $0.0771 and -2.16%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $2.45 and +7.93% are the source defaults. OP and the name agree across the two actions."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0146",
+    "pickerOrdinal": 48,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "INJ",
+            "name": "Injective",
+            "price": "$28.50",
+            "change": "+8.16%",
+            "favorite": "Add Injective (INJ) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "INJ",
+            "name": "Injective",
+            "price": "$28.50",
+            "change": "+8.16%",
+            "favorite": "Add Injective (INJ) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "INJ",
+          "name": "Injective",
+          "price": "$7.32",
+          "change": "+5.37%",
+          "favorite": "Add INJ to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "INJ",
+          "name": "Injective",
+          "price": "$7.32",
+          "change": "+5.37%",
+          "favorite": "Add INJ to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "91d6f3432e8e9948ec1609789ba1e7a4cbe742f31475237267110d60538c250a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "officialReference": null,
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Injective/INJ showed $7.32 and +5.37%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $28.50 and +8.16% are the seed at the correct two-decimal display precision."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  }
+]
