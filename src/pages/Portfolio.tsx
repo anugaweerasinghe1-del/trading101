@@ -22,7 +22,7 @@ import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { marketRequests } from "@/lib/marketDataClient";
 import { quoteCoverageForHoldings, type QuoteCoverage } from "@/lib/quoteCoverage";
 import { getAccountPortfolioHistory, getPortfolioHistory, recordSnapshot } from "@/lib/portfolioHistory";
-import { calculateDayChange } from "@/lib/portfolio";
+import { calculateChangeFromEarlierSnapshot } from "@/lib/portfolio";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -279,7 +279,7 @@ export default function Portfolio() {
       ? (totalProfitLoss / (totalPositionValue - totalProfitLoss)) * 100
       : 0;
 
-  const dayChange = calculateDayChange(portfolio.totalValue, history);
+  const snapshotChange = calculateChangeFromEarlierSnapshot(portfolio.totalValue, history);
 
   // Approximate regular US equity schedule. Quote provenance controls valuation independently.
   const isMarketOpen = (() => {
@@ -499,16 +499,16 @@ export default function Portfolio() {
                 <p className="text-2xl font-bold tabular-nums">
                   <span data-portfolio-total-value>${portfolio.totalValue.toFixed(2)}</span>
                 </p>
-                {dayChange ? (
+                {snapshotChange ? (
                   <p
                     className={cn(
                       "text-2xs mt-0.5 tabular-nums",
-                      dayChange.dollars >= 0 ? "text-success" : "text-destructive",
+                      snapshotChange.dollars >= 0 ? "text-success" : "text-destructive",
                     )}
                   >
-                    {dayChange.dollars >= 0 ? "+" : ""}${dayChange.dollars.toFixed(2)} (
-                    {dayChange.percent >= 0 ? "+" : ""}
-                    {dayChange.percent.toFixed(2)}%) today
+                    {snapshotChange.dollars >= 0 ? "+" : ""}${snapshotChange.dollars.toFixed(2)}
+                    {snapshotChange.percent !== null && ` (${snapshotChange.percent >= 0 ? "+" : ""}${snapshotChange.percent.toFixed(2)}%)`}
+                    {" "}since <time dateTime={snapshotChange.baselineAt.toISOString()}>{snapshotChange.baselineAt.toLocaleString()}</time>
                   </p>
                 ) : (
                   <p className="text-2xs text-muted-foreground mt-0.5">Cash + Positions</p>
@@ -620,7 +620,7 @@ export default function Portfolio() {
                 {
                   question: "What does the TradeHQ portfolio tracker show?",
                   answer:
-                    "It tracks simulated positions, realized and unrealized P&L, day change, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
+                    "It tracks simulated positions, realized and unrealized P&L, change from a saved snapshot, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
                 },
                 {
                   question: "Are the portfolio statistics based on real prices?",

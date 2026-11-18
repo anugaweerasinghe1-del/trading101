@@ -255,23 +255,21 @@ export function calculateMaxDrawdown(history = getPortfolioHistory()): number {
   return maxDd;
 }
 
-/**
- * Day change: total value now vs ~24h ago snapshot. Returns null if no snapshot ≥ 20h old.
- */
-export function calculateDayChange(currentValue: number, history = getPortfolioHistory()): { dollars: number; percent: number } | null {
+/** Compare the current value with the most recent saved snapshot at least 20 hours old. */
+export function calculateChangeFromEarlierSnapshot(
+  currentValue: number,
+  history = getPortfolioHistory(),
+): { dollars: number; percent: number | null; baselineAt: Date } | null {
   if (history.length === 0) return null;
   const cutoff = Date.now() - 20 * 60 * 60 * 1000;
-  // Find oldest snapshot newer than cutoff... actually we want the snapshot closest to 24h ago
-  const dayAgoTarget = Date.now() - 24 * 60 * 60 * 1000;
   let candidate = history[0];
   for (const s of history) {
-    const t = new Date(s.timestamp).getTime();
+    const t = s.timestamp.getTime();
     if (t <= cutoff) candidate = s;
     else break;
   }
-  const candTime = new Date(candidate.timestamp).getTime();
-  if (candTime > cutoff) return null; // no 20h+ old snapshot yet
+  if (candidate.timestamp.getTime() > cutoff) return null;
   const dollars = currentValue - candidate.totalValue;
-  const percent = candidate.totalValue > 0 ? (dollars / candidate.totalValue) * 100 : 0;
-  return { dollars, percent };
+  const percent = candidate.totalValue > 0 ? (dollars / candidate.totalValue) * 100 : null;
+  return { dollars, percent, baselineAt: candidate.timestamp };
 }
