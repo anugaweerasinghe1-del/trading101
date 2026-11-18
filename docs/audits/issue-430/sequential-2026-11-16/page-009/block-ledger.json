@@ -1,0 +1,1306 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0001",
+    "text": "Learning notes: Paper Trade 170 Assets",
+    "sha256": "c48e4f75512243e9e12dfef4e7c5dbd4f096f49c94eb59c2e3e0d20cd36323d6",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h2",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading identifies simulator practice and count, cross-referenced to the prior reproducible 170-asset inventory."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The fresh hydrated heading retains the same practice label and count. It is separate from the H1 that includes the selected instrument."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0002",
+    "text": "Choose from 170 simulated assets and place buy or sell orders instantly. Every account starts with $100,000 in virtual cash. Educational simulation \u2014 no real money and no brokerage relationship.",
+    "sha256": "3136e8934252d74e31eb5fd6f6e16e042327b38a699ffe2894542ce884a07a3c",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Explicit no-money/no-broker qualification; current fresh guest starts with $100,000. The instant-fill wording is qualified by the simplified-fill paragraphs."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh hydrated desktop shows a $100,000 total and available cash. A normal market-order model is not a guarantee of backend availability; repository path can report failure."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0003",
+    "text": "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+    "sha256": "1ecb0367a81cda8fd8c399ad684df90c1e8b5a4aeafa4707962690ae1b2b0318",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Identifies TradeHQ and the creator, points to the editorial background and limits the professional-review claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh visible attribution also links /about. Professional accreditation is not asserted."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0004",
+    "text": "How the practice trading desk works",
+    "sha256": "d85cd8075765cc7cbd8cfaeba7fc6c2c0b96a930fbffeef8539729a9cfd1f51d",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Heading accurately introduces order entry and storage."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The hydrated heading still precedes the same instrument/side/size and restoration explanation."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0005",
+    "text": "The trading desk is where simulated orders are placed. You choose an instrument, choose a side, choose a size, and the order is filled against the simulator's current price. Guest fills and results are recorded in your browser. Account orders execute through the server and cash, positions and server-recorded trade history restore across devices when the service is available.",
+    "sha256": "9a2e84bfbba044d5ee9bfb37cf3b3f0e9fb4b7df97256afd5afb939e488895e6",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The current source uses browser guest order execution and authenticated server RPC. Separate wording explicitly conditions cross-device restoration on service availability."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Independent read of executeTrade confirms anonymous use enters the guest lock and returns browser results; authenticated use reconciles and calls record_practice_trade. Real restoration remains untested here."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0006",
+    "text": "One order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. The virtual order screen leaves quantities to the learner. Comparing hypothetical account exposure can teach arithmetic, but this simplified fill model does not validate real-market risk management.",
+    "sha256": "7983227b7c815abb2b58e99c80f9b9c5b3d6c1d036af148c811a1e941d900e22",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The order desk submits market execution only. Both order panels and Trade.tsx's submit path agree. Reserve the exact shown-price parity claim for a client/server price check."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Both UI panels lack a resting-order submission path. Server fill applies through a separate input, so review shown-price language against the quote/execution paths before settling the concern."
+    },
+    "disposition": "SHOWN-PRICE-ACCURACY-COUNTERCHECK-PENDING"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0007",
+    "text": "What to practise on the desk",
+    "sha256": "83fe60337cf9b2ea254ce44f6fd224c58ca8ce02da530bbd11e8c8d71e5dbbb0",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading introduces four distinct practice exercises."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The succeeding bullets teach sizing, discipline, entry and concentration rather than promising a trading method."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0008",
+    "text": "Position sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.",
+    "sha256": "d2e50718bb15d4550f7cf027232a559ad57c55b8ae95bb96b4c01a383ec65639",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "An adverse-move comparison illustrates position sizing; it explicitly avoids guaranteed outcomes and describes absent automatic stops."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Read the same sentence on mobile. The fixed-fraction caveat and stop limitation qualify the hypothetical comparison."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0009",
+    "text": "Stop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.",
+    "sha256": "8f0c39f534bdf6dd468b0a85e683900b4edc0762005e8567c166b41a41e06943",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Decide a hypothetical exit before entering and check the practice decision against a journal; a concrete exercise."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "No claim that the simulator sets a stop; the exercise tells the learner to decide and record the exit."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0010",
+    "text": "Entry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.",
+    "sha256": "5d9e8f302ffea8067f53161b0c6293d716ea5b87d9d5a7628634c9d74d023b18",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A timestamp comparison teaches the difference between intended and received simulator price, without forecasting real fills."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The recommendation is to compare two recorded prices, not a claim that the simplified fill reproduces spread or slippage."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0011",
+    "text": "Concentration: run a week with five positions and a week with one, and compare the drawdown.",
+    "sha256": "87972d14ac9e0fab70784d1d8f8b9306f5540773b62c8ceccafeee4950167e91",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Comparing one versus five positions is a hypothetical concentration exercise, with no promised drawdown outcome."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The scope is a practice journal comparison, without a claim that one position or five positions is inherently superior."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0012",
+    "text": "Limits of any simulator",
+    "sha256": "a8026cb12e229694053b4358cdd5118e32b95833a14dc5df079122d75401b7bb",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading identifies where simplified mechanics end."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The section is immediately followed by the model fee and limits."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0013",
+    "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Displayed-price fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+    "sha256": "c0ce7c96a1182a1ebea6e5229cfb31efef94478d436828668444c76f4b480c1a",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The fixed 0.1% virtual fee matches total*0.001 in the guest engine. Exclusions and no-prediction framing add material educational context."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The UI and the older verified FAQ distinguish virtual execution fees from real fees. Excluded spreads, financing and taxes remain explicit."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0014",
+    "text": "Orders supported by this simulator",
+    "sha256": "8f5cdba45a30f1feaf0a2a6cc1fe4ba16a3c28a17fc42df4af96885fb4cdff7f",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The second order heading introduces three specific available or unavailable order behaviors."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The subsection reiterates the market-order boundary and adds the sell/short distinction."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0015",
+    "text": "Market order: the virtual engine uses a simplified displayed practice price. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+    "sha256": "196f3b7fe9524cf493ff5d7d20522de3d423e146cd934d91c56df643c620ea10",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Real market-order wording notes price variation and interruptions; virtual model is labelled simplified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Available market prices and incomplete execution under interruptions are possible. No real-broker execution guarantee appears."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0016",
+    "text": "Limit orders are explained in the learning material but are not available in the current simulator. Practice orders execute as market orders at the shown simulated price.",
+    "sha256": "a803f36f3db2eeb33e6dcc4d1212bcaacb7d519a1d2ca13ac7a3ed6bdd386173",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Limit orders are reference material, while these practice orders use market execution. Exact displayed-price parity for signed-in orders remains to be cross-checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Market-only support is independently corroborated by the actual controls. The sentence about shown execution price needs the specific signed-in countercheck."
+    },
+    "disposition": "SHOWN-PRICE-ACCURACY-COUNTERCHECK-PENDING"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0017",
+    "text": "Closing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.",
+    "sha256": "2a35be6386888a3aabeb309683376324aff48420720e215ec0992e616ca43821",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guest engine limits sells to holdings and filters current trade records into history. No short exposure is offered."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Sell-on-existing-quantity follows guest engine validation and no visible short action. Server scope remains to review independently."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0018",
+    "text": "A practice routine that actually builds skill",
+    "sha256": "daab8af6ef5a9aa6f3dadcca2e7ed74ce3ce6145119f4ea6b2f07fe62172c8da",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading introduces a concrete repeatable routine rather than an outcome guarantee."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The content following the title requires reflection and measurement, without implying reliably better investment results."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0019",
+    "text": "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.",
+    "sha256": "1bc8b40258f6f189a69331e28c9541be8e1edc4b0689f8f0d5da403d1565c32c",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The block asks for a question, recorded assumptions and review. It explicitly distinguishes volume of trades from learning evidence."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The separate reread confirms the rejection of transaction count alone. No demand for repeated artificial activity."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0020",
+    "text": "A sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.",
+    "sha256": "cce9dc04e93c99f29178a053056e2ceffd871053b0fd05e4ff24b649d1b89dde",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The sample specifies observable quantities and timestamp/cost checks and disclaims increased returns."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The journal questions refer to quote timestamps and missing costs, both concrete practice limitations."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0021",
+    "text": "References and related pages",
+    "sha256": "95fdefa4c5697b6157a5462167c0c071bed9855bf178c610a9acef49e1d49d8c",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note h3",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The references heading describes links."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The mobile reference title is identical and followed by four labelled navigation options."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0022",
+    "text": "Choose an instrument",
+    "sha256": "10397a942ae77dbe50070b934f2b993acd06e52e73a68f60a539c453d59cc204",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The instrument CTA points to /markets."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Both no-JS and hydrated href projections identify /markets."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0023",
+    "text": "Your practice portfolio",
+    "sha256": "92c49ee1e3f0d78c72c6af949b51aaa9121b8d06c2161ebb92e26ca88b0caca6",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The portfolio CTA points to /portfolio."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Both no-JS and hydrated href projections identify /portfolio."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0024",
+    "text": "How-to guides per asset",
+    "sha256": "0f5f88ac48315389ffd32a554504348a37d4d77c47df53b832346249e3ff037f",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Asset instruction points to /how-to-trade, distinct from the simulator."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Both no-JS and hydrated href projections identify /how-to-trade. The destination body has its own queue."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0025",
+    "text": "Strategy walkthroughs",
+    "sha256": "8b7cc98a26fff9c6830808a282d27de469e345cefc5544d989bcce921661e502",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note li",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The strategy CTA points to /strategy."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Both no-JS and hydrated href projections identify /strategy. The destination body has its own queue."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0026",
+    "text": "Educational simulation only \u2014 not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+    "sha256": "6b1d67d4b146fb8fe9bc867f0c483e7de2fa9349f5f496fa62809cef687df4e7",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/staticCopy.ts; scripts/content.ts; src/components/PublisherNotes.tsx",
+    "scope": "publisher-note p",
+    "captures": [
+      "capture-0.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The disclaimer explains virtual-only and quote uncertainty and explicitly separates generated charts."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate hydrated canvas status labels and browser text retain the scope qualification. No real-money outcome or guaranteed returns are advertised here."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0027",
+    "text": "Is the TradeHQ trading simulator free to use?",
+    "sha256": "15b64299065555dc10872adf0627bc771da180c5a549425fa2b0b03c5bbec143",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ question",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named disclosure asks a specific beginner question and shows answer 1."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile activation preserves matching control text and associated answer."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0028",
+    "text": "Yes. TradeHQ lets guests practise with $100,000 in virtual cash without signup or a credit card. There are no real-money charges; simulated buy and sell orders include a 0.1% virtual transaction fee. (Educational simulation only \u2014 not financial advice.)",
+    "sha256": "172e2c70cbc2ced6b7c71cc0105fd9b0563b47d0235a4b94b370a70098a7bf0b",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ answer",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Matches #454's verified copy. Free guest access is distinguished from a virtual accounting fee."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh mobile answer is identical to the desktop answer reviewed against current source. Matches #454's verified copy. Free guest access is distinguished from a virtual accounting fee."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0029",
+    "text": "Are the prices on the trading simulator real?",
+    "sha256": "b5e17293a2b14512f3cd3785939d6b7c0eeadfd8b6f48af24d3f6807e29a66d5",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ question",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named disclosure asks a specific beginner question and shows answer 2."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile activation preserves matching control text and associated answer."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0030",
+    "text": "Data availability differs by asset. TradeHQ may use live, cached, delayed or simulated quotes, and the interface labels the source when available. Treat all prices as educational rather than execution-quality brokerage data.",
+    "sha256": "96d3312824f8ceb6d5198ece9ea537a662a6178262c4d2e52621fa3d2f0539b5",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ answer",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The source and freshness caveat matches the observed provider, delayed and simulator pathways."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh mobile answer is identical to the desktop answer reviewed against current source. The source and freshness caveat matches the observed provider, delayed and simulator pathways."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0031",
+    "text": "What can I trade on TradeHQ?",
+    "sha256": "eaba8b96c82b973e45bb17e81ce5fe8a0e3c0c42760502761f2c28cdb3cd990d",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ question",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named disclosure asks a specific beginner question and shows answer 3."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile activation preserves matching control text and associated answer."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0032",
+    "text": "170 practice instruments across five asset classes: cryptocurrencies (BTC, ETH, SOL\u2026), US stocks (AAPL, NVDA, TSLA\u2026), ETFs (SPY, QQQ, VOO\u2026), major forex pairs and commodities like gold and oil \u2014 all in one simulated portfolio.",
+    "sha256": "7a91a7d40dc39bb14fb1a93288dee25308d5e0c2faaa8332f1695f01df692ed8",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ answer",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The five illustrative classes and selected examples match the repository asset inventory and virtual portfolio."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh mobile answer is identical to the desktop answer reviewed against current source. The five illustrative classes and selected examples match the repository asset inventory and virtual portfolio."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0033",
+    "text": "Can I lose real money on TradeHQ?",
+    "sha256": "e1e44e384aa2063140d2003f0ab941a367751dc7fabde07bb5bbde11b614465f",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ question",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named disclosure asks a specific beginner question and shows answer 4."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile activation preserves matching control text and associated answer."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0034",
+    "text": "No. Every trade uses virtual currency only \u2014 no real funds are ever at risk. TradeHQ is built purely for education and practice. (Educational simulation only \u2014 not financial advice.)",
+    "sha256": "e5acd45de3ec65d902f6c05bc4753d6454315055ef5a713161549d143451ba7e",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ answer",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The page and modal use virtual money only. No real-money order or brokerage is advertised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh mobile answer is identical to the desktop answer reviewed against current source. The page and modal use virtual money only. No real-money order or brokerage is advertised."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0035",
+    "text": "How do I start practice trading?",
+    "sha256": "69197620a9e7d43529773d9e69bd2d5c4ed9814f2fdc726c1db7cd1c326bf6eb",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ question",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named disclosure asks a specific beginner question and shows answer 5."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate mobile activation preserves matching control text and associated answer."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0036",
+    "text": "Choose an asset from the market cards or asset selector, set a virtual order size, then select Buy or Sell. Guest orders are stored in this browser; signed-in account orders and cash/positions are server-recorded when the service is available.",
+    "sha256": "677ce749a38cd4226aafcc0c4d58e7d1df453ba921ffe4cecad6b95ec0efed77",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx; src/components/AssetFAQSection.tsx",
+    "scope": "expanded FAQ answer",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Matches #454's verified guest/server split and service-availability caveat; no all-journal sync claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Fresh mobile answer is identical to the desktop answer reviewed against current source. Matches #454's verified guest/server split and service-availability caveat; no all-journal sync claim."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0037",
+    "text": "Paper Trade 170 Assets \u2014 Free Simulator | TradeHQ",
+    "sha256": "3d2d611c9ef882fe850ecb09f8a8c26851eac78695116a8242699342a17cb136",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/routes.ts; scripts/prerender.ts",
+    "scope": "initial page title",
+    "captures": [
+      "capture-0.json",
+      "initial.html"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Title identifies a simulator with conditional virtual-trading context; no profits promised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Counterchecked initial and hydrated titles separately. Different wording maps to the same /trade canonical and educational purpose."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0038",
+    "text": "Buy and sell 170 stocks, crypto, ETFs, forex and commodities with $100,000 in virtual cash. No signup or real-money trading. Educational simulation only.",
+    "sha256": "ae4c52ccb636c3d69fd78f660cc47449b44647e9f37bb0e638373f1d058ea677",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "scripts/routes.ts; scripts/prerender.ts",
+    "scope": "initial meta description",
+    "captures": [
+      "capture-0.json",
+      "initial.html"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Description qualifies monetary amounts as virtual and names supported practice use."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separately reread the served description alongside the visible simulation disclaimer. No real-money access or investment outcome is promised."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0039",
+    "text": "Free Trading Simulator \u2014 Buy Stocks, ETFs & Crypto with $100K | TradeHQ",
+    "sha256": "7eaca1df0e9977b941ceef3763966f2c6a02316ef42069f4f6e78e7cc88cc405",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx",
+    "scope": "hydrated page title",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Title identifies a simulator with conditional virtual-trading context; no profits promised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Counterchecked initial and hydrated titles separately. Different wording maps to the same /trade canonical and educational purpose."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0040",
+    "text": "Use our free trading simulator to practise stocks, ETFs and crypto with $100K virtual money. Market data may be live, cached, delayed or simulated. No real money is involved.",
+    "sha256": "68fd2dc8c091e7b1ba24a246739ddcbfc15c8e4334a2e30dc9a3016af6d66d6a",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx",
+    "scope": "hydrated meta description",
+    "captures": [
+      "capture-2.json",
+      "capture-1.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Description qualifies monetary amounts as virtual and names supported practice use."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separately reread the served description alongside the visible simulation disclaimer. No real-money access or investment outcome is promised."
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0041",
+    "text": "Place simulated buy and sell orders across crypto, stocks, ETFs, forex and commodities with $100,000 in virtual cash. Quotes and charts can be provider-sourced, delayed or simulated and clearly labelled LIVE, CACHED or SIM. (Educational simulation only \u2014 not financial advice.)",
+    "sha256": "66ed853031c638b336b19ee17c0f4738989ff71147652827be21c8cc74236f08",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/pages/Trade.tsx",
+    "scope": "hydrated guest intro",
+    "captures": [
+      "capture-1.json",
+      "capture-2.json",
+      "capture-3.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-001"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The quoted enumerated labels omit Provider snapshot, MARKET DATA and SNAPSHOT, visible in the same route."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "A separate live guided view and the chart and quote source branches verify additional DELAYED, SIMULATED, FIXED and other optional labels. The simulation disclosure remains accurate."
+    },
+    "disposition": "CONFIRMED-CONTENT-MISMATCH"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0042",
+    "text": "Mobile order panel close button with no programmatically determinable name.",
+    "sha256": "8f577bebfd0ae93a0ace8979a0279c3805a4c0c57d48a01064254fa6b042bba9",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "scope": "production before",
+    "captures": [
+      "before-drawer.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-002"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "390px light accessibility tree exposes an unnamed button with a chevron image."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Separate 430px dark AX and outerHTML confirm there is no name through aria-label, title or button text."
+    },
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sourceSHA256": "e90784834bf1cbdab2794f49d5585aa51acff12de178078a7a05daa0198d0772"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0043",
+    "text": "Mobile order panel percentage slider with no programmatically determinable name.",
+    "sha256": "a673071b9784c1cad0f6246ec7e036e90cdc0daf19aaad1aa582b2d197fb43ce",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "scope": "production before",
+    "captures": [
+      "before-drawer.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-002"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Actual Buy slider role is present without a programmatic name. It controls available-cash sizing."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "The separate Sell context is likewise unnamed and the role's DOM attributes contain no labeling reference."
+    },
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sourceSHA256": "e90784834bf1cbdab2794f49d5585aa51acff12de178078a7a05daa0198d0772"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0044",
+    "text": "Place simulated buy and sell orders across crypto, stocks, ETFs, forex and commodities with $100,000 in virtual cash. Quotes and charts may use provider data, delayed prices or simulated values. Check the source and freshness labels for each input where available. (Educational simulation only \u2014 not financial advice.)",
+    "sha256": "8b7b3fa7db8355cdadc1ea850abf75164e8678c851d1aeedbb3179c7377f391e",
+    "source": "src/pages/Trade.tsx",
+    "candidateSourceSHA256": "f7b1205d3d8d2fee9ef9d88a2ddc093bd94f8be87113c9911752920626808e52",
+    "scope": "compiled local candidate",
+    "captures": [
+      "local-final-intro.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-001"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Local mobile and desktop use consistent labels and preserve both prior FAQ answers and the disclosure."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Fresh native production confirmation and skeptical reread due."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0045",
+    "text": "Close order panel",
+    "sha256": "729c78352e61c862073cacad756ce48b27b13afa4d3d350c296467c39abbb93b",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "candidateSourceSHA256": "4b8f817ede5a972e7019a7c64a01382f22e955661713311f1b71a71b4d2ababf",
+    "scope": "compiled local candidate",
+    "captures": [
+      "local-trade-drawer.json",
+      "local-btc-drawer.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-002"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Local compiled AX exposes the name and Enter dismisses the panel on both routes and widths."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Fresh native production confirmation and skeptical reread due."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0046",
+    "text": "Order size as a percentage of available cash | Order size as a percentage of holdings",
+    "sha256": "28ff34f7e4d7326435b3506c2615a1cc12b748045f61d235115c703f6b9e874f",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "candidateSourceSHA256": "4b8f817ede5a972e7019a7c64a01382f22e955661713311f1b71a71b4d2ababf",
+    "scope": "compiled local candidate",
+    "captures": [
+      "local-trade-drawer.json",
+      "local-btc-drawer.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-002"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Local compiled Buy and Sell update the AX slider name with the correct sizing basis on both routes and widths."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Fresh native production confirmation and skeptical reread due."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0047",
+    "text": "Search assets by name or symbol",
+    "sha256": "ac8e07c8afd0872d1af9a7f986e3be289e377550f0acd31bf3a11a452887af84",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Named input makes both lookup methods clear."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The fresh desktop and mobile searches accept both the nonmatching fixture and the valid symbol.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0048",
+    "text": "Search 170 assets...",
+    "sha256": "2ff17db5df185f83cfa15b49f3192dd3696e5f27bd2b4a5e4513057d9c83b389",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Actual placeholder states the catalog count."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "After hydration, both picker instances contain 170 available asset actions. The separate accessible input label does not depend on placeholder.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0049",
+    "text": "All",
+    "sha256": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Current All filter exposes pressed state on first open."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "In the Forex state All is no longer pressed, consistent with the mutually exclusive filter source.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0050",
+    "text": "Crypto",
+    "sha256": "df12b8f89b61274c73291296ec828eab61202f5863680ec6003682821d77fd31",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Asset-class filter meaning and label agree with source."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Independent FX selection leaves the Crypto filter unpressed. No real coin ownership is described.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0051",
+    "text": "Stocks",
+    "sha256": "df09c2fb2400025ab24ac6ff6f00d758df1189a266e72a20453f9cf28ccbbfc2",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Short label identifies the stock subset."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Second AX tree exposes the same usable filter; it does not claim live execution.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0052",
+    "text": "ETFs",
+    "sha256": "c6d29ec0e75160d962bffa0711cd50fd617811845735e45f67433edb0a2c0946",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Standard ETF label matches the registered asset type."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separate tree identifies the same selection affordance and default unpressed state.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0053",
+    "text": "Forex",
+    "sha256": "f17c396c36a6bb4f1c424ce6f38a2f09d711e4ee9875efcfcd829e447c25e2b3",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The label accurately names currency pairs."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "In each runtime Forex state the filter reports pressed and the matching pair uses both its symbol and name.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0054",
+    "text": "Commodities",
+    "sha256": "ee35b0629f9336cd8266cfb711418df01900cb6ccd706931b95020c41bbef467",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Short label names the practice commodity class."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separate tree retains it as an independent unselected option during FX filtering.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0055",
+    "text": "No assets found",
+    "sha256": "ad5555b56cd732c2b9af35daa15d6a374b97c3a7c41884fed5cf409749c0e987",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Nonmatching test text yields a plain-language empty result."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separate 1440px case reproduces for the same harmless search, then clears when searching EUR/USD.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0056",
+    "text": "Add EUR/USD to favorites",
+    "sha256": "db8f21aa955584bcf94daec8bcf004f5d349c677d3873ffba3a6d61416eb0ad3",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named secondary control identifies its target asset."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "It is separate from the selecting button in both states. No favorite change was required for the evidence.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0057",
+    "text": "Quote updates paused",
+    "sha256": "31dca680c442658bea6bc18544d245c033cac399e2cb76249b5e7f0e3076fb14",
+    "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "source": "src/components/trading/LiveDataToggle.tsx",
+    "scope": "public guest picker and quote controls",
+    "captures": [
+      "production-picker.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Turning off quote updates presents the current state."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Role has aria-pressed=false. Reactivating removes the paused label. This control does not change source pricing or inspect the provider contract.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    },
+    "disposition": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  }
+]
