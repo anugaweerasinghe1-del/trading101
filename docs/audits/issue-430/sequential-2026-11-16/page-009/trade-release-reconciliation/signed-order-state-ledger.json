@@ -1,0 +1,78 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0497",
+    "text": "390px signed-in fixture | stale quote",
+    "source": "src/pages/Trade.tsx; src/lib/portfolio.ts; src/lib/cloudPortfolio.ts",
+    "sourceRevision": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "local-signed-order-fixture.json",
+    "sha256": "bfb1fa07e53de2c77dee2c14bc0c911de243e35156697902eb3e398c0790c12f",
+    "capturedAtUTC": "2026-11-18T08:48:12.121628+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The page shows the controlled stale-quote error and preserves $100,000 cash and an empty ledger."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate state and arithmetic review",
+      "reason": "The isolated RPC fulfills the stale provider rejection. Cash and the synthetic browser ledger agree with the untouched initial snapshot. Mobile closes its form while the error remains available in a toast."
+    },
+    "disposition": "REVIEWED-ISOLATED-SIMULATION; NO-PRODUCTION-ACCOUNT-CREDIT"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0498",
+    "text": "390px signed-in fixture | eligible SDK-shaped success",
+    "source": "src/pages/Trade.tsx; src/lib/portfolio.ts; src/lib/cloudPortfolio.ts",
+    "sourceRevision": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "local-signed-order-fixture.json",
+    "sha256": "98c442622a1d706d239bbc73b0f5d52d25f9429f09f4f9e8d1adbb499725375a",
+    "capturedAtUTC": "2026-11-18T08:48:12.392369+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The page reports the fixture’s $256 execution quote for two units and one recorded trade. The preview uses its own $255.25 amount."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate state and arithmetic review",
+      "reason": "A $512 gross virtual cost and $0.512 fee yield $99,487.488 cash. Exactly one synthetic RPC was invoked with asset, buy side and quantity two. The guided completion appears after the success."
+    },
+    "disposition": "REVIEWED-ISOLATED-SIMULATION; NO-PRODUCTION-ACCOUNT-CREDIT"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0499",
+    "text": "1440px signed-in fixture | stale quote",
+    "source": "src/pages/Trade.tsx; src/lib/portfolio.ts; src/lib/cloudPortfolio.ts",
+    "sourceRevision": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "local-signed-order-fixture.json",
+    "sha256": "e5ba79a4edb05a0c974b645a7b25ca28bb0e489f5bdaed0d275cc3eb95a026b5",
+    "capturedAtUTC": "2026-11-18T08:48:11.500045+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The page shows the controlled stale-quote error and preserves $100,000 cash and an empty ledger."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate state and arithmetic review",
+      "reason": "The same synthetic account cash and history remain intact. The desktop error appears as a status rather than a completion."
+    },
+    "disposition": "REVIEWED-ISOLATED-SIMULATION; NO-PRODUCTION-ACCOUNT-CREDIT"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0500",
+    "text": "1440px signed-in fixture | eligible SDK-shaped success",
+    "source": "src/pages/Trade.tsx; src/lib/portfolio.ts; src/lib/cloudPortfolio.ts",
+    "sourceRevision": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "local-signed-order-fixture.json",
+    "sha256": "98f9891d909fcb0788f420bc70a5efaa7587c4bc3c49a96563f537d1746ed190",
+    "capturedAtUTC": "2026-11-18T08:48:11.597465+00:00",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The page reports the fixture’s $256 execution quote for two units and one recorded trade. The preview uses its own $255.25 amount."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate state and arithmetic review",
+      "reason": "A $512 gross virtual cost and $0.512 fee yield $99,487.488 cash. Exactly one synthetic RPC was invoked with asset, buy side and quantity two. The guided completion appears after the success."
+    },
+    "disposition": "REVIEWED-ISOLATED-SIMULATION; NO-PRODUCTION-ACCOUNT-CREDIT"
+  }
+]

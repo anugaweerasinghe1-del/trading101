@@ -83,3 +83,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Disclosure and note production readback
 
 #474 has its exact native receipt and twelve fresh custom-domain cases. Four product fixes and six further revised learning notes passed. The notes extend the already verified mobile price wording under the same identified root. P09 has 482 durable two-pass records and remains partial. [Exact #474 receipt](trade-release-reconciliation/RELEASE-474.json)
+
+# Chart and order release position
+
+#475 protected-merged with the exact validated tree and awaits native confirmation and current public review. Four disposable signed-in projections separately reviewed the accepted server-shaped fill and safe stale-quote rejection. P09 has 500 first-pass and 495 second-pass records at this stage. [Pending release](trade-release-reconciliation/RELEASE-475-PENDING.json)
