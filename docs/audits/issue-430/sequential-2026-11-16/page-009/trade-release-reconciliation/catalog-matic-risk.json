@@ -1,0 +1,16 @@
+{
+  "id": "STRICT-TRADE-RISK-002",
+  "classification": "SUBSTANTIATED QUALITY RISK",
+  "status": "OPEN",
+  "block": "STRICT-0009-BLOCK-0129",
+  "source": "src/lib/assets.ts; src/lib/assetContent.ts",
+  "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967502085",
+  "official": {
+    "url": "https://docs.polygon.technology/pos/concepts/tokens/matic-to-pol",
+    "retrievedUTC": "2026-11-18",
+    "observed": "POL is the native gas and staking token on Polygon Chain"
+  },
+  "reason": "The public picker lists MATIC with Polygon and no legacy qualifier, beside the separate POL instrument. The linked educational detail explains legacy semantics and the catalog explicitly keeps MATIC for account history. A qualifier should preserve the existing ID, quotes and history.",
+  "policyViolation": false,
+  "pageClosureCredit": 0
+}

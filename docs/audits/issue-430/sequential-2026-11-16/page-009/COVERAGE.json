@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 121,
-  "firstPass": 121,
-  "secondPass": 121,
+  "textRecords": 128,
+  "firstPass": 128,
+  "secondPass": 128,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -97,7 +97,7 @@
       "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Complete #469 required checks and native public rereads at 0093 and 0095. Rebase the mobile price correction onto its merged main, verify its release at 0113, and continue picker ordinal 31 (MATIC) and the shared picker quote-provenance state.",
+  "nextAction": "Complete #469 protected merge and active native production rereads at 0093 and 0095. Publish and verify the mobile price correction at 0113. Continue picker ordinal 38 (FTM) and shared quote provenance.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
@@ -114,9 +114,10 @@
     "trade-release-reconciliation/catalog-block-ledger.json",
     "cooldown-dialog/block-ledger.json",
     "trade-release-reconciliation/picker-rows-001-016-ledger.json",
-    "trade-release-reconciliation/picker-rows-017-030-ledger.json"
+    "trade-release-reconciliation/picker-rows-017-030-ledger.json",
+    "trade-release-reconciliation/picker-rows-031-037-ledger.json"
   ],
-  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–30 reviewed twice against controlled captures and source; ordinal 31 remains due. Shared quote provenance and named existing findings remain open.",
+  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–37 reviewed twice against controlled captures and source; ordinal 38 remains due. Shared quote provenance and named existing findings remain open.",
   "confirmedProductDefectsProductionVerified": 5,
   "latestApplicationRelease": "8400ff251984500416dfc333c079881e555bbd6b",
   "qualityRisks": [
@@ -124,6 +125,11 @@
       "id": "STRICT-TRADE-RISK-001",
       "status": "OPEN-LEGACY-IDENTIFIER-COUNTERCHECK",
       "record": "trade-release-reconciliation/catalog-risk.json"
+    },
+    {
+      "id": "STRICT-TRADE-RISK-002",
+      "status": "OPEN",
+      "record": "trade-release-reconciliation/catalog-matic-risk.json"
     }
   ],
   "activeSeparateCandidate": {
