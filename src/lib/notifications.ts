@@ -12,6 +12,8 @@ interface MilestoneState {
 }
 
 const MILESTONE_KEY = 'tradehq_milestones';
+const MILESTONE_ALERTS_KEY = 'tradehq_milestone_alerts';
+let sessionAlertPreference: boolean | undefined;
 
 export const MILESTONES = [
   { value: 10, label: '+10%', type: 'success' as const },
@@ -30,6 +32,32 @@ export function requestNotificationPermission(): Promise<NotificationPermission>
   }
   
   return Notification.requestPermission();
+}
+
+function readMilestoneAlertPreference(): boolean | undefined {
+  if (sessionAlertPreference !== undefined) return sessionAlertPreference;
+  try {
+    const preference = localStorage.getItem(MILESTONE_ALERTS_KEY);
+    if (preference === 'on') return true;
+    if (preference === 'off') return false;
+  } catch {
+    // Without a stored choice, retain the existing alert behavior.
+  }
+}
+
+export function milestoneAlertsEnabled(): boolean {
+  return typeof Notification !== 'undefined' &&
+    Notification.permission === 'granted' &&
+    readMilestoneAlertPreference() !== false;
+}
+
+export function setMilestoneAlertsEnabled(enabled: boolean): void {
+  try {
+    localStorage.setItem(MILESTONE_ALERTS_KEY, enabled ? 'on' : 'off');
+    sessionAlertPreference = undefined;
+  } catch {
+    sessionAlertPreference = enabled;
+  }
 }
 
 export function getMilestoneState(): MilestoneState {
@@ -101,18 +129,17 @@ export function checkMilestones(
         
         setMilestoneState(state);
         
-        // Trigger notification
-        onMilestoneReached(milestone.value, milestone.label, milestone.type);
-        
-        // Send browser notification
-        sendBrowserNotification(milestone.label, currentValue, state.initialValue);
+        if (readMilestoneAlertPreference() !== false) {
+          onMilestoneReached(milestone.value, milestone.label, milestone.type);
+          sendBrowserNotification(milestone.label, currentValue, state.initialValue);
+        }
       }
     }
   });
 }
 
 function sendBrowserNotification(label: string, currentValue: number, initialValue: number): void {
-  if (Notification.permission === 'granted') {
+  if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
     const isPositive = label.startsWith('+');
     const icon = isPositive ? '📈' : '📉';
     const profit = currentValue - initialValue;
