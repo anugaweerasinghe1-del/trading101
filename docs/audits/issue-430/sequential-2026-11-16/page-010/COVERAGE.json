@@ -1,0 +1,101 @@
+{
+  "pageId": "STRICT-0010",
+  "url": "https://www.thetradehq.com/portfolio",
+  "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "pageStatus": "PARTIAL-REVIEW",
+  "strictPageClosure": false,
+  "closureCredit": 0,
+  "firstPass": 33,
+  "secondPass": 33,
+  "rawCaptures": [
+    {
+      "file": "production-portfolio-guest-capture-0.json",
+      "atUTC": "2026-11-18T09:41:48.036938+00:00",
+      "layout": "390px dark",
+      "javaScript": false,
+      "rawOccurrences": 48,
+      "expandedFAQCount": 0,
+      "artifactSHA256": "efd6cf3ff824f30273a2fc6c17a1df1218fb42d6d341fd199daa1b0bbe4a6c36",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-1.json",
+      "atUTC": "2026-11-18T09:42:03.668141+00:00",
+      "layout": "390px light",
+      "javaScript": true,
+      "rawOccurrences": 629,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "c56c74bc05fae5291af7a1691ef35119f2cb140c3a668fb3dd9cda43e8aefb41",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-2.json",
+      "atUTC": "2026-11-18T09:41:55.423363+00:00",
+      "layout": "1440px dark",
+      "javaScript": true,
+      "rawOccurrences": 631,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "790744461517cbf5b84472060235dde7b33e9a3a7b079a63a97506f326b7be7e",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-3.json",
+      "atUTC": "2026-11-18T09:41:55.755214+00:00",
+      "layout": "1440px light",
+      "javaScript": true,
+      "rawOccurrences": 630,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "e239423f34b2cfa8dacc4276ba97281ac5bb3f95a3e5676f46918d8d5982f533",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-4.json",
+      "atUTC": "2026-11-18T09:41:55.638254+00:00",
+      "layout": "390px dark",
+      "javaScript": true,
+      "rawOccurrences": 631,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "b3e195b3a9aacb3f4faac880cb417b2a7e5921670259beb996cfd0983a574a81",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    }
+  ],
+  "findings": [
+    "STRICT-PORTFOLIO-001",
+    "STRICT-PORTFOLIO-002"
+  ],
+  "confirmedProductDefectsReproduced": 2,
+  "confirmedProductDefectsProductionVerified": 0,
+  "nextAction": "Reproduce and review populated guest holdings, recovery, scenario inputs and results, chart data, settings, journal and flow states. Local fixes for 0032 and 0033 await a protected candidate release. No closure credit.",
+  "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
+  "qualityRisks": [
+    {
+      "id": "STRICT-PORTFOLIO-RISK-001",
+      "block": "STRICT-0010-BLOCK-0006",
+      "status": "OPEN",
+      "scope": "The text describes measurements of outcomes as measurements of a process."
+    },
+    {
+      "id": "STRICT-PORTFOLIO-RISK-002",
+      "block": "STRICT-0010-BLOCK-0015",
+      "status": "OPEN",
+      "scope": "The local curriculum uses money where gains and losses are always virtual."
+    }
+  ],
+  "historicalDisposition": {
+    "id": "IND-P10-001",
+    "status": "SUBJECTIVE; NO CONFIRMED DEFECT",
+    "source": "../../independent-2026-11-17/LIVE-BROWSER-RESULTS.md"
+  },
+  "candidatePR": {
+    "number": 478,
+    "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+    "status": "OPEN; exact hosted validation and production reread pending",
+    "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/478",
+    "findingIds": [
+      "STRICT-PORTFOLIO-001",
+      "STRICT-PORTFOLIO-002"
+    ]
+  },
+  "beforeEditIssueComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974926389",
+  "localCandidateEvidence": "local-candidate-alerts.json"
+}

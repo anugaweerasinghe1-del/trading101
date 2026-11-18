@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-18T09:35:55.243741+00:00",
-  "phase": "P10-STRICT-REVIEW-NEXT",
+  "updatedAtUTC": "2026-11-18T10:01:10.014795+00:00",
+  "phase": "P10-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/portfolio",
   "newAuditCompletedPages": 8,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "3243cf7f-990c-4bd5-9392-8cd8d99dc1b9",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Begin P10 Portfolio. Reuse the 17 November supplementary evidence, capture current guest and applicable authored state branches, and establish block-level first and second passes.",
+  "nextStep": "Reproduce and review populated guest holdings, recovery, scenario inputs and results, chart data, settings, journal and flow states. Local fixes for 0032 and 0033 await a protected candidate release. No closure credit.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -111,8 +111,8 @@
   },
   "activeAssignment": {
     "page": "STRICT-0010",
-    "status": "SUPPLEMENTARY-INSPECTED-STRICT-PENDING",
-    "nextExactContentState": "Live Portfolio shell, source/imported components, guest blank and populated practice states, and documented authenticated boundaries."
+    "status": "PARTIAL-REVIEW",
+    "nextExactContentState": "Reproduce and review populated guest holdings, recovery, scenario inputs and results, chart data, settings, journal and flow states. Local fixes for 0032 and 0033 await a protected candidate release. No closure credit."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -211,5 +211,29 @@
     "rawResidualGroupsMapped": 247,
     "signedOrderFixtureStatesTwoPass": 4
   },
-  "partiallyReviewedPublisherPages": 13
+  "partiallyReviewedPublisherPages": 13,
+  "currentPortfolioCoverage": {
+    "record": "page-010/COVERAGE.json",
+    "status": "PARTIAL-REVIEW",
+    "firstPass": 33,
+    "secondPass": 33,
+    "confirmedProductDefects": 2,
+    "productionVerified": 0,
+    "qualityRisksOpen": 2
+  },
+  "latestEvidencePR": {
+    "number": 477,
+    "status": "MERGED",
+    "mergeSHA": "bc07459d91889bea89191b7bd3dedf8c3e076e10"
+  },
+  "activePortfolioPR": {
+    "number": 478,
+    "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+    "status": "OPEN; exact hosted validation and production reread pending",
+    "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/478",
+    "findingIds": [
+      "STRICT-PORTFOLIO-001",
+      "STRICT-PORTFOLIO-002"
+    ]
+  }
 }

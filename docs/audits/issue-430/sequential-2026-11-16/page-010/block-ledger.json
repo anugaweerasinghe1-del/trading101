@@ -1,0 +1,625 @@
+[
+  {
+    "id": "STRICT-0010-BLOCK-0001",
+    "text": "Learning notes: Practice Portfolio",
+    "sha256": "9aff7724d4d1bb388b96b3cccc89756e4f9b161f0a84962ec41c7b7351791612",
+    "capture": "production-portfolio-guest-capture-0.json#notes/0",
+    "source": "scripts/routes.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading identifies the visible static publisher notes and describes the practice portfolio scope."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The same heading follows the publisher introduction in the hydrated guest capture. The advisory page context survives hydration.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0002",
+    "text": "Review simulated positions, trades, P&L, drawdown and allocation snapshots. Guest records stay in your browser; account cash, positions and server-recorded trades restore when the service is available. Server-recorded account trades restore across devices; earlier guest history and journals remain browser-held.",
+    "sha256": "f51a3a5b076fa6e0dc4444b378a6a80fc1cea694e44a2aa3f410709376fd3547",
+    "capture": "production-portfolio-guest-capture-0.json#notes/1",
+    "source": "scripts/routes.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The overview lists concrete dashboard functions and distinguishes browser records from account records. The two restoration statements overlap but jointly clarify cross-device access and journal boundaries."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The actual backup component shows this browser is the guest authority. The account refresh path separately uses the account snapshot. Keep the explicit availability and browser-only journal qualification.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0003",
+    "text": "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+    "sha256": "1ecb0367a81cda8fd8c399ad684df90c1e8b5a4aeafa4707962690ae1b2b0318",
+    "capture": "production-portfolio-guest-capture-0.json#notes/2",
+    "source": "publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The visible byline names the publisher and author and links the publisher page. It makes no independent professional endorsement claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The published author is consistent in the HTML and current visible projection. The link exposes the about destination and the lack of an outside reviewer is explicit.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0004",
+    "text": "What the practice portfolio tracks",
+    "sha256": "877e30e12c83cf5c8fca5e6af7d25d8f45458d6d6a06c62ab50e96f70e4d708d",
+    "capture": "production-portfolio-guest-capture-0.json#notes/3",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading clearly introduces the definitions and account-storage paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The financial terms below this heading correspond to simulator positions, trade records and price inputs. The section title sets an appropriate scope.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0005",
+    "text": "The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser's history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.",
+    "sha256": "ed7d2a1b304586bc6df5733d8816fdd1218ce05c07ab35f7b3cbdc120a829f00",
+    "capture": "production-portfolio-guest-capture-0.json#notes/4",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Entry price, current input and unrealised P&L form a useful beginner sequence. The sentence refers to this browser history while its next sentence distinguishes signed-in cash and holdings."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The wallet code reads the local portfolio for guests and account snapshots for active accounts. Clearing local data cannot itself instruct the server to clear practice_positions. Private account deletion remains outside the live evidence.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0006",
+    "text": "Beyond raw P&L, the page calculates the metrics that actually describe a process rather than an outcome: fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. The chart can include generated history; it is not a verified sequence of account observations.",
+    "sha256": "a5df117b7e0e6d76eab8d0a8ea699294333bc87c53be1191e14196e44221b702",
+    "capture": "production-portfolio-guest-capture-0.json#notes/5",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The listed measures are specific. A process reflection can use these observed outcome measures. Whether each implementation is cost-aware and whether history is labelled is due in the conditional metric review."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Win rate, averages, dispersion and drawdown are outcome statistics that may help learners question a process. The exact claimed metrics have source implementations. The phrase rather than an outcome is an oversimplification and remains flagged for copy review.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "SUBSTANTIATED EDITORIAL CLARITY RISK OPEN"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0007",
+    "text": "How to read your own numbers honestly",
+    "sha256": "8577e39c7d213623175b5cb07452cf2f9dbcf5849031834904211a87e2c39911",
+    "capture": "production-portfolio-guest-capture-0.json#notes/6",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading organizes interpretation and is backed by distinct cautions."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Each item below the heading addresses a different mistaken interpretation. The heading provides a useful transition across both captured widths.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0008",
+    "text": "Compare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.",
+    "sha256": "a8b67677c86a2c36dec08e14c4255fd3bf4d7e0ad271c27336127443c901ff43",
+    "capture": "production-portfolio-guest-capture-0.json#notes/7",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Win frequency dressed alone omits average gains, average losses and friction. The notes accurately encourage considering all three inputs."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A high win rate can coexist with a loss if mean loss and fees outweigh the wins. The code differentiates profitable completed sells from all completed results, which supports the wording.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0009",
+    "text": "Maximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.",
+    "sha256": "d02b60f456f3cb94d9869a3596a688ed8a782f18fd2488b28bb2c5a7eaa12ae6",
+    "capture": "production-portfolio-guest-capture-0.json#notes/8",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Drawdown describes peak-to-trough decline within a defined observation window. This item avoids promising a comprehensive measure of risk."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The implementation takes the running peak before later declines. The note properly identifies drawdown as one specific kind of historical loss summary.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0010",
+    "text": "A short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.",
+    "sha256": "b4db89d25e4f6475d725ef4a399c50ffff728eaf303e66fe73f35087b285ec14",
+    "capture": "production-portfolio-guest-capture-0.json#notes/9",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The language avoids guaranteeing statistical evidence at an arbitrary number. Dependence, selection and costs are material qualifications."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The actual article lists dependence and costs alongside selection. It proposes no hard minimum number of trades or guaranteed threshold for competence.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0011",
+    "text": "If one position drives most of the return, you learned about that position, not about your method.",
+    "sha256": "4f2eeee0d6ec591f6ea923e6a400fe6b5aa2816cbfb21e0344d24ada04cfbd92",
+    "capture": "production-portfolio-guest-capture-0.json#notes/10",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A dominant holding changes how one should interpret an outcome. The statement belongs in the lesson on concentration and inference. Its absolute wording needs skeptical reconsideration."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A single holding can dominate profits and confound attribution to a method. The text is strongest as a concentration warning. The neighboring item keeps the broader inference appropriately qualified.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0012",
+    "text": "Why results here do not transfer one-to-one",
+    "sha256": "4a1b81c44913217c02bc28dd43899245c383e5c6b4b1c8b0b8c545797584a767",
+    "capture": "production-portfolio-guest-capture-0.json#notes/11",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "This heading identifies simulator limitations before the separate fee statement."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The heading accurately promises discussion of the differences from real orders, which the next paragraph supplies.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0013",
+    "text": "The simulator applies a 0.1% practice transaction fee, rather than a real broker fee schedule. It does not model financing costs, taxes or actual market execution. Review practice results alongside these limits; they do not predict real-money results.",
+    "sha256": "e37e74cce031838ecb1dfb9a70e866fdb076acb63401aa4f780f862598601e2b",
+    "capture": "production-portfolio-guest-capture-0.json#notes/12",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A fixed 0.1% practice fee and excluded financing, tax and market execution are concrete distinctions. The claim requires a fee-path cross-check."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The order paths verified under P09 and the unchanged portfolio accounting code use 0.001. The text describes excluded real-world frictions and stays within the practice model.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0014",
+    "text": "The metrics explained in plain language",
+    "sha256": "b1c5ae05711a0b77b455fabd7a8e4c9fddb7194c441f04d1d246d3592fb70a44",
+    "capture": "production-portfolio-guest-capture-0.json#notes/13",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The following five items define separate metrics in terms a beginner can recognize."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The heading introduces the five observable metrics that follow. Visible context marks them as practice figures.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0015",
+    "text": "Unrealised P&L: what an open position is worth right now versus what you paid. It is not money until you close.",
+    "sha256": "b050be1749392f4ed146dbd230dd3e6f5ac30f4d8812e44d4675b21f31180fff",
+    "capture": "production-portfolio-guest-capture-0.json#notes/14",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The comparison with what was paid conveys unrealised gain or loss. The sentence about money could blur the virtual context or confuse realization with receiving actual money. Hold for skeptical review against the adjacent disclaimer and labelled practice values."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Closing a virtual position realizes virtual P&L only. The footer disclosure rules out an actual cash promise, but the wording can confuse the meaning of realized profit and remains an editorial concern.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "SUBSTANTIATED EDITORIAL CLARITY RISK OPEN"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0016",
+    "text": "Realised P&L: the result of trades you have actually closed. This is the number that measures decisions you finished making.",
+    "sha256": "3c58780801d60be45ec81d366ac20565faec4a475e51a976494393e0066244b0",
+    "capture": "production-portfolio-guest-capture-0.json#notes/15",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Closing a position realizes a result in the simulator. The second sentence describes a review use rather than a guarantee of performance."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "In this product, completed sells feed fee-inclusive realized results. The definition is understandable as a description of outcomes after closing virtual units.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0017",
+    "text": "Open positions in profit: the share of current open positions showing positive unrealised P&L. This is not a closed-trade win rate.",
+    "sha256": "56106f42a5f2e75ea1af8c6bdef85e0a080c181aed2d289bdb1d22eced438c66",
+    "capture": "production-portfolio-guest-capture-0.json#notes/16",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The denominator is explicitly current open positions. It avoids using this percentage as a closed-trade success statistic."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The ratio is winners divided by current open positions. The code calculates historical completed-sell metrics in a different component. The two values must stay separate.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0018",
+    "text": "Open-position P&L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.",
+    "sha256": "0ed10c67c7297374911525a3af9423b4f02a2c14a520fec49d66da94cf4e327f",
+    "capture": "production-portfolio-guest-capture-0.json#notes/17",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The definition treats returns across open positions as a snapshot. The separate introduction warns against confusing this with a time-series risk gauge."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source computes variation around the mean of current open position returns and labels the units in percentage points. The note correctly excludes time-series and Sharpe interpretations.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0019",
+    "text": "Practice maximum drawdown: the largest fall from a peak in locally stored snapshots, which can include generated hourly backfill. It is not an observed market record or proof that a strategy is survivable.",
+    "sha256": "3efab7faa422a1f6da2d053812c0d36f2d8e434995d88b041abeaa8702566164",
+    "capture": "production-portfolio-guest-capture-0.json#notes/18",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The note names local snapshots and the possibility of synthetic backfill, and carefully limits interpretation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The chart source and drawdown both consume browser-held history, with separate warning on model backfill. The applicability review must still exercise populated history and account labels.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0020",
+    "text": "Reviewing the portfolio weekly",
+    "sha256": "5bc7240a3c40450b07b3aa76118c9e591898a716f66d6ffc7047117e7b3346e5",
+    "capture": "production-portfolio-guest-capture-0.json#notes/19",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading introduces a concrete retrospective exercise."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The weekly title suggests a cadence without asserting that users must trade or that one cadence guarantees better results.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0021",
+    "text": "Choose a repeatable review interval for virtual results and compare the information recorded before each order with what became known later. A loss alone cannot establish whether the original reasoning was sound.",
+    "sha256": "b98d4ce8d62d8cfa44702fe5cb495d07e8243bb1a1cf55b9083b981614c9e079",
+    "capture": "production-portfolio-guest-capture-0.json#notes/20",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The recommendation to record before and after observations distinguishes evidence available at the decision from later information. No returns or time horizon are promised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The comparison of information available before and after the decision is a sound review practice. Nothing in the wording guarantees a benefit.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0022",
+    "text": "Compare the largest virtual gain with its position size, price change, quotation source and costs. A large one-off outcome does not by itself establish skill or predict a similar future result.",
+    "sha256": "87a2c9e065645844af4883a2e4355154c42b6de1215a95deadd304ad247f9343",
+    "capture": "production-portfolio-guest-capture-0.json#notes/21",
+    "source": "scripts/staticCopyExtra.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The review combines size, move, data provenance and costs. A single gain is insufficient evidence for future performance."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Quote provenance and size can explain a large nominal gain. The separate cost and exposure displays give the reader actionable terms to use in that review.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0023",
+    "text": "References and related pages",
+    "sha256": "95fdefa4c5697b6157a5462167c0c071bed9855bf178c610a9acef49e1d49d8c",
+    "capture": "production-portfolio-guest-capture-0.json#notes/22",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The heading identifies links as related pages, with each target appearing separately in the capture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The three related links aid navigation alongside the lesson. Their destination health can be assessed independently from the page bodies.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0024",
+    "text": "Place a practice trade",
+    "sha256": "7975e4ac7a7708ffe49cfa80d49f5dcdde97acdeff83974567cbafe3a3f60c97",
+    "capture": "production-portfolio-guest-capture-0.json#notes/23",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The call to action is a practice action and links to /trade, whose body is separately reviewed."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The actual /trade link returns HTTP 200 and offers guest practice. The reviewed destination uses a virtual order interface.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0025",
+    "text": "Risk management guide",
+    "sha256": "af9d14029f20cad97b54967312958da56a6efc2b6b7690984e6ddb2813a366f7",
+    "capture": "production-portfolio-guest-capture-0.json#notes/24",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The link points to the audited trading guide. Its label describes the risk-management topic."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The linked /learn-trading-guide returns HTTP 200 and includes risk education. Destination chapter closure remains in P08.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0026",
+    "text": "What drawdown means",
+    "sha256": "e023290136f2ee444f287e94c80f8238d9aa3fa8edaa2a58be56b1eb1c0c54f9",
+    "capture": "production-portfolio-guest-capture-0.json#notes/25",
+    "source": "scripts/staticCopy.ts; publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The link points to the canonical drawdown glossary entry. The glossary body retains its separate audit entry."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The /wiki/drawdown link returns HTTP 200. A similar glossary label was crosschecked in the Guide footer, and the body retains its own strict position.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0027",
+    "text": "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+    "sha256": "6b1d67d4b146fb8fe9bc867f0c483e7de2fa9349f5f496fa62809cef687df4e7",
+    "capture": "production-portfolio-guest-capture-0.json#notes/26",
+    "source": "publisher note template",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The disclosure accurately states the simulator context, quote limitations and lack of investing guarantees. Check current conditional surfaces before closing the page."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The final statement explicitly limits brokerage, price freshness and investment predictions. It is consistent with the guest order data and the educational context.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-4.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0028",
+    "text": "What does the TradeHQ portfolio tracker show?\nIt tracks simulated positions, realized and unrealized P&L, day change, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
+    "sha256": "c60024a09b6887a108ab8216b9bb69969a20d4a7c88ce7e975b2813c4e52225c",
+    "capture": "production-portfolio-guest-capture-2.json#faq/0",
+    "source": "src/pages/Portfolio.tsx",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "This is a useful description of simulated risk and P&L. The named measures and quote branches require independent calculation and state checks."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The implementation exposes the named statistics in separate components using different denominators and source inputs. Populated histories and simulation state remain due.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-2.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0029",
+    "text": "Are the portfolio statistics based on real prices?\nNot always. TradeHQ can use live, cached, delayed or simulated quotes depending on the asset and data availability. Status badges indicate the source when available. The portfolio is an educational simulation, not a brokerage account.",
+    "sha256": "04a4df0c819173774143e22a01458dba59395cc0291d9810dbc25976d67d6fc5",
+    "capture": "production-portfolio-guest-capture-2.json#faq/1",
+    "source": "src/pages/Portfolio.tsx",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The answer avoids implying that every price is a provider quote. It distinguishes public quote labels and a brokerage account."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The capture shows the displayed cached or simulated labels. The source has distinct provider, delayed and fixed inputs. Eligibility of live refresh remains provider-dependent.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-2.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0030",
+    "text": "How do I reset my virtual portfolio?\nGuest records are browser-held; clearing site data removes the local copy. Signed-in cash, positions and server-recorded trades can restore from the account copy when the service is available. Clearing browser data does not delete or reset that account copy. Earlier guest trade history and journals remain browser-held. Signed-in lessons and beginner-journey progress can sync privately when online.",
+    "sha256": "a0163fbaf1459d6e86fcb851578a82569fbaf8d88764bb4bdda00f1ddcde7f11",
+    "capture": "production-portfolio-guest-capture-2.json#faq/2",
+    "source": "src/pages/Portfolio.tsx",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Clearing site data only erases the browser copy. Signed-in server records and local history are explicitly differentiated. Verify backup and auth boundaries separately."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The actual published no-account view provides file backup and browser-state ownership disclosures. The FAQ keeps guest history separate from account recovery and makes no promise about future successful restoration.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-2.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0031",
+    "text": "Your Practice Portfolio — Positions, P&L, Analytics | TradeHQ\nPortfolio Dashboard — Track Your $100K Virtual Trading Performance | TradeHQ",
+    "sha256": "8f6febd3196937c68070eed5ff6ece826e392e984af9ca08c395b5e228963dbb",
+    "capture": "production-portfolio-guest-capture-0.json#title; production-portfolio-guest-capture-2.json#title",
+    "source": "scripts/routes.ts; src/pages/Portfolio.tsx",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The no-JavaScript and hydrated titles both describe a practice portfolio, with the latter providing the virtual starter balance. The canonical stays /portfolio in all five views."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The exact metadata versions differ in phrasing between the prerendered and hydrated trees. Both describe simulated portfolio work with the same index-eligible canonical. Additional head fields remain in the coverage queue.",
+      "reviewer": "Codex assistant, separate source and current mobile/desktop review",
+      "evidence": "production-portfolio-guest-capture-2.json"
+    },
+    "disposition": "NO ISSUE IN CURRENT REVIEWED TEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0032",
+    "text": "Notifications Disabled\nYou won't receive milestone notifications",
+    "sha256": "b9a838586a8ecefdec75faa0a8b1018720bb1cf1453f878c1f032065bdf7a745",
+    "capture": "production-current-alerts.json#rows",
+    "source": "src/pages/Portfolio.tsx; src/lib/notifications.ts",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The switch reports a completed opt-out, yet both responsive disabled fixtures issue a toast and a browser notification call. The enabled fixtures confirm working positive controls."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Independently traced the unchanged guest refresh path. The local component flag never reaches checkMilestones, which calls both alert channels. The controlled input is a fake public quote and the Notification constructor is an in-memory stand-in. The mismatch is objectively reproducible."
+    },
+    "findingId": "STRICT-PORTFOLIO-001"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0033",
+    "text": "Confirmed virtual trades update cash, holdings and trade history immediately. While TradeHQ is open, your portfolio syncs about every minute and when relevant server updates arrive. The server checks supported holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+    "sha256": "7911ee839a94a427aa29499bb37b267aaf3d67f72a52c4505a2865b057c5ba6e",
+    "capture": "production-portfolio-guest-capture-2.json#occurrences",
+    "source": "src/pages/Portfolio.tsx; src/components/PortfolioLiveUpdates.tsx; supabase/migrations/20261007130602_protect_price_refresh_queue.sql",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "This main guest paragraph presents account-only portfolio synchronization and scheduled offline holdings checks without a signed-in qualifier. The rendered guest backup copy separately describes local recovery."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The foreground guest route reads market quotes and computes local values, while the hosted scheduler selects from server-recorded practice_positions. Shared quote updates help guests in the current browser and can coincide with an asset tracked by accounts. They do not give the server knowledge of a guest portfolio. The immediate update and provider caveat remain accurate in scope."
+    },
+    "findingId": "STRICT-PORTFOLIO-002"
+  }
+]

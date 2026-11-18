@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T09:35:55.243741+00:00",
+  "updatedAtUTC": "2026-11-18T09:56:07.332071+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -10,10 +10,11 @@
     "canonicalPageFreshlyEditoriallyExaminedThisSession": 2,
     "activePage": "STRICT-0010",
     "activeCoverage": {
-      "status": "SUPPLEMENTARY-INSPECTED-STRICT-PENDING",
-      "firstPass": 0,
-      "secondPass": 0,
-      "strictClosureCredit": 0
+      "status": "PARTIAL-REVIEW",
+      "firstPass": 33,
+      "secondPass": 33,
+      "strictClosureCredit": 0,
+      "record": "../page-010/COVERAGE.json"
     },
     "remainingNotStrictClosed": 155,
     "partiallyReviewedCanonicalPages": 13,
@@ -118,7 +119,7 @@
     "productFixesMergedAwaitingNativeReceipt": 0,
     "productFixesLocalAwaitingRelease": 0
   },
-  "currentBlock": "STRICT-0010 live current Portfolio shell and authored states",
+  "currentBlock": "STRICT-0010 populated guest and conditional review",
   "historicalNovember17CheckpointFindings": {
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 5,
@@ -145,5 +146,10 @@
     "qualityRisksRecorded": 3,
     "unresolvedCandidate": null,
     "record": "../page-009/PAGE-RECORD.json"
+  },
+  "currentPortfolioFindings": {
+    "confirmedProductOrContentDefects": 2,
+    "productionVerified": 0,
+    "qualityRisksRecorded": 2
   }
 }
