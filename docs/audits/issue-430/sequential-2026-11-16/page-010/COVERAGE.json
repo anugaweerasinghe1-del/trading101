@@ -6,7 +6,7 @@
   "strictPageClosure": false,
   "closureCredit": 0,
   "firstPass": 91,
-  "secondPass": 87,
+  "secondPass": 91,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -68,8 +68,8 @@
     "STRICT-PORTFOLIO-006"
   ],
   "confirmedProductDefectsReproduced": 6,
-  "confirmedProductDefectsProductionVerified": 4,
-  "nextAction": "Verify exact native #480 deployment, then replay the ten fixed-state browser cases for 0058–0061. Finish full default occurrence/control/source reconciliation before strict Portfolio closure. Reuse current shared footer judgments in Portfolio context.",
+  "confirmedProductDefectsProductionVerified": 6,
+  "nextAction": "Finish current default occurrence, control, metadata and source reconciliation for Portfolio. All six confirmed defects and both existing-root extensions are production-verified. Strict page closure remains conditional on complete eligible coverage.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -130,14 +130,14 @@
     "production-current-guest-recovery.json",
     "local-signed-portfolio.json"
   ],
-  "latestApplicationRelease": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+  "latestApplicationRelease": "232e7daa3162e949186709036ccda8a83826a342",
   "existingRootExtensions": [
     "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
     "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
   ],
   "controlsPR": {
     "number": 480,
-    "status": "MERGED; exact native and custom-domain readback pending",
+    "status": "FIXED-RECHECKED",
     "beforeEditComments": [
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
@@ -151,14 +151,10 @@
       "local-final480-chart-access.json",
       "local-final480-baseline.json"
     ],
-    "pendingBlocks": [
-      "STRICT-0010-BLOCK-0058",
-      "STRICT-0010-BLOCK-0059",
-      "STRICT-0010-BLOCK-0060",
-      "STRICT-0010-BLOCK-0061"
-    ],
+    "pendingBlocks": [],
     "mergeSHA": "232e7daa3162e949186709036ccda8a83826a342",
-    "mainWorkflow": 44337762133
+    "mainWorkflow": 44337762133,
+    "receipt": "RELEASE-480.json"
   },
   "mentorScope": {
     "fullyReadRecords": 13,

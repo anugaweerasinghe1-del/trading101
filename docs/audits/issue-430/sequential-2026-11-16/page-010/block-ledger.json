@@ -1105,7 +1105,12 @@
       "reason": "Four compiled width and motion-preference combinations offer start and stop. Reduced motion starts stationary, keyboard arrows scroll the static list, and only one set of rows is exposed while stopped."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "All four production cases honor reduced motion, start and stop by keyboard, and permit keyboard scrolling while stopped. The continuously moving duplicate rows are accessibility-hidden.",
+      "reviewer": "Codex assistant, separate post-native production reread",
+      "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+      "contentReference": "production480-final-ticker.json",
+      "contentSHA256": "5ed88963b2aa54a76e2035746e9d03e40bb13c63b663be6c17c7d665183a8430"
     }
   },
   {
@@ -1122,7 +1127,12 @@
       "reason": "Every settled compiled music and mentor center resolves to its own button. The desktop geometry control remains individually clickable."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Both mobile hit stacks reach the independent music and mentor controls. Desktop target controls remain reachable. This resolves the Portfolio occurrence under the existing root.",
+      "reviewer": "Codex assistant, separate post-native production reread",
+      "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+      "contentReference": "production480-final-ticker.json",
+      "contentSHA256": "5ed88963b2aa54a76e2035746e9d03e40bb13c63b663be6c17c7d665183a8430"
     }
   },
   {
@@ -1139,7 +1149,12 @@
       "reason": "On both compiled widths the named graph surfaces receive keyboard focus. Consecutive arrow presses reveal different saved dates or scenario-day data, while the pointer remains supported."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Both responsive history and scenario surfaces expose names, receive keyboard focus and show different values after consecutive arrow presses. Pointer values remain available.",
+      "reviewer": "Codex assistant, separate post-native production reread",
+      "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+      "contentReference": "production480-final-chart-access.json",
+      "contentSHA256": "c8bb0845e753d9f9b7ff6bf996d3a98f8a529ba82f41255160c7ab85a4c5277a"
     }
   },
   {
@@ -1156,7 +1171,12 @@
       "reason": "Both widths keep the $10,000 and 11.11% arithmetic. Each public-shaped card names its saved date and exposes the exact ISO time. The FAQ describes a comparison against a saved snapshot."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Both widths expose the saved ISO timestamp and visible date for 22-hour and seven-day baselines. The $10,000 and 11.11% comparison retains its verified arithmetic without calling the interval today.",
+      "reviewer": "Codex assistant, separate post-native production reread",
+      "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+      "contentReference": "production480-final-baseline.json",
+      "contentSHA256": "f43bb3b2c4fe1a3d5ec56e5dd58c2ec135bda72b6845d28e17a9fa93da33e463"
     }
   },
   {

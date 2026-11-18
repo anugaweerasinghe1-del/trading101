@@ -1,0 +1,161 @@
+{
+  "scope": "Isolated anonymous page with outgoing calls blocked. CSS motion and pointer hit testing only.",
+  "rows": [
+    {
+      "width": 390,
+      "reducedMotion": true,
+      "initial": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "after": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "region": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "buttons": [
+        {
+          "label": "Play background music",
+          "box": {
+            "x": 330,
+            "y": 776,
+            "w": 44,
+            "h": 44
+          },
+          "z": "40",
+          "hit": "Play background music",
+          "hitOrder": [
+            "Play background music",
+            "Play background music"
+          ]
+        },
+        {
+          "label": "Open portfolio review mentor",
+          "box": {
+            "x": 258,
+            "y": 764,
+            "w": 56,
+            "h": 56
+          },
+          "z": "50",
+          "hit": "Open portfolio review mentor",
+          "hitOrder": [
+            "Open portfolio review mentor"
+          ]
+        }
+      ],
+      "atUTC": "2026-11-18T17:26:30.013225+00:00"
+    },
+    {
+      "width": 390,
+      "reducedMotion": false,
+      "initial": "- region \"Practice price ticker\":\n  - button \"Stop price ticker motion\": Stop scrolling\n  - text: USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00%",
+      "after": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "region": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "buttons": [
+        {
+          "label": "Play background music",
+          "box": {
+            "x": 330,
+            "y": 776,
+            "w": 44,
+            "h": 44
+          },
+          "z": "40",
+          "hit": "Play background music",
+          "hitOrder": [
+            "Play background music",
+            "Play background music"
+          ]
+        },
+        {
+          "label": "Open portfolio review mentor",
+          "box": {
+            "x": 258,
+            "y": 764,
+            "w": 56,
+            "h": 56
+          },
+          "z": "50",
+          "hit": "Open portfolio review mentor",
+          "hitOrder": [
+            "Open portfolio review mentor"
+          ]
+        }
+      ],
+      "atUTC": "2026-11-18T17:26:29.425142+00:00"
+    },
+    {
+      "width": 1440,
+      "reducedMotion": true,
+      "initial": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "after": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "region": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "buttons": [
+        {
+          "label": "Play background music",
+          "box": {
+            "x": 1372,
+            "y": 832,
+            "w": 44,
+            "h": 44
+          },
+          "z": "40",
+          "hit": "Play background music",
+          "hitOrder": [
+            "Play background music",
+            "Play background music"
+          ]
+        },
+        {
+          "label": "Open portfolio review mentor",
+          "box": {
+            "x": 1368,
+            "y": 764,
+            "w": 56,
+            "h": 56
+          },
+          "z": "50",
+          "hit": "Open portfolio review mentor",
+          "hitOrder": [
+            "Open portfolio review mentor"
+          ]
+        }
+      ],
+      "atUTC": "2026-11-18T17:26:29.240620+00:00"
+    },
+    {
+      "width": 1440,
+      "reducedMotion": false,
+      "initial": "- region \"Practice price ticker\":\n  - button \"Stop price ticker motion\": Stop scrolling\n  - text: USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00%",
+      "after": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "region": "- region \"Practice price ticker\":\n  - button \"Start price ticker motion\": Start scrolling\n  - group \"Scroll practice prices\":\n    - text: USDC $0.999718\n    - img\n    - text: +0.00% USDT $0.999503\n    - img\n    - text: +0.00% DAI $0.999989\n    - img\n    - text: +0.00% TRX $0.332191\n    - img\n    - text: +0.00% BCH $277.03\n    - img\n    - text: +0.00% TON $1.38\n    - img\n    - text: +0.00% ETC $8.11\n    - img\n    - text: +0.00% XMR $544.27\n    - img\n    - text: +0.00% AAVE $165.18\n    - img\n    - text: +0.00% GRT $0.026168\n    - img\n    - text: +0.00% LDO $0.412042\n    - img\n    - text: +0.00% RUNE $0.678915\n    - img\n    - text: +0.00% KAS $0.039311\n    - img\n    - text: +0.00% STX $0.392636\n    - img\n    - text: +0.00% IMX $0.187519\n    - img\n    - text: +0.00% RENDER $1.85\n    - img\n    - text: +0.00% PEPE $0.000004\n    - img\n    - text: +0.00% BONK $0.000003\n    - img\n    - text: +0.00% WLD $0.484973\n    - img\n    - text: +0.00% POL $0.098777\n    - img\n    - text: +0.00%",
+      "buttons": [
+        {
+          "label": "Play background music",
+          "box": {
+            "x": 1372,
+            "y": 832,
+            "w": 44,
+            "h": 44
+          },
+          "z": "40",
+          "hit": "Play background music",
+          "hitOrder": [
+            "Play background music",
+            "Play background music"
+          ]
+        },
+        {
+          "label": "Open portfolio review mentor",
+          "box": {
+            "x": 1368,
+            "y": 764,
+            "w": 56,
+            "h": 56
+          },
+          "z": "50",
+          "hit": "Open portfolio review mentor",
+          "hitOrder": [
+            "Open portfolio review mentor"
+          ]
+        }
+      ],
+      "atUTC": "2026-11-18T17:26:29.885223+00:00"
+    }
+  ]
+}

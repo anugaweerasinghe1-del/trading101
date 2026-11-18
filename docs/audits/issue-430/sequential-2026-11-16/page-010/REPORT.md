@@ -25,3 +25,7 @@ The exact #479 native production release passed eight fresh scenario cases acros
 # APEX continuation
 
 Recovered main and the open Portfolio candidate, reopened tracking issue #430, and protected-merged #480 after all five final checks and ten hosted browser cases. Native readback remains due. Added individual skeptical judgments for quote states, recovery messages, exposure, the reference comparison, navigation, empty scenarios and contextual shared footer use. Portfolio remains partial at 91 first-pass and 87 second-pass records.
+
+# Portfolio controls production verification
+
+#480 has exact native production evidence and ten subsequent custom-domain browser cases. The ticker, independent mobile launchers, keyboard chart data and actual comparison timestamp passed. All six distinct Portfolio defects and both shared-root occurrences are production-verified. The page remains partial until its final eligible coverage reconciliation. [Exact receipt](RELEASE-480.json)
