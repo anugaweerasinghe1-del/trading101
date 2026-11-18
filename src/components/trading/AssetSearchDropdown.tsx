@@ -157,7 +157,7 @@ export function AssetSearchDropdown({
               filteredAssets.map((asset) => (
                 <div key={asset.id} className={cn("flex items-center px-3 hover:bg-white/5", selectedAsset?.id === asset.id && "bg-primary/10")}>
                   <button
-                    aria-label={`${favorites.includes(asset.id) ? 'Remove' : 'Add'} ${asset.symbol} ${favorites.includes(asset.id) ? 'from' : 'to'} favorites`}
+                    aria-label={`${favorites.includes(asset.id) ? 'Remove' : 'Add'} ${asset.name} (${asset.symbol}) ${favorites.includes(asset.id) ? 'from' : 'to'} favorites`}
                     aria-pressed={favorites.includes(asset.id)}
                     onClick={() => onToggleFavorite(asset.id)}
                     className="p-2 shrink-0"
