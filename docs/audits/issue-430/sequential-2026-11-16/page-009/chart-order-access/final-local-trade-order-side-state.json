@@ -1,0 +1,80 @@
+{
+  "scope": "Current guest terminal in both layouts, keyboard only. No submit action.",
+  "rows": [
+    {
+      "width": 390,
+      "route": "/trade?journey=1",
+      "atUTC": "2026-11-18T08:19:30.423077+00:00",
+      "states": [
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\" [pressed]\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Buy AAPL\" [disabled]"
+        },
+        {
+          "active": "Sell",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Sell AAPL\" [disabled]"
+        },
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"AAPL $255.25 USD/unit\":\n  - heading \"AAPL $255.25 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\" [pressed]\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Buy AAPL\" [disabled]"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "route": "/trade/btc",
+      "atUTC": "2026-11-18T08:19:30.295634+00:00",
+      "states": [
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"BTC $95,000.00 USD/unit\":\n  - heading \"BTC $95,000.00 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\" [pressed]\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (BTC) Available: $100,000\"\n  - spinbutton \"Amount in BTC\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Buy BTC\" [disabled]"
+        },
+        {
+          "active": "Sell",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"BTC $95,000.00 USD/unit\":\n  - heading \"BTC $95,000.00 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\" [pressed]\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (BTC) Available: $100,000\"\n  - spinbutton \"Amount in BTC\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of holdings\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Sell BTC\" [disabled]"
+        },
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- dialog \"BTC $95,000.00 USD/unit\":\n  - heading \"BTC $95,000.00 USD/unit\" [level=2]\n  - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\" [pressed]\n  - button \"Sell\"\n  - paragraph: Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.\n  - text: \"Amount (BTC) Available: $100,000\"\n  - spinbutton \"Amount in BTC\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $0.00\n  - button \"Buy BTC\" [disabled]"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/trade?journey=1",
+      "atUTC": "2026-11-18T08:19:28.541780+00:00",
+      "states": [
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- button \"Buy\" [pressed]\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.00\n- button \"Buy AAPL\" [disabled]"
+        },
+        {
+          "active": "Sell",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- button \"Buy\"\n- button \"Sell\" [pressed]\n- text: \"Amount Max: 0.0000 AAPL\"\n- spinbutton \"Amount in AAPL\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.00\n- button \"Sell AAPL\" [disabled]"
+        },
+        {
+          "active": "Buy",
+          "pressed": "true",
+          "other": "false",
+          "snapshot": "- button \"Buy\" [pressed]\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $0.00 Total (USD) $0.00\n- button \"Buy AAPL\" [disabled]"
+        }
+      ]
+    }
+  ]
+}

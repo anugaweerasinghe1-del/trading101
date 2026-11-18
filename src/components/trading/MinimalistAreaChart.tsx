@@ -261,7 +261,13 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
       {/* Chart */}
       <div className="flex-1 min-h-0 px-2">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={visibleChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+          <AreaChart
+            accessibilityLayer
+            title={`${asset.symbol} practice price chart`}
+            desc="Use the left and right arrow keys to review chart times and prices."
+            data={visibleChartData}
+            margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+          >
             <defs>
               <linearGradient id="priceGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="hsl(152, 60%, 42%)" stopOpacity={0.3} />

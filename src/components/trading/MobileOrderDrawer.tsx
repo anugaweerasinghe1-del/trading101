@@ -112,18 +112,16 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
           </Button>
         </DrawerTrigger>
         <DrawerContent className="max-h-[85vh]">
-          <DrawerHeader className="pb-2">
-            <DrawerTitle className="flex items-center justify-between">
-              <div>
-                <span className="text-xl">{asset.symbol}</span>
-                <span className="text-sm text-muted-foreground ml-2">${formatPrice(asset.price, asset.type)} USD/unit</span>
-              </div>
-              <DrawerClose asChild>
-                <Button variant="ghost" size="icon" aria-label="Close order panel">
-                  <ChevronDown aria-hidden="true" className="w-5 h-5" />
-                </Button>
-              </DrawerClose>
+          <DrawerHeader className="flex items-center justify-between pb-2">
+            <DrawerTitle className="text-left">
+              <span className="text-xl">{asset.symbol}</span>{" "}
+              <span className="text-sm text-muted-foreground ml-2">${formatPrice(asset.price, asset.type)} USD/unit</span>
             </DrawerTitle>
+            <DrawerClose asChild>
+              <Button variant="ghost" size="icon" aria-label="Close order panel">
+                <ChevronDown aria-hidden="true" className="w-5 h-5" />
+              </Button>
+            </DrawerClose>
           </DrawerHeader>
           <p className="px-4 pb-2 text-xs text-muted-foreground">
             Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.
@@ -134,10 +132,12 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
               <Button
                 className={cn("h-14 text-lg font-semibold rounded-xl transition-all", side === 'buy' ? "bg-profit text-profit-foreground hover:bg-profit/90" : "bg-muted text-muted-foreground hover:bg-muted/80")}
                 onClick={() => setSide('buy')}
+                aria-pressed={side === 'buy'}
               >Buy</Button>
               <Button
                 className={cn("h-14 text-lg font-semibold rounded-xl transition-all", side === 'sell' ? "bg-loss text-loss-foreground hover:bg-loss/90" : "bg-muted text-muted-foreground hover:bg-muted/80")}
                 onClick={() => setSide('sell')}
+                aria-pressed={side === 'sell'}
               >Sell</Button>
             </div>
 
