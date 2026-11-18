@@ -95,3 +95,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Fractional Sell follow-up
 
 The final #475 public crosswalk accounted for four current default and guided views. Both embedded mentor follow-up observations were independently replayed with their corrected text. Two further simulator defects were separately reproduced before editing. Four public guest fixtures could purchase fractional holdings and enter an exact Sell amount manually, while the shortcuts entered an invalid larger amount or zero. Mobile Sell also showed cash under availability. The compiled candidate passed, and #476 awaits hosted testing, a protected merge and native readback. The page remains partial with 504 first-pass records, 502 second-pass records, 25 confirmed defects and 23 production-verified fixes. [Before-edit evidence](fractional-sell/BEFORE.md) · [Current public crosswalk](trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json)
+
+# Fractional Sell protected merge
+
+#476 passed all five checks on its final head. Four disposable hosted browser sessions sold the entire exact position and retained the two expected virtual fees. The normal protected merge has the identical source tree. Native and independent custom-domain verification remain due at 0502 and 0504. [Pending release record](trade-release-reconciliation/RELEASE-476-PENDING.json)

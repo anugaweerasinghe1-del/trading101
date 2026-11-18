@@ -300,7 +300,7 @@
     {
       "id": "STRICT-TRADE-024",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-      "status": "OPEN-PR; PRODUCTION READBACK PENDING",
+      "status": "MERGED-NATIVE-RECHECK-PENDING",
       "pr": 476,
       "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
       "source": "src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx",
@@ -310,12 +310,14 @@
       ],
       "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974007591",
       "policyViolation": false,
-      "pageClosureCredit": 0
+      "pageClosureCredit": 0,
+      "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json"
     },
     {
       "id": "STRICT-TRADE-025",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-      "status": "OPEN-PR; PRODUCTION READBACK PENDING",
+      "status": "MERGED-NATIVE-RECHECK-PENDING",
       "pr": 476,
       "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
       "source": "src/components/trading/MobileOrderDrawer.tsx",
@@ -325,10 +327,12 @@
       ],
       "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974007591",
       "policyViolation": false,
-      "pageClosureCredit": 0
+      "pageClosureCredit": 0,
+      "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json"
     }
   ],
-  "nextAction": "Wait for #476 exact final-head required checks and hosted fixture readback, then protected merge, native production proof and fresh custom-domain checks of 0502 and 0504. The #475 public state crosswalk is complete for its source revision.",
+  "nextAction": "Verify native Cloudflare main for exact #476 merge, then repeat the fractional Sell, maximum Buy and final public default-state checks. P09 closure remains pending.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
@@ -402,7 +406,7 @@
   "unresolvedStateNotes": [
     "STRICT-TRADE-024 and STRICT-TRADE-025 exact native deployment and public reread."
   ],
-  "nextExactContentState": "Wait for #476 exact final-head required checks and hosted fixture readback, then protected merge, native production proof and fresh custom-domain checks of 0502 and 0504. The #475 public state crosswalk is complete for its source revision.",
+  "nextExactContentState": "Verify native Cloudflare main for exact #476 merge, then repeat the fractional Sell, maximum Buy and final public default-state checks. P09 closure remains pending.",
   "rawCurrentCensus": "trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json",
   "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json",
   "closedRootExtensions": [
@@ -423,5 +427,11 @@
       "REVIEWED-PROJECTIONS; CONTROL-RELEASE-PENDING": 12,
       "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
     }
+  },
+  "mergedAwaitingNative": {
+    "pr": 476,
+    "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "run": 44275108147,
+    "record": "trade-release-reconciliation/RELEASE-476-PENDING.json"
   }
 }
