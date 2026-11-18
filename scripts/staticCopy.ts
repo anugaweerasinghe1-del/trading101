@@ -64,8 +64,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How the practice trading desk works",
         p: [
-          "The trading desk is where simulated orders are placed. You choose an instrument, choose a side, choose a size, and the order is filled against the simulator's current price. Guest fills and results are recorded in your browser. Account orders execute through the server and cash, positions and server-recorded trade history restore across devices when the service is available.",
-          "One order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. The virtual order screen leaves quantities to the learner. Comparing hypothetical account exposure can teach arithmetic, but this simplified fill model does not validate real-market risk management.",
+          "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+          "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
         ],
       },
       {
@@ -80,7 +80,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Limits of any simulator",
         p: [
-          "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Displayed-price fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+          "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
         ],
       },
     ],

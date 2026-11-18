@@ -129,7 +129,7 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
           onClick={() => setIsOpen(true)}
           aria-label="Open portfolio educational mentor"
           aria-expanded={false}
-          className="fixed bottom-20 right-4 w-14 h-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50"
+          className="fixed bottom-20 right-[4.75rem] w-14 h-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50 md:right-4"
           size="icon"
         >
           <Bot className="w-6 h-6" />

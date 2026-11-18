@@ -1,0 +1,93 @@
+{
+  "scope": "Public guest viewport with same-origin GET only; pointer hit test without playback or order changes",
+  "rows": [
+    {
+      "width": 320,
+      "route": "/trade",
+      "atUTC": "2026-11-18T03:51:41.451469+00:00",
+      "musicProjection": {
+        "box": {
+          "x": 260,
+          "y": 776,
+          "width": 44,
+          "height": 44
+        },
+        "hit": "Play background music",
+        "same": true
+      },
+      "mentorBox": {
+        "x": 248,
+        "y": 764,
+        "width": 56,
+        "height": 56
+      },
+      "mentorCenterHit": "Open portfolio educational mentor"
+    },
+    {
+      "width": 390,
+      "route": "/trade",
+      "atUTC": "2026-11-18T03:51:41.402851+00:00",
+      "musicProjection": {
+        "box": {
+          "x": 330,
+          "y": 776,
+          "width": 44,
+          "height": 44
+        },
+        "hit": "Open portfolio educational mentor",
+        "same": false
+      },
+      "mentorBox": {
+        "x": 318,
+        "y": 764,
+        "width": 56,
+        "height": 56
+      },
+      "mentorCenterHit": "Open portfolio educational mentor"
+    },
+    {
+      "width": 430,
+      "route": "/trade/btc",
+      "atUTC": "2026-11-18T03:51:41.002682+00:00",
+      "musicProjection": {
+        "box": {
+          "x": 370,
+          "y": 776,
+          "width": 44,
+          "height": 44
+        },
+        "hit": "Play background music",
+        "same": true
+      },
+      "mentorBox": {
+        "x": 358,
+        "y": 764,
+        "width": 56,
+        "height": 56
+      },
+      "mentorCenterHit": "Play background music"
+    },
+    {
+      "width": 1440,
+      "route": "/trade",
+      "atUTC": "2026-11-18T03:51:41.338568+00:00",
+      "musicProjection": {
+        "box": {
+          "x": 1372,
+          "y": 832,
+          "width": 44,
+          "height": 44
+        },
+        "hit": "Play background music",
+        "same": true
+      },
+      "mentorBox": {
+        "x": 1368,
+        "y": 764,
+        "width": 56,
+        "height": 56
+      },
+      "mentorCenterHit": "Open portfolio educational mentor"
+    }
+  ]
+}

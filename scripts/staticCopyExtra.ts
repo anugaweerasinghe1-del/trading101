@@ -32,8 +32,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Orders supported by this simulator",
       list: [
-        "Market order: the virtual engine uses a simplified displayed practice price. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
-        "Limit orders are explained in the learning material but are not available in the current simulator. Practice orders execute as market orders at the shown simulated price.",
+        "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+        "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
         "Closing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.",
       ],
     },

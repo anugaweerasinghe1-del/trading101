@@ -23,8 +23,8 @@
     "findingId": "STRICT-TRADE-015",
     "text": "Details | expanded true / false",
     "sha256": "ccb54cb85c9725a42ead8c51f5969d94cec53bab2169204c1d3d52b88895f95a",
-    "contentReference": "local-disclosures.json",
-    "contentSHA256": "08e065327413e57e67febf04878e422f595a0a513f165eab568ccb87dfcae57f",
+    "contentReference": "local-final-disclosures.json",
+    "contentSHA256": "b5ea2bbf5048fe4fb5f81a0c153f81b2d4934209872b5baa5e4d6fadf4dd777f",
     "source": "src/components/trading/MinimalistPortfolioBar.tsx",
     "sourceVersion": "compiled candidate",
     "pass1": {
@@ -59,8 +59,8 @@
     "findingId": "STRICT-TRADE-016",
     "text": "Embedded mentor | type a topic",
     "sha256": "87de1ff6a7a23bcc670d142001b7250057f2aa17eef8108a9188f3f9c68b4ba2",
-    "contentReference": "local-disclosures.json",
-    "contentSHA256": "08e065327413e57e67febf04878e422f595a0a513f165eab568ccb87dfcae57f",
+    "contentReference": "local-final-disclosures.json",
+    "contentSHA256": "b5ea2bbf5048fe4fb5f81a0c153f81b2d4934209872b5baa5e4d6fadf4dd777f",
     "source": "src/lib/smartMentor.ts",
     "sourceVersion": "compiled candidate",
     "pass1": {
@@ -95,8 +95,8 @@
     "findingId": "STRICT-TRADE-017",
     "text": "TradingView Lightweight Charts™ · Copyright (с) 2023 TradingView, Inc.",
     "sha256": "137e0ef2f45c4034f850b2c6d2f6de2062b57448961720657240f4f31370de93",
-    "contentReference": "local-chart-license.json",
-    "contentSHA256": "4e75e36453ab0a7aeafa971e9da462a4a8cb6468bd7d1616fa4b51dad66c10e0",
+    "contentReference": "local-final-chart-license.json",
+    "contentSHA256": "a12b43ab8f3d8600cca9e01fa4270d7104f66c652a884bf3fda5aade890f01f9",
     "source": "src/components/trading/NeuralPulseChart.tsx",
     "sourceVersion": "compiled candidate",
     "pass1": {
@@ -106,5 +106,159 @@
     "pass2": {
       "status": "PENDING-PRODUCTION"
     }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0458",
+    "findingId": "STRICT-TRADE-018",
+    "text": "Play background music and Open portfolio educational mentor overlap",
+    "contentReference": "before-floating-controls.json",
+    "source": "src/components/trading/AIMentor.tsx; src/components/BackgroundMusic.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "At 390px the music center hits the mentor launcher."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate browser and source review",
+      "reason": "On the separate 430px asset route the mentor center instead hits the music control. Both controls have the same bottom/right mobile anchor and the desktop hit test is independent."
+    },
+    "contentSHA256": "11bd5e37a525d15e523a75a38cdacc10a102e01e3b5a4ff96977321e4afde677",
+    "sha256": "e7ed758107be35719ee9460b07c1fdc7214e8afebabad62b6c5e896c26daebb7"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0459",
+    "findingId": "STRICT-TRADE-018",
+    "text": "Play background music and Open portfolio educational mentor each receive center pointer",
+    "contentReference": "local-final-floating-controls.json",
+    "source": "src/components/trading/AIMentor.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both controls receive their own pointer at 320px, 390px, 430px and 1440px in the compiled terminal and asset projections."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "95e5741a09a3966879041be3e8860167cfb56429fd470f73f0625f6d9a79341d",
+    "sha256": "e64aa83607a627bc442e78a9358f475490fb70dd89e6019e010af31545072c28"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0470",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0002",
+    "beforeText": "Choose from 170 simulated assets and place buy or sell orders instantly. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+    "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The summary preserves the 170 instruments and virtual funds while replacing the unqualified instant timing."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "645a85eb0e4d80915cfa231589fb7bb8b5a054bf85d3e0c26e733e3cf6f4ab25"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0471",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0005",
+    "beforeText": "The trading desk is where simulated orders are placed. You choose an instrument, choose a side, choose a size, and the order is filled against the simulator's current price. Guest fills and results are recorded in your browser. Account orders execute through the server and cash, positions and server-recorded trade history restore across devices when the service is available.",
+    "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The note distinguishes local browser execution inputs from the account RPC choice of eligible quote and preserves restoration wording."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "309f04a4d6b5b446d2cbee8803304fa6e617ed17cc3c498aaabbaaaf7e993fb1"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0472",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0006",
+    "beforeText": "One order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. The virtual order screen leaves quantities to the learner. Comparing hypothetical account exposure can teach arithmetic, but this simplified fill model does not validate real-market risk management.",
+    "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The market-only desk, unavailable-quote pause, glossary order examples and arithmetic learning scope now agree with the verified product state."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "f73a907a7084f3e6f21c411fc905d3c5440f4a4e8a1799611dd1903903282256"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0473",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0013",
+    "beforeText": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Displayed-price fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+    "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The 0.1% fee, real-cost limitations and performance qualification remain. Simplified fills are described without implying an exact published price."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "4d048a5fde1585582491494072d86fe63f11250cc942db5ba842b544bcef70b1"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0474",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0015",
+    "beforeText": "Market order: the virtual engine uses a simplified displayed practice price. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+    "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The market practice order estimate and eligible account execution wording agree with the independent before-edit SQL fixture."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "f4431504e1029367287eb5e162f4519f530f0eedb81cb8e4dd62bb7a99957c32"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0475",
+    "findingId": "STRICT-TRADE-008",
+    "existingRoot": true,
+    "beforeRecord": "STRICT-0009-BLOCK-0016",
+    "beforeText": "Limit orders are explained in the learning material but are not available in the current simulator. Practice orders execute as market orders at the shown simulated price.",
+    "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+    "contentReference": "local-final-trade-note-price.json",
+    "beforeEvidence": "before-trade-note-price.json",
+    "source": "scripts/routes.ts; scripts/staticCopy.ts; scripts/staticCopyExtra.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The current market-only scope remains. Removing the duplicate exact-fill claim keeps the educational limit-order distinction intact."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "contentSHA256": "c47ea2f8827e41c0b2bcde0c755546b8bba67ee8d9e946ac16482b74d2c4d940",
+    "sha256": "30b8a1b93ab7c41af91ffae8d7e86fb1811c4bc5ec0be34356f116cbf930e24d"
   }
 ]
