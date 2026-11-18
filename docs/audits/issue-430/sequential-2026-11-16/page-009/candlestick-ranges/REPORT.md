@@ -1,0 +1,6 @@
+# P09 candlestick range findings
+
+- **STRICT-TRADE-009**. The 1D view discarded a valid 24-record intraday series because it merged all records with the same calendar date, then required at least three distinct dates. The candidate retains intraday timestamps and time labels in 1D. The other ranges retain the existing date grouping. In both local widths the fixture now displays Provider history in 1D and 1W. With no provider response, the 1D fallback produces 97 unique points spanning 24 hours at 15-minute intervals. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967743939)
+- **STRICT-TRADE-010**. The same five range buttons previously lacked a programmatic selected state. The candidate exposes exactly one pressed button at a time and preserves keyboard selection. Fifteen selected-state transitions passed on the compiled candidate. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967748160)
+
+The TypeScript app check and full Cloudflare build passed. Public before captures and local candidate captures use explicit synthetic market responses and blocked outbound provider calls. They establish frontend behavior. Exact protected release and custom-domain verification remain pending.

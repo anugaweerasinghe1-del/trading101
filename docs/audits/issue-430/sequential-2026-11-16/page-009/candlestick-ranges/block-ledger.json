@@ -1,0 +1,78 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0270",
+    "findingId": "STRICT-TRADE-009",
+    "text": "1D | BTC/USD ● Simulated",
+    "sha256": "b9a2a2069c0eb2e12068fd93184b1b550f3c720f3986f8021ea4657da0d17343",
+    "capture": "before-candle-history.json",
+    "captureSHA256": "ee86dd7b7de028438b50f0d1a7933d22052189601e78f4b819623db6c5858870",
+    "scope": "public controlled browser projections",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "custom-domain pre-edit observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public widths discard the accepted 24-record one-day fixture and show Simulated."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The 1W fixture takes the provider branch with the same transport, and the reference code groups the 1D inputs into a single calendar date.",
+      "reviewer": "Codex assistant, separate source and fixture reread"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0271",
+    "findingId": "STRICT-TRADE-009",
+    "text": "1D | BTC/USD ● Provider history",
+    "sha256": "70bff26d13ee9a53a76c1919161ae3d4ea05bc374e1e191e8e325d255b971cc9",
+    "capture": "local-candle-history.json",
+    "captureSHA256": "9a14a5320bc5784bd774b205dd7f12a593a929fd671395cf285afa709e096f89",
+    "scope": "public controlled browser projections",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The candidate retains the synthetic one-day provider history at both widths and retains the seven-day provider indicator. The independently extracted fallback returns 97 points at 15-minute intervals."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0272",
+    "findingId": "STRICT-TRADE-010",
+    "text": "1D / 1W / 1M / 1Y / 5Y | no selected attribute",
+    "sha256": "8c081a7469228903bd5822c651278ad448dc6e3174639698b8b96c683f4a97f6",
+    "capture": "before-candle-control.json",
+    "captureSHA256": "00b5fecc5fedecbee59c7c9dcf26f70229dce7a6da47ac794c5f30a86671a594",
+    "scope": "public controlled browser projections",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "custom-domain pre-edit observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Across all five range choices, the compiled view changes the highlighted CSS but exposes five plain buttons."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Keyboard trials in desktop, mobile, and the mobile AAPL guided variant demonstrate that all five states are operational and none expose aria-pressed.",
+      "reviewer": "Codex assistant, separate source and fixture reread"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0273",
+    "findingId": "STRICT-TRADE-010",
+    "text": "1D / 1W / 1M / 1Y / 5Y | one selected attribute",
+    "sha256": "d737c1272182de2dc8780d1e22515a46baa706904496df6ccc8aa8151ba6344b",
+    "capture": "local-candle-control.json",
+    "captureSHA256": "66b5521e90202b32aa50068d35f48ef0cce6607b2826833f4a35c86e75845ea3",
+    "scope": "public controlled browser projections",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The compiled candidate exposes exactly one pressed choice for each of 15 keyboard state transitions, preserving labels and styled selection."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]
