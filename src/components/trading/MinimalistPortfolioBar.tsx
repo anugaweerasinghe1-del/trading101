@@ -86,7 +86,7 @@ export function MinimalistPortfolioBar({ portfolio }: MinimalistPortfolioBarProp
                 ) : (
                   <TrendingDown className="w-4 h-4 text-loss" />
                 )}
-                <span className="text-xs text-muted-foreground">Total P&L</span>
+                <span className="text-xs text-muted-foreground">Open P&L</span>
               </div>
               <p className={cn(
                 "text-lg font-bold tabular-nums",
