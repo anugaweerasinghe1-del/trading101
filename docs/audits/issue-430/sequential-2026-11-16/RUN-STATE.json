@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T10:25:45.865951+00:00",
+  "updatedAtUTC": "2026-11-18T10:35:36.701494+00:00",
   "phase": "P10-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/portfolio",
   "newAuditCompletedPages": 8,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "0c9549fd-7ec5-4dc0-ab7c-886f5ba2a94f",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Conclude #479 exact protection and native readback for 0035 and 0037, then release the separately reproduced ticker and launcher corrections. Continue the remaining Portfolio states.",
+  "nextStep": "Obtain exact #479 native receipt and replay 0035 and 0037. Complete the revised #480 responsive browser and exact-head checks. Continue the Portfolio block coverage from 0058.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -112,7 +112,7 @@
   "activeAssignment": {
     "page": "STRICT-0010",
     "status": "PARTIAL-REVIEW",
-    "nextExactContentState": "Conclude #479 exact protection and native readback for 0035 and 0037, then release the separately reproduced ticker and launcher corrections. Continue the remaining Portfolio states."
+    "nextExactContentState": "Obtain exact #479 native receipt and replay 0035 and 0037. Complete the revised #480 responsive browser and exact-head checks. Continue the Portfolio block coverage from 0058."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -215,11 +215,12 @@
   "currentPortfolioCoverage": {
     "record": "page-010/COVERAGE.json",
     "status": "PARTIAL-REVIEW",
-    "firstPass": 53,
-    "secondPass": 51,
-    "confirmedProductDefects": 4,
+    "firstPass": 57,
+    "secondPass": 55,
+    "confirmedProductDefects": 6,
     "productionVerified": 2,
-    "qualityRisksOpen": 2
+    "qualityRisksOpen": 2,
+    "existingRootExtensionsOpen": 2
   },
   "latestEvidencePR": {
     "number": 477,
@@ -243,8 +244,19 @@
   "activePortfolioScenarioPR": {
     "number": 479,
     "headSHA": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
-    "status": "OPEN; exact hosted fixture passed",
+    "status": "MERGED; exact native and custom-domain readback pending",
     "previewURL": "https://30a11869.tradehq-preview.pages.dev",
-    "hostedEvidence": "exact-preview479-scenario.json"
+    "hostedEvidence": "exact-preview479-scenario.json",
+    "mergeSHA": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "mainWorkflow": 44285375247
+  },
+  "activePortfolioControlsPR": {
+    "number": 480,
+    "status": "OPEN; revised candidate being validated for 0054–0057",
+    "beforeEditComments": [
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975934096"
+    ]
   }
 }

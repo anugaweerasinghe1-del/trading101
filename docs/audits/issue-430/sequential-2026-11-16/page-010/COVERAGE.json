@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 53,
-  "secondPass": 51,
+  "firstPass": 57,
+  "secondPass": 55,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -63,11 +63,13 @@
     "STRICT-PORTFOLIO-001",
     "STRICT-PORTFOLIO-002",
     "STRICT-PORTFOLIO-003",
-    "STRICT-PORTFOLIO-004"
+    "STRICT-PORTFOLIO-004",
+    "STRICT-PORTFOLIO-005",
+    "STRICT-PORTFOLIO-006"
   ],
-  "confirmedProductDefectsReproduced": 4,
+  "confirmedProductDefectsReproduced": 6,
   "confirmedProductDefectsProductionVerified": 2,
-  "nextAction": "Conclude #479 exact protection and native readback for 0035 and 0037, then release the separately reproduced ticker and launcher corrections. Continue the remaining Portfolio states.",
+  "nextAction": "Obtain exact #479 native receipt and replay 0035 and 0037. Complete the revised #480 responsive browser and exact-head checks. Continue the Portfolio block coverage from 0058.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -117,13 +119,28 @@
   "scenarioPR": {
     "number": 479,
     "headSHA": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
-    "status": "OPEN; exact hosted fixture passed",
+    "status": "MERGED; exact native and custom-domain readback pending",
     "previewURL": "https://30a11869.tradehq-preview.pages.dev",
-    "hostedEvidence": "exact-preview479-scenario.json"
+    "hostedEvidence": "exact-preview479-scenario.json",
+    "mergeSHA": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "mainWorkflow": 44285375247
   },
   "guestAndAccountFixtureEvidence": [
     "production-current-guest-recovery.json",
     "local-signed-portfolio.json"
   ],
-  "latestApplicationRelease": "04f853729f2cf46e9223866251c5fa71c9e540a6"
+  "latestApplicationRelease": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+  "existingRootExtensions": [
+    "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
+    "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
+  ],
+  "controlsPR": {
+    "number": 480,
+    "status": "OPEN; revised candidate being validated for 0054–0057",
+    "beforeEditComments": [
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975934096"
+    ]
+  }
 }

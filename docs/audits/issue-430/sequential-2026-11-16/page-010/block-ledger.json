@@ -1004,5 +1004,81 @@
       "reason": "The width variants retain the same accepted account data and warn that the last confirmed values are still displayed. No private account, native server history or actual provider health was observed."
     },
     "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0054",
+    "findingId": "STRICT-PORTFOLIO-005",
+    "text": "The practice ticker has no stop control and moves for more than five seconds.",
+    "sha256": "072436d3c599659b05e7b585bb14f1537073e57226c42a1cc13a2e2211b50d5f",
+    "source": "src/components/PriceTicker.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-ticker.json",
+    "contentSHA256": "41e02796cbca9f8cdd90b7e5ff172bb99cc246f8c9e418789b91beba0e6735ac",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both widths change their transform by roughly 111 pixels during the sample, with or without reduced motion."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source uses a repeating 50ms timer and has no stop control or reduced-motion check. This is a reproducible accessibility issue.",
+      "reviewer": "Codex assistant, separate browser and source comparison"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0055",
+    "findingId": "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
+    "text": "The Portfolio mentor overlaps the mobile music control after hydration.",
+    "sha256": "ad476083f289c7094a5cb991f9698ba2ec09884fdf76f9f61bf6c1bc559b92fd",
+    "source": "src/components/AIAssistant.tsx; src/components/BackgroundMusic.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-ticker.json",
+    "contentSHA256": "41e02796cbca9f8cdd90b7e5ff172bb99cc246f8c9e418789b91beba0e6735ac",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The simultaneous hit stacks at 390px resolve the music center to the mentor under both motion preferences. Desktop centers map to their respective controls."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The earlier non-overlap hit sample was taken before settled geometry. The separately recorded shared mobile anchor and settled bounds establish the issue without counting another root.",
+      "reviewer": "Codex assistant, separate browser and source comparison"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0056",
+    "findingId": "STRICT-TRADE-019-PORTFOLIO-EXTENSION",
+    "text": "History and scenario chart data are reachable under the pointer only.",
+    "sha256": "dad9810a2061ee75ad6ec32dee8f9328fb624cef836f65e9fe5d3be44f038a22",
+    "source": "src/components/PortfolioChart.tsx; src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-chart-access.json",
+    "contentSHA256": "d13ecc3d0eb27748b43f0f293e1c3924e9c75f68dbe75312db1cbbb44c12b3cd",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "In both responsive cases, the pointer exposes a valuation or model percentile tooltip. Neither surface has an accessible name or a usable keyboard focus route."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source call sites omit the keyboard accessibility configuration from Trade. The tooltip does not appear following focus and arrow navigation in all four chart projections. This is the same root in two additional authored surfaces.",
+      "reviewer": "Codex assistant, separate browser and source comparison"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0057",
+    "findingId": "STRICT-PORTFOLIO-006",
+    "text": "+$10000.00 (+11.11%) today",
+    "sha256": "dc1bec1c451dce9d96e6d92795da59e3b7ec906c1f660916c83de536952029e4",
+    "source": "src/pages/Portfolio.tsx; src/lib/portfolio.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "contentReference": "production-current-baseline.json",
+    "contentSHA256": "ed467762c5d9486cc122f710b9651e68e183a2f10a033fc9951386e0ad9d711f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The observed arithmetic is correct. The card says today after it compares with a snapshot seven days old at both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source deliberately accepts snapshots at least 20 hours old and discards the selected timestamp. The 22-hour and 168-hour browser baselines receive identical time labels. This is incorrect interval labelling.",
+      "reviewer": "Codex assistant, separate browser and source comparison"
+    }
   }
 ]
