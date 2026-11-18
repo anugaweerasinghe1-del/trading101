@@ -29,3 +29,7 @@ Recovered main and the open Portfolio candidate, reopened tracking issue #430, a
 # Portfolio controls production verification
 
 #480 has exact native production evidence and ten subsequent custom-domain browser cases. The ticker, independent mobile launchers, keyboard chart data and actual comparison timestamp passed. All six distinct Portfolio defects and both shared-root occurrences are production-verified. The page remains partial until its final eligible coverage reconciliation. [Exact receipt](RELEASE-480.json)
+
+# Supported quantity display
+
+Two public guest browser cases reproduced a supported 0.00003 AAPL holding displayed as zero in positions and filled history. The narrow correction passes TypeScript, the Cloudflare build and both compiled layouts. PR #481 awaits hosted validation and the normal release loop. Current metadata, schemas, media and empty-state readings are recorded separately. Coverage is 98 first-pass and 97 second-pass records.

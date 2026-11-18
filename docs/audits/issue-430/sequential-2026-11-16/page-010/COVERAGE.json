@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 91,
-  "secondPass": 91,
+  "firstPass": 98,
+  "secondPass": 97,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -65,11 +65,12 @@
     "STRICT-PORTFOLIO-003",
     "STRICT-PORTFOLIO-004",
     "STRICT-PORTFOLIO-005",
-    "STRICT-PORTFOLIO-006"
+    "STRICT-PORTFOLIO-006",
+    "STRICT-PORTFOLIO-007"
   ],
-  "confirmedProductDefectsReproduced": 6,
+  "confirmedProductDefectsReproduced": 7,
   "confirmedProductDefectsProductionVerified": 6,
-  "nextAction": "Finish current default occurrence, control, metadata and source reconciliation for Portfolio. All six confirmed defects and both existing-root extensions are production-verified. Strict page closure remains conditional on complete eligible coverage.",
+  "nextAction": "Verify and release the quantity correction through its protected PR. Finish conditional source and default control reconciliation before strict P10 closure. Latest completed release is #480.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -160,5 +161,13 @@
     "fullyReadRecords": 13,
     "evidence": "production-current-mentor.json",
     "sharedTopicSource": "The unchanged fallback topic library retains the previously reviewed P09 word-level evidence."
+  },
+  "quantityPR": {
+    "number": 481,
+    "headSHA": "6a67ac2",
+    "status": "OPEN; exact final-head hosted validation pending",
+    "pendingBlock": "STRICT-0010-BLOCK-0093",
+    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
+    "localEvidence": "local-quantity-tiny-position.json"
   }
 }
