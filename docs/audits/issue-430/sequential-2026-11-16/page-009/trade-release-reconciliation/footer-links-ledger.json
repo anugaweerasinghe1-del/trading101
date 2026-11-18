@@ -1,0 +1,2144 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0330",
+    "text": "BTC",
+    "href": "/trade/btc",
+    "destinationPage": "STRICT-0098",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "c278cf2e8d1b52cfd6d8aa9b01dad6cfa4a44a0c2df8eb350b66b7e1d996805e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes BTC; desktop exposes BTC Bitcoin."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/btc match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0331",
+    "text": "ETH",
+    "href": "/trade/eth",
+    "destinationPage": "STRICT-0099",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "65bac3a35c42bed9452e7ddbdf6f10fa7ca1beb8f16d8cd6b2564142e92e8e0c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes ETH; desktop exposes ETH Ethereum."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/eth match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0332",
+    "text": "SOL",
+    "href": "/trade/sol",
+    "destinationPage": "STRICT-0109",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "649e42bace0d537d7f59de0076642186df9f8281676ec3204a4902ab07526a28",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes SOL; desktop exposes SOL Solana."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/sol match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0333",
+    "text": "XRP",
+    "href": "/trade/xrp",
+    "destinationPage": "STRICT-0112",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "abd3522ce8821695e9f2167bd13e787accd41e435b661bad465d367b0b51f007",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes XRP; desktop exposes XRP XRP."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/xrp match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0334",
+    "text": "BNB",
+    "href": "/trade/bnb",
+    "destinationPage": "STRICT-0097",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "27fa2ee8832cce4e709064a1c70a8ce97811ebc0c906f318974f5e458ca638ea",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes BNB; desktop exposes BNB BNB."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/bnb match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0335",
+    "text": "ADA",
+    "href": "/trade/ada",
+    "destinationPage": "STRICT-0243",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "bd659d2e86db53643d569e8fdd31a51e76b815c163910f3a1f708a5dd50e3377",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes ADA; desktop exposes ADA Cardano."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/ada match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0336",
+    "text": "NVDA",
+    "href": "/trade/nvda",
+    "destinationPage": "STRICT-0106",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "e8852a0a03413fa0beac57fb997cc61757b0651bff2f03ca23ac3f4f88fc382c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes NVDA; desktop exposes NVDA NVIDIA."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/nvda match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0337",
+    "text": "MSFT",
+    "href": "/trade/msft",
+    "destinationPage": "STRICT-0105",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "cff5fb2d085a947a0f0c40587d5b6a2b3870980cb9701c191cad808d1bc782f3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes MSFT; desktop exposes MSFT Microsoft."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/msft match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0338",
+    "text": "GOOGL",
+    "href": "/trade/googl",
+    "destinationPage": "STRICT-0103",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "0cd551e98e51ca291b8c893c45c90234d4433a5c9afc7d4acd86b629badb6686",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes GOOGL; desktop exposes GOOGL Alphabet."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/googl match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0339",
+    "text": "AAPL",
+    "href": "/trade/aapl",
+    "destinationPage": "STRICT-0095",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "4808d866ce3baf12af49365a196bad9c75061cba943d8963c506d4b738e90d1f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes AAPL; desktop exposes AAPL Apple."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/aapl match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0340",
+    "text": "META",
+    "href": "/trade/meta",
+    "destinationPage": "STRICT-0104",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "65477f9e5dd65c3cf5a39286454c5de6400b12433cbc47ce2cb69f5de56c8156",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes META; desktop exposes META Meta."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/meta match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0341",
+    "text": "AMZN",
+    "href": "/trade/amzn",
+    "destinationPage": "STRICT-0096",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "32f7355eff07cbb39a8733bdd175048771d82bd2a49b1b6edae1fbb345bb7e13",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes AMZN; desktop exposes AMZN Amazon."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/amzn match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0342",
+    "text": "SPY",
+    "href": "/trade/spy",
+    "destinationPage": "STRICT-0110",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "25f075cec47c5b4cde237c5b9716cc7a630dd35c6a31e7b776243f183d96b306",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes SPY; desktop exposes SPY S&P 500 ETF."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/spy match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0343",
+    "text": "QQQ",
+    "href": "/trade/qqq",
+    "destinationPage": "STRICT-0108",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "50294c340bce9895a82b5f8ee7775c32d9f70eeab655ee57c9d2506535d52215",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes QQQ; desktop exposes QQQ Nasdaq ETF."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/qqq match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0344",
+    "text": "DIA",
+    "href": "/trade/dia",
+    "destinationPage": "STRICT-0275",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "14212ce1e468515b16ff6021badfa5c6a3117967ff7f933a25cb8e8b66374d6a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes DIA; desktop exposes DIA Dow Jones ETF."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/dia match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0345",
+    "text": "ARKK",
+    "href": "/trade/arkk",
+    "destinationPage": "STRICT-0251",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "f321229b77c6332363e6a1a1f3a0c2a498898b57ece02734d4c16169a36b505d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes ARKK; desktop exposes ARKK ARK Innovation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/arkk match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0346",
+    "text": "EUR/USD",
+    "href": "/trade/eurusd",
+    "destinationPage": "STRICT-0100",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "3637fb734390b60f58093f7824490813e174aaa650738c20a05df0ec29c9657c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes EUR/USD; desktop exposes EUR/USD Euro/Dollar."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/eurusd match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0347",
+    "text": "GBP/USD",
+    "href": "/trade/gbpusd",
+    "destinationPage": "STRICT-0101",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "84fd905c1f20c479e0a5b54b25b87a311e7f37dc7c6ac90c081a3b9608e4daf7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes GBP/USD; desktop exposes GBP/USD Pound/Dollar."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/gbpusd match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0348",
+    "text": "USD/JPY",
+    "href": "/trade/usdjpy",
+    "destinationPage": "STRICT-0367",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "aeb1652fdd2bf69616d573f9086ebcbb81c14b14a10d3256758704312aacb3a9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes USD/JPY; desktop exposes USD/JPY Dollar/Yen."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/usdjpy match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0349",
+    "text": "XAU",
+    "href": "/trade/gold",
+    "destinationPage": "STRICT-0102",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "bedec2d6decd08163d8f47b7e4361eafff75cccd88a8caa5c05985438ae8d1e2",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes XAU; desktop exposes XAU Gold."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/gold match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0350",
+    "text": "XAG",
+    "href": "/trade/silver",
+    "destinationPage": "STRICT-0341",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "66d2c8e3d9b36e8db367cb7e0ac4b4da5fcbce08441df0bfc9edf72a3aef0b0f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes XAG; desktop exposes XAG Silver."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/silver match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0351",
+    "text": "WTI",
+    "href": "/trade/oil",
+    "destinationPage": "STRICT-0107",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "7fa1aec7da211dbc5d288a07c471c1b8252529067ed5e43a0213d5cf5766a882",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile exposes WTI; desktop exposes WTI Crude Oil."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The symbol and asset destination /trade/oil match the footer source and current canonical queue. The symbol-only mobile label remains suitable for the compact market list."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0352",
+    "text": "Short Squeeze",
+    "href": "/wiki/short-squeeze",
+    "destinationPage": "STRICT-0154",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0714",
+    "sha256": "dcc8de53da136cde0da4c4b3b52c24a66479aa7100576529e4365e46099f8381",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Short Squeeze appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug short-squeeze. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0353",
+    "text": "Golden Cross",
+    "href": "/wiki/golden-cross",
+    "destinationPage": "STRICT-0134",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0715",
+    "sha256": "0c2b2a122cab682a48319ceb983906f1cfbdfe500d80507b4384902a20dd4589",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Golden Cross appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug golden-cross. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0354",
+    "text": "Death Cross",
+    "href": "/wiki/death-cross",
+    "destinationPage": "STRICT-0124",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0716",
+    "sha256": "86da6bbd740f0385dbcb55c21aa84470da99c638b4d70bfe0cdb077263dc9bd9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Death Cross appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug death-cross. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0355",
+    "text": "Liquidation Cascade",
+    "href": "/wiki/liquidation-cascade",
+    "destinationPage": "STRICT-0141",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0717",
+    "sha256": "a1de07a80ebc3fbd708c53e2740c17c12542ff1fa1463a3df351440e633bab67",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Liquidation Cascade appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug liquidation-cascade. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0356",
+    "text": "Fibonacci Retracement",
+    "href": "/wiki/fibonacci-retracement",
+    "destinationPage": "STRICT-0130",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0718",
+    "sha256": "2be8858d78b72595010f4de2908ddadc6a19fb24ac0adedfe2aae5648cf67fbf",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Fibonacci Retracement appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug fibonacci-retracement. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0357",
+    "text": "RSI Divergence",
+    "href": "/wiki/rsi-divergence",
+    "destinationPage": "STRICT-0151",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0719",
+    "sha256": "5cb40fadd5183726ba76b3c236c5fa1a8cb9dca2733318d5f9fe0276ee75f6f1",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "RSI Divergence appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug rsi-divergence. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0358",
+    "text": "MACD Histogram",
+    "href": "/wiki/macd-histogram",
+    "destinationPage": "STRICT-0144",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0720",
+    "sha256": "0fe5593ed8646db6c8732861b93df3dccbcebbb5080a3076481dd49ab4360e04",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "MACD Histogram appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug macd-histogram. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0359",
+    "text": "Bollinger Band Squeeze",
+    "href": "/wiki/bollinger-band-squeeze",
+    "destinationPage": "STRICT-0117",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0721",
+    "sha256": "4b8d46841ab1275109dedfdfcf2a460de4254f36e37977ced1f8cd6b50455ef5",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bollinger Band Squeeze appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug bollinger-band-squeeze. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0360",
+    "text": "Order Block",
+    "href": "/wiki/order-block",
+    "destinationPage": "STRICT-0147",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0722",
+    "sha256": "976663b01e4df43aed9ed213cd1c139f1c6707e6354d828f477d5cafff1fa03f",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Order Block appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug order-block. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0361",
+    "text": "Fair Value Gap (FVG)",
+    "href": "/wiki/fair-value-gap",
+    "destinationPage": "STRICT-0129",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0723",
+    "sha256": "a1773161cd9fd663b143dafd58e111ed52c21dde5edf49ab0423d0c617e4d5a8",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Fair Value Gap (FVG) appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug fair-value-gap. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0362",
+    "text": "Bull Trap",
+    "href": "/wiki/bull-trap",
+    "destinationPage": "STRICT-0118",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0724",
+    "sha256": "ffd0899c1cb8945eff3b19e84bc902bfca36713703ca3fa08b8670c6e2c4e25d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bull Trap appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug bull-trap. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0363",
+    "text": "Bear Trap",
+    "href": "/wiki/bear-trap",
+    "destinationPage": "STRICT-0116",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0725",
+    "sha256": "57217e190d4b2ae85dbac8e27e8c89fa6b1b3ac04d1cde2fc98470c2a8086bce",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bear Trap appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug bear-trap. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0364",
+    "text": "Whale Manipulation",
+    "href": "/wiki/whale-manipulation",
+    "destinationPage": "STRICT-0161",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0726",
+    "sha256": "386170c94f6cb20e56c8939b09b43c6f6d4704340194ed8d58a4d491f8392d6c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Whale Manipulation appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug whale-manipulation. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0365",
+    "text": "Support and Resistance",
+    "href": "/wiki/support-and-resistance",
+    "destinationPage": "STRICT-0157",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0727",
+    "sha256": "fddd5ce972952f994e6959f8083a3ab9b17724b40b7f84b6efd6510b4bee62dd",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Support and Resistance appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug support-and-resistance. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0366",
+    "text": "Candlestick Patterns",
+    "href": "/wiki/candlestick-patterns",
+    "destinationPage": "STRICT-0119",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0728",
+    "sha256": "95c3ba18fa9b1528599617d196cf9929a553bc26c42091e08e6dd0210c6ef746",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Candlestick Patterns appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug candlestick-patterns. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0367",
+    "text": "Head and Shoulders",
+    "href": "/wiki/head-and-shoulders",
+    "destinationPage": "STRICT-0135",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0729",
+    "sha256": "ad41072870c054fb82bc9757ce56247e6158b095cdcaf296551adefd9d32ceb8",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Head and Shoulders appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug head-and-shoulders. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0368",
+    "text": "Double Bottom",
+    "href": "/wiki/double-bottom",
+    "destinationPage": "STRICT-0126",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0730",
+    "sha256": "0ce80cc9fb4135772f2e77949530ae8d08a41625f2612b9e820a4ae91160468e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Double Bottom appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug double-bottom. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0369",
+    "text": "Moving Average Convergence Divergence",
+    "href": "/wiki/macd",
+    "destinationPage": "STRICT-0143",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0731",
+    "sha256": "3db698be67e99b9a6db1519c41a0482add37133a58617632cf5170df7498cb94",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Moving Average Convergence Divergence appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug macd. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0370",
+    "text": "Limit Order vs Market Order",
+    "href": "/wiki/limit-order-vs-market-order",
+    "destinationPage": "STRICT-0140",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0732",
+    "sha256": "ec6e3f0d2fe4320c823b0293469eda605e4e20149098924ca7924c9210d12d1e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Limit Order vs Market Order appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug limit-order-vs-market-order. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0371",
+    "text": "Stop Loss Hunting",
+    "href": "/wiki/stop-loss-hunting",
+    "destinationPage": "STRICT-0156",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0733",
+    "sha256": "0a7b3f15d4d51dad1f5f847b9fe74b782b040b73d349adf8beaa49e08b8417fc",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Stop Loss Hunting appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug stop-loss-hunting. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0372",
+    "text": "Leverage Trading",
+    "href": "/wiki/leverage-trading",
+    "destinationPage": "STRICT-0139",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0734",
+    "sha256": "2acf5cdcd660dd3d23bc0ebe12e4a55db9f6fe1cefdf481394852cbcb9d2aac7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Leverage Trading appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug leverage-trading. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0373",
+    "text": "FOMO (Fear of Missing Out)",
+    "href": "/wiki/fomo",
+    "destinationPage": "STRICT-0132",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0735",
+    "sha256": "7565bf0de607c5e0cf27a05fa6e0644932685c4d5fa2f3d2547c76cba398add8",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "FOMO (Fear of Missing Out) appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug fomo. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0374",
+    "text": "FUD (Fear, Uncertainty, Doubt)",
+    "href": "/wiki/fud",
+    "destinationPage": "STRICT-0133",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0736",
+    "sha256": "4d348341265a36fee119c45bb3bd840246f0593680f94911bb3341bab8595b4d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "FUD (Fear, Uncertainty, Doubt) appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug fud. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0375",
+    "text": "HODL Strategy",
+    "href": "/wiki/hodl-strategy",
+    "destinationPage": "STRICT-0136",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0737",
+    "sha256": "2091f652aa0018fa4e7a8d55ec0c0f40fc3acc2878923ed3ff9f92c3c4cd850e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "HODL Strategy appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug hodl-strategy. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0376",
+    "text": "Satoshi Nakamoto",
+    "href": "/wiki/satoshi-nakamoto",
+    "destinationPage": "STRICT-0152",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0738",
+    "sha256": "d1344a48cb3fdc1c3e1186f64a36afbdc64aa3240f37be9430e37760a9af290c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Satoshi Nakamoto appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug satoshi-nakamoto. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0377",
+    "text": "Margin Call",
+    "href": "/wiki/margin-call",
+    "destinationPage": "STRICT-0145",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0739",
+    "sha256": "111800ce61ff7a7661e1dc607d80b7441b92e52858b9a63ac30fc05d2d8166c8",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Margin Call appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug margin-call. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0378",
+    "text": "Liquidation Price",
+    "href": "/wiki/liquidation-price",
+    "destinationPage": "STRICT-0142",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0740",
+    "sha256": "7d2cee2491b15bb292ddcc067e0afca780144866ea27fe31335450123e750603",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Liquidation Price appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug liquidation-price. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0379",
+    "text": "Dollar Cost Averaging",
+    "href": "/wiki/dollar-cost-averaging",
+    "destinationPage": "STRICT-0125",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0741",
+    "sha256": "a39890336a5ff55322bf0f1f7a2b450abb45a69cc95fcc1165f67757fe15be0d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Dollar Cost Averaging appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug dollar-cost-averaging. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0380",
+    "text": "Swing Trading",
+    "href": "/wiki/swing-trading",
+    "destinationPage": "STRICT-0158",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0742",
+    "sha256": "ddb2cf917c454a154ecc16ad6d788e1ffd4e9505717306f182f65d0118330aec",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Swing Trading appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug swing-trading. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0381",
+    "text": "Day Trading",
+    "href": "/wiki/day-trading",
+    "destinationPage": "STRICT-0123",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0743",
+    "sha256": "5a1359a58923f052598f02fdfbb4eae41cacdd0280ea19989087689fc63b7432",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Day Trading appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug day-trading. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0382",
+    "text": "Scalping",
+    "href": "/wiki/scalping",
+    "destinationPage": "STRICT-0153",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0744",
+    "sha256": "0323084099aab7a8a1a00733bba90289070127499fb3380a50e3022785d7dacf",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Scalping appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug scalping. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0383",
+    "text": "Volume Profile",
+    "href": "/wiki/volume-profile",
+    "destinationPage": "STRICT-0159",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0745",
+    "sha256": "6648621a4b1042dfdc09f9c3c9219461047e6c1648c1092a21f17b64b9d61726",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Volume Profile appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug volume-profile. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0384",
+    "text": "VWAP",
+    "href": "/wiki/vwap",
+    "destinationPage": "STRICT-0160",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0746",
+    "sha256": "b5fb01028b86b17f5f7a1a0349b9bab15d8013db9ad244bb343fa62bd632b6d8",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "VWAP appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug vwap. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0385",
+    "text": "Ichimoku Cloud",
+    "href": "/wiki/ichimoku-cloud",
+    "destinationPage": "STRICT-0137",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0747",
+    "sha256": "e2322d62c369ce665f2b1856ff2347f3279a662d2d950a31cc4dcc3239f769db",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Ichimoku Cloud appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug ichimoku-cloud. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0386",
+    "text": "Elliott Wave Theory",
+    "href": "/wiki/elliott-wave-theory",
+    "destinationPage": "STRICT-0128",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0748",
+    "sha256": "fb6fc7fd80912867a9a62c99d983a55ddef605ccad9e7444701a351474568dcf",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Elliott Wave Theory appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug elliott-wave-theory. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0387",
+    "text": "Wyckoff Method",
+    "href": "/wiki/wyckoff-method",
+    "destinationPage": "STRICT-0162",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0749",
+    "sha256": "03caf4aec8121efb222aff56d2500e39b35cf2e56f8cddf6e19e0be2a5cfabd5",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Wyckoff Method appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug wyckoff-method. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0388",
+    "text": "Market Maker",
+    "href": "/wiki/market-maker",
+    "destinationPage": "STRICT-0146",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0750",
+    "sha256": "2a80f8856eb55c83ee4653b2adc41a3f4b5038709ce24787d93180dba650c771",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Market Maker appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug market-maker. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0389",
+    "text": "Dark Pool",
+    "href": "/wiki/dark-pool",
+    "destinationPage": "STRICT-0122",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0751",
+    "sha256": "2639e1f4870d63433dfcbadb45860ec3db2abb5d45c37c8ef29448f3d4383e1e",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Dark Pool appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug dark-pool. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0390",
+    "text": "Slippage",
+    "href": "/wiki/slippage",
+    "destinationPage": "STRICT-0155",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0752",
+    "sha256": "a9623c1c97918807d3660c62f2ffa2cdc4c2a88d8754228e99c7f905c698cdf4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Slippage appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug slippage. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0391",
+    "text": "Impermanent Loss",
+    "href": "/wiki/impermanent-loss",
+    "destinationPage": "STRICT-0138",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0753",
+    "sha256": "8ba9b59f8a6f13736f9702ac35b6ba7806d8b9bdc97c0dd7891f9701b762e6c1",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Impermanent Loss appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug impermanent-loss. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0392",
+    "text": "Yield Farming",
+    "href": "/wiki/yield-farming",
+    "destinationPage": "STRICT-0163",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0754",
+    "sha256": "3c21c484e44d68b6f556ea5c5e9664f3e5357a6795090e8a59c18a43cca5fd22",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Yield Farming appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug yield-farming. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0393",
+    "text": "Flash Crash",
+    "href": "/wiki/flash-crash",
+    "destinationPage": "STRICT-0131",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0755",
+    "sha256": "9bf2a901448305204b0d8961ea7ae8466b56e6368beda7e12230a5747748c5f7",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Flash Crash appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug flash-crash. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0394",
+    "text": "Circuit Breaker",
+    "href": "/wiki/circuit-breaker",
+    "destinationPage": "STRICT-0120",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0756",
+    "sha256": "064ec1084bab933dd484754782a3883774e136c2c4a751db43e211a0f21f4cf5",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Circuit Breaker appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug circuit-breaker. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0395",
+    "text": "Pump and Dump",
+    "href": "/wiki/pump-and-dump",
+    "destinationPage": "STRICT-0149",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0757",
+    "sha256": "c7ba5c33550b16442304425eeb049c7ace10d6e5026b99beb49fee10e2f3b38c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Pump and Dump appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug pump-and-dump. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0396",
+    "text": "Paper Trading",
+    "href": "/wiki/paper-trading",
+    "destinationPage": "STRICT-0148",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0758",
+    "sha256": "8df394460856690feecf397165fbe3ef498df923c5c8fe13c2d59551a85cb008",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Paper Trading appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug paper-trading. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0397",
+    "text": "Risk-Reward Ratio",
+    "href": "/wiki/risk-reward-ratio",
+    "destinationPage": "STRICT-0150",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0759",
+    "sha256": "c036c434bb679011662a5f74052da7987f5f4627a759bb181688a955dbcc919c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Risk-Reward Ratio appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug risk-reward-ratio. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0398",
+    "text": "Drawdown",
+    "href": "/wiki/drawdown",
+    "destinationPage": "STRICT-0127",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0760",
+    "sha256": "faed613957d89c3a3f33fc28d126e352d2f3a085b37e43ac9bee70d228e28726",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Drawdown appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug drawdown. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0399",
+    "text": "Backtesting",
+    "href": "/wiki/backtesting",
+    "destinationPage": "STRICT-0115",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0761",
+    "sha256": "f006284058e7212a8d9906bd0006c52468125b07825c3c8d7da238cb553a67d9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Backtesting appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug backtesting. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0400",
+    "text": "Correlation Trading",
+    "href": "/wiki/correlation-trading",
+    "destinationPage": "STRICT-0121",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": "STRICT-0008-BLOCK-0762",
+    "sha256": "077158dafde6cb8a5f31425d8302b95af34ab8159fffbb9a5c11c0d9837f261a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Correlation Trading appears as an individually named link in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The shared glossary source and prior reviewed card projection give the same term and slug correlation-trading. The current publisher queue retains the destination. Only the link projection is reviewed here."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0401",
+    "text": "TradeHQ home",
+    "href": "/",
+    "destinationPage": "STRICT-0001",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "c1fd469906cc76d14c1f3a684c44f9466cf2db3c3b5ab92a2deeca1a182fe0b5",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TradeHQ home appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Brand link exposes TradeHQ home in both accessibility projections."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0402",
+    "text": "Contact TradeHQ",
+    "href": "/contact",
+    "destinationPage": "STRICT-0005",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "755ef0cfb3d129efddf4dff9bff0508f242fcdb3ed10496b11fd7724e35c54aa",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Contact TradeHQ appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Action navigates to the published contact page and initiates no message by itself."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0403",
+    "text": "anugaweerasinghe1@gmail.com",
+    "href": "mailto:anugaweerasinghe1@gmail.com",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "aff85ed0004f2c41ca2450bcb8e1b4379249af97a0f30e6f436f8b8d72cd6615",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The email action has readable contact text and a mailto target in both modes."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The address and target match the published contact route. The link is intentionally a contact action and no email was sent."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0404",
+    "text": "+94 71 489 7346",
+    "href": "tel:+94714897346",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "407da19a0e3e2fd0155e4825bf048abd2bd1804be1e15aa061cae7f8cb9c9787",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The telephone action exposes a readable number at both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The literal visual digits and the normalized tel target agree. No call was initiated."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0405",
+    "text": "TradeHQ on Instagram, @thetradehq_1",
+    "href": "https://www.instagram.com/thetradehq_1/",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "394c6413c65bd88b8dd253917f46e3139831a4315f888a7564e758dd21099a23",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TradeHQ on Instagram, @thetradehq_1 appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The brand link is labeled TradeHQ on Instagram and opens using noopener noreferrer."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0406",
+    "text": "Founder's personal Instagram, @anw_008",
+    "href": "https://www.instagram.com/anw_008/",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "2fbf84532d52168b0fbe79e87563a618e8424fbdbd6b6b792e1fab0651f3d333",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Founder's personal Instagram, @anw_008 appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The separate founder personal Instagram link has an explicit programmatic name and opens using noopener noreferrer."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0407",
+    "text": "Founder's personal Bluesky, @anugaweerasinghe.bsky.social",
+    "href": "https://bsky.app/profile/anugaweerasinghe.bsky.social",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "b7fe301d44aa6bfa75a62a0741baa1b7e611d81033a49d8fd838bb140ec647ba",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Founder's personal Bluesky, @anugaweerasinghe.bsky.social appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The founder personal Bluesky link is distinct from the TradeHQ brand account."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0408",
+    "text": "Trading Simulator",
+    "href": "/trade",
+    "destinationPage": "STRICT-0009",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "6e0b9bb094e45a6708794789d67df6823464b09cb090fe2021b0cdef30e1261d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Trading Simulator appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Trading Simulator link correctly resolves to the current P09 terminal."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0409",
+    "text": "Markets Hub",
+    "href": "/markets",
+    "destinationPage": "STRICT-0083",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "dc88751f184f0e8027ab3725e90cd74db795c6b7c8005f0c7b2949a2fe162824",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Markets Hub appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Markets Hub label and path agree. No provider data assertion is attached to the label."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0410",
+    "text": "Portfolio Tracker",
+    "href": "/portfolio",
+    "destinationPage": "STRICT-0010",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "f991d949429785c765b83e4fdbfbdd73ff004effeedc8a5f66d0b539a9d05644",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Portfolio Tracker appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Portfolio Tracker route matches the product label and remains its separate publisher audit."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0411",
+    "text": "All Courses",
+    "href": "/learn",
+    "destinationPage": "STRICT-0006",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "1e8c42647eb7f73417bb8ed0a6e76fe052e46670c30eea9bbe44742db678bc23",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All Courses appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "All Courses leads to the published Learn hub, which lists course learning resources."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0412",
+    "text": "Structured Tracks",
+    "href": "/courses",
+    "destinationPage": "STRICT-0007",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "35932a8e7997262f0eab32725af2e1bafe53c657b1a8039388a00b0dc769fa11",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Structured Tracks appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Structured Tracks points to the published course hub."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0413",
+    "text": "Options Fundamentals",
+    "href": "/courses/options-trading-fundamentals",
+    "destinationPage": "STRICT-0049",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "dd8f56885f2f4a50ca19f76e2fa184e54125e331e8f451bb06d62198187c4433",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Options Fundamentals appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The abbreviated options label identifies the options fundamentals course."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0414",
+    "text": "Futures & Derivatives",
+    "href": "/courses/futures-and-derivatives",
+    "destinationPage": "STRICT-0037",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "eed9d3d39af1fb18b643b491ac41f75a782e37eec8ce81b73d270f88b0a98518",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Futures & Derivatives appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The ampersand and the two course topics match the linked course identity."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0415",
+    "text": "Macro Reading",
+    "href": "/courses/macro-reading-for-traders",
+    "destinationPage": "STRICT-0043",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "c17417a4d77d2ba3003141bd128cbf526d93fe4808269ecf4cd6042e34eeabfc",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Macro Reading appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Macro Reading is an abbreviated label of the course destination."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0416",
+    "text": "Trading Psychology",
+    "href": "/courses/trading-psychology-mastery",
+    "destinationPage": "STRICT-0055",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "147643a490e08d20b989dcce811fb103a0a2c8d688cf52edd8a4b2ca4fcf9f38",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Trading Psychology appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Trading Psychology label matches the course identity, with no claim about outcomes."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0417",
+    "text": "Trading Guide",
+    "href": "/learn-trading-guide",
+    "destinationPage": "STRICT-0008",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "a6a88f195deddfffa4de678c6e07e496d24830d46ae691dd0f69f62ef8740bd3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Trading Guide appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Trading Guide points to the already closed P08 page."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0418",
+    "text": "Learning Mentor",
+    "href": "/ai-mentor",
+    "destinationPage": "STRICT-0012",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "d6365142325c57ce7e8a3d1b8996ef69e5f22867f0a25a4fe34b0424cbc5a40b",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Learning Mentor appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The Learning Mentor route is the standalone named educational mentor."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0419",
+    "text": "About",
+    "href": "/about",
+    "destinationPage": "STRICT-0002",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "6ee35110aa9ee079fb47b43a9475bfbea76d7336142bf62fd13780b2ffca44a9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "About appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "About is published and also hosts the specifically linked disclaimer anchor."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0420",
+    "text": "Contact",
+    "href": "/contact",
+    "destinationPage": "STRICT-0005",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "a934c474662b25679d888dedd7fdf987b5921886830219f028db380ce814341c",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Contact appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Action navigates to the published contact page and initiates no message by itself."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0421",
+    "text": "What’s New",
+    "href": "/whats-new",
+    "destinationPage": "STRICT-0113",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "95e7fd94c9728143bd2c20330a92fab6bdecfd1c9767c7b1232d53016350bab9",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "What’s New appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The release-notes link describes the target function without a recency guarantee."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0422",
+    "text": "Roadmap",
+    "href": "/roadmap",
+    "destinationPage": "STRICT-0086",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "4eee698277ac0837493a498e07b4a9b0b41cb3b398a6fc0a4b8befbfab03d867",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Roadmap appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The label identifies its publication and promises no implementation date."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0423",
+    "text": "Privacy Policy",
+    "href": "/privacy",
+    "destinationPage": "STRICT-0003",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "805f4cb28508a8346131384bca36dc01b76946a9f6652c7f1e5d1eaf7c8d3232",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Privacy Policy appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The visible policy link and consent link require no account. The separate policy closure supplies the content review."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0424",
+    "text": "Terms of Service",
+    "href": "/terms",
+    "destinationPage": "STRICT-0004",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "5d8dd94ccf4b01ae24789c39de5c18168d9e62e5e101e2978ac363793dd02e81",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Terms of Service appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The link identifies the Terms publication. Owner wording review remains a separate recorded gate."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0425",
+    "text": "Disclaimer",
+    "href": "/about#disclaimer",
+    "destinationPage": "STRICT-0002",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "dd5f7c05d2270969280058abf1bb37996fdec3a7c61167606a9f785084a3191a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Disclaimer appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The disclaimer anchor routes to the intended section of About."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0426",
+    "text": "Privacy Policy",
+    "href": "/privacy",
+    "destinationPage": "STRICT-0003",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "805f4cb28508a8346131384bca36dc01b76946a9f6652c7f1e5d1eaf7c8d3232",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Privacy Policy appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The visible policy link and consent link require no account. The separate policy closure supplies the content review."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0427",
+    "text": "Contact TradeHQ",
+    "href": "/contact",
+    "destinationPage": "STRICT-0005",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "755ef0cfb3d129efddf4dff9bff0508f242fcdb3ed10496b11fd7724e35c54aa",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Contact TradeHQ appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Action navigates to the published contact page and initiates no message by itself."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0428",
+    "text": "Privacy Policy",
+    "href": "/privacy",
+    "destinationPage": "STRICT-0003",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "805f4cb28508a8346131384bca36dc01b76946a9f6652c7f1e5d1eaf7c8d3232",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Privacy Policy appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The visible policy link and consent link require no account. The separate policy closure supplies the content review."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0429",
+    "text": "Terms of Service",
+    "href": "/terms",
+    "destinationPage": "STRICT-0004",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "5d8dd94ccf4b01ae24789c39de5c18168d9e62e5e101e2978ac363793dd02e81",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Terms of Service appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The link identifies the Terms publication. Owner wording review remains a separate recorded gate."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0430",
+    "text": "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+    "href": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "d8bb730969ae1df5127a16700ac27be3ab27ce983c1794bc253cb33a582c4650",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Long Road Ahead by Kevin MacLeod (incompetech.com) appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "Track and creator match the already reviewed P08 attribution, including the track record."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0431",
+    "text": "Creative Commons Attribution 4.0",
+    "href": "https://creativecommons.org/licenses/by/4.0/",
+    "destinationPage": null,
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-trade-footer.json",
+    "sameTermGuideRecord": null,
+    "sha256": "9d335c0495b19300ce2375f4a7fd6de4613fe1b1c0c5d3a23a8354691af0ee42",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Creative Commons Attribution 4.0 appears in both live footer states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate link name and source reread",
+      "reason": "The CC BY 4.0 URL and link name agree with the already reviewed music release evidence."
+    },
+    "disposition": "NO-ISSUE-IN-LINK-PROJECTION"
+  }
+]
