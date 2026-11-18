@@ -280,9 +280,10 @@
   "activePortfolioQuantityPR": {
     "number": 481,
     "headSHA": "6a67ac2",
-    "status": "OPEN; exact final-head hosted validation pending",
+    "status": "MERGED-NATIVE-AND-PUBLIC-READBACK-PENDING",
     "pendingBlock": "STRICT-0010-BLOCK-0093",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
-    "localEvidence": "local-quantity-tiny-position.json"
+    "localEvidence": "local-quantity-tiny-position.json",
+    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c"
   }
 }
