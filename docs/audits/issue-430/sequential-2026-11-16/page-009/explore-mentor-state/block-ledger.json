@@ -1,0 +1,110 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0295",
+    "findingId": "STRICT-TRADE-011",
+    "text": "USDT | $0.9897 | FIXED",
+    "sha256": "29d6994b2042c3a6507053fad06315416cfdc6e380aca483df317d577546a510",
+    "capture": "before-explore-cards.json",
+    "captureSHA256": "168edcb0d8f96031c3455a2f818b50537ceaa30120a31587e681f91626184866",
+    "source": "src/pages/Trade.tsx",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Fresh controlled browsers retain the $0.9897 delayed cache value while showing FIXED in both layouts."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Current source derives the status from the latest response and uses valid persisted quotes independently. The expired Toncoin and simulated Dai entries do not replace defaults.",
+      "reviewer": "Codex assistant, separate source and browser analysis"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0296",
+    "findingId": "STRICT-TRADE-011",
+    "text": "USDT | $0.9897 | SNAPSHOT",
+    "sha256": "e1b63fb651a13b13f16434ad7ffe895fd4f73400376f1badb40aab31b207daf0",
+    "capture": "local-final-explore-cards.json",
+    "captureSHA256": "130569cd9995f5de4b4bb787451a38c99d387e26609d31c637168c35de4823e1",
+    "source": "src/pages/Trade.tsx",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The two seeded layouts keep the quote and identify it as SNAPSHOT. A successful empty shared response also preserves the label. Clean controls remain FIXED."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0297",
+    "findingId": "STRICT-TRADE-012",
+    "text": "Risk assessment | Your portfolio at a glance",
+    "sha256": "af12d7993ef3f5dc98127ab76be4c4cc4501bf1559cfb07e602889aef7547d1a",
+    "capture": "current-mentor-prompts.json",
+    "captureSHA256": "94f4493115e04451013c5c184cf9ce00e5f546b99f519e8e53f55acfb329f9ed",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public widths return exactly the same response as My portfolio."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The earlier portfolio rule takes precedence for the prompt words and the intended Risk review response is absent.",
+      "reviewer": "Codex assistant, separate source and browser analysis"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0298",
+    "findingId": "STRICT-TRADE-012",
+    "text": "Risk assessment | Risk review",
+    "sha256": "4abae9898fe80aae0618deca82087ce2656cb18f59b28e16a224d877dd7b93a6",
+    "capture": "local-mentor-prompts.json",
+    "captureSHA256": "cc3e79bbf2300e2d09ddcd368d3e09b42781c5abd83849ece8ff87202480ac2b",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both local widths select the Risk review rule. The other three nonaffected shortcut responses remain byte-for-byte equal to public controls."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0299",
+    "findingId": "STRICT-TRADE-012",
+    "text": "Review assumptions | No curated reply",
+    "sha256": "2b57633250e1195b5435085e5b65321c2d33370c1347d1da0db2e0b281194ae5",
+    "capture": "current-mentor-prompts.json",
+    "captureSHA256": "94f4493115e04451013c5c184cf9ce00e5f546b99f519e8e53f55acfb329f9ed",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public widths display the generic unknown-topic response."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The authored request promises quantity, fees and assumptions. The observer confirmed none of those are explained in the answer.",
+      "reviewer": "Codex assistant, separate source and browser analysis"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0300",
+    "findingId": "STRICT-TRADE-012",
+    "text": "Review assumptions | Practice assumptions",
+    "sha256": "90e4b29ca3a00df00ea4ee23e7361afb90c165e09d4c2fcdac1fc2f7adb35753",
+    "capture": "local-mentor-prompts.json",
+    "captureSHA256": "cc3e79bbf2300e2d09ddcd368d3e09b42781c5abd83849ece8ff87202480ac2b",
+    "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled widths explain the quantity and fee relationship. At two units and $50, $100 × 0.001 equals $0.10. The resulting cost is $100.10 and net proceeds are $99.90."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]
