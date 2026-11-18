@@ -1469,5 +1469,14 @@
       244
     ],
     "disposition": "The previously release-gated projections now have exact native and public evidence in RELEASE-475.json. Their written content already has recorded reviews."
+  },
+  "optionalAnalyticsAndAudio": {
+    "records": [
+      "STRICT-0009-BLOCK-0437",
+      "STRICT-0009-BLOCK-0465"
+    ],
+    "evidence": "../production475-final-shell-consent-music.json",
+    "sha256": "d2050b0b90825d50756214605e2b9ef1bf67ce2933d66bf998d71b08cfc4bb87",
+    "disposition": "Both public widths reopen the shared consent UI. Reject leaves the SDK absent; the local opt-in attempts one blocked SDK request, and revoking removes it. Both named music controls play and mute the bundled licensed file by keyboard. No actual analytics, advertising or account changes occurred."
   }
 }
