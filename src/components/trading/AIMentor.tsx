@@ -16,7 +16,7 @@ import {
   BarChart3
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Message, Portfolio, Asset } from "@/lib/types";
+import { Message, Portfolio, Asset, Trade } from "@/lib/types";
 import { getPortfolioAIReply } from "@/lib/smartMentor";
 
 interface AIMentorProps {
@@ -66,10 +66,12 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
   // Compute portfolio stats for display
   const totalTrades = portfolio.trades.length;
   const sellTrades = portfolio.trades.filter(t => t.type === 'sell');
-  const wins = sellTrades.filter((t, _i) => {
-    const buys = portfolio.trades.filter(bt => bt.assetId === t.assetId && bt.type === 'buy' && bt.timestamp < t.timestamp);
-    if (buys.length === 0) return false;
-    return t.price > buys[buys.length - 1].price;
+  const wins = sellTrades.filter((sale) => {
+    const latestEarlierBuy = portfolio.trades.reduce<Trade | null>((latest, buy) => {
+      if (buy.type !== 'buy' || buy.assetId !== sale.assetId || !(buy.timestamp < sale.timestamp)) return latest;
+      return latest && latest.timestamp >= buy.timestamp ? latest : buy;
+    }, null);
+    return latestEarlierBuy !== null && sale.price > latestEarlierBuy.price;
   });
   const priceOnlySellRatio = sellTrades.length > 0 ? ((wins.length / sellTrades.length) * 100).toFixed(0) : '—';
 

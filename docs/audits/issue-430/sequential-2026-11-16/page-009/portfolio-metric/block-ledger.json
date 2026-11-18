@@ -1,0 +1,86 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0092",
+    "page": "/trade",
+    "label": "Total P&L",
+    "source": "src/components/trading/MinimalistPortfolioBar.tsx",
+    "findingId": "STRICT-TRADE-006",
+    "contentReference": "before-pnl-label.json",
+    "contentSHA256": "b8fd374b5edca7bd94d465fe5b3553c05e21338b1b18f8678946e15e07ed32c4",
+    "captureKind": "disposable guest browser state",
+    "reviewer": "Codex assistant, separate same-agent review",
+    "capturedAtUTC": "2026-11-18T02:30:30.924180+00:00",
+    "sourceVersion": "custom-domain pre-edit observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "result": "The closed portfolio reports zero in this field despite a $1.021 decrease in account value. The cash and total value agree with the two fee deductions."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "result": "The display correctly sums an empty set of open positions. Comparing that calculation to the all-period implication of the title confirms a label mismatch."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0093",
+    "page": "/trade",
+    "label": "Open P&L",
+    "source": "src/components/trading/MinimalistPortfolioBar.tsx",
+    "findingId": "STRICT-TRADE-006",
+    "contentReference": "local-final-trade-pnl-label.json",
+    "contentSHA256": "8b389e335c0612ac8c65babf86d3a2fb08784bd5c0b25455219898b3f4603ee5",
+    "captureKind": "disposable guest browser state",
+    "reviewer": "Codex assistant, separate same-agent review",
+    "capturedAtUTC": "2026-11-18T02:38:43.318411+00:00",
+    "sourceVersion": "local candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "result": "The displayed title now identifies open positions. The cash, total value and zero open result match both the previous capture and the closed fixture."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION",
+      "result": null
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0094",
+    "page": "/trade",
+    "label": "Price-only sells",
+    "source": "src/components/trading/AIMentor.tsx",
+    "findingId": "STRICT-TRADE-007",
+    "contentReference": "before-mentor.json",
+    "contentSHA256": "c3907338872928df14c8cc64ceaf52b97701eae754ac45a6a138411a2453cffa",
+    "captureKind": "disposable guest browser state",
+    "reviewer": "Codex assistant, separate same-agent review",
+    "capturedAtUTC": "2026-11-18T02:33:57.096077+00:00",
+    "sourceVersion": "custom-domain pre-edit observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "result": "At both widths the mentor shows 100%, including in its history response. The definition names the latest earlier buy."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "result": "Independently ordered by timestamp, the 105 sale is below the earlier 110 buy at 00:01 and the displayed comparison should be 0%. The older 100 purchase explains the observed error."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0095",
+    "page": "/trade",
+    "label": "Price-only sells",
+    "source": "src/components/trading/AIMentor.tsx",
+    "findingId": "STRICT-TRADE-007",
+    "contentReference": "local-final-trade-mentor.json",
+    "contentSHA256": "0d1a7c2dbea5a197b75f26ef1193fc1d4af6a906421d92f2c65f5f4a61b90d1b",
+    "captureKind": "disposable guest browser state",
+    "reviewer": "Codex assistant, separate same-agent review",
+    "capturedAtUTC": "2026-11-18T02:38:45.043640+00:00",
+    "sourceVersion": "local candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "result": "The compiled candidate shows 0% in the card and built-in history reply at both widths. The limitation about fees and lot matching is retained."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION",
+      "result": null
+    }
+  }
+]
