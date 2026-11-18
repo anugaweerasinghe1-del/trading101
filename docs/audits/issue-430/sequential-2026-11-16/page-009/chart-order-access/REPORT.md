@@ -6,3 +6,5 @@
 - **STRICT-TRADE-022**. The mobile order dialog identifies the asset and price. The close action remains separately named. [Before-edit order evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968677691)
 
 TypeScript, the editorial UI verifier, full Cloudflare build and Chromium checks passed. Browser fixtures used local or intercepted data and submitted zero orders. Hosted and native verification remain due.
+
+- **STRICT-TRADE-023**. The desktop 100% buy control now rounds down to the largest four-decimal amount within virtual cash, including fees. The AAPL regression case passed in both widths. The final compiled tree also passed the chart and order access suites. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6973147495)

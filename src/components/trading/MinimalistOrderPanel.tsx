@@ -51,8 +51,9 @@ export function MinimalistOrderPanel({
   }, [asset, portfolio]);
 
   const maxBuyQuantity = price > 0 ? availableCash / (price * 1.001) : 0;
+  const maxBuyAmount = Math.floor(maxBuyQuantity * 10_000) / 10_000;
   const maxSellQuantity = currentPosition?.quantity ?? 0;
-  const maxActionQuantity = side === "buy" ? maxBuyQuantity : maxSellQuantity;
+  const maxActionQuantity = side === "buy" ? maxBuyAmount : maxSellQuantity;
 
   const handleQuickAmount = useCallback(
     (percentage: number) => {
