@@ -11,8 +11,8 @@
     "activePage": "STRICT-0010",
     "activeCoverage": {
       "status": "PARTIAL-REVIEW",
-      "firstPass": 98,
-      "secondPass": 97,
+      "firstPass": 123,
+      "secondPass": 122,
       "strictClosureCredit": 0,
       "record": "../page-010/COVERAGE.json"
     },
@@ -119,7 +119,7 @@
     "productFixesMergedAwaitingNativeReceipt": 0,
     "productFixesLocalAwaitingRelease": 0
   },
-  "currentBlock": "STRICT-0010-BLOCK-0093 production quantity verification; final source and control reconciliation",
+  "currentBlock": "STRICT-0010-BLOCK-0093; #481 exact protected release and native verification",
   "historicalNovember17CheckpointFindings": {
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 5,

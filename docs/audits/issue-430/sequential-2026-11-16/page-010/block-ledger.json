@@ -4095,5 +4095,455 @@
       "reason": "The music title preserves Kevin MacLeod and CC BY 4.0 attribution in the unchanged shared component. Graph SVGs are data projections. Current source gives no evidence of an unlicensed new media item.",
       "reviewer": "Codex assistant, separate source/current-view review"
     }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0099",
+    "text": "This backup is larger than 5 MB.",
+    "sha256": "17101fe4caa7d84d3f21e3fceabd16cbd9e9f6c8c111eefcaf6787c54dd4be8e",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The parse boundary caps text length before accepting the backup."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The browser file-size gate and parser text-size gate have distinct limits. The message accurately describes the parser rejection.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0100",
+    "text": "This is not a valid JSON backup.",
+    "sha256": "92c1c9a37ae1c4f5a093a4a0d667528226c8b9d23eac5ab3b2dbfd41489acd53",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The message follows a failed JSON parse and precedes portfolio reconstruction."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Malformed syntax cannot reach replacement. The message makes no assertion about a successfully parsed file authenticity.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0101",
+    "text": "This is not a TradeHQ practice portfolio backup.",
+    "sha256": "422e7db558694f5be40ded391efc6c3e473e0938fcf9ba5570744a74d1824e47",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The required format and version are checked before accepting a portfolio."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The existing live malformed-object fixture reproduces this branch. The older file evidence stays intact.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0102",
+    "text": "The backup is missing valid portfolio information.",
+    "sha256": "7d610675ece068e293f4005d93025fcbfa62551d55df210cb55bf70aef389318",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A failed portfolio parse stops import with a specific message."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This distinguishes a structurally invalid portfolio from an unrecognized file format. Neither has been imported at that point.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0103",
+    "text": "Backup has duplicate or missing trade IDs.",
+    "sha256": "734ab977d7524448960ba333eb3b0c9640a5ca6c3ed8b0d5acdcbb8c465e31af",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Identifiers are checked before rows can be imported."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An invalid import is rejected at validation. Existing legacy browser records retain their separately supported parser.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0104",
+    "text": "Backup contains an invalid simulated trade.",
+    "sha256": "c8847b1b6ef0b9b89d0578eb8d40f5109c6a27d98a3782d463d6a15e8efcd24c",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Nonpositive quantities, prices and totals or missing asset fields are rejected."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The error matches the numeric validation. A positive editable file still remains unverified, as the visible preview explains.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0105",
+    "text": "Backup includes a malformed private trading journal.",
+    "sha256": "dafecf73924f95c0463c132c80bea8dd1ae2307aea2d1579518bdd97d7aed064",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Journal notes, reasoning and emotion-array types are checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The string/type checks protect the journal UI fields that are mapped in the authored component. No private journal was observed.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0106",
+    "text": "Backup contains duplicate or invalid holdings.",
+    "sha256": "6b2ed29426b15bdb436ea921619cdd8f6dc196e375770bf2b68ea6392055d587",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Duplicate asset IDs and nonpositive position inputs cannot pass import validation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The wording describes those conditions without claiming authenticity or server acceptance.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0107",
+    "text": "Portfolio value does not match cash plus the saved holdings.",
+    "sha256": "afb4d7358947c8d9cdb30fe9a286895e9e3bf3e1eb4d51863269b80ffbc1f991",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The arithmetic compares cash plus current position values with the supplied total."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The explicit tolerance permits rounding. It does not prove the trades occurred and the UI says so.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0108",
+    "text": "Could not preserve your previous portfolio. No import was performed.",
+    "sha256": "00efd516e2e31526d75f35b0f5c09ac5f84e010e4486d95816d7deffc56f0a88",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "captureKind": "SOURCE-ONLY CONDITIONAL ERROR TEXT",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The undo snapshot is saved and parsed before import is allowed."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The failure explanation corresponds to the preserved-copy gate. Actual browser storage failure is an unexercised conditional boundary.",
+      "reviewer": "Codex assistant, separate applicability and source review"
+    },
+    "runtimeEvidence": "Only the malformed-object case is covered by the existing live fixture. Other listed errors are reviewed as source conditions."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0109",
+    "text": "About TradeHQ",
+    "sha256": "6f9dcf465718ac6f003426dce896299042e2a257a6fbc2da26aadb6159a9c0d0",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The About link identifies the publisher background."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Its destination is the previously closed About page and does not claim outside certification.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0110",
+    "text": "Country guides",
+    "sha256": "bcba501273d870ba555bf9da9188596bba1ff934d4d5654dae95646c3ed0ef2a",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Country guides link is contextual site navigation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Destination review remains in the canonical queue. This label conveys no country-specific regulated status.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0111",
+    "text": "Trading Glossary",
+    "sha256": "9e2b060aef0a22d325267a22b9d868d2b307e27bdbbe5e06814b63abcfb2375d",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The glossary title introduces the shared educational link list."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The title describes the list, whose named terms and slugs retain individual P09 judgments.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0112",
+    "text": "Follow TradeHQ",
+    "sha256": "dd1edf1f86da4bea4d9b7b193a89b729184489437295c9b80fc434c66d008073",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Follow label introduces brand social destinations."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The same footer distinguishes the founder accounts immediately below. It does not imply endorsement.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0113",
+    "text": "Founder · personal accounts",
+    "sha256": "f2a6aabcadf59b2cfb31af0ca4e5677a8dd122a8b59a9225f81c3425520d34cf",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The founder label clearly separates personal social links."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This qualification resolves ambiguity between the publisher and the creator accounts in the present context.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0114",
+    "text": "Practice trading skills",
+    "sha256": "c485a16457e782264bedc7251fa678d348d7659a3f63f805909e4bb1717d9b72",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The trust caption describes the purpose of educational practice."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "It makes no promise about future profitability or validated competency.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0115",
+    "text": "Understand money, one useful idea at a time.",
+    "sha256": "9c8b31d1e946045fb23b85d6f091473e25733d28c373eecdf2bd611ac5f04352",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The newsletter title describes a learning offering."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The nearby subscription description scopes the cadence and optional action. This heading is not an investment outcome promise.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0116",
+    "text": "A free, original, beginner-friendly financial lesson each week. Real examples, simple explanations, no trading jargon or hype. No account required.",
+    "sha256": "f8cce1d274252cd0666f66ea84b735b5ab89b4ac0bbe7cf087dab31dd858b8bc",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The subscription copy offers original beginner lessons and states that an account is not required."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "P09 retains the actual newsletter boundary and authored-content checks. Actual delivery and future editorial quality remain separately unverified.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0117",
+    "text": "Your email address",
+    "sha256": "3fa7c5ef191f6fdd6bc02a51bd68a10b44f6775da45df613eca42831cd41e46b",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The visible email label explains the required form input."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The existing shared form requires a valid email and explicit opt-in before its request. The label is meaningful on Portfolio.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0118",
+    "text": "Subscribe free",
+    "sha256": "97d2166e0ccc2f1b23ec009046cce6e6add61dbdfbe520c1bfb803926f2b6688",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The button identifies a free subscription action."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "P09 exercised confirmation and failure states on the unchanged shared form. The action does not promise account activation.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0119",
+    "text": "I agree to receive the free weekly TradeHQ Newsletter. I'll confirm my email and can unsubscribe anytime. See the",
+    "sha256": "cdaf50ebc3b60a6dc052f15faa3ffc091d13bb2a62fc2abe3df77c378770701b",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The consent text explains voluntary signup, email confirmation, unsubscribe and the linked privacy context."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Those actions are consistent with the tested form boundaries. The text provides no permission to send an email during this audit.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0120",
+    "text": "One educational email per week after editorial review. No promotions or account needed.",
+    "sha256": "0de608ffd2b6913535280d454aa6e3efef9aa7ca56fe6e2cc917ce2c362114f3",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The cadence statement explicitly subjects one weekly lesson to editorial review."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This matches the reviewed shared newsletter design. The source wording does not independently prove future delivery.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0121",
+    "text": "TradeHQ is an educational paper trading simulator.",
+    "sha256": "4bb3cdbc9f77a1fcb476171587abbebc9c9c43c7c8343eafa99ea325c9bd5816",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The footer identifies the site as an educational simulator."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The default guest values and revised account wording are consistent with that description.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0122",
+    "text": "No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+    "sha256": "61508541490f133c8fedb99e9b72f0a89e87692a2eee6ba211dbed47359613f1",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The disclaimer scopes money, advice and hypothetical results at the page boundary."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The product findings retain their technical classifications. This disclosure alone does not establish suitability or repair a product defect.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0123",
+    "text": "Music:",
+    "sha256": "dd20d8ad3f2e6725459feb52993fb42640d59b90da8fd3891bd0af493e20fa74",
+    "source": "src/components/MegaFooter.tsx; src/components/NewsletterSignup.tsx; src/components/EducationalDisclaimer.tsx",
+    "sourceRevision": "232e7daa3162e949186709036ccda8a83826a342",
+    "contentReference": "production480-capture-2.json and responsive current captures",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The music label introduces the adjacent attribution."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The current track bytes and title match the documented CC BY 4.0 shared asset. The source metadata and existing asset evidence remain applicable.",
+      "reviewer": "Codex assistant, separate page-context source and existing evidence review"
+    },
+    "disposition": "NO ISSUE IN REVIEWED CONTEXT"
   }
 ]

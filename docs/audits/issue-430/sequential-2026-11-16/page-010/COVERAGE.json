@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 98,
-  "secondPass": 97,
+  "firstPass": 123,
+  "secondPass": 122,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -169,5 +169,7 @@
     "pendingBlock": "STRICT-0010-BLOCK-0093",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
     "localEvidence": "local-quantity-tiny-position.json"
-  }
+  },
+  "sourceOnlyRecoveryErrorRecords": 10,
+  "currentFragmentCrosswalk": "CURRENT-FRAGMENT-CROSSWALK.json"
 }
