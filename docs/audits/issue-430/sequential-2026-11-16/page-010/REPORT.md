@@ -9,3 +9,7 @@ The next scope is the populated guest portfolio and the source and browser state
 # Scenario controls and hosted alert readback
 
 The exact #478 Cloudflare preview passed all four focused browser cases. The independent populated fixture also reproduced a mismatch between the scenario horizon and its chart, plus a negative price after a supposedly bounded shock. Both new corrections pass TypeScript, a model arithmetic check, the Cloudflare build and two compiled responsive browsers. Production release gates remain open. P10 has 40 first-pass and 36 second-pass records. [Reproduction](production-current-scenario.json) · [Compiled correction](local-scenario-scenario.json) · [Hosted #478 evidence](exact-preview478-alerts.json)
+
+# Populated guest and authored account checkpoints
+
+Two public guest sessions completed an isolated buy and sale, validated fixed fees, checked the journal and trade filters, and verified local backup preview, import and undo. Four compiled loopback cases exercised account loading, the first snapshot, initial unavailability and a subsequent failed refresh with a retained valuation. The private production service was outside those fixtures. #478 protected-merged, and exact native/readback remains due. The scenario candidate is open in #479. [Guest evidence](production-current-guest-recovery.json) · [Account fixture evidence](local-signed-portfolio.json)

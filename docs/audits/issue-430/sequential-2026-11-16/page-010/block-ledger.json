@@ -745,5 +745,252 @@
       "reason": "Both widths display three days and the chart ends at three. The expected deterministic price agrees with the multiplicative shock while the portfolio mean remains a random sample.",
       "reviewer": "Codex assistant, separate browser/source countercheck"
     }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0041",
+    "text": "Malformed backup rejection",
+    "sha256": "8c6727b7f696156f3eddf7d2f65e0472b54f71dac283eee1dff743af2d937101",
+    "capture": "production-current-guest-recovery.json#rows/recoveryInvalid",
+    "contentReference": "production-current-guest-recovery.json#rows/recoveryInvalid",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both file inputs reject a non-TradeHQ object with a named status. No preview or import is offered for that object."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The valid app export is accepted later in the same context. The contrast shows a format check, not a browser file-selection fault or provider outage."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0042",
+    "text": "Valid backup preview and the pre-import status",
+    "sha256": "db6d0b147940ddfabd84a6c5673524d32243c2cdff645e7c2e6af5d83e0a5804",
+    "capture": "production-current-guest-recovery.json#rows/recoveryPreview",
+    "contentReference": "production-current-guest-recovery.json#rows/recoveryPreview",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The file is presented as user-editable and unverified. Cash, total, position count and saved trade count are previewed before replacing the guest record."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The same browser still holds two trades after cancelling. Choosing the file again reproduces the preview without updating account or leaderboard records."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0043",
+    "text": "Explicit local restore and undo confirmations",
+    "sha256": "6f8b97ee24282f2cf889f9dfe60d04860db8f50e6cbbe528b04ba190b6649e6b",
+    "capture": "production-current-guest-recovery.json#rows/confirmationDialogs",
+    "contentReference": "production-current-guest-recovery.json#rows/confirmationDialogs",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The local confirmation names the two-trade $99,999.23 starting portfolio and the one-trade $99,999.49 selected backup. A separate confirmation controls undo."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The restored and undo branches agree with the values in the confirmation. The procedure differs from signed-in account restoration. Every accepted confirmation applies only to the isolated guest data."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0044",
+    "text": "Unverified restored file and guest rollback",
+    "sha256": "3fd0e359f2e5c11a2f92a51286ae3f9d90812d781101c30ce23e4c13400ede43",
+    "capture": "production-current-guest-recovery.json#rows/recoverySuccessful",
+    "contentReference": "production-current-guest-recovery.json#rows/recoverySuccessful",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The restored view labels its data unverified and private learning only. Trade count becomes one and AAPL position returns to two units."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "After confirmed undo, each local UI restores the two original trade rows and one remaining AAPL unit. The actual backup export and restore exercise the normal route and verification logic."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0045",
+    "text": "Undo result",
+    "sha256": "9375e1324e404f1d44d20f49534ff9db1b1067909f2406e0bb49e81987b4950b",
+    "capture": "production-current-guest-recovery.json#rows/recoveryUndo",
+    "contentReference": "production-current-guest-recovery.json#rows/recoveryUndo",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The visible status confirms that the prior guest portfolio was restored."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The resulting stored trades and quantities match the immediately prior guest state. Undo applies to an imported backup and makes no promise about clearing browser data."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0046",
+    "text": "Recorded buy row under Buys",
+    "sha256": "1ba810dc9d79a9d8310926e3c98b886943999be6b71ddb992f051c427b1d93b4",
+    "capture": "production-current-guest-recovery.json#rows/historyBuys",
+    "contentReference": "production-current-guest-recovery.json#rows/historyBuys",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/TradeHistory.tsx; src/lib/portfolio.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The two-unit AAPL purchase displays $255.25 per unit and a $511.01 cash debit, with an explicit notes marker."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "Two times $255.25 plus the fixed 0.1% virtual fee equals $511.0105. The displayed row rounds correctly and the Sell row is hidden in this tab."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0047",
+    "text": "Recorded sale row under Sells and total notional",
+    "sha256": "872bc82b648ed3b0cfe7388d3f9e11bf68fc083304255b6448f9d1687844db22",
+    "capture": "production-current-guest-recovery.json#rows/historySells",
+    "contentReference": "production-current-guest-recovery.json#rows/historySells",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/TradeHistory.tsx; src/lib/portfolio.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The one-unit sale lists proceeds of $254.99 and names the filled state. The full history notes $765.75 notional before fees."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "Subtracting $0.25525 from $255.25 gives $254.99475, and the three traded units imply $765.75 gross notional. The displayed total is correctly labelled before fees."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0048",
+    "text": "Net-of-fees realized and unrealized results",
+    "sha256": "3d86e42b02c41cf0750871cf409938348c504bbe4b70456ce05853515c08ed9d",
+    "capture": "production-current-guest-recovery.json#rows/after",
+    "contentReference": "production-current-guest-recovery.json#rows/after",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/PortfolioAnalytics.tsx; src/components/TradeAnalytics.tsx; src/lib/realizedTrades.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both guest views show a lifetime realized loss of $0.51 and an open position loss of $0.26 on the remainder."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "One sell at $254.99475 net versus a $255.50525 fee-inclusive cost yields -$0.5105. The still-open unit is worth $255.25 and currently differs by -$0.25525 from its basis. The two balances are treated separately."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0049",
+    "text": "Journal summary and emotion limits",
+    "sha256": "e3e04cdfd1345ae59081812ce7d6fce27572bf3904a6dfc4b244e2cc543bfd7d",
+    "capture": "production-current-guest-recovery.json#rows/journalSummary",
+    "contentReference": "production-current-guest-recovery.json#rows/journalSummary",
+    "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "source": "src/components/TradingJournal.tsx; src/lib/portfolio.ts",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Summary tab counts current local entries and emotion tags. It explicitly labels both computation limits and uncertainty about cause."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "Both widths retain the local journal note from the guest buy. The wording avoids inferring a trade win rate or causation from counts. The separate Emotions and Summary tabs operate as ordinary accessible tabs."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0050",
+    "text": "Pending account snapshot without substituted valuation",
+    "sha256": "3697842e38dd09ef41de45953a0e27ed5301a6403c0b67d08255d2e957a35fdb",
+    "capture": "local-signed-portfolio.json#rows/loading",
+    "contentReference": "local-signed-portfolio.json#rows/loading",
+    "sourceRevision": "Loopback compiled branch 0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "source": "src/pages/Portfolio.tsx; src/lib/cloudPortfolio.ts; src/components/PortfolioChart.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All four loopback states show Loading your portfolio and no guessed total while the account fixture is held pending."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The account branch uses the missing snapshot gate. Its absence never substitutes the $100,000 guest balance in the main valuation."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0051",
+    "text": "Initial unavailable account and no confirmed value",
+    "sha256": "83c2235ddffe8426c3b6828eeda582ce9abfdd5bb6a0e80fc5cd5364460ccff3",
+    "capture": "local-signed-portfolio.json#rows/finalView",
+    "contentReference": "local-signed-portfolio.json#rows/finalView",
+    "sourceRevision": "Loopback compiled branch 0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "source": "src/pages/Portfolio.tsx; src/lib/cloudPortfolio.ts; src/components/PortfolioChart.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A synthetic failed first lookup reports account refresh failure and no confirmed valuation on both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The source leaves account totals absent until a valid server-shaped account snapshot exists. The fixture is evidence of authored UI behavior rather than real account state."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0052",
+    "text": "Accepted account snapshot and chart with one observation",
+    "sha256": "46f877431e77307a36b4ff92190773064fc391bc26164494a8bbeab32ba016d5",
+    "capture": "local-signed-portfolio.json#rows/accepted",
+    "contentReference": "local-signed-portfolio.json#rows/accepted",
+    "sourceRevision": "Loopback compiled branch 0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "source": "src/pages/Portfolio.tsx; src/lib/cloudPortfolio.ts; src/components/PortfolioChart.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A two-unit AAPL position valued at $260 plus $99,487.488 cash gives the $100,007.49 figure and one account observation. Guest import and download controls are absent."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The exact figure is the server-shaped fixture value, not a guest or virtual quote backup. The chart distinguishes this one observed snapshot from a trend and the provider timestamps refer to the injected state."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0053",
+    "text": "Temporary failed refresh with last confirmed account snapshot",
+    "sha256": "7cdacc6bd864ecc7925526e2febbb1f98077933f426c881d02bce9baf4848b90",
+    "capture": "local-signed-portfolio.json#rows/finalView",
+    "contentReference": "local-signed-portfolio.json#rows/finalView",
+    "sourceRevision": "Loopback compiled branch 0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "source": "src/pages/Portfolio.tsx; src/lib/cloudPortfolio.ts; src/components/PortfolioChart.tsx",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "After a good snapshot, an unavailable response preserves the $100,007.49 value and names the stale read state."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and responsive check",
+      "reason": "The width variants retain the same accepted account data and warn that the last confirmed values are still displayed. No private account, native server history or actual provider health was observed."
+    },
+    "disposition": "NO ISSUE IN THE CAPTURED PROJECTION"
   }
 ]
