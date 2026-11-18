@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ShieldAlert, Wind } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 interface RevengeTradingBlockerProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ const COOLDOWN_SECONDS = 5;
 export function RevengeTradingBlocker({ isOpen, onComplete, onCancel }: RevengeTradingBlockerProps) {
   const [secondsLeft, setSecondsLeft] = useState(COOLDOWN_SECONDS);
   const [breathPhase, setBreathPhase] = useState<"in" | "out">("in");
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -40,27 +42,35 @@ export function RevengeTradingBlocker({ isOpen, onComplete, onCancel }: RevengeT
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center">
-      {/* Blurred backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-xl" />
-
-      <div className="relative z-10 max-w-md w-full mx-4 glass-tactile border-chrome rounded-3xl p-8 text-center space-y-6 animate-scale-in">
+    <Dialog open={isOpen} onOpenChange={(nextOpen) => { if (!nextOpen) onCancel(); }}>
+      <DialogContent
+        className="z-[100] w-[calc(100%-2rem)] max-w-md max-h-[calc(100dvh-2rem)] overflow-auto gap-0 rounded-3xl glass-tactile border-chrome p-8 text-center space-y-6"
+        onInteractOutside={(event) => event.preventDefault()}
+        onOpenAutoFocus={() => {
+          returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+        }}
+        onCloseAutoFocus={(event) => {
+          const orderButton = returnFocusRef.current;
+          if (orderButton?.isConnected) {
+            event.preventDefault();
+            orderButton.focus();
+          }
+        }}
+      >
         {/* Warning Icon */}
         <div className="w-20 h-20 mx-auto rounded-full bg-warning/20 flex items-center justify-center">
           <ShieldAlert className="w-10 h-10 text-warning" />
         </div>
 
-        <h2 className="text-xl font-bold text-foreground tracking-tight-cyber">
+        <DialogTitle className="text-xl font-bold text-foreground tracking-tight-cyber">
           Psychology Warning
-        </h2>
+        </DialogTitle>
 
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <DialogDescription className="text-sm text-muted-foreground leading-relaxed">
           You're attempting a large trade shortly after a loss. This pattern is associated with
           <span className="text-warning font-semibold"> revenge trading</span> — an emotional response that often leads to larger losses.
-        </p>
+        </DialogDescription>
 
         {/* Breath & Reset */}
         <div className="py-6 space-y-3">
@@ -109,8 +119,8 @@ export function RevengeTradingBlocker({ isOpen, onComplete, onCancel }: RevengeT
             {secondsLeft > 0 ? "Wait..." : "Proceed Anyway"}
           </button>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
