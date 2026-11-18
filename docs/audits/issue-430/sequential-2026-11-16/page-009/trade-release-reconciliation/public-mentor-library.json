@@ -1,0 +1,173 @@
+{
+  "scope": "Trade embedded local rule engine, same-origin GET only; typed topics and browser-local guest state",
+  "cases": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "items": [
+        {
+          "id": "market-order",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.341075+00:00"
+        },
+        {
+          "id": "spread-slippage",
+          "prompt": "bid ask spread",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nThe bid is the best available buy price and the ask is the best available sell price. If the bid is $49.90 and the ask is $50.10, their spread is $0.20.\n\nSlippage is the difference between the expected price and the actual fill. If you expect to buy at $50.10 and fill at $50.25, that is $0.15 of adverse slippage per unit. A last traded price, an available quote and a fill can each be different.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.468290+00:00"
+        },
+        {
+          "id": "drawdown",
+          "prompt": "drawdown",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nDrawdown measures how far an account has fallen from an earlier peak. If your simulated portfolio reaches $110,000 and then falls to $99,000, the drawdown is $11,000 divided by $110,000, or 10%.\n\nReturn and drawdown answer different questions. That same account is down 1% from a $100,000 starting balance while it is down 10% from its peak.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.563318+00:00"
+        },
+        {
+          "id": "stop-loss",
+          "prompt": "stop loss",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA stop order uses a trigger price. When a standard stop triggers, it becomes a market order and can fill at a different price.\n\nPractice example: You bought 10 units at $50 and set a stop at $45. A fill at $45 would lose $50 before fees. If the market gaps and the order fills at $42, the loss is $80. The trigger is separate from the execution price. TradeHQ’s practice orders are market orders, so this example is conceptual.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.703824+00:00"
+        },
+        {
+          "id": "dca",
+          "prompt": "dollar cost averaging",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nDollar-cost averaging means contributing a fixed amount on a stated schedule. For example, $200 each Friday changes purchase timing and the units acquired. It does not guarantee a lower average cost, better returns or emotional discipline. Compare equal total contributions under scheduled purchases and a lump-sum hypothetical example, including a declining-price path.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.862223+00:00"
+        },
+        {
+          "id": "risk-management",
+          "prompt": "manage risk",
+          "response": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.925217+00:00"
+        },
+        {
+          "id": "bull-market",
+          "prompt": "bull market",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nBull market describes a sustained rising market; a twenty-percent rise is a commonly used convention, not a trading instruction. Rising past prices do not establish that a dip will recover or that a moving average provides an entry. For a practice exercise, describe the observation period and compare continuation with reversal outcomes.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.969027+00:00"
+        },
+        {
+          "id": "bear-market",
+          "prompt": "bear market",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nBear market commonly describes a substantial decline, often using a twenty-percent convention. It does not prescribe cash, gold, defensive sectors or additional purchases. Compare hypothetical exposures and price shocks with the same starting balance. A declining asset can keep falling and a recovery is not guaranteed.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.033197+00:00"
+        },
+        {
+          "id": "rsi",
+          "prompt": "RSI",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nRSI is a momentum oscillator scaled 0–100 measuring speed and change of price moves.\n\n• >70 = overbought (potential pullback)\n• <30 = oversold (potential bounce)\n• 50 is the midpoint of the scale.\n\nPractice example: If an asset is rising and its RSI moves from 72 to 76, both readings are above the traditional 70 threshold. A strong trend can keep RSI elevated. The readings describe recent momentum, so check the price history before drawing conclusions about a reversal. RSI alone is not a buy/sell signal.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.070592+00:00"
+        },
+        {
+          "id": "moving-average",
+          "prompt": "moving average",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA moving average summarizes a specified historical price series. Different periods and SMA/EMA methods produce different values. A shorter average crossing a longer one describes that series and lags price changes; it does not prove an entry, support level or future direction. Compare settings and record where their descriptions differ.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.132210+00:00"
+        },
+        {
+          "id": "candlestick",
+          "prompt": "candlestick",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA candlestick shows open, high, low and close for a stated interval. Doji, hammer and engulfing names describe shapes, not guaranteed reversals. Inspect the data source and interval before interpreting the chart. TradeHQ can show provider candles or generated practice candles, and neither shape establishes the next move.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.174345+00:00"
+        },
+        {
+          "id": "psychology",
+          "prompt": "trading psychology",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nTrading decisions can be affected by emotion, attention and cognitive bias. Psychology matters, but there is no credible universal percentage that separates psychology from strategy.\n\nThe 4 killers:\n• FOMO — acting from fear of missing a move without checking an assumption.\n• Revenge trading — increasing activity or exposure to recover a loss without reassessing risk.\n• Anchoring — refusing to sell because 'I'll wait until it gets back to my entry'.\n• Confirmation bias — only reading news that supports your position.\n\nPractice review: Record the original reasoning and compare it with the outcome. Ghost Journal and Revenge Blocker can support a review, but do not cure bias or guarantee disciplined decisions.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.229046+00:00"
+        },
+        {
+          "id": "diversification",
+          "prompt": "diversification",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nDiversification compares exposure to different holdings and their shared drivers.\n\nA $100K practice comparison:\n• There is no universal allocation that fits everyone.\n• In TradeHQ, compare concentrated and diversified practice portfolios and observe how volatility and drawdown change.\n• Treat any example allocation as a simulation scenario, not a recommendation for real money.\n\nDiversification depends on weights and shared drivers; ten technology stocks can still concentrate sector exposure. Correlations change and different holdings can decline together.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.275273+00:00"
+        },
+        {
+          "id": "leverage",
+          "prompt": "leverage",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nLeverage magnifies gains and losses relative to the amount committed.\n\nPractice example: With $100 committed at 10× leverage, the exposure is $1,000. A 5% drop means a $50 loss before costs, or half the amount committed. A 5% drop on $100 without leverage means a $5 loss. Actual margin calls or liquidation may happen earlier, and losses can exceed a deposit depending on the product. TradeHQ spot practice uses no leverage.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.347425+00:00"
+        },
+        {
+          "id": "crypto-basics",
+          "prompt": "cryptocurrency",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nCryptocurrencies have different network designs, issuance, custody and operational risks. Volatility and correlation depend on the asset and observation period; neither market-cap rank nor a halving schedule establishes a safe tier or a predictable four-year return cycle. Compare equal hypothetical exposures rather than presume a universal daily move or a reliable price forecast.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.413020+00:00"
+        },
+        {
+          "id": "etfs",
+          "prompt": "index fund",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nAn ETF provides the exposure defined by its objective and holdings. Fees, leverage, concentration and overlaps vary by fund. SPY and QQQ illustrate different index exposures, but no fund is universally beginner-friendly or assuredly low risk. Use current fund documents and compare hypothetical positions without a claimed outperformance rate.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.463635+00:00"
+        },
+        {
+          "id": "tax",
+          "prompt": "wash sale",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nTax treatment depends on the country, asset, account type, holding period and the rules in force at the time. TradeHQ cannot determine what tax rate, loss rule or reporting requirement applies to a specific user.\n\nFor real-money activity, check the current guidance published by your tax authority or ask a qualified local tax professional. The simulator itself uses virtual money and this explanation is educational, not tax advice.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.526184+00:00"
+        },
+        {
+          "id": "compounding",
+          "prompt": "compounding",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHypothetical arithmetic: $100,000 with a fixed ten-percent effective annual gain and no contributions or costs becomes about $259,374 after ten years and $672,750 after twenty. The positive rate is an assumption, not a forecast or an investing rule. Negative returns and costs change the path; compare several scenarios rather than use one result as a promise.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.580307+00:00"
+        },
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic or pick a suggestion below.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.742537+00:00"
+        },
+        {
+          "id": "unknown",
+          "prompt": "uncurated topic zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time, or use the Learning Center link to find a related guide.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.835983+00:00"
+        },
+        {
+          "id": "no-action",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:38.897053+00:00"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "items": [
+        {
+          "id": "market-order",
+          "prompt": "market order",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nA market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\nPractice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.196927+00:00"
+        },
+        {
+          "id": "risk-management",
+          "prompt": "manage risk",
+          "response": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.306911+00:00"
+        },
+        {
+          "id": "leverage",
+          "prompt": "leverage",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nLeverage magnifies gains and losses relative to the amount committed.\n\nPractice example: With $100 committed at 10× leverage, the exposure is $1,000. A 5% drop means a $50 loss before costs, or half the amount committed. A 5% drop on $100 without leverage means a $5 loss. Actual margin calls or liquidation may happen earlier, and losses can exceed a deposit depending on the product. TradeHQ spot practice uses no leverage.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.428288+00:00"
+        },
+        {
+          "id": "compounding",
+          "prompt": "compounding",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHypothetical arithmetic: $100,000 with a fixed ten-percent effective annual gain and no contributions or costs becomes about $259,374 after ten years and $672,750 after twenty. The positive rate is an assumption, not a forecast or an investing rule. Negative returns and costs change the path; compare several scenarios rather than use one result as a promise.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.552773+00:00"
+        },
+        {
+          "id": "no-action",
+          "prompt": "what should I buy",
+          "response": "Built-in educational response:\n\nI won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T03:13:37.705394+00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0274",
+    "topic": "market-order",
+    "prompt": "market order",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "9561ca8af74d2ac1ecf303c0705c1c3e26939e058711667a20df02e7e3069ef9",
+    "capturedAtUTC": "2026-11-18T03:13:37.341075+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Order types and hypothetical availability are useful for a beginner."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "At $51 offered, a market buy can cost $51 despite the $50 last price. A $50 buy limit waits or stays unfilled. The response scopes the actual platform to simulated market orders."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0275",
+    "topic": "spread-slippage",
+    "prompt": "bid ask spread",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "a9644cc837858f4b8d9ce1ce1a1523ffe69f1ece85fe7e358d4a689bc598027e",
+    "capturedAtUTC": "2026-11-18T03:13:37.468290+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Defines both bid–ask spread and adverse slippage with short examples."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "50.10−49.90 = 0.20; 50.25−50.10 = 0.15 per unit. Both examples preserve the difference between available quote and fill."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0276",
+    "topic": "drawdown",
+    "prompt": "drawdown",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "feef4af9465345c3373b8bfac6904f786b2e13e2f7064ec90e0793e234240777",
+    "capturedAtUTC": "2026-11-18T03:13:37.563318+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Shows why a drawdown calculation can differ from total return."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "11,000/110,000 = 10%. 99,000 versus a 100,000 starting value is a decrease of 1%. The earlier peak is explicit."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0277",
+    "topic": "stop-loss",
+    "prompt": "stop loss",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "8e8e5c7b179334b8849499cc7bfd7b037654a4ab8f92e3600abf350b737f398e",
+    "capturedAtUTC": "2026-11-18T03:13:37.703824+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Explains trigger price and the gap example, then distinguishes practice functions."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "10×(50−45) = 50 and 10×(50−42) = 80. The trigger does not promise a fill and the prose uses a standard stop order."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0278",
+    "topic": "dca",
+    "prompt": "dollar cost averaging",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "7f2090ccfaea74383ec160ed4111ad0081793dd66baaa0bb14d58f79ee2f1c29",
+    "capturedAtUTC": "2026-11-18T03:13:37.862223+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Explains fixed dollar contributions and a comparable thought experiment."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "A fixed $200 schedule buys different units at different prices. A declining-price comparison and equal contributions remove a misleading guarantee."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0279",
+    "topic": "risk-management",
+    "prompt": "manage risk",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "a3e70f283bef7ba597e05c3387fc7f0fbdc356ecbba873a69fa7d040b38febec",
+    "capturedAtUTC": "2026-11-18T03:13:37.925217+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The typed prompt triggers the embedded general risk review."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "Named risk factors include weights, correlation, liquidity and stress losses without setting a universal limit. Raw shared risk-topic keywords route through the embedded rules first."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0280",
+    "topic": "bull-market",
+    "prompt": "bull market",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "4b03b965266965ecb9b049dada88e66f0abbcf2a5f222689548a733694929d6d",
+    "capturedAtUTC": "2026-11-18T03:13:37.969027+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Qualifies a conventional threshold and puts the emphasis on observation period."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The 20% convention is described as common. No reversal, dip-buy, or crossing guarantee is present."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0281",
+    "topic": "bear-market",
+    "prompt": "bear market",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "7b39f84122c961ce3394bc2b43b68558850f75e63c448f041575a75d4c7abedd",
+    "capturedAtUTC": "2026-11-18T03:13:38.033197+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Introduces the common decline convention and comparable hypothetical exposures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The 20% convention is not framed as a rule. Declining assets may keep falling and the answer avoids promising recovery."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0282",
+    "topic": "rsi",
+    "prompt": "RSI",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "234ee39ba4fbfe895965417d5eb1f386c167d902bbbc6132d58d3bb4145a5a64",
+    "capturedAtUTC": "2026-11-18T03:13:38.070592+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Explains the 0–100 scale and higher/lower threshold labels."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "72 and 76 are both above 70. A strong trend can keep RSI elevated, so the reply does not imply that overbought alone establishes a pullback."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0283",
+    "topic": "moving-average",
+    "prompt": "moving average",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "31c54ba17dc208d342fa7334c2f4af5e6b0acfa7aa91ba1b333b1c831c4e72ce",
+    "capturedAtUTC": "2026-11-18T03:13:38.132210+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Explains period and SMA/EMA method differences."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "A cross is a transformation of historical data. The response describes the lag and avoids a reliable-entry or forecast claim."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0284",
+    "topic": "candlestick",
+    "prompt": "candlestick",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "da1fc5fc7cfd3eaf90a6759df42659f30965dceba6f820a339b7734e8022d200",
+    "capturedAtUTC": "2026-11-18T03:13:38.174345+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Defines open, high, low and close and identifies familiar pattern names."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The interval and source limitation is explicit. Provider and simulated alternatives are both represented in the chart source and fixtures."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0285",
+    "topic": "psychology",
+    "prompt": "trading psychology",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "bcd43889d45f1564b516ea60e5fa55bce4338df79a95e12607632960c36db98d",
+    "capturedAtUTC": "2026-11-18T03:13:38.229046+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Gives four named examples of bias or behavior and a journaling exercise."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The “4 killers” term is rhetorical. The examples explain the meanings and do not promise a universal numeric effect or claim either tool cures bias."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0286",
+    "topic": "diversification",
+    "prompt": "diversification",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "97ed6b3d929cba33e057837976b51950a9df983def364e336006530fedbc3386",
+    "capturedAtUTC": "2026-11-18T03:13:38.275273+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Uses shared exposure drivers and a practice comparison to explain diversification."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "Ten tech stocks may share sector exposure. Weights and correlation are distinguished, and neither diversification nor the comparison guarantees returns."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0287",
+    "topic": "leverage",
+    "prompt": "leverage",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "4c2610ea563b7a1c2abfb72ece9d1213b56e8f67cfdf5b40d666236e9e57d8d5",
+    "capturedAtUTC": "2026-11-18T03:13:38.347425+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Shows an exposure multiplier and a loss comparison with identical committed funds."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "$100×10 = $1,000; 5% gives $50 versus $5 on an unleveraged $100. The answer qualifies product variation and scopes TradeHQ to spot practice."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0288",
+    "topic": "crypto-basics",
+    "prompt": "cryptocurrency",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "c3cc46803080febffbb36b8f34cb30abde7761820086743180a7b8f1caa0797e",
+    "capturedAtUTC": "2026-11-18T03:13:38.413020+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Introduces custody, network differences and volatility without a guaranteed cycle."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "Asset rank and halving schedule do not establish a safe class or return calendar. Hypothetical equal exposures are appropriately limited."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0289",
+    "topic": "etfs",
+    "prompt": "index fund",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "d5d966641fe775f133f1314a12b8b3a6a8fd52f3784a3aae6c5a5392ec8a400d",
+    "capturedAtUTC": "2026-11-18T03:13:38.463635+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Distinguishes exposures by fund holdings and objective."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "SPY and QQQ have different exposures. The reply avoids guaranteed returns or universal eligibility and directs readers to current fund documentation."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0290",
+    "topic": "tax",
+    "prompt": "wash sale",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "a25d162024104e72da1894cf6a0b7f41846355c2eff9d7f6cee6e48d99dcce38",
+    "capturedAtUTC": "2026-11-18T03:13:38.526184+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Introduces relevant tax variables without inventing jurisdiction rules."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "No taxpayer facts are requested or applied. The example identifies official local guidance as the source for actual activity."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0291",
+    "topic": "compounding",
+    "prompt": "compounding",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "3271d6076910251effe564a9dd74e353891cf862311e1efb2a205d4c8c38d16e",
+    "capturedAtUTC": "2026-11-18T03:13:38.580307+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Shows two time horizons for a clearly hypothetical fixed return."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "100,000×1.1^10 rounds to 259,374 and ×1.1^20 rounds to 672,750. No contributions or costs are assumed and the result is explicitly hypothetical."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0292",
+    "topic": "greeting",
+    "prompt": "hello",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "e35412d06b1769aeb9ed6ca142b6d6d23b71033357c7b3afc8467634d07455bf",
+    "capturedAtUTC": "2026-11-18T03:13:38.742537+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The greeting lists the available topics using the embedded deterministic engine."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The thematic content matches the shared library. It also asks the reader to pick a suggestion below, though the embedded component hides suggestions after the first exchange. Retain this as a specific UI-state follow-up."
+    },
+    "disposition": "FOLLOW-UP-UI-STATE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0293",
+    "topic": "unknown",
+    "prompt": "uncurated topic zqx",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "4b71787d90b8d82622917a7a2254a66071f2f08a78933ee21cfa0f2a2f4ab4f6",
+    "capturedAtUTC": "2026-11-18T03:13:38.835983+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The fallback plainly acknowledges that the exact phrase has no authored topic and shows alternatives."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "It does not invent a financial answer. The reference to a Learning Center needs navigation reconciliation in this embedded view."
+    },
+    "disposition": "FOLLOW-UP-UI-STATE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0294",
+    "topic": "no-action",
+    "prompt": "what should I buy",
+    "contentReference": "public-mentor-library.json",
+    "sha256": "fcec44d19b7a17cfe614a08e9ab5c2e877150d046f68f4ccb95245dd3c213792",
+    "capturedAtUTC": "2026-11-18T03:13:38.897053+00:00",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceRevision": "6327bffee9431df55d74f676acb09faab18c8d3a",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Declines the buy request and offers a four-step simulation exercise."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate editorial and arithmetic reread",
+      "reason": "The risk limit is chosen for the practice case, no universal percent or exact fill is asserted, and the advice is to record reasoning, not take a live trade."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-RESPONSE"
+  }
+]
