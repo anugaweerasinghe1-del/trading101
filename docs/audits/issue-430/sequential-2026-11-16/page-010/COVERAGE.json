@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 74,
-  "secondPass": 70,
+  "firstPass": 91,
+  "secondPass": 87,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -69,7 +69,7 @@
   ],
   "confirmedProductDefectsReproduced": 6,
   "confirmedProductDefectsProductionVerified": 4,
-  "nextAction": "Verify the exact final #480 head, run all fixed-state hosted checks, then complete protected merge, native deployment and readback of 0058–0061. Continue the remaining Portfolio source, view and control coverage.",
+  "nextAction": "Verify exact native #480 deployment, then replay the ten fixed-state browser cases for 0058–0061. Finish full default occurrence/control/source reconciliation before strict Portfolio closure. Reuse current shared footer judgments in Portfolio context.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -137,7 +137,7 @@
   ],
   "controlsPR": {
     "number": 480,
-    "status": "OPEN; exact final-head hosted and production checks pending",
+    "status": "MERGED; exact native and custom-domain readback pending",
     "beforeEditComments": [
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
       "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
@@ -156,7 +156,9 @@
       "STRICT-0010-BLOCK-0059",
       "STRICT-0010-BLOCK-0060",
       "STRICT-0010-BLOCK-0061"
-    ]
+    ],
+    "mergeSHA": "232e7daa3162e949186709036ccda8a83826a342",
+    "mainWorkflow": 44337762133
   },
   "mentorScope": {
     "fullyReadRecords": 13,

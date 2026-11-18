@@ -1404,5 +1404,2326 @@
       "reason": "The four contexts restore focus to the launcher after Escape and permit typed prompts. The separate mobile pointer-overlap finding still gates production verification."
     },
     "disposition": "CONTROL CONTENT REVIEWED"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0075",
+    "text": "Quote state provider",
+    "content": [
+      {
+        "width": 390,
+        "state": "provider",
+        "atUTC": "2026-11-18T10:45:36.816666+00:00",
+        "label": "Provider snapshot",
+        "title": "Recent provider snapshot; not a streaming quote · Fetched 11/18/2026, 10:44:36 AM",
+        "ariaLabel": "Quote status: Recent provider snapshot; not a streaming quote",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:36.231739+00:00",
+                "observed_at": "2026-11-18T10:43:36.231739+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "provider",
+        "atUTC": "2026-11-18T10:45:50.475938+00:00",
+        "label": "Provider snapshot",
+        "title": "Recent provider snapshot; not a streaming quote · Fetched 11/18/2026, 10:44:49 AM",
+        "ariaLabel": "Quote status: Recent provider snapshot; not a streaming quote",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:49.761646+00:00",
+                "observed_at": "2026-11-18T10:43:49.761646+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sha256": "7e4807cd132eed2a6c34ef808ed285276ab28a03e45bf88ff0dfef6ce1e1b943",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both layouts show Provider snapshot with an accessible explanation that the price is not streaming."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The timestamp inputs meet the freshness criteria. The $263 fixture and two virtual units yield the shown $100,014.99 including unchanged cash."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0076",
+    "text": "Quote state previous_close",
+    "content": [
+      {
+        "width": 390,
+        "state": "previous_close",
+        "atUTC": "2026-11-18T10:45:36.996861+00:00",
+        "label": "Previous close",
+        "title": "Previous trading-session close; not a live price · Fetched 11/18/2026, 10:44:36 AM",
+        "ariaLabel": "Quote status: Previous trading-session close; not a live price",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:36.609981+00:00",
+                "observed_at": "2026-11-16T10:45:36.609981+00:00",
+                "quote_status": "previous_close"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "previous_close",
+        "atUTC": "2026-11-18T10:45:49.501490+00:00",
+        "label": "Previous close",
+        "title": "Previous trading-session close; not a live price · Fetched 11/18/2026, 10:44:49 AM",
+        "ariaLabel": "Quote status: Previous trading-session close; not a live price",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:49.046099+00:00",
+                "observed_at": "2026-11-16T10:45:49.046099+00:00",
+                "quote_status": "previous_close"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sha256": "d9a1bca5ae0780021a66483b687fc4aaa1ca8776b70085a09146c8dbcd4dd0b5",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both layouts identify the previous-session close distinctly."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The source treats this as the previous session observation within its seven-day bound. It does not promise a current streaming quote."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0077",
+    "text": "Quote state delayed",
+    "content": [
+      {
+        "width": 390,
+        "state": "delayed",
+        "atUTC": "2026-11-18T10:45:37.021885+00:00",
+        "label": "Delayed quote",
+        "title": "Latest observed provider price is delayed or undated · Fetched 11/18/2026, 10:44:36 AM",
+        "ariaLabel": "Quote status: Latest observed provider price is delayed or undated",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:36.211316+00:00",
+                "observed_at": "2026-11-18T10:20:36.211316+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "delayed",
+        "atUTC": "2026-11-18T10:45:50.021064+00:00",
+        "label": "Delayed quote",
+        "title": "Latest observed provider price is delayed or undated · Fetched 11/18/2026, 10:44:49 AM",
+        "ariaLabel": "Quote status: Latest observed provider price is delayed or undated",
+        "portfolioValue": "$100014.99",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:44:49.437329+00:00",
+                "observed_at": "2026-11-18T10:20:49.437329+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sha256": "b30e451d810b1b5e928555607efe35b89ce290a397d88f4d0d6fb66cd2d229f0",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A recent cache write with a 25-minute observation is labelled delayed."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "This distinguishes retrieval from observation time. Both labels expose the same explanation without calling the result live."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0078",
+    "text": "Quote state stale",
+    "content": [
+      {
+        "width": 390,
+        "state": "stale",
+        "atUTC": "2026-11-18T10:45:43.919756+00:00",
+        "label": "Stale quote",
+        "title": "Provider cache last refreshed over 15 minutes ago · Fetched 11/18/2026, 10:23:43 AM",
+        "ariaLabel": "Quote status: Provider cache last refreshed over 15 minutes ago",
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:23:43.338475+00:00",
+                "observed_at": "2026-11-18T10:10:43.338475+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "stale",
+        "atUTC": "2026-11-18T10:45:56.631075+00:00",
+        "label": "Stale quote",
+        "title": "Provider cache last refreshed over 15 minutes ago · Fetched 11/18/2026, 10:23:55 AM",
+        "ariaLabel": "Quote status: Provider cache last refreshed over 15 minutes ago",
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": [
+              {
+                "asset_id": "aapl",
+                "price": 263,
+                "source": "audit quote fixture",
+                "updated_at": "2026-11-18T10:23:55.633948+00:00",
+                "observed_at": "2026-11-18T10:10:55.633948+00:00",
+                "quote_status": "provider"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sha256": "e20d223e10098496bc623b0504664c51381b9c068a678ea0ced559801d95ed12",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The old cache yields Stale quote, with the preserved guest valuation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The current quote reader rejects the older cache for repricing. The retained $99,999.49 and stale wording are compatible."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0079",
+    "text": "Quote state simulator",
+    "content": [
+      {
+        "width": 390,
+        "state": "simulator",
+        "atUTC": "2026-11-18T10:45:43.853904+00:00",
+        "label": "Simulator-only",
+        "title": "No provider quote; fixed simulator reference used",
+        "ariaLabel": "Quote status: No provider quote; fixed simulator reference used",
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": []
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "simulator",
+        "atUTC": "2026-11-18T10:45:58.764439+00:00",
+        "label": "Simulator-only",
+        "title": "No provider quote; fixed simulator reference used",
+        "ariaLabel": "Quote status: No provider quote; fixed simulator reference used",
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 200,
+            "rows": []
+          }
+        ]
+      }
+    ],
+    "sha256": "7306529439888fb64a0c30149b55a851bc93ae8fb660d6656d6fd210fb3d03d5",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "No cache result yields Simulator-only at both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The accessible note names a fixed simulator reference. The valuation stays at the existing practice mark."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0080",
+    "text": "Quote state unavailable",
+    "content": [
+      {
+        "width": 390,
+        "state": "unavailable",
+        "atUTC": "2026-11-18T10:45:43.756365+00:00",
+        "label": "Provider status could not be checked; valuations may rely on older data.",
+        "title": null,
+        "ariaLabel": null,
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 503,
+            "rows": []
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "state": "unavailable",
+        "atUTC": "2026-11-18T10:45:56.501289+00:00",
+        "label": "Provider status could not be checked; valuations may rely on older data.",
+        "title": null,
+        "ariaLabel": null,
+        "portfolioValue": "$99999.49",
+        "inputs": [
+          {
+            "status": 503,
+            "rows": []
+          }
+        ]
+      }
+    ],
+    "sha256": "e205bff754f99b5dd7ffef3aab05e4f809e3e95ebd0fe29bf01fbef67a399669",
+    "contentReference": "production-current-quotes.json",
+    "artifactSHA256": "90c58510784fd3dd3b39b77eaf3247a1bb330a91be87e761a8cc4a844d567c95",
+    "source": "src/lib/quoteCoverage.ts; src/components/portfolio/PositionsTable.tsx; src/pages/Portfolio.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "An unavailable read explicitly warns that provider status could not be checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The stored practice value survives. A failed lookup is described without certifying a currently valid provider quote."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0081",
+    "text": "Account recovery response",
+    "content": [
+      "Recovered your current server snapshot: 1 recorded orders, 1 open positions. Server trading history was not changed.",
+      "Recovered your current server snapshot: 1 recorded orders, 1 open positions. Server trading history was not changed."
+    ],
+    "sha256": "56b2e876a774a4fe8b4d04a53c9530f651ff836b4d48a6a4f008d844fd5e6b39",
+    "contentReference": "local-verified-recovery.json",
+    "artifactSHA256": "f2a5e2ebad45c8308d7991f932e88ab667b3ad22ba795097d7ba44638392701d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both synthetic account sessions recover the supplied snapshot and leave its displayed valuation intact."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The fixture exercised a read-only snapshot path. The wording correctly scopes recovery to the server copy. Actual account availability remains unverified."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0082",
+    "text": "Signed export response",
+    "content": [
+      "Signed historical export downloaded. It contains your current-cycle server-recorded practice data; it is NOT a file that can overwrite ranked account history.",
+      "Signed historical export downloaded. It contains your current-cycle server-recorded practice data; it is NOT a file that can overwrite ranked account history."
+    ],
+    "sha256": "67cfc550eae07c7bc3d63dedde633becfb4f99a8b9c4a27df70eaa66c9e450bf",
+    "contentReference": "local-verified-recovery.json",
+    "artifactSHA256": "f2a5e2ebad45c8308d7991f932e88ab667b3ad22ba795097d7ba44638392701d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The expected download filename and success message appear in both loopback layouts."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The payload is synthetic. This tests authored handling and copy. It provides no cryptographic or actual production export evidence."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0083",
+    "text": "Synthetic verified verdict",
+    "content": [
+      "Signature valid: this historical file was issued by TradeHQ's server for your signed-in account and hasn't been changed. Verification does not import trades.",
+      "Signature valid: this historical file was issued by TradeHQ's server for your signed-in account and hasn't been changed. Verification does not import trades."
+    ],
+    "sha256": "3812be66994519f9da8e6253e26a14dccb364b0dcd4863d12c3ba2809aac8b00",
+    "contentReference": "local-verified-recovery.json",
+    "artifactSHA256": "f2a5e2ebad45c8308d7991f932e88ab667b3ad22ba795097d7ba44638392701d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The affirmative server-shaped response displays a signature-valid statement."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The statement explicitly describes verification without importing trades. The response is a fixture, and genuine server signing remains an external evidence limit."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0084",
+    "text": "Synthetic failed verdict",
+    "content": [
+      "Signature NOT verified. The file may have changed, belong to another account or use an unsupported format. No portfolio data was imported.",
+      "Signature NOT verified. The file may have changed, belong to another account or use an unsupported format. No portfolio data was imported."
+    ],
+    "sha256": "7ebb5f73c85da3bc02a9979669c3dd6a512b9f2f6aa026911a78bcd759ef3ecc",
+    "contentReference": "local-verified-recovery.json",
+    "artifactSHA256": "f2a5e2ebad45c8308d7991f932e88ab667b3ad22ba795097d7ba44638392701d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A false response states that the signature is unverified and data was not imported."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "Both fixtures preserve the current valuation and do not route an uploaded record into ranked account history."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0085",
+    "text": "Unsupported signed-history file",
+    "content": [
+      "Choose a signed TradeHQ account-history JSON export under 2.1 MB.",
+      "Choose a signed TradeHQ account-history JSON export under 2.1 MB."
+    ],
+    "sha256": "ac7731d68a3d1a8b0bf0be7d57b20fb624645ce22ae2b4cd6057813e60150758",
+    "contentReference": "local-verified-recovery.json",
+    "artifactSHA256": "f2a5e2ebad45c8308d7991f932e88ab667b3ad22ba795097d7ba44638392701d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The input gives a JSON and size requirement for the text-file attempt."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The constraint matches the component checks and does not imply that successful structure alone certifies authenticity."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0086",
+    "text": "Exposure and insight mixed returns",
+    "content": {
+      "width": 390,
+      "allGain": false,
+      "atUTC": "2026-11-18T10:39:35.463094+00:00",
+      "quoted": {
+        "aapl": 281.055775,
+        "btc": 76076.0
+      },
+      "costBasis": {
+        "aapl": 255.50525,
+        "btc": 95095
+      },
+      "returns": [
+        9.999999999999986,
+        -19.999999999999996
+      ],
+      "dispersion": 14.999999999999991,
+      "total": 98149.20105,
+      "insight": "- img\n- heading \"Portfolio Insight\" [level=3]\n- text: Educational Analysis\n- img\n- paragraph: \"Strongest holding: AAPL is up 10.0%. This records the selected marks and cost basis; it does not predict the next return.\"\n- img\n- paragraph: \"Weakest holding: BTC is down 20.0%. This records the selected marks and cost basis; it does not establish an instruction to sell.\"\n- img\n- paragraph: BTC is 93.1% of invested holdings and 7.75% of total account value, including cash. In a hypothetical 10% decline in this holding alone, with other marks and cash unchanged, account value falls by $760.76 (0.775%) before additional costs. This is a sensitivity example, not a forecast or loss limit.\n- img\n- paragraph: You currently hold 2 positions. Position count alone does not measure diversification, correlation or suitability.",
+      "risk": "- heading \"Portfolio Exposure Snapshot\" [level=3]:\n  - img\n  - text: Portfolio Exposure Snapshot\n- img\n- text: Cash Share of Account 91.7%\n- progressbar \"Cash Share of Account\"\n- img\n- text: Largest Position Share of Account 7.8%\n- progressbar \"Largest Position Share of Account\"\n- paragraph: Open Positions\n- paragraph: \"2\"\n- paragraph: Crypto Share of Invested Value\n- paragraph: 93.1%\n- paragraph: These figures describe current practice allocations. Position count and asset labels do not measure correlation, future loss or whether an allocation suits a person. With no invested value, the crypto share is shown as zero. Compare hypothetical price shocks in the Scenario Builder to explore exposure.",
+      "body": "- main:\n  - text: USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00% USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00%\n  - region \"Backup and restore your virtual portfolio\":\n    - img\n    - heading \"Backup & restore your portfolio\" [level=2]\n    - paragraph: Keep your practice work even when browser data disappears. Downloads are local JSON files, not brokerage records. Guest backups are editable and cannot prove genuine leaderboard activity.\n    - heading \"1. Save a copy\" [level=3]:\n      - img\n      - text: 1. Save a copy\n    - paragraph: Download your current local simulated cash, positions, trades and attached private journal. Store this file somewhere outside the browser, such as your device files.\n    - button \"Download .json backup\":\n      - img\n      - text: Download .json backup\n    - heading \"2. Restore a copy\" [level=3]:\n      - img\n      - text: 2. Restore a copy\n    - paragraph: Choose a previously downloaded TradeHQ .json file. Inspect its values before replacing this browser's guest portfolio.\n    - button \"Select TradeHQ JSON backup file\"\n    - button \"Choose backup to restore\":\n      - img\n      - text: Choose backup to restore\n    - paragraph: A local recovery snapshot also exists when browser storage works. Clearing all site data removes that snapshot. Keep a downloaded file externally. Account trading and verified rankings use server records, never imported browser balances.\n  - heading \"Portfolio Dashboard\" [level=1]\n  - paragraph: Track your virtual investments, analyze performance, and manage simulated risk.\n  - status: 0 simulator-only · 0 stale · 0 previous-close holdings. See each asset below.\n  - paragraph: Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.\n  - text: Provider reference + simulation\n  - img\n  - text: Updated 0s ago\n  - img\n  - text: Outside usual US equity hours\n  - button \"Refresh portfolio and available quotes\":\n    - img\n    - text: Refresh now\n  - button \"Alerts\":\n    - img\n    - text: Alerts\n  - heading \"Practice Portfolio History\" [level=3]\n  - button \"Toggle 10% downside reference\" [pressed]:\n    - img\n    - text: Hide 10% downside reference\n  - paragraph: Earlier local practice snapshots may include simulated backfill. The reference line is for comparison.\n  - text: $98149.20\n  - img\n  - text: $-1850.29 (-1.85%) since first saved snapshot\n  - img: 11/18/2026, 10:39:35AM $97,779 $98,429 $99,079 $100,370\n  - paragraph:\n    - text: \"First saved observation:\"\n    - strong: $99,999.49\n  - status:\n    - text: \"10% downside reference:\"\n    - strong: $89,999.54\n    - text: . The reference is below this chart's visible scale; it is shown here without flattening your actual portfolio changes.\n  - paragraph: This is an educational comparison, not a stop-loss order.\n  - heading \"Performance Metrics\" [level=3]:\n    - img\n    - text: Performance Metrics\n  - text: Open Position P&L $-1850.80 (-18.47%) Open P&L Dispersion 15.00 pp Open Positions in Profit 50.0% Open Profit / Loss Positions 1 / 1\n  - img\n  - text: Practice Max Drawdown -1.85% Realized P&L (Lifetime) +$0.00\n  - heading \"Asset Allocation\" [level=3]:\n    - img\n    - text: Asset Allocation\n  - img:\n    - img\n    - img\n  - text: STOCK 6.9%\n  - progressbar \"STOCK allocation\"\n  - text: CRYPTO 93.1%\n  - progressbar \"CRYPTO allocation\"\n  - heading \"Allocation Breadth (Practice)\" [level=3]:\n    - img\n    - text: Allocation Breadth (Practice)\n  - text: 50 /100\n  - paragraph: Practice-only breadth score based on 2 asset class(es) across 2 open position(s). It does not measure correlation or guarantee diversification.\n  - heading \"Risk Assessment\" [level=3]:\n    - img\n    - text: Risk Assessment\n  - text: Open P&L Dispersion 15.00 percentage points\n  - paragraph: Spread of current open-position returns around their average; this is not time-series volatility or a Sharpe ratio.\n  - text: Cash Reserve 91.7%\n  - progressbar \"Cash Reserve\"\n  - paragraph: Cash reserve is shown descriptively only; TradeHQ does not prescribe a target cash percentage.\n  - heading \"Portfolio Exposure Snapshot\" [level=3]:\n    - img\n    - text: Portfolio Exposure Snapshot\n  - img\n  - text: Cash Share of Account 91.7%\n  - progressbar \"Cash Share of Account\"\n  - img\n  - text: Largest Position Share of Account 7.8%\n  - progressbar \"Largest Position Share of Account\"\n  - paragraph: Open Positions\n  - paragraph: \"2\"\n  - paragraph: Crypto Share of Invested Value\n  - paragraph: 93.1%\n  - paragraph: These figures describe current practice allocations. Position count and asset labels do not measure correlation, future loss or whether an allocation suits a person. With no invested value, the crypto share is shown as zero. Compare hypothetical price shocks in the Scenario Builder to explore exposure.\n  - img\n  - heading \"Scenario Builder Beta\" [level=2]\n  - paragraph: Enter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n  - paragraph: \"Assumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days. Requested losses below −99% are clamped to −99%.\"\n  - textbox \"Hypothetical portfolio scenario\":\n    - /placeholder: e.g. What if BTC drops 30% in 30 days?\n  - button \"Run Scenario\" [disabled]:\n    - img\n    - text: Run Scenario\n  - button \"What if BTC drops 30%?\"\n  - button \"ETH gains 50% in 30 days\"\n  - button \"Tech stocks crash 20%\"\n  - button \"Crypto rallies 40% over 60 days\"\n  - img\n  - text: Total Value\n  - paragraph: $98149.20\n  - paragraph: Cash + Positions\n  - img\n  - text: Available Cash\n  - paragraph: $89979.49\n  - paragraph: Ready to deploy\n  - img\n  - text: Invested\n  - paragraph: $8169.71\n  - paragraph: 2 positions\n  - img\n  - text: Unrealized P&L\n  - paragraph: $-1850.80\n  - paragraph: \"-18.47% overall\"\n  - img\n  - heading \"Portfolio Insight\" [level=3]\n  - text: Educational Analysis\n  - img\n  - paragraph: \"Strongest holding: AAPL is up 10.0%. This records the selected marks and cost basis; it does not predict the next return.\"\n  - img\n  - paragraph: \"Weakest holding: BTC is down 20.0%. This records the selected marks and cost basis; it does not establish an instruction to sell.\"\n  - img\n  - paragraph: BTC is 93.1% of invested holdings and 7.75% of total account value, including cash. In a hypothetical 10% decline in this holding alone, with other marks and cash unchanged, account value falls by $760.76 (0.775%) before additional costs. This is a sensitivity example, not a forecast or loss limit.\n  - img\n  - paragraph: You currently hold 2 positions. Position count alone does not measure diversification, correlation or suitability.\n  - heading \"Positions\" [level=2]\n  - heading \"AAPL\" [level=3]\n  - text: stock\n  - paragraph: Apple Inc.\n  - text: Provider snapshot\n  - img\n  - text: +10.00%\n  - paragraph: Entry\n  - paragraph: $255.51\n  - paragraph: Current\n  - paragraph: $281.06\n  - paragraph: Qty\n  - paragraph: \"2.0000\"\n  - paragraph: Value\n  - paragraph: $562.11\n  - paragraph: P&L\n  - paragraph: +$51.1\n  - heading \"BTC\" [level=3]\n  - text: crypto\n  - paragraph: Bitcoin\n  - text: Provider snapshot\n  - img\n  - text: \"-20.00%\"\n  - paragraph: Entry\n  - paragraph: $95,095\n  - paragraph: Current\n  - paragraph: $76,076\n  - paragraph: Qty\n  - paragraph: \"0.1000\"\n  - paragraph: Value\n  - paragraph: $7,607.6\n  - paragraph: P&L\n  - paragraph: $-1,901.9\n  - heading \"Trade Performance\" [level=2]\n  - img\n  - text: Closed-Sell Win Rate — No completed sells\n  - img\n  - text: Avg Profit/Trade — 0 completed trades\n  - img\n  - text: Total Realized P&L $0.00 Net of recorded simulator fees\n  - img\n  - text: Profit Factor — Unavailable without recorded losses Average Win —\n  - img\n  - text: Average Loss —\n  - img\n  - heading \"Best Trades\" [level=3]:\n    - img\n    - text: Best Trades\n  - text: No completed trades yet\n  - heading \"Worst Trades\" [level=3]:\n    - img\n    - text: Worst Trades\n  - text: No losing trades yet\n  - heading \"Trading Journal\" [level=2]\n  - paragraph: 0 trades with journal entries\n  - tablist:\n    - tab \"Entries\" [selected]\n    - tab \"Emotions\"\n    - tab \"Summary\"\n  - tabpanel \"Entries\":\n    - img\n    - paragraph: No journal entries yet. Add notes to your trades to track your psychology!\n  - heading \"Trade History\" [level=2]\n  - img\n  - text: 2 Buys\n  - img\n  - text: \"0 Sells Traded notional (before fees): $10,010.50\"\n  - img\n  - textbox \"Filter trade history by symbol\":\n    - /placeholder: Search by symbol...\n  - tablist:\n    - tab \"All\" [selected]\n    - tab \"Buys\"\n    - tab \"Sells\"\n  - table:\n    - rowgroup:\n      - row \"Type Asset Quantity Price Total Date & Time Status\":\n        - columnheader \"Type\"\n        - columnheader \"Asset\"\n        - columnheader \"Quantity\"\n        - columnheader \"Price\"\n        - columnheader \"Total\"\n        - columnheader \"Date & Time\"\n        - columnheader \"Status\"\n    - rowgroup:\n      - row \"BUY BTC 0.1000 $95,000.00 -$9,509.50 Nov 18, 2026 10:39 AM ✓ Filled\":\n        - cell \"BUY\":\n          - img\n          - text: BUY\n        - cell \"BTC\"\n        - cell \"0.1000\"\n        - cell \"$95,000.00\"\n        - cell \"-$9,509.50\"\n        - cell \"Nov 18, 2026 10:39 AM\"\n        - cell \"✓ Filled\"\n      - row \"BUY AAPL 2.0000 $255.25 -$511.01 Nov 18, 2026 10:39 AM ✓ Filled\":\n        - cell \"BUY\":\n          - img\n          - text: BUY\n        - cell \"AAPL\"\n        - cell \"2.0000\"\n        - cell \"$255.25\"\n        - cell \"-$511.01\"\n        - cell \"Nov 18, 2026 10:39 AM\"\n        - cell \"✓ Filled\"\n  - text: Showing 2 of 2 trades\n  - region \"What to study next\":\n    - heading \"What to study next\" [level=2]:\n      - img\n      - text: What to study next\n    - paragraph:\n      - text: Strengthen your simulated portfolio with these guides — then put them into practice on the\n      - link \"trading simulator\":\n        - /url: /trade\n      - text: .\n    - link \"How to Build a Portfolio\":\n      - /url: /learn/article/how-to-build-a-portfolio\n    - link \"Beginner Trading Strategies\":\n      - /url: /learn/article/trading-strategies-for-beginners\n    - link \"Reading Stock Charts\":\n      - /url: /learn/article/how-to-read-stock-charts\n    - link \"Browse Markets\":\n      - /url: /markets\n      - img\n      - text: Browse Markets\n  - navigation \"Breadcrumb\":\n    - list:\n      - listitem:\n        - link \"Home\":\n          - /url: /\n          - img\n          - text: Home\n        - img\n      - listitem: Portfolio\n  - region \"Frequently Asked Questions\":\n    - img\n    - heading \"Frequently Asked Questions\" [level=3]\n    - heading \"What does the TradeHQ portfolio tracker show?\" [level=3]:\n      - button \"What does the TradeHQ portfolio tracker show?\":\n        - text: What does the TradeHQ portfolio tracker show?\n        - img\n    - heading \"Are the portfolio statistics based on real prices?\" [level=3]:\n      - button \"Are the portfolio statistics based on real prices?\":\n        - text: Are the portfolio statistics based on real prices?\n        - img\n    - heading \"How do I reset my virtual portfolio?\" [level=3]:\n      - button \"How do I reset my virtual portfolio?\":\n        - text: How do I reset my virtual portfolio?\n        - img"
+    },
+    "sha256": "307417787c4e76685be64ac8a790ed7bea3e56107846ea3fa7217a36d53c913c",
+    "contentReference": "production-current-exposure.json",
+    "artifactSHA256": "9594ee86ea8b4adfa9d802f0083dfaa859da863d43ef15f3a8408307ad35e4f2",
+    "source": "src/components/PortfolioAnalytics.tsx; src/components/portfolio/AIInsightSummary.tsx; src/lib/portfolioExposure.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The marked account total, strongest or weakest holding, and cash-inclusive exposure appear together with the simulation limits."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The two returns imply 15 percentage points of population dispersion for +10% and −20%, or 5 for +10% and +20%. Crypto weight explicitly uses invested value, while total-account weight includes cash. The stated 10% shock scales only that position. Neither position count nor a positive snapshot establishes diversification or future performance."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0087",
+    "text": "Exposure and insight nonnegative returns",
+    "content": {
+      "width": 1440,
+      "allGain": true,
+      "atUTC": "2026-11-18T10:39:34.096660+00:00",
+      "quoted": {
+        "aapl": 281.055775,
+        "btc": 114114.0
+      },
+      "costBasis": {
+        "aapl": 255.50525,
+        "btc": 95095
+      },
+      "returns": [
+        9.999999999999986,
+        19.999999999999996
+      ],
+      "dispersion": 5.000000000000005,
+      "total": 101953.00104999999,
+      "insight": "- img\n- heading \"Portfolio Insight\" [level=3]\n- text: Educational Analysis\n- img\n- paragraph: \"Strongest holding: BTC is up 20.0%. This records the selected marks and cost basis; it does not predict the next return.\"\n- img\n- paragraph: BTC is 95.3% of invested holdings and 11.19% of total account value, including cash. In a hypothetical 10% decline in this holding alone, with other marks and cash unchanged, account value falls by $1141.14 (1.119%) before additional costs. This is a sensitivity example, not a forecast or loss limit.\n- img\n- paragraph: You currently hold 2 positions. Position count alone does not measure diversification, correlation or suitability.\n- img\n- paragraph: All current positions have nonnegative marked profit/loss. This snapshot does not establish future performance or measure every account risk.",
+      "risk": "- heading \"Portfolio Exposure Snapshot\" [level=3]:\n  - img\n  - text: Portfolio Exposure Snapshot\n- img\n- text: Cash Share of Account 88.3%\n- progressbar \"Cash Share of Account\"\n- img\n- text: Largest Position Share of Account 11.2%\n- progressbar \"Largest Position Share of Account\"\n- paragraph: Open Positions\n- paragraph: \"2\"\n- paragraph: Crypto Share of Invested Value\n- paragraph: 95.3%\n- paragraph: These figures describe current practice allocations. Position count and asset labels do not measure correlation, future loss or whether an allocation suits a person. With no invested value, the crypto share is shown as zero. Compare hypothetical price shocks in the Scenario Builder to explore exposure.",
+      "body": "- main:\n  - text: USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00% USDC $0.999718\n  - img\n  - text: +0.00% USDT $0.999503\n  - img\n  - text: +0.00% DAI $0.999989\n  - img\n  - text: +0.00% TRX $0.332191\n  - img\n  - text: +0.00% BCH $277.03\n  - img\n  - text: +0.00% TON $1.38\n  - img\n  - text: +0.00% ETC $8.11\n  - img\n  - text: +0.00% XMR $544.27\n  - img\n  - text: +0.00% AAVE $165.18\n  - img\n  - text: +0.00% GRT $0.026168\n  - img\n  - text: +0.00% LDO $0.412042\n  - img\n  - text: +0.00% RUNE $0.678915\n  - img\n  - text: +0.00% KAS $0.039311\n  - img\n  - text: +0.00% STX $0.392636\n  - img\n  - text: +0.00% IMX $0.187519\n  - img\n  - text: +0.00% RENDER $1.85\n  - img\n  - text: +0.00% PEPE $0.000004\n  - img\n  - text: +0.00% BONK $0.000003\n  - img\n  - text: +0.00% WLD $0.484973\n  - img\n  - text: +0.00% POL $0.098777\n  - img\n  - text: +0.00%\n  - region \"Backup and restore your virtual portfolio\":\n    - img\n    - heading \"Backup & restore your portfolio\" [level=2]\n    - paragraph: Keep your practice work even when browser data disappears. Downloads are local JSON files, not brokerage records. Guest backups are editable and cannot prove genuine leaderboard activity.\n    - heading \"1. Save a copy\" [level=3]:\n      - img\n      - text: 1. Save a copy\n    - paragraph: Download your current local simulated cash, positions, trades and attached private journal. Store this file somewhere outside the browser, such as your device files.\n    - button \"Download .json backup\":\n      - img\n      - text: Download .json backup\n    - heading \"2. Restore a copy\" [level=3]:\n      - img\n      - text: 2. Restore a copy\n    - paragraph: Choose a previously downloaded TradeHQ .json file. Inspect its values before replacing this browser's guest portfolio.\n    - button \"Select TradeHQ JSON backup file\"\n    - button \"Choose backup to restore\":\n      - img\n      - text: Choose backup to restore\n    - paragraph: A local recovery snapshot also exists when browser storage works. Clearing all site data removes that snapshot. Keep a downloaded file externally. Account trading and verified rankings use server records, never imported browser balances.\n  - heading \"Portfolio Dashboard\" [level=1]\n  - paragraph: Track your virtual investments, analyze performance, and manage simulated risk.\n  - status: 0 simulator-only · 0 stale · 0 previous-close holdings. See each asset below.\n  - paragraph: Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.\n  - text: Provider reference + simulation\n  - img\n  - text: Updated 0s ago\n  - img\n  - text: Outside usual US equity hours\n  - button \"Refresh portfolio and available quotes\":\n    - img\n    - text: Refresh now\n  - button \"Alerts\":\n    - img\n    - text: Alerts\n  - heading \"Practice Portfolio History\" [level=3]\n  - button \"Toggle 10% downside reference\" [pressed]:\n    - img\n    - text: Hide 10% downside reference\n  - paragraph: Earlier local practice snapshots may include simulated backfill. The reference line is for comparison.\n  - text: $101953.00\n  - img\n  - text: +$1953.51 (+1.95%) since first saved snapshot\n  - img: 11/18/2026, 10:39:30 AM 11/18/2026, 10:39:32 AM 11/18/2026, 10:39:33 AM $99,597 $100,297 $100,997 $102,346\n  - paragraph:\n    - text: \"First saved observation:\"\n    - strong: $99,999.49\n  - status:\n    - text: \"10% downside reference:\"\n    - strong: $89,999.54\n    - text: . The reference is below this chart's visible scale; it is shown here without flattening your actual portfolio changes.\n  - paragraph: This is an educational comparison, not a stop-loss order.\n  - heading \"Performance Metrics\" [level=3]:\n    - img\n    - text: Performance Metrics\n  - text: Open Position P&L +$1953.00 (19.49%) Open P&L Dispersion 5.00 pp Open Positions in Profit 100.0% Open Profit / Loss Positions 2 / 0\n  - img\n  - text: Practice Max Drawdown -0.01% Realized P&L (Lifetime) +$0.00\n  - heading \"Asset Allocation\" [level=3]:\n    - img\n    - text: Asset Allocation\n  - img:\n    - img\n    - img\n  - text: STOCK 4.7%\n  - progressbar \"STOCK allocation\"\n  - text: CRYPTO 95.3%\n  - progressbar \"CRYPTO allocation\"\n  - heading \"Allocation Breadth (Practice)\" [level=3]:\n    - img\n    - text: Allocation Breadth (Practice)\n  - text: 50 /100\n  - paragraph: Practice-only breadth score based on 2 asset class(es) across 2 open position(s). It does not measure correlation or guarantee diversification.\n  - heading \"Risk Assessment\" [level=3]:\n    - img\n    - text: Risk Assessment\n  - text: Open P&L Dispersion 5.00 percentage points\n  - paragraph: Spread of current open-position returns around their average; this is not time-series volatility or a Sharpe ratio.\n  - text: Cash Reserve 88.3%\n  - progressbar \"Cash Reserve\"\n  - paragraph: Cash reserve is shown descriptively only; TradeHQ does not prescribe a target cash percentage.\n  - heading \"Portfolio Exposure Snapshot\" [level=3]:\n    - img\n    - text: Portfolio Exposure Snapshot\n  - img\n  - text: Cash Share of Account 88.3%\n  - progressbar \"Cash Share of Account\"\n  - img\n  - text: Largest Position Share of Account 11.2%\n  - progressbar \"Largest Position Share of Account\"\n  - paragraph: Open Positions\n  - paragraph: \"2\"\n  - paragraph: Crypto Share of Invested Value\n  - paragraph: 95.3%\n  - paragraph: These figures describe current practice allocations. Position count and asset labels do not measure correlation, future loss or whether an allocation suits a person. With no invested value, the crypto share is shown as zero. Compare hypothetical price shocks in the Scenario Builder to explore exposure.\n  - img\n  - heading \"Scenario Builder Beta\" [level=2]\n  - paragraph: Enter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n  - paragraph: \"Assumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days. Requested losses below −99% are clamped to −99%.\"\n  - textbox \"Hypothetical portfolio scenario\":\n    - /placeholder: e.g. What if BTC drops 30% in 30 days?\n  - button \"Run Scenario\" [disabled]:\n    - img\n    - text: Run Scenario\n  - button \"What if BTC drops 30%?\"\n  - button \"ETH gains 50% in 30 days\"\n  - button \"Tech stocks crash 20%\"\n  - button \"Crypto rallies 40% over 60 days\"\n  - img\n  - text: Total Value\n  - paragraph: $101953.00\n  - paragraph: Cash + Positions\n  - img\n  - text: Available Cash\n  - paragraph: $89979.49\n  - paragraph: Ready to deploy\n  - img\n  - text: Invested\n  - paragraph: $11973.51\n  - paragraph: 2 positions\n  - img\n  - text: Unrealized P&L\n  - paragraph: +$1953.00\n  - paragraph: +19.49% overall\n  - img\n  - heading \"Portfolio Insight\" [level=3]\n  - text: Educational Analysis\n  - img\n  - paragraph: \"Strongest holding: BTC is up 20.0%. This records the selected marks and cost basis; it does not predict the next return.\"\n  - img\n  - paragraph: BTC is 95.3% of invested holdings and 11.19% of total account value, including cash. In a hypothetical 10% decline in this holding alone, with other marks and cash unchanged, account value falls by $1141.14 (1.119%) before additional costs. This is a sensitivity example, not a forecast or loss limit.\n  - img\n  - paragraph: You currently hold 2 positions. Position count alone does not measure diversification, correlation or suitability.\n  - img\n  - paragraph: All current positions have nonnegative marked profit/loss. This snapshot does not establish future performance or measure every account risk.\n  - heading \"Positions\" [level=2]\n  - table:\n    - rowgroup:\n      - row \"Asset Entry Current Qty Cost Basis Value P&L Return\":\n        - columnheader \"Asset\"\n        - columnheader \"Entry\"\n        - columnheader \"Current\"\n        - columnheader \"Qty\"\n        - columnheader \"Cost Basis\"\n        - columnheader \"Value\"\n        - columnheader \"P&L\"\n        - columnheader \"Return\"\n    - rowgroup:\n      - 'row \"BTC crypto Bitcoin Quote status: Recent provider snapshot; not a streaming quote $95,095 $114,114 0.1000 $9,509.5 $11,411.4 +$1,901.9 +20.00%\"':\n        - 'cell \"BTC crypto Bitcoin Quote status: Recent provider snapshot; not a streaming quote\"': BTC crypto Bitcoin Provider snapshot\n        - cell \"$95,095\"\n        - cell \"$114,114\"\n        - cell \"0.1000\"\n        - cell \"$9,509.5\"\n        - cell \"$11,411.4\"\n        - cell \"+$1,901.9\"\n        - cell \"+20.00%\"\n      - 'row \"AAPL stock Apple Inc. Quote status: Recent provider snapshot; not a streaming quote $255.51 $281.06 2.0000 $511.01 $562.11 +$51.1 +10.00%\"':\n        - 'cell \"AAPL stock Apple Inc. Quote status: Recent provider snapshot; not a streaming quote\"': AAPL stock Apple Inc. Provider snapshot\n        - cell \"$255.51\"\n        - cell \"$281.06\"\n        - cell \"2.0000\"\n        - cell \"$511.01\"\n        - cell \"$562.11\"\n        - cell \"+$51.1\"\n        - cell \"+10.00%\"\n  - heading \"Trade Performance\" [level=2]\n  - img\n  - text: Closed-Sell Win Rate — No completed sells\n  - img\n  - text: Avg Profit/Trade — 0 completed trades\n  - img\n  - text: Total Realized P&L $0.00 Net of recorded simulator fees\n  - img\n  - text: Profit Factor — Unavailable without recorded losses Average Win —\n  - img\n  - text: Average Loss —\n  - img\n  - heading \"Best Trades\" [level=3]:\n    - img\n    - text: Best Trades\n  - text: No completed trades yet\n  - heading \"Worst Trades\" [level=3]:\n    - img\n    - text: Worst Trades\n  - text: No losing trades yet\n  - heading \"Trading Journal\" [level=2]\n  - paragraph: 0 trades with journal entries\n  - tablist:\n    - tab \"Entries\" [selected]\n    - tab \"Emotions\"\n    - tab \"Summary\"\n  - tabpanel \"Entries\":\n    - img\n    - paragraph: No journal entries yet. Add notes to your trades to track your psychology!\n  - heading \"Trade History\" [level=2]\n  - img\n  - text: 2 Buys\n  - img\n  - text: \"0 Sells Traded notional (before fees): $10,010.50\"\n  - img\n  - textbox \"Filter trade history by symbol\":\n    - /placeholder: Search by symbol...\n  - tablist:\n    - tab \"All\" [selected]\n    - tab \"Buys\"\n    - tab \"Sells\"\n  - table:\n    - rowgroup:\n      - row \"Type Asset Quantity Price Total Date & Time Status\":\n        - columnheader \"Type\"\n        - columnheader \"Asset\"\n        - columnheader \"Quantity\"\n        - columnheader \"Price\"\n        - columnheader \"Total\"\n        - columnheader \"Date & Time\"\n        - columnheader \"Status\"\n    - rowgroup:\n      - row \"BUY BTC 0.1000 $95,000.00 -$9,509.50 Nov 18, 2026 10:39 AM ✓ Filled\":\n        - cell \"BUY\":\n          - img\n          - text: BUY\n        - cell \"BTC\"\n        - cell \"0.1000\"\n        - cell \"$95,000.00\"\n        - cell \"-$9,509.50\"\n        - cell \"Nov 18, 2026 10:39 AM\"\n        - cell \"✓ Filled\"\n      - row \"BUY AAPL 2.0000 $255.25 -$511.01 Nov 18, 2026 10:39 AM ✓ Filled\":\n        - cell \"BUY\":\n          - img\n          - text: BUY\n        - cell \"AAPL\"\n        - cell \"2.0000\"\n        - cell \"$255.25\"\n        - cell \"-$511.01\"\n        - cell \"Nov 18, 2026 10:39 AM\"\n        - cell \"✓ Filled\"\n  - text: Showing 2 of 2 trades\n  - region \"What to study next\":\n    - heading \"What to study next\" [level=2]:\n      - img\n      - text: What to study next\n    - paragraph:\n      - text: Strengthen your simulated portfolio with these guides — then put them into practice on the\n      - link \"trading simulator\":\n        - /url: /trade\n      - text: .\n    - link \"How to Build a Portfolio\":\n      - /url: /learn/article/how-to-build-a-portfolio\n    - link \"Beginner Trading Strategies\":\n      - /url: /learn/article/trading-strategies-for-beginners\n    - link \"Reading Stock Charts\":\n      - /url: /learn/article/how-to-read-stock-charts\n    - link \"Browse Markets\":\n      - /url: /markets\n      - img\n      - text: Browse Markets\n  - navigation \"Breadcrumb\":\n    - list:\n      - listitem:\n        - link \"Home\":\n          - /url: /\n          - img\n          - text: Home\n        - img\n      - listitem: Portfolio\n  - region \"Frequently Asked Questions\":\n    - img\n    - heading \"Frequently Asked Questions\" [level=3]\n    - heading \"What does the TradeHQ portfolio tracker show?\" [level=3]:\n      - button \"What does the TradeHQ portfolio tracker show?\":\n        - text: What does the TradeHQ portfolio tracker show?\n        - img\n    - heading \"Are the portfolio statistics based on real prices?\" [level=3]:\n      - button \"Are the portfolio statistics based on real prices?\":\n        - text: Are the portfolio statistics based on real prices?\n        - img\n    - heading \"How do I reset my virtual portfolio?\" [level=3]:\n      - button \"How do I reset my virtual portfolio?\":\n        - text: How do I reset my virtual portfolio?\n        - img"
+    },
+    "sha256": "7d7216e4546057dc2147321ed4ced9ceffdc398020eed031e1734bd12c7f3d1b",
+    "contentReference": "production-current-exposure.json",
+    "artifactSHA256": "9594ee86ea8b4adfa9d802f0083dfaa859da863d43ef15f3a8408307ad35e4f2",
+    "source": "src/components/PortfolioAnalytics.tsx; src/components/portfolio/AIInsightSummary.tsx; src/lib/portfolioExposure.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The marked account total, strongest or weakest holding, and cash-inclusive exposure appear together with the simulation limits."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The two returns imply 15 percentage points of population dispersion for +10% and −20%, or 5 for +10% and +20%. Crypto weight explicitly uses invested value, while total-account weight includes cash. The stated 10% shock scales only that position. Neither position count nor a positive snapshot establishes diversification or future performance."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0088",
+    "text": "Downside reference and practice drawdown",
+    "content": [
+      {
+        "width": 390,
+        "atUTC": "2026-11-18T10:49:04.559657+00:00",
+        "shown": "10% downside reference: $112,500.00. The dashed reference line is visible on the chart.",
+        "breached": "Reference threshold crossed. Portfolio dropped below $112500.00",
+        "hidden": "10% downside reference hidden.",
+        "analytics": "Performance Metrics\nOpen Position P&L\n+$0.00 (0.00%)\nOpen P&L Dispersion\n0.00 pp\nOpen Positions in Profit\n0.0%\nOpen Profit / Loss Positions\n0 / 0\nPractice Max Drawdown\n-20.00%\nRealized P&L (Lifetime)\n+$0.00"
+      },
+      {
+        "width": 1440,
+        "atUTC": "2026-11-18T10:49:04.517695+00:00",
+        "shown": "10% downside reference: $112,500.00. The dashed reference line is visible on the chart.",
+        "breached": "Reference threshold crossed. Portfolio dropped below $112500.00",
+        "hidden": "10% downside reference hidden.",
+        "analytics": "Performance Metrics\nOpen Position P&L\n+$0.00 (0.00%)\nOpen P&L Dispersion\n0.00 pp\nOpen Positions in Profit\n0.0%\nOpen Profit / Loss Positions\n0 / 0\nPractice Max Drawdown\n-20.00%\nRealized P&L (Lifetime)\n+$0.00"
+      }
+    ],
+    "sha256": "fe479f882de499a346aa678a450532e21d7463a3327d66c13651cc434e7c0c5b",
+    "contentReference": "production-current-reference.json",
+    "artifactSHA256": "98233c1dcfcd84410f1f4fdce2d73b8146313f93b1cb42c4c68e7c644609a351",
+    "source": "src/components/PortfolioChart.tsx; src/lib/portfolio.ts",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The $125,000 first observation yields a 10% reference at $112,500. It is shown and hidden using the pressed toggle. The $100,000 endpoint crosses it."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The $25,000 peak-to-trough drop divided by $125,000 is 20%, matching the calculated drawdown. The reference status explicitly describes an educational comparison. The fixture uses synthetic local history."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0089",
+    "text": "Empty scenario and study destinations",
+    "content": [
+      {
+        "width": 390,
+        "related": [
+          [
+            "trading simulator",
+            "/trade"
+          ],
+          [
+            "How to Build a Portfolio",
+            "/learn/article/how-to-build-a-portfolio"
+          ],
+          [
+            "Beginner Trading Strategies",
+            "/learn/article/trading-strategies-for-beginners"
+          ],
+          [
+            "Reading Stock Charts",
+            "/learn/article/how-to-read-stock-charts"
+          ],
+          [
+            "Browse Markets",
+            "/markets"
+          ]
+        ],
+        "scenarioEmpty": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\nBuy some assets in the Trade tab first — the scenario engine needs positions to simulate.",
+        "scenarioEmptyError": "Buy some assets first so the scenario has something to simulate."
+      },
+      {
+        "width": 1440,
+        "related": [
+          [
+            "trading simulator",
+            "/trade"
+          ],
+          [
+            "How to Build a Portfolio",
+            "/learn/article/how-to-build-a-portfolio"
+          ],
+          [
+            "Beginner Trading Strategies",
+            "/learn/article/trading-strategies-for-beginners"
+          ],
+          [
+            "Reading Stock Charts",
+            "/learn/article/how-to-read-stock-charts"
+          ],
+          [
+            "Browse Markets",
+            "/markets"
+          ]
+        ],
+        "scenarioEmpty": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\nBuy some assets in the Trade tab first — the scenario engine needs positions to simulate.",
+        "scenarioEmptyError": "Buy some assets first so the scenario has something to simulate."
+      }
+    ],
+    "sha256": "2bcc0815cdb1d6e47a379303f62d3cb5cfaf48ea81a26e1fd92d84e4c420229e",
+    "contentReference": "production-current-shell.json",
+    "artifactSHA256": "a75be38586569f74c4fe5cc623b4193b9ecb46636d60ea6fa91546d0db3eef82",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx; src/components/ContextualLinks.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "An empty guest portfolio has no enabled blank run. Selecting an example explains that holdings are needed. Five related links identify appropriate next learning surfaces."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The public empty-state message agrees with the no-holdings branch. The related destination bodies retain their own queue entries. The button does not invent a portfolio or result."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0090",
+    "text": "Portfolio navigation, theme and release controls",
+    "content": [
+      {
+        "width": 390,
+        "atUTC": "2026-11-18T10:43:43.303395+00:00",
+        "status": 200,
+        "script": "/assets/index-BxDVIQps.js",
+        "htmlSHA256": "58d4920d95539c00de8f4420feff382e84a35d68da16732b6144616b29135684",
+        "consentAX": "- region \"Optional analytics choices\":\n  - paragraph:\n    - strong: Optional analytics.\n    - text: Help improve practice and sign-ups using a browser ID. No answers or trades.\n    - link \"Details\":\n      - /url: /privacy\n  - button \"Reject\"\n  - button \"I confirm I am 18 or older and consent to optional analytics\": I'm 18+ · Accept analytics",
+        "themeRoundTrip": true,
+        "escapeRestoredFocus": true,
+        "menuLinks": [
+          [
+            "Start Here",
+            "/start"
+          ],
+          [
+            "Practice Arena",
+            "/practice"
+          ],
+          [
+            "Courses",
+            "/courses"
+          ],
+          [
+            "Learning Mentor",
+            "/ai-mentor"
+          ],
+          [
+            "Markets",
+            "/markets"
+          ],
+          [
+            "Daily Practice",
+            "/daily"
+          ],
+          [
+            "Leaderboard",
+            "/leaderboard"
+          ],
+          [
+            "Reviews",
+            "/reviews"
+          ],
+          [
+            "About",
+            "/about"
+          ],
+          [
+            "Contact",
+            "/contact"
+          ],
+          [
+            "What’s New",
+            "/whats-new"
+          ],
+          [
+            "Roadmap",
+            "/roadmap"
+          ],
+          [
+            "Privacy Policy",
+            "/privacy"
+          ],
+          [
+            "Terms of Service",
+            "/terms"
+          ],
+          [
+            "Educational Disclaimer",
+            "/about#disclaimer"
+          ]
+        ],
+        "guestHref": "/auth",
+        "mobileCurrent": [
+          "Portfolio"
+        ],
+        "topNavigationAX": "- navigation:\n  - link \"TradeHQ home\":\n    - /url: /\n    - img \"TradeHQ\"\n  - link \"Daily\":\n    - /url: /daily\n    - img\n    - text: Daily\n  - button \"Switch to light theme\":\n    - img\n  - button \"Open menu\":\n    - img",
+        "releaseNotice": {
+          "href": "/whats-new",
+          "dismissed": true
+        }
+      },
+      {
+        "width": 1440,
+        "atUTC": "2026-11-18T10:43:43.235202+00:00",
+        "status": 200,
+        "script": "/assets/index-BxDVIQps.js",
+        "htmlSHA256": "58d4920d95539c00de8f4420feff382e84a35d68da16732b6144616b29135684",
+        "consentAX": "- region \"Optional analytics choices\":\n  - paragraph:\n    - strong: Optional analytics.\n    - text: Help improve practice and sign-ups using a browser ID. No answers or trades.\n    - link \"Details\":\n      - /url: /privacy\n  - button \"Reject\"\n  - button \"I confirm I am 18 or older and consent to optional analytics\": I'm 18+ · Accept analytics",
+        "themeRoundTrip": true,
+        "escapeRestoredFocus": true,
+        "menuLinks": [
+          [
+            "Start Here",
+            "/start"
+          ],
+          [
+            "Practice Arena",
+            "/practice"
+          ],
+          [
+            "Courses",
+            "/courses"
+          ],
+          [
+            "Learning Mentor",
+            "/ai-mentor"
+          ],
+          [
+            "Markets",
+            "/markets"
+          ],
+          [
+            "Daily Practice",
+            "/daily"
+          ],
+          [
+            "Leaderboard",
+            "/leaderboard"
+          ],
+          [
+            "Reviews",
+            "/reviews"
+          ],
+          [
+            "About",
+            "/about"
+          ],
+          [
+            "Contact",
+            "/contact"
+          ],
+          [
+            "What’s New",
+            "/whats-new"
+          ],
+          [
+            "Roadmap",
+            "/roadmap"
+          ],
+          [
+            "Privacy Policy",
+            "/privacy"
+          ],
+          [
+            "Terms of Service",
+            "/terms"
+          ],
+          [
+            "Educational Disclaimer",
+            "/about#disclaimer"
+          ]
+        ],
+        "guestHref": "/auth",
+        "mobileCurrent": [],
+        "topNavigationAX": "- navigation:\n  - link \"TradeHQ home\":\n    - /url: /\n    - img \"TradeHQ\"\n  - link \"Home\":\n    - /url: /\n    - img\n    - text: Home\n  - link \"Learn\":\n    - /url: /learn\n    - img\n    - text: Learn\n  - link \"Trade\":\n    - /url: /trade\n    - img\n    - text: Trade\n  - link \"Portfolio\":\n    - /url: /portfolio\n    - img\n    - text: Portfolio\n  - link \"Newsletter\":\n    - /url: /newsletter\n    - img\n    - text: Newsletter\n  - button \"More site pages\":\n    - text: More\n    - img\n  - link \"Daily\":\n    - /url: /daily\n    - img\n    - text: Daily\n  - button \"Switch to light theme\":\n    - img\n  - link \"Sign in\":\n    - /url: /auth\n    - img\n    - text: Sign in",
+        "releaseNotice": {
+          "href": "/whats-new",
+          "dismissed": true
+        }
+      }
+    ],
+    "sha256": "55c99335664796cbb82182c6c1d38459cba7b701c2dafe67dfbd44446cde9459",
+    "contentReference": "production-current-nav-states.json",
+    "artifactSHA256": "2e684e2d3112cd2b1e8dfba44da89d31d7c715ce5b5cdbc660fee2f804b6ab58",
+    "source": "src/components/Navigation.tsx; src/components/ReleaseNotices.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both navigation variants expose the same More destinations. The mobile current page is Portfolio. Consent can reopen and the theme toggles in both directions."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "Escape returns focus to the relevant menu trigger and optional sign-in routes to /auth. Existing release text retains its own source evidence and dismiss action. These are page-context projections of the reviewed shared shell."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0091",
+    "text": "Portfolio shared footer context",
+    "content": [
+      [
+        {
+          "name": "BTC",
+          "programmaticName": null,
+          "href": "/trade/btc",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ETH",
+          "programmaticName": null,
+          "href": "/trade/eth",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "SOL",
+          "programmaticName": null,
+          "href": "/trade/sol",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XRP",
+          "programmaticName": null,
+          "href": "/trade/xrp",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "BNB",
+          "programmaticName": null,
+          "href": "/trade/bnb",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ADA",
+          "programmaticName": null,
+          "href": "/trade/ada",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "NVDA",
+          "programmaticName": null,
+          "href": "/trade/nvda",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "MSFT",
+          "programmaticName": null,
+          "href": "/trade/msft",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "GOOGL",
+          "programmaticName": null,
+          "href": "/trade/googl",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "AAPL",
+          "programmaticName": null,
+          "href": "/trade/aapl",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "META",
+          "programmaticName": null,
+          "href": "/trade/meta",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "AMZN",
+          "programmaticName": null,
+          "href": "/trade/amzn",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "SPY",
+          "programmaticName": null,
+          "href": "/trade/spy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "QQQ",
+          "programmaticName": null,
+          "href": "/trade/qqq",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "DIA",
+          "programmaticName": null,
+          "href": "/trade/dia",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ARKK",
+          "programmaticName": null,
+          "href": "/trade/arkk",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "EUR/USD",
+          "programmaticName": null,
+          "href": "/trade/eurusd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "GBP/USD",
+          "programmaticName": null,
+          "href": "/trade/gbpusd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "USD/JPY",
+          "programmaticName": null,
+          "href": "/trade/usdjpy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XAU",
+          "programmaticName": null,
+          "href": "/trade/gold",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XAG",
+          "programmaticName": null,
+          "href": "/trade/silver",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "WTI",
+          "programmaticName": null,
+          "href": "/trade/oil",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Short Squeeze",
+          "programmaticName": null,
+          "href": "/wiki/short-squeeze",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Golden Cross",
+          "programmaticName": null,
+          "href": "/wiki/golden-cross",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Death Cross",
+          "programmaticName": null,
+          "href": "/wiki/death-cross",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Liquidation Cascade",
+          "programmaticName": null,
+          "href": "/wiki/liquidation-cascade",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Fibonacci Retracement",
+          "programmaticName": null,
+          "href": "/wiki/fibonacci-retracement",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "RSI Divergence",
+          "programmaticName": null,
+          "href": "/wiki/rsi-divergence",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "MACD Histogram",
+          "programmaticName": null,
+          "href": "/wiki/macd-histogram",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bollinger Band Squeeze",
+          "programmaticName": null,
+          "href": "/wiki/bollinger-band-squeeze",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Order Block",
+          "programmaticName": null,
+          "href": "/wiki/order-block",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Fair Value Gap (FVG)",
+          "programmaticName": null,
+          "href": "/wiki/fair-value-gap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bull Trap",
+          "programmaticName": null,
+          "href": "/wiki/bull-trap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bear Trap",
+          "programmaticName": null,
+          "href": "/wiki/bear-trap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Whale Manipulation",
+          "programmaticName": null,
+          "href": "/wiki/whale-manipulation",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Support and Resistance",
+          "programmaticName": null,
+          "href": "/wiki/support-and-resistance",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Candlestick Patterns",
+          "programmaticName": null,
+          "href": "/wiki/candlestick-patterns",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Head and Shoulders",
+          "programmaticName": null,
+          "href": "/wiki/head-and-shoulders",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Double Bottom",
+          "programmaticName": null,
+          "href": "/wiki/double-bottom",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Moving Average Convergence Divergence",
+          "programmaticName": null,
+          "href": "/wiki/macd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Limit Order vs Market Order",
+          "programmaticName": null,
+          "href": "/wiki/limit-order-vs-market-order",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Stop Loss Hunting",
+          "programmaticName": null,
+          "href": "/wiki/stop-loss-hunting",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Leverage Trading",
+          "programmaticName": null,
+          "href": "/wiki/leverage-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "FOMO (Fear of Missing Out)",
+          "programmaticName": null,
+          "href": "/wiki/fomo",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "FUD (Fear, Uncertainty, Doubt)",
+          "programmaticName": null,
+          "href": "/wiki/fud",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "HODL Strategy",
+          "programmaticName": null,
+          "href": "/wiki/hodl-strategy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Satoshi Nakamoto",
+          "programmaticName": null,
+          "href": "/wiki/satoshi-nakamoto",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Margin Call",
+          "programmaticName": null,
+          "href": "/wiki/margin-call",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Liquidation Price",
+          "programmaticName": null,
+          "href": "/wiki/liquidation-price",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Dollar Cost Averaging",
+          "programmaticName": null,
+          "href": "/wiki/dollar-cost-averaging",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Swing Trading",
+          "programmaticName": null,
+          "href": "/wiki/swing-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Day Trading",
+          "programmaticName": null,
+          "href": "/wiki/day-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Scalping",
+          "programmaticName": null,
+          "href": "/wiki/scalping",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Volume Profile",
+          "programmaticName": null,
+          "href": "/wiki/volume-profile",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "VWAP",
+          "programmaticName": null,
+          "href": "/wiki/vwap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Ichimoku Cloud",
+          "programmaticName": null,
+          "href": "/wiki/ichimoku-cloud",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Elliott Wave Theory",
+          "programmaticName": null,
+          "href": "/wiki/elliott-wave-theory",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Wyckoff Method",
+          "programmaticName": null,
+          "href": "/wiki/wyckoff-method",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Market Maker",
+          "programmaticName": null,
+          "href": "/wiki/market-maker",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Dark Pool",
+          "programmaticName": null,
+          "href": "/wiki/dark-pool",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Slippage",
+          "programmaticName": null,
+          "href": "/wiki/slippage",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Impermanent Loss",
+          "programmaticName": null,
+          "href": "/wiki/impermanent-loss",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Yield Farming",
+          "programmaticName": null,
+          "href": "/wiki/yield-farming",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Flash Crash",
+          "programmaticName": null,
+          "href": "/wiki/flash-crash",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Circuit Breaker",
+          "programmaticName": null,
+          "href": "/wiki/circuit-breaker",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Pump and Dump",
+          "programmaticName": null,
+          "href": "/wiki/pump-and-dump",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Paper Trading",
+          "programmaticName": null,
+          "href": "/wiki/paper-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Risk-Reward Ratio",
+          "programmaticName": null,
+          "href": "/wiki/risk-reward-ratio",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Drawdown",
+          "programmaticName": null,
+          "href": "/wiki/drawdown",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Backtesting",
+          "programmaticName": null,
+          "href": "/wiki/backtesting",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Correlation Trading",
+          "programmaticName": null,
+          "href": "/wiki/correlation-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "",
+          "programmaticName": "TradeHQ home",
+          "href": "/",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact TradeHQ",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "anugaweerasinghe1@gmail.com",
+          "programmaticName": null,
+          "href": "mailto:anugaweerasinghe1@gmail.com",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "+94 71 489 7346",
+          "programmaticName": null,
+          "href": "tel:+94714897346",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "@thetradehq_1",
+          "programmaticName": "TradeHQ on Instagram, @thetradehq_1",
+          "href": "https://www.instagram.com/thetradehq_1/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Instagram",
+          "programmaticName": "Founder's personal Instagram, @anw_008",
+          "href": "https://www.instagram.com/anw_008/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Bluesky",
+          "programmaticName": "Founder's personal Bluesky, @anugaweerasinghe.bsky.social",
+          "href": "https://bsky.app/profile/anugaweerasinghe.bsky.social",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Trading Simulator",
+          "programmaticName": null,
+          "href": "/trade",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Markets Hub",
+          "programmaticName": null,
+          "href": "/markets",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Portfolio Tracker",
+          "programmaticName": null,
+          "href": "/portfolio",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "All Courses",
+          "programmaticName": null,
+          "href": "/learn",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Structured Tracks",
+          "programmaticName": null,
+          "href": "/courses",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Options Fundamentals",
+          "programmaticName": null,
+          "href": "/courses/options-trading-fundamentals",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Futures & Derivatives",
+          "programmaticName": null,
+          "href": "/courses/futures-and-derivatives",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Macro Reading",
+          "programmaticName": null,
+          "href": "/courses/macro-reading-for-traders",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Trading Psychology",
+          "programmaticName": null,
+          "href": "/courses/trading-psychology-mastery",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Trading Guide",
+          "programmaticName": null,
+          "href": "/learn-trading-guide",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Learning Mentor",
+          "programmaticName": null,
+          "href": "/ai-mentor",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "About",
+          "programmaticName": null,
+          "href": "/about",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "What’s New",
+          "programmaticName": null,
+          "href": "/whats-new",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Roadmap",
+          "programmaticName": null,
+          "href": "/roadmap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Terms of Service",
+          "programmaticName": null,
+          "href": "/terms",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Disclaimer",
+          "programmaticName": null,
+          "href": "/about#disclaimer",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact TradeHQ",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Terms of Service",
+          "programmaticName": null,
+          "href": "/terms",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+          "programmaticName": null,
+          "href": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Creative Commons Attribution 4.0",
+          "programmaticName": null,
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "target": null,
+          "rel": null
+        }
+      ],
+      [
+        {
+          "name": "BTC Bitcoin",
+          "programmaticName": null,
+          "href": "/trade/btc",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ETH Ethereum",
+          "programmaticName": null,
+          "href": "/trade/eth",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "SOL Solana",
+          "programmaticName": null,
+          "href": "/trade/sol",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XRP XRP",
+          "programmaticName": null,
+          "href": "/trade/xrp",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "BNB BNB",
+          "programmaticName": null,
+          "href": "/trade/bnb",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ADA Cardano",
+          "programmaticName": null,
+          "href": "/trade/ada",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "NVDA NVIDIA",
+          "programmaticName": null,
+          "href": "/trade/nvda",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "MSFT Microsoft",
+          "programmaticName": null,
+          "href": "/trade/msft",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "GOOGL Alphabet",
+          "programmaticName": null,
+          "href": "/trade/googl",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "AAPL Apple",
+          "programmaticName": null,
+          "href": "/trade/aapl",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "META Meta",
+          "programmaticName": null,
+          "href": "/trade/meta",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "AMZN Amazon",
+          "programmaticName": null,
+          "href": "/trade/amzn",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "SPY S&P 500 ETF",
+          "programmaticName": null,
+          "href": "/trade/spy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "QQQ Nasdaq ETF",
+          "programmaticName": null,
+          "href": "/trade/qqq",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "DIA Dow Jones ETF",
+          "programmaticName": null,
+          "href": "/trade/dia",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "ARKK ARK Innovation",
+          "programmaticName": null,
+          "href": "/trade/arkk",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "EUR/USD Euro/Dollar",
+          "programmaticName": null,
+          "href": "/trade/eurusd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "GBP/USD Pound/Dollar",
+          "programmaticName": null,
+          "href": "/trade/gbpusd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "USD/JPY Dollar/Yen",
+          "programmaticName": null,
+          "href": "/trade/usdjpy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XAU Gold",
+          "programmaticName": null,
+          "href": "/trade/gold",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "XAG Silver",
+          "programmaticName": null,
+          "href": "/trade/silver",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "WTI Crude Oil",
+          "programmaticName": null,
+          "href": "/trade/oil",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Short Squeeze",
+          "programmaticName": null,
+          "href": "/wiki/short-squeeze",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Golden Cross",
+          "programmaticName": null,
+          "href": "/wiki/golden-cross",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Death Cross",
+          "programmaticName": null,
+          "href": "/wiki/death-cross",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Liquidation Cascade",
+          "programmaticName": null,
+          "href": "/wiki/liquidation-cascade",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Fibonacci Retracement",
+          "programmaticName": null,
+          "href": "/wiki/fibonacci-retracement",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "RSI Divergence",
+          "programmaticName": null,
+          "href": "/wiki/rsi-divergence",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "MACD Histogram",
+          "programmaticName": null,
+          "href": "/wiki/macd-histogram",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bollinger Band Squeeze",
+          "programmaticName": null,
+          "href": "/wiki/bollinger-band-squeeze",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Order Block",
+          "programmaticName": null,
+          "href": "/wiki/order-block",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Fair Value Gap (FVG)",
+          "programmaticName": null,
+          "href": "/wiki/fair-value-gap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bull Trap",
+          "programmaticName": null,
+          "href": "/wiki/bull-trap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Bear Trap",
+          "programmaticName": null,
+          "href": "/wiki/bear-trap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Whale Manipulation",
+          "programmaticName": null,
+          "href": "/wiki/whale-manipulation",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Support and Resistance",
+          "programmaticName": null,
+          "href": "/wiki/support-and-resistance",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Candlestick Patterns",
+          "programmaticName": null,
+          "href": "/wiki/candlestick-patterns",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Head and Shoulders",
+          "programmaticName": null,
+          "href": "/wiki/head-and-shoulders",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Double Bottom",
+          "programmaticName": null,
+          "href": "/wiki/double-bottom",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Moving Average Convergence Divergence",
+          "programmaticName": null,
+          "href": "/wiki/macd",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Limit Order vs Market Order",
+          "programmaticName": null,
+          "href": "/wiki/limit-order-vs-market-order",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Stop Loss Hunting",
+          "programmaticName": null,
+          "href": "/wiki/stop-loss-hunting",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Leverage Trading",
+          "programmaticName": null,
+          "href": "/wiki/leverage-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "FOMO (Fear of Missing Out)",
+          "programmaticName": null,
+          "href": "/wiki/fomo",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "FUD (Fear, Uncertainty, Doubt)",
+          "programmaticName": null,
+          "href": "/wiki/fud",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "HODL Strategy",
+          "programmaticName": null,
+          "href": "/wiki/hodl-strategy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Satoshi Nakamoto",
+          "programmaticName": null,
+          "href": "/wiki/satoshi-nakamoto",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Margin Call",
+          "programmaticName": null,
+          "href": "/wiki/margin-call",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Liquidation Price",
+          "programmaticName": null,
+          "href": "/wiki/liquidation-price",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Dollar Cost Averaging",
+          "programmaticName": null,
+          "href": "/wiki/dollar-cost-averaging",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Swing Trading",
+          "programmaticName": null,
+          "href": "/wiki/swing-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Day Trading",
+          "programmaticName": null,
+          "href": "/wiki/day-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Scalping",
+          "programmaticName": null,
+          "href": "/wiki/scalping",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Volume Profile",
+          "programmaticName": null,
+          "href": "/wiki/volume-profile",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "VWAP",
+          "programmaticName": null,
+          "href": "/wiki/vwap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Ichimoku Cloud",
+          "programmaticName": null,
+          "href": "/wiki/ichimoku-cloud",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Elliott Wave Theory",
+          "programmaticName": null,
+          "href": "/wiki/elliott-wave-theory",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Wyckoff Method",
+          "programmaticName": null,
+          "href": "/wiki/wyckoff-method",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Market Maker",
+          "programmaticName": null,
+          "href": "/wiki/market-maker",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Dark Pool",
+          "programmaticName": null,
+          "href": "/wiki/dark-pool",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Slippage",
+          "programmaticName": null,
+          "href": "/wiki/slippage",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Impermanent Loss",
+          "programmaticName": null,
+          "href": "/wiki/impermanent-loss",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Yield Farming",
+          "programmaticName": null,
+          "href": "/wiki/yield-farming",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Flash Crash",
+          "programmaticName": null,
+          "href": "/wiki/flash-crash",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Circuit Breaker",
+          "programmaticName": null,
+          "href": "/wiki/circuit-breaker",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Pump and Dump",
+          "programmaticName": null,
+          "href": "/wiki/pump-and-dump",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Paper Trading",
+          "programmaticName": null,
+          "href": "/wiki/paper-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Risk-Reward Ratio",
+          "programmaticName": null,
+          "href": "/wiki/risk-reward-ratio",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Drawdown",
+          "programmaticName": null,
+          "href": "/wiki/drawdown",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Backtesting",
+          "programmaticName": null,
+          "href": "/wiki/backtesting",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Correlation Trading",
+          "programmaticName": null,
+          "href": "/wiki/correlation-trading",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "",
+          "programmaticName": "TradeHQ home",
+          "href": "/",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact TradeHQ",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "anugaweerasinghe1@gmail.com",
+          "programmaticName": null,
+          "href": "mailto:anugaweerasinghe1@gmail.com",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "+94 71 489 7346",
+          "programmaticName": null,
+          "href": "tel:+94714897346",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "@thetradehq_1",
+          "programmaticName": "TradeHQ on Instagram, @thetradehq_1",
+          "href": "https://www.instagram.com/thetradehq_1/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Instagram",
+          "programmaticName": "Founder's personal Instagram, @anw_008",
+          "href": "https://www.instagram.com/anw_008/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Bluesky",
+          "programmaticName": "Founder's personal Bluesky, @anugaweerasinghe.bsky.social",
+          "href": "https://bsky.app/profile/anugaweerasinghe.bsky.social",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "name": "Trading Simulator",
+          "programmaticName": null,
+          "href": "/trade",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Markets Hub",
+          "programmaticName": null,
+          "href": "/markets",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Portfolio Tracker",
+          "programmaticName": null,
+          "href": "/portfolio",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "All Courses",
+          "programmaticName": null,
+          "href": "/learn",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Structured Tracks",
+          "programmaticName": null,
+          "href": "/courses",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Options Fundamentals",
+          "programmaticName": null,
+          "href": "/courses/options-trading-fundamentals",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Futures & Derivatives",
+          "programmaticName": null,
+          "href": "/courses/futures-and-derivatives",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Macro Reading",
+          "programmaticName": null,
+          "href": "/courses/macro-reading-for-traders",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Trading Psychology",
+          "programmaticName": null,
+          "href": "/courses/trading-psychology-mastery",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Trading Guide",
+          "programmaticName": null,
+          "href": "/learn-trading-guide",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Learning Mentor",
+          "programmaticName": null,
+          "href": "/ai-mentor",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "About",
+          "programmaticName": null,
+          "href": "/about",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "What’s New",
+          "programmaticName": null,
+          "href": "/whats-new",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Roadmap",
+          "programmaticName": null,
+          "href": "/roadmap",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Terms of Service",
+          "programmaticName": null,
+          "href": "/terms",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Disclaimer",
+          "programmaticName": null,
+          "href": "/about#disclaimer",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Contact TradeHQ",
+          "programmaticName": null,
+          "href": "/contact",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Privacy Policy",
+          "programmaticName": null,
+          "href": "/privacy",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Terms of Service",
+          "programmaticName": null,
+          "href": "/terms",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+          "programmaticName": null,
+          "href": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+          "target": null,
+          "rel": null
+        },
+        {
+          "name": "Creative Commons Attribution 4.0",
+          "programmaticName": null,
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "target": null,
+          "rel": null
+        }
+      ]
+    ],
+    "sha256": "a1c7629b0e088ba9d5d77de1b696952ea74043869859b559c69d71bc917242fb",
+    "contentReference": "production-current-shell.json",
+    "artifactSHA256": "a75be38586569f74c4fe5cc623b4193b9ecb46636d60ea6fa91546d0db3eef82",
+    "source": "src/components/MegaFooter.tsx",
+    "sourceRevision": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Portfolio captures each contain 102 footer links and the same educational, publisher and privacy footer observed on Trade."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical source and responsive assessment",
+      "reason": "The source is unchanged since the reviewed P09 release. Per-link label and destination judgments remain in the P09 footer ledger. The footer context continues to describe the virtual product. Destination bodies and private subscription or CMP operations remain separately bounded."
+    },
+    "disposition": "NO ISSUE IN REVIEWED SCOPE"
   }
 ]

@@ -21,3 +21,7 @@ Two public guest sessions completed an isolated buy and sale, validated fixed fe
 # Scenario release, chart and controls, and mentor readback
 
 The exact #479 native production release passed eight fresh scenario cases across both responsive layouts. The revised #480 candidate passes ten compiled browser contexts and awaits exact hosted checks. Two shared issues extend existing roots. The request-triggered Portfolio mentor now has twelve response-state records plus a separate control projection. Portfolio remains partial at 74 first-pass and 70 second-pass records, with four of its six confirmed defects production-verified. [Exact #479 receipt](RELEASE-479.json) · [Current coverage](COVERAGE.json)
+
+# APEX continuation
+
+Recovered main and the open Portfolio candidate, reopened tracking issue #430, and protected-merged #480 after all five final checks and ten hosted browser cases. Native readback remains due. Added individual skeptical judgments for quote states, recovery messages, exposure, the reference comparison, navigation, empty scenarios and contextual shared footer use. Portfolio remains partial at 91 first-pass and 87 second-pass records.
