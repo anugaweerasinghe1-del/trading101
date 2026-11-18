@@ -141,7 +141,9 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
               >Sell</Button>
             </div>
 
-            <p className="text-sm text-muted-foreground">Market order — fills immediately at the shown simulator price.</p>
+            <p className="text-sm text-muted-foreground">
+              Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.
+            </p>
 
             <div className="space-y-2">
               <div className="flex items-center justify-between">
