@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 159,
-  "firstPass": 159,
-  "secondPass": 157,
+  "textRecords": 160,
+  "firstPass": 160,
+  "secondPass": 158,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -121,7 +121,8 @@
     "trade-release-reconciliation/picker-rows-031-037-ledger.json",
     "trade-release-reconciliation/picker-rows-038-048-ledger.json",
     "portfolio-metric/block-ledger.json",
-    "trade-release-reconciliation/picker-rows-049-064-ledger.json"
+    "trade-release-reconciliation/picker-rows-049-064-ledger.json",
+    "trade-release-reconciliation/picker-quote-provenance-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–64 reviewed twice against controlled captures and source; ordinal 65 remains due. Shared quote provenance and named findings remain open.",
   "confirmedProductDefectsProductionVerified": 5,
@@ -136,6 +137,11 @@
       "id": "STRICT-TRADE-RISK-002",
       "status": "OPEN",
       "record": "trade-release-reconciliation/catalog-matic-risk.json"
+    },
+    {
+      "id": "STRICT-TRADE-RISK-003",
+      "status": "OPEN",
+      "record": "trade-release-reconciliation/catalog-quote-provenance-risk.json"
     }
   ],
   "confirmedProductDefectsReproduced": 8,

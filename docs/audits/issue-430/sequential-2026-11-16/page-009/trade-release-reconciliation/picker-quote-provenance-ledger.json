@@ -1,0 +1,28 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0163",
+    "contentReference": "picker-quote-provenance.json",
+    "contentSHA256": "615309560b321fa0e24ca924227080d277815d4f7cbf8a213b112b25b59d2525",
+    "sourceRevision": "8400ff251984500416dfc333c079881e555bbd6b",
+    "sources": [
+      "src/pages/Trade.tsx",
+      "src/components/trading/AssetSearchDropdown.tsx",
+      "src/components/trading/LiveDataToggle.tsx",
+      "src/lib/marketDataClient.ts"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Search exposes a symbol, full name, quote and percentage in each of four public examples. Neither viewport includes per-row source or time in this control."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and public AX read",
+      "reason": "The adjacent quote widget identifies only the selected USDC asset. The list can simultaneously contain fixed defaults, persisted figures and refreshed snapshots. The broader page already explains that source labels may be unavailable, so no promise that each quote is live was reproduced."
+    },
+    "findingIds": [
+      "STRICT-TRADE-RISK-003"
+    ],
+    "disposition": "SUBSTANTIATED-QUALITY-RISK",
+    "policyViolation": false
+  }
+]

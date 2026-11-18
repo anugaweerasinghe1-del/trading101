@@ -37,3 +37,5 @@ Picker ordinals 31–37 have individual source and live readings. The unqualifie
 ## Latest release position
 
 #469 passed the five exact-head checks and protected-merged with the same tree. Its native production run is active and the post-release reviews of 0093 and 0095 are pending. #470 is open for the mobile price wording. The separately reconciled 48 picker rows bring the full P09 ledger to 143 first-pass records and 141 second-pass records. [Pending release record](trade-release-reconciliation/RELEASE-469-PENDING.json)
+
+The picker quote-origin follow-up is recorded once as a shared quality risk. Its row markup displays prices and percentages from inputs that can occupy different source states, while the adjacent source widget covers the selected instrument. The broader introduction already qualifies availability. [Focused evidence](trade-release-reconciliation/catalog-quote-provenance-risk.json)
