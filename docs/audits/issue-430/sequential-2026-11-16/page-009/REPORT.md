@@ -19,3 +19,7 @@ Two guest views separately verified the asset-picker search label, five asset-cl
 #466 and #467 now have exact native Cloudflare receipts and fresh public readback. The initial intro, two mobile drawer actions, FX title and distinct ZS favorites are production-verified. The four confirmed defects are closed. [Native release records](trade-release-reconciliation/)
 
 P09 has 87 reviewed text/version records in both passes reconciled on this evidence branch. A separate #468 adds four records, three with two readings, while its cooldown correction clears required release gates. The issuer-symbol ambiguity has one substantiated quality-risk entry. Individual picker rows, other quote/candle/UI branches and the account-execution estimate remain open. The strict publisher score stays seven of 163.
+
+## Continued review
+
+Picker ordinals 1–16 have two individual readings in the unrestricted capture, current controlled production capture and source. The new 16 records and four cooldown records bring durable P09 coverage to 107 first readings and 106 second readings. Three additional second readings are due across the native cooldown and current portfolio-correction releases, including two blocks on the #469 candidate branch. The next unsampled picker row is ordinal 17, PEPE. [Picker ledger](trade-release-reconciliation/picker-rows-001-016-ledger.json)

@@ -1,0 +1,866 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0096",
+    "pickerOrdinal": 1,
+    "content": {
+      "controlled": {
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "price": "$0.9997",
+        "change": "+0.00%",
+        "favorite": "Add USD Coin (USDC) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "price": "$0.9996",
+          "change": "-0.00%",
+          "favorite": "Add USDC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "price": "$0.9996",
+          "change": "-0.00%",
+          "favorite": "Add USDC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f3565c15058bda984f9c9fd6a037b9cf2492953602463475a33b078c1b8a57f2",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "USD Coin uses USDC. The uncontrolled view displays $0.9996 and -0.00%; the controlled display changes to $0.9997."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The documented fallback value 0.999718 rounds to $0.9997. The earlier signed zero reflects two-decimal formatting, and does not establish that the feed was unchanged. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0097",
+    "pickerOrdinal": 2,
+    "content": {
+      "controlled": {
+        "symbol": "USDT",
+        "name": "Tether",
+        "price": "$0.9995",
+        "change": "+0.00%",
+        "favorite": "Add Tether (USDT) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "USDT",
+          "name": "Tether",
+          "price": "$0.9992",
+          "change": "-0.01%",
+          "favorite": "Add USDT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "USDT",
+          "name": "Tether",
+          "price": "$0.9992",
+          "change": "-0.01%",
+          "favorite": "Add USDT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "594fd55fce44fb51310fe1cd2126312edb8f28cf9bac9e145974640ca9c6bb31",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Tether uses USDT. The unrestricted view displayed $0.9992 and -0.01%, with the same labels at both widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.999503 rounds to $0.9995; its sub-dollar display preserves precision, and its label distinguishes this asset from USD Coin. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0098",
+    "pickerOrdinal": 3,
+    "content": {
+      "controlled": {
+        "symbol": "DAI",
+        "name": "Dai",
+        "price": "$1.0000",
+        "change": "+0.00%",
+        "favorite": "Add Dai (DAI) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "DAI",
+          "name": "Dai",
+          "price": "$1.0000",
+          "change": "+0.01%",
+          "favorite": "Add DAI to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "DAI",
+          "name": "Dai",
+          "price": "$1.0000",
+          "change": "+0.01%",
+          "favorite": "Add DAI to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "415e466e46944800b48a827d411767b9988380632f481a0211a8707d0254ce93",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Dai uses DAI. The $1.0000 price is present at both widths; the unrestricted row reports +0.01%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.999989 rounds to $1.0000 and does not provide an exact peg claim. The visible selection and favorite act on the same asset. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0099",
+    "pickerOrdinal": 4,
+    "content": {
+      "controlled": {
+        "symbol": "TRX",
+        "name": "TRON",
+        "price": "$0.3322",
+        "change": "+0.00%",
+        "favorite": "Add TRON (TRX) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "TRX",
+          "name": "TRON",
+          "price": "$0.3080",
+          "change": "+0.77%",
+          "favorite": "Add TRX to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TRX",
+          "name": "TRON",
+          "price": "$0.3080",
+          "change": "+0.77%",
+          "favorite": "Add TRX to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "c85e0cf6bb4b7e72e23d1145431986fa4167c604d2e80bbfc5f8c1055d400db1",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TRON uses TRX. The unrestricted figure is $0.3080 and +0.77%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.332191 rounds to $0.3322 and its TRON/TRX title does not conflate the protocol with a US-dollar ticker. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0100",
+    "pickerOrdinal": 5,
+    "content": {
+      "controlled": {
+        "symbol": "BCH",
+        "name": "Bitcoin Cash",
+        "price": "$277.03",
+        "change": "+0.00%",
+        "favorite": "Add Bitcoin Cash (BCH) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "price": "$208.96",
+          "change": "+0.30%",
+          "favorite": "Add BCH to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "price": "$208.96",
+          "change": "+0.30%",
+          "favorite": "Add BCH to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "e041d1782ba73a0cf779bd358a6bc038f36358d42789cc155c4ff608ee03765b",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bitcoin Cash uses BCH. The unrestricted row shows $208.96 and +0.30%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $277.03 uses two decimals. The full Bitcoin Cash label distinguishes the practice instrument from Bitcoin in the same catalog. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0101",
+    "pickerOrdinal": 6,
+    "content": {
+      "controlled": {
+        "symbol": "TON",
+        "name": "Toncoin",
+        "price": "$1.38",
+        "change": "+0.00%",
+        "favorite": "Add Toncoin (TON) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "TON",
+          "name": "Toncoin",
+          "price": "$1.09",
+          "change": "+4.01%",
+          "favorite": "Add TON to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TON",
+          "name": "Toncoin",
+          "price": "$1.09",
+          "change": "+4.01%",
+          "favorite": "Add TON to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "df6b9e67934b3d25310c3200c2ac738c95df08551d46c697020bc0ec2cb9d0de",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Toncoin uses TON. The unrestricted row displays $1.09 and +4.01%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $1.38 is consistent with the two-decimal above-dollar format. The row labels the actual Toncoin asset object. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0102",
+    "pickerOrdinal": 7,
+    "content": {
+      "controlled": {
+        "symbol": "ETC",
+        "name": "Ethereum Classic",
+        "price": "$8.11",
+        "change": "+0.00%",
+        "favorite": "Add Ethereum Classic (ETC) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "ETC",
+          "name": "Ethereum Classic",
+          "price": "$5.94",
+          "change": "+1.28%",
+          "favorite": "Add ETC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ETC",
+          "name": "Ethereum Classic",
+          "price": "$5.94",
+          "change": "+1.28%",
+          "favorite": "Add ETC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "7dae14b8b40de3cdc2349c49eaf33557c930e4050bd4cab0df1eb73d6168d8ff",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Ethereum Classic uses ETC. The unrestricted figure is $5.94 and +1.28%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $8.11 is consistent with the format. The explicit Classic name and ETC distinguish this entry from Ethereum/ETH. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0103",
+    "pickerOrdinal": 8,
+    "content": {
+      "controlled": {
+        "symbol": "XMR",
+        "name": "Monero",
+        "price": "$544.27",
+        "change": "+0.00%",
+        "favorite": "Add Monero (XMR) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "XMR",
+          "name": "Monero",
+          "price": "$506.03",
+          "change": "+2.30%",
+          "favorite": "Add XMR to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "XMR",
+          "name": "Monero",
+          "price": "$506.03",
+          "change": "+2.30%",
+          "favorite": "Add XMR to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "7d6f2b22e823021308655879b4cc0453024e97aa175ccb07a5c1ba26ce62c79e",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Monero uses XMR. The unrestricted row displays $506.03 and +2.30%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $544.27 bears the Monero name and two decimals. The quote display makes no claim about private network activity. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0104",
+    "pickerOrdinal": 9,
+    "content": {
+      "controlled": {
+        "symbol": "AAVE",
+        "name": "Aave",
+        "price": "$165.18",
+        "change": "+0.00%",
+        "favorite": "Add Aave (AAVE) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "AAVE",
+          "name": "Aave",
+          "price": "$111.10",
+          "change": "+1.04%",
+          "favorite": "Add AAVE to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AAVE",
+          "name": "Aave",
+          "price": "$111.10",
+          "change": "+1.04%",
+          "favorite": "Add AAVE to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "e29587d3c4165791ae13ec68f1b45bbb8852c612ac90f1072cbfce6eb7084d1c",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Aave uses AAVE. The unrestricted row displays $111.10 and +1.04%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $165.18 and the Aave label resolve to AAVE. The row offers a practice selection without promising yield or returns. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0105",
+    "pickerOrdinal": 10,
+    "content": {
+      "controlled": {
+        "symbol": "GRT",
+        "name": "The Graph",
+        "price": "$0.0262",
+        "change": "+0.00%",
+        "favorite": "Add The Graph (GRT) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "GRT",
+          "name": "The Graph",
+          "price": "$0.0173",
+          "change": "+4.01%",
+          "favorite": "Add GRT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "GRT",
+          "name": "The Graph",
+          "price": "$0.0173",
+          "change": "+4.01%",
+          "favorite": "Add GRT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "1c29feed0efe073cd118ff9a64c0c34fda3ce4b1f2664ddd4b0689241a5518ab",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The Graph uses GRT. The unrestricted row shows $0.0173 and +4.01%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.02616787 rounds to $0.0262; the full project name prevents confusion with the Trade chart itself. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0106",
+    "pickerOrdinal": 11,
+    "content": {
+      "controlled": {
+        "symbol": "LDO",
+        "name": "Lido DAO",
+        "price": "$0.4120",
+        "change": "+0.00%",
+        "favorite": "Add Lido DAO (LDO) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "LDO",
+          "name": "Lido DAO",
+          "price": "$0.2736",
+          "change": "-0.49%",
+          "favorite": "Add LDO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "LDO",
+          "name": "Lido DAO",
+          "price": "$0.2736",
+          "change": "-0.49%",
+          "favorite": "Add LDO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "2a5b6d71241bf9426f238b6c3c29580938f65c5d1814bbf5026e358bca67cea9",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Lido DAO uses LDO. The unrestricted figure is $0.2736 and -0.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.412042 rounds to $0.4120. The LDO label identifies the catalog asset and makes no claim that the simulator stakes ETH. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0107",
+    "pickerOrdinal": 12,
+    "content": {
+      "controlled": {
+        "symbol": "RUNE",
+        "name": "THORChain",
+        "price": "$0.6789",
+        "change": "+0.00%",
+        "favorite": "Add THORChain (RUNE) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "RUNE",
+          "name": "THORChain",
+          "price": "$0.5561",
+          "change": "+8.26%",
+          "favorite": "Add RUNE to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "RUNE",
+          "name": "THORChain",
+          "price": "$0.5561",
+          "change": "+8.26%",
+          "favorite": "Add RUNE to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "505ada69182c6d98639880e7145c384ae8fa686c7b32f91c0cdaf07f4e8eae09",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "THORChain uses RUNE. The unrestricted row displays $0.5561 and +8.26%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.678915 rounds to $0.6789. The RUNE ticker and THORChain name provide the identity separately from the past captured percentage. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0108",
+    "pickerOrdinal": 13,
+    "content": {
+      "controlled": {
+        "symbol": "KAS",
+        "name": "Kaspa",
+        "price": "$0.0393",
+        "change": "+0.00%",
+        "favorite": "Add Kaspa (KAS) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "KAS",
+          "name": "Kaspa",
+          "price": "$0.0273",
+          "change": "+2.18%",
+          "favorite": "Add KAS to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "KAS",
+          "name": "Kaspa",
+          "price": "$0.0273",
+          "change": "+2.18%",
+          "favorite": "Add KAS to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "cec00fae7b58dc064230634b913c3e57d7aac893fd66495674ac574621570e76",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Kaspa uses KAS. The unrestricted numbers are $0.0273 and +2.18%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.03931111 rounds to $0.0393 and its fourth decimal remains visible. The KAS and Kaspa identities agree. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0109",
+    "pickerOrdinal": 14,
+    "content": {
+      "controlled": {
+        "symbol": "STX",
+        "name": "Stacks",
+        "price": "$0.3926",
+        "change": "+0.00%",
+        "favorite": "Add Stacks (STX) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "STX",
+          "name": "Stacks",
+          "price": "$0.2759",
+          "change": "+4.95%",
+          "favorite": "Add STX to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "STX",
+          "name": "Stacks",
+          "price": "$0.2759",
+          "change": "+4.95%",
+          "favorite": "Add STX to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "29c966c89b5664388d567b62d071c0a0ea3c98b2db8520c67bd8c415fcc9deeb",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Stacks uses STX. The unrestricted row displays $0.2759 and +4.95%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.392636 rounds to $0.3926. The STX label specifies the asset without suggesting the value measures Bitcoin itself. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0110",
+    "pickerOrdinal": 15,
+    "content": {
+      "controlled": {
+        "symbol": "IMX",
+        "name": "Immutable",
+        "price": "$0.1875",
+        "change": "+0.00%",
+        "favorite": "Add Immutable (IMX) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "IMX",
+          "name": "Immutable",
+          "price": "$0.0977",
+          "change": "+1.27%",
+          "favorite": "Add IMX to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "IMX",
+          "name": "Immutable",
+          "price": "$0.0977",
+          "change": "+1.27%",
+          "favorite": "Add IMX to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "b15af8037ef266e89f2fc9bdbcdfa9e769f4632c629610b1bb1571bdb5481488",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Immutable uses IMX. The unrestricted row shows $0.0977 and +1.27%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback 0.187519 rounds to $0.1875. The ticker and full name agree with the catalog source. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0111",
+    "pickerOrdinal": 16,
+    "content": {
+      "controlled": {
+        "symbol": "RENDER",
+        "name": "Render",
+        "price": "$1.85",
+        "change": "+0.00%",
+        "favorite": "Add Render (RENDER) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "RENDER",
+          "name": "Render",
+          "price": "$1.45",
+          "change": "+5.91%",
+          "favorite": "Add RENDER to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "RENDER",
+          "name": "Render",
+          "price": "$1.45",
+          "change": "+5.91%",
+          "favorite": "Add RENDER to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "bce8fc6a24f8c342ed143019a6f341d0859a979fe7be1ee676b05db181a9a285",
+    "contentReferences": [
+      "picker-rows-001-016-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Render uses RENDER. The unrestricted row displays $1.45 and +5.91%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $1.85 resolves to RENDER as implemented. The row scopes its figures to the catalog token and does not claim identity with a separate legacy ticker. Both fresh viewports expose the matching named unpressed favorite action."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  }
+]
