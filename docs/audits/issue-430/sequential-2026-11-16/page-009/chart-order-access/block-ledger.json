@@ -32,7 +32,12 @@
       "reason": "Both compiled widths focus the chart and render different time and price tooltips on successive arrow presses."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The named chart received keyboard focus on both widths. Two successive right arrows reached different recorded times and prices, consistent with the public instructions.",
+      "contentReference": "../trade-release-reconciliation/production475-final-chart-keyboard.json",
+      "contentSHA256": "58911f1d6d611ace6e35ff908d53473e3281adecc1a3009b011da4f7717ca516",
+      "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "readAtUTC": "2026-11-18T09:00:48.905026+00:00"
     }
   },
   {
@@ -68,7 +73,12 @@
       "reason": "Keyboard disclosure exposes 24 provider-shaped and 261 simulated rows and formatted UTC, currency and captions. Closing removes table content."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The table exposed Time, Open, High, Low and Close in the accessibility tree at both widths. The 24 provider-fixture rows and 261 simulated rows followed the active data branch and closed with the disclosure. The provider values are fixtures.",
+      "contentReference": "../trade-release-reconciliation/production475-final-accessible-candle-table.json",
+      "contentSHA256": "dd9a05dd5cd8bc244a84cec18de06fb2e7af9ca409cb1c57f3867e80ef2fd640",
+      "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "readAtUTC": "2026-11-18T09:00:51.561037+00:00"
     }
   },
   {
@@ -104,7 +114,12 @@
       "reason": "Three local browser layouts expose exactly one pressed state across nine mode transitions."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Each responsive route exposed the active buy or sell button as pressed across Buy, Sell and Buy again; the opposite control stayed unpressed.",
+      "contentReference": "../trade-release-reconciliation/production475-final-trade-order-side-state.json",
+      "contentSHA256": "6b57be6b68073eb4d0a7750f4e8ba4eb2e54e07439c63c17db678893a158f0c0",
+      "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "readAtUTC": "2026-11-18T09:00:48.806907+00:00"
     }
   },
   {
@@ -140,7 +155,12 @@
       "reason": "Both compiled headings separate symbol and price. Close remains independently named and receives Enter."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The mobile order panel exposed the asset and its displayed estimate as the dialog name and heading, with a working named Close order panel button. The desktop records are parity controls.",
+      "contentReference": "../trade-release-reconciliation/production475-final-trade-order-side-state.json",
+      "contentSHA256": "6b57be6b68073eb4d0a7750f4e8ba4eb2e54e07439c63c17db678893a158f0c0",
+      "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "readAtUTC": "2026-11-18T09:00:48.806907+00:00"
     }
   },
   {
@@ -174,7 +194,12 @@
       "reason": "The compiled desktop and mobile examples both choose an enabled fee-inclusive amount of 391.3813. No order was submitted."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The desktop maximum stayed below available virtual cash with the fixed 0.1% fee, and the order button was enabled. The matching mobile case remained valid. No order was placed.",
+      "contentReference": "../trade-release-reconciliation/production475-final-max-buy.json",
+      "contentSHA256": "8a8c03d2aa3a3edc8d64f73d5e0e6f08633d642a62b99fc419bd8d796e11d40c",
+      "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+      "readAtUTC": "2026-11-18T09:00:46.803762+00:00"
     }
   }
 ]

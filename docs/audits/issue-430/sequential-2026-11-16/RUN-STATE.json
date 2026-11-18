@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T08:50:24.499746+00:00",
+  "updatedAtUTC": "2026-11-18T09:02:37.989373+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -16,10 +16,10 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
+  "nativeCloudflareId": "a6ded1a5-3106-482b-a655-03b4e9e37424",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify exact native #475 and reread 0477, 0479, 0481, 0483 and 0485. Capture final default and guided views on that deployment and reconcile changed block/control projections. Reconcile the remaining eligible state inventory and documented private and quality-risk scope before any closure.",
+  "nextStep": "Finish the post-deployment public state crosswalk. Resolve the two historical mentor follow-up notes against the released embedded view and its actual navigation, then check strict closure eligibility.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -57,7 +57,7 @@
   ],
   "latestPR": {
     "number": 475,
-    "status": "MERGED; exact native and custom-domain verification pending",
+    "status": "FIXED-RECHECKED",
     "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
@@ -84,7 +84,7 @@
   },
   "publisherPagesRemaining": 156,
   "caseTotals": {
-    "confirmedFixedRechecked": 42,
+    "confirmedFixedRechecked": 47,
     "qualityRisksFixedRechecked": 8,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
@@ -114,14 +114,8 @@
     "session": "audit/issue430-trade-release-20261118",
     "status": "PARTIAL-REVIEW",
     "nextPickerOrdinal": null,
-    "pendingNativeReadbackBlocks": [
-      "STRICT-0009-BLOCK-0477",
-      "STRICT-0009-BLOCK-0479",
-      "STRICT-0009-BLOCK-0481",
-      "STRICT-0009-BLOCK-0483",
-      "STRICT-0009-BLOCK-0485"
-    ],
-    "nextExactContentState": "Exact post-native #475 public audit and source-bound closure validation. The signed-in order failure and success UI is reviewed only on loopback. Actual account and provider operations stay unverified."
+    "pendingNativeReadbackBlocks": [],
+    "nextExactContentState": "Finish the post-deployment public state crosswalk. Resolve the two historical mentor follow-up notes against the released embedded view and its actual navigation, then check strict closure eligibility."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -184,7 +178,7 @@
     "ownerDecisionOpen": 1,
     "newCasesImplementedThisResume": 7
   },
-  "latestCodeReleaseReceipt": "page-009/trade-release-reconciliation/RELEASE-474.json",
+  "latestCodeReleaseReceipt": "page-009/trade-release-reconciliation/RELEASE-475.json",
   "sessionCaseTotals": {
     "confirmedProductErrorsFixedRechecked": 7,
     "confirmedPolicyIssues": 0,
@@ -201,21 +195,15 @@
     "strictStatus": "PARTIAL-REVIEW",
     "textRecords": 500,
     "firstPass": 500,
-    "secondPass": 495,
+    "secondPass": 500,
     "separateCandidateRecords": 0,
     "separateCandidateSecondPass": 0,
     "pickerRowsTwoPass": 170,
     "pickerRowsTotal": 170,
     "confirmedProductDefects": 23,
-    "confirmedProductDefectsProductionVerified": 18,
+    "confirmedProductDefectsProductionVerified": 23,
     "substantiatedQualityRisksOpen": 3,
-    "currentNativeVerificationBlock": [
-      "STRICT-0009-BLOCK-0477",
-      "STRICT-0009-BLOCK-0479",
-      "STRICT-0009-BLOCK-0481",
-      "STRICT-0009-BLOCK-0483",
-      "STRICT-0009-BLOCK-0485"
-    ],
+    "currentNativeVerificationBlock": [],
     "mentorTopicResponsesTwoPass": 21,
     "exploreLinkProjectionsTwoPass": 14,
     "mentorPortfolioStateProjectionsTwoPass": 12,

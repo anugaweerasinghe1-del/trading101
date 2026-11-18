@@ -87,3 +87,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Chart and order release position
 
 #475 protected-merged with the exact validated tree and awaits native confirmation and current public review. Four disposable signed-in projections separately reviewed the accepted server-shaped fill and safe stale-quote rejection. P09 has 500 first-pass and 495 second-pass records at this stage. [Pending release](trade-release-reconciliation/RELEASE-475-PENDING.json)
+
+# Chart and order production readback
+
+#475 has exact native production evidence and nine fresh browser contexts on the custom domain. The five corrections and two responsive controls passed. All 500 recorded block versions now have two reads, and all 23 distinct confirmed P09 defects are production-verified. Final public state reconciliation remains open. Both current sitemaps still match the 163-page publisher queue. [Exact receipt](trade-release-reconciliation/RELEASE-475.json) · [Live sitemap comparison](trade-release-reconciliation/current-default-census/SITEMAP-475.json)
