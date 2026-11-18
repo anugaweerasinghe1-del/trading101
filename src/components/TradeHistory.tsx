@@ -142,7 +142,7 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
                     </div>
                   </TableCell>
                   <TableCell className="text-right">
-                    <span className="font-mono">{trade.quantity.toFixed(4)}</span>
+                    <span className="font-mono">{trade.quantity}</span>
                   </TableCell>
                   <TableCell className="text-right">
                     <span className="font-mono">${formatPrice(trade.price, "stock")}</span>
