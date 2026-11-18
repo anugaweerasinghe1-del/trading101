@@ -43,6 +43,14 @@ export const DAILY_VOL: Record<AssetType, number> = {
   forex: 0.006,
 };
 
+export function scenarioHorizonDays(requestedDays: number): number {
+  return Math.max(1, Math.min(365, Math.round(Number.isNaN(requestedDays) ? 30 : requestedDays)));
+}
+
+export function scenarioShockPercent(requestedPercent: number): number {
+  return Math.max(-99, requestedPercent);
+}
+
 // Box-Muller standard normal
 function randn(): number {
   let u = 0, v = 0;
@@ -63,10 +71,10 @@ export function runScenario(
   horizonDays: number,
   paths = 1000,
 ): ScenarioResult {
-  const days = Math.max(1, Math.min(365, Math.round(horizonDays || 30)));
+  const days = scenarioHorizonDays(horizonDays);
   const shockMap = new Map<string, number>();
   shocks.forEach((s) => {
-    if (s?.symbol) shockMap.set(s.symbol.toUpperCase(), s.shockPercent / 100);
+    if (s?.symbol) shockMap.set(s.symbol.toUpperCase(), scenarioShockPercent(s.shockPercent) / 100);
   });
 
   const currentValue = portfolio.totalValue;
@@ -76,7 +84,7 @@ export function runScenario(
   const positions = portfolio.positions.map((p) => {
     const totalShock = shockMap.get(p.asset.symbol.toUpperCase()) ?? 0;
     // Convert total return over horizon to log-drift per day
-    const totalLog = Math.log(1 + Math.max(-0.99, totalShock));
+    const totalLog = Math.log1p(totalShock);
     const dailyDrift = totalLog / days;
     const dailySigma = DAILY_VOL[p.asset.type] ?? 0.02;
     return { p, dailyDrift, dailySigma, totalShock };
