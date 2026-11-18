@@ -31,5 +31,6 @@
   ],
   "after": "Four custom-domain browser reads verified both attribution destinations and the exact credit text. The clipboard-denial fixture exposed the named dismiss button in the accessibility tree. Enter closes the toast.",
   "status": "FIXED-RECHECKED",
-  "strictPageClosure": false
+  "strictPageClosure": false,
+  "scopeNote": "This is a defect-release receipt. The consolidated page closeout has its own Guide PAGE-RECORD."
 }

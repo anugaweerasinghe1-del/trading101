@@ -4646,5 +4646,304 @@
       "evidence": "preview462-second-control-state-captures.json; separate actual attribute read",
       "result": "Exact href/name matches source correction; production release still pending."
     }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0144",
+    "control": {
+      "tag": "ul",
+      "role": "list",
+      "count": 7
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceGitBlob": "1f2c740ff9cd444f92567ed7f2fbce1e86fa6b5e",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "54ce829034c2a550a26dc7046646d4d0693268995c0d815308e2148a795bae14",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-appearance.json",
+      "result": "Seven unique figures and the non-live disclosure were checked on first pass. Separate dark/light rereads preserve all seven and their signs."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-appearance.json",
+      "result": "The separately hosted preview and production snapshots both preserve the seven list items. The live keyboard and motion tests report zero persistent ticker animation.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0145",
+    "control": {
+      "role": "status",
+      "ariaAtomic": "true",
+      "initial": "empty",
+      "condition": "after answer"
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceGitBlob": "1f2c740ff9cd444f92567ed7f2fbce1e86fa6b5e",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "f040ae593a20390e0c031b06e6bf264fc228ae98bbf23511ccaabc6e717ff73d",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-all-quiz-status.json",
+      "result": "Persistent empty status precedes the answer. Separate wrong and correct states put matching feedback inside it."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-all-quiz-status.json",
+      "result": "During the post-receipt run the status existed while empty. Both a correct and a wrong response then appeared inside it with no changed grading.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0146",
+    "control": {
+      "tag": "div",
+      "ariaHidden": "true",
+      "condition": "correct answer",
+      "content": "decorative celebration"
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx"
+    ],
+    "sourceGitBlob": "1f2c740ff9cd444f92567ed7f2fbce1e86fa6b5e",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "bf592c7382dac5e6e5d0a201d1b87030592e5bf464838557250296f9c9924bd3",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-all-quiz-status.json",
+      "result": "Source identifies the celebration as separate from status. AX snapshots show the status feedback without the extra decorative symbols."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-all-quiz-status.json",
+      "result": "The correct-result tree contains only the existing status words, with the decorative symbols absent. Wrong-result trees contain no celebration.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0147",
+    "control": {
+      "role": "status",
+      "ancestorAriaBusy": "true",
+      "name": "Loading your page"
+    },
+    "source": [
+      "src/App.tsx"
+    ],
+    "sourceGitBlob": "bf4db89c6af7921d8a7a22e29c000ff1a3969c55",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "8700f663a625db4e5d7f0bd7945350666fda763f37b33c6229e2b68e29ba1f00",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-fixtures-conditional.json",
+      "result": "The local held-chunk experiment shows the busy region. The separate custom-domain fixture confirms matching semantics and that hydration removes it."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-fixtures-conditional.json",
+      "result": "The held production chunk exposes the same busy state and clears it after the normal chunk request completes, independently of the loopback renderer.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0148",
+    "control": {
+      "tag": "a",
+      "text": "Return to TradeHQ home",
+      "href": "/"
+    },
+    "source": [
+      "src/App.tsx"
+    ],
+    "sourceGitBlob": "bf4db89c6af7921d8a7a22e29c000ff1a3969c55",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "c297a17eb6bafb107bddd7cd329d5f06de2bf512da30326f9d2f4c2647cf116b",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-fixtures-conditional.json",
+      "result": "The link gives the correct navigation action and the desktop and mobile source have no alternate destination."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-fixtures-conditional.json",
+      "result": "The production AX name and link destination match the local capture. The link stays outside the status message.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0149",
+    "control": {
+      "tag": "a",
+      "text": "See What\u2019s New",
+      "href": "/whats-new"
+    },
+    "source": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "6d9c8e1d67223fdeb4b96b119513c7e992d3928c6508b19dfa11ee5ce5afe00f",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-expanded-live-states.json",
+      "result": "Every current desktop notice uses the same descriptive destination. Mobile and the separate authored fixture corroborate it."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-expanded-live-states.json",
+      "result": "Both production course titles and authored titles keep the same link in independent mobile and desktop observations.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0150",
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Dismiss release announcement"
+    },
+    "source": [
+      "src/components/ReleaseNotices.tsx"
+    ],
+    "sourceGitBlob": "1093ce3eba7089143e4ed635bff7bec76f7a0d37",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "ed1b2f4fc03265ee0b288e81f591e804f1f734268db37384fbec6eb4b62b30b6",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-expanded-live-states.json",
+      "result": "Named action exists in AX and Enter dismisses each notice. Separate mobile and desktop runs agree."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production464-expanded-live-states.json",
+      "result": "The same controls are keyboard reachable while the release title is displayed. Triggering Enter dismisses that exact notice before the next one appears.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0151",
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Switch to dark theme",
+      "condition": "light theme"
+    },
+    "source": [
+      "src/components/ThemeToggle.tsx"
+    ],
+    "sourceGitBlob": "dada7165378daca70d1c1e64511a182a9fc3fe26",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "53ee312325e86f08f3f8846990a50d57ca002100f88192e1cf82ba8fb78b9b36",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/production463-nav-states.json",
+      "result": "The theme label follows the next action. Keyboard round-trips at both widths confirm the light and dark HTML states."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/production463-nav-states.json",
+      "result": "On both the 390 and 1440 contexts the opposing label updates after the actual html light class changes. No duplicate visible toggle appeared in either view.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0152",
+    "control": {
+      "label": "Account menu",
+      "condition": "signed-in loopback fixture"
+    },
+    "source": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "6856320a46095fc928b15818ed965248ec4c2068ab76e039e3bf1ffc994bb254",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "Desktop synthetic account menu has a programmatic name and retains the distinct profile link and sign-out action."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "A fresh mock failure still leaves the actual desktop account menu and programmatically named trigger available. This confirms UI state only.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0153",
+    "control": {
+      "text": "My profile",
+      "href": "/trader/me",
+      "condition": "signed-in loopback fixture"
+    },
+    "source": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "3cb924d39c08c1b4456338d7f15b48326cdd44caf738437abb293c456bd7541e",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "Actual local desktop and mobile links agree with source. No private account contents were fetched."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "The mobile profile link appears in the signed-in dialog without a second guest login link. Its title matches the destination semantics in source.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0154",
+    "control": {
+      "text": "Signing out\u2026",
+      "disabled": true,
+      "condition": "pending local response"
+    },
+    "source": [
+      "src/components/Navigation.tsx"
+    ],
+    "sourceGitBlob": "ea2834c99ed113117ff816371939a5847859a0d4",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "46c6ae9a2500e88d167fd197e61c4e1c411a6cf913669eeeb114c94aec225e44",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "Pending label appears in both mobile fixture outcomes. The desktop menu closes when selected; its source uses the same pending text if reopened."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-account-fixture.json",
+      "result": "Holding a separate failed response shows the pending label before the error feedback. The simulated success does not certify the real response path.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0155",
+    "control": {
+      "region": "Optional analytics choices",
+      "condition": "accepted/reopened/rejected, loopback fixture"
+    },
+    "source": [
+      "src/components/ConsentBanner.tsx"
+    ],
+    "sourceGitBlob": "ce00ae2c800357200a5ebddd6020e55ac5b330d6",
+    "sourceVersion": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "sha256": "26446e86ccddd4ced94392660ef17c7685f89e6e7d4b00e6dc550c460998cbe9",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-consent-fixture.json",
+      "result": "Rejection and reopening were checked in the live guest runs. The local test confirmed acceptance and a later rejection reload without sending tracking."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/local-consent-fixture.json",
+      "result": "A fresh local accept/reject sequence remounts and reloads correctly with all external requests blocked. It therefore does not assert an actual analytics receipt.",
+      "reviewer": "Codex continuation, separate skeptical reread"
+    }
   }
 ]

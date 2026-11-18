@@ -1,0 +1,494 @@
+[
+  {
+    "width": 1440,
+    "js": true,
+    "atUTC": "2026-11-18T01:16:56.422382+00:00",
+    "status": 200,
+    "htmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+    "notesSHA256": "eab051fdf55e56dc765bdf9fd6975f9434b37c3e9c6faef58b13b822548d36f0",
+    "notes": {
+      "label": "Learning and reference notes",
+      "paragraphs": [
+        "Learning notes: Beginner Trading Practice Guide",
+        "An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.",
+        "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+        "What this page actually provides",
+        "This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.",
+        "Four checks for a virtual practice exercise",
+        "Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.",
+        "Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.",
+        "Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.",
+        "Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.",
+        "Worked example: virtual shares, fees and two outcomes",
+        "Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.",
+        "For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.",
+        "What this simulator cannot teach by itself",
+        "TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.",
+        "Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.",
+        "The vocabulary you need before anything else",
+        "Bid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.",
+        "Liquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.",
+        "Volatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.",
+        "Leverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.",
+        "Expectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.",
+        "A first-month plan",
+        "Week one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.",
+        "Week two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.",
+        "Week three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.",
+        "Week four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.",
+        "References and related pages",
+        "Structured courses and quizzes",
+        "Glossary: order terms and market mechanics",
+        "Strategy concepts and limits",
+        "Virtual practice desk",
+        "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+      ],
+      "links": [
+        [
+          "Publisher background and editorial approach",
+          "/about"
+        ],
+        [
+          "Structured courses and quizzes",
+          "/courses"
+        ],
+        [
+          "Glossary: order terms and market mechanics",
+          "/wiki"
+        ],
+        [
+          "Strategy concepts and limits",
+          "/strategy"
+        ],
+        [
+          "Virtual practice desk",
+          "/trade"
+        ]
+      ]
+    },
+    "metadata": {
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "robots": "index, follow",
+      "twitterImage": null,
+      "socialImage": null,
+      "script": "/assets/index-BAzZNzC3.js",
+      "schemas": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TradeHQ",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+          "featureList": [
+            "$100,000 virtual trading capital",
+            "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+            "Rule-based educational mentor",
+            "Portfolio performance tracking",
+            "Leaderboard competition",
+            "Technical analysis indicators",
+            "market education hub"
+          ],
+          "url": "https://www.thetradehq.com/",
+          "author": {
+            "@type": "Person",
+            "name": "Anuga Weerasinghe",
+            "url": "https://www.thetradehq.com/about"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "TradeHQ",
+            "url": "https://www.thetradehq.com/"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "TradeHQ",
+          "url": "https://www.thetradehq.com/",
+          "logo": "https://www.thetradehq.com/logo.png",
+          "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+          "areaServed": "Worldwide",
+          "teaches": [
+            "Stock Trading",
+            "Cryptocurrency Investment",
+            "Technical Analysis",
+            "Risk Management",
+            "Portfolio Diversification",
+            "Asset Class Allocation"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": "Beginner Trading Practice Guide",
+          "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
+          "author": {
+            "@type": "Organization",
+            "name": "TradeHQ"
+          },
+          "image": "https://www.thetradehq.com/tradehq-preview-2026.png"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I start trading with no money?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "One learning exercise is to use a simulator such as TradeHQ to study order entry and portfolio changes with $100,000 in virtual cash. Practice outcomes do not establish readiness for real trading."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "actualPublicAnnouncements": [
+      {
+        "title": "Understanding Cryptocurrency Price Feeds and Portfolio Valuation",
+        "href": "/whats-new",
+        "ax": "- paragraph: Understanding Cryptocurrency Price Feeds and Portfolio Valuation\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review",
+        "href": "/whats-new",
+        "ax": "- paragraph: \"Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review\"\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Daily cases now revisit topics you missed",
+        "href": "/whats-new",
+        "ax": "- paragraph: Daily cases now revisit topics you missed\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Review missed answers and discover the newest course updates",
+        "href": "/whats-new",
+        "ax": "- paragraph: Review missed answers and discover the newest course updates\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Your next learning step, with a clearer route to rewards",
+        "href": "/whats-new",
+        "ax": "- paragraph: Your next learning step, with a clearer route to rewards\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      }
+    ],
+    "runtimeErrors": []
+  },
+  {
+    "width": 390,
+    "js": true,
+    "atUTC": "2026-11-18T01:16:56.609418+00:00",
+    "status": 200,
+    "htmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+    "notesSHA256": "eab051fdf55e56dc765bdf9fd6975f9434b37c3e9c6faef58b13b822548d36f0",
+    "notes": {
+      "label": "Learning and reference notes",
+      "paragraphs": [
+        "Learning notes: Beginner Trading Practice Guide",
+        "An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.",
+        "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+        "What this page actually provides",
+        "This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.",
+        "Four checks for a virtual practice exercise",
+        "Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.",
+        "Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.",
+        "Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.",
+        "Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.",
+        "Worked example: virtual shares, fees and two outcomes",
+        "Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.",
+        "For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.",
+        "What this simulator cannot teach by itself",
+        "TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.",
+        "Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.",
+        "The vocabulary you need before anything else",
+        "Bid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.",
+        "Liquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.",
+        "Volatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.",
+        "Leverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.",
+        "Expectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.",
+        "A first-month plan",
+        "Week one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.",
+        "Week two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.",
+        "Week three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.",
+        "Week four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.",
+        "References and related pages",
+        "Structured courses and quizzes",
+        "Glossary: order terms and market mechanics",
+        "Strategy concepts and limits",
+        "Virtual practice desk",
+        "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+      ],
+      "links": [
+        [
+          "Publisher background and editorial approach",
+          "/about"
+        ],
+        [
+          "Structured courses and quizzes",
+          "/courses"
+        ],
+        [
+          "Glossary: order terms and market mechanics",
+          "/wiki"
+        ],
+        [
+          "Strategy concepts and limits",
+          "/strategy"
+        ],
+        [
+          "Virtual practice desk",
+          "/trade"
+        ]
+      ]
+    },
+    "metadata": {
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "robots": "index, follow",
+      "twitterImage": null,
+      "socialImage": null,
+      "script": "/assets/index-BAzZNzC3.js",
+      "schemas": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TradeHQ",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+          "featureList": [
+            "$100,000 virtual trading capital",
+            "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+            "Rule-based educational mentor",
+            "Portfolio performance tracking",
+            "Leaderboard competition",
+            "Technical analysis indicators",
+            "market education hub"
+          ],
+          "url": "https://www.thetradehq.com/",
+          "author": {
+            "@type": "Person",
+            "name": "Anuga Weerasinghe",
+            "url": "https://www.thetradehq.com/about"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "TradeHQ",
+            "url": "https://www.thetradehq.com/"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "TradeHQ",
+          "url": "https://www.thetradehq.com/",
+          "logo": "https://www.thetradehq.com/logo.png",
+          "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+          "areaServed": "Worldwide",
+          "teaches": [
+            "Stock Trading",
+            "Cryptocurrency Investment",
+            "Technical Analysis",
+            "Risk Management",
+            "Portfolio Diversification",
+            "Asset Class Allocation"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": "Beginner Trading Practice Guide",
+          "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
+          "author": {
+            "@type": "Organization",
+            "name": "TradeHQ"
+          },
+          "image": "https://www.thetradehq.com/tradehq-preview-2026.png"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I start trading with no money?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "One learning exercise is to use a simulator such as TradeHQ to study order entry and portfolio changes with $100,000 in virtual cash. Practice outcomes do not establish readiness for real trading."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "actualPublicAnnouncements": [
+      {
+        "title": "Understanding Cryptocurrency Price Feeds and Portfolio Valuation",
+        "href": "/whats-new",
+        "ax": "- paragraph: Understanding Cryptocurrency Price Feeds and Portfolio Valuation\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review",
+        "href": "/whats-new",
+        "ax": "- paragraph: \"Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review\"\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Daily cases now revisit topics you missed",
+        "href": "/whats-new",
+        "ax": "- paragraph: Daily cases now revisit topics you missed\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Review missed answers and discover the newest course updates",
+        "href": "/whats-new",
+        "ax": "- paragraph: Review missed answers and discover the newest course updates\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      },
+      {
+        "title": "Your next learning step, with a clearer route to rewards",
+        "href": "/whats-new",
+        "ax": "- paragraph: Your next learning step, with a clearer route to rewards\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\""
+      }
+    ],
+    "runtimeErrors": []
+  },
+  {
+    "width": 390,
+    "js": false,
+    "atUTC": "2026-11-18T01:16:45.849318+00:00",
+    "status": 200,
+    "htmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+    "notesSHA256": "eab051fdf55e56dc765bdf9fd6975f9434b37c3e9c6faef58b13b822548d36f0",
+    "notes": {
+      "label": "Learning and reference notes",
+      "paragraphs": [
+        "Learning notes: Beginner Trading Practice Guide",
+        "An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.",
+        "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+        "What this page actually provides",
+        "This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.",
+        "Four checks for a virtual practice exercise",
+        "Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.",
+        "Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.",
+        "Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.",
+        "Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.",
+        "Worked example: virtual shares, fees and two outcomes",
+        "Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.",
+        "For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.",
+        "What this simulator cannot teach by itself",
+        "TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.",
+        "Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.",
+        "The vocabulary you need before anything else",
+        "Bid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.",
+        "Liquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.",
+        "Volatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.",
+        "Leverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.",
+        "Expectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.",
+        "A first-month plan",
+        "Week one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.",
+        "Week two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.",
+        "Week three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.",
+        "Week four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.",
+        "References and related pages",
+        "Structured courses and quizzes",
+        "Glossary: order terms and market mechanics",
+        "Strategy concepts and limits",
+        "Virtual practice desk",
+        "Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+      ],
+      "links": [
+        [
+          "Publisher background and editorial approach",
+          "/about"
+        ],
+        [
+          "Structured courses and quizzes",
+          "/courses"
+        ],
+        [
+          "Glossary: order terms and market mechanics",
+          "/wiki"
+        ],
+        [
+          "Strategy concepts and limits",
+          "/strategy"
+        ],
+        [
+          "Virtual practice desk",
+          "/trade"
+        ]
+      ]
+    },
+    "metadata": {
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "twitterImage": "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116",
+      "socialImage": "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116",
+      "script": "/assets/index-BAzZNzC3.js",
+      "schemas": [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "TradeHQ",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+          "featureList": [
+            "$100,000 virtual trading capital",
+            "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+            "Rule-based educational mentor",
+            "Portfolio performance tracking",
+            "Leaderboard competition",
+            "Technical analysis indicators",
+            "market education hub"
+          ],
+          "url": "https://www.thetradehq.com/",
+          "author": {
+            "@type": "Person",
+            "name": "Anuga Weerasinghe",
+            "url": "https://www.thetradehq.com/about"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "TradeHQ",
+            "url": "https://www.thetradehq.com/"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "TradeHQ",
+          "url": "https://www.thetradehq.com/",
+          "logo": "https://www.thetradehq.com/logo.png",
+          "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+          "areaServed": "Worldwide",
+          "teaches": [
+            "Stock Trading",
+            "Cryptocurrency Investment",
+            "Technical Analysis",
+            "Risk Management",
+            "Portfolio Diversification",
+            "Asset Class Allocation"
+          ]
+        }
+      ]
+    },
+    "actualPublicAnnouncements": [],
+    "runtimeErrors": []
+  }
+]

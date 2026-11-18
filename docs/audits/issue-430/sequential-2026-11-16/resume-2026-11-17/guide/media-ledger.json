@@ -513,5 +513,34 @@
       "evidence": "production-pass2-media-states.json; fresh context playback/bytes/source and title reread",
       "result": "Fresh read agrees with fixed properties and track hash; changing playback time expected. No private or user-server writes; no standalone destination-page credit."
     }
+  },
+  {
+    "id": "STRICT-0008-MEDIA-0007",
+    "state": "social-and-schema-preview",
+    "source": "public/tradehq-preview-2026.png",
+    "version": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "snapshot": {
+      "status": 200,
+      "width": 1731,
+      "height": 909,
+      "bytesSHA256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+      "bodyTextBlock": "STRICT-0008-BLOCK-0866",
+      "URLs": [
+        "https://www.thetradehq.com/tradehq-preview-2026.png",
+        "https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116"
+      ]
+    },
+    "sha256": "10656040852253c251e9ff503f6dbd9693c583549c8236549e7acaca818ac63f",
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "guide/SOURCE-RECONCILIATION-2026-11-18.md",
+      "result": "Visual read of full PNG confirms the recorded wording and illustrative chart labels."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "guide/SOURCE-RECONCILIATION-2026-11-18.md",
+      "reviewer": "Codex continuation, separate skeptical reread",
+      "result": "Social and schema URLs match the inspected source asset bytes; the virtual-money qualification and explicit 'Example interface' contextualize the chart."
+    }
   }
 ]

@@ -1,10 +1,10 @@
 {
-  "updatedAtUTC": "2026-11-18T01:03:09.662177+00:00",
-  "phase": "GUIDE-ACCESSIBILITY-FIX-AND-FINAL-STATE-RECONCILIATION",
-  "currentPage": "https://www.thetradehq.com/learn-trading-guide",
-  "newAuditCompletedPages": 6,
+  "updatedAtUTC": "2026-11-18T01:29:57.170241+00:00",
+  "phase": "P09-STRICT-REVIEW-NEXT",
+  "currentPage": "https://www.thetradehq.com/trade",
+  "newAuditCompletedPages": 7,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 157,
+  "publisherPagesStillQueued": 156,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
   "priorRemediation": "18/19; Diversification draft6/public3 remains normal owner publication pending. Not19/19.",
@@ -19,15 +19,15 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Resume P08 at STRICT-0008-BLOCK-0846 after native #463 account observation. Verify live calculator; then candidate post-release blocks 0849\u20130850. Continue current source-expression/attribute reconciliation for public menu, consent and responsive navigation, before applying the strict closure gate. Preserve owner-blocked Terms/Diversification and go to P09 only after P08 qualifies.",
+  "nextStep": "P09 /trade is the first unfinished canonical page. Reuse the P09 independent inspection and #454 deployed wording fix evidence. Start at live initial HTML, metadata, guest Trade UI and source state inventory; record remaining strict coverage before proceeding to P10.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 30,
-  "latestClosedPageRecord": "page-007/closure-2026-11-17/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+  "freshReviewTotalClosedCases": 33,
+  "latestClosedPageRecord": "resume-2026-11-17/guide/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -36,18 +36,18 @@
     "closed": 3
   },
   "production": {
-    "mergeSHA": "c7a56b923038d38a76b9b7b1ac203f0adc0ac879",
+    "mergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
     "nativeCloudflare": {
-      "id": "92fb5d54-56a5-4acf-9c42-525d13bf4490",
-      "sha": "c7a56b923038d38a76b9b7b1ac203f0adc0ac879",
+      "id": "02f521be-a85b-4df9-bda4-e017afaf319e",
+      "sha": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
       "environment": "production",
       "branch": "main",
       "status": "success",
-      "createdAt": "2026-11-17T17:53:21.265693Z"
+      "createdAt": "2026-11-18T01:14:19.715302Z"
     },
-    "nativeObservedAtUTC": "2026-11-17T18:05:58.313Z",
-    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44141887829/job/134254422670",
-    "liveRereadAtUTC": "2026-11-18T00:55:02.402445+00:00"
+    "nativeObservedAtUTC": "2026-11-18T01:25:12.955Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44214239194/job/134504647438",
+    "liveRereadAtUTC": "2026-11-18T01:26:22.398150+00:00"
   },
   "resumeRestrictions": [
     "Ad serving disabled",
@@ -56,9 +56,9 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 463,
-    "status": "MERGED; CUSTOM-DOMAIN BEHAVIOR CHECKED; NATIVE RECEIPT PENDING",
-    "mergeSHA": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1"
+    "number": 464,
+    "status": "MERGED; EXACT NATIVE PRODUCTION/LIVE VERIFIED",
+    "mergeSHA": "b0292fb636b1826f1b485c5bb3b50465e07222cf"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -82,9 +82,9 @@
     "fixedRechecked": 3,
     "pageStatus": "FIXED-RECHECKED"
   },
-  "publisherPagesRemaining": 157,
+  "publisherPagesRemaining": 156,
   "caseTotals": {
-    "confirmedFixedRechecked": 21,
+    "confirmedFixedRechecked": 24,
     "qualityRisksFixedRechecked": 8,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
@@ -101,7 +101,7 @@
     "closed": 3,
     "record": "page-006/closure-2026-11-17/PAGE-RECORD.json"
   },
-  "candidatePullRequestBranch": "audit/issue430-guide-ticker-20261118",
+  "candidatePullRequestBranch": "audit/issue430-guide-receipts-20261118",
   "coursesFindings": {
     "confirmed": 2,
     "qualityRisks": 1,
@@ -110,47 +110,36 @@
     "record": "page-007/closure-2026-11-17/PAGE-RECORD.json"
   },
   "activeAssignment": {
-    "session": "audit/issue430-guide-ticker-20261118",
-    "page": "STRICT-0008",
-    "status": "PARTIAL. Calculator native receipt, accessibility release, full expression/state reconciliation remain due.",
-    "planComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6965658719"
+    "session": "audit/issue430-guide-receipts-20261118",
+    "page": "STRICT-0009",
+    "status": "NEXT TO AUDIT AFTER P08 CLOSEOUT"
   },
   "guideCoverage": {
     "publisherPages": 163,
     "widerDiscoveryURLs": 480,
     "historicalClosuresRecovered": 6,
-    "newStrictClosuresThisSession": 0,
+    "newStrictClosuresThisSession": 1,
     "currentPage": "STRICT-0008",
     "extractedCapturedTextOccurrences": 713,
     "pass1ReviewedCapturedOccurrences": 713,
     "pass2ReviewedCapturedOccurrences": 713,
-    "pageStatus": "PARTIAL-REVIEW-EXTRACTION-RECONCILIATION-PENDING",
-    "limitations": [
-      "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
-      "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
-      "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
-      "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
-      "No unqualified closure claim; product fix release independent of page closure.",
-      "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
-      "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
-      "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed."
-    ],
-    "totalRecordedBlocks": 850,
+    "pageStatus": "FIXED-RECHECKED",
+    "totalRecordedBlocks": 866,
     "pass1ReviewedSourceOnlyAlternatives": 49,
     "pass1ReviewedMetadataBlocks": 60,
     "pass2ReviewedSourceOnlyAlternatives": 49,
     "pass2ReviewedMetadataBlocks": 60,
-    "totalPass2Reviewed": 847,
-    "pendingSecondPass": 3,
-    "totalPass1Reviewed": 850,
+    "totalPass2Reviewed": 866,
+    "pendingSecondPass": 0,
+    "totalPass1Reviewed": 866,
     "selectableCardsCapturedAndReadTwice": 48,
     "sourceOnlyUnselectableCards": 1,
-    "controlRecords": 143,
-    "controlPass1Reviewed": 143,
-    "controlPass2Reviewed": 143,
-    "mediaRecords": 6,
-    "mediaPass1Reviewed": 6,
-    "mediaPass2Reviewed": 6,
+    "controlRecords": 155,
+    "controlPass1Reviewed": 155,
+    "controlPass2Reviewed": 155,
+    "mediaRecords": 7,
+    "mediaPass1Reviewed": 7,
+    "mediaPass2Reviewed": 7,
     "dateFixturePasses": {
       "eachPass": 18,
       "labelsCovered": 5,
@@ -158,11 +147,25 @@
     },
     "historicalSourceProjectionRecords": 49,
     "currentSourceOnlyUnselectableCardRecords": 1,
-    "pendingSecondPassIDs": [
-      "STRICT-0008-BLOCK-0846",
-      "STRICT-0008-BLOCK-0849",
-      "STRICT-0008-BLOCK-0850"
-    ]
+    "pendingSecondPassIDs": [],
+    "historicalLimitations": [
+      "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
+      "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
+      "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
+      "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
+      "No unqualified closure claim; product fix release independent of page closure.",
+      "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
+      "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
+      "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed.",
+      "The default public DOM and no-JavaScript projections reconcile. Controlled requests and synthetic account and consent states are separately labelled. A production account session and unrestricted provider outcomes remain unobserved. Final page-wide applicability review is outstanding."
+    ],
+    "limitations": [
+      "Real private production account records and provider operations unavailable; the Guide's signed-in navigation and sign-out outcomes are covered by source and loopback fixtures. This gives no production account verification credit.",
+      "Linked destination bodies retain their own queue positions. Time-selected public previews and current release notice titles are reviewed in the Guide, not as separate page closures.",
+      "Terms eligibility wording, Diversification publication, underlying provider contracts and Google account approval/consent operations retain their separate gates."
+    ],
+    "closureRecord": "PAGE-RECORD.json",
+    "strictPageClosure": true
   },
   "pendingLayoutFollowup": null,
   "historicalCaseTotalsBeforeThisSession": {
@@ -172,26 +175,16 @@
     "ownerDecisionOpen": 1,
     "newCasesImplementedThisResume": 7
   },
-  "latestCodeReleaseReceipt": "resume-2026-11-17/RELEASE-460.json",
+  "latestCodeReleaseReceipt": "resume-2026-11-17/RELEASE-464.json",
   "sessionCaseTotals": {
-    "confirmedProductErrorsFixedRechecked": 3,
+    "confirmedProductErrorsFixedRechecked": 7,
     "confirmedPolicyIssues": 0,
     "qualityRisks": 0,
-    "newStrictPagesClosed": 0,
-    "confirmedProductErrorsImplementedAwaitingRelease": 2,
-    "existingRootQualityExtensionsAwaitingRelease": 1
+    "newStrictPagesClosed": 1,
+    "confirmedProductErrorsImplementedAwaitingRelease": 0,
+    "existingRootQualityExtensionsAwaitingRelease": 0
   },
-  "pendingGuideFollowup": {
-    "pullRequest": 462,
-    "headSHA": "debf817aee2e2a5417e63c69533511761c5ef05b",
-    "newProductCase": "STRICT-GUIDE-004",
-    "existingRootQualityExtension": "STRICT-HOME-001-GUIDE-EXTENSION",
-    "status": "PR462 protected merged c7a56b9 after5/5 checks and Cloudflare preview; native receipt/live verification pending."
-  },
-  "pendingGuideNumberFix": {
-    "finding": "STRICT-GUIDE-005",
-    "branch": "audit/issue430-guide-numbers-20261117",
-    "status": "source corrected; validation pending",
-    "beforeEditIssueComment": 6956311244
-  }
+  "pendingGuideFollowup": null,
+  "pendingGuideNumberFix": null,
+  "pendingGuideAccessibilityRelease": null
 }

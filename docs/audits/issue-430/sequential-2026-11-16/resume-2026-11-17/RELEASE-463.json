@@ -1,0 +1,72 @@
+{
+  "pullRequest": 463,
+  "finalHeadSHA": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+  "requiredChecks": [
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44143012144/job/134257261709",
+      "head_sha": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+      "id": 134257261709,
+      "name": "TradeHQ Required validation"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/161c81bd-99b8-400d-a46b-38467718f41c",
+      "head_sha": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+      "id": 134252534355,
+      "name": "Cloudflare Pages"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44143012144/job/134250601712",
+      "head_sha": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+      "id": 134250601712,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44143012144/job/134250601129",
+      "head_sha": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+      "id": 134250601129,
+      "name": "TradeHQ Phase 3 tests"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44143012248/job/134250601096",
+      "head_sha": "f54d1836ad94cb691928d81a1c89e6428cb15fa6",
+      "id": 134250601096,
+      "name": "TradeHQ Disposable PostgreSQL controls"
+    }
+  ],
+  "mergeSHA": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+  "mergedTreeEqualsFinalHeadTree": "f11f7e85c172da75bb7299b6adbeb898029572a4",
+  "previewURL": "https://161c81bd.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T01:06:15.983Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "3b94d6e2-2d2e-4db1-ada4-f19bbdaf8c7c",
+      "sha": "1c42dc72b4f76acd0efa4bd3af3494773f834fe1",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T00:55:46.595074Z"
+    },
+    "sourceGitHubRun": 44211809492,
+    "sourceGitHubJob": 134496293376,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44211809492/job/134496293376"
+  },
+  "productionURL": "https://www.thetradehq.com/learn-trading-guide",
+  "liveRereadAtUTC": "2026-11-18T01:08:30.696331+00:00",
+  "liveEvidence": "guide/production463-final-number-readability.json",
+  "previewEvidence": "guide/preview463-number-readability.json",
+  "findings": [
+    "STRICT-GUIDE-005"
+  ],
+  "after": "Complete calculator amounts in all 12 maximum-input desktop/mobile light/dark cases at 5% and 30%. Calculation logic unchanged.",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": false,
+  "scopeNote": "This is a defect-release receipt. The consolidated page closeout has its own Guide PAGE-RECORD."
+}

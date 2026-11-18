@@ -1,0 +1,31 @@
+{
+  "atUTC": "2026-11-18T01:13:45.341757+00:00",
+  "origin": "http://127.0.0.1:43119",
+  "status": 200,
+  "loader": {
+    "busy": "true",
+    "tree": "- main:\n  - status:\n    - heading \"Loading your page\" [level=1]\n    - paragraph: Your TradeHQ page is on its way. Please wait a moment while we get it ready.\n  - link \"Return to TradeHQ home\":\n    - /url: /",
+    "home": "/"
+  },
+  "announcements": [
+    {
+      "title": "Daily cases now revisit topics you missed",
+      "ax": "- paragraph: Daily cases now revisit topics you missed\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\"",
+      "href": "/whats-new",
+      "dismissedWithKeyboard": true
+    },
+    {
+      "title": "Review missed answers and discover the newest course updates",
+      "ax": "- paragraph: Review missed answers and discover the newest course updates\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\"",
+      "href": "/whats-new",
+      "dismissedWithKeyboard": true
+    },
+    {
+      "title": "Your next learning step, with a clearer route to rewards",
+      "ax": "- paragraph: Your next learning step, with a clearer route to rewards\n- link \"See What’s New\":\n  - /url: /whats-new\n- button \"Dismiss release announcement\"",
+      "href": "/whats-new",
+      "dismissedWithKeyboard": true
+    }
+  ],
+  "fixture": "Held browser chunk for loader. Browser clock set to 18 November, and empty public-course feed response simulated for authored notices."
+}

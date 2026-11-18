@@ -1,0 +1,112 @@
+{
+  "pageId": "STRICT-0008",
+  "path": "/learn-trading-guide",
+  "url": "https://www.thetradehq.com/learn-trading-guide",
+  "reviewer": "Codex assistant, including documented same-assistant skeptical rereads; retained earlier judged records by exact hash",
+  "scope": "Public publisher page and its applicable authored states. Synthetic and unobserved private behavior are explicitly described.",
+  "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "capturedUTC": "2026-11-18T01:26:22.398150+00:00",
+  "closedAtUTC": "2026-11-18T01:29:57.170241+00:00",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": true,
+  "coverage": {
+    "textVersionRecords": 866,
+    "pass1": 866,
+    "pass2": 866,
+    "controls": 155,
+    "media": 7,
+    "overlap": "Responsive, historical, source-only and default projections overlap. Counts are not unique paragraphs.",
+    "defaultViewExactOrReviewedComposite": [
+      {
+        "width": 390,
+        "js": true,
+        "atUTC": "2026-11-18T01:18:50.318825+00:00",
+        "status": 200,
+        "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+        "occurrenceCount": 244,
+        "exactLedgerMatchedOccurrences": 240,
+        "matchedCompositeBlock": "STRICT-0008-BLOCK-0825",
+        "compositeLeaves": [
+          ".",
+          "Creative Commons Attribution 4.0",
+          "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+          "Music:"
+        ],
+        "occurrencesSHA256": "545c4bc4319ad83630bd0b77f570c20abaecfb414e75061b761b5596a23e53f7"
+      },
+      {
+        "width": 1440,
+        "js": true,
+        "atUTC": "2026-11-18T01:18:50.308352+00:00",
+        "status": 200,
+        "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+        "occurrenceCount": 244,
+        "exactLedgerMatchedOccurrences": 240,
+        "matchedCompositeBlock": "STRICT-0008-BLOCK-0825",
+        "compositeLeaves": [
+          ".",
+          "Creative Commons Attribution 4.0",
+          "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+          "Music:"
+        ],
+        "occurrencesSHA256": "e9ee955ad5ab2f2c164997b7dc69811496b55db8a1a359cdf10e9c4aef543ec8"
+      },
+      {
+        "width": 390,
+        "js": false,
+        "atUTC": "2026-11-18T01:18:49.399443+00:00",
+        "status": 200,
+        "initialHtmlSHA256": "89e173e9d6b0c229afe5a8f49f70a2dc1807ef02837e10908f6830f6c4a62aeb",
+        "occurrenceCount": 54,
+        "exactLedgerMatchedOccurrences": 54,
+        "matchedCompositeBlock": null,
+        "compositeLeaves": [],
+        "occurrencesSHA256": "8d0938e29aa0aa9f533f240123d28f74dfe11535e4ee75d18c511c1454896ed7"
+      }
+    ]
+  },
+  "evidence": {
+    "individualBlockLedger": "block-ledger.json",
+    "controlLedger": "control-ledger.json",
+    "controlHashManifest": "control-hashes-2026-11-18.json",
+    "mediaLedger": "media-ledger.json",
+    "sourceReconciliation": "SOURCE-RECONCILIATION-2026-11-18.md",
+    "coverageValidation": "continuation-2026-11-18-validation.json",
+    "releases": [
+      "../RELEASE-459.json",
+      "../RELEASE-460.json",
+      "../RELEASE-462.json",
+      "../RELEASE-463.json",
+      "../RELEASE-464.json"
+    ],
+    "policyBaseline": "../policies/refresh.json"
+  },
+  "findings": [
+    "STRICT-GUIDE-001",
+    "STRICT-GUIDE-002",
+    "STRICT-GUIDE-003",
+    "STRICT-GUIDE-004",
+    "STRICT-HOME-001-GUIDE-EXTENSION",
+    "STRICT-GUIDE-005",
+    "STRICT-GUIDE-006",
+    "STRICT-GUIDE-007"
+  ],
+  "productDefectsProductionVerified": 7,
+  "existingQualityRiskOccurrenceVerified": 1,
+  "newUniqueQualityRisks": 0,
+  "confirmedGooglePolicyViolations": 0,
+  "nativeCloudflare": {
+    "id": "02f521be-a85b-4df9-bda4-e017afaf319e",
+    "sha": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-18T01:14:19.715302Z"
+  },
+  "limitations": [
+    "Real private production account records and provider operations unavailable; the Guide's signed-in navigation and sign-out outcomes are covered by source and loopback fixtures. This gives no production account verification credit.",
+    "Linked destination bodies retain their own queue positions. Time-selected public previews and current release notice titles are reviewed in the Guide, not as separate page closures.",
+    "Terms eligibility wording, Diversification publication, underlying provider contracts and Google account approval/consent operations retain their separate gates."
+  ],
+  "decision": "All identified applicable authored surfaces and current public variants are accounted for in the source and browser crosswalk. Coverage, separate skeptical rereads and all seven product release receipts reconcile. Authored private UI alternatives are separately exercised without production authentication or provider certification."
+}
