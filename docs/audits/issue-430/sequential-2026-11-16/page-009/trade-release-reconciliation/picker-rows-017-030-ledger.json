@@ -1,0 +1,758 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0115",
+    "pickerOrdinal": 17,
+    "content": {
+      "controlled": {
+        "symbol": "PEPE",
+        "name": "Pepe",
+        "price": "$0.00000388",
+        "change": "+0.00%",
+        "favorite": "Add Pepe (PEPE) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "PEPE",
+          "name": "Pepe",
+          "price": "$0.00000381",
+          "change": "-3.08%",
+          "favorite": "Add PEPE to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "PEPE",
+          "name": "Pepe",
+          "price": "$0.00000381",
+          "change": "-3.08%",
+          "favorite": "Add PEPE to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "c6e697715973ca14d0cc96a9fb449eaf5f05e321e79e7b1ca519e49d178a57fa",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Pepe/PEPE displayed $0.00000381 and -3.08% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The 3.88e-06 fallback is rendered as $0.00000388, maintaining a nonzero number, and the favorite identifies Pepe/PEPE."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0116",
+    "pickerOrdinal": 18,
+    "content": {
+      "controlled": {
+        "symbol": "BONK",
+        "name": "Bonk",
+        "price": "$0.00000327",
+        "change": "+0.00%",
+        "favorite": "Add Bonk (BONK) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "BONK",
+          "name": "Bonk",
+          "price": "$0.00000238",
+          "change": "+2.04%",
+          "favorite": "Add BONK to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "BONK",
+          "name": "Bonk",
+          "price": "$0.00000238",
+          "change": "+2.04%",
+          "favorite": "Add BONK to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "78823272c89576c76d8360c73b19767c6c393a66b741ef2596d5db2e0595aab7",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bonk/BONK displayed $0.00000238 and +2.04% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The 3.27e-06 fallback renders as $0.00000327. The unpressed Bonk favorite is independent from Pepe."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0117",
+    "pickerOrdinal": 19,
+    "content": {
+      "controlled": {
+        "symbol": "WLD",
+        "name": "Worldcoin",
+        "price": "$0.4850",
+        "change": "+0.00%",
+        "favorite": "Add Worldcoin (WLD) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "WLD",
+          "name": "Worldcoin",
+          "price": "$0.2639",
+          "change": "+0.90%",
+          "favorite": "Add WLD to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "WLD",
+          "name": "Worldcoin",
+          "price": "$0.2639",
+          "change": "+0.90%",
+          "favorite": "Add WLD to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "d793f4198a2a9697667e0a6a3259914dda929b17c012d6f556f0149696008f87",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Worldcoin/WLD displayed $0.2639 and +0.90% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The 0.484973 fallback rounds to $0.4850. The row retains the catalog token identity and does not make a claim about the current branding of the wider organization."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0118",
+    "pickerOrdinal": 20,
+    "content": {
+      "controlled": {
+        "symbol": "POL",
+        "name": "Polygon Ecosystem Token",
+        "price": "$0.0988",
+        "change": "+0.00%",
+        "favorite": "Add Polygon Ecosystem Token (POL) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "POL",
+          "name": "Polygon Ecosystem Token",
+          "price": "$0.0818",
+          "change": "+3.41%",
+          "favorite": "Add POL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "POL",
+          "name": "Polygon Ecosystem Token",
+          "price": "$0.0818",
+          "change": "+3.41%",
+          "favorite": "Add POL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "dc1a3a40ff9f3977fe51be78ede4cf4cbba97e476865da9ca69eecdab0897e0b",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "POL was named Polygon Ecosystem Token and displayed $0.0818 and +3.41%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The 0.098777 fallback rounds to $0.0988. The named control remains distinct from the separately cataloged legacy MATIC entry."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0119",
+    "pickerOrdinal": 21,
+    "content": {
+      "controlled": {
+        "symbol": "TAO",
+        "name": "Bittensor",
+        "price": "$273.42",
+        "change": "+0.00%",
+        "favorite": "Add Bittensor (TAO) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "TAO",
+          "name": "Bittensor",
+          "price": "$195.74",
+          "change": "+2.28%",
+          "favorite": "Add TAO to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TAO",
+          "name": "Bittensor",
+          "price": "$195.74",
+          "change": "+2.28%",
+          "favorite": "Add TAO to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "673122d354c373cf0b8fd7016b61f57c7a0e662acfae7a8a65e367dde226b8e8",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bittensor/TAO displayed $195.74 and +2.28% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Fallback $273.42 matches its entry and its TAO action. The row makes no independent claim about compute or model performance."
+    },
+    "disposition": "NO-ISSUE-IN-THIS-ROW-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0120",
+    "pickerOrdinal": 22,
+    "content": {
+      "controlled": {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "price": "$95,000.00",
+        "change": "+1.99%",
+        "favorite": "Add Bitcoin (BTC) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "price": "$64,388.00",
+          "change": "-0.60%",
+          "favorite": "Add BTC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "price": "$64,388.00",
+          "change": "-0.60%",
+          "favorite": "Add BTC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "12845b894e2d5b6a9351e0b224cc957840216b7102174e97ae31020f32cbd5cc",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Bitcoin/BTC displayed $64,388.00 and -0.60% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $95,000.00 and +1.99% reconcile to the original static BTC entry. Row provenance needs the shared picker follow-up; neither capture establishes a real-time price."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0121",
+    "pickerOrdinal": 23,
+    "content": {
+      "controlled": {
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "price": "$3,850.00",
+        "change": "+3.37%",
+        "favorite": "Add Ethereum (ETH) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "price": "$1,805.21",
+          "change": "-0.84%",
+          "favorite": "Add ETH to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "price": "$1,805.21",
+          "change": "-0.84%",
+          "favorite": "Add ETH to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "8ca0f2fec932035de03070068eb649529df08d5cc335dc11fdeaffe1e263a06d",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Ethereum/ETH displayed $1,805.21 and -0.84% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $3,850.00 and +3.37% match the static ETH entry. ETH is distinct from ETC; provenance remains a shared state question."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0122",
+    "pickerOrdinal": 24,
+    "content": {
+      "controlled": {
+        "symbol": "SOL",
+        "name": "Solana",
+        "price": "$248.50",
+        "change": "+6.33%",
+        "favorite": "Add Solana (SOL) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "SOL",
+          "name": "Solana",
+          "price": "$74.29",
+          "change": "+3.49%",
+          "favorite": "Add SOL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SOL",
+          "name": "Solana",
+          "price": "$74.29",
+          "change": "+3.49%",
+          "favorite": "Add SOL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f8bf85b6595e04b36df9e215dd63b9e23d210aba3f7b7d53539a8fd50411a5af",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Solana/SOL displayed $74.29 and +3.49% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $248.50 and +6.33% match the static SOL entry. Nothing in this row establishes a current source or observation time."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0123",
+    "pickerOrdinal": 25,
+    "content": {
+      "controlled": {
+        "symbol": "BNB",
+        "name": "BNB",
+        "price": "$312.80",
+        "change": "-2.65%",
+        "favorite": "Add BNB (BNB) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "BNB",
+          "name": "BNB",
+          "price": "$591.89",
+          "change": "-0.11%",
+          "favorite": "Add BNB to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "BNB",
+          "name": "BNB",
+          "price": "$591.89",
+          "change": "-0.11%",
+          "favorite": "Add BNB to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "78086792ee0a064b8bf2a9ea9c89b6936dd836afcee1ac816566e063704ff9eb",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "BNB displayed $591.89 and -0.11%; the source intentionally uses BNB as both the name and ticker."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $312.80 and -2.65% match. The BNB (BNB) action repeats the label but remains unambiguous within the catalog. Price provenance remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0124",
+    "pickerOrdinal": 26,
+    "content": {
+      "controlled": {
+        "symbol": "XRP",
+        "name": "XRP",
+        "price": "$0.6245",
+        "change": "+4.78%",
+        "favorite": "Add XRP (XRP) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "XRP",
+          "name": "XRP",
+          "price": "$0.9746",
+          "change": "+1.75%",
+          "favorite": "Add XRP to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "XRP",
+          "name": "XRP",
+          "price": "$0.9746",
+          "change": "+1.75%",
+          "favorite": "Add XRP to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "fc46eec8ef0653b7a9c901ce5ca6981086437d8e52a90857b40b901476817a1c",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "XRP displayed $0.9746 and +1.75% with XRP as both the display name and symbol."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "Controlled $0.6245 and +4.78% match its own source entry. Four decimals preserve the sub-dollar precision; the shared fallback presentation remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0125",
+    "pickerOrdinal": 27,
+    "content": {
+      "controlled": {
+        "symbol": "ADA",
+        "name": "Cardano",
+        "price": "$0.5820",
+        "change": "-3.00%",
+        "favorite": "Add Cardano (ADA) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "ADA",
+          "name": "Cardano",
+          "price": "$0.1531",
+          "change": "+0.20%",
+          "favorite": "Add ADA to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ADA",
+          "name": "Cardano",
+          "price": "$0.1531",
+          "change": "+0.20%",
+          "favorite": "Add ADA to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "e5e8c464fe2ec20389fabca1dc018f7c4d2211b73eda5a92f5a2c577aa8840ba",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cardano/ADA displayed $0.1531 and +0.20% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.5820 and -3.00% are both seeded. The percentage sign is accurate to that source fixture; the source visibility remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0126",
+    "pickerOrdinal": 28,
+    "content": {
+      "controlled": {
+        "symbol": "DOGE",
+        "name": "Dogecoin",
+        "price": "$0.0825",
+        "change": "+5.77%",
+        "favorite": "Add Dogecoin (DOGE) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "price": "$0.0593",
+          "change": "+0.66%",
+          "favorite": "Add DOGE to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "price": "$0.0593",
+          "change": "+0.66%",
+          "favorite": "Add DOGE to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "9a65eaef183e5548dcc1ebacb75fc17f11ff5f72a731d9b4c42d91a31af29c7c",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Dogecoin/DOGE displayed $0.0593 and +0.66%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $0.0825 and +5.77% match the static DOGE pair. Its full name and named action distinguish it from the other meme-token rows. Provenance remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0127",
+    "pickerOrdinal": 29,
+    "content": {
+      "controlled": {
+        "symbol": "AVAX",
+        "name": "Avalanche",
+        "price": "$38.90",
+        "change": "+5.85%",
+        "favorite": "Add Avalanche (AVAX) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "AVAX",
+          "name": "Avalanche",
+          "price": "$7.18",
+          "change": "+0.97%",
+          "favorite": "Add AVAX to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AVAX",
+          "name": "Avalanche",
+          "price": "$7.18",
+          "change": "+0.97%",
+          "favorite": "Add AVAX to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "ed7736e1cf346e50034ad303fd62f55be9d16950c52b299c6ce45fd9e87aa82f",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Avalanche/AVAX displayed $7.18 and +0.97% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $38.90 and +5.85% match the AVAX default. The explicit asset identity is consistent. Shared fallback presentation still needs a user-facing reading."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0128",
+    "pickerOrdinal": 30,
+    "content": {
+      "controlled": {
+        "symbol": "DOT",
+        "name": "Polkadot",
+        "price": "$7.85",
+        "change": "-2.73%",
+        "favorite": "Add Polkadot (DOT) to favorites",
+        "favoritePressed": "false"
+      },
+      "historicalUnrestricted": [
+        {
+          "symbol": "DOT",
+          "name": "Polkadot",
+          "price": "$0.7308",
+          "change": "-0.03%",
+          "favorite": "Add DOT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "DOT",
+          "name": "Polkadot",
+          "price": "$0.7308",
+          "change": "-0.03%",
+          "favorite": "Add DOT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "a37cd5e87e0a12fd22cfd879f20da968a81a7f154f95d57141458d8c542864a6",
+    "contentReferences": [
+      "picker-rows-017-030-controlled.json",
+      "../continuation-2026-11-18/inventory.json"
+    ],
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Polkadot/DOT displayed $0.7308 and -0.03% in the unrestricted read."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate skeptical reread against source and controlled live capture",
+      "reason": "The controlled $7.85 and -2.73% match the DOT entry. The sub-dollar and above-dollar projections use the relevant display precision. Provenance remains open."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-FORMATTING; SHARED-PROVENANCE-REVIEW-OPEN"
+  }
+]

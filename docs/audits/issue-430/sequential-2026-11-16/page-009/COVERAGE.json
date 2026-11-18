@@ -4,9 +4,9 @@
   "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "pageStatus": "PARTIAL-REVIEW",
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
-  "textRecords": 107,
-  "firstPass": 107,
-  "secondPass": 107,
+  "textRecords": 121,
+  "firstPass": 121,
+  "secondPass": 121,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -97,7 +97,7 @@
       "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Finish #469 required checks, native deployment and custom-domain rereads at 0093 and 0095. Continue picker ordinal 17 (PEPE), remaining chart and quote branches, and isolated account order-state reconciliation.",
+  "nextAction": "Complete #469 required checks and native public rereads at 0093 and 0095. Rebase the mobile price correction onto its merged main, verify its release at 0113, and continue picker ordinal 31 (MATIC) and the shared picker quote-provenance state.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
@@ -113,9 +113,10 @@
     "trade-release-reconciliation/order-block-ledger.json",
     "trade-release-reconciliation/catalog-block-ledger.json",
     "cooldown-dialog/block-ledger.json",
-    "trade-release-reconciliation/picker-rows-001-016-ledger.json"
+    "trade-release-reconciliation/picker-rows-001-016-ledger.json",
+    "trade-release-reconciliation/picker-rows-017-030-ledger.json"
   ],
-  "rawPickerInventory": "continuation-2026-11-18/inventory.json; specific content/controls for ordinals 1–16 reviewed twice. Ordinal 17 is next; existing Block Inc. and ZS judgments preserved.",
+  "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–30 reviewed twice against controlled captures and source; ordinal 31 remains due. Shared quote provenance and named existing findings remain open.",
   "confirmedProductDefectsProductionVerified": 5,
   "latestApplicationRelease": "8400ff251984500416dfc333c079881e555bbd6b",
   "qualityRisks": [
@@ -142,5 +143,15 @@
     "record": "https://github.com/anugaweerasinghe1-del/trading101/tree/6a14cfcaa13e7a68f2770ebfe9181e4900e45753/docs/audits/issue-430/sequential-2026-11-16/page-009/portfolio-metric",
     "previewURL": "https://94a43206.tradehq-preview.pages.dev"
   },
-  "confirmedProductDefectsReproduced": 7
+  "confirmedProductDefectsReproduced": 8,
+  "nextSeparateCandidate": {
+    "branch": "audit/issue430-mobile-order-wording-20261118",
+    "localHead": "0d4ccf5",
+    "finding": "STRICT-TRADE-008",
+    "exactResumeBlock": "STRICT-0009-BLOCK-0113",
+    "firstPassAdditional": 3,
+    "secondPassAdditional": 2,
+    "status": "Local TypeScript, build and Chromium passed. Open PR after #469 protected merge.",
+    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344"
+  }
 }

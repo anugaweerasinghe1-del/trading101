@@ -27,3 +27,7 @@ Picker ordinals 1–16 have two individual readings in the unrestricted capture,
 # Cooldown production readback
 
 #468 now has the exact native Cloudflare production receipt and a subsequent public readback. All three cancellation scenarios exposed the named modal, disabled the early continuation and recorded zero trade submissions. P09 has 107 durable records with two passes. #469 has four additional candidate records, of which two await production reread. [Receipt](trade-release-reconciliation/RELEASE-468.json)
+
+The second picker chunk adds 14 individually read rows, bringing durable two-pass coverage to 121 block/version records. On several seeded fallback entries, price and change match the static catalog but no row-level source is displayed. The shared provenance question remains open for a focused review. The next picker row is MATIC at ordinal 31. [Rows 17–30](trade-release-reconciliation/picker-rows-017-030-ledger.json)
+
+An isolated, normal signed-in account fixture confirmed that an AAPL preview at $100 can be followed by a $101 recorded fill. The public mobile drawer describes the display as an exact immediate price. A candidate text-only correction passes local validation and is queued behind #469. [Before-edit finding](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344)
