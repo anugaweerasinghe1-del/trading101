@@ -1,0 +1,54 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0315",
+    "findingId": "STRICT-TRADE-013",
+    "text": "PEPE | 5Y simulated price scale | 0.00",
+    "sha256": "6c84223449347c3c4982c8984e8c0607672a123e92160fd3c81d36ef7c301331",
+    "scope": "public before-edit",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "captures": [
+      {
+        "path": "before-candle-small-price.json",
+        "sha256": "fbec8b837890b96aa278dadd1025473553219dfc193673ba7f7ccf3bcbae3d11"
+      },
+      {
+        "path": "before-candle-small-source.json",
+        "sha256": "86509b24633e875fcacba50ecf5dd0e10faa10dd0fec05541164f5919aa2a83f"
+      }
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "In both current widths the picker preserves $0.00000388 but all recorded candle price labels render 0.00."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The extracted checked-in generator independently returns 0.0001 for every first OHLC component, more than 25 times the source price.",
+      "reviewer": "Codex assistant, separate extracted source test"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0316",
+    "findingId": "STRICT-TRADE-013",
+    "text": "PEPE | 5Y simulated price scale | distinct positive prices",
+    "sha256": "5c0ee73df593e0215e1ca4db1c6b9c28d2cef6ab657d95baf32a78e1ce680c87",
+    "scope": "compiled candidate",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "captures": [
+      {
+        "path": "local-candle-small-price.json",
+        "sha256": "f303d64571567a6aac86864c8206f7ed9acc189de66be7a24eed2a114689faf8"
+      },
+      {
+        "path": "local-candle-small-source.json",
+        "sha256": "cdfd71d74ceb1ea40f746ccd4d77a0584a5bf416f41abd5be6bada1c9fa05bcc"
+      }
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "At both widths the corrected compiled chart paints multiple distinct positive labels below 0.0001. The four extracted comparisons preserve positive ordered OHLC and distinct times."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]

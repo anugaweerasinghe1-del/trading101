@@ -1,0 +1,93 @@
+{
+  "scope": "Explicit synthetic browser-local portfolio records; same-origin GET only",
+  "rows": [
+    {
+      "width": 390,
+      "case": "single",
+      "snapshot": {
+        "cash": 1000,
+        "totalValue": 77575.0,
+        "positions": [
+          {
+            "asset": {
+              "id": "aapl",
+              "symbol": "AAPL",
+              "name": "Apple Inc.",
+              "type": "stock",
+              "price": 255.25,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 300,
+            "avgPrice": 250,
+            "currentValue": 76575.0,
+            "profitLoss": 1575.0,
+            "profitLossPercent": 2.0999999999999908
+          }
+        ],
+        "trades": [
+          {
+            "id": "fixture-aapl",
+            "assetId": "aapl",
+            "symbol": "AAPL",
+            "type": "buy",
+            "quantity": 300,
+            "price": 250,
+            "total": 75000,
+            "timestamp": "2026-11-18T00:00:00Z"
+          }
+        ]
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $77.6K\n• Cash: $1.0K (1% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 99% of book, P&L +2.10%\n\nObservation: Cash is 1% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• AAPL is 99% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nTrade history review (1 recorded trades):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:28:03.368101+00:00"
+    },
+    {
+      "width": 1440,
+      "case": "single",
+      "snapshot": {
+        "cash": 1000,
+        "totalValue": 77575.0,
+        "positions": [
+          {
+            "asset": {
+              "id": "aapl",
+              "symbol": "AAPL",
+              "name": "Apple Inc.",
+              "type": "stock",
+              "price": 255.25,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 300,
+            "avgPrice": 250,
+            "currentValue": 76575.0,
+            "profitLoss": 1575.0,
+            "profitLossPercent": 2.0999999999999908
+          }
+        ],
+        "trades": [
+          {
+            "id": "fixture-aapl",
+            "assetId": "aapl",
+            "symbol": "AAPL",
+            "type": "buy",
+            "quantity": 300,
+            "price": 250,
+            "total": 75000,
+            "timestamp": "2026-11-18T00:00:00Z"
+          }
+        ]
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $77.6K\n• Cash: $1.0K (1% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 99% of book, P&L +2.10%\n\nObservation: Cash is 1% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• AAPL is 99% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nTrade history review (1 recorded trades):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:28:03.476577+00:00"
+    }
+  ]
+}
