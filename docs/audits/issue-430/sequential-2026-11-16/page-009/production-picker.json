@@ -1,0 +1,22 @@
+[
+  {
+    "width": 390,
+    "atUTC": "2026-11-18T01:43:40.498500+00:00",
+    "quoteBeforePause": "Provider snapshot",
+    "picker": {
+      "originalResultCount": 170,
+      "emptyAX": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: ZZZZ-example\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- paragraph: No assets found",
+      "forexAX": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: EUR/USD\n- button \"All\"\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\" [pressed]\n- button \"Commodities\"\n- button \"Add EUR/USD to favorites\":\n  - img\n- button \"EUR/USD Euro / US Dollar 1.0892 USD +0.22%\":\n  - text: EUR/USD Euro / US Dollar 1.0892 USD\n  - img\n  - text: +0.22%"
+    }
+  },
+  {
+    "width": 1440,
+    "atUTC": "2026-11-18T01:43:40.768280+00:00",
+    "quoteBeforePause": "Loading quote…",
+    "picker": {
+      "originalResultCount": 170,
+      "emptyAX": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: ZZZZ-example\n- button \"All\" [pressed]\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\"\n- button \"Commodities\"\n- paragraph: No assets found",
+      "forexAX": "- img\n- textbox \"Search assets by name or symbol\":\n  - /placeholder: Search 170 assets...\n  - text: EUR/USD\n- button \"All\"\n- button \"Crypto\"\n- button \"Stocks\"\n- button \"ETFs\"\n- button \"Forex\" [pressed]\n- button \"Commodities\"\n- button \"Add EUR/USD to favorites\":\n  - img\n- button \"EUR/USD Euro / US Dollar 1.0892 USD +0.22%\":\n  - text: EUR/USD Euro / US Dollar 1.0892 USD\n  - img\n  - text: +0.22%"
+    }
+  }
+]

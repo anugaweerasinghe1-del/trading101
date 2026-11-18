@@ -1,0 +1,65 @@
+{
+  "pageId": "STRICT-0009",
+  "url": "https://www.thetradehq.com/trade",
+  "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "pageStatus": "PARTIAL-REVIEW",
+  "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
+  "textRecords": 57,
+  "firstPass": 57,
+  "secondPass": 54,
+  "partialCoverage": true,
+  "strictPageClosure": false,
+  "rawBodyOccurrences": [
+    47,
+    438,
+    440,
+    442
+  ],
+  "verifiedExistingFindings": [
+    "IND-P09-001",
+    "IND-P09-002"
+  ],
+  "findings": [
+    {
+      "id": "STRICT-TRADE-001",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "source": "src/pages/Trade.tsx intro",
+      "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966282274",
+      "block": "STRICT-0009-BLOCK-0041",
+      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "policyViolation": false
+    },
+    {
+      "id": "STRICT-TRADE-002",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6966370315",
+      "blocks": [
+        "STRICT-0009-BLOCK-0042",
+        "STRICT-0009-BLOCK-0043"
+      ],
+      "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+      "policyViolation": false,
+      "reference": {
+        "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+        "retrievedUTC": "2026-11-17",
+        "criterion": "WCAG 2.2 SC 4.1.2"
+      },
+      "evidence": "before-drawer.json",
+      "localVerification": [
+        "local-trade-drawer.json",
+        "local-btc-drawer.json"
+      ]
+    }
+  ],
+  "nextAction": "Review and reconcile the remaining supplied/hydrated metadata, responsive order drawer, asset picker, quote/cache/pause and candle states, path-specific chart labels, local journal and error/result states. Countercheck shown-price wording in note blocks 0006 and 0016 against the account execution RPC. Keep authenticated live operation separate.",
+  "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
+  "closureCredit": 0,
+  "pendingSecondPass": [
+    "STRICT-0009-BLOCK-0044",
+    "STRICT-0009-BLOCK-0045",
+    "STRICT-0009-BLOCK-0046"
+  ],
+  "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
+  "pickerContinuations": "production-picker.json; no all-result reading credit"
+}

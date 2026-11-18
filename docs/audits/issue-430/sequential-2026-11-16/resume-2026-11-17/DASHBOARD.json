@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T01:29:57.170241+00:00",
+  "updatedAtUTC": "2026-11-18T01:44:50.690786+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -10,7 +10,11 @@
     "canonicalPageFreshlyEditoriallyExaminedThisSession": 1,
     "activePage": "STRICT-0009",
     "activeCoverage": {
-      "status": "STRICT-PENDING; supplemental evidence retained"
+      "status": "PARTIAL-REVIEW",
+      "firstPass": 57,
+      "secondPass": 54,
+      "record": "../page-009/COVERAGE.json",
+      "strictClosureCredit": 0
     },
     "remainingNotStrictClosed": 156,
     "partiallyReviewedCanonicalPages": 14,
@@ -104,7 +108,7 @@
     "productFixesMergedAwaitingNativeReceipt": 0,
     "productFixesLocalAwaitingRelease": 0
   },
-  "currentBlock": "STRICT-0009 initial HTML/metadata, guest Trade UI and source",
+  "currentBlock": "STRICT-0009-BLOCK-0044",
   "historicalNovember17CheckpointFindings": {
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 5,
@@ -124,5 +128,10 @@
       "guideOccurrence": "release462 pending",
       "newUniqueRootCount": 0
     }
+  },
+  "currentTradeFindings": {
+    "confirmedProductOrContentDefects": 2,
+    "productionVerified": 0,
+    "qualityRisksRecorded": 0
   }
 }
