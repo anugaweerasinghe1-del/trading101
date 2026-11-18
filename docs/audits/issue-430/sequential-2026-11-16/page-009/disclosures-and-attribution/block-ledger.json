@@ -1,0 +1,110 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0452",
+    "findingId": "STRICT-TRADE-015",
+    "text": "Details | expanded state absent",
+    "sha256": "276b08af13e311209432a926e707ecedda02c49b32f1feeed00782662ed2d718",
+    "contentReference": "before-disclosures.json",
+    "contentSHA256": "d7b9a8f63516facf3f4300bb6c42c518ec6c47054eba918c5e19dfb146ef8300",
+    "source": "src/components/trading/MinimalistPortfolioBar.tsx",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both user layouts show expanded details after Enter while the control has no expanded attribute."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The second browser and original component confirm the text and state problem in both open and closed positions.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0453",
+    "findingId": "STRICT-TRADE-015",
+    "text": "Details | expanded true / false",
+    "sha256": "ccb54cb85c9725a42ead8c51f5969d94cec53bab2169204c1d3d52b88895f95a",
+    "contentReference": "local-disclosures.json",
+    "contentSHA256": "08e065327413e57e67febf04878e422f595a0a513f165eab568ccb87dfcae57f",
+    "source": "src/components/trading/MinimalistPortfolioBar.tsx",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled layouts expose collapsed and expanded states and preserve the Open P&L contents."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0454",
+    "findingId": "STRICT-TRADE-016",
+    "text": "Embedded mentor | suggestion and Learning Center instructions",
+    "sha256": "d1d9c36b4164079b2aa3e7f1a6683c49fbb13f4d030d3e78085cd999991ebe63",
+    "contentReference": "before-disclosures.json",
+    "contentSHA256": "d7b9a8f63516facf3f4300bb6c42c518ec6c47054eba918c5e19dfb146ef8300",
+    "source": "src/lib/smartMentor.ts; src/components/trading/AIMentor.tsx",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two public views instruct the reader to select an absent suggestion or use an absent link from inside the embedded dialog."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A separate source read confirms suggested short actions are hidden after the greeting reply and no Learning Center link is rendered in the embedded dialog.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0455",
+    "findingId": "STRICT-TRADE-016",
+    "text": "Embedded mentor | type a topic",
+    "sha256": "87de1ff6a7a23bcc670d142001b7250057f2aa17eef8108a9188f3f9c68b4ba2",
+    "contentReference": "local-disclosures.json",
+    "contentSHA256": "08e065327413e57e67febf04878e422f595a0a513f165eab568ccb87dfcae57f",
+    "source": "src/lib/smartMentor.ts",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The embedded greeting and unknown-topic variant give correct instructions. The standalone engine stays byte-identical on 98 inputs."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0456",
+    "findingId": "STRICT-TRADE-017",
+    "text": "TradingView Lightweight Charts | upstream notice missing",
+    "sha256": "74f20a1da39e0fd89ea7d1265c337913ab13d25961b74200055f4a540fcc371f",
+    "contentReference": "before-chart-license.json",
+    "contentSHA256": "7757c8a6b43b6a37540046499a61c7eceb8aafd12f1fedfc2ea64ef692823288",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "pre-edit custom-domain observation",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both public chart layouts expose the existing logo link and lack the versioned NOTICE text."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The installed 4.2.0 package README and separately fetched versioned upstream NOTICE distinguish the link requirement from the required displayed notice.",
+      "reviewer": "Codex assistant, separate source and browser review"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0457",
+    "findingId": "STRICT-TRADE-017",
+    "text": "TradingView Lightweight Charts™ · Copyright (с) 2023 TradingView, Inc.",
+    "sha256": "137e0ef2f45c4034f850b2c6d2f6de2062b57448961720657240f4f31370de93",
+    "contentReference": "local-chart-license.json",
+    "contentSHA256": "4e75e36453ab0a7aeafa971e9da462a4a8cb6468bd7d1616fa4b51dad66c10e0",
+    "source": "src/components/trading/NeuralPulseChart.tsx",
+    "sourceVersion": "compiled candidate",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both layouts render the upstream attribution text and expose a stable vendor link. The existing chart link is preserved."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]

@@ -175,8 +175,7 @@ const GREETING_RESPONSE =
   "• Bull/bear markets, leverage, position sizing\n" +
   "• Dollar-cost averaging, diversification, compounding\n" +
   "• Trading psychology, FOMO, revenge trading\n" +
-  "• Crypto, ETFs, taxes\n\n" +
-  "Type a topic or pick a suggestion below.";
+  "• Crypto, ETFs, taxes\n\n";
 
 const FALLBACK_RESPONSE =
   "I don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\n" +
@@ -184,16 +183,17 @@ const FALLBACK_RESPONSE =
   "Technicals: RSI, moving averages, candlestick patterns, support/resistance.\n" +
   "Psychology: FOMO, revenge trading, discipline.\n" +
   "Markets: bull/bear markets, leverage, crypto, ETFs.\n\n" +
-  "Try asking about one term from your lesson at a time, or use the Learning Center link to find a related guide.";
+  "Try asking about one term from your lesson at a time";
 
 /**
  * Match an input string to the best-fit mentor topic.
  * Returns an expert canned answer + disclaimer, or a friendly fallback.
  */
-export function getSmartMentorReply(input: string): string {
+export function getSmartMentorReply(input: string, surface: "standalone" | "portfolio" = "standalone"): string {
   const text = input.toLowerCase().trim();
+  const greeting = GREETING_RESPONSE + (surface === "portfolio" ? "Type a topic to start." : "Type a topic or pick a suggestion below.");
 
-  if (!text) return GREETING_RESPONSE + DISCLAIMER;
+  if (!text) return greeting + DISCLAIMER;
 
   // Match whole words and phrases so acronyms such as ETH and EMA
   // cannot turn unrelated prompts about a method or a reminder into lessons.
@@ -212,8 +212,9 @@ export function getSmartMentorReply(input: string): string {
   }
 
   if (best) return best.topic.answer + DISCLAIMER;
-  if (/^(hi|hey|hello|sup|yo|hola)( there)?$/.test(normalize(text))) return GREETING_RESPONSE + DISCLAIMER;
-  return FALLBACK_RESPONSE + DISCLAIMER;
+  if (/^(hi|hey|hello|sup|yo|hola)( there)?$/.test(normalize(text))) return greeting + DISCLAIMER;
+  const guidance = surface === "portfolio" ? "." : ", or use the Learning Center link to find a related guide.";
+  return FALLBACK_RESPONSE + guidance + DISCLAIMER;
 }
 
 /**
@@ -325,5 +326,5 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   }
 
   // Fall back to topic engine
-  return "Built-in rule-based educational response:\n\n" + getSmartMentorReply(input);
+  return "Built-in rule-based educational response:\n\n" + getSmartMentorReply(input, "portfolio");
 }

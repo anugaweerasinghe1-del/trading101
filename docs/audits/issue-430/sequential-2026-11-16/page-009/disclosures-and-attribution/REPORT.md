@@ -1,0 +1,7 @@
+# P09 disclosures and chart attribution
+
+- **STRICT-TRADE-015**. The portfolio disclosure opens and closes with Enter but did not expose which state was active. The compiled candidate exposes both states without changing its accounting or content. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968340833)
+- **STRICT-TRADE-016**. The embedded mentor gave standalone instructions after the UI had removed suggestions, and referred to a Learning Center link outside the dialog. The embedded reply now describes the action available in its own interface. Standalone responses are byte-identical on 98 authored and edge inputs. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968340833)
+- **STRICT-TRADE-017**. The public chart had TradingView's built-in link, with the required versioned attribution text absent. The candidate displays the 4.2.0 upstream notice and link beside the chart. The existing logo and chart behavior are preserved. [Before-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968382996) · [Upstream source, retrieved 18 November 2026](https://github.com/tradingview/lightweight-charts/blob/v4.2.0/NOTICE)
+
+TypeScript, the editorial UI verifier, the Cloudflare build and compiled browser checks passed. The hosted and native readbacks remain required after the preceding release.
