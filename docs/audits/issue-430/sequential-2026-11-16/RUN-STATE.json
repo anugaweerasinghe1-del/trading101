@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T03:15:03.789614+00:00",
+  "updatedAtUTC": "2026-11-18T03:18:14.754510+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -19,13 +19,13 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify native production #470 and reread 0113. Complete local and immutable preview checks of the candlestick corrections and preserve the exact #470 native and domain evidence before any following merge. Remaining chart and order states and the shared quote provenance risk stay open.",
+  "nextStep": "Finish #471 exact checks, protected merge, native confirmation and custom-domain rereads for 0271 and 0273. Open the prepared Explore and mentor candidate on the merged base, verify 0296, 0298 and 0300, and continue the remaining interactive states, guest and conditional ledger reconciliation.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 40,
+  "freshReviewTotalClosedCases": 41,
   "latestClosedPageRecord": "resume-2026-11-17/guide/PAGE-RECORD.json",
   "latestCodeMergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a",
   "privacyFindings": {
@@ -36,18 +36,18 @@
     "closed": 3
   },
   "production": {
-    "mergeSHA": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+    "mergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a",
     "nativeCloudflare": {
-      "id": "52ed853e-47b1-4267-a0fa-cc3ad696ef0b",
-      "sha": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
+      "id": "4df66d90-86d5-4692-a742-cbc2c710b4a1",
+      "sha": "6327bffee9431df55d74f676acb09faab18c8d3a",
       "environment": "production",
       "branch": "main",
       "status": "success",
-      "createdAt": "2026-11-18T02:51:20.677655Z"
+      "createdAt": "2026-11-18T03:05:57.919855Z"
     },
-    "nativeObservedAtUTC": "2026-11-18T03:03:52.406Z",
-    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44226262123/job/134544831390",
-    "liveRereadAtUTC": "2026-11-18T03:05:19.717216+00:00"
+    "nativeObservedAtUTC": "2026-11-18T03:16:17.092Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44227979782/job/134549786336",
+    "liveRereadAtUTC": "2026-11-18T03:16:50.144417+00:00"
   },
   "resumeRestrictions": [
     "Ad serving disabled",
@@ -57,7 +57,7 @@
   ],
   "latestPR": {
     "number": 470,
-    "status": "MERGED; active native and custom-domain verification pending",
+    "status": "MERGED; EXACT NATIVE PRODUCTION AND LIVE VERIFIED",
     "mergeSHA": "6327bffee9431df55d74f676acb09faab18c8d3a"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
@@ -84,7 +84,7 @@
   },
   "publisherPagesRemaining": 156,
   "caseTotals": {
-    "confirmedFixedRechecked": 31,
+    "confirmedFixedRechecked": 32,
     "qualityRisksFixedRechecked": 8,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
@@ -115,7 +115,11 @@
     "status": "PARTIAL-REVIEW",
     "nextPickerOrdinal": null,
     "pendingNativeReadbackBlocks": [
-      "STRICT-0009-BLOCK-0113"
+      "STRICT-0009-BLOCK-0271",
+      "STRICT-0009-BLOCK-0273",
+      "STRICT-0009-BLOCK-0296",
+      "STRICT-0009-BLOCK-0298",
+      "STRICT-0009-BLOCK-0300"
     ]
   },
   "guideCoverage": {
@@ -179,7 +183,7 @@
     "ownerDecisionOpen": 1,
     "newCasesImplementedThisResume": 7
   },
-  "latestCodeReleaseReceipt": "page-009/trade-release-reconciliation/RELEASE-469.json",
+  "latestCodeReleaseReceipt": "page-009/trade-release-reconciliation/RELEASE-470.json",
   "sessionCaseTotals": {
     "confirmedProductErrorsFixedRechecked": 7,
     "confirmedPolicyIssues": 0,
@@ -196,18 +200,18 @@
     "strictStatus": "PARTIAL-REVIEW",
     "textRecords": 290,
     "firstPass": 290,
-    "secondPass": 289,
-    "separateCandidateRecords": 0,
-    "separateCandidateSecondPass": 0,
+    "secondPass": 290,
+    "separateCandidateRecords": 4,
+    "separateCandidateSecondPass": 2,
     "pickerRowsTwoPass": 170,
     "pickerRowsTotal": 170,
-    "confirmedProductDefects": 10,
-    "confirmedProductDefectsProductionVerified": 7,
+    "confirmedProductDefects": 12,
+    "confirmedProductDefectsProductionVerified": 8,
     "substantiatedQualityRisksOpen": 3,
-    "currentNativeVerificationBlock": [
-      "STRICT-0009-BLOCK-0113"
-    ],
-    "mentorTopicResponsesTwoPass": 21
+    "currentNativeVerificationBlock": null,
+    "mentorTopicResponsesTwoPass": 21,
+    "queuedCandidateRecords": 6,
+    "queuedCandidateSecondPass": 3
   },
   "partiallyReviewedPublisherPages": 14
 }

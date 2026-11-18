@@ -45,3 +45,7 @@ The picker quote-origin follow-up is recorded once as a shared quality risk. Its
 #469 now has exact native Cloudflare confirmation and eight subsequent browser cases on /trade and /trade/btc. Both corrections pass and remain fixture-scoped. #470 subsequently protected-merged with all five checks passed. The post-native mobile order reread remains due. All 170 picker rows now have two recorded individual readings. The page remains partial with 269 first-pass records and 268 second-pass records. [Exact #469 receipt](trade-release-reconciliation/RELEASE-469.json)
 
 The embedded mentor now has 21 typed-topic responses with individual two-pass notes. These include all reachable curated topics, the embedded risk branch, greeting, unknown topic and the refusal to give a specific trade. Five were independently replayed at the mobile width. Two follow-ups concern the greeting and fallback navigation. [Mentor response ledger](trade-release-reconciliation/mentor-library-ledger.json)
+
+# Order estimate production readback
+
+#470 now has its exact native production confirmation and later browser checks in two mobile drawers and the desktop comparison. The page has 290 durable records with both reads. Four candlestick and six Explore/mentor records remain on separate candidate branches with their production second readings still due. [Exact #470 receipt](trade-release-reconciliation/RELEASE-470.json)

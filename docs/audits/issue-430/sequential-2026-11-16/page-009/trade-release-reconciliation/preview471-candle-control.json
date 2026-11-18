@@ -1,0 +1,491 @@
+{
+  "scope": "Same-origin GET only, public guest, keyboard selection, fallback candle state",
+  "rows": [
+    {
+      "width": 390,
+      "path": "/trade",
+      "capturedAtUTC": "2026-11-18T03:12:06.852280+00:00",
+      "cases": [
+        {
+          "active": "1M",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\" [pressed]\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1D",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\" [pressed]\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1W",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\" [pressed]\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\" [pressed]\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "5Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\" [pressed]\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "path": "/trade",
+      "capturedAtUTC": "2026-11-18T03:12:07.457914+00:00",
+      "cases": [
+        {
+          "active": "1M",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\" [pressed]\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1D",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\" [pressed]\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1W",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\" [pressed]\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\" [pressed]\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "5Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            }
+          ],
+          "accessibility": "- text: USDC/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\" [pressed]\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "path": "/trade?journey=1",
+      "capturedAtUTC": "2026-11-18T03:12:07.306305+00:00",
+      "cases": [
+        {
+          "active": "1M",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: AAPL/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\" [pressed]\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1D",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: AAPL/USD ● Simulated\n- button \"1D\" [pressed]\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1W",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: AAPL/USD ● Simulated\n- button \"1D\"\n- button \"1W\" [pressed]\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "1Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            }
+          ],
+          "accessibility": "- text: AAPL/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\" [pressed]\n- button \"5Y\"\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        },
+        {
+          "active": "5Y",
+          "options": [
+            {
+              "label": "1D",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1W",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1M",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "1Y",
+              "visuallySelected": false,
+              "pressed": "false"
+            },
+            {
+              "label": "5Y",
+              "visuallySelected": true,
+              "pressed": "true"
+            }
+          ],
+          "accessibility": "- text: AAPL/USD ● Simulated\n- button \"1D\"\n- button \"1W\"\n- button \"1M\"\n- button \"1Y\"\n- button \"5Y\" [pressed]\n- text: Lower illustrative band −3% Upper illustrative band +3.5%"
+        }
+      ]
+    }
+  ]
+}
