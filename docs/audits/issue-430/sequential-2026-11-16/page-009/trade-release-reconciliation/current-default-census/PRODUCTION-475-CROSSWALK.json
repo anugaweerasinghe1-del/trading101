@@ -1,0 +1,1473 @@
+{
+  "pageId": "STRICT-0009",
+  "sourceRevision": "08054db9181da3dd88728e0d0270c100e8fbd199",
+  "checkedAtUTC": "2026-11-18T09:11:01.275094+00:00",
+  "state": "PUBLIC AND SOURCE CROSSWALK; subsequent fractional Sell findings remain pending",
+  "views": [
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "width": 390,
+      "theme": "dark",
+      "js": false,
+      "capturedAtUTC": "2026-11-18T09:00:40.709484+00:00",
+      "bodyOccurrences": 47,
+      "selectedElementOccurrences": 0,
+      "linkOccurrences": 23,
+      "faqCount": 0,
+      "sha256": "ae0002993c90ae10f2d6bcbc4190d2d39420c33a7b3e525c3f6e65a8ead46baf",
+      "evidence": "production475-final-capture-0.json",
+      "initialResponseSHA256": "7d8156d86562e1635e3d30ce381500d7596c3e60330913503475d6a7650b9afd",
+      "comparisonBase": "reconciliation-471-473-capture-0.json",
+      "changes": {
+        "occurrences": {
+          "added": [
+            {
+              "projection": {
+                "area": "article",
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            }
+          ],
+          "removedCount": 6
+        },
+        "controls": {
+          "added": [],
+          "removedCount": 0
+        },
+        "links": {
+          "added": [],
+          "removedCount": 0
+        },
+        "notes": {
+          "added": [
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            }
+          ],
+          "removedCount": 6
+        }
+      }
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "width": 390,
+      "theme": "light",
+      "js": true,
+      "capturedAtUTC": "2026-11-18T09:01:02.640653+00:00",
+      "bodyOccurrences": 443,
+      "selectedElementOccurrences": 43,
+      "linkOccurrences": 143,
+      "faqCount": 5,
+      "sha256": "3e0e04c86a656d2706b386b08e4215a26708236ac1874fbe4730ed0c5f3b3bde",
+      "evidence": "production475-final-capture-1.json",
+      "initialResponseSHA256": "7d8156d86562e1635e3d30ce381500d7596c3e60330913503475d6a7650b9afd",
+      "comparisonBase": "reconciliation-471-473-capture-1.json",
+      "changes": {
+        "occurrences": {
+          "added": [
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "$0.9889",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "-0.0047",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "-0.47",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "title",
+                "text": "USDC practice price chart",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "desc",
+                "text": "Use the left and right arrow keys to review chart times and prices.",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:15 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:33 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "09:01 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$0.98",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$0.992",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$1.003",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "08:14 AM",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "span",
+                "text": "99928.2796",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "summary",
+                "text": "View candlestick data",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0479"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "TradingView Lightweight Charts™ · Copyright (с) 2023",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "a",
+                "text": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "article",
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            },
+            {
+              "projection": {
+                "area": null,
+                "tag": "span",
+                "text": "09:01",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            }
+          ],
+          "removedCount": 20
+        },
+        "controls": {
+          "added": [
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": "false",
+                "label": null,
+                "node": "BUTTON",
+                "pressed": null,
+                "role": null,
+                "text": "Details",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0453"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "true",
+                "role": null,
+                "text": "Buy",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "false",
+                "role": null,
+                "text": "Sell",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            }
+          ],
+          "removedCount": 3
+        },
+        "links": {
+          "added": [
+            {
+              "projection": {
+                "href": "https://www.tradingview.com/",
+                "label": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            }
+          ],
+          "removedCount": 0
+        },
+        "notes": {
+          "added": [
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            }
+          ],
+          "removedCount": 6
+        }
+      }
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "width": 1440,
+      "theme": "dark",
+      "js": true,
+      "capturedAtUTC": "2026-11-18T09:00:54.471248+00:00",
+      "bodyOccurrences": 450,
+      "selectedElementOccurrences": 43,
+      "linkOccurrences": 143,
+      "faqCount": 5,
+      "sha256": "e9aa52191b83bd844277e21fc36d52aa633f1fa02e3d171be12b94c8c41beed8",
+      "evidence": "production475-final-capture-2.json",
+      "initialResponseSHA256": "7d8156d86562e1635e3d30ce381500d7596c3e60330913503475d6a7650b9afd",
+      "comparisonBase": "reconciliation-471-473-capture-2.json",
+      "changes": {
+        "occurrences": {
+          "added": [
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "$0.9936",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "2.58",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "title",
+                "text": "USDC practice price chart",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "desc",
+                "text": "Use the left and right arrow keys to review chart times and prices.",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:12 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:19 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:26 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:33 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:40 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:47 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:54 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "09:00 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$0.965",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$0.98",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$0.995",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$1.01",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "08:11 AM",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "span",
+                "text": "99928.2796",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "summary",
+                "text": "View candlestick data",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0479"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "TradingView Lightweight Charts™ · Copyright (с) 2023",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "a",
+                "text": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "No. Every trade uses virtual currency only — no real funds are ever at risk. TradeHQ is built purely for education and practice. (Educational simulation only — not financial advice.)",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0034"
+            },
+            {
+              "projection": {
+                "area": "article",
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            },
+            {
+              "projection": {
+                "area": null,
+                "tag": "span",
+                "text": "08:54",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            }
+          ],
+          "removedCount": 25
+        },
+        "controls": {
+          "added": [
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": "false",
+                "label": null,
+                "node": "BUTTON",
+                "pressed": null,
+                "role": null,
+                "text": "Details",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0453"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "true",
+                "role": null,
+                "text": "Buy",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "false",
+                "role": null,
+                "text": "Sell",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            }
+          ],
+          "removedCount": 4
+        },
+        "links": {
+          "added": [
+            {
+              "projection": {
+                "href": "https://www.tradingview.com/",
+                "label": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            }
+          ],
+          "removedCount": 1
+        },
+        "notes": {
+          "added": [
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            }
+          ],
+          "removedCount": 6
+        }
+      }
+    },
+    {
+      "url": "https://www.thetradehq.com/trade?journey=1",
+      "width": 1440,
+      "theme": "light",
+      "js": true,
+      "capturedAtUTC": "2026-11-18T09:00:54.726729+00:00",
+      "bodyOccurrences": 455,
+      "selectedElementOccurrences": 44,
+      "linkOccurrences": 145,
+      "faqCount": 5,
+      "sha256": "df6fdf01b7c71cbdc5daeb4a65e0f04aee6b5b0cfbb4c81c5ed9e22e67805b8a",
+      "evidence": "production475-final-capture-3.json",
+      "initialResponseSHA256": "7d8156d86562e1635e3d30ce381500d7596c3e60330913503475d6a7650b9afd",
+      "comparisonBase": "reconciliation-471-473-capture-3.json",
+      "changes": {
+        "occurrences": {
+          "added": [
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "$261.42",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "11.33",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "4.53",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "title",
+                "text": "AAPL practice price chart",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "desc",
+                "text": "Use the left and right arrow keys to review chart times and prices.",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0477"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:12 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:19 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:26 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:33 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:40 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:47 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "08:54 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "09:00 AM",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$248.052",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$252.052",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$256.052",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "tspan",
+                "text": "$262.634",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "08:11 AM",
+                "visible": false
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "span",
+                "text": "391.3813",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "summary",
+                "text": "View candlestick data",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0479"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "p",
+                "text": "TradingView Lightweight Charts™ · Copyright (с) 2023",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "main",
+                "tag": "a",
+                "text": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            },
+            {
+              "projection": {
+                "area": "article",
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "area": "section",
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            },
+            {
+              "projection": {
+                "area": null,
+                "tag": "span",
+                "text": "$262.634",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "Generated timestamp, chart point or numeric balance from the corresponding existing chart/quote/portfolio projection"
+            }
+          ],
+          "removedCount": 24
+        },
+        "controls": {
+          "added": [
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": "false",
+                "label": null,
+                "node": "BUTTON",
+                "pressed": null,
+                "role": null,
+                "text": "Details",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0453"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "true",
+                "role": null,
+                "text": "Buy",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            },
+            {
+              "projection": {
+                "disabled": false,
+                "expanded": null,
+                "label": null,
+                "node": "BUTTON",
+                "pressed": "false",
+                "role": null,
+                "text": "Sell",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0481"
+            }
+          ],
+          "removedCount": 3
+        },
+        "links": {
+          "added": [
+            {
+              "projection": {
+                "href": "https://www.tradingview.com/",
+                "label": "TradingView, Inc.",
+                "visible": true
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0457"
+            }
+          ],
+          "removedCount": 0
+        },
+        "notes": {
+          "added": [
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose from 170 simulated assets and practise placing buy or sell orders. Every account starts with $100,000 in virtual cash. Educational simulation — no real money and no brokerage relationship."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0470"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "Choose an instrument, side and quantity to preview a market practice order. Guest orders use the browser's virtual execution input and are recorded in that browser. For signed-in orders, the server selects an eligible quote at execution, so the fill price may differ from the estimate. Account cash, positions and server-recorded trade history restore across devices when the service is available."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0471"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "The desk supports market practice orders only. A signed-in order may pause if an eligible quote is unavailable. The glossary explains limit and stop orders. Learners choose their own quantities and compare hypothetical exposure to practise the arithmetic. The simplified fill model does not validate real-market risk management."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0472"
+            },
+            {
+              "projection": {
+                "tag": "p",
+                "text": "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Simplified practice fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0473"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "The market practice order shows a price estimate. Signed-in fills use an eligible quote at execution. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0474"
+            },
+            {
+              "projection": {
+                "tag": "li",
+                "text": "Limit orders appear in the learning material. The current simulator supports market practice orders only."
+              },
+              "count": 1,
+              "reviewRecord": "STRICT-0009-BLOCK-0475"
+            }
+          ],
+          "removedCount": 6
+        }
+      }
+    }
+  ],
+  "sourceExpressionReconciliation": [
+    {
+      "scope": "Canonical, indexability, metadata, sharing image and FAQ",
+      "records": [
+        "0001–0041",
+        "0460–0464",
+        "0470–0475"
+      ],
+      "notes": "Four captures retain exact title, canonical, metadata, structured data and images for the current route. All five hydrated answers and no-JavaScript fallback are accounted for."
+    },
+    {
+      "scope": "Asset picker, class context and derived insights",
+      "records": [
+        "0065–0080",
+        "0091–0269"
+      ],
+      "notes": "All 170 unique seeded catalog rows have individual reviews. The chart and price formats, class copy, practice thresholds and numeric expressions are shared projections, with five distinct asset-class readings. Selected asset names and symbols reuse the exact catalog records."
+    },
+    {
+      "scope": "Chart, quote and responsive controls",
+      "records": [
+        "0058–0064",
+        "0270–0273",
+        "0315–0316",
+        "0444–0453",
+        "0456–0457",
+        "0476–0479",
+        "0493–0495"
+      ],
+      "notes": "Chart ranges, accessible tables, synthetic and provider-shaped data, display intervals, manual quote updates and pause states use their respective source and browser evidence. Interactive time and price values are generated. Authentication and provider operations remain bounded by the specific evidence."
+    },
+    {
+      "scope": "Virtual order, guided practice, journal, cooldown",
+      "records": [
+        "0081–0090",
+        "0107–0114",
+        "0462",
+        "0480–0485",
+        "0497–0500"
+      ],
+      "notes": "Validated guest success and balance arithmetic, unavailable funds, oversell, journal gating, cooldown and cancellation, guided completion, and signed-in success and stale rejection in loopback fixtures. Identical order sources now have two newly reproduced fractional Sell findings awaiting independent production verification."
+    },
+    {
+      "scope": "Learn routes, embedded mentor and public shell",
+      "records": [
+        "0274–0300",
+        "0329",
+        "0301–0443",
+        "0454–0459",
+        "0465–0469",
+        "0486–0492",
+        "0496"
+      ],
+      "notes": "Authored mentor topics and conditional portfolio responses, Explore destinations, all footer links, newsletter UI, release notice, music and navigation are bound to their evidence. The prior two embedded mentor follow-up notes are superseded by exact #474 release wording, independently replayed on the #475 deployment."
+    }
+  ],
+  "mentorGreetingAndFallback": {
+    "records": [
+      "STRICT-0009-BLOCK-0292",
+      "STRICT-0009-BLOCK-0293",
+      "STRICT-0009-BLOCK-0455"
+    ],
+    "evidence": "../production475-final-mentor-library.json",
+    "sha256": "676c273d4a1b7f7534b7ebbb67e6e6898ef6be61bb0c8d3736b71975ed037d8a",
+    "disposition": "Both widths show the exact portfolio-surface wording. The embedded greeting directs typed input. The embedded fallback points to one term from the lesson. The standalone surface keeps its actual navigation and is separately in queue."
+  },
+  "historicalCoverage": {
+    "groupedEvidence": "GROUP-TIE-OUT.json",
+    "last32GroupsReconciledWithRelease475": [
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      244
+    ],
+    "disposition": "The previously release-gated projections now have exact native and public evidence in RELEASE-475.json. Their written content already has recorded reviews."
+  }
+}

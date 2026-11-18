@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-18T09:02:37.989373+00:00",
+  "updatedAtUTC": "2026-11-18T09:12:18.719596+00:00",
   "phase": "P09-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/trade",
   "newAuditCompletedPages": 7,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "a6ded1a5-3106-482b-a655-03b4e9e37424",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Finish the post-deployment public state crosswalk. Resolve the two historical mentor follow-up notes against the released embedded view and its actual navigation, then check strict closure eligibility.",
+  "nextStep": "Wait for #476 exact final-head required checks and hosted fixture readback, then protected merge, native production proof and fresh custom-domain checks of 0502 and 0504. The #475 public state crosswalk is complete for its source revision.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -56,9 +56,9 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 475,
-    "status": "FIXED-RECHECKED",
-    "mergeSHA": "08054db9181da3dd88728e0d0270c100e8fbd199"
+    "number": 476,
+    "status": "OPEN; hosted required checks and browser readback pending",
+    "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -114,8 +114,11 @@
     "session": "audit/issue430-trade-release-20261118",
     "status": "PARTIAL-REVIEW",
     "nextPickerOrdinal": null,
-    "pendingNativeReadbackBlocks": [],
-    "nextExactContentState": "Finish the post-deployment public state crosswalk. Resolve the two historical mentor follow-up notes against the released embedded view and its actual navigation, then check strict closure eligibility."
+    "pendingNativeReadbackBlocks": [
+      "STRICT-0009-BLOCK-0502",
+      "STRICT-0009-BLOCK-0504"
+    ],
+    "nextExactContentState": "Wait for #476 exact final-head required checks and hosted fixture readback, then protected merge, native production proof and fresh custom-domain checks of 0502 and 0504. The #475 public state crosswalk is complete for its source revision."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -193,17 +196,20 @@
   "tradeCoverageRecord": "page-009/COVERAGE.json",
   "currentTradeCoverage": {
     "strictStatus": "PARTIAL-REVIEW",
-    "textRecords": 500,
-    "firstPass": 500,
-    "secondPass": 500,
+    "textRecords": 504,
+    "firstPass": 504,
+    "secondPass": 502,
     "separateCandidateRecords": 0,
     "separateCandidateSecondPass": 0,
     "pickerRowsTwoPass": 170,
     "pickerRowsTotal": 170,
-    "confirmedProductDefects": 23,
+    "confirmedProductDefects": 25,
     "confirmedProductDefectsProductionVerified": 23,
     "substantiatedQualityRisksOpen": 3,
-    "currentNativeVerificationBlock": [],
+    "currentNativeVerificationBlock": [
+      "STRICT-0009-BLOCK-0502",
+      "STRICT-0009-BLOCK-0504"
+    ],
     "mentorTopicResponsesTwoPass": 21,
     "exploreLinkProjectionsTwoPass": 14,
     "mentorPortfolioStateProjectionsTwoPass": 12,

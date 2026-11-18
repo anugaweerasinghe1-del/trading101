@@ -1,0 +1,41 @@
+{
+  "scope": "Trade embedded local rule engine, same-origin GET only; typed topics and browser-local guest state",
+  "cases": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "items": [
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T09:03:32.519344+00:00"
+        },
+        {
+          "id": "unknown",
+          "prompt": "uncurated topic zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T09:03:32.681283+00:00"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "items": [
+        {
+          "id": "greeting",
+          "prompt": "hello",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nHey! I'm your Smart Mentor — a curated trading knowledge engine.\n\nTry asking me about:\n• Stop-losses, RSI, moving averages, candlesticks\n• Bull/bear markets, leverage, position sizing\n• Dollar-cost averaging, diversification, compounding\n• Trading psychology, FOMO, revenge trading\n• Crypto, ETFs, taxes\n\nType a topic to start.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T09:03:32.358277+00:00"
+        },
+        {
+          "id": "unknown",
+          "prompt": "uncurated topic zqx",
+          "response": "Built-in educational response:\n\nBuilt-in rule-based educational response:\n\nI don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\nOrders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\nTechnicals: RSI, moving averages, candlestick patterns, support/resistance.\nPsychology: FOMO, revenge trading, discipline.\nMarkets: bull/bear markets, leverage, crypto, ETFs.\n\nTry asking about one term from your lesson at a time.\n\n(Educational simulation only — not financial advice.)",
+          "atUTC": "2026-11-18T09:03:32.518894+00:00"
+        }
+      ]
+    }
+  ]
+}

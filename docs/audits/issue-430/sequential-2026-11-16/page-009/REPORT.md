@@ -91,3 +91,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Chart and order production readback
 
 #475 has exact native production evidence and nine fresh browser contexts on the custom domain. The five corrections and two responsive controls passed. All 500 recorded block versions now have two reads, and all 23 distinct confirmed P09 defects are production-verified. Final public state reconciliation remains open. Both current sitemaps still match the 163-page publisher queue. [Exact receipt](trade-release-reconciliation/RELEASE-475.json) · [Live sitemap comparison](trade-release-reconciliation/current-default-census/SITEMAP-475.json)
+
+# Fractional Sell follow-up
+
+The final #475 public crosswalk accounted for four current default and guided views. Both embedded mentor follow-up observations were independently replayed with their corrected text. Two further simulator defects were separately reproduced before editing. Four public guest fixtures could purchase fractional holdings and enter an exact Sell amount manually, while the shortcuts entered an invalid larger amount or zero. Mobile Sell also showed cash under availability. The compiled candidate passed, and #476 awaits hosted testing, a protected merge and native readback. The page remains partial with 504 first-pass records, 502 second-pass records, 25 confirmed defects and 23 production-verified fixes. [Before-edit evidence](fractional-sell/BEFORE.md) · [Current public crosswalk](trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json)

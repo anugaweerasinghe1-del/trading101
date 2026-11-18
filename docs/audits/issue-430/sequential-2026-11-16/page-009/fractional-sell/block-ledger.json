@@ -1,0 +1,72 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0501",
+    "findingId": "STRICT-TRADE-024",
+    "text": "Fractional holdings above four decimal places are rounded in Sell shortcuts.",
+    "sha256": "d67d2252e10d37d1f2a9dde12415aeb93ce05fae2d936a0c1ee38358bc9452f2",
+    "source": "src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx",
+    "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "production-before.json",
+    "contentSHA256": "359de1ac4efc4ce6d787aa69f36cbb3cec4cb760c5f1df04dcb2015a785d8185",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The 2.00006 position was rounded above holdings. The 0.00003 position rounded to zero. Both shortcuts disabled submission."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Manual exact entries enable the same Sell control at both widths; the separate mobile slider reproduces the rounded amounts."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0502",
+    "findingId": "STRICT-TRADE-024",
+    "text": "Sell presets, mobile slider and desktop preview preserve the supported holding quantity.",
+    "sha256": "220738f504bf022db1f44ebd3e7b314079b71cbc51061b567293a49375a9a528",
+    "source": "src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx",
+    "sourceVersion": "a232c4df20b388738b4e75365b28be5b50fc1503",
+    "contentReference": "local476-sell-balance.json",
+    "contentSHA256": "88b4f4d75c7d89055d3208123f9d2080a8c046702cc29565a98ceecf1872f6c2",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The compiled browser exercises the full holdings, a 25% fraction and exact manual entries. The same Buy fixtures still respect the fee-inclusive maximum."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0503",
+    "findingId": "STRICT-TRADE-025",
+    "text": "Mobile Sell amount shows available cash.",
+    "sha256": "cf36eec96f3b2e18c6fc9b6e2edb18acf5e1cd293761904302c2d37473a19632",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "sourceVersion": "08054db9181da3dd88728e0d0270c100e8fbd199",
+    "contentReference": "production-before.json",
+    "contentSHA256": "359de1ac4efc4ce6d787aa69f36cbb3cec4cb760c5f1df04dcb2015a785d8185",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both mobile trees show the cash balance alongside Amount (AAPL) even though Sell is limited by the AAPL held."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The two fixtures independently confirm the display includes a dollar amount while the exact holdings were used to enable Sell. The corresponding Buy context correctly shows cash."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0504",
+    "findingId": "STRICT-TRADE-025",
+    "text": "Mobile Sell shows the current holding in units of the selected asset.",
+    "sha256": "411b83f213c7844fea525249982e33ffae171a87040a18334680b2d15135b6d2",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "sourceVersion": "a232c4df20b388738b4e75365b28be5b50fc1503",
+    "contentReference": "local476-sell-balance.json",
+    "contentSHA256": "88b4f4d75c7d89055d3208123f9d2080a8c046702cc29565a98ceecf1872f6c2",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both compiled mobile fixtures show the exact AAPL holdings and omit the cash-availability label in Sell. The separate Buy regression still exposes the cash balance."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]
