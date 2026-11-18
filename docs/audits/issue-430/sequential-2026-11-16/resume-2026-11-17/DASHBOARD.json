@@ -1,29 +1,24 @@
 {
-  "updatedAtUTC": "2026-11-18T09:22:03.190868+00:00",
+  "updatedAtUTC": "2026-11-18T09:35:55.243741+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
     "ownerBlockedTerms": 1,
     "supplementaryP08toP22": 15,
     "supplementaryStrictClosureCredit": 0,
-    "newStrictClosuresThisSession": 1,
-    "canonicalPageFreshlyEditoriallyExaminedThisSession": 1,
-    "activePage": "STRICT-0009",
+    "newStrictClosuresThisSession": 2,
+    "canonicalPageFreshlyEditoriallyExaminedThisSession": 2,
+    "activePage": "STRICT-0010",
     "activeCoverage": {
-      "status": "PARTIAL-REVIEW",
-      "firstPass": 504,
-      "secondPass": 502,
-      "separateCandidatePassCounts": [
-        0,
-        0
-      ],
-      "record": "../page-009/COVERAGE.json",
+      "status": "SUPPLEMENTARY-INSPECTED-STRICT-PENDING",
+      "firstPass": 0,
+      "secondPass": 0,
       "strictClosureCredit": 0
     },
-    "remainingNotStrictClosed": 156,
-    "partiallyReviewedCanonicalPages": 14,
-    "partiallyReviewedScope": "P09–P22 supplementary inspections, no strict closure credit; Terms owner-blocked separately.",
-    "strictClosedCurrent": 7,
+    "remainingNotStrictClosed": 155,
+    "partiallyReviewedCanonicalPages": 13,
+    "partiallyReviewedScope": "P10–P22 retain supplementary coverage; Terms is separately owner-blocked.",
+    "strictClosedCurrent": 8,
     "latestClosedGuideCoverage": {
       "publisherPages": 163,
       "widerDiscoveryURLs": 480,
@@ -76,6 +71,17 @@
       ],
       "closureRecord": "PAGE-RECORD.json",
       "strictPageClosure": true
+    },
+    "latestClosedTradeCoverage": {
+      "textVersionRecords": 504,
+      "pass1": 504,
+      "pass2": 504,
+      "pickerRowsIndividuallyReviewedTwice": 170,
+      "footerLinkProjectionsReviewedTwice": 102,
+      "defaultAndGuidedBrowserViews": 4,
+      "unreconciledAuthoredDefaultDeltas": 0,
+      "nativeProductionFixReceipts": 11,
+      "overlap": "Text versions, responsive projections, controls, source traces and earlier revisions overlap. The counters do not represent unique paragraphs."
     }
   },
   "technicalInventory": {
@@ -112,10 +118,7 @@
     "productFixesMergedAwaitingNativeReceipt": 0,
     "productFixesLocalAwaitingRelease": 0
   },
-  "currentBlock": [
-    "STRICT-0009-BLOCK-0502",
-    "STRICT-0009-BLOCK-0504"
-  ],
+  "currentBlock": "STRICT-0010 live current Portfolio shell and authored states",
   "historicalNovember17CheckpointFindings": {
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 5,
@@ -138,8 +141,9 @@
   },
   "currentTradeFindings": {
     "confirmedProductOrContentDefects": 25,
-    "productionVerified": 23,
+    "productionVerified": 25,
     "qualityRisksRecorded": 3,
-    "unresolvedCandidate": 476
+    "unresolvedCandidate": null,
+    "record": "../page-009/PAGE-RECORD.json"
   }
 }

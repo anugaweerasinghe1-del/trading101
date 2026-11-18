@@ -1,0 +1,105 @@
+{
+  "pageId": "STRICT-0009",
+  "path": "/trade",
+  "url": "https://www.thetradehq.com/trade",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": true,
+  "closedAtUTC": "2026-11-18T09:35:55.243741+00:00",
+  "reviewer": "Codex assistant, including documented separate skeptical rereads. Earlier judgments reused where the exact evidence remains applicable.",
+  "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "nativeCloudflare": {
+    "id": "3243cf7f-990c-4bd5-9392-8cd8d99dc1b9",
+    "sha": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-18T09:21:11.584295Z"
+  },
+  "scope": "Current public Trade page and all identified applicable authored projections. Guest actions remain in disposable browser storage. Private alternatives are source-reviewed and isolated where reproducible.",
+  "decision": "The current source and public projections reconcile with the individual editorial ledger and reviewed states. All 25 reproduced product defects have exact release and production evidence. Three open substantiated quality risks are carried forward separately as judgments about the reviewed material.",
+  "coverage": {
+    "textVersionRecords": 504,
+    "pass1": 504,
+    "pass2": 504,
+    "pickerRowsIndividuallyReviewedTwice": 170,
+    "footerLinkProjectionsReviewedTwice": 102,
+    "defaultAndGuidedBrowserViews": 4,
+    "unreconciledAuthoredDefaultDeltas": 0,
+    "nativeProductionFixReceipts": 11,
+    "overlap": "Text versions, responsive projections, controls, source traces and earlier revisions overlap. The counters do not represent unique paragraphs."
+  },
+  "evidence": {
+    "coverage": "COVERAGE.json",
+    "finalViews": "trade-release-reconciliation/PRODUCTION-476-VIEWS.json",
+    "sourceAndStateCrosswalk": "trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json",
+    "canonicalInventory": "trade-release-reconciliation/current-default-census/SITEMAP-475.json",
+    "officialGoogleResearch": "../resume-2026-11-17/policies/refresh.json",
+    "policyApplicability": "POLICY-APPLICABILITY.md",
+    "ledgerIntegrity": "trade-release-reconciliation/LEDGER-VALIDATION-476.json",
+    "releaseReceipts": [
+      "trade-release-reconciliation/RELEASE-466.json",
+      "trade-release-reconciliation/RELEASE-467.json",
+      "trade-release-reconciliation/RELEASE-468.json",
+      "trade-release-reconciliation/RELEASE-469.json",
+      "trade-release-reconciliation/RELEASE-470.json",
+      "trade-release-reconciliation/RELEASE-471.json",
+      "trade-release-reconciliation/RELEASE-472.json",
+      "trade-release-reconciliation/RELEASE-473.json",
+      "trade-release-reconciliation/RELEASE-474.json",
+      "trade-release-reconciliation/RELEASE-475.json",
+      "trade-release-reconciliation/RELEASE-476.json"
+    ]
+  },
+  "findings": [
+    "STRICT-TRADE-001",
+    "STRICT-TRADE-002",
+    "STRICT-TRADE-003",
+    "STRICT-TRADE-004",
+    "STRICT-TRADE-005",
+    "STRICT-TRADE-006",
+    "STRICT-TRADE-007",
+    "STRICT-TRADE-008",
+    "STRICT-TRADE-009",
+    "STRICT-TRADE-010",
+    "STRICT-TRADE-011",
+    "STRICT-TRADE-012",
+    "STRICT-TRADE-013",
+    "STRICT-TRADE-014",
+    "STRICT-TRADE-015",
+    "STRICT-TRADE-016",
+    "STRICT-TRADE-017",
+    "STRICT-TRADE-018",
+    "STRICT-TRADE-019",
+    "STRICT-TRADE-020",
+    "STRICT-TRADE-021",
+    "STRICT-TRADE-022",
+    "STRICT-TRADE-023",
+    "STRICT-TRADE-024",
+    "STRICT-TRADE-025"
+  ],
+  "productDefectsProductionVerified": 25,
+  "substantiatedQualityRisksOpen": [
+    {
+      "id": "STRICT-TRADE-RISK-001",
+      "status": "OPEN",
+      "reason": "Legacy SQ labelling may confuse beginners. Current issuer identity is sourced. Provider aliasing and established portfolios need protection before adapting catalog identifiers."
+    },
+    {
+      "id": "STRICT-TRADE-RISK-002",
+      "status": "OPEN",
+      "reason": "MATIC remains a separate intentionally retained practice instrument for legacy history. The picker lacks that qualifier. The linked explanation supplies the verified distinction."
+    },
+    {
+      "id": "STRICT-TRADE-RISK-003",
+      "status": "OPEN",
+      "reason": "Comparison picker rows share display without per-row source provenance. The selected-asset interface discloses its source where available."
+    }
+  ],
+  "confirmedGooglePolicyViolations": 0,
+  "limitations": [
+    "Actual private production orders, holdings, server account state and provider operation were unavailable. Authored signed-in UI states and provider-shaped display branches were exercised in explicitly isolated fixtures.",
+    "Newsletter form outcomes were simulated. Actual confirmation email delivery, authenticated account operations and Google Ads or CMP configuration were outside the verified production scope.",
+    "Links, labels, and sample quote states were reviewed in Trade. Linked canonical destination bodies keep their place in the sequential audit. Generated graph values and personalized amounts are projected from the reviewed sources and disclosures.",
+    "Terms eligibility and Diversification publication remain separately owner-gated. AdSense account review remains external."
+  ]
+}

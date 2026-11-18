@@ -1,14 +1,14 @@
 {
   "pageId": "STRICT-0009",
   "url": "https://www.thetradehq.com/trade",
-  "sourceRevision": "b0292fb636b1826f1b485c5bb3b50465e07222cf",
-  "pageStatus": "PARTIAL-REVIEW",
+  "sourceRevision": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+  "pageStatus": "FIXED-RECHECKED",
   "scope": "Trade public page and applicable authored states in current and historical projections. Exact public states and separate loopback-only cases are identified in the crosswalk.",
   "textRecords": 504,
   "firstPass": 504,
-  "secondPass": 502,
-  "partialCoverage": true,
-  "strictPageClosure": false,
+  "secondPass": 504,
+  "partialCoverage": false,
+  "strictPageClosure": true,
   "rawBodyOccurrences": [
     47,
     438,
@@ -300,7 +300,7 @@
     {
       "id": "STRICT-TRADE-024",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-      "status": "MERGED-NATIVE-RECHECK-PENDING",
+      "status": "FIXED-RECHECKED",
       "pr": 476,
       "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
       "source": "src/components/trading/MinimalistOrderPanel.tsx; src/components/trading/MobileOrderDrawer.tsx",
@@ -312,12 +312,13 @@
       "policyViolation": false,
       "pageClosureCredit": 0,
       "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
-      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json"
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json",
+      "receipt": "trade-release-reconciliation/RELEASE-476.json"
     },
     {
       "id": "STRICT-TRADE-025",
       "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
-      "status": "MERGED-NATIVE-RECHECK-PENDING",
+      "status": "FIXED-RECHECKED",
       "pr": 476,
       "headSHA": "a232c4df20b388738b4e75365b28be5b50fc1503",
       "source": "src/components/trading/MobileOrderDrawer.tsx",
@@ -329,17 +330,15 @@
       "policyViolation": false,
       "pageClosureCredit": 0,
       "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
-      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json"
+      "pendingReceipt": "trade-release-reconciliation/RELEASE-476-PENDING.json",
+      "receipt": "trade-release-reconciliation/RELEASE-476.json"
     }
   ],
-  "nextAction": "Verify native Cloudflare main for exact #476 merge, then repeat the fractional Sell, maximum Buy and final public default-state checks. P09 closure remains pending.",
-  "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
+  "nextAction": "Proceed to P10 Portfolio in canonical queue order.",
+  "releaseBaseline": "Cloudflare production ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
-  "closureCredit": 0,
-  "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0502",
-    "STRICT-0009-BLOCK-0504"
-  ],
+  "closureCredit": 1,
+  "pendingSecondPass": [],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
@@ -383,8 +382,8 @@
     "fractional-sell/block-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
-  "confirmedProductDefectsProductionVerified": 23,
-  "latestApplicationRelease": "08054db9181da3dd88728e0d0270c100e8fbd199",
+  "confirmedProductDefectsProductionVerified": 25,
+  "latestApplicationRelease": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
   "qualityRisks": [
     {
       "id": "STRICT-TRADE-RISK-001",
@@ -403,10 +402,8 @@
     }
   ],
   "confirmedProductDefectsReproduced": 25,
-  "unresolvedStateNotes": [
-    "STRICT-TRADE-024 and STRICT-TRADE-025 exact native deployment and public reread."
-  ],
-  "nextExactContentState": "Verify native Cloudflare main for exact #476 merge, then repeat the fractional Sell, maximum Buy and final public default-state checks. P09 closure remains pending.",
+  "unresolvedStateNotes": [],
+  "nextExactContentState": null,
   "rawCurrentCensus": "trade-release-reconciliation/current-default-census/PRODUCTION-475-CROSSWALK.json",
   "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json",
   "closedRootExtensions": [
@@ -428,10 +425,6 @@
       "REVIEWED-PROJECTION; DATA-ACCESS-RELEASE-PENDING": 1
     }
   },
-  "mergedAwaitingNative": {
-    "pr": 476,
-    "mergeSHA": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
-    "run": 44275108147,
-    "record": "trade-release-reconciliation/RELEASE-476-PENDING.json"
-  }
+  "closedAtUTC": "2026-11-18T09:35:55.243741+00:00",
+  "finalRecord": "PAGE-RECORD.json"
 }

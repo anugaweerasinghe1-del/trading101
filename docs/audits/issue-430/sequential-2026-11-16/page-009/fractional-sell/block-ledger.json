@@ -31,7 +31,13 @@
       "reason": "The compiled browser exercises the full holdings, a 25% fraction and exact manual entries. The same Buy fixtures still respect the fee-inclusive maximum."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The old rounding could disable either full holdings or tiny holdings. Both sizes now submit their full amount at both widths. The mobile slider and 25% preset expose the correct fractions, and the complete virtual round trip leaves zero units and the exact two fees. The separate 100% Buy control still passes.",
+      "reviewer": "Codex assistant, separate native-deployed public browser and source reconciliation",
+      "contentReference": "production476-final-sell-execution.json",
+      "contentSHA256": "6019d434800de7e8c66ed0a6fc4988f39c944f107b07feba9575fba37516a10c",
+      "sourceVersion": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "readAtUTC": "2026-11-18T09:33:12.708437+00:00"
     }
   },
   {
@@ -66,7 +72,13 @@
       "reason": "Both compiled mobile fixtures show the exact AAPL holdings and omit the cash-availability label in Sell. The separate Buy regression still exposes the cash balance."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Both mobile production fixtures identify Sell availability as exact AAPL holdings and display no cash label in Sell. The separate Buy control continues to show available cash. Units agree with the actual amount cap and successful local sale.",
+      "reviewer": "Codex assistant, separate native-deployed public browser and source reconciliation",
+      "contentReference": "production476-final-sell-execution.json",
+      "contentSHA256": "6019d434800de7e8c66ed0a6fc4988f39c944f107b07feba9575fba37516a10c",
+      "sourceVersion": "ad250fb272a2e5000ed6bcc4cca19b96e3efa01d",
+      "readAtUTC": "2026-11-18T09:33:12.708437+00:00"
     }
   }
 ]
