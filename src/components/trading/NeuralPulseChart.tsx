@@ -1,5 +1,6 @@
 import { useEffect, useRef, useMemo, useState, useCallback } from "react";
 import { createChart, IChartApi, ISeriesApi, LineStyle, ColorType } from "lightweight-charts";
+import type { UTCTimestamp } from "lightweight-charts";
 import { Asset } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { marketRequests } from "@/lib/marketDataClient";
@@ -20,27 +21,33 @@ const RANGE_CONFIG: Record<TimeRange, { label: string; days: number; count: numb
 };
 
 interface OHLCData {
-  time: string;
+  time: string | UTCTimestamp;
   open: number;
   high: number;
   low: number;
   close: number;
 }
 
+function candleTime(date: Date, range: TimeRange): OHLCData['time'] {
+  if (range === '1D') return Math.floor(date.getTime() / 1000) as UTCTimestamp;
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
+
 function generateFallbackOHLC(basePrice: number, count: number, intervalMinutes: number, range: TimeRange): OHLCData[] {
   const data: OHLCData[] = [];
   let price = basePrice * (range === '5Y' ? 0.25 : range === '1Y' ? 0.6 : range === '1M' ? 0.85 : 0.95);
   const now = new Date();
-  const seen = new Set<string>();
+  const seen = new Set<OHLCData['time']>();
   const vol = range === '5Y' ? 0.035 : range === '1Y' ? 0.022 : range === '1M' ? 0.018 : basePrice > 1000 ? 0.012 : 0.025;
   const drift = range === '5Y' ? 0.001 : range === '1Y' ? 0.0005 : 0.0001;
 
   for (let i = count; i >= 0; i--) {
     const date = new Date(now);
-    date.setMinutes(date.getMinutes() - i * intervalMinutes);
-    const timeStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-    if (seen.has(timeStr)) continue;
-    seen.add(timeStr);
+    if (range === '1D') date.setTime(now.getTime() - i * intervalMinutes * 60_000);
+    else date.setMinutes(date.getMinutes() - i * intervalMinutes);
+    const time = candleTime(date, range);
+    if (seen.has(time)) continue;
+    seen.add(time);
 
     const change = (Math.random() - 0.48 + drift) * vol * price;
     const open = price;
@@ -49,7 +56,7 @@ function generateFallbackOHLC(basePrice: number, count: number, intervalMinutes:
     const low = Math.min(open, close) * (1 - Math.random() * vol * 0.5);
 
     data.push({
-      time: timeStr,
+      time,
       open: Math.max(open, 0.0001),
       high: Math.max(high, 0.0001),
       low: Math.max(low, 0.0001),
@@ -83,17 +90,18 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       if (version !== requestVersion.current) return;
       if (Array.isArray(result.data)) {
         if (result.success && Array.isArray(result.data) && result.data.length > 5) {
-          // Convert API candle data to chart format with unique daily keys
-          const seen = new Set<string>();
+          // Preserve intraday points on the one-day scale and group longer ranges by date.
+          const seen = new Set<OHLCData['time']>();
           const formatted: OHLCData[] = [];
           
           for (const candle of result.data) {
             const d = new Date(candle.time);
-            const timeStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+            if (!Number.isFinite(d.getTime())) continue;
+            const time = candleTime(d, range);
             
-            if (seen.has(timeStr)) {
+            if (seen.has(time)) {
               // Merge into existing candle
-              const existing = formatted.find(f => f.time === timeStr);
+              const existing = formatted.find(f => f.time === time);
               if (existing) {
                 existing.high = Math.max(existing.high, candle.high);
                 existing.low = Math.min(existing.low, candle.low);
@@ -101,9 +109,9 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
               }
               continue;
             }
-            seen.add(timeStr);
+            seen.add(time);
             formatted.push({
-              time: timeStr,
+              time,
               open: candle.open,
               high: candle.high,
               low: candle.low,
@@ -128,7 +136,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
     setLiveData(null);
     setDataSource('simulated');
     setIsLoadingData(false);
-  }, [asset?.id, asset?.type, config.days]);
+  }, [asset?.id, asset?.type, config.days, range]);
 
   useEffect(() => {
     setLiveData(null); setDataSource('simulated');
@@ -165,7 +173,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
         horzLine: { color: '#00FFCC', width: 1, style: LineStyle.Dashed },
       },
       rightPriceScale: { borderColor: '#1E2028' },
-      timeScale: { borderColor: '#1E2028' },
+      timeScale: { borderColor: '#1E2028', timeVisible: range === '1D' },
     });
 
     const series = chart.addCandlestickSeries({
@@ -177,7 +185,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       wickDownColor: '#F06060',
     });
 
-    series.setData(chartData as any);
+    series.setData(chartData);
 
     // Fixed illustrative bands; not calculated support or resistance.
     const lastClose = chartData[chartData.length - 1]?.close || asset.price;
@@ -245,6 +253,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
             <button
               key={r}
               onClick={() => setRange(r)}
+              aria-pressed={range === r}
               className={cn(
                 "px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all",
                 range === r
