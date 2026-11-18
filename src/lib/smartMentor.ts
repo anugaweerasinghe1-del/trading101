@@ -308,7 +308,8 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   // Trade history
   if (/trade history|recent trades|review my trades|patterns/.test(text)) {
     if (ctx.tradesCount === 0) return "No recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern." + DISCLAIMER;
-    return `Trade history review (${ctx.tradesCount} recorded trades):\n\n${winSummary}.${priceSummary ? "\n" + priceSummary : ""}\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.` + DISCLAIMER;
+    const tradeLabel = ctx.tradesCount === 1 ? "trade" : "trades";
+    return `Trade history review (${ctx.tradesCount} recorded ${tradeLabel}):\n\n${winSummary}.${priceSummary ? "\n" + priceSummary : ""}\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.` + DISCLAIMER;
   }
 
   // What should I do

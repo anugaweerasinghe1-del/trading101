@@ -57,12 +57,12 @@ function generateFallbackOHLC(basePrice: number, count: number, intervalMinutes:
 
     data.push({
       time,
-      open: Math.max(open, 0.0001),
-      high: Math.max(high, 0.0001),
-      low: Math.max(low, 0.0001),
-      close: Math.max(close, 0.0001),
+      open,
+      high,
+      low,
+      close,
     });
-    price = Math.max(close, 0.0001);
+    price = close;
   }
   return data;
 }
@@ -176,6 +176,9 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       timeScale: { borderColor: '#1E2028', timeVisible: range === '1D' },
     });
 
+    const precision = asset.price > 0 && asset.price < 1
+      ? Math.min(12, 3 - Math.floor(Math.log10(asset.price)))
+      : 2;
     const series = chart.addCandlestickSeries({
       upColor: '#22C55E',
       downColor: '#EF4444',
@@ -183,6 +186,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       borderDownColor: '#EF4444',
       wickUpColor: '#2DD46B',
       wickDownColor: '#F06060',
+      priceFormat: { type: 'price', precision, minMove: 10 ** -precision },
     });
 
     series.setData(chartData);
@@ -225,7 +229,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
       window.removeEventListener('resize', handleResize);
       chart.remove();
     };
-  }, [asset.id, chartData, height, range]);
+  }, [asset.id, asset.price, chartData, height, range]);
 
   return (
     <div className="glass-tactile rounded-2xl p-1 overflow-hidden border-chrome">
