@@ -22,7 +22,7 @@ import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { marketRequests } from "@/lib/marketDataClient";
 import { quoteCoverageForHoldings, type QuoteCoverage } from "@/lib/quoteCoverage";
 import { getAccountPortfolioHistory, getPortfolioHistory, recordSnapshot } from "@/lib/portfolioHistory";
-import { calculateDayChange } from "@/lib/portfolio";
+import { calculateChangeFromEarlierSnapshot } from "@/lib/portfolio";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -48,6 +48,8 @@ import {
   checkMilestones,
   initializeMilestones,
   getMilestoneState,
+  milestoneAlertsEnabled,
+  setMilestoneAlertsEnabled,
 } from "@/lib/notifications";
 
 import { useAuth } from "@/hooks/useAuth";
@@ -98,10 +100,7 @@ export default function Portfolio() {
   lastUpdatedRef.current = lastUpdated;
   const assetsRef = useRef(assets);
   const isMounted = useRef(true);
-  const [notificationsEnabled, setNotificationsEnabled] = useState(
-    typeof Notification !== "undefined" &&
-      Notification.permission === "granted",
-  );
+  const [notificationsEnabled, setNotificationsEnabled] = useState(milestoneAlertsEnabled);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -280,7 +279,7 @@ export default function Portfolio() {
       ? (totalProfitLoss / (totalPositionValue - totalProfitLoss)) * 100
       : 0;
 
-  const dayChange = calculateDayChange(portfolio.totalValue, history);
+  const snapshotChange = calculateChangeFromEarlierSnapshot(portfolio.totalValue, history);
 
   // Approximate regular US equity schedule. Quote provenance controls valuation independently.
   const isMarketOpen = (() => {
@@ -295,6 +294,7 @@ export default function Portfolio() {
 
   const handleToggleNotifications = async () => {
     if (notificationsEnabled) {
+      setMilestoneAlertsEnabled(false);
       setNotificationsEnabled(false);
       toast({
         title: "Notifications Disabled",
@@ -304,6 +304,7 @@ export default function Portfolio() {
       const permission = await requestNotificationPermission();
 
       if (permission === "granted") {
+        setMilestoneAlertsEnabled(true);
         setNotificationsEnabled(true);
         toast({
           title: "Notifications Enabled!",
@@ -388,7 +389,7 @@ export default function Portfolio() {
                     </p>
                   )}
                   <p className="mt-3 text-xs text-muted-foreground max-w-2xl leading-relaxed" data-portfolio-refresh-policy>
-                    Confirmed virtual trades update cash, holdings and trade history immediately. While TradeHQ is open, your portfolio syncs about every minute and when relevant server updates arrive. The server checks supported holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.
+                    Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.
                   </p>
                   {user && <div className="text-xs text-muted-foreground mt-3 max-w-2xl leading-relaxed">
                     <p>{PRICE_REFRESH_COPY} Account values are checked while TradeHQ is open and whenever supported server updates arrive.</p>
@@ -450,6 +451,7 @@ export default function Portfolio() {
                   </Button>
                   <Button
                     onClick={handleToggleNotifications}
+                    aria-pressed={notificationsEnabled}
                     size="sm"
                     variant="outline"
                     className="gap-1.5 text-xs"
@@ -497,16 +499,16 @@ export default function Portfolio() {
                 <p className="text-2xl font-bold tabular-nums">
                   <span data-portfolio-total-value>${portfolio.totalValue.toFixed(2)}</span>
                 </p>
-                {dayChange ? (
+                {snapshotChange ? (
                   <p
                     className={cn(
                       "text-2xs mt-0.5 tabular-nums",
-                      dayChange.dollars >= 0 ? "text-success" : "text-destructive",
+                      snapshotChange.dollars >= 0 ? "text-success" : "text-destructive",
                     )}
                   >
-                    {dayChange.dollars >= 0 ? "+" : ""}${dayChange.dollars.toFixed(2)} (
-                    {dayChange.percent >= 0 ? "+" : ""}
-                    {dayChange.percent.toFixed(2)}%) today
+                    {snapshotChange.dollars >= 0 ? "+" : ""}${snapshotChange.dollars.toFixed(2)}
+                    {snapshotChange.percent !== null && ` (${snapshotChange.percent >= 0 ? "+" : ""}${snapshotChange.percent.toFixed(2)}%)`}
+                    {" "}since <time dateTime={snapshotChange.baselineAt.toISOString()}>{snapshotChange.baselineAt.toLocaleString()}</time>
                   </p>
                 ) : (
                   <p className="text-2xs text-muted-foreground mt-0.5">Cash + Positions</p>
@@ -618,7 +620,7 @@ export default function Portfolio() {
                 {
                   question: "What does the TradeHQ portfolio tracker show?",
                   answer:
-                    "It tracks simulated positions, realized and unrealized P&L, day change, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
+                    "It tracks simulated positions, realized and unrealized P&L, change from a saved snapshot, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
                 },
                 {
                   question: "Are the portfolio statistics based on real prices?",

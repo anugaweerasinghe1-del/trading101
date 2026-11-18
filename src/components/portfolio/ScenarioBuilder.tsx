@@ -17,7 +17,7 @@ import {
   YAxis,
   ComposedChart,
 } from "recharts";
-import { DAILY_VOL, runScenario, type ScenarioResult, type Shock } from "@/lib/scenarioEngine";
+import { DAILY_VOL, runScenario, scenarioHorizonDays, scenarioShockPercent, type ScenarioResult, type Shock } from "@/lib/scenarioEngine";
 import { supabase } from "@/integrations/supabase/client";
 import type { Portfolio, Asset } from "@/lib/types";
 
@@ -98,29 +98,35 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
       const dropMatch = /drop|crash|fall|down|plunge|dump/.test(lower);
       const pumpMatch = /pump|rally|surge|moon|up|rise/.test(lower);
       const pct = pctMatch ? Number(pctMatch[1]) : (dropMatch ? -20 : pumpMatch ? 20 : -10);
-      const signedPct = dropMatch && pct > 0 ? -pct : pct;
-      let horizon = 30;
+      const requestedPercent = dropMatch && pct > 0 ? -pct : pct;
+      let requestedDays = 30;
       if (daysMatch) {
         const n = Number(daysMatch[1]);
         const unit = daysMatch[2];
-        horizon = unit === "week" ? n * 7 : unit === "month" ? n * 30 : n;
+        requestedDays = unit === "week" ? n * 7 : unit === "month" ? n * 30 : n;
       }
+      if (!Number.isFinite(requestedPercent) || !Number.isFinite(requestedDays)) {
+        throw new Error("Enter a finite percentage and time horizon.");
+      }
+      const signedPct = scenarioShockPercent(requestedPercent);
+      const horizon = scenarioHorizonDays(requestedDays);
+      const horizonLabel = `${horizon} ${horizon === 1 ? "day" : "days"}`;
       // Try to match a specific symbol from holdings, otherwise apply to all
       const targetSymbol = holdings.find(h => lower.includes(h.symbol.toLowerCase()) || lower.includes(h.name.toLowerCase()))?.symbol;
       const shocks: Shock[] = targetSymbol
         ? [{ symbol: targetSymbol, shockPercent: signedPct, confidence: 0.7 }]
         : holdings.map(h => ({ symbol: h.symbol, shockPercent: signedPct, confidence: 0.7 }));
-      const parsed = {
-        shocks,
-        horizonDays: horizon,
-        narrative: `Modeled a ${signedPct >= 0 ? "+" : ""}${signedPct}% move on ${targetSymbol ?? "your full portfolio"} over ${horizon} days. (Deterministic scenario — no AI required.)`,
-      };
-      setShocks(parsed.shocks ?? []);
-      setHorizonDays(parsed.horizonDays ?? 30);
-      setNarrative(parsed.narrative ?? "");
-
-      const sim = runScenario(livePortfolio, parsed.shocks ?? [], parsed.horizonDays ?? 30, 1000);
-      setResult(sim);
+      const narrative = [`Modeled a ${signedPct >= 0 ? "+" : ""}${signedPct}% move on ${targetSymbol ?? "your full portfolio"} over ${horizonLabel}.`];
+      if (requestedPercent !== signedPct) {
+        narrative.push(`The requested ${requestedPercent}% move was limited to ${signedPct}%.`);
+      }
+      if (requestedDays !== horizon) {
+        narrative.push(`The requested ${requestedDays}-day horizon was limited to ${horizonLabel}.`);
+      }
+      setShocks(shocks);
+      setHorizonDays(horizon);
+      setNarrative(narrative.join(" "));
+      setResult(runScenario(livePortfolio, shocks, horizon, 1000));
     } catch (e: any) {
       toast({ title: "Scenario error", description: e?.message ?? "Unknown error", variant: "destructive" });
     } finally {
@@ -151,7 +157,8 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
         Asset moves are independent; cross-asset correlation, costs and market events are not modeled.
         The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies,
         not calibrated market probabilities. A frequency near 50% has about ±3 percentage points
-        of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.
+        of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days.
+        Requested losses below −99% are clamped to −99%.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-2 mt-4">
@@ -234,7 +241,13 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
 
           <div className="h-64 w-full">
             <ResponsiveContainer>
-              <ComposedChart data={result.bands} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+              <ComposedChart
+                data={result.bands}
+                margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                accessibilityLayer
+                title="Portfolio scenario chart"
+                desc="Use the left and right arrow keys to review model percentiles by day."
+              >
                 <defs>
                   <linearGradient id="bandWide" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.18} />
@@ -291,7 +304,7 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
           )}
 
           <p className="text-2xs text-muted-foreground/70 text-center">
-            Based on {1000} Monte Carlo paths • Shocks: {shocks.length ? shocks.map((s) => `${s.symbol} ${s.shockPercent >= 0 ? "+" : ""}${s.shockPercent}%`).join(", ") : "none"} • Horizon {horizonDays} days
+            Based on {1000} Monte Carlo paths • Shocks: {shocks.length ? shocks.map((s) => `${s.symbol} ${s.shockPercent >= 0 ? "+" : ""}${s.shockPercent}%`).join(", ") : "none"} • Horizon {horizonDays} {horizonDays === 1 ? "day" : "days"}
           </p>
         </div>
       )}
