@@ -154,10 +154,12 @@
     "exactResumeBlock": "STRICT-0009-BLOCK-0113",
     "firstPassAdditional": 3,
     "secondPassAdditional": 2,
-    "status": "OPEN; local validation passed; hosted preview and exact GitHub checks pending",
+    "status": "OPEN; local and exact immutable Cloudflare preview browser checks passed; remaining required checks pending",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6967439344",
     "pr": 470,
-    "head": "fd407b606523c215c81571002eafc6bfc5e184c3"
+    "head": "fd407b606523c215c81571002eafc6bfc5e184c3",
+    "previewURL": "https://1483d354.tradehq-preview.pages.dev",
+    "previewEvidence": "trade-release-reconciliation/preview470-order-wording.json"
   },
   "mergedAwaitingNative": {
     "pr": 469,
