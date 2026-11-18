@@ -241,7 +241,13 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
 
           <div className="h-64 w-full">
             <ResponsiveContainer>
-              <ComposedChart data={result.bands} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+              <ComposedChart
+                data={result.bands}
+                margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                accessibilityLayer
+                title="Portfolio scenario chart"
+                desc="Use the left and right arrow keys to review model percentiles by day."
+              >
                 <defs>
                   <linearGradient id="bandWide" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.18} />

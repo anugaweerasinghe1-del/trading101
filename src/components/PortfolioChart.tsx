@@ -73,7 +73,15 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
       </p>}
       {data.length > 0 && <div className="min-w-0" data-portfolio-chart-state={hasHistory ? "trend" : "single-observation"}>
         <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
-        <LineChart data={data} margin={{ top: 12, right: 18, bottom: 10, left: 10 }}>
+        <LineChart
+          data={data}
+          margin={{ top: 12, right: 18, bottom: 10, left: 10 }}
+          accessibilityLayer
+          title="Practice portfolio history chart"
+          desc={hasHistory
+            ? "Use the left and right arrow keys to review saved snapshot times and values."
+            : "One saved practice portfolio observation."}
+        >
           <XAxis 
             dataKey="time" 
             stroke="hsl(var(--muted-foreground))"
@@ -120,6 +128,7 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           <Line 
             type="monotone" 
             dataKey="value" 
+            name="Portfolio value"
             stroke={stopLossBreached ? "hsl(var(--destructive))" : "hsl(var(--primary))"} 
             strokeWidth={3}
             dot={{ fill: stopLossBreached ? 'hsl(var(--destructive))' : 'hsl(var(--primary))', r: 4 }}
