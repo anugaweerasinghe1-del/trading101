@@ -79,3 +79,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Disclosure release and raw occurrence reconciliation
 
 #474 passed the five exact final checks, the hosted browser suites and protected merge. Native production and separate custom-domain reviews remain due. The raw census preserves all 1,383 occurrence identities and an explicit 247-group residual list. Literal linkage candidates, generated values and raw occurrence counts do not confer editorial credit. [Raw reconciliation](trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json)
+
+# Disclosure and note production readback
+
+#474 has its exact native receipt and twelve fresh custom-domain cases. Four product fixes and six further revised learning notes passed. The notes extend the already verified mobile price wording under the same identified root. P09 has 482 durable two-pass records and remains partial. [Exact #474 receipt](trade-release-reconciliation/RELEASE-474.json)

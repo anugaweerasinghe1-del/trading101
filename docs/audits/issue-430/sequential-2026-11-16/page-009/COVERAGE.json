@@ -6,7 +6,7 @@
   "scope": "Word-level records for notes, FAQ, selected metadata and current intro. Additional raw captures are unreviewed or only incidentally examined.",
   "textRecords": 482,
   "firstPass": 482,
-  "secondPass": 472,
+  "secondPass": 482,
   "partialCoverage": true,
   "strictPageClosure": false,
   "rawBodyOccurrences": [
@@ -197,24 +197,57 @@
       "block": "STRICT-0009-BLOCK-0329",
       "policyViolation": false,
       "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-015",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0453",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-016",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0455",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-017",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0457",
+      "policyViolation": false,
+      "pageClosureCredit": 0
+    },
+    {
+      "id": "STRICT-TRADE-018",
+      "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+      "status": "FIXED-RECHECKED",
+      "pr": 474,
+      "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "block": "STRICT-0009-BLOCK-0459",
+      "policyViolation": false,
+      "pageClosureCredit": 0
     }
   ],
-  "nextAction": "Verify native #474 and reread blocks 0453, 0455, 0457, 0459 and 0470–0475. Finish chart and order accessibility candidate 019–022. Continue default occurrence reconciliation from the grouped unmatched records.",
+  "nextAction": "Verify the new exact #475 head, hosted preview and required checks. After protected merge verify native production and reread 0477, 0479, 0481, 0483 and 0485. Continue mapping captured P09 occurrences to the reviewed projections and preserve all unresolved access scopes.",
   "releaseBaseline": "Cloudflare production b0292fb636b1826f1b485c5bb3b50465e07222cf",
   "evidencePolicy": "The active 17 November official AdSense and Publisher baseline remains applicable.",
   "closureCredit": 0,
-  "pendingSecondPass": [
-    "STRICT-0009-BLOCK-0453",
-    "STRICT-0009-BLOCK-0455",
-    "STRICT-0009-BLOCK-0457",
-    "STRICT-0009-BLOCK-0459",
-    "STRICT-0009-BLOCK-0470",
-    "STRICT-0009-BLOCK-0471",
-    "STRICT-0009-BLOCK-0472",
-    "STRICT-0009-BLOCK-0473",
-    "STRICT-0009-BLOCK-0474",
-    "STRICT-0009-BLOCK-0475"
-  ],
+  "pendingSecondPass": [],
   "baseRevision": "8b2a13eb3a843f44a18fd7ed3ee26f1bb047a0ac",
   "pickerContinuations": "production-picker.json; no all-result reading credit",
   "mergedCandidate466": "b8401214c9da104f11b1da79d35fe2463a74c35d",
@@ -253,8 +286,8 @@
     "trade-release-reconciliation/navigation-state-ledger.json"
   ],
   "rawPickerInventory": "continuation-2026-11-18/inventory.json; ordinals 1–170 reviewed twice against controlled captures and source.",
-  "confirmedProductDefectsProductionVerified": 14,
-  "latestApplicationRelease": "fe5d1a67754b2cd6d303241e49df0f0cbb555db3",
+  "confirmedProductDefectsProductionVerified": 18,
+  "latestApplicationRelease": "a51634bf345d337455da317d06bf411bd8b4e275",
   "qualityRisks": [
     {
       "id": "STRICT-TRADE-RISK-001",
@@ -279,7 +312,8 @@
   ],
   "nextExactContentState": "Line and candle keyboard/data alternatives 019/020, followed by guided/order conditional scope and default occurrence tie-out.",
   "rawCurrentCensus": "trade-release-reconciliation/current-default-census/MANIFEST.json; browser raw occurrence counts and hashes. No per-occurrence closure credit.",
-  "queuedFollowup": {
+  "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json",
+  "activeSeparateCandidate": {
     "branch": "audit/issue430-trade-chart-access-20261118",
     "findings": [
       "STRICT-TRADE-019",
@@ -288,17 +322,27 @@
       "STRICT-TRADE-022",
       "STRICT-TRADE-023"
     ],
-    "status": "Open. Original accessibility head passed its immutable preview. The separately reproduced max-buy correction is under final local checks before the head update.",
+    "status": "Open. Final local chart, order and max-buy cases passed. New exact-head hosted and required checks pending.",
     "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968611993",
     "orderEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6968677691",
     "pr": 475,
-    "head": "04023469aae21da2933e89f6fa0ba38d12ef5573"
+    "head": "4cfe13e",
+    "firstPassAdditional": 10,
+    "secondPassAdditional": 5,
+    "pendingReadbackBlocks": [
+      "STRICT-0009-BLOCK-0477",
+      "STRICT-0009-BLOCK-0479",
+      "STRICT-0009-BLOCK-0481",
+      "STRICT-0009-BLOCK-0483",
+      "STRICT-0009-BLOCK-0485"
+    ]
   },
-  "mergedAwaitingNative": {
-    "pr": 474,
-    "mergeSHA": "a51634bf345d337455da317d06bf411bd8b4e275",
-    "run": 44265670752,
-    "record": "trade-release-reconciliation/RELEASE-474-PENDING.json"
-  },
-  "rawOccurrenceReconciliation": "trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json"
+  "closedRootExtensions": [
+    {
+      "id": "STRICT-TRADE-008",
+      "status": "FIXED-RECHECKED",
+      "receipt": "trade-release-reconciliation/RELEASE-474.json",
+      "scope": "Six learning-note revisions; zero added distinct defects"
+    }
+  ]
 }
