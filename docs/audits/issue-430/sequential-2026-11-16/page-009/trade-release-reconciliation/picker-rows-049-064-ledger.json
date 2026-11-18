@@ -1,0 +1,1090 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0147",
+    "pickerOrdinal": 49,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SUI",
+            "name": "Sui",
+            "price": "$1.45",
+            "change": "+9.02%",
+            "favorite": "Add Sui (SUI) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SUI",
+            "name": "Sui",
+            "price": "$1.45",
+            "change": "+9.02%",
+            "favorite": "Add Sui (SUI) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SUI",
+          "name": "Sui",
+          "price": "$0.7274",
+          "change": "+1.42%",
+          "favorite": "Add SUI to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SUI",
+          "name": "Sui",
+          "price": "$0.7274",
+          "change": "+1.42%",
+          "favorite": "Add SUI to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "9e680015117ccc21a227b0c4c1a2d11f8b616cd081521f6aea105d036f14d14c",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Sui/SUI displayed $0.7274 and +1.42% in the unrestricted capture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "Controlled $1.45 and +9.02% match the SUI defaults. The seeded 0.12 gain over a 1.33 reference rounds to 9.02%."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0148",
+    "pickerOrdinal": 50,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SEI",
+            "name": "Sei",
+            "price": "$0.5200",
+            "change": "+8.33%",
+            "favorite": "Add Sei (SEI) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SEI",
+            "name": "Sei",
+            "price": "$0.5200",
+            "change": "+8.33%",
+            "favorite": "Add Sei (SEI) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "SEI",
+          "name": "Sei",
+          "price": "$0.0395",
+          "change": "+1.73%",
+          "favorite": "Add SEI to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "SEI",
+          "name": "Sei",
+          "price": "$0.0395",
+          "change": "+1.73%",
+          "favorite": "Add SEI to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "d11d13a5bd55582dd457a25a6d6ae1faa8c0243705579045d2379cdcb4e9b67e",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Sei/SEI displayed $0.0395 and +1.73%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "Controlled $0.5200 and +8.33% match the source. The 0.04 gain over 0.48 explains the seeded percent."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0149",
+    "pickerOrdinal": 51,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TIA",
+            "name": "Celestia",
+            "price": "$12.85",
+            "change": "+9.83%",
+            "favorite": "Add Celestia (TIA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TIA",
+            "name": "Celestia",
+            "price": "$12.85",
+            "change": "+9.83%",
+            "favorite": "Add Celestia (TIA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "TIA",
+          "name": "Celestia",
+          "price": "$0.3494",
+          "change": "-2.08%",
+          "favorite": "Add TIA to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TIA",
+          "name": "Celestia",
+          "price": "$0.3494",
+          "change": "-2.08%",
+          "favorite": "Add TIA to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "6e3909905609fb89c4d9854f1afd75ca1912257f31342b2b17169e0d2e002f8d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Celestia/TIA displayed $0.3494 and -2.08%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "Controlled $12.85 and +9.83% match the default and its 1.15 gain over 11.70. The two snapshots are distinct."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0150",
+    "pickerOrdinal": 52,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AAPL",
+            "name": "Apple Inc.",
+            "price": "$255.25",
+            "change": "+1.37%",
+            "favorite": "Add Apple Inc. (AAPL) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AAPL",
+            "name": "Apple Inc.",
+            "price": "$255.25",
+            "change": "+1.37%",
+            "favorite": "Add Apple Inc. (AAPL) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "AAPL",
+          "name": "Apple Inc.",
+          "price": "$255.25",
+          "change": "+1.37%",
+          "favorite": "Add AAPL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AAPL",
+          "name": "Apple Inc.",
+          "price": "$255.25",
+          "change": "+1.37%",
+          "favorite": "Add AAPL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "bd04742427d3dc4344227c261a63cd3ac011e483098e2ed4007a33b4a1b988c8",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Apple Inc./AAPL showed $255.25 and +1.37% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The checked-in 255.25 with a 3.45 seeded gain yields 1.37%. The value also matches the guided-practice fixture and cannot establish a current market observation."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0151",
+    "pickerOrdinal": 53,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "MSFT",
+            "name": "Microsoft Corporation",
+            "price": "$378.91",
+            "change": "+1.29%",
+            "favorite": "Add Microsoft Corporation (MSFT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "MSFT",
+            "name": "Microsoft Corporation",
+            "price": "$378.91",
+            "change": "+1.29%",
+            "favorite": "Add Microsoft Corporation (MSFT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "MSFT",
+          "name": "Microsoft Corporation",
+          "price": "$378.91",
+          "change": "+1.29%",
+          "favorite": "Add MSFT to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "MSFT",
+          "name": "Microsoft Corporation",
+          "price": "$378.91",
+          "change": "+1.29%",
+          "favorite": "Add MSFT to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "7b77a6499869e86a947def2e7b1b9eee35996765825a2ccae1f800be265adb29",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Microsoft Corporation/MSFT showed $378.91 and +1.29% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The source gains 4.82 from 374.09, yielding 1.29%. The symbol and full issuer name align."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0152",
+    "pickerOrdinal": 54,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "GOOGL",
+            "name": "Alphabet Inc.",
+            "price": "$338.58",
+            "change": "+1.37%",
+            "favorite": "Add Alphabet Inc. (GOOGL) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "GOOGL",
+            "name": "Alphabet Inc.",
+            "price": "$338.58",
+            "change": "+1.37%",
+            "favorite": "Add Alphabet Inc. (GOOGL) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "GOOGL",
+          "name": "Alphabet Inc.",
+          "price": "$338.58",
+          "change": "+1.37%",
+          "favorite": "Add GOOGL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "GOOGL",
+          "name": "Alphabet Inc.",
+          "price": "$338.58",
+          "change": "+1.37%",
+          "favorite": "Add GOOGL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "a36d056dddaac6224be46600f65816380ad2fc5bb772a74fc41adbb9dd7f37f3",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Alphabet Inc./GOOGL showed $338.58 and +1.37% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 4.58 move from 334.00 explains the percent. GOOGL identifies the specific simulator entry even though the issuer name alone could cover another share class."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0153",
+    "pickerOrdinal": 55,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AMZN",
+            "name": "Amazon.com Inc.",
+            "price": "$178.25",
+            "change": "-1.19%",
+            "favorite": "Add Amazon.com Inc. (AMZN) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AMZN",
+            "name": "Amazon.com Inc.",
+            "price": "$178.25",
+            "change": "-1.19%",
+            "favorite": "Add Amazon.com Inc. (AMZN) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "AMZN",
+          "name": "Amazon.com Inc.",
+          "price": "$178.25",
+          "change": "-1.19%",
+          "favorite": "Add AMZN to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AMZN",
+          "name": "Amazon.com Inc.",
+          "price": "$178.25",
+          "change": "-1.19%",
+          "favorite": "Add AMZN to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "4c50b5ae7b4a65b35cfb4b81311c90b472e23122973f254de0020f208f345482",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Amazon.com Inc./AMZN showed $178.25 and -1.19% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "A -2.15 move from 180.40 yields -1.19%. The negative sign and issuer label reconcile."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0154",
+    "pickerOrdinal": 56,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NVDA",
+            "name": "NVIDIA Corporation",
+            "price": "$190.20",
+            "change": "+2.81%",
+            "favorite": "Add NVIDIA Corporation (NVDA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NVDA",
+            "name": "NVIDIA Corporation",
+            "price": "$190.20",
+            "change": "+2.81%",
+            "favorite": "Add NVIDIA Corporation (NVDA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "price": "$190.20",
+          "change": "+2.81%",
+          "favorite": "Add NVDA to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "price": "$190.20",
+          "change": "+2.81%",
+          "favorite": "Add NVDA to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "ef94adbdbedac02437e7c92492732df3528439e42a359a82c0ab749552d61457",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "NVIDIA Corporation/NVDA showed $190.20 and +2.81% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 5.20 seeded move from 185.00 yields +2.81%. No inference about the current exchange quote follows from that arithmetic."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0155",
+    "pickerOrdinal": 57,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TSLA",
+            "name": "Tesla Inc.",
+            "price": "$248.50",
+            "change": "-2.09%",
+            "favorite": "Add Tesla Inc. (TSLA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TSLA",
+            "name": "Tesla Inc.",
+            "price": "$248.50",
+            "change": "-2.09%",
+            "favorite": "Add Tesla Inc. (TSLA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "TSLA",
+          "name": "Tesla Inc.",
+          "price": "$248.50",
+          "change": "-2.09%",
+          "favorite": "Add TSLA to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "TSLA",
+          "name": "Tesla Inc.",
+          "price": "$248.50",
+          "change": "-2.09%",
+          "favorite": "Add TSLA to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "d4f7a1f0ce3f551c68a068d55a28d857c7ba8f7b7a03a8814c61dfb00ddd6100",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Tesla Inc./TSLA showed $248.50 and -2.09% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The -5.30 move from 253.80 yields -2.09%. The action is named for the same issuer and ticker."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0156",
+    "pickerOrdinal": 58,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "META",
+            "name": "Meta Platforms Inc.",
+            "price": "$505.95",
+            "change": "+1.70%",
+            "favorite": "Add Meta Platforms Inc. (META) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "META",
+            "name": "Meta Platforms Inc.",
+            "price": "$505.95",
+            "change": "+1.70%",
+            "favorite": "Add Meta Platforms Inc. (META) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "META",
+          "name": "Meta Platforms Inc.",
+          "price": "$505.95",
+          "change": "+1.70%",
+          "favorite": "Add META to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "META",
+          "name": "Meta Platforms Inc.",
+          "price": "$505.95",
+          "change": "+1.70%",
+          "favorite": "Add META to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "8846fd0879056c66146370f7505818c03d25ef4612b61a905cb22ae70e786ade",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Meta Platforms Inc./META showed $505.95 and +1.70% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 8.45 move from 497.50 yields +1.70%. The row uses META consistently in both picker actions."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0157",
+    "pickerOrdinal": 59,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NFLX",
+            "name": "Netflix Inc.",
+            "price": "$485.60",
+            "change": "-0.65%",
+            "favorite": "Add Netflix Inc. (NFLX) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NFLX",
+            "name": "Netflix Inc.",
+            "price": "$485.60",
+            "change": "-0.65%",
+            "favorite": "Add Netflix Inc. (NFLX) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "NFLX",
+          "name": "Netflix Inc.",
+          "price": "$485.60",
+          "change": "-0.65%",
+          "favorite": "Add NFLX to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "NFLX",
+          "name": "Netflix Inc.",
+          "price": "$485.60",
+          "change": "-0.65%",
+          "favorite": "Add NFLX to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "45fe7fe08a5898665bef060d78b9e196a1d787649b6d9ac99c5e6daa01d8401e",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Netflix Inc./NFLX showed $485.60 and -0.65% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The -3.20 seed move from 488.80 yields -0.65%. This source tie-out gives no current quote or corporate-action certification."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0158",
+    "pickerOrdinal": 60,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AMD",
+            "name": "Advanced Micro Devices",
+            "price": "$142.30",
+            "change": "+2.78%",
+            "favorite": "Add Advanced Micro Devices (AMD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AMD",
+            "name": "Advanced Micro Devices",
+            "price": "$142.30",
+            "change": "+2.78%",
+            "favorite": "Add Advanced Micro Devices (AMD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "AMD",
+          "name": "Advanced Micro Devices",
+          "price": "$142.30",
+          "change": "+2.78%",
+          "favorite": "Add AMD to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "AMD",
+          "name": "Advanced Micro Devices",
+          "price": "$142.30",
+          "change": "+2.78%",
+          "favorite": "Add AMD to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "d3fbf7d909fc7615009fd56cc3c265aa2d4ecac3c6161ef7cf7543d13d072c0a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Advanced Micro Devices/AMD showed $142.30 and +2.78% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "A 3.85 gain from 138.45 yields +2.78%. The entire company name is included in the favorite accessible action."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0159",
+    "pickerOrdinal": 61,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CRM",
+            "name": "Salesforce Inc.",
+            "price": "$264.90",
+            "change": "+1.73%",
+            "favorite": "Add Salesforce Inc. (CRM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CRM",
+            "name": "Salesforce Inc.",
+            "price": "$264.90",
+            "change": "+1.73%",
+            "favorite": "Add Salesforce Inc. (CRM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "CRM",
+          "name": "Salesforce Inc.",
+          "price": "$264.90",
+          "change": "+1.73%",
+          "favorite": "Add CRM to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "CRM",
+          "name": "Salesforce Inc.",
+          "price": "$264.90",
+          "change": "+1.73%",
+          "favorite": "Add CRM to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "6de465c46f4fb03253f6bb41e94d9d203a74daf3b29abaf7ef5778857420f083",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Salesforce Inc./CRM showed $264.90 and +1.73% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 4.50 move from 260.40 yields +1.73%. The full name disambiguates the displayed CRM ticker."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0160",
+    "pickerOrdinal": 62,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "INTC",
+            "name": "Intel Corporation",
+            "price": "$43.25",
+            "change": "-1.70%",
+            "favorite": "Add Intel Corporation (INTC) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "INTC",
+            "name": "Intel Corporation",
+            "price": "$43.25",
+            "change": "-1.70%",
+            "favorite": "Add Intel Corporation (INTC) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "INTC",
+          "name": "Intel Corporation",
+          "price": "$43.25",
+          "change": "-1.70%",
+          "favorite": "Add INTC to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "INTC",
+          "name": "Intel Corporation",
+          "price": "$43.25",
+          "change": "-1.70%",
+          "favorite": "Add INTC to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "26413c364c589e726b216448f28454ac96040f03ea0c05f4b0497039ce745468",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Intel Corporation/INTC showed $43.25 and -1.70% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The -0.75 move from 44.00 yields -1.70%. This supports the source projection only."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0161",
+    "pickerOrdinal": 63,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ORCL",
+            "name": "Oracle Corporation",
+            "price": "$118.45",
+            "change": "+1.85%",
+            "favorite": "Add Oracle Corporation (ORCL) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ORCL",
+            "name": "Oracle Corporation",
+            "price": "$118.45",
+            "change": "+1.85%",
+            "favorite": "Add Oracle Corporation (ORCL) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ORCL",
+          "name": "Oracle Corporation",
+          "price": "$118.45",
+          "change": "+1.85%",
+          "favorite": "Add ORCL to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ORCL",
+          "name": "Oracle Corporation",
+          "price": "$118.45",
+          "change": "+1.85%",
+          "favorite": "Add ORCL to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "f6c57bf8f385f8401d5f8cae65e722029de80ec075ed30be100a9cc0598b288a",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Oracle Corporation/ORCL showed $118.45 and +1.85% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 2.15 move from 116.30 yields +1.85%. The issuer/ticker and numeric two-decimal format agree."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0162",
+    "pickerOrdinal": 64,
+    "content": {
+      "controlled": [
+        {
+          "width": 390,
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ADBE",
+            "name": "Adobe Inc.",
+            "price": "$528.30",
+            "change": "+1.64%",
+            "favorite": "Add Adobe Inc. (ADBE) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        {
+          "width": 1440,
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ADBE",
+            "name": "Adobe Inc.",
+            "price": "$528.30",
+            "change": "+1.64%",
+            "favorite": "Add Adobe Inc. (ADBE) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      ],
+      "historicalUnrestricted": [
+        {
+          "symbol": "ADBE",
+          "name": "Adobe Inc.",
+          "price": "$528.30",
+          "change": "+1.64%",
+          "favorite": "Add ADBE to favorites",
+          "favoritePressed": "false"
+        },
+        {
+          "symbol": "ADBE",
+          "name": "Adobe Inc.",
+          "price": "$528.30",
+          "change": "+1.64%",
+          "favorite": "Add ADBE to favorites",
+          "favoritePressed": "false"
+        }
+      ]
+    },
+    "sha256": "309e183f6104badb05d544ecff2419cfe632514b30ad3904c0f1f3e9d4a55fe9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Adobe Inc./ADBE showed $528.30 and +1.64% in both captures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source arithmetic and live state reread",
+      "reason": "The 8.50 move from 519.80 yields +1.64%. The exact source match does not establish a current observation."
+    },
+    "disposition": "NO-ISSUE-IN-ROW-IDENTITY-OR-ARITHMETIC; SHARED-PROVENANCE-REVIEW-OPEN"
+  }
+]
