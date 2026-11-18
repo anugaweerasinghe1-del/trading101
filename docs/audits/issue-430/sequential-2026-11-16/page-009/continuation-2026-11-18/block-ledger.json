@@ -193,5 +193,52 @@
       "reason": "Independent desktop event selects 1W and shows the same window and qualifiers. The expression uses the selected timeframe and confers no claim of full provider history."
     },
     "outcome": "NO-ISSUE-IN-REVIEWED-SCOPE"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0069",
+    "text": "Add ZS to favorites (identical for Zscaler Inc. and Soybeans)",
+    "sourceVersion": "b8401214c9da104f11b1da79d35fe2463a74c35d",
+    "scope": "actual production before",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "captures": [
+      "before-favorite-names.json",
+      "inventory.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-004"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Mobile 390px AX tree contains two same-named Add ZS buttons for distinct adjacent asset choices."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same Codex assistant, separate skeptical reread",
+      "reason": "Desktop tree independently distinguishes Zscaler and Soybeans as selection actions but not as favorites. The symbol collision in the catalog is legitimate."
+    },
+    "sha256": "578038547ce53f722c9954142326a82fbc87a7d80b03abb0a92c4eb77942f9ea"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0070",
+    "text": "Add or Remove Zscaler Inc. (ZS) and Soybeans (ZS) favorites",
+    "candidateSourceSHA256": "5a8ee85c5e74e6425f3e1c9d4fdbee9f8111c56ee624b1007ef90c14c4348c8a",
+    "scope": "compiled candidate",
+    "source": "src/components/trading/AssetSearchDropdown.tsx",
+    "captures": [
+      "local-followup-trade-favorite-names.json",
+      "local-followup-btc-favorite-names.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-004"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both routes and widths expose separate Add and Remove names and matching aria-pressed changes for the two legal ticker identities."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Waiting for exact native deployment and separate custom-domain reread."
+    },
+    "sha256": "aba1f3bd7615bb8f9c79ce5c2d0fe1b1c23f9cf90dc073931f03d14e1901cb61"
   }
 ]
