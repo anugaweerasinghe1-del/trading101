@@ -1,0 +1,425 @@
+{
+  "origin": "https://www.thetradehq.com",
+  "states": [
+    {
+      "state": "default-not-playing",
+      "atUTC": "2026-11-17T17:47:36.402298+00:00",
+      "audio": {
+        "src": "https://www.thetradehq.com/audio/long-road-ahead-kevin-macleod.mp3",
+        "readyState": 4,
+        "error": null,
+        "paused": true,
+        "currentTime": 0,
+        "duration": 146,
+        "loop": true,
+        "volume": 0.18,
+        "preload": "auto",
+        "preference": null
+      },
+      "button": {
+        "label": "Play background music",
+        "title": "Play ambient music \u00b7 Long Road Ahead \u00b7 Kevin MacLeod (CC BY 4.0)"
+      }
+    },
+    {
+      "state": "user-initiated-play",
+      "atUTC": "2026-11-17T17:47:37.634565+00:00",
+      "audio": {
+        "src": "https://www.thetradehq.com/audio/long-road-ahead-kevin-macleod.mp3",
+        "readyState": 4,
+        "error": null,
+        "paused": false,
+        "currentTime": 1.078462,
+        "duration": 146,
+        "loop": true,
+        "volume": 0.18,
+        "preload": "auto",
+        "preference": "1"
+      },
+      "button": {
+        "label": "Mute background music",
+        "title": "Mute ambient music \u00b7 Long Road Ahead \u00b7 Kevin MacLeod (CC BY 4.0)"
+      }
+    },
+    {
+      "state": "muted",
+      "atUTC": "2026-11-17T17:47:37.683463+00:00",
+      "audio": {
+        "src": "https://www.thetradehq.com/audio/long-road-ahead-kevin-macleod.mp3",
+        "readyState": 4,
+        "error": null,
+        "paused": true,
+        "currentTime": 1.121754,
+        "duration": 146,
+        "loop": true,
+        "volume": 0.18,
+        "preload": "auto",
+        "preference": "0"
+      },
+      "button": {
+        "label": "Play background music",
+        "title": "Play ambient music \u00b7 Long Road Ahead \u00b7 Kevin MacLeod (CC BY 4.0)"
+      }
+    }
+  ],
+  "mp3": {
+    "status": 200,
+    "bytes": 5847166,
+    "sha256": "91997574f6b18918a6e93e543c42b047ae7179d2643b2a4d706e5338ad75eef7"
+  },
+  "media": {
+    "images": [],
+    "embedded": [],
+    "svgs": [
+      {
+        "role": "img",
+        "label": "TradeHQ",
+        "hidden": null,
+        "class": "h-8 w-8 shrink-0"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-house w-[18px] h-[18px] mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-graduation-cap w-[18px] h-[18px] mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chart-column w-[18px] h-[18px] mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-wallet w-[18px] h-[18px] mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-mail w-[18px] h-[18px] mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chevron-down ml-1.5 w-[18px] h-[18px]"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-flame w-3.5 h-3.5"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-sun h-5 w-5 text-primary"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-user-round w-4 h-4 mr-2"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-flame w-3.5 h-3.5"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-sun h-5 w-5 text-primary"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-menu w-5 h-5"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-arrow-right ml-2 w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-target text-emerald-500 w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-zap w-5 h-5 text-emerald-400"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-shield w-5 h-5 text-emerald-400"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-trophy w-6 h-6 text-primary"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-twitter w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-book-open w-5 h-5"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-lock w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-lock w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-lock w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-lock w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-lock w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chart-line text-emerald-500 w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-calculator w-3.5 h-3.5 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chart-column text-emerald-500 w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-sparkles w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-trending-up w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-book-open w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-globe w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-shield w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-zap w-4 h-4 text-emerald-500"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-twitter w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-copy w-4 h-4"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-users w-8 h-8 text-primary"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-star w-8 h-8 text-profit"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-book-open w-8 h-8 text-primary"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-award w-8 h-8 text-profit"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-house w-5 h-5 relative z-10 transition-transform"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-trending-up w-5 h-5 relative z-10 transition-transform"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chart-column w-5 h-5 relative z-10 transition-transform"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-wallet w-5 h-5 relative z-10 transition-transform"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-graduation-cap w-5 h-5 relative z-10 transition-transform scale-110"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-volume-x w-4 h-4"
+      },
+      {
+        "role": "img",
+        "label": "TradeHQ",
+        "hidden": null,
+        "class": "h-6 w-6 shrink-0"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-x w-5 h-5"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-house w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-graduation-cap w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chart-column w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-wallet w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-mail w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-layers w-4 h-4 mr-3"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-chevron-down ml-auto w-4 h-4 transition-transform"
+      },
+      {
+        "role": null,
+        "label": null,
+        "hidden": null,
+        "class": "lucide lucide-user-round w-4 h-4 mr-3"
+      }
+    ]
+  },
+  "streak": [
+    {
+      "text": "7",
+      "title": "7-day practice streak",
+      "href": "/daily"
+    },
+    {
+      "text": "7",
+      "title": "7-day practice streak",
+      "href": "/daily"
+    }
+  ],
+  "limits": "Streak is explicit isolated browser-local fixture; no daily challenge/user record or external provider changes. No attribution ownership certification beyond prior source-byte provenance."
+}

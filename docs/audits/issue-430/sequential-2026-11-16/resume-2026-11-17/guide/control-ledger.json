@@ -1,0 +1,4650 @@
+[
+  {
+    "control": {
+      "tag": "div",
+      "role": "region",
+      "ariaLabel": "Notifications (F8)",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance"
+    ],
+    "id": "STRICT-0008-CONTROL-0001",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Live region title and actual copy-error words agree with source. No clipboard failure inferred from denial fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ui/toast.tsx",
+      "src/components/ui/toaster.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "section",
+      "ariaLabel": "Notifications alt+T",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0002",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Global notification region, no error content."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ui/sonner.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "ariaLabel": "TradeHQ home",
+      "href": "https://www.thetradehq.com/",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0003",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "svg",
+      "role": "img",
+      "ariaLabel": "TradeHQ",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0004",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Named brand vector, not factual chart or missing informative-image alt."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/brand/BrandMark.tsx:29"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Home",
+      "href": "https://www.thetradehq.com/",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0005",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learn",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance"
+    ],
+    "id": "STRICT-0008-CONTROL-0006",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Trade",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0007",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Portfolio",
+      "href": "https://www.thetradehq.com/portfolio",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0008",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Newsletter",
+      "href": "https://www.thetradehq.com/newsletter",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance"
+    ],
+    "id": "STRICT-0008-CONTROL-0009",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "More",
+      "ariaLabel": "More site pages",
+      "ariaExpanded": "false",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default"
+    ],
+    "id": "STRICT-0008-CONTROL-0010",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Daily",
+      "href": "https://www.thetradehq.com/daily",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0011",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Switch to light theme",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0012",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Sign in",
+      "href": "https://www.thetradehq.com/auth",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0013",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Daily",
+      "href": "https://www.thetradehq.com/daily",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0014",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Switch to light theme",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0015",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Open menu",
+      "ariaExpanded": "false",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0016",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "LAUNCH TERMINAL",
+      "href": "https://www.thetradehq.com/trade/btc",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0017",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Share Progress",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0018",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Browser-local progress controls; initial zero XP and unlocked first Complete agree with source. Six state transitions separately checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/LearningProgressTracker.tsx:148",
+      "src/components/ui/progress.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "progressbar",
+      "ariaLabel": "Experience Points",
+      "value": "0",
+      "min": "0",
+      "max": "100",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0019",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Browser-local progress controls; initial zero XP and unlocked first Complete agree with source. Six state transitions separately checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/LearningProgressTracker.tsx:148",
+      "src/components/ui/progress.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Complete",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0020",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Browser-local progress controls; initial zero XP and unlocked first Complete agree with source. Six state transitions separately checked."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/LearningProgressTracker.tsx:148",
+      "src/components/ui/progress.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "input",
+      "label": "Initial Capital",
+      "value": "1000",
+      "min": "0",
+      "max": "100000000",
+      "step": "100",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0021",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "input",
+      "label": "Monthly Add",
+      "value": "50",
+      "min": "0",
+      "max": "1000000",
+      "step": "10",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0022",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "span",
+      "ariaLabel": "Assumed nominal annual rate",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0023",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "span",
+      "role": "slider",
+      "ariaLabel": "Assumed nominal annual rate",
+      "value": "5",
+      "min": "0",
+      "max": "30",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0024",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "span",
+      "ariaLabel": "Illustrative deduction as a percentage of monthly growth",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0025",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "span",
+      "role": "slider",
+      "ariaLabel": "Illustrative deduction as a percentage of monthly growth",
+      "value": "0.1",
+      "min": "0",
+      "max": "1",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0026",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "START SIMULATOR",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0027",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Authored label, input bounds/value and slider attributes match source. Formula/limits checked separately; no live-market claim."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CompoundCalculator.tsx:107",
+      "src/components/ui/slider.tsx:18"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Bear Trap",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0028",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Liquidation Cascade",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0029",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Short Squeeze",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0030",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "RSI Divergence\n\nIntermediate \u00b7 4 min\n\nRSI divergence describes a mismatch between selected price swings and RSI swings. It can be followed\u2026",
+      "href": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0031",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "MACD Histogram\n\nIntermediate \u00b7 4 min\n\nThe MACD histogram represents the difference between the MACD line and signal line as vertical bars.\u2026",
+      "href": "https://www.thetradehq.com/wiki/macd-histogram",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0032",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Bollinger Band Squeeze\n\nIntermediate \u00b7 4 min\n\nA Bollinger Band squeeze describes a narrow distance between the bands relative to a selected compar\u2026",
+      "href": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0033",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Question options/card previews/CTA agree with authored data and route; no destination article editorial credit."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/pages/LearnTradingGuide.tsx:122",
+      "src/pages/LearnTradingGuide.tsx:250",
+      "src/pages/LearnTradingGuide.tsx:330",
+      "src/lib/tradingGlossary.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Tweet",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0034",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Compact variant only; share URL intercepted, no posting. Clipboard success/error source matches captured messages."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/SocialShare.tsx:70"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Copy",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0035",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Compact variant only; share URL intercepted, no posting. Clipboard success/error source matches captured messages."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/SocialShare.tsx:70"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "note",
+      "text": "TradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "ariaLabel": "Educational disclaimer",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0036",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Clear educational and simulated-performance disclaimer; no promise of returns."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/EducationalDisclaimer.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Contact TradeHQ",
+      "href": "https://www.thetradehq.com/contact",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0037",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "TH\nTradeHQ",
+      "href": "https://www.thetradehq.com/",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0038",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Trading Simulator",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0039",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Portfolio Tracker",
+      "href": "https://www.thetradehq.com/portfolio",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0040",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Markets",
+      "href": "https://www.thetradehq.com/markets",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0041",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "All Courses",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0042",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Beginner's Guide",
+      "href": "https://www.thetradehq.com/learn-trading-guide",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0043",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learning Guide",
+      "href": "https://www.thetradehq.com/learn-trading-guide",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0044",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Trading Psychology",
+      "href": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0045",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Trading Glossary",
+      "href": "https://www.thetradehq.com/wiki",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0046",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Market Guides",
+      "href": "https://www.thetradehq.com/markets",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0047",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learning Mentor",
+      "href": "https://www.thetradehq.com/ai-mentor",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0048",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Market Learning Guide",
+      "href": "https://www.thetradehq.com/learn-trading-guide",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0049",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Footer destination names/hrefs agree with source; custom footer attribution omission separately logged as existing-root extension."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/CredibilityFooter.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "article",
+      "text": "[CONTAINER: body text preserved in raw capture and existing text ledger; no duplicate paragraph credit]",
+      "ariaLabel": "Learning and reference notes",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0050",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Publisher background and editorial approach",
+      "href": "https://www.thetradehq.com/about",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0051",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "nav",
+      "text": "References and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk",
+      "ariaLabel": "Learning notes references",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0052",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Structured courses and quizzes",
+      "href": "https://www.thetradehq.com/courses",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0053",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Glossary: order terms and market mechanics",
+      "href": "https://www.thetradehq.com/wiki",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0054",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Strategy concepts and limits",
+      "href": "https://www.thetradehq.com/strategy",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0055",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Virtual practice desk",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0056",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Publisher-note labels and links agree with reviewed article body. Large container text preserved, not double-counted as a new paragraph."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/PublisherNotes.tsx",
+      "src/components/RoutePublisherNotes.tsx",
+      "scripts/staticCopy.ts"
+    ]
+  },
+  {
+    "control": {
+      "tag": "nav",
+      "role": "navigation",
+      "text": "HomeTradeMarketsPortfolioLearn",
+      "ariaLabel": "Mobile navigation",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0057",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Home",
+      "href": "https://www.thetradehq.com/",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-default",
+      "desktop-more",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0058",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Trade",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-default",
+      "desktop-more",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0059",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Markets",
+      "href": "https://www.thetradehq.com/markets",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0060",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Portfolio",
+      "href": "https://www.thetradehq.com/portfolio",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-default",
+      "desktop-more",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0061",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learn",
+      "ariaCurrent": "page",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0062",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Play background music",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0063",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Named play control; exact track/title and separate media-byte/playback check recorded."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/BackgroundMusic.tsx:65"
+    ]
+  },
+  {
+    "control": {
+      "tag": "section",
+      "role": "region",
+      "text": "Optional analytics. Help improve practice and sign-ups using a browser ID. No answers or trades. Details\n\nReject\nI'm 18+ \u00b7 Accept analytics",
+      "ariaLabel": "Optional analytics choices",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0064",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Analytics choices accurately distinguished; rejection/reopen tested, real acceptance/provider submission not exercised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ConsentBanner.tsx:98"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Details",
+      "href": "https://www.thetradehq.com/privacy",
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0065",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Analytics choices accurately distinguished; rejection/reopen tested, real acceptance/provider submission not exercised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ConsentBanner.tsx:98"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "Reject",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0066",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Analytics choices accurately distinguished; rejection/reopen tested, real acceptance/provider submission not exercised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ConsentBanner.tsx:98"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "I'm 18+ \u00b7 Accept analytics",
+      "ariaLabel": "I confirm I am 18 or older and consent to optional analytics",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0067",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Analytics choices accurately distinguished; rejection/reopen tested, real acceptance/provider submission not exercised."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ConsentBanner.tsx:98"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "dialog",
+      "text": "HomeLearnTradePortfolioNewsletter MoreSign in (optional)",
+      "ariaLabel": "Site menu",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0068",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "svg",
+      "role": "img",
+      "ariaLabel": "TradeHQ",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0069",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Named brand vector, not factual chart or missing informative-image alt."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/brand/BrandMark.tsx:29"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Close menu",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0070",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learn",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0071",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Newsletter",
+      "href": "https://www.thetradehq.com/newsletter",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more",
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0072",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "More",
+      "ariaExpanded": "false",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0073",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Sign in (optional)",
+      "href": "https://www.thetradehq.com/auth",
+      "visible": false
+    },
+    "states": [
+      "desktop-default",
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0074",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "More",
+      "ariaLabel": "More site pages",
+      "ariaExpanded": "true",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0075",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "menu",
+      "text": "EXPLORE\nStart Here\nPractice Arena\nCourses\nLearning Mentor\nMarkets\nDaily Practice\nCOMMUNITY\nLeaderboard\nReviews\nCOMPANY\nAbout\nContact\nWhat\u2019s New\nRoadmap\nLEGAL & TRUST\nPrivacy Policy\nTerms of Service\nEducational Disclaimer",
+      "ariaLabel": "More site pages",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0076",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Start Here",
+      "href": "https://www.thetradehq.com/start",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0077",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Practice Arena",
+      "href": "https://www.thetradehq.com/practice",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0078",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Courses",
+      "href": "https://www.thetradehq.com/courses",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0079",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Learning Mentor",
+      "href": "https://www.thetradehq.com/ai-mentor",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0080",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Markets",
+      "href": "https://www.thetradehq.com/markets",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0081",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Daily Practice",
+      "href": "https://www.thetradehq.com/daily",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0082",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Leaderboard",
+      "href": "https://www.thetradehq.com/leaderboard",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0083",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Reviews",
+      "href": "https://www.thetradehq.com/reviews",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0084",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "About",
+      "href": "https://www.thetradehq.com/about",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0085",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Contact",
+      "href": "https://www.thetradehq.com/contact",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0086",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "What\u2019s New",
+      "href": "https://www.thetradehq.com/whats-new",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0087",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Roadmap",
+      "href": "https://www.thetradehq.com/roadmap",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0088",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Privacy Policy",
+      "href": "https://www.thetradehq.com/privacy",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0089",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Terms of Service",
+      "href": "https://www.thetradehq.com/terms",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0090",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "role": "menuitem",
+      "text": "Educational Disclaimer",
+      "href": "https://www.thetradehq.com/about#disclaimer",
+      "visible": true
+    },
+    "states": [
+      "desktop-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0091",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "More",
+      "ariaLabel": "More site pages",
+      "ariaExpanded": "false",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0092",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Sign in",
+      "href": "https://www.thetradehq.com/auth",
+      "visible": false
+    },
+    "states": [
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0093",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Close menu",
+      "ariaExpanded": "true",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0094",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "nav",
+      "role": "navigation",
+      "text": "Home\nTrade\nMarkets\nPortfolio\nLearn",
+      "ariaLabel": "Mobile navigation",
+      "visible": true
+    },
+    "states": [
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0095",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Learn",
+      "ariaCurrent": "page",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": true
+    },
+    "states": [
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0096",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Responsive shared navigation; Learn active because current pathname begins /learn. Destination mapping correct."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/MobileBottomNav.tsx:14"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "dialog",
+      "text": "Home\nLearn\nTrade\nPortfolio\nNewsletter\nMore\n\nEXPLORE\n\nStart Here\nPractice Arena\nCourses\nLearning Mentor\nMarkets\nDaily Practice\n\nCOMMUNITY\n\nLeaderboard\nReviews\n\nCOMPANY\n\nAbout\nContact\nWhat\u2019s New\nRoadmap\n\nLEGAL & TRUST\n\nPrivacy Policy\nTerms of Service\nEducational Disclaimer\nSign in (optional)",
+      "ariaLabel": "Site menu",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0097",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Close menu",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0098",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "text": "More",
+      "ariaExpanded": "true",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "mobile-more",
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance"
+    ],
+    "id": "STRICT-0008-CONTROL-0099",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Start Here",
+      "href": "https://www.thetradehq.com/start",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0100",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Practice Arena",
+      "href": "https://www.thetradehq.com/practice",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0101",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Courses",
+      "href": "https://www.thetradehq.com/courses",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0102",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Daily Practice",
+      "href": "https://www.thetradehq.com/daily",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0103",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Leaderboard",
+      "href": "https://www.thetradehq.com/leaderboard",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0104",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Reviews",
+      "href": "https://www.thetradehq.com/reviews",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0105",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "About",
+      "href": "https://www.thetradehq.com/about",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0106",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Contact",
+      "href": "https://www.thetradehq.com/contact",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0107",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "What\u2019s New",
+      "href": "https://www.thetradehq.com/whats-new",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0108",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Roadmap",
+      "href": "https://www.thetradehq.com/roadmap",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0109",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Privacy Policy",
+      "href": "https://www.thetradehq.com/privacy",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0110",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Terms of Service",
+      "href": "https://www.thetradehq.com/terms",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0111",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Educational Disclaimer",
+      "href": "https://www.thetradehq.com/about#disclaimer",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0112",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "text": "Sign in (optional)",
+      "href": "https://www.thetradehq.com/auth",
+      "visible": true
+    },
+    "states": [
+      "mobile-more"
+    ],
+    "id": "STRICT-0008-CONTROL-0113",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Open menu",
+      "ariaExpanded": "false",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0114",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "dialog",
+      "text": "Home\nLearn\nTrade\nPortfolio\nNewsletter\nMore",
+      "ariaLabel": "Site menu",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance"
+    ],
+    "id": "STRICT-0008-CONTROL-0115",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/start",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0116",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/practice",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0117",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/courses",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0118",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/ai-mentor",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0119",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/markets",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0120",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/daily",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0121",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/leaderboard",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0122",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/reviews",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0123",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/about",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0124",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/contact",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0125",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/whats-new",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0126",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/roadmap",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0127",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/privacy",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0128",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/terms",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0129",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/about#disclaimer",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0130",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/auth",
+      "visible": false
+    },
+    "states": [
+      "analytics-rejected",
+      "analytics-reopened-no-acceptance",
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0131",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "region",
+      "text": "Failed to copy\nPlease copy the link manually",
+      "ariaLabel": "Notifications (F8)",
+      "visible": true
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0132",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Live region title and actual copy-error words agree with source. No clipboard failure inferred from denial fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/ui/toast.tsx",
+      "src/components/ui/toaster.tsx"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0133",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "STRICT-GUIDE-004: unnamed dismiss control; correction release pending"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "result": "Original unnamed action confirmed by preserved pre-fix AX and source; new preview button named Dismiss notification and keyboard-dismissed. Release closure pending."
+    },
+    "source": [
+      "src/components/ui/toast.tsx:65",
+      "src/components/ui/toaster.tsx:17"
+    ]
+  },
+  {
+    "control": {
+      "tag": "div",
+      "role": "dialog",
+      "ariaLabel": "Site menu",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0134",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0135",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/learn",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0136",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/trade",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0137",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/portfolio",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0138",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "a",
+      "href": "https://www.thetradehq.com/newsletter",
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0139",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "control": {
+      "tag": "button",
+      "ariaExpanded": "true",
+      "disabled": false,
+      "visible": false
+    },
+    "states": [
+      "clipboard-error-controls"
+    ],
+    "id": "STRICT-0008-CONTROL-0140",
+    "pass1": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant",
+      "evidence": "All normalized control attributes printed/read; raw occurrences retained.",
+      "result": "Navigation/state attributes match authored shared components. Hidden transition anchors are not visible broken links. Guest labels only; authenticated behavior unverified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "same assistant, separate second read",
+      "evidence": "preview462-second-control-state-captures.json; all142 unique projected controls printed/read separately",
+      "result": "Exact attributes match after origin normalization; source/behavior cross-check retained from pass1. No new issue."
+    },
+    "source": [
+      "src/components/Navigation.tsx:76",
+      "src/components/Navigation.tsx:157",
+      "src/components/Navigation.tsx:209",
+      "src/components/ThemeToggle.tsx:37",
+      "src/components/badges/StreakBadge.tsx:38"
+    ]
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0141",
+    "control": {
+      "tag": "a",
+      "text": "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+      "href": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+      "visible": true
+    },
+    "states": [
+      "fresh Cloudflare preview"
+    ],
+    "source": [
+      "src/components/CredibilityFooter.tsx:123"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "local-credit-toast-credit-toast.json and source read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "preview462-second-control-state-captures.json; separate actual attribute read",
+      "result": "Exact href/name matches source correction; production release still pending."
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0142",
+    "control": {
+      "tag": "a",
+      "text": "Creative Commons Attribution 4.0",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "visible": true
+    },
+    "states": [
+      "fresh Cloudflare preview"
+    ],
+    "source": [
+      "src/components/CredibilityFooter.tsx:123"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "local-credit-toast-credit-toast.json and source read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "preview462-second-control-state-captures.json; separate actual attribute read",
+      "result": "Exact href/name matches source correction; production release still pending."
+    }
+  },
+  {
+    "id": "STRICT-0008-CONTROL-0143",
+    "control": {
+      "tag": "button",
+      "ariaLabel": "Dismiss notification",
+      "disabled": false,
+      "visible": true
+    },
+    "states": [
+      "fresh Cloudflare preview"
+    ],
+    "source": [
+      "src/components/ui/toast.tsx:69"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "evidence": "local-credit-toast-credit-toast.json and source read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "evidence": "preview462-second-control-state-captures.json; separate actual attribute read",
+      "result": "Exact href/name matches source correction; production release still pending."
+    }
+  }
+]

@@ -38,5 +38,17 @@
     "evidence": "guide/music-credit-extension-before.json",
     "remedy": "Reuse exact approved shared-footer attribution; no license decision or music bytes changed.",
     "localVerification": "guide/local-credit-toast-credit-toast.json"
+  },
+  "STRICT-GUIDE-005": {
+    "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+    "status": "FIXED-RELEASE-PENDING",
+    "policyViolation": false,
+    "finding": "Accepted maximum-input monetary results visually ellipsized on small screens; complete DOM text retained.",
+    "beforeEditIssueComment": 6956311244,
+    "blockId": "STRICT-0008-BLOCK-0845",
+    "evidence": "guide/before005-number-readability.json",
+    "remedy": "Stack result cards below sm and permit wrapping; preserve all formulas and bounds.",
+    "coordination": "All8 open PR file lists checked; PR7 formula/deduction/copy patch inspected, no overlapping result-layout edits adopted or overwritten.",
+    "localVerification": "12 actual Chromium cases320/390/1440 \u00d7 light/dark \u00d75/30% nominal rate; complete visible values, independent closed-form matches, no overflow. Default result/layout4 cases pass; full build and TypeScript pass."
   }
 }

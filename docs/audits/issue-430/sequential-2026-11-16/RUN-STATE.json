@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T17:05:52.801822+00:00",
-  "phase": "GUIDE-THREE-ERRORS-FIXED-PRODUCTION-VERIFIED-PAGE-PARTIAL",
+  "updatedAtUTC": "2026-11-17T17:55:33.731351+00:00",
+  "phase": "GUIDE-CONTROLS-RELEASE462-NATIVE-PENDING-NUMBER-FIX-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/learn-trading-guide",
   "newAuditCompletedPages": 6,
   "publisherPageBaseline": 163,
@@ -111,7 +111,7 @@
   "activeAssignment": {
     "session": "audit/issue430-release-evidence-20261117",
     "page": "STRICT-0008",
-    "status": "RECOVERY CHECKPOINT; release work finished, editorial page incomplete",
+    "status": "ACTIVE P08 controls/media/date-state reconciliation and release462",
     "planComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6953065810"
   },
   "guideCoverage": {
@@ -130,16 +130,32 @@
       "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
       "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
       "No unqualified closure claim; product fix release independent of page closure.",
-      "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure."
+      "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
+      "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification."
     ],
-    "extractedSourceOnlyAlternatives": 49,
-    "totalRecordedBlocks": 822,
+    "totalRecordedBlocks": 846,
     "pass1ReviewedSourceOnlyAlternatives": 49,
     "pass1ReviewedMetadataBlocks": 60,
     "pass2ReviewedSourceOnlyAlternatives": 49,
     "pass2ReviewedMetadataBlocks": 60,
-    "totalPass2Reviewed": 822,
-    "pendingSecondPass": 0
+    "totalPass2Reviewed": 840,
+    "pendingSecondPass": 6,
+    "totalPass1Reviewed": 846,
+    "selectableCardsCapturedAndReadTwice": 48,
+    "sourceOnlyUnselectableCards": 1,
+    "controlRecords": 143,
+    "controlPass1Reviewed": 143,
+    "controlPass2Reviewed": 143,
+    "mediaRecords": 6,
+    "mediaPass1Reviewed": 6,
+    "mediaPass2Reviewed": 6,
+    "dateFixturePasses": {
+      "eachPass": 18,
+      "labelsCovered": 5,
+      "fixtureOnly": true
+    },
+    "historicalSourceProjectionRecords": 49,
+    "currentSourceOnlyUnselectableCardRecords": 1
   },
   "pendingLayoutFollowup": null,
   "historicalCaseTotalsBeforeThisSession": {
@@ -154,6 +170,21 @@
     "confirmedProductErrorsFixedRechecked": 3,
     "confirmedPolicyIssues": 0,
     "qualityRisks": 0,
-    "newStrictPagesClosed": 0
+    "newStrictPagesClosed": 0,
+    "confirmedProductErrorsImplementedAwaitingRelease": 2,
+    "existingRootQualityExtensionsAwaitingRelease": 1
+  },
+  "pendingGuideFollowup": {
+    "pullRequest": 462,
+    "headSHA": "debf817aee2e2a5417e63c69533511761c5ef05b",
+    "newProductCase": "STRICT-GUIDE-004",
+    "existingRootQualityExtension": "STRICT-HOME-001-GUIDE-EXTENSION",
+    "status": "PR462 protected merged c7a56b9 after5/5 checks and Cloudflare preview; native receipt/live verification pending."
+  },
+  "pendingGuideNumberFix": {
+    "finding": "STRICT-GUIDE-005",
+    "branch": "audit/issue430-guide-numbers-20261117",
+    "status": "source corrected; validation pending",
+    "beforeEditIssueComment": 6956311244
   }
 }

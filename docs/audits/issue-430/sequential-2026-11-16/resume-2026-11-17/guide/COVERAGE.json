@@ -14,14 +14,30 @@
     "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
     "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
     "No unqualified closure claim; product fix release independent of page closure.",
-    "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure."
+    "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
+    "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification."
   ],
-  "extractedSourceOnlyAlternatives": 49,
-  "totalRecordedBlocks": 822,
+  "totalRecordedBlocks": 846,
   "pass1ReviewedSourceOnlyAlternatives": 49,
   "pass1ReviewedMetadataBlocks": 60,
   "pass2ReviewedSourceOnlyAlternatives": 49,
   "pass2ReviewedMetadataBlocks": 60,
-  "totalPass2Reviewed": 822,
-  "pendingSecondPass": 0
+  "totalPass2Reviewed": 840,
+  "pendingSecondPass": 6,
+  "totalPass1Reviewed": 846,
+  "selectableCardsCapturedAndReadTwice": 48,
+  "sourceOnlyUnselectableCards": 1,
+  "controlRecords": 143,
+  "controlPass1Reviewed": 143,
+  "controlPass2Reviewed": 143,
+  "mediaRecords": 6,
+  "mediaPass1Reviewed": 6,
+  "mediaPass2Reviewed": 6,
+  "dateFixturePasses": {
+    "eachPass": 18,
+    "labelsCovered": 5,
+    "fixtureOnly": true
+  },
+  "historicalSourceProjectionRecords": 49,
+  "currentSourceOnlyUnselectableCardRecords": 1
 }

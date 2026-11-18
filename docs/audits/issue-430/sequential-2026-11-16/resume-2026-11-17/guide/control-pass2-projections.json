@@ -1,0 +1,885 @@
+[
+  {
+    "tag": "div",
+    "role": "region",
+    "ariaLabel": "Notifications (F8)",
+    "visible": true
+  },
+  {
+    "tag": "section",
+    "ariaLabel": "Notifications alt+T",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "ariaLabel": "TradeHQ home",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/",
+    "visible": true
+  },
+  {
+    "tag": "svg",
+    "role": "img",
+    "ariaLabel": "TradeHQ",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Home",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Learn",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Trade",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Portfolio",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/portfolio",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Newsletter",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/newsletter",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "More",
+    "ariaLabel": "More site pages",
+    "ariaExpanded": "false",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Daily",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/daily",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Switch to light theme",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Sign in",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/auth",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Daily",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/daily",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Switch to light theme",
+    "disabled": false,
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Open menu",
+    "ariaExpanded": "false",
+    "disabled": false,
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "LAUNCH TERMINAL",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade/btc",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Share Progress",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "progressbar",
+    "ariaLabel": "Experience Points",
+    "value": "0",
+    "min": "0",
+    "max": "100",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Complete",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "input",
+    "label": "Initial Capital",
+    "value": "1000",
+    "min": "0",
+    "max": "100000000",
+    "step": "100",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "input",
+    "label": "Monthly Add",
+    "value": "50",
+    "min": "0",
+    "max": "1000000",
+    "step": "10",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "span",
+    "ariaLabel": "Assumed nominal annual rate",
+    "visible": true
+  },
+  {
+    "tag": "span",
+    "role": "slider",
+    "ariaLabel": "Assumed nominal annual rate",
+    "value": "5",
+    "min": "0",
+    "max": "30",
+    "visible": true
+  },
+  {
+    "tag": "span",
+    "ariaLabel": "Illustrative deduction as a percentage of monthly growth",
+    "visible": true
+  },
+  {
+    "tag": "span",
+    "role": "slider",
+    "ariaLabel": "Illustrative deduction as a percentage of monthly growth",
+    "value": "0.1",
+    "min": "0",
+    "max": "1",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "START SIMULATOR",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Bear Trap",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Liquidation Cascade",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Short Squeeze",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "RSI Divergence\n\nIntermediate \u00b7 4 min\n\nRSI divergence describes a mismatch between selected price swings and RSI swings. It can be followed\u2026",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/wiki/rsi-divergence",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "MACD Histogram\n\nIntermediate \u00b7 4 min\n\nThe MACD histogram represents the difference between the MACD line and signal line as vertical bars.\u2026",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/wiki/macd-histogram",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Bollinger Band Squeeze\n\nIntermediate \u00b7 4 min\n\nA Bollinger Band squeeze describes a narrow distance between the bands relative to a selected compar\u2026",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/wiki/bollinger-band-squeeze",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Tweet",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Copy",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "note",
+    "text": "TradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+    "ariaLabel": "Educational disclaimer",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Contact TradeHQ",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/contact",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "TH\nTradeHQ",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Trading Simulator",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Portfolio Tracker",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/portfolio",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Markets",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/markets",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "All Courses",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Beginner's Guide",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn-trading-guide",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Learning Guide",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn-trading-guide",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Trading Psychology",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/courses/trading-psychology-mastery",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Trading Glossary",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/wiki",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Market Guides",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/markets",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Learning Mentor",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/ai-mentor",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Market Learning Guide",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn-trading-guide",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Long Road Ahead by Kevin MacLeod (incompetech.com)",
+    "href": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Creative Commons Attribution 4.0",
+    "href": "https://creativecommons.org/licenses/by/4.0/",
+    "visible": true
+  },
+  {
+    "tag": "article",
+    "text": "[CONTAINER: body text retained in raw and previously read text ledger]",
+    "ariaLabel": "Learning and reference notes",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Publisher background and editorial approach",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about",
+    "visible": true
+  },
+  {
+    "tag": "nav",
+    "text": "References and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk",
+    "ariaLabel": "Learning notes references",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Structured courses and quizzes",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/courses",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Glossary: order terms and market mechanics",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/wiki",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Strategy concepts and limits",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/strategy",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Virtual practice desk",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": true
+  },
+  {
+    "tag": "nav",
+    "role": "navigation",
+    "text": "HomeTradeMarketsPortfolioLearn",
+    "ariaLabel": "Mobile navigation",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Home",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Trade",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Markets",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/markets",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Portfolio",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/portfolio",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Learn",
+    "ariaCurrent": "page",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Play background music",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "section",
+    "role": "region",
+    "text": "Optional analytics. Help improve practice and sign-ups using a browser ID. No answers or trades. Details\n\nReject\nI'm 18+ \u00b7 Accept analytics",
+    "ariaLabel": "Optional analytics choices",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Details",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/privacy",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "Reject",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "I'm 18+ \u00b7 Accept analytics",
+    "ariaLabel": "I confirm I am 18 or older and consent to optional analytics",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "dialog",
+    "text": "HomeLearnTradePortfolioNewsletter MoreSign in (optional)",
+    "ariaLabel": "Site menu",
+    "visible": false
+  },
+  {
+    "tag": "svg",
+    "role": "img",
+    "ariaLabel": "TradeHQ",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Close menu",
+    "disabled": false,
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Learn",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Newsletter",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/newsletter",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "text": "More",
+    "ariaExpanded": "false",
+    "disabled": false,
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Sign in (optional)",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/auth",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "text": "More",
+    "ariaLabel": "More site pages",
+    "ariaExpanded": "true",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "menu",
+    "text": "EXPLORE\nStart Here\nPractice Arena\nCourses\nLearning Mentor\nMarkets\nDaily Practice\nCOMMUNITY\nLeaderboard\nReviews\nCOMPANY\nAbout\nContact\nWhat\u2019s New\nRoadmap\nLEGAL & TRUST\nPrivacy Policy\nTerms of Service\nEducational Disclaimer",
+    "ariaLabel": "More site pages",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Start Here",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/start",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Practice Arena",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/practice",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Courses",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/courses",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Learning Mentor",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/ai-mentor",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Markets",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/markets",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Daily Practice",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/daily",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Leaderboard",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/leaderboard",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Reviews",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/reviews",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "About",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Contact",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/contact",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "What\u2019s New",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/whats-new",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Roadmap",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/roadmap",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Privacy Policy",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/privacy",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Terms of Service",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/terms",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "role": "menuitem",
+    "text": "Educational Disclaimer",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about#disclaimer",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "More",
+    "ariaLabel": "More site pages",
+    "ariaExpanded": "false",
+    "disabled": false,
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "text": "Sign in",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/auth",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Close menu",
+    "ariaExpanded": "true",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "nav",
+    "role": "navigation",
+    "text": "Home\nTrade\nMarkets\nPortfolio\nLearn",
+    "ariaLabel": "Mobile navigation",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Learn",
+    "ariaCurrent": "page",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "dialog",
+    "text": "Home\nLearn\nTrade\nPortfolio\nNewsletter\nMore\n\nEXPLORE\n\nStart Here\nPractice Arena\nCourses\nLearning Mentor\nMarkets\nDaily Practice\n\nCOMMUNITY\n\nLeaderboard\nReviews\n\nCOMPANY\n\nAbout\nContact\nWhat\u2019s New\nRoadmap\n\nLEGAL & TRUST\n\nPrivacy Policy\nTerms of Service\nEducational Disclaimer\nSign in (optional)",
+    "ariaLabel": "Site menu",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Close menu",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "text": "More",
+    "ariaExpanded": "true",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Start Here",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/start",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Practice Arena",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/practice",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Courses",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/courses",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Daily Practice",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/daily",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Leaderboard",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/leaderboard",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Reviews",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/reviews",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "About",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Contact",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/contact",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "What\u2019s New",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/whats-new",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Roadmap",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/roadmap",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Privacy Policy",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/privacy",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Terms of Service",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/terms",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Educational Disclaimer",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about#disclaimer",
+    "visible": true
+  },
+  {
+    "tag": "a",
+    "text": "Sign in (optional)",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/auth",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Open menu",
+    "ariaExpanded": "false",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "dialog",
+    "text": "Home\nLearn\nTrade\nPortfolio\nNewsletter\nMore",
+    "ariaLabel": "Site menu",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/start",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/practice",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/courses",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/ai-mentor",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/markets",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/daily",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/leaderboard",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/reviews",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/contact",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/whats-new",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/roadmap",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/privacy",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/terms",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/about#disclaimer",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/auth",
+    "visible": false
+  },
+  {
+    "tag": "div",
+    "role": "region",
+    "text": "Failed to copy\nPlease copy the link manually",
+    "ariaLabel": "Notifications (F8)",
+    "visible": true
+  },
+  {
+    "tag": "button",
+    "ariaLabel": "Dismiss notification",
+    "disabled": false,
+    "visible": true
+  },
+  {
+    "tag": "div",
+    "role": "dialog",
+    "ariaLabel": "Site menu",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/learn",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/trade",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/portfolio",
+    "visible": false
+  },
+  {
+    "tag": "a",
+    "href": "https://db1d3765.tradehq-preview.pages.dev/newsletter",
+    "visible": false
+  },
+  {
+    "tag": "button",
+    "ariaExpanded": "true",
+    "disabled": false,
+    "visible": false
+  }
+]

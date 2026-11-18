@@ -1,0 +1,18 @@
+import asyncio,json,pathlib,datetime,hashlib,sys
+from playwright.async_api import async_playwright
+P=pathlib.Path(__file__).resolve().parents[1]/'guide'
+async def main():
+ async with async_playwright() as pw:
+  b=await pw.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);c=await b.new_context(ignore_https_errors=True);await c.add_init_script('window.Audio=class extends Audio {constructor(...args){super(...args);window.__auditAudio=this}}');p=await c.new_page();await p.goto(sys.argv[1]+'/learn-trading-guide',wait_until='networkidle');await p.get_by_role('button',name='Play background music',exact=True).wait_for()
+  await p.get_by_role('button',name='Reject',exact=True).click()
+  states=[]
+  async def snap(state):
+   states.append({'state':state,'atUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'audio':await p.evaluate('({src:__auditAudio.src,readyState:__auditAudio.readyState,error:__auditAudio.error?.code||null,paused:__auditAudio.paused,currentTime:__auditAudio.currentTime,duration:__auditAudio.duration,loop:__auditAudio.loop,volume:__auditAudio.volume,preload:__auditAudio.preload,preference:localStorage.getItem("tradehq:bg-music-on")})'),'button':await p.locator('button[title*="ambient music"]').evaluate('(e)=>({label:e.getAttribute("aria-label"),title:e.title})')})
+  await snap('default-not-playing');assert states[-1]['audio']['paused']
+  await p.get_by_role('button',name='Play background music',exact=True).click();await p.get_by_role('button',name='Mute background music',exact=True).wait_for();await p.wait_for_timeout(1100);await snap('user-initiated-play');assert states[-1]['audio']['currentTime']>0 and states[-1]['audio']['preference']=='1'
+  await p.get_by_role('button',name='Mute background music',exact=True).click();await snap('muted');assert states[-1]['audio']['paused'] and states[-1]['audio']['preference']=='0'
+  audioBytes=await p.evaluate('async (url)=>{let r=await fetch(url);let b=await r.arrayBuffer();return {status:r.status,bytes:b.byteLength,sha256:[...new Uint8Array(await crypto.subtle.digest("SHA-256",b))].map(n=>n.toString(16).padStart(2,"0")).join("")}}',sys.argv[1]+'/audio/long-road-ahead-kevin-macleod.mp3');assert audioBytes['status']==200 and audioBytes['sha256']=='91997574f6b18918a6e93e543c42b047ae7179d2643b2a4d706e5338ad75eef7' 
+  media=await p.evaluate('({images:[...document.images].map(e=>({src:e.src,alt:e.alt,complete:e.complete,width:e.naturalWidth})),embedded:[...document.querySelectorAll("iframe,video,canvas,figure")].map(e=>({tag:e.tagName,role:e.getAttribute("role"),label:e.getAttribute("aria-label")})),svgs:[...document.querySelectorAll("svg")].map(e=>({role:e.getAttribute("role"),label:e.getAttribute("aria-label"),hidden:e.getAttribute("aria-hidden"),class:e.getAttribute("class")}))})')
+  today=await p.evaluate('new Date().toLocaleDateString("en-CA")');await p.evaluate('(d)=>localStorage.setItem("tradehq:daily-streak",JSON.stringify({current:7,longest:7,totalCompleted:7,lastCompletedDate:d,history:[]}))',today);await p.reload(wait_until='networkidle');streak=await p.locator('a[title="7-day practice streak"]').evaluate_all('(es)=>es.map(e=>({text:e.innerText,title:e.title,href:e.getAttribute("href")}))');assert len(streak)==2
+  (P/(sys.argv[2]+'-media-states.json')).write_text(json.dumps({'origin':sys.argv[1],'states':states,'mp3':audioBytes,'media':media,'streak':streak,'limits':'Streak is explicit isolated browser-local fixture; no daily challenge/user record or external provider changes. No attribution ownership certification beyond prior source-byte provenance.'},indent=2));print('audio play/mute, bytes, media inventory, local streak PASS');await b.close()
+asyncio.run(main())
