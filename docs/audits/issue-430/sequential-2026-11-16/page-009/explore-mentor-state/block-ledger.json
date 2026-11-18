@@ -26,14 +26,19 @@
     "capture": "local-final-explore-cards.json",
     "captureSHA256": "130569cd9995f5de4b4bb787451a38c99d387e26609d31c637168c35de4823e1",
     "source": "src/pages/Trade.tsx",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
     "pass1": {
       "status": "REVIEWED",
       "reason": "The two seeded layouts keep the quote and identify it as SNAPSHOT. A successful empty shared response also preserves the label. Clean controls remain FIXED."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "Both responsive/theme layouts identify the retained $0.9897 source as SNAPSHOT. An empty synthetic shared response retains it. The clean controls remain FIXED."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production472-final-explore-cards.json",
+    "productionEvidenceSHA256": "2aa75ec91288c814c0aa70ec6136f97aae2c5ec733225461471be50e99e7c197",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-472.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0297",
@@ -62,14 +67,19 @@
     "capture": "local-mentor-prompts.json",
     "captureSHA256": "cc3e79bbf2300e2d09ddcd368d3e09b42781c5abd83849ece8ff87202480ac2b",
     "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
     "pass1": {
       "status": "REVIEWED",
       "reason": "Both local widths select the Risk review rule. The other three nonaffected shortcut responses remain byte-for-byte equal to public controls."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The Risk assessment button now receives the Risk review response in both fresh guest viewports, one light and one dark. The unaffected shortcuts match the compiled evidence."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production472-final-mentor-prompts.json",
+    "productionEvidenceSHA256": "4438a57325ecd222a489daee0939531818330dc84ca9d7d432586a527d4e7979",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-472.json"
   },
   {
     "id": "STRICT-0009-BLOCK-0299",
@@ -98,13 +108,18 @@
     "capture": "local-mentor-prompts.json",
     "captureSHA256": "cc3e79bbf2300e2d09ddcd368d3e09b42781c5abd83849ece8ff87202480ac2b",
     "source": "src/components/trading/AIMentor.tsx; src/lib/smartMentor.ts",
-    "sourceVersion": "compiled candidate",
+    "sourceVersion": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
     "pass1": {
       "status": "REVIEWED",
       "reason": "Both compiled widths explain the quantity and fee relationship. At two units and $50, $100 × 0.001 equals $0.10. The resulting cost is $100.10 and net proceeds are $99.90."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "reason": "The authored reply in both fresh guest viewports includes the 0.1% fee and correct $100.10 buy and $99.90 sell figures. All ten public replies match the intended local results."
+    },
+    "productionEvidence": "../trade-release-reconciliation/production472-final-mentor-prompts.json",
+    "productionEvidenceSHA256": "4438a57325ecd222a489daee0939531818330dc84ca9d7d432586a527d4e7979",
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-472.json"
   }
 ]

@@ -63,3 +63,7 @@ Four responsive/theme projections reconcile the Explore cards, leading to 14 dou
 # Footer and newsletter state review
 
 The two responsive footer captures preserve all 102 link occurrences. All 49 glossary links reuse exact title and slug evidence from the reviewed Guide, while their destination bodies remain in queue. Local response fixtures exercise explicit opt-in, invalid email, pending, confirmation and retry states. Actual subscription delivery and private CMP operations remain unverified. The checked-in chart polling minimum agrees with the visible five-minute candle check wording. [Footer state ledger](trade-release-reconciliation/footer-state-ledger.json)
+
+# Portfolio guidance and source badge production readback
+
+#472 now has its exact account-native receipt and fourteen fresh public guest test cases. The Explore and mentor fixes pass. The visible quote widget also has seven two-pass entries covering explicit provider, delayed, simulated, unavailable, loading, pause and resume states. No actual provider outage or private operation was inferred. #473 has passed its immutable Cloudflare preview browser cases and awaits required validation. [Exact #472 receipt](trade-release-reconciliation/RELEASE-472.json)

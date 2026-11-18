@@ -1,0 +1,515 @@
+{
+  "scope": "Explicit synthetic browser-local portfolio records; same-origin GET only",
+  "rows": [
+    {
+      "width": 390,
+      "case": "single",
+      "snapshot": {
+        "cash": 1000,
+        "totalValue": 77575.0,
+        "positions": [
+          {
+            "asset": {
+              "id": "aapl",
+              "symbol": "AAPL",
+              "name": "Apple Inc.",
+              "type": "stock",
+              "price": 255.25,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 300,
+            "avgPrice": 250,
+            "currentValue": 76575.0,
+            "profitLoss": 1575.0,
+            "profitLossPercent": 2.0999999999999908
+          }
+        ],
+        "trades": [
+          {
+            "id": "fixture-aapl",
+            "assetId": "aapl",
+            "symbol": "AAPL",
+            "type": "buy",
+            "quantity": 300,
+            "price": 250,
+            "total": 75000,
+            "timestamp": "2026-11-18T00:00:00Z"
+          }
+        ]
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $77.6K\n• Cash: $1.0K (1% of book)\n• Positions: 1\n• Trades executed: 1\n• Realized win rate: unavailable in this snapshot\n\nTop position: AAPL — 99% of book, P&L +2.10%\n\nObservation: Cash is 1% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• AAPL is 99% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.\n• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nTrade history review (1 recorded trade):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:38:47.000458+00:00"
+    },
+    {
+      "width": 1440,
+      "case": "many",
+      "snapshot": {
+        "cash": 5000,
+        "totalValue": 21000.0,
+        "positions": [
+          {
+            "asset": {
+              "id": "usdc",
+              "symbol": "USDC",
+              "name": "USD Coin",
+              "type": "crypto",
+              "price": 0.999718,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 1000.2820795464321,
+            "avgPrice": 0.999718,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "usdt",
+              "symbol": "USDT",
+              "name": "Tether",
+              "type": "crypto",
+              "price": 0.999503,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 1000.4972471318245,
+            "avgPrice": 0.999503,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "dai",
+              "symbol": "DAI",
+              "name": "Dai",
+              "type": "crypto",
+              "price": 0.999989,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 1000.0110001210013,
+            "avgPrice": 0.999989,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "trx",
+              "symbol": "TRX",
+              "name": "TRON",
+              "type": "crypto",
+              "price": 0.332191,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 3010.316354145657,
+            "avgPrice": 0.332191,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "bch",
+              "symbol": "BCH",
+              "name": "Bitcoin Cash",
+              "type": "crypto",
+              "price": 277.03,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 3.6097173591307805,
+            "avgPrice": 277.03,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "ton",
+              "symbol": "TON",
+              "name": "Toncoin",
+              "type": "crypto",
+              "price": 1.38,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 724.6376811594204,
+            "avgPrice": 1.38,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "etc",
+              "symbol": "ETC",
+              "name": "Ethereum Classic",
+              "type": "crypto",
+              "price": 8.11,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 123.30456226880395,
+            "avgPrice": 8.11,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "xmr",
+              "symbol": "XMR",
+              "name": "Monero",
+              "type": "crypto",
+              "price": 544.27,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 1.8373233872893968,
+            "avgPrice": 544.27,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "aave",
+              "symbol": "AAVE",
+              "name": "Aave",
+              "type": "crypto",
+              "price": 165.18,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 6.0540016951204745,
+            "avgPrice": 165.18,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "grt",
+              "symbol": "GRT",
+              "name": "The Graph",
+              "type": "crypto",
+              "price": 0.02616787,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 38214.80311542361,
+            "avgPrice": 0.02616787,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "ldo",
+              "symbol": "LDO",
+              "name": "Lido DAO",
+              "type": "crypto",
+              "price": 0.412042,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 2426.9370598142905,
+            "avgPrice": 0.412042,
+            "currentValue": 999.9999999999999,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "rune",
+              "symbol": "RUNE",
+              "name": "THORChain",
+              "type": "crypto",
+              "price": 0.678915,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 1472.9384385379612,
+            "avgPrice": 0.678915,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "kas",
+              "symbol": "KAS",
+              "name": "Kaspa",
+              "type": "crypto",
+              "price": 0.03931111,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 25438.10134081688,
+            "avgPrice": 0.03931111,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "stx",
+              "symbol": "STX",
+              "name": "Stacks",
+              "type": "crypto",
+              "price": 0.392636,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 2546.8882119826,
+            "avgPrice": 0.392636,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "imx",
+              "symbol": "IMX",
+              "name": "Immutable",
+              "type": "crypto",
+              "price": 0.187519,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 5332.792943648377,
+            "avgPrice": 0.187519,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          },
+          {
+            "asset": {
+              "id": "render",
+              "symbol": "RENDER",
+              "name": "Render",
+              "type": "crypto",
+              "price": 1.85,
+              "change": 0,
+              "changePercent": 0
+            },
+            "quantity": 540.5405405405405,
+            "avgPrice": 1.85,
+            "currentValue": 1000.0,
+            "profitLoss": 0.0,
+            "profitLossPercent": 0.0
+          }
+        ],
+        "trades": [
+          {
+            "id": "fixture-usdc",
+            "assetId": "usdc",
+            "symbol": "USDC",
+            "type": "buy",
+            "quantity": 1000.2820795464321,
+            "price": 0.999718,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-usdt",
+            "assetId": "usdt",
+            "symbol": "USDT",
+            "type": "buy",
+            "quantity": 1000.4972471318245,
+            "price": 0.999503,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-dai",
+            "assetId": "dai",
+            "symbol": "DAI",
+            "type": "buy",
+            "quantity": 1000.0110001210013,
+            "price": 0.999989,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-trx",
+            "assetId": "trx",
+            "symbol": "TRX",
+            "type": "buy",
+            "quantity": 3010.316354145657,
+            "price": 0.332191,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-bch",
+            "assetId": "bch",
+            "symbol": "BCH",
+            "type": "buy",
+            "quantity": 3.6097173591307805,
+            "price": 277.03,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-ton",
+            "assetId": "ton",
+            "symbol": "TON",
+            "type": "buy",
+            "quantity": 724.6376811594204,
+            "price": 1.38,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-etc",
+            "assetId": "etc",
+            "symbol": "ETC",
+            "type": "buy",
+            "quantity": 123.30456226880395,
+            "price": 8.11,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-xmr",
+            "assetId": "xmr",
+            "symbol": "XMR",
+            "type": "buy",
+            "quantity": 1.8373233872893968,
+            "price": 544.27,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-aave",
+            "assetId": "aave",
+            "symbol": "AAVE",
+            "type": "buy",
+            "quantity": 6.0540016951204745,
+            "price": 165.18,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-grt",
+            "assetId": "grt",
+            "symbol": "GRT",
+            "type": "buy",
+            "quantity": 38214.80311542361,
+            "price": 0.02616787,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-ldo",
+            "assetId": "ldo",
+            "symbol": "LDO",
+            "type": "buy",
+            "quantity": 2426.9370598142905,
+            "price": 0.412042,
+            "total": 999.9999999999999,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-rune",
+            "assetId": "rune",
+            "symbol": "RUNE",
+            "type": "buy",
+            "quantity": 1472.9384385379612,
+            "price": 0.678915,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-kas",
+            "assetId": "kas",
+            "symbol": "KAS",
+            "type": "buy",
+            "quantity": 25438.10134081688,
+            "price": 0.03931111,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-stx",
+            "assetId": "stx",
+            "symbol": "STX",
+            "type": "buy",
+            "quantity": 2546.8882119826,
+            "price": 0.392636,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-imx",
+            "assetId": "imx",
+            "symbol": "IMX",
+            "type": "buy",
+            "quantity": 5332.792943648377,
+            "price": 0.187519,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          },
+          {
+            "id": "fixture-render",
+            "assetId": "render",
+            "symbol": "RENDER",
+            "type": "buy",
+            "quantity": 540.5405405405405,
+            "price": 1.85,
+            "total": 1000.0,
+            "timestamp": "2026-11-18T00:00:00Z"
+          }
+        ]
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $21.0K\n• Cash: $5.0K (24% of book)\n• Positions: 16\n• Trades executed: 16\n• Realized win rate: unavailable in this snapshot\n\nTop position: USDC — 5% of book, P&L +0.00%\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• The portfolio has 16 positions. Position count alone does not determine diversification; check weights and how strongly the holdings move together.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nTrade history review (16 recorded trades):\n\nRealized win rate: unavailable in this snapshot.\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:38:47.204659+00:00"
+    },
+    {
+      "width": 390,
+      "case": "zero",
+      "snapshot": {
+        "cash": 0,
+        "totalValue": 0,
+        "positions": [],
+        "trades": []
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $0\n• Cash: $0 (percentage unavailable)\n• Positions: 0\n• Trades executed: 0\n• Realized win rate: unavailable in this snapshot\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nNo recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:38:46.414572+00:00"
+    },
+    {
+      "width": 1440,
+      "case": "empty",
+      "snapshot": {
+        "cash": 100000,
+        "totalValue": 100000,
+        "positions": [],
+        "trades": []
+      },
+      "rendered": {
+        "summary": "Built-in educational response:\n\nYour portfolio at a glance:\n• Total value: $100.0K\n• Cash: $100.0K (100% of book)\n• Positions: 0\n• Trades executed: 0\n• Realized win rate: unavailable in this snapshot\n\nObservation: You're sitting on heavy cash (100%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.\n\n(Educational simulation only — not financial advice.)",
+        "risk": "Built-in educational response:\n\nRisk review:\n• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.\n\n(Educational simulation only — not financial advice.)",
+        "history": "Built-in educational response:\n\nNo recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern.\n\n(Educational simulation only — not financial advice.)"
+      },
+      "atUTC": "2026-11-18T03:38:47.256471+00:00"
+    }
+  ]
+}

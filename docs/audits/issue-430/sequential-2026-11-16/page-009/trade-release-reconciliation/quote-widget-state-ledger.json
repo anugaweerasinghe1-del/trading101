@@ -1,0 +1,128 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0445",
+    "text": "Loading quote…",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#loading",
+    "sha256": "ce7589f2e3c1b4949392d7c742b936390622445b72d4b36261e23a4023895a3d",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The named pending button appears in all four held fixtures."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The control remains operable to pause selected-widget requests even while Refresh quote is disabled."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0446",
+    "text": "Provider snapshot",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#provider",
+    "sha256": "e2e2adf59c1de4aee31d6ad4a4f9259c5631e642c51309e9ef589f0d21496df3",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The recent shaped quote is labeled Provider snapshot."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The provider field and recent observation threshold reconcile to sharedQuote. The active mobile widget condenses its timestamp."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0447",
+    "text": "Cached provider quote",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#delayed",
+    "sha256": "57a80216ebe99c2e70baf318e0ad634a7de04c74e01d2e9dc64d290f7787e1e1",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The older shaped input uses a Cached provider quote label and desktop Observed time."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The test observation was 22 minutes old, beyond the source 15-minute cutoff for this classification. The text is appropriately qualified."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0448",
+    "text": "Fixed simulation quote",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#simulated",
+    "sha256": "f78df7c0ab21a5809a98deffea0f8c8072ebc00f9f5f2aa0f95d70c1213dcd12",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The simulated endpoint shape produces Fixed simulation quote and SIMULATION."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The UI does not imply outside data. The controlled endpoint supplied an explicit simulated source."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0449",
+    "text": "Quote unavailable",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#unavailable",
+    "sha256": "bf6a96d52dfa13c377130de6d0cd29d9f039a89c24e679af9cf5f7a42631e601",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The fallback labels Quote unavailable and displays the temporary error status."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "No provider response was accepted. Automatic retries are conditional on backoff and visibility; no actual outage is asserted."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0450",
+    "text": "Quote updates paused",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#paused",
+    "sha256": "45311cfbd89ec344f127e03c51fc20e9c7a30ef9be45022462cf73f7e678b146",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "All four pause interactions change the selected widget label."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The button is unpressed while paused. The line and candlestick charts remain separate data scopes."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0451",
+    "text": "Refresh quote and resume",
+    "source": "src/components/trading/LiveDataToggle.tsx; src/hooks/useLiveMarketData.ts; supabase/functions/_shared/sharedQuote.ts",
+    "sourceRevision": "5db29e65489bcbfcda4dbc32db360ee3710f2313",
+    "contentReference": "public-quote-widget-states.json#resumed",
+    "sha256": "1cd1de45a84d584ae2c8372a77f85c8c1fef273417dc10422a96dc8704656a78",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Each fresh resume restores the state appropriate to its fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate code and state review",
+      "reason": "The toggle is pressed again and Refresh quote is named. A return to an unavailable status in the outage fixture is correct."
+    },
+    "disposition": "NO-ISSUE-IN-CONTROLLED-PROJECTION"
+  }
+]
