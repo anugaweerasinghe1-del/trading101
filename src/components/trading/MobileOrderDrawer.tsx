@@ -53,15 +53,14 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
   const handleSliderChange = useCallback((value: number[]) => {
     setSliderValue(value);
     const percentage = value[0] / 100;
-    const maxAmount = side === 'buy' ? maxBuyAmount : maxSellAmount;
-    setAmount((maxAmount * percentage).toFixed(4));
+    setAmount(side === 'sell'
+      ? String(maxSellAmount * percentage)
+      : (maxBuyAmount * percentage).toFixed(4));
   }, [side, maxBuyAmount, maxSellAmount]);
 
   const handleQuickAmount = useCallback((percentage: number) => {
-    const maxAmount = side === 'buy' ? maxBuyAmount : maxSellAmount;
-    setAmount((maxAmount * percentage).toFixed(4));
-    setSliderValue([percentage * 100]);
-  }, [side, maxBuyAmount, maxSellAmount]);
+    handleSliderChange([percentage * 100]);
+  }, [handleSliderChange]);
 
   const executeTrade = useCallback(async () => {
     if (!asset || !quantity || quantity <= 0) return;
@@ -148,7 +147,11 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label className="text-sm text-muted-foreground">Amount ({asset.symbol})</Label>
-                <span className="text-sm text-muted-foreground">Available: ${availableCash.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
+                <span className="text-sm text-muted-foreground">
+                  {side === 'sell'
+                    ? `Holdings: ${maxSellAmount} ${asset.symbol}`
+                    : `Available: $${availableCash.toLocaleString('en-US', { maximumFractionDigits: 2 })}`}
+                </span>
               </div>
               <Input aria-label={`Amount in ${asset.symbol}`} type="number" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} className="h-14 text-lg bg-muted/50 border-0 tabular-nums rounded-xl" />
             </div>
