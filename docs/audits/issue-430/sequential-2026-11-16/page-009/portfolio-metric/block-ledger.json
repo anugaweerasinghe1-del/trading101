@@ -31,15 +31,27 @@
     "captureKind": "disposable guest browser state",
     "reviewer": "Codex assistant, separate same-agent review",
     "capturedAtUTC": "2026-11-18T02:38:43.318411+00:00",
-    "sourceVersion": "local candidate",
+    "sourceVersion": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
     "pass1": {
       "status": "REVIEWED",
       "result": "The displayed title now identifies open positions. The cash, total value and zero open result match both the previous capture and the closed fixture."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION",
-      "result": null
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "result": "Both routes and widths show Open P&L +$0.00 and account value $99,998.98 in the same disposed closed portfolio."
+    },
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-469.json",
+    "liveEvidence": [
+      {
+        "path": "../trade-release-reconciliation/production469-final-btc-pnl-label.json",
+        "sha256": "be4397d7c669885a0edd0791d7101b3c7171184748a52fc8a9d74c90dfc82b48"
+      },
+      {
+        "path": "../trade-release-reconciliation/production469-final-trade-pnl-label.json",
+        "sha256": "f277a7190f90306639f478dac4e4fb3b06cf9d8ac41250a9f7aa4557d82337c2"
+      }
+    ]
   },
   {
     "id": "STRICT-0009-BLOCK-0094",
@@ -73,14 +85,26 @@
     "captureKind": "disposable guest browser state",
     "reviewer": "Codex assistant, separate same-agent review",
     "capturedAtUTC": "2026-11-18T02:38:45.043640+00:00",
-    "sourceVersion": "local candidate",
+    "sourceVersion": "2789f4eaebe89f9c5c5bfcde8937b0c6559680fc",
     "pass1": {
       "status": "REVIEWED",
       "result": "The compiled candidate shows 0% in the card and built-in history reply at both widths. The limitation about fees and lot matching is retained."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION",
-      "result": null
-    }
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate post-native custom-domain reread",
+      "result": "Both routes and widths show 0% in the Price-only sells card and reply, with the displayed exclusions intact."
+    },
+    "productionReceipt": "../trade-release-reconciliation/RELEASE-469.json",
+    "liveEvidence": [
+      {
+        "path": "../trade-release-reconciliation/production469-final-btc-mentor.json",
+        "sha256": "fe43f61808d73ef6cf160d4ec497f6f2cd8ff123386ea5b4eef4e82c39ce3675"
+      },
+      {
+        "path": "../trade-release-reconciliation/production469-final-trade-mentor.json",
+        "sha256": "e114ac01d992a8a623edee08504663f07831c56c6e31137fcf0457561bb284db"
+      }
+    ]
   }
 ]
