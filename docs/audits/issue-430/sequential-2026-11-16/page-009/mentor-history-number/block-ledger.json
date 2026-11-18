@@ -1,0 +1,29 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0329",
+    "findingId": "STRICT-TRADE-014",
+    "text": "Trade history review (1 recorded trade)",
+    "sha256": "1420a6f55e746846f44c0538eef4fd65ab2d0bd64d013545ca3d9969ded9b37d",
+    "source": "src/lib/smartMentor.ts",
+    "scope": "compiled candidate and associated public before-edit contrast",
+    "sourceVersion": "compiled candidate",
+    "beforeBlock": "STRICT-0009-BLOCK-0319",
+    "captures": [
+      {
+        "path": "public-mentor-single-repeat.json",
+        "sha256": "229698a5fa97fee0818352826eb71b5c1c542276e16fe2edd7ed3dec64410fa8"
+      },
+      {
+        "path": "local-mentor-state-matrix.json",
+        "sha256": "dfc13103415ec51ad6ccabcfb55eff8f2b8dc75276d5773f918c0543ea922aa1"
+      }
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Compiled fixture reports 1 recorded trade. Exact comparison across all twelve projections found only this singular adjustment."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  }
+]
