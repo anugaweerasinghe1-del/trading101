@@ -82,7 +82,7 @@ function DesktopRow({ position, quote }: { position: Position; quote?: QuoteCove
       </td>
       <td className="px-4 py-4 tabular-nums">{formatMoney(position.avgPrice)}</td>
       <td className="px-4 py-4 tabular-nums">{formatMoney(position.asset.price)}</td>
-      <td className="px-4 py-4 tabular-nums">{position.quantity.toFixed(4)}</td>
+      <td className="px-4 py-4 tabular-nums">{position.quantity}</td>
       <td className="px-4 py-4 tabular-nums text-muted-foreground">
         {formatMoney(position.avgPrice * position.quantity)}
       </td>
@@ -156,7 +156,7 @@ function MobileCard({ position, quote }: { position: Position; quote?: QuoteCove
         </div>
         <div>
           <p className="text-muted-foreground">Qty</p>
-          <p className="mt-1 font-medium tabular-nums">{position.quantity.toFixed(4)}</p>
+          <p className="mt-1 font-medium tabular-nums">{position.quantity}</p>
         </div>
         <div>
           <p className="text-muted-foreground">Value</p>
