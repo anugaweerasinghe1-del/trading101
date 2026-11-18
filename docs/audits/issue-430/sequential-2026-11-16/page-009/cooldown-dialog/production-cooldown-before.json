@@ -1,0 +1,65 @@
+{
+  "scope": "Production read-only browser fixture, explicit recent-loss state, non-GET requests blocked and no completed trade",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T02:13:59.460039+00:00",
+      "journalOff": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\"",
+      "journalWhitespace": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\" [checked]\n  - textbox \"Trade rationale\":\n    - /placeholder: Why are you making this trade? (required)\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\" [disabled]",
+      "journalFilled": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\" [checked]\n  - textbox \"Trade rationale\":\n    - /placeholder: Why are you making this trade? (required)\n    - text: Practice a fixed-size decision.\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\"",
+      "timerInitialText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\n0:05\nCancel Trade\nWait...",
+      "timerInitialAX": "",
+      "timerReadyText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\nReady\nCancel Trade\nProceed Anyway",
+      "timerReadyAX": "",
+      "cashAtCapture": 100000,
+      "hit": {
+        "cancelReceivesPointer": false,
+        "hitTag": "TEXTAREA",
+        "hitLabel": "Trade rationale",
+        "hitInDrawer": true,
+        "cancelHiddenAncestor": true
+      },
+      "origin": "https://www.thetradehq.com"
+    },
+    {
+      "width": 430,
+      "atUTC": "2026-11-18T02:13:59.557110+00:00",
+      "journalOff": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\"\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\"",
+      "journalWhitespace": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\" [checked]\n  - textbox \"Trade rationale\":\n    - /placeholder: Why are you making this trade? (required)\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\" [disabled]",
+      "journalFilled": "- dialog \"AAPL$255.25 USD/unit Close order panel\":\n  - heading \"AAPL$255.25 USD/unit Close order panel\" [level=2]:\n    - text: AAPL$255.25 USD/unit\n    - button \"Close order panel\"\n  - paragraph: Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.\n  - button \"Buy\"\n  - button \"Sell\"\n  - paragraph: Market order — fills immediately at the shown simulator price.\n  - text: \"Amount (AAPL) Available: $100,000\"\n  - spinbutton \"Amount in AAPL\": \"100\"\n  - button \"25%\"\n  - button \"50%\"\n  - button \"75%\"\n  - button \"100%\"\n  - slider \"Order size as a percentage of available cash\"\n  - img\n  - text: Ghost Journal\n  - switch \"Enable Ghost Journal\" [checked]\n  - textbox \"Trade rationale\":\n    - /placeholder: Why are you making this trade? (required)\n    - text: Practice a fixed-size decision.\n  - text: Total (USD) $25550.53\n  - button \"Buy AAPL\"",
+      "timerInitialText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\n0:05\nCancel Trade\nWait...",
+      "timerInitialAX": "",
+      "timerReadyText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\nReady\nCancel Trade\nProceed Anyway",
+      "timerReadyAX": "",
+      "cashAtCapture": 100000,
+      "hit": {
+        "cancelReceivesPointer": false,
+        "hitTag": "TEXTAREA",
+        "hitLabel": "Trade rationale",
+        "hitInDrawer": true,
+        "cancelHiddenAncestor": true
+      },
+      "origin": "https://www.thetradehq.com"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T02:13:59.635755+00:00",
+      "journalOff": "- button \"Buy\"\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\": \"100\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\"\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $25.53 Total (USD) $25550.53 Est. position value $25525.00 You are placing a market buy for 100.0000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Buy AAPL\"",
+      "journalWhitespace": "- button \"Buy\"\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\": \"100\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\" [checked]\n- textbox \"Trade rationale\":\n  - /placeholder: Why are you making this trade? (required)\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $25.53 Total (USD) $25550.53 Est. position value $25525.00 You are placing a market buy for 100.0000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Buy AAPL\" [disabled]",
+      "journalFilled": "- button \"Buy\"\n- button \"Sell\"\n- text: \"Amount Max: 391.3814 AAPL\"\n- spinbutton \"Amount in AAPL\": \"100\"\n- text: AAPL\n- button \"25%\"\n- button \"50%\"\n- button \"75%\"\n- button \"100%\"\n- img\n- text: Ghost Journal\n- switch \"Enable Ghost Journal\" [checked]\n- textbox \"Trade rationale\":\n  - /placeholder: Why are you making this trade? (required)\n  - text: Practice a fixed-size decision.\n- paragraph: Virtual execution input · USD per simulator unit\n- text: Price (USD/unit) $255.25\n- paragraph: Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.\n- text: Fee (0.1%) $25.53 Total (USD) $25550.53 Est. position value $25525.00 You are placing a market buy for 100.0000 AAPL at approximately $255.25 USD per simulator unit.\n- button \"Buy AAPL\"",
+      "timerInitialText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\n0:05\nCancel Trade\nWait...",
+      "timerInitialAX": "- img\n- heading \"Psychology Warning\" [level=2]\n- paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n- img\n- text: Breath & Reset Breathe In 0:05\n- button \"Cancel Trade\"\n- button \"Wait...\" [disabled]",
+      "timerReadyText": "Psychology Warning\n\nYou're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n\nBreath & Reset\nBreathe In\nReady\nCancel Trade\nProceed Anyway",
+      "timerReadyAX": "- img\n- heading \"Psychology Warning\" [level=2]\n- paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n- img\n- text: Breath & Reset Breathe In Ready\n- button \"Cancel Trade\"\n- button \"Proceed Anyway\"",
+      "cashAtCapture": 100000,
+      "hit": {
+        "cancelReceivesPointer": true,
+        "hitTag": "BUTTON",
+        "hitLabel": null,
+        "hitInDrawer": false,
+        "cancelHiddenAncestor": false
+      },
+      "origin": "https://www.thetradehq.com"
+    }
+  ]
+}

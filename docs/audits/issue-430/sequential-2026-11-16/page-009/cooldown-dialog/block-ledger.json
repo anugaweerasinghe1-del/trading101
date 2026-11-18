@@ -1,0 +1,89 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0087",
+    "text": "Psychology Warning: Cancel Trade / Wait... / Proceed Anyway",
+    "sha256": "7f3636ff976d8545fd97e3bd0183a2c213fa3f0c968eb3e09d3b96572619a475",
+    "source": "src/components/trading/RevengeTradingBlocker.tsx",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "scope": "public guest browser fixture",
+    "captures": [
+      "production-cooldown-before.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-005"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The visual control is blocked by the order drawer in 390px and excluded from AX."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The 430px independently reproduced hit-testing and aria-hidden results; desktop cancel remains pointer-reachable. The fixture leaves cash unchanged.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0088",
+    "text": "Psychology Warning dialog: Cancel Trade, Wait... and Proceed Anyway",
+    "sha256": "d44be3d32b0e29daad209c84a62892a05314d64a4443e0defeac9009c6285d94",
+    "source": "src/components/trading/RevengeTradingBlocker.tsx",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "scope": "compiled candidate",
+    "captures": [
+      "local-cooldown.json"
+    ],
+    "findingIds": [
+      "STRICT-TRADE-005"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Four local cases verify the named modal and an initially disabled timer action; Tab containment, Cancel/Escape and deliberate after-cooldown proceed work."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Exact native deployment and subsequent custom-domain reread due."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0089",
+    "text": "Enable Ghost Journal",
+    "sha256": "19040ed2abb3705454bb0f6813c6e0f8930904f06414a81af7836e2c0a5a39a4",
+    "source": "src/components/trading/GhostJournalToggle.tsx",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "scope": "public guest browser fixture",
+    "captures": [
+      "production-cooldown-before.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The switch has a meaningful programmatic name and reflects its enabled state in the local mobile fixture."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The separate desktop and custom-domain fixture observations expose the same named switch and independent rationale state.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0090",
+    "text": "Trade rationale | Why are you making this trade? (required)",
+    "sha256": "6fc6a04230fd319fe22f5e8493179a9c23250db3652d24bc15547a8bae48b05c",
+    "source": "src/components/trading/GhostJournalToggle.tsx",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "scope": "public guest browser fixture",
+    "captures": [
+      "production-cooldown-before.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The actual expanded area has a label and reason prompt; blank or whitespace-only rationale disables enabled-journal submission."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A separate browser state with a nonblank rationale enables the prospective action; actual testing used the isolated cooldown and no live order.",
+      "reviewer": "same Codex assistant, separate skeptical reread"
+    }
+  }
+]

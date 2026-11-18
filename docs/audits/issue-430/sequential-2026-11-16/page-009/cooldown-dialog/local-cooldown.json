@@ -1,0 +1,50 @@
+[
+  {
+    "width": 390,
+    "path": "/trade?journey=1",
+    "symbol": "AAPL",
+    "atUTC": "2026-11-18T02:18:55.335769+00:00",
+    "action": "cancel",
+    "cancelReceivesPointer": true,
+    "initialAX": "- dialog \"Psychology Warning\":\n  - img\n  - heading \"Psychology Warning\" [level=2]\n  - paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n  - img\n  - text: Breath & Reset Breathe In 0:05\n  - button \"Cancel Trade\"\n  - button \"Wait...\" [disabled]\n  - button \"Close\":\n    - img\n    - text: Close",
+    "tradeCount": 0,
+    "focusRestoredOrCompleted": true,
+    "http": 200
+  },
+  {
+    "width": 430,
+    "path": "/trade?journey=1",
+    "symbol": "AAPL",
+    "atUTC": "2026-11-18T02:18:55.149400+00:00",
+    "action": "escape",
+    "cancelReceivesPointer": true,
+    "initialAX": "- dialog \"Psychology Warning\":\n  - img\n  - heading \"Psychology Warning\" [level=2]\n  - paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n  - img\n  - text: Breath & Reset Breathe In 0:05\n  - button \"Cancel Trade\"\n  - button \"Wait...\" [disabled]\n  - button \"Close\":\n    - img\n    - text: Close",
+    "tradeCount": 0,
+    "focusRestoredOrCompleted": true,
+    "http": 200
+  },
+  {
+    "width": 390,
+    "path": "/trade/btc",
+    "symbol": "BTC",
+    "atUTC": "2026-11-18T02:18:55.491460+00:00",
+    "action": "cancel",
+    "cancelReceivesPointer": true,
+    "initialAX": "- dialog \"Psychology Warning\":\n  - img\n  - heading \"Psychology Warning\" [level=2]\n  - paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n  - img\n  - text: Breath & Reset Breathe In 0:05\n  - button \"Cancel Trade\"\n  - button \"Wait...\" [disabled]\n  - button \"Close\":\n    - img\n    - text: Close",
+    "tradeCount": 0,
+    "focusRestoredOrCompleted": true,
+    "http": 200
+  },
+  {
+    "width": 1440,
+    "path": "/trade?journey=1",
+    "symbol": "AAPL",
+    "atUTC": "2026-11-18T02:18:58.650336+00:00",
+    "action": "proceed",
+    "cancelReceivesPointer": true,
+    "initialAX": "- dialog \"Psychology Warning\":\n  - img\n  - heading \"Psychology Warning\" [level=2]\n  - paragraph: You're attempting a large trade shortly after a loss. This pattern is associated with revenge trading — an emotional response that often leads to larger losses.\n  - img\n  - text: Breath & Reset Breathe In 0:04\n  - button \"Cancel Trade\"\n  - button \"Wait...\" [disabled]\n  - button \"Close\":\n    - img\n    - text: Close",
+    "tradeCount": 1,
+    "focusRestoredOrCompleted": true,
+    "http": 200
+  }
+]
