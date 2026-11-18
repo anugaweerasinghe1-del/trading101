@@ -1,0 +1,1452 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0211",
+    "pickerOrdinal": 112,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "KO",
+            "name": "Coca-Cola Company",
+            "price": "$62.45",
+            "change": "+0.73%",
+            "favorite": "Add Coca-Cola Company (KO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "KO",
+            "name": "Coca-Cola Company",
+            "price": "$62.45",
+            "change": "+0.73%",
+            "favorite": "Add Coca-Cola Company (KO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 112
+    },
+    "sha256": "f2f29ec1a6a438668bfddca38c095445301c47d8aae50eca14ccc6c9f701b430",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Coca-Cola Company/KO row shows $62.45, +0.73% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $62.45 and +0.73%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full company label and KO identify the issuer separately from competing beverage stock PEP. Checked-in stock asset ID ko, with price 62.45 and movement 0.45. Those seed fields imply 0.73% at two decimals, versus the displayed source field 0.73%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0212",
+    "pickerOrdinal": 113,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "PEP",
+            "name": "PepsiCo Inc.",
+            "price": "$172.80",
+            "change": "+0.73%",
+            "favorite": "Add PepsiCo Inc. (PEP) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "PEP",
+            "name": "PepsiCo Inc.",
+            "price": "$172.80",
+            "change": "+0.73%",
+            "favorite": "Add PepsiCo Inc. (PEP) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 113
+    },
+    "sha256": "0543694391a28d3d6db2fcec90e62cc8e0be9b427482242672c7d3b8889125c9",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published PepsiCo Inc./PEP row shows $172.80, +0.73% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $172.80 and +0.73%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The same +0.73% shown for KO resolves to a different underlying catalog seed and action. Checked-in stock asset ID pep, with price 172.80 and movement 1.25. Those seed fields imply 0.73% at two decimals, versus the displayed source field 0.73%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0213",
+    "pickerOrdinal": 114,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "DIS",
+            "name": "Walt Disney Company",
+            "price": "$108.50",
+            "change": "+2.31%",
+            "favorite": "Add Walt Disney Company (DIS) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "DIS",
+            "name": "Walt Disney Company",
+            "price": "$108.50",
+            "change": "+2.31%",
+            "favorite": "Add Walt Disney Company (DIS) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 114
+    },
+    "sha256": "56aeeab3973b16f6aff0a8d80e33df3a09fe004a9022efb3af2ba7efacc26d80",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Walt Disney Company/DIS row shows $108.50, +2.31% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $108.50 and +2.31%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The three-part name and DIS selection are unambiguous within the stock group. Checked-in stock asset ID dis, with price 108.50 and movement 2.45. Those seed fields imply 2.31% at two decimals, versus the displayed source field 2.31%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0214",
+    "pickerOrdinal": 115,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "NKE",
+            "name": "Nike Inc.",
+            "price": "$98.25",
+            "change": "+1.92%",
+            "favorite": "Add Nike Inc. (NKE) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "NKE",
+            "name": "Nike Inc.",
+            "price": "$98.25",
+            "change": "+1.92%",
+            "favorite": "Add Nike Inc. (NKE) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 115
+    },
+    "sha256": "f0eb1e8652f911ec8daa19eb209898b381b8d19cad8c5797715a72b72d509665",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Nike Inc./NKE row shows $98.25, +1.92% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $98.25 and +1.92%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The whole Nike name and NKE favorite agree with the practice asset. Checked-in stock asset ID nke, with price 98.25 and movement 1.85. Those seed fields imply 1.92% at two decimals, versus the displayed source field 1.92%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0215",
+    "pickerOrdinal": 116,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XOM",
+            "name": "Exxon Mobil Corp.",
+            "price": "$108.50",
+            "change": "-1.68%",
+            "favorite": "Add Exxon Mobil Corp. (XOM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XOM",
+            "name": "Exxon Mobil Corp.",
+            "price": "$108.50",
+            "change": "-1.68%",
+            "favorite": "Add Exxon Mobil Corp. (XOM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 116
+    },
+    "sha256": "28469a617bfc95703ef508c6569c7419308d3d3f48f592b224be4f29e64007c4",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Exxon Mobil Corp./XOM row shows $108.50, -1.68% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $108.50 and -1.68%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The negative move remains readable at both widths; the row is the issuer stock rather than a crude oil proxy. Checked-in stock asset ID xom, with price 108.50 and movement -1.85. Those seed fields imply -1.68% at two decimals, versus the displayed source field -1.68%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0216",
+    "pickerOrdinal": 117,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CVX",
+            "name": "Chevron Corporation",
+            "price": "$152.40",
+            "change": "-1.46%",
+            "favorite": "Add Chevron Corporation (CVX) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CVX",
+            "name": "Chevron Corporation",
+            "price": "$152.40",
+            "change": "-1.46%",
+            "favorite": "Add Chevron Corporation (CVX) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 117
+    },
+    "sha256": "4d8a6ab49479865843541e570d8ae263b8b99286fb81a2586ff86d091df109c3",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Chevron Corporation/CVX row shows $152.40, -1.46% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $152.40 and -1.46%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The control identifies Chevron and CVX distinctly from the other energy instruments. Checked-in stock asset ID cvx, with price 152.40 and movement -2.25. Those seed fields imply -1.45% at two decimals, versus the displayed source field -1.46%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0217",
+    "pickerOrdinal": 118,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "BA",
+            "name": "Boeing Company",
+            "price": "$218.50",
+            "change": "+2.27%",
+            "favorite": "Add Boeing Company (BA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "BA",
+            "name": "Boeing Company",
+            "price": "$218.50",
+            "change": "+2.27%",
+            "favorite": "Add Boeing Company (BA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 118
+    },
+    "sha256": "99f96497ee14425f14bc95852082e8032cfb7ff4391ad3f6a8e2e4f14f7efda1",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Boeing Company/BA row shows $218.50, +2.27% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $218.50 and +2.27%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The entity name and short BA ticker together identify the selected stock. Checked-in stock asset ID ba, with price 218.50 and movement 4.85. Those seed fields imply 2.27% at two decimals, versus the displayed source field 2.27%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0218",
+    "pickerOrdinal": 119,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "CAT",
+            "name": "Caterpillar Inc.",
+            "price": "$295.80",
+            "change": "+1.46%",
+            "favorite": "Add Caterpillar Inc. (CAT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "CAT",
+            "name": "Caterpillar Inc.",
+            "price": "$295.80",
+            "change": "+1.46%",
+            "favorite": "Add Caterpillar Inc. (CAT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 119
+    },
+    "sha256": "fed2e4a31bf1857c39fc21e954951ecafcf10b9393ee5e5ede1ee51ea7fea6bc",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Caterpillar Inc./CAT row shows $295.80, +1.46% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $295.80 and +1.46%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full issuer label disambiguates the common-word ticker. Checked-in stock asset ID cat, with price 295.80 and movement 4.25. Those seed fields imply 1.46% at two decimals, versus the displayed source field 1.46%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0219",
+    "pickerOrdinal": 120,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "DE",
+            "name": "Deere & Company",
+            "price": "$398.50",
+            "change": "+1.49%",
+            "favorite": "Add Deere & Company (DE) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "DE",
+            "name": "Deere & Company",
+            "price": "$398.50",
+            "change": "+1.49%",
+            "favorite": "Add Deere & Company (DE) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 120
+    },
+    "sha256": "0a551c0a7b9421f779e063d8cf0b76fac1311846d268777759e6dc4595b5734f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Deere & Company/DE row shows $398.50, +1.49% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $398.50 and +1.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The ampersand and ticker are complete in the action name. Checked-in stock asset ID de, with price 398.50 and movement 5.85. Those seed fields imply 1.49% at two decimals, versus the displayed source field 1.49%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0220",
+    "pickerOrdinal": 121,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SPY",
+            "name": "SPDR S&P 500 ETF",
+            "price": "$478.25",
+            "change": "+0.60%",
+            "favorite": "Add SPDR S&P 500 ETF (SPY) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SPY",
+            "name": "SPDR S&P 500 ETF",
+            "price": "$478.25",
+            "change": "+0.60%",
+            "favorite": "Add SPDR S&P 500 ETF (SPY) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 121
+    },
+    "sha256": "734e40b420a76945d9c7dc5c19f517346211db34542d758ff7ae712591e2cbaa",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published SPDR S&P 500 ETF/SPY row shows $478.25, +0.60% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $478.25 and +0.60%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The S&P 500 wording names this fund projection and the SPY ticker distinguishes it from VOO and IVV. Checked-in etf asset ID spy, with price 478.25 and movement 2.85. Those seed fields imply 0.60% at two decimals, versus the displayed source field 0.60%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0221",
+    "pickerOrdinal": 122,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "QQQ",
+            "name": "Invesco QQQ Trust",
+            "price": "$405.90",
+            "change": "+1.05%",
+            "favorite": "Add Invesco QQQ Trust (QQQ) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "QQQ",
+            "name": "Invesco QQQ Trust",
+            "price": "$405.90",
+            "change": "+1.05%",
+            "favorite": "Add Invesco QQQ Trust (QQQ) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 122
+    },
+    "sha256": "03bc7916a7a752662ada0576bb1df255c039086cbdd77f5491d8fc51855aac54",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Invesco QQQ Trust/QQQ row shows $405.90, +1.05% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $405.90 and +1.05%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The name explicitly identifies the trust and shares the QQQ ticker in the favorite. Checked-in etf asset ID qqq, with price 405.90 and movement 4.20. Those seed fields imply 1.05% at two decimals, versus the displayed source field 1.05%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0222",
+    "pickerOrdinal": 123,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "IWM",
+            "name": "iShares Russell 2000 ETF",
+            "price": "$198.45",
+            "change": "-0.60%",
+            "favorite": "Add iShares Russell 2000 ETF (IWM) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "IWM",
+            "name": "iShares Russell 2000 ETF",
+            "price": "$198.45",
+            "change": "-0.60%",
+            "favorite": "Add iShares Russell 2000 ETF (IWM) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 123
+    },
+    "sha256": "66fa557bcfef1da4188756f86b1061edb7f471dfb8742c4e49865fef8c07a846",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares Russell 2000 ETF/IWM row shows $198.45, -0.60% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $198.45 and -0.60%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The fund label gives the Russell 2000 exposure and negative seeded move with no performance guarantee. Checked-in etf asset ID iwm, with price 198.45 and movement -1.20. Those seed fields imply -0.60% at two decimals, versus the displayed source field -0.60%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0223",
+    "pickerOrdinal": 124,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "DIA",
+            "name": "SPDR Dow Jones ETF",
+            "price": "$378.60",
+            "change": "+0.38%",
+            "favorite": "Add SPDR Dow Jones ETF (DIA) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "DIA",
+            "name": "SPDR Dow Jones ETF",
+            "price": "$378.60",
+            "change": "+0.38%",
+            "favorite": "Add SPDR Dow Jones ETF (DIA) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 124
+    },
+    "sha256": "c608b5163e9cd919b13c7114f358f11a5ffe3bd5a96a8cb97308ac386269389b",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published SPDR Dow Jones ETF/DIA row shows $378.60, +0.38% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $378.60 and +0.38%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "DIA is an ETF asset record. The abbreviated Dow Jones name does not convert it into a standalone index quote. Checked-in etf asset ID dia, with price 378.60 and movement 1.45. Those seed fields imply 0.38% at two decimals, versus the displayed source field 0.38%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0224",
+    "pickerOrdinal": 125,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "VOO",
+            "name": "Vanguard S&P 500 ETF",
+            "price": "$439.80",
+            "change": "+0.59%",
+            "favorite": "Add Vanguard S&P 500 ETF (VOO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "VOO",
+            "name": "Vanguard S&P 500 ETF",
+            "price": "$439.80",
+            "change": "+0.59%",
+            "favorite": "Add Vanguard S&P 500 ETF (VOO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 125
+    },
+    "sha256": "82b87cd76ebf72bcfc36367ad68b1d0311b658cf7133a2aa1846c39f1219d37e",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Vanguard S&P 500 ETF/VOO row shows $439.80, +0.59% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $439.80 and +0.59%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The issuer and VOO distinguish it from the other S&P 500 instruments even with similar seeded moves. Checked-in etf asset ID voo, with price 439.80 and movement 2.60. Those seed fields imply 0.59% at two decimals, versus the displayed source field 0.59%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0225",
+    "pickerOrdinal": 126,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "ARKK",
+            "name": "ARK Innovation ETF",
+            "price": "$48.25",
+            "change": "+3.99%",
+            "favorite": "Add ARK Innovation ETF (ARKK) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "ARKK",
+            "name": "ARK Innovation ETF",
+            "price": "$48.25",
+            "change": "+3.99%",
+            "favorite": "Add ARK Innovation ETF (ARKK) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 126
+    },
+    "sha256": "5fc7cc0167f97e146c33dfc0a404a324b8f2eef81053953654531ef119131f53",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published ARK Innovation ETF/ARKK row shows $48.25, +3.99% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $48.25 and +3.99%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The project identifies the innovation fund without making a guarantee about underlying holdings or future returns. Checked-in etf asset ID arkk, with price 48.25 and movement 1.85. Those seed fields imply 3.99% at two decimals, versus the displayed source field 3.99%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0226",
+    "pickerOrdinal": 127,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "VTI",
+            "name": "Vanguard Total Stock Market",
+            "price": "$245.80",
+            "change": "+0.59%",
+            "favorite": "Add Vanguard Total Stock Market (VTI) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "VTI",
+            "name": "Vanguard Total Stock Market",
+            "price": "$245.80",
+            "change": "+0.59%",
+            "favorite": "Add Vanguard Total Stock Market (VTI) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 127
+    },
+    "sha256": "c262c6fcba749d75cc8966689849da3145a4988bc675afddc6444d3993e22e37",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Vanguard Total Stock Market/VTI row shows $245.80, +0.59% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $245.80 and +0.59%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The shortened total-market product name and VTI are sufficient to distinguish the fund from Vanguard's VOO row. Checked-in etf asset ID vti, with price 245.80 and movement 1.45. Those seed fields imply 0.59% at two decimals, versus the displayed source field 0.59%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0227",
+    "pickerOrdinal": 128,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "IVV",
+            "name": "iShares Core S&P 500",
+            "price": "$482.50",
+            "change": "+0.59%",
+            "favorite": "Add iShares Core S&P 500 (IVV) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "IVV",
+            "name": "iShares Core S&P 500",
+            "price": "$482.50",
+            "change": "+0.59%",
+            "favorite": "Add iShares Core S&P 500 (IVV) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 128
+    },
+    "sha256": "245b583692dceb0a434ac6063b1a7231bdae9901864de2368a20a210a2aa95e3",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares Core S&P 500/IVV row shows $482.50, +0.59% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $482.50 and +0.59%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The ticker names the specific iShares product distinct from the SPY and VOO rows. Checked-in etf asset ID ivv, with price 482.50 and movement 2.85. Those seed fields imply 0.59% at two decimals, versus the displayed source field 0.59%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0228",
+    "pickerOrdinal": 129,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "AGG",
+            "name": "iShares Core US Aggregate Bond",
+            "price": "$98.50",
+            "change": "+0.15%",
+            "favorite": "Add iShares Core US Aggregate Bond (AGG) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "AGG",
+            "name": "iShares Core US Aggregate Bond",
+            "price": "$98.50",
+            "change": "+0.15%",
+            "favorite": "Add iShares Core US Aggregate Bond (AGG) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 129
+    },
+    "sha256": "4778ec1370f15c7ea10b4a488b9ef937283fe7943679df473579883829375943",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares Core US Aggregate Bond/AGG row shows $98.50, +0.15% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $98.50 and +0.15%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The aggregate bond label and AGG are consistent; the row is the fund projection without an interest-rate guarantee. Checked-in etf asset ID agg, with price 98.50 and movement 0.15. Those seed fields imply 0.15% at two decimals, versus the displayed source field 0.15%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0229",
+    "pickerOrdinal": 130,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "IEF",
+            "name": "iShares 7-10 Year Treasury",
+            "price": "$95.80",
+            "change": "+0.26%",
+            "favorite": "Add iShares 7-10 Year Treasury (IEF) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "IEF",
+            "name": "iShares 7-10 Year Treasury",
+            "price": "$95.80",
+            "change": "+0.26%",
+            "favorite": "Add iShares 7-10 Year Treasury (IEF) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 130
+    },
+    "sha256": "7cb5d7d2e76fa96add214924408bffffe221c0235e565a7c0aaaaf6a07458b3d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares 7-10 Year Treasury/IEF row shows $95.80, +0.26% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $95.80 and +0.26%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The maturity band is preserved as 7–10 years, and IEF distinguishes it from TLT. Checked-in etf asset ID ief, with price 95.80 and movement 0.25. Those seed fields imply 0.26% at two decimals, versus the displayed source field 0.26%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0230",
+    "pickerOrdinal": 131,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "TLT",
+            "name": "iShares 20+ Year Treasury",
+            "price": "$92.45",
+            "change": "+0.49%",
+            "favorite": "Add iShares 20+ Year Treasury (TLT) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "TLT",
+            "name": "iShares 20+ Year Treasury",
+            "price": "$92.45",
+            "change": "+0.49%",
+            "favorite": "Add iShares 20+ Year Treasury (TLT) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 131
+    },
+    "sha256": "5378bfc70ec26e95f98f9ffdd8717cf145a1502d70e61ef62b89d268406d70b1",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares 20+ Year Treasury/TLT row shows $92.45, +0.49% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $92.45 and +0.49%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The literal plus character remains readable and the ticker identifies a separate long-maturity Treasury fund. Checked-in etf asset ID tlt, with price 92.45 and movement 0.45. Those seed fields imply 0.49% at two decimals, versus the displayed source field 0.49%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0231",
+    "pickerOrdinal": 132,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "GLD",
+            "name": "SPDR Gold Shares",
+            "price": "$185.40",
+            "change": "+0.68%",
+            "favorite": "Add SPDR Gold Shares (GLD) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "GLD",
+            "name": "SPDR Gold Shares",
+            "price": "$185.40",
+            "change": "+0.68%",
+            "favorite": "Add SPDR Gold Shares (GLD) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 132
+    },
+    "sha256": "df1bfb28acc927cb43f417f106f93735675cae3ff5e3da03f6a8886fb9ece2ff",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published SPDR Gold Shares/GLD row shows $185.40, +0.68% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $185.40 and +0.68%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The GLD and SPDR label identify the fund entry, distinct from the site's separate gold commodity proxy. Checked-in etf asset ID gld, with price 185.40 and movement 1.25. Those seed fields imply 0.68% at two decimals, versus the displayed source field 0.68%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0232",
+    "pickerOrdinal": 133,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SLV",
+            "name": "iShares Silver Trust",
+            "price": "$21.85",
+            "change": "+1.63%",
+            "favorite": "Add iShares Silver Trust (SLV) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SLV",
+            "name": "iShares Silver Trust",
+            "price": "$21.85",
+            "change": "+1.63%",
+            "favorite": "Add iShares Silver Trust (SLV) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 133
+    },
+    "sha256": "84af181a42d3e6a463017afcb3d67c6450303c2b9dcf9f428c24cfc8d15d6ca1",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares Silver Trust/SLV row shows $21.85, +1.63% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $21.85 and +1.63%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The trust name identifies the source ETF group entry, distinct from the separate silver commodity row. Checked-in etf asset ID slv, with price 21.85 and movement 0.35. Those seed fields imply 1.63% at two decimals, versus the displayed source field 1.63%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0233",
+    "pickerOrdinal": 134,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "USO",
+            "name": "United States Oil Fund",
+            "price": "$72.50",
+            "change": "-1.69%",
+            "favorite": "Add United States Oil Fund (USO) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "USO",
+            "name": "United States Oil Fund",
+            "price": "$72.50",
+            "change": "-1.69%",
+            "favorite": "Add United States Oil Fund (USO) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 134
+    },
+    "sha256": "716fd1f7d0913b76823d242a9e4b0956aa99edbb4be5157ac1687c4ac79e376f",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published United States Oil Fund/USO row shows $72.50, -1.69% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $72.50 and -1.69%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The USO fund name and negative price move appear as an ETF projection, distinct from a crude oil unit. Checked-in etf asset ID uso, with price 72.50 and movement -1.25. Those seed fields imply -1.69% at two decimals, versus the displayed source field -1.69%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0234",
+    "pickerOrdinal": 135,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XLF",
+            "name": "Financial Select SPDR",
+            "price": "$42.85",
+            "change": "+1.06%",
+            "favorite": "Add Financial Select SPDR (XLF) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XLF",
+            "name": "Financial Select SPDR",
+            "price": "$42.85",
+            "change": "+1.06%",
+            "favorite": "Add Financial Select SPDR (XLF) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 135
+    },
+    "sha256": "f9b9bb745aef081d8c409c895602a66d4e04a48ba6d30194e39ecf715a558bdc",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Financial Select SPDR/XLF row shows $42.85, +1.06% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $42.85 and +1.06%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The financial sector shorthand and XLF agree with the checked-in fund label. Checked-in etf asset ID xlf, with price 42.85 and movement 0.45. Those seed fields imply 1.06% at two decimals, versus the displayed source field 1.06%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0235",
+    "pickerOrdinal": 136,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XLK",
+            "name": "Technology Select SPDR",
+            "price": "$195.40",
+            "change": "+1.48%",
+            "favorite": "Add Technology Select SPDR (XLK) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XLK",
+            "name": "Technology Select SPDR",
+            "price": "$195.40",
+            "change": "+1.48%",
+            "favorite": "Add Technology Select SPDR (XLK) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 136
+    },
+    "sha256": "35a8afa3e971fb418380258059aa21e6a2339aef6c3d346ade06e3df5597e1e4",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Technology Select SPDR/XLK row shows $195.40, +1.48% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $195.40 and +1.48%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The technology sector label and ticker distinguish the projection from XLF and the semiconductor ETFs. Checked-in etf asset ID xlk, with price 195.40 and movement 2.85. Those seed fields imply 1.48% at two decimals, versus the displayed source field 1.48%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0236",
+    "pickerOrdinal": 137,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XLE",
+            "name": "Energy Select SPDR",
+            "price": "$85.40",
+            "change": "-1.44%",
+            "favorite": "Add Energy Select SPDR (XLE) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XLE",
+            "name": "Energy Select SPDR",
+            "price": "$85.40",
+            "change": "-1.44%",
+            "favorite": "Add Energy Select SPDR (XLE) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 137
+    },
+    "sha256": "926b6b10d8ba956f99098b1d500c55c59404ad7698302fc5101876bab401d60d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Energy Select SPDR/XLE row shows $85.40, -1.44% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $85.40 and -1.44%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The XLE row shows a fund, not a promise of energy spot price exposure at a displayed value. Checked-in etf asset ID xle, with price 85.40 and movement -1.25. Those seed fields imply -1.44% at two decimals, versus the displayed source field -1.44%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0237",
+    "pickerOrdinal": 138,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "XLV",
+            "name": "Health Care Select SPDR",
+            "price": "$142.80",
+            "change": "+0.81%",
+            "favorite": "Add Health Care Select SPDR (XLV) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "XLV",
+            "name": "Health Care Select SPDR",
+            "price": "$142.80",
+            "change": "+0.81%",
+            "favorite": "Add Health Care Select SPDR (XLV) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 138
+    },
+    "sha256": "cf3fd878e9696695ef741a504b483cc2e59a94c4c286aa6bb74ccaa063764795",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published Health Care Select SPDR/XLV row shows $142.80, +0.81% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $142.80 and +0.81%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full sector qualifier and ticker match the source fund projection. Checked-in etf asset ID xlv, with price 142.80 and movement 1.15. Those seed fields imply 0.81% at two decimals, versus the displayed source field 0.81%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0238",
+    "pickerOrdinal": 139,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SMH",
+            "name": "VanEck Semiconductor ETF",
+            "price": "$195.80",
+            "change": "+2.54%",
+            "favorite": "Add VanEck Semiconductor ETF (SMH) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SMH",
+            "name": "VanEck Semiconductor ETF",
+            "price": "$195.80",
+            "change": "+2.54%",
+            "favorite": "Add VanEck Semiconductor ETF (SMH) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 139
+    },
+    "sha256": "318cc88ca978a4136bb9a12c9f8381c4ab6b9eb5d362c766871f3cc18409636d",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published VanEck Semiconductor ETF/SMH row shows $195.80, +2.54% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $195.80 and +2.54%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The full issuer label distinguishes the VanEck fund from the separate iShares semiconductor row. Checked-in etf asset ID smh, with price 195.80 and movement 4.85. Those seed fields imply 2.54% at two decimals, versus the displayed source field 2.54%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0239",
+    "pickerOrdinal": 140,
+    "content": {
+      "controlled": {
+        "390": {
+          "atUTC": "2026-11-18T02:40:02.401644+00:00",
+          "row": {
+            "symbol": "SOXX",
+            "name": "iShares Semiconductor ETF",
+            "price": "$545.20",
+            "change": "+2.35%",
+            "favorite": "Add iShares Semiconductor ETF (SOXX) to favorites",
+            "favoritePressed": "false"
+          }
+        },
+        "1440": {
+          "atUTC": "2026-11-18T02:40:02.566524+00:00",
+          "row": {
+            "symbol": "SOXX",
+            "name": "iShares Semiconductor ETF",
+            "price": "$545.20",
+            "change": "+2.35%",
+            "favorite": "Add iShares Semiconductor ETF (SOXX) to favorites",
+            "favoritePressed": "false"
+          }
+        }
+      },
+      "historicalReference": "../continuation-2026-11-18/inventory.json",
+      "historicalOrdinal": 140
+    },
+    "sha256": "da30fa0f9a7435d5c90b4a1a70b9582d28b4b0d871e92e6ec44c065a22f31d99",
+    "sourceRevision": "20b1c04dbf982b287225cf35e1dfde53c58d1fc4",
+    "sourceBlobs": {
+      "src/lib/additionalCryptoAssets.ts": "0817c4a1ace435a338f767ee4887494a4145abe6",
+      "src/lib/assets.ts": "b51cd2f10714bdcc4083b19981c024234854a055",
+      "src/lib/quoteDisplay.ts": "0c4c370ac453b463958ece63a74c7362052e3b02",
+      "src/components/trading/AssetSearchDropdown.tsx": "29692ebc7e302d05094f8a267cb815a5caf02e60"
+    },
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The published iShares Semiconductor ETF/SOXX row shows $545.20, +2.35% and the name-matched unpressed favorite in both controlled views. The earlier public capture shows $545.20 and +2.35%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and live reading",
+      "reason": "The iShares label and SOXX ticker distinguish the fund from SMH, adding no holdings-specific certification. Checked-in etf asset ID soxx, with price 545.20 and movement 12.50. Those seed fields imply 2.35% at two decimals, versus the displayed source field 2.35%."
+    },
+    "disposition": "NO-INDIVIDUAL-ISSUE-IN-PROJECTION; SHARED-PROVENANCE-RISK-OPEN"
+  }
+]
