@@ -1,0 +1,64 @@
+[
+  {
+    "id": "STRICT-0009-BLOCK-0112",
+    "text": "Market order — fills immediately at the shown simulator price.",
+    "sha256": "8cd9487f9e4e1de133ca43149623b8aeded6344a9979d8f5798ee798a18acdb8",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "sourceRevision": "8400ff251984500416dfc333c079881e555bbd6b",
+    "sourceSHA256": null,
+    "capture": "before-order-wording.json",
+    "captureSHA256": "09dda6f96a30e888cfc48013a65d3cb3c4368dd83755b050dd2f5f0e8d29b5b6",
+    "findingIds": [
+      "STRICT-TRADE-008"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The 390px and 430px public drawers promise the displayed price."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and isolated behavior check",
+      "reason": "The checked-in account path records a separate $101 eligible quote after a $100 preview in a disposable test. Both public captures contain the same wording."
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0113",
+    "text": "Market practice order. The shown price is an estimate. For signed-in orders, the price may change or the order may pause if the quote is unavailable.",
+    "sha256": "ddc59966f2e5bb39d6a19c557fc5559a94397b520ed7e7912d0a0592e08462c0",
+    "source": "src/components/trading/MobileOrderDrawer.tsx",
+    "sourceRevision": "compiled candidate",
+    "sourceSHA256": "8a3686634b91cba849f33ccc8f00fdd4485264696e8c8f14525eb329bc932c9d",
+    "capture": "local-order-wording.json",
+    "captureSHA256": "c745674e066ed2a458f264d4012d9e7909e7a9c41beef56c92a01bcc5df0ebe8",
+    "findingIds": [
+      "STRICT-TRADE-008"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Local 390px /trade and 430px /trade/btc show the adjusted copy. Its claims match both the changing-quote and rejected stale-quote SQL cases."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    }
+  },
+  {
+    "id": "STRICT-0009-BLOCK-0114",
+    "text": "You are placing a market buy for 2.0000 AAPL at approximately $255.25 USD per simulator unit.",
+    "sha256": "0fe49693f89f27284ccf77d551d04f1d7adbb97f2c0644da781bc81285ef2e9d",
+    "source": "src/components/trading/MinimalistOrderPanel.tsx",
+    "sourceRevision": "8400ff251984500416dfc333c079881e555bbd6b",
+    "sourceSHA256": null,
+    "capture": "before-order-wording.json",
+    "captureSHA256": "09dda6f96a30e888cfc48013a65d3cb3c4368dd83755b050dd2f5f0e8d29b5b6",
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "At 1440px the active order panel qualifies the price as approximate."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reviewer": "Codex assistant, separate source and isolated behavior check",
+      "reason": "The active desktop source uses approximately and preserves the USD per simulator unit qualifier. The accessible price mismatch is specific to the mobile wording."
+    }
+  }
+]
