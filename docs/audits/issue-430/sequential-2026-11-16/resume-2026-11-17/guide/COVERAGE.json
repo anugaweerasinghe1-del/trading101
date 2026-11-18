@@ -15,16 +15,17 @@
     "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
     "No unqualified closure claim; product fix release independent of page closure.",
     "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
-    "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification."
+    "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
+    "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed."
   ],
-  "totalRecordedBlocks": 846,
+  "totalRecordedBlocks": 850,
   "pass1ReviewedSourceOnlyAlternatives": 49,
   "pass1ReviewedMetadataBlocks": 60,
   "pass2ReviewedSourceOnlyAlternatives": 49,
   "pass2ReviewedMetadataBlocks": 60,
-  "totalPass2Reviewed": 840,
-  "pendingSecondPass": 6,
-  "totalPass1Reviewed": 846,
+  "totalPass2Reviewed": 847,
+  "pendingSecondPass": 3,
+  "totalPass1Reviewed": 850,
   "selectableCardsCapturedAndReadTwice": 48,
   "sourceOnlyUnselectableCards": 1,
   "controlRecords": 143,
@@ -39,5 +40,10 @@
     "fixtureOnly": true
   },
   "historicalSourceProjectionRecords": 49,
-  "currentSourceOnlyUnselectableCardRecords": 1
+  "currentSourceOnlyUnselectableCardRecords": 1,
+  "pendingSecondPassIDs": [
+    "STRICT-0008-BLOCK-0846",
+    "STRICT-0008-BLOCK-0849",
+    "STRICT-0008-BLOCK-0850"
+  ]
 }

@@ -1,0 +1,35 @@
+{
+  "pullRequest": 462,
+  "finalHeadSHA": "debf817aee2e2a5417e63c69533511761c5ef05b",
+  "requiredChecks": "pr462-final-head-checks.json; five required checks succeeded",
+  "mergeSHA": "c7a56b923038d38a76b9b7b1ac203f0adc0ac879",
+  "mergedTreeEqualsFinalHeadTree": "522f133c49bb5f2d0c846463107a39757421a194",
+  "previewURL": "https://db1d3765.tradehq-preview.pages.dev",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-17T18:05:58.313Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "92fb5d54-56a5-4acf-9c42-525d13bf4490",
+      "sha": "c7a56b923038d38a76b9b7b1ac203f0adc0ac879",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-17T17:53:21.265693Z"
+    },
+    "sourceGitHubRun": 44141887829,
+    "sourceGitHubJob": 134254422670,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44141887829/job/134254422670"
+  },
+  "productionURL": "https://www.thetradehq.com/learn-trading-guide",
+  "liveRereadAtUTC": "2026-11-18T00:55:02.402445+00:00",
+  "liveEvidence": "guide/production462-credit-toast.json",
+  "findings": [
+    "STRICT-GUIDE-004",
+    "STRICT-HOME-001-GUIDE-EXTENSION"
+  ],
+  "after": "Four custom-domain browser reads verified both attribution destinations and the exact credit text. The clipboard-denial fixture exposed the named dismiss button in the accessibility tree. Enter closes the toast.",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": false
+}

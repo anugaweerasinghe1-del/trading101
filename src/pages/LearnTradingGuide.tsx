@@ -129,44 +129,28 @@ const LearnTradingGuide = () => {
         </header>
 
         <main className="container mx-auto px-6 pb-6">
-          {/* --- Ticker Tape --- */}
-          <div className="overflow-hidden rounded-xl border border-border/70 bg-card/70 mb-6">
+          {/* --- Illustrative quotes --- */}
+          <div className="rounded-xl border border-border/70 bg-card/70 mb-6">
             <p className="px-4 pt-2.5 text-[9px] uppercase tracking-[0.16em] font-bold text-muted-foreground">
               Illustrative ticker examples — not live market data
             </p>
-            <div className="ticker-tape-container flex whitespace-nowrap py-2.5" style={{ willChange: "transform" }}>
-              {[...Array(2)].map((_, dupeIdx) => (
-                <div key={dupeIdx} className="ticker-scroll flex gap-8 px-4 animate-ticker">
-                  {[
-                    { sym: "BTC", change: "+2.4%", up: true },
-                    { sym: "ETH", change: "+1.8%", up: true },
-                    { sym: "SOL", change: "-0.6%", up: false },
-                    { sym: "NVDA", change: "+3.1%", up: true },
-                    { sym: "SPY", change: "+0.4%", up: true },
-                    { sym: "GOLD", change: "+0.9%", up: true },
-                    { sym: "EUR/USD", change: "-0.2%", up: false },
-                  ].map((t) => (
-                    <span key={`${dupeIdx}-${t.sym}`} className="inline-flex items-center gap-2 text-xs font-mono">
-                      <span className="font-bold text-foreground">{t.sym}</span>
-                      <span className="text-muted-foreground">sample move</span>
-                      <span className={t.up ? "text-emerald-400" : "text-red-400"}>{t.change}</span>
-                    </span>
-                  ))}
-                </div>
+            <ul role="list" className="flex flex-wrap gap-x-8 gap-y-2 px-4 py-2.5">
+              {[
+                { sym: "BTC", change: "+2.4%", up: true },
+                { sym: "ETH", change: "+1.8%", up: true },
+                { sym: "SOL", change: "-0.6%", up: false },
+                { sym: "NVDA", change: "+3.1%", up: true },
+                { sym: "SPY", change: "+0.4%", up: true },
+                { sym: "GOLD", change: "+0.9%", up: true },
+                { sym: "EUR/USD", change: "-0.2%", up: false },
+              ].map((quote) => (
+                <li key={quote.sym} className="flex items-center gap-2 text-xs font-mono">
+                  <span className="font-bold text-foreground">{quote.sym}</span>
+                  <span className="text-muted-foreground">sample move</span>
+                  <span className={quote.up ? "text-emerald-400" : "text-red-400"}>{quote.change}</span>
+                </li>
               ))}
-            </div>
-            <style>{`
-              @keyframes tickerScroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-              .ticker-tape-container {
-                will-change: transform;
-              }
-              .animate-ticker {
-                animation: tickerScroll 25s linear infinite;
-              }
-            `}</style>
+            </ul>
           </div>
 
           {/* --- Grid Layout: SEO Content + Functional Tools --- */}
@@ -269,27 +253,31 @@ const LearnTradingGuide = () => {
                     </Button>
                   ))}
                 </div>
-                {challengeAnswer !== null && (
-                  <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-3">
-                    <p className={`text-xs font-bold ${isCorrect ? "text-emerald-400" : "text-red-400"}`}>
+                <div role="status" aria-atomic="true">
+                  {challengeAnswer !== null && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`mt-3 text-xs font-bold ${isCorrect ? "text-emerald-400" : "text-red-400"}`}
+                    >
                       {isCorrect ? "🎉 Correct! You identified the pattern." : `❌ The correct answer was: ${challenge.pattern}`}
-                    </p>
-                    {isCorrect && (
-                      <div className="mt-2 flex gap-1">
-                        {["🎊", "✨", "🎉", "⭐", "💫"].map((e, i) => (
-                          <motion.span
-                            key={i}
-                            initial={{ opacity: 0, y: 10, scale: 0 }}
-                            animate={{ opacity: 1, y: -10 * (i + 1), scale: 1 }}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className="text-lg"
-                          >
-                            {e}
-                          </motion.span>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
+                    </motion.p>
+                  )}
+                </div>
+                {isCorrect && (
+                  <div aria-hidden="true" className="mt-2 flex gap-1">
+                    {["🎊", "✨", "🎉", "⭐", "💫"].map((e, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ opacity: 0, y: 10, scale: 0 }}
+                        animate={{ opacity: 1, y: -10 * (i + 1), scale: 1 }}
+                        transition={{ delay: i * 0.1, duration: 0.5 }}
+                        className="text-lg"
+                      >
+                        {e}
+                      </motion.span>
+                    ))}
+                  </div>
                 )}
               </Card>
 

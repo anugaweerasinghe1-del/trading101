@@ -1,0 +1,92 @@
+[
+  {
+    "fixtureDate": "2026-11-18",
+    "answer": "Double Bottom",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price drops to $42,100, bounces to $43,800, drops again to $42,150, then breaks above $43,800 with increasing volume.\n- button \"Head and Shoulders\" [disabled]\n- button \"Double Bottom\" [disabled]\n- button \"Bull Flag\" [disabled]\n- paragraph: 🎉 Correct! You identified the pattern.\n- text: 🎊 ✨ 🎉 ⭐ 💫",
+    "atUTC": "2026-11-18T00:59:18.871013+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-18",
+    "answer": "Bull Flag",
+    "expected": "❌ The correct answer was: Double Bottom",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "❌ The correct answer was: Double Bottom",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price drops to $42,100, bounces to $43,800, drops again to $42,150, then breaks above $43,800 with increasing volume.\n- button \"Head and Shoulders\" [disabled]\n- button \"Double Bottom\" [disabled]\n- button \"Bull Flag\" [disabled]\n- paragraph: \"❌ The correct answer was: Double Bottom\"",
+    "atUTC": "2026-11-18T00:59:20.281268+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-16",
+    "answer": "Golden Cross",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: The 50-day moving average crosses above the 200-day moving average while price trades above both lines with rising volume.\n- button \"Death Cross\" [disabled]\n- button \"Bollinger Squeeze\" [disabled]\n- button \"Golden Cross\" [disabled]\n- paragraph: 🎉 Correct! You identified the pattern.\n- text: 🎊 ✨ 🎉 ⭐ 💫",
+    "atUTC": "2026-11-18T00:59:21.525016+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-16",
+    "answer": "Death Cross",
+    "expected": "❌ The correct answer was: Golden Cross",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "❌ The correct answer was: Golden Cross",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: The 50-day moving average crosses above the 200-day moving average while price trades above both lines with rising volume.\n- button \"Death Cross\" [disabled]\n- button \"Bollinger Squeeze\" [disabled]\n- button \"Golden Cross\" [disabled]\n- paragraph: \"❌ The correct answer was: Golden Cross\"",
+    "atUTC": "2026-11-18T00:59:22.638618+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-17",
+    "answer": "Bear Trap",
+    "expected": "🎉 Correct! You identified the pattern.",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "🎉 Correct! You identified the pattern.",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price briefly breaks below key support at $2,800, triggering stop losses, then reverses sharply to close at $2,950 within the same candle.\n- button \"Bear Trap\" [disabled]\n- button \"Liquidation Cascade\" [disabled]\n- button \"Short Squeeze\" [disabled]\n- paragraph: 🎉 Correct! You identified the pattern.\n- text: 🎊 ✨ 🎉 ⭐ 💫",
+    "atUTC": "2026-11-18T00:59:23.805673+00:00"
+  },
+  {
+    "fixtureDate": "2026-11-17",
+    "answer": "Short Squeeze",
+    "expected": "❌ The correct answer was: Bear Trap",
+    "httpStatus": 200,
+    "beforeStatuses": 0,
+    "result": {
+      "feedback": "❌ The correct answer was: Bear Trap",
+      "closestLive": null,
+      "focus": "BODY",
+      "allDisabled": true
+    },
+    "ax": "- img\n- heading \"Daily Challenge\" [level=3]\n- paragraph: \"Identify This Pattern:\"\n- paragraph: Price briefly breaks below key support at $2,800, triggering stop losses, then reverses sharply to close at $2,950 within the same candle.\n- button \"Bear Trap\" [disabled]\n- button \"Liquidation Cascade\" [disabled]\n- button \"Short Squeeze\" [disabled]\n- paragraph: \"❌ The correct answer was: Bear Trap\"",
+    "atUTC": "2026-11-18T00:59:24.909236+00:00"
+  }
+]

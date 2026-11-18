@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-17T17:56:50.777309+00:00",
+  "updatedAtUTC": "2026-11-18T01:03:09.662177+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -26,16 +26,17 @@
         "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
         "No unqualified closure claim; product fix release independent of page closure.",
         "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure.",
-        "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification."
+        "Continued review adds control/media/date-fixture records and product005. P08 remains partial pending production462/005 release,5 new before/after text second-pass records, current-source expression tie-out and extraction reconciliation. No authenticated/provider certification.",
+        "18 November continuation closes five #462-related second-pass blocks and adds four before/after accessibility version records. Native #463 receipt and candidate after-release reads remain due. No full coverage gate passed."
       ],
-      "totalRecordedBlocks": 846,
+      "totalRecordedBlocks": 850,
       "pass1ReviewedSourceOnlyAlternatives": 49,
       "pass1ReviewedMetadataBlocks": 60,
       "pass2ReviewedSourceOnlyAlternatives": 49,
       "pass2ReviewedMetadataBlocks": 60,
-      "totalPass2Reviewed": 840,
-      "pendingSecondPass": 6,
-      "totalPass1Reviewed": 846,
+      "totalPass2Reviewed": 847,
+      "pendingSecondPass": 3,
+      "totalPass1Reviewed": 850,
       "selectableCardsCapturedAndReadTwice": 48,
       "sourceOnlyUnselectableCards": 1,
       "controlRecords": 143,
@@ -50,9 +51,16 @@
         "fixtureOnly": true
       },
       "historicalSourceProjectionRecords": 49,
-      "currentSourceOnlyUnselectableCardRecords": 1
+      "currentSourceOnlyUnselectableCardRecords": 1,
+      "pendingSecondPassIDs": [
+        "STRICT-0008-BLOCK-0846",
+        "STRICT-0008-BLOCK-0849",
+        "STRICT-0008-BLOCK-0850"
+      ]
     },
-    "remainingNotStrictClosed": 157
+    "remainingNotStrictClosed": 157,
+    "partiallyReviewedCanonicalPages": 15,
+    "partiallyReviewedScope": "P08\u2013P22 inclusive; Terms tracked separately as owner-blocked."
   },
   "technicalInventory": {
     "capturedInitialHTML": 480,
@@ -98,5 +106,15 @@
     "Diversification source publication remains prior18/19 remediation gate",
     "Private authenticated/account/Google site approval/CMP/license operations not verified"
   ],
-  "noApprovalPrediction": true
+  "noApprovalPrediction": true,
+  "currentGuideFindings": {
+    "confirmedProductDefects": 7,
+    "confirmedPolicyIssues": 0,
+    "newUniqueQualityRisks": 0,
+    "existingQualityRiskOccurrenceFixed": 1,
+    "productFixesMergedAndProductionVerified": 4,
+    "productFixesMergedAwaitingNativeReceipt": 1,
+    "productFixesLocalAwaitingRelease": 2
+  },
+  "currentBlock": "STRICT-0008-BLOCK-0846"
 }
