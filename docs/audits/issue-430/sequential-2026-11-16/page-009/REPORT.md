@@ -75,3 +75,7 @@ The two responsive footer captures preserve all 102 link occurrences. All 49 glo
 # Small-price and history production readback
 
 #473 has its exact native receipt and six fresh custom-domain cases. Both corrections are verified, bringing P09 to 461 durable two-pass records and fourteen production-verified fixes. The final #474 head passed its four hosted suites. A further controlled browser comparison reproduced two chart keyboard/data gaps and their before-edit records are intact. [Exact #473 receipt](trade-release-reconciliation/RELEASE-473.json)
+
+# Disclosure release and raw occurrence reconciliation
+
+#474 passed the five exact final checks, the hosted browser suites and protected merge. Native production and separate custom-domain reviews remain due. The raw census preserves all 1,383 occurrence identities and an explicit 247-group residual list. Literal linkage candidates, generated values and raw occurrence counts do not confer editorial credit. [Raw reconciliation](trade-release-reconciliation/current-default-census/RAW-RECONCILIATION.json)
