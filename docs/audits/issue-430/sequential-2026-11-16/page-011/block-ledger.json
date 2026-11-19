@@ -16327,5 +16327,2274 @@
       "reviewedAtUTC": "2026-11-19T11:47:37.080098+00:00"
     },
     "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-brief",
+    "text": "Two buys, one weighted entry price / brief",
+    "content": "A hypothetical trader buys two units at $100, then one unit at $130. Fees are excluded so that the entry-price calculation is visible. The trader writes $115 because it is halfway between the two quotes. But there were different quantities at those prices. Your task is to recover total spend and divide by total units.\n\nMark the three units at $120 each, first without fees. Then compare a cost-inclusive branch charging 0.1% on the $330 total purchases and the $360 full sale. The two purchases had different quantities. A weighted entry is only a summary of those transactions, not a forecast. Check that your total-cost method and your per-unit method produce the same gross result before introducing the two fee charges.",
+    "sha256": "a34d3cd2fa8245d70d0cae2dc83d74ff81679a0599286b97be1903a70f719c8a",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two units at100 and one at130 have unequal quantities; fees are initially excluded, with a separate0.1% purchase/sale-cost branch at120 exit.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Unequal2/1 quantities require quantity weighting. The first branch excludes fees; the second explicitly charges entry and full-sale notionals separately, with no forecast claim.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-visual",
+    "text": "Two buys, one weighted entry price / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "First quote",
+          "value": 100
+        },
+        {
+          "label": "Second quote",
+          "value": 130
+        },
+        {
+          "label": "Total spend",
+          "value": 330
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "42ea4799a2d17ff0f77ca0b295916bbc7a9d975e5cfaf37d92b999e6161935b6",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "100/130 quote bars and330 total-spend bar are labelled separate dollar quantities, with a hypothetical caption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "100/130 are transaction quotes and330 is total purchase spend. Their labels prevent treating them as three successive market prices.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q01",
+    "text": "Two buys, one weighted entry price / q01",
+    "content": {
+      "prompt": "What is the combined cost of the three units?",
+      "options": [
+        "$330",
+        "$230",
+        "$345"
+      ],
+      "explanation": "The first purchase costs 2 × $100 = $200; the second costs $130. Their sum is $330. Adding the two quoted prices alone would omit one unit from the first purchase.",
+      "correctAnswer": 0
+    },
+    "sha256": "450dc9ba6a73d58077ded10008bca78525a3d71b50e3f4afa818bfaa62272e4d",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2×100+130=330 total purchase notional.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "200+130=330;230 omits one first-purchase unit and345 uses the wrong midpoint for three units.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q02",
+    "text": "Two buys, one weighted entry price / q02",
+    "content": {
+      "prompt": "What is the quantity-weighted entry price before fees?",
+      "options": [
+        "$110 per unit",
+        "$115 per unit",
+        "$165 per unit"
+      ],
+      "explanation": "Divide the total $330 cost by three units to get $110. The cheaper quote receives twice the weight because twice as many units were bought there. A midpoint only works for equal quantities.",
+      "correctAnswer": 0
+    },
+    "sha256": "b8f22517825b44daed7f07b73525124a081eafe47269d782697326946ba2601c",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "330/3=110 quantity-weighted entry, not115 unweighted midpoint.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "330/3=110. The cheaper quote gets2/3 weight, so115 is not correct for this actual quantity mix.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q03",
+    "text": "Two buys, one weighted entry price / q03",
+    "content": {
+      "prompt": "Does the weighted entry guarantee the next profitable exit?",
+      "options": [
+        "No; it is a cost reference",
+        "Yes; a lower entry ensures profit",
+        "Yes; three units diversify the position"
+      ],
+      "explanation": "Entry cost describes past transactions, not future market movement. A later net exit also depends on sale price and fees. Increasing units of the same asset does not create exposure to a different underlying asset.",
+      "correctAnswer": 0
+    },
+    "sha256": "f92a39085cf77f14f3bda6b7221b2434c7e5b49cf52a4230c965a1b8dbdfc89e",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Entry is a historical cost reference and neither forecasts profit nor diversifies the same underlying asset.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "More units of the same instrument do not add a different underlying exposure, and cost basis alone cannot guarantee a profitable exit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q04",
+    "text": "Two buys, one weighted entry price / q04",
+    "content": {
+      "prompt": "At $120 per unit, what is the three-unit position worth?",
+      "options": [
+        "$330",
+        "$240",
+        "$360"
+      ],
+      "explanation": "Multiply total quantity of three by the current $120 quote. Current valuation uses units held, rather than averaging the original transaction quotes again.",
+      "correctAnswer": 2
+    },
+    "sha256": "3de2198d391d55700f121986e164945e8e195579f7f14a527d1ede291f4327c3",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "3×120=360 marked value.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Three unchanged units marked120 give360; old transaction quotes are not re-averaged to value the current position.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q05",
+    "text": "Two buys, one weighted entry price / q05",
+    "content": {
+      "prompt": "What is gross gain at that mark, excluding fees?",
+      "options": [
+        "$60",
+        "$30",
+        "$15"
+      ],
+      "explanation": "Subtract $330 purchase notional from $360 current value. The $110 weighted entry also gives three units times a $10 per-unit gain, or $30.",
+      "correctAnswer": 1
+    },
+    "sha256": "9428d7d71a7a729b0ad3826ab5d0b3cfebc8c2c60cdc909534b8358de01f7b0a",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "360−330=30 gross gain, also3×(120−110).",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "360−330=30, independently matching3×10 above110 average entry.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q06",
+    "text": "Two buys, one weighted entry price / q06",
+    "content": {
+      "prompt": "What is gross return on the $330 purchases, approximately?",
+      "options": [
+        "9.09%",
+        "10%",
+        "4.55%"
+      ],
+      "explanation": "Divide $30 gross gain by $330 invested notional. Using the unweighted $115 midpoint or a $300 denominator would misstate this return.",
+      "correctAnswer": 0
+    },
+    "sha256": "5a599af6d2918b89d12694947e746d50821d401b58d574ba61dd5d03bbb1d04a",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "30/330≈9.09% gross return on purchase notional.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "30/330=9.0909...%, not10% on a300 denominator or4.55% from an unweighted entry.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q07",
+    "text": "Two buys, one weighted entry price / q07",
+    "content": {
+      "prompt": "What are combined purchase fees in the cost-inclusive branch?",
+      "options": [
+        "$3.30",
+        "$0.30",
+        "$0.33"
+      ],
+      "explanation": "Charge 0.1% to $330 total purchase notional to get $0.33. This agrees with calculating and summing the two purchase fees separately.",
+      "correctAnswer": 2
+    },
+    "sha256": "35471ffc3ec011a1318f356e0aea453cc6cd93fce0b6a0c71967307c98af473a",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "330×0.001=0.33 total entry fees, equal to0.20+0.13.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.2+0.13=0.33 agrees with0.001×330. The proportional fee can be summed across the two purchases under the supplied exact inputs.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q08",
+    "text": "Two buys, one weighted entry price / q08",
+    "content": {
+      "prompt": "What fee applies to the later $360 full sale?",
+      "options": [
+        "$3.60",
+        "$0.36",
+        "$0.33"
+      ],
+      "explanation": "The sale fee uses its actual $360 notional. The larger exit base means the fee differs from the combined fees on the $330 purchases.",
+      "correctAnswer": 1
+    },
+    "sha256": "fc4a4e3fd84d20640e5623e73c4cff74d00863c82de1584fdce5435a507d347d",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "360×0.001=0.36 exit fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The sale's360 base gives0.36, rather than reusing0.33 entry charges.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q09",
+    "text": "Two buys, one weighted entry price / q09",
+    "content": {
+      "prompt": "What is net gain after both sets of stated fees?",
+      "options": [
+        "$29.31",
+        "$30",
+        "$29.67"
+      ],
+      "explanation": "Reduce $30 gross gain by $0.33 total entry fees and $0.36 exit fee. Both sides reduce the net amount compared with the price-only result.",
+      "correctAnswer": 0
+    },
+    "sha256": "0195954248e9ad7a9016f37fed4f178d9e46716081e4a05dbea34aab6b4cca43",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "30−0.33−0.36=29.31 net gain.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "360−0.36−(330+0.33)=29.31.29.67 would omit the sale fee.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-q10",
+    "text": "Two buys, one weighted entry price / q10",
+    "content": {
+      "prompt": "Which alternative would make $115 the correct fee-free average entry?",
+      "options": [
+        "The current quote becoming $115",
+        "A refresh after the second purchase",
+        "Equal quantities bought at $100 and $130"
+      ],
+      "explanation": "The midpoint is quantity-weighted only when equal quantities were bought at the two prices. A subsequent market quote cannot alter the historical entry ledger.",
+      "correctAnswer": 2
+    },
+    "sha256": "15a79b00d4d04ccae1362bc7b6be2811ecb471eb22477d76740d32b8b1646077",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Equal quantities at100/130 would make115 a valid fee-free average; later quotes do not rewrite entries.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Equal quantities make the simple midpoint valid; a later120 or115 market quote cannot rewrite recorded purchase quantities/prices.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-takeaway",
+    "text": "Two buys, one weighted entry price / takeaway",
+    "content": "Record quantities and notional costs first, then track fees under a consistent cost method. Explain whether your displayed average excludes fees; compare net proceeds with total relevant expenses when reviewing performance.",
+    "sha256": "f0577e31df3e527598b4d4184b50b82ccede679a414bfb6484ab05c8ce964036",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide requests explicit quantities/notionals and a consistent fee-inclusion method.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide explicitly requests whether average entry excludes fees and consistent accounting, rather than implying a universal tax-basis convention.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-sources",
+    "text": "Two buys, one weighted entry price / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is retrieved general investing context, not a real trade ledger or guaranteed entry strategy.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The generic primary reference is not a real transaction receipt or evidence that averaging down guarantees an exit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-07-unused-reflection",
+    "text": "Two buys, one weighted entry price / unused-reflection",
+    "content": "How would you adapt this ledger if each buy had a fee?",
+    "sha256": "3d33d06a210e073877553e9c43c315eb6bc319e071b8c4f3f682167468627cdf",
+    "contentReference": "published-bank.json#/exercises/30",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The fee-adaptation reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only fee reflection does not add a typed-note feature or actual user ledger inspection.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-brief",
+    "text": "A network fee is a different charge / brief",
+    "content": "A crypto worksheet compares a $1,000 trade with a 0.1% platform fee and a separate hypothetical $8 blockchain transfer charge. TradeHQ paper trades do not send real crypto on a blockchain. The transfer figure belongs to a different activity, so do not add it to the simulator ledger as if a virtual purchase created a real wallet transaction.\n\nCompare two separate activities: the $1,000 paper trade and an external conceptual transfer with an $8 network charge. Neither sends real funds through TradeHQ. Then test a $5,000 platform trade at the same 0.1% rate while leaving the illustrative transfer fee fixed at $8. Different fee bases can make one charge larger or smaller without making the activities equivalent.",
+    "sha256": "1d0aa9d31eede8e038424d2af6a44c154c59769e142acbf214bb0bf35094181c",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The1,000/5,000 platform trades and separate8 network transfer assumption are explicitly different activities; TradeHQ sends no blockchain funds.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Trade notional fees and network-transfer charges apply to separate activities. The worksheet repeatedly excludes real funds/blockchain operations through TradeHQ.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-visual",
+    "text": "A network fee is a different charge / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Platform fee",
+          "value": 1
+        },
+        {
+          "label": "Hypothetical transfer",
+          "value": 8
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "2602491052f9bffc26a9fd6e64f07a786f69e1f2d4693cfdb4efcc4e6c599724",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Platform1 and hypothetical transfer8 bars match the initial fee comparison and fictional caption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The1platform/8transfer values are the initial assumed comparison, not two automatic simulator debits.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q01",
+    "text": "A network fee is a different charge / q01",
+    "content": {
+      "prompt": "What is the stated platform fee on $1,000?",
+      "options": [
+        "$8",
+        "$10",
+        "$1"
+      ],
+      "explanation": "The fee is $1,000 × 0.001 = $1. This percentage charge is tied to the trade value in the case. It is distinct from a separate transfer charge described elsewhere.",
+      "correctAnswer": 2
+    },
+    "sha256": "db1b5f6c53a8b5105ef9192a7cbf9d54d173c78e9e043abd3f2fd8edce2ac13e",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,000×0.001=1 platform fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,000×0.001=1. The8 transfer assumption cannot replace the platform percentage charge.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q02",
+    "text": "A network fee is a different charge / q02",
+    "content": {
+      "prompt": "Which action is associated with the hypothetical blockchain charge?",
+      "options": [
+        "Every virtual buy on TradeHQ",
+        "Refreshing the leaderboard",
+        "A real on-chain transfer outside this simulator"
+      ],
+      "explanation": "On-chain transfers are different from changing a virtual holding record. The worksheet’s $8 transfer charge must not be represented as a simulator debit or a fee for viewing a portfolio.",
+      "correctAnswer": 2
+    },
+    "sha256": "2dc798b822757a5f0eb2dd6253434b274ce0ddc457bdf06f201614f060acb06f",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The hypothetical network charge belongs to an external on-chain transfer, not every paper trade or portfolio view.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Only an external on-chain transfer corresponds to the hypothetical network activity; no paper trade or refresh creates a real wallet movement.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q03",
+    "text": "A network fee is a different charge / q03",
+    "content": {
+      "prompt": "What should a cost comparison state explicitly?",
+      "options": [
+        "That all crypto fees are identical",
+        "That a fixed $8 charge always applies",
+        "The activity, provider and cost assumptions"
+      ],
+      "explanation": "Costs vary with the activity and provider. This example supplies an assumed transfer charge rather than a current network quote. A useful comparison labels its assumptions and avoids turning one number into a universal rule.",
+      "correctAnswer": 2
+    },
+    "sha256": "42a62f1232e8043a156a1beda7fb2031dd659a65c48ecd1a63a6207db8b790d9",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Activity/provider/assumptions matter;8 is not a current universal network quote.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Provider/activity assumptions must stay explicit. The8 example is not a universal charge or current network quote.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q04",
+    "text": "A network fee is a different charge / q04",
+    "content": {
+      "prompt": "What decimal multiplier corresponds to the 0.1% platform rate in this case?",
+      "options": [
+        "0.1",
+        "0.001",
+        "0.01"
+      ],
+      "explanation": "Divide the stated percentage by 100. The 0.001 multiplier converts trade notional into a fee; using 0.01 would charge ten times too much.",
+      "correctAnswer": 1
+    },
+    "sha256": "8a4bfed196b8d5463ffeaaeb355f161b2cd1a3fb94a40cf99fe89d8e814a3e05",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.1% divided by100=0.001 multiplier.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.1/100=0.001.0.01 would be ten times the stated rate and0.1 a hundred times it.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q05",
+    "text": "A network fee is a different charge / q05",
+    "content": {
+      "prompt": "How much larger is the illustrative $8 network fee than the $1 trade fee?",
+      "options": [
+        "Eight times as large",
+        "Two times as large",
+        "The same amount"
+      ],
+      "explanation": "Divide $8 by $1 to obtain a factor of eight. This size comparison does not imply the blockchain charge belongs to the paper trade.",
+      "correctAnswer": 0
+    },
+    "sha256": "c4ec44f478fc967349bdfd09824b4c79f7ef2375414d0ebea597f5e21f7b46d6",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8/1=8 times as large; this does not attach the network charge to the paper ledger.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The answer says eight times as large and the explanation uses8/1. It does not claim both charges belong in one paper trade.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q06",
+    "text": "A network fee is a different charge / q06",
+    "content": {
+      "prompt": "What is the fee on a separate $5,000 platform trade?",
+      "options": [
+        "$50",
+        "$8",
+        "$5"
+      ],
+      "explanation": "Multiply $5,000 notional by 0.001 to obtain $5. The proportional platform rule differs from the separately specified fixed transfer charge.",
+      "correctAnswer": 2
+    },
+    "sha256": "180ebf52c95229d51f41b51bd702a16c93b072db7677ce66245fc0019fc49806",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "5,000×0.001=5 platform fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "5,000×0.001=5, still proportional to trade size while the conceptual transfer assumption remains8.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q07",
+    "text": "A network fee is a different charge / q07",
+    "content": {
+      "prompt": "At $5,000 notional, which stated charge is larger?",
+      "options": [
+        "They are equal",
+        "The $8 transfer charge",
+        "The $5 platform fee"
+      ],
+      "explanation": "Compare $8 with the calculated $5 platform charge. Their ordering changes with trade size, but the two charges still relate to different activities.",
+      "correctAnswer": 1
+    },
+    "sha256": "2d93ce4cbb0dcfc49083789daa3ab780b4cea56ac97d5626fb76143a1ebfce5b",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8 remains larger than5 at this notional; different bases mean relative amounts depend on size.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "At the supplied5k example8>5. The explanation's size dependence is general: equality occurs at8k and ordering reverses only beyond8k, not between the1k and5k examples.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q08",
+    "text": "A network fee is a different charge / q08",
+    "content": {
+      "prompt": "What platform-trade notional would produce an $8 fee at 0.1%?",
+      "options": [
+        "$8,000",
+        "$800",
+        "$80"
+      ],
+      "explanation": "Solve notional times 0.001 equal to $8. Dividing $8 by 0.001 yields $8,000; this mathematical equality does not make the charges interchangeable.",
+      "correctAnswer": 0
+    },
+    "sha256": "06293c395a297ca153b567e94eaf5b03ec2cc18b3e814af212faead56a73441b",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8/0.001=8,000 trade notional for a mathematically equal fee, not equivalent activities.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "8/0.001=8,000 produces numerical equality only; it does not merge the two activities or fee schedules.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q09",
+    "text": "A network fee is a different charge / q09",
+    "content": {
+      "prompt": "Does a TradeHQ paper purchase create a blockchain transaction to inspect?",
+      "options": [
+        "Yes; every purchase sends crypto to a wallet",
+        "Yes; a fee always implies a real transaction hash",
+        "No; the paper ledger uses virtual holdings"
+      ],
+      "explanation": "The simulator does not transfer real tokens over a blockchain. Virtual trades and platform charges should not be presented as on-chain wallet operations.",
+      "correctAnswer": 2
+    },
+    "sha256": "fa43d9b351b2c8040a2438681803a847967d5de026c05dbb428a12d72ed90fa6",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Virtual purchase records create no on-chain transaction hash or wallet transfer.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A virtual holdings update supplies no genuine blockchain transaction hash or token transfer.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-q10",
+    "text": "A network fee is a different charge / q10",
+    "content": {
+      "prompt": "Which comparison keeps the charge bases explicit?",
+      "options": [
+        "Both charges silently added to every paper buy",
+        "Trade notional fee versus separately stated transfer fee",
+        "Both charges labelled the asset’s price spread"
+      ],
+      "explanation": "Naming the activity and calculation base prevents unrelated costs from entering a ledger. A blockchain transfer charge is not a paper-trading commission or quoted spread.",
+      "correctAnswer": 1
+    },
+    "sha256": "217a704b5204ca3b05853a8c61b26410fe73a6c9921e531ae9e43791769e25b7",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Separate trade-notional versus transfer bases avoid mixing charges or confusing spread with a network fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Explicit bases distinguish trade percentage, transfer cost and spread instead of silently combining unrelated charges.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-takeaway",
+    "text": "A network fee is a different charge / takeaway",
+    "content": "Identify which record changes in each activity and which fee schedule would need checking. Keep the hypothetical transfer amount outside the virtual account and avoid implying that TradeHQ holds real customer crypto.",
+    "sha256": "7b924dec467a40f18962f0c96ac6a83c7120681aff2623786456169b6a6fb1be",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide keeps transfer assumptions outside the virtual account and does not imply real customer crypto custody.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide requests records/schedules appropriate to each activity and denies customer-crypto custody by the simulator.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-sources",
+    "text": "A network fee is a different charge / sources",
+    "content": [
+      {
+        "url": "https://www.finra.org/investors/investing/investment-products/crypto-assets",
+        "label": "FINRA — Crypto assets"
+      }
+    ],
+    "sha256": "60bcc313f3a1bf5ebc49a13bd88ef16e3045d1a0a1c6b467c131d767178184da",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "FINRA crypto-assets primary URL/title were retrieved; it is not claimed to quote this8 network charge.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The FINRA page is retained primary educational context, not a quoted8 fee schedule or validation of actual network costs.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-17-unused-reflection",
+    "text": "A network fee is a different charge / unused-reflection",
+    "content": "Separate a paper trade, an exchange trade and an on-chain transfer.",
+    "sha256": "fc72f3407edbe7981c6f47c7011b74eebf1cb87c2b86daef7ea98605d69e19fc",
+    "contentReference": "published-bank.json#/exercises/31",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The activity-separation reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The activity-separation reflection is source-only; no real exchange or blockchain operation is performed or claimed.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-brief",
+    "text": "A timeout is not a new zero price / brief",
+    "content": "A refresh request times out while the account’s last valid hypothetical quote is $50. You hold ten units. The provider returned no replacement observation. A developer could accidentally turn an empty response into zero and erase the marked holding. Think through the last-known value, freshness warning and distinction between missing data and a genuine price.\n\nAt 10:00 the last valid quote is $50, and at 10:05 the refresh times out. At 10:10 a valid replacement observation reports $48. Keep ten units owned throughout. Compare the labelled last-known mark during the outage with the value after a successful update. The missing response is neither a sale nor a price observation, and recovery should clear the outage message only when a usable response arrives.",
+    "sha256": "9c73cf8482bed087a8d20b9aedd702ef68d3750479ce9dca1691f67247a207d2",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Timeout supplies no observation/sale; ten units retain a labelled last-known50 until a valid48 observation arrives. This is a hypothetical failure example, not a reproduced actual TradeHQ bug.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The failure example is expressly hypothetical and teaches missing data versus market events. It does not establish a current TradeHQ zero-price bug or an actual provider outage.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-visual",
+    "text": "A timeout is not a new zero price / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Last valid quote",
+          "value": 50
+        },
+        {
+          "label": "Last marked holding",
+          "value": 500
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "8e62c7d6b0cc3f0fb207292c65812966853eb263b6f72570316d2ed4218f78e8",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Last-valid50 quote and500 ten-unit marked value are separately labelled fictional dollar inputs.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The50 quote and500 holding value are separately labelled and reconcile to ten units. The caption does not imply live data.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q01",
+    "text": "A timeout is not a new zero price / q01",
+    "content": {
+      "prompt": "What was the last-known marked value of the ten units?",
+      "options": [
+        "$0",
+        "$500",
+        "$50"
+      ],
+      "explanation": "Ten units at the last valid $50 observation were worth $500. That is a last-known mark, not confirmation of the current market value after the failed refresh.",
+      "correctAnswer": 1
+    },
+    "sha256": "6f9250245eed7a8ce50e8484567453f5cc260a73d19882b0f2892d452abc88fd",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×50=500 last-known mark, expressly not a verified current market value after failure.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten times50=500 last-known value only, not a current observation during the outage.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q02",
+    "text": "A timeout is not a new zero price / q02",
+    "content": {
+      "prompt": "Does a timeout supply evidence that the asset is worth zero?",
+      "options": [
+        "Yes; the account has sold the asset",
+        "No; it supplies no new valid observation",
+        "Yes; missing values are zero"
+      ],
+      "explanation": "A network failure is a data-availability event. It does not state a market price and does not execute a sale. Treating absence as zero would fabricate a price change and distort account valuation.",
+      "correctAnswer": 1
+    },
+    "sha256": "15558520ea31449f796ddf109acbf4d771e0735ede76f3f1814766775494e4d9",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A timeout provides no new valid quote and cannot justify a fabricated zero or sale.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A timeout contains neither a new zero price nor a completed sale; absence cannot be treated as a quote.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q03",
+    "text": "A timeout is not a new zero price / q03",
+    "content": {
+      "prompt": "What is the most honest display during this failure?",
+      "options": [
+        "A new timestamp on the old quote without warning",
+        "Last valid mark with age and a refresh warning",
+        "A fresh zero quote"
+      ],
+      "explanation": "Keep the known observation identifiable and disclose that refresh failed. Updating only the displayed timestamp would hide the data’s age. Users need to see what is known and what is unavailable.",
+      "correctAnswer": 1
+    },
+    "sha256": "d83a920636551b521534a03a780bca2fe9a6913eb7b00b4ac109ff714e578eed",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Preserve original age/mark and disclose refresh failure rather than resetting timestamp.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An old observation needs its actual age and a failure notice. Changing only the timestamp would fabricate freshness.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q04",
+    "text": "A timeout is not a new zero price / q04",
+    "content": {
+      "prompt": "During the timeout, what observation remains available?",
+      "options": [
+        "The earlier valid $50 quote",
+        "A new verified zero-dollar quote",
+        "An automatic ten-unit sale"
+      ],
+      "explanation": "A timeout contains no replacement price. Retaining the earlier observation with its original time preserves information without treating the failure itself as market data.",
+      "correctAnswer": 0
+    },
+    "sha256": "29d0c32042cd88d82b2f76e8b15fe46321c97d0bb356d6ef06ca7ef46b424b48",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The earlier50 observation remains available with its original time.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The previous50 observation remains the last usable input, not a newly verified mark at10:05.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q05",
+    "text": "A timeout is not a new zero price / q05",
+    "content": {
+      "prompt": "At the new valid $48 observation, what are ten units worth?",
+      "options": [
+        "$500",
+        "$48",
+        "$480"
+      ],
+      "explanation": "Multiply ten unchanged units by the replacement $48 quote. The account can now update its mark based on actual supplied data rather than an empty response.",
+      "correctAnswer": 2
+    },
+    "sha256": "f588f9fba238d47a507279239516a621d495260502b657c1a70c1197f21ea580",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×48=480 value after the stipulated usable replacement.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units at the stipulated valid48 observation give480 after recovery.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q06",
+    "text": "A timeout is not a new zero price / q06",
+    "content": {
+      "prompt": "What change separates the previous and replacement marked values?",
+      "options": [
+        "+$20",
+        "−$20",
+        "−$500"
+      ],
+      "explanation": "The prior mark was $500 and the new mark is $480. The $20 decline is supported by the two valid observations, unlike any move inferred from the timeout.",
+      "correctAnswer": 1
+    },
+    "sha256": "879db2433884f24e31fb5ea95ed813a507f08d97680755c7acb74a19bb560a5b",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "480−500=−20 change between the two valid observations.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "480−500=−20 change justified by two valid marks, rather than a500 collapse inferred from the timeout.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q07",
+    "text": "A timeout is not a new zero price / q07",
+    "content": {
+      "prompt": "What is the quote’s percentage change from $50 to $48?",
+      "options": [
+        "−4%",
+        "−2%",
+        "−40%"
+      ],
+      "explanation": "Divide the $2 price decline by the earlier $50 quote. This gives −4%; the failed request between observations supplies no additional return interval.",
+      "correctAnswer": 0
+    },
+    "sha256": "29184e94c609cdc7738b7fc13d4e81afa7fde715f81c9937a0278113c202d019",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(48−50)/50=−4%; the failed request supplies no extra return interval.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "−2/50=−4%. The failed request creates no extra price observation to compound.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q08",
+    "text": "A timeout is not a new zero price / q08",
+    "content": {
+      "prompt": "Which display avoids implying a current observation during the outage?",
+      "options": [
+        "Zero labelled as a new live price",
+        "The old quote timestamp rewritten as 10:05",
+        "Last-known $50 quote with its age and an unavailable-update notice"
+      ],
+      "explanation": "Preserving the original time and naming the update failure keeps stale data distinct from a current observation. The outage should not fabricate freshness.",
+      "correctAnswer": 2
+    },
+    "sha256": "bcd95bf8c9e8bdbd2a71b06be4ef54e0c0f13e2683d21c5df9d7d6b06de89c62",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A last-known50 label with age/unavailable-update notice avoids false freshness.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Last-known50 with age/unavailable-update notice separates known data from missing current evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q09",
+    "text": "A timeout is not a new zero price / q09",
+    "content": {
+      "prompt": "After a usable replacement arrives, what should happen to the old outage message?",
+      "options": [
+        "Clear it before any response validates",
+        "Clear it and show the replacement’s observation time",
+        "Keep it forever despite successful updates"
+      ],
+      "explanation": "Recovery should follow validation of the new quote. Clearing a stale error then accurately reflects restored data availability, without prematurely claiming success.",
+      "correctAnswer": 1
+    },
+    "sha256": "4dd5700e3936f3120c448ebcd338526ae4bfc9ddf19759493ecb6d71854e6f04",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Clear the old outage message only after a usable replacement validates and show its observation time.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Clear the old outage warning after usable response validation and show the replacement observation time; a successful fetch alone is not enough if the quote is invalid.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-q10",
+    "text": "A timeout is not a new zero price / q10",
+    "content": {
+      "prompt": "What portfolio field should not change solely because of this timeout?",
+      "options": [
+        "The number of units owned",
+        "The warning about quote availability",
+        "The displayed age of the last observation"
+      ],
+      "explanation": "A data-fetch failure does not execute a trade. Quantity remains ten while data availability and the last observation’s age may change.",
+      "correctAnswer": 0
+    },
+    "sha256": "46aaee8eeea2d35e9f6752341d826881ff4e3ab978e39d3926a4cf802c473ddb",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Owned quantity stays ten; availability warnings and age can change without a trade.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Owned units remain ten without a trade; age and warning can legitimately change independently.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-takeaway",
+    "text": "A timeout is not a new zero price / takeaway",
+    "content": "You know the previous quote, its time and the quantity held. You do not know a newer provider observation from this failed request. State that limit rather than inferring a market event.",
+    "sha256": "3d5a52dd4c24492a11d47fecea47aed160af6b1e77534e4070a54301a6e0ae30",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide separates known previous quote/time/quantity from missing new observation.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide accurately names previous quote/time/quantity as known and a newer observation as unavailable.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-sources",
+    "text": "A timeout is not a new zero price / sources",
+    "content": [
+      {
+        "url": "https://www.coingecko.com/en/methodology",
+        "label": "CoinGecko — Price methodology"
+      }
+    ],
+    "sha256": "f7b2c49dcfaf4b3e88598f1d1f78d96b62f81ec8745469482ef68f1db893b92c",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "CoinGecko methodology is general price-data context, not evidence that a real outage or zero-price defect occurred.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The methodology link is context only and does not prove a particular live incident or certify this application state's behavior.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-27-unused-reflection",
+    "text": "A timeout is not a new zero price / unused-reflection",
+    "content": "Explain what you know and what remains unknown after the timeout.",
+    "sha256": "aaab905200101d89afa8dfaac135f4b330202d783ff9904964f4a47e0d899ec6",
+    "contentReference": "published-bank.json#/exercises/32",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The known/unknown reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The reflection prompt remains source-only and gives no actual outage reproduction credit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-brief",
+    "text": "A scenario is not a probability estimate / brief",
+    "content": "A worksheet imagines an asset worth $100 falling to $80 or rising to $120. No probability is assigned to either branch. A learner averages the two prices and calls $100 the asset’s expected future price. A pair of possibilities can organize thinking, but it is not automatically a complete probabilistic model.\n\nTo make a separate, explicitly hypothetical probability worksheet, assign 25% to the $80 outcome and 75% to the $120 outcome, assuming these two outcomes are exhaustive. Then compare equal weights as another branch. These are chosen assumptions, not estimates derived from market evidence. A weighted average can summarize such assumptions without guaranteeing that the price will equal the average.",
+    "sha256": "7799a657716e4c58ba31f867953a42780fd6573e2a9bf29aebf45772f0e84711",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Original80/120 possibilities have no probabilities. A separate exhaustive two-outcome model expressly stipulates25/75 or50/50 as hypothetical, not evidence-derived estimates.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The original two scenarios are unweighted. The extension deliberately adds an exhaustive assumed model and separate50/50 alternative, repeatedly labelling the weights hypothetical rather than market estimates.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-visual",
+    "text": "A scenario is not a probability estimate / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Downside branch",
+          "value": 80
+        },
+        {
+          "label": "Upside branch",
+          "value": 120
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "fe29b94c5805a5c0aa25393b3b9e1d475a176bf7f9af62b7f0255c215f07c909",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Downside80/upside120 bars are labelled scenario inputs, not probability bars or guaranteed bounds.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "80downside/120upside are selected price outcomes, not confidence intervals, probabilities or guaranteed minimum/maximum prices.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q01",
+    "text": "A scenario is not a probability estimate / q01",
+    "content": {
+      "prompt": "What is the arithmetic midpoint of the two listed prices?",
+      "options": [
+        "$100",
+        "$200",
+        "$20"
+      ],
+      "explanation": "Add $80 and $120, then divide by two, giving $100. This is an arithmetic midpoint. Its calculation does not provide evidence that the branches are equally likely.",
+      "correctAnswer": 0
+    },
+    "sha256": "b808bf80bdd2d9515e48e4d0fbef78b0bdb0f382982969afedbbf26d5bf2f42c",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(80+120)/2=100 arithmetic midpoint without a likelihood inference.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "(80+120)/2=100 is arithmetic only; the number cannot establish equal likelihood.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q02",
+    "text": "A scenario is not a probability estimate / q02",
+    "content": {
+      "prompt": "What assumption is missing before calling that midpoint an expected price?",
+      "options": [
+        "Probabilities and an adequate set of outcomes",
+        "The chart’s color",
+        "An extra decimal place"
+      ],
+      "explanation": "An expected value weights outcomes by their probabilities. The worksheet supplies neither probabilities nor proof that these are the only outcomes. The midpoint should not be given a probabilistic interpretation without those assumptions.",
+      "correctAnswer": 0
+    },
+    "sha256": "1814cdd68911bd128aaa119054b0f47808fa16077afba527eeb3807d8591e2e8",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Expected value needs probabilities and adequate outcome coverage; two unweighted possibilities do not establish either.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The question concerns the original unweighted setup. Probabilities and adequate coverage are needed before interpreting its midpoint as an expectation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q03",
+    "text": "A scenario is not a probability estimate / q03",
+    "content": {
+      "prompt": "How can the two branches still be useful?",
+      "options": [
+        "As labelled stress cases for exposure review",
+        "As a guaranteed future range",
+        "As proof the position cannot lose more"
+      ],
+      "explanation": "Stress cases help examine account sensitivity to selected moves. They are not a hard boundary on possible prices and do not quantify likelihood. Keep the selected inputs and their limitations visible.",
+      "correctAnswer": 0
+    },
+    "sha256": "fddca2d4ca4b52bcfcc0f2f54730236b3a63d3a6da12ef6c11f6cc391eca364e",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Labelled stress cases examine sensitivity without hard price bounds or quantified probability.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Selected stress cases can test exposure sensitivity without excluding other outcomes or assigning likelihoods.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q04",
+    "text": "A scenario is not a probability estimate / q04",
+    "content": {
+      "prompt": "With explicitly equal 50% weights, what is the weighted average of $80 and $120?",
+      "options": [
+        "$80",
+        "$120",
+        "$100"
+      ],
+      "explanation": "Multiply each outcome by one half and add $40 plus $60. The original midpoint can be an expected value only under an appropriate stated probability model.",
+      "correctAnswer": 2
+    },
+    "sha256": "548596bb87d47ca1c77aebf2db7782b214c06cf8e325e465408b75b466d02e14",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.5×80+0.5×120=100 only under the stated equal-weight model.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Under explicit50/50 weights,40+60=100. The original midpoint gains an expectation interpretation only with that appropriate assumed model.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q05",
+    "text": "A scenario is not a probability estimate / q05",
+    "content": {
+      "prompt": "With 25% on $80 and 75% on $120, what is the weighted average?",
+      "options": [
+        "$105",
+        "$110",
+        "$100"
+      ],
+      "explanation": "Multiply $80 by 0.25 and $120 by 0.75, giving $20 plus $90. The assumed unequal weights produce $110 rather than the midpoint.",
+      "correctAnswer": 1
+    },
+    "sha256": "8fe2ac95030e327df0d00455f5a11834ec6838b3243ee8cd1b784e9d1250efa1",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.25×80+0.75×120=110 weighted mean.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Under25/75 weights,20+90=110, distinct from100 midpoint.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q06",
+    "text": "A scenario is not a probability estimate / q06",
+    "content": {
+      "prompt": "Where did the 25% and 75% probabilities come from in this extension?",
+      "options": [
+        "They were stipulated as hypothetical assumptions",
+        "The two prices mathematically determine them",
+        "The simulator guarantees them"
+      ],
+      "explanation": "The extension supplies the weights for a conceptual calculation. The two possible prices alone did not establish their likelihoods or validate the assumptions.",
+      "correctAnswer": 0
+    },
+    "sha256": "56414ee6dac39af9dd25a6d31cb49cefabb5de03bfcdbd5e0f06662047e0cc83",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "25/75 weights are stipulated inputs, not derived from scenario prices or simulator guarantees.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The weights are stipulated; no calculation from80/120 alone can infer or validate them.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q07",
+    "text": "A scenario is not a probability estimate / q07",
+    "content": {
+      "prompt": "Does a calculated $110 expected value guarantee a $110 outcome?",
+      "options": [
+        "Yes; averages force market prices",
+        "Yes; probabilities eliminate uncertainty",
+        "No; the listed outcomes are still $80 and $120"
+      ],
+      "explanation": "Expected value summarizes the weighted model. A realized result can differ from that average, and this two-outcome worksheet never lists a $110 realized price.",
+      "correctAnswer": 2
+    },
+    "sha256": "de0d1ad12c84299b08062818a4f484bfe0b9dc2ed31283b2e86a5707d40fe7f1",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "An expected110 does not force110 to occur when the listed outcomes are80/120.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The two-outcome model can have expectation110 without any110 realized outcome; its supported values remain80/120.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q08",
+    "text": "A scenario is not a probability estimate / q08",
+    "content": {
+      "prompt": "What is the distance between the two specified scenario prices?",
+      "options": [
+        "$10",
+        "$40",
+        "$20"
+      ],
+      "explanation": "Subtract $80 from $120 to obtain a $40 spread between the outcomes. This scenario range is not an empirically established maximum market range.",
+      "correctAnswer": 1
+    },
+    "sha256": "d72a2b38e2d5813fdd77fbd9aa5bd2499093278319a65b8161da82681efe9f59",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "120−80=40 distance between selected scenarios, not an empirically established maximum range.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "120−80=40 selected range. This does not establish empirical market bounds or a maximum possible loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q09",
+    "text": "A scenario is not a probability estimate / q09",
+    "content": {
+      "prompt": "What return does the $80 branch represent from the $100 starting quote?",
+      "options": [
+        "−20%",
+        "−25%",
+        "−80%"
+      ],
+      "explanation": "The $20 decline divided by the original $100 quote is −20%. The branch return is separate from its stipulated 25% likelihood in the weighted worksheet.",
+      "correctAnswer": 0
+    },
+    "sha256": "4ddc8e0d242e9d2285e0bd3b3ac48dd265e8a16ae8f0f42d2cdeb3c8492a094e",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(80−100)/100=−20% branch return, separate from25% assigned likelihood.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "80from100 is−20% return. The25% probability is a different quantity from the branch's price change.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-q10",
+    "text": "A scenario is not a probability estimate / q10",
+    "content": {
+      "prompt": "What would be needed before presenting these probabilities as evidence-based estimates?",
+      "options": [
+        "Only the arithmetic being correct",
+        "Only a visually balanced scenario chart",
+        "A defensible estimation method and relevant supporting data"
+      ],
+      "explanation": "Correct arithmetic cannot validate invented likelihoods. Probability estimates require evidence and a method, while this extension intentionally supplies only conceptual assumptions.",
+      "correctAnswer": 2
+    },
+    "sha256": "7238b571594dd0b01cb580138a0ae9c9d61e7f5acdf31220878c765fb45f2d15",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Evidence-based probabilities need a defensible method and relevant data beyond correct arithmetic.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Evidence and a defensible method are required for estimated likelihoods. Correct weighted arithmetic alone cannot validate chosen probabilities.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-takeaway",
+    "text": "A scenario is not a probability estimate / takeaway",
+    "content": "They illustrate sensitivity to two assumed price moves. They do not supply probabilities, exclude other outcomes or justify a forecast. Explain how you would use them to examine exposure rather than predict direction.",
+    "sha256": "67c5d93f8531d908df36a99515af5c813b9fec3c8d75de29f4c27b70101a6bcd",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide describes original unweighted branches as sensitivity cases, not evidence for probabilities or forecasts; the extension's weights remain expressly hypothetical.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide describes what the original price branches themselves supply. It does not deny the extension explicitly stipulates conceptual weights; neither those weights nor the branches justify an evidence-based forecast.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-sources",
+    "text": "A scenario is not a probability estimate / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is retained contextual reading, not support for invented market probabilities.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The primary educational reference is not support for actual25/75 market probabilities or a guaranteed80–120 range.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-37-unused-reflection",
+    "text": "A scenario is not a probability estimate / unused-reflection",
+    "content": "Write what the branches tell you and what they do not.",
+    "sha256": "be01b02d88ab59a38cf395f5e665cc5f4d794862024e40d7721a64417eb26dab",
+    "contentReference": "published-bank.json#/exercises/33",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The branch-limit reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only reflection field does not establish a forecast or actual user probability model.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-brief",
+    "text": "Separate observation from interpretation / brief",
+    "content": "A hypothetical asset falls from $50 to $48 while reported volume increases. A journal says “institutions are definitely selling and it will keep falling.” The price and volume are supplied observations, but the identity of sellers and future direction are not. Practice writing a note that preserves what is known without dressing a hypothesis as a fact.\n\nAssume ten units are held as the quote falls from $50 to $48. Reported volume changes from a hypothetical 1,000 units to 1,500 units over comparable windows. No trader-identity data are supplied. Separate the position’s dollar result, the volume calculation and the claim about institutions. A measurable change can be established without validating the story attached to it.",
+    "sha256": "36797d4564469d1597678b9158e583fb8d1581f94dac1f608871b72774645c35",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Ten units fall50→48 while comparable volume1,000→1,500; no participant identities or future direction are supplied.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The case supplies comparable price/volume observations but no seller identity or future direction. The institutional-selling certainty is the learner claim being challenged, not an endorsed fact.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-visual",
+    "text": "Separate observation from interpretation / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Earlier quote",
+          "value": 50
+        },
+        {
+          "label": "Later quote",
+          "value": 48
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "c5cd0ded7fd555419d131338a0c1dccfd37c8500fc4329cf08cbbdf9911c6146",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Earlier50/later48 quote bars match the fictional observations.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The50/48 bars are the two hypothetical quote observations, not participant-flow data.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q01",
+    "text": "Separate observation from interpretation / q01",
+    "content": {
+      "prompt": "What is the stated price change?",
+      "options": [
+        "−2%",
+        "+4%",
+        "−4%"
+      ],
+      "explanation": "The $2 fall divided by the $50 reference equals −4%. This calculation describes the price change in the supplied interval, not the identity or motive of the participants.",
+      "correctAnswer": 2
+    },
+    "sha256": "af5069d562e8b7d33533c0052e129d28a45237cd2ce3669e5b91e89b3d93ef6c",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "−2/50=−4% price change without identifying sellers.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "(48−50)/50=−4%. This arithmetic supplies no identity or motive attribution.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q02",
+    "text": "Separate observation from interpretation / q02",
+    "content": {
+      "prompt": "Which part of the journal goes beyond the supplied evidence?",
+      "options": [
+        "The $50 and $48 observations",
+        "The fact that the displayed prices differ",
+        "Who sold and the claim of continued decline"
+      ],
+      "explanation": "The case does not identify traders or provide a forecast. Increased volume indicates more reported trading activity under the measure used; it does not by itself prove institutional selling or continuation.",
+      "correctAnswer": 2
+    },
+    "sha256": "c98ee178d6a431260337dec0a896ae22fbd8a0278d83a89ea2d8bb17616d4778",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Institutional identity and continued decline go beyond supplied price/volume evidence.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Who sold and future continuation are unsupported by the supplied aggregate measures; different displayed prices themselves are directly observed within the case.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q03",
+    "text": "Separate observation from interpretation / q03",
+    "content": {
+      "prompt": "What is a better journal structure?",
+      "options": [
+        "A single certain explanation",
+        "Only a predicted target price",
+        "Observation, possible explanations, and a question to test"
+      ],
+      "explanation": "Separate the measured inputs from interpretations and state how a hypothesis could be checked. This keeps reasoning reviewable and makes room for alternative explanations rather than treating one story as settled.",
+      "correctAnswer": 2
+    },
+    "sha256": "0a3db67734128a9ccb8defd8b8a479831e17cd7e80b7c3436d939c2db69b9610",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Observation, possible explanations and a test question keep hypotheses distinct from facts.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Separating observations, hypotheses and a test question makes alternatives reviewable without claiming a single certain explanation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q04",
+    "text": "Separate observation from interpretation / q04",
+    "content": {
+      "prompt": "What is the original ten-unit position value at $50?",
+      "options": [
+        "$1,000",
+        "$500",
+        "$50"
+      ],
+      "explanation": "Multiply ten units by $50 to obtain $500. The selected holding quantity is needed before translating the per-unit price move into account impact.",
+      "correctAnswer": 1
+    },
+    "sha256": "1b719fb8d811f488c49ec2b3053fa64e2fbf14d2c055384ac3cbe38e0d8f601d",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×50=500 original marked position.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units times50=500, distinguishing position impact from the per-unit quote.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q05",
+    "text": "Separate observation from interpretation / q05",
+    "content": {
+      "prompt": "What is the later ten-unit position value at $48?",
+      "options": [
+        "$480",
+        "$48",
+        "$500"
+      ],
+      "explanation": "Ten units at $48 produce $480 marked value. This result follows directly from quantity and quote without any assumption about seller identity.",
+      "correctAnswer": 0
+    },
+    "sha256": "b7e6f76f0dcd26cb9731b1fde24b4a606349f8384b22497a324c9cc2a527e609",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×48=480 later marked position.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units times48=480, without any assumption about institutions.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q06",
+    "text": "Separate observation from interpretation / q06",
+    "content": {
+      "prompt": "What is the position’s dollar change between those two marks?",
+      "options": [
+        "−$2",
+        "−$50",
+        "−$20"
+      ],
+      "explanation": "Subtract the initial $500 from the later $480. Ten units turn the $2 per-unit decline into a $20 position loss.",
+      "correctAnswer": 2
+    },
+    "sha256": "3d53db26bc33316ae3f0d7e7248a9fe0da07f2861716a2f03762f3933293b192",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "480−500=−20 holding change, distinct from−2 per unit.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "480−500=−20 holding change;−2 describes one unit only.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q07",
+    "text": "Separate observation from interpretation / q07",
+    "content": {
+      "prompt": "What percentage increase occurs in comparable volume from 1,000 to 1,500?",
+      "options": [
+        "150%",
+        "50%",
+        "500%"
+      ],
+      "explanation": "Divide the 500-unit increase by the original 1,000 units. The 50% increase is a volume statistic, not an estimate of institutional participation.",
+      "correctAnswer": 1
+    },
+    "sha256": "238113ee0d7e50449660de65b9ad19ef42d3f5da86e84246e7813e46317f0707",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "500/1,000=50% comparable-volume increase, not institutional-participation estimate.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "(1,500−1,000)/1,000=50% volume growth. The windows are explicitly comparable, and no participation percentage is inferred.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q08",
+    "text": "Separate observation from interpretation / q08",
+    "content": {
+      "prompt": "Does the stated volume reveal exactly who sold the asset?",
+      "options": [
+        "No; no trader identities were supplied",
+        "Yes; all increased volume is institutional selling",
+        "Yes; the last seller controls the next price"
+      ],
+      "explanation": "Aggregate volume lacks the specific identity evidence required by the journal claim. Increased turnover alone does not identify particular classes of traders.",
+      "correctAnswer": 0
+    },
+    "sha256": "81ba9c7791457ffc4669563a398b4e6309baf1f9a1a977dc7c0b56122743cb99",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Aggregate turnover lacks the trader-identity evidence needed for the definite institutional claim.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Aggregate reported volume cannot identify particular trader classes. The correct answer does not claim no institutions could have participated, only that evidence is absent.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q09",
+    "text": "Separate observation from interpretation / q09",
+    "content": {
+      "prompt": "Which revised journal sentence keeps the observations and hypothesis distinct?",
+      "options": [
+        "Institutions definitely sold and the next decline is certain",
+        "Volume guarantees a price reversal tomorrow",
+        "Price fell 4% and volume rose 50%; seller identity is unknown"
+      ],
+      "explanation": "The revised note preserves the measured changes while exposing what is unverified. It avoids assigning a definite identity or forecasting the next move from limited inputs.",
+      "correctAnswer": 2
+    },
+    "sha256": "cadc8f343b05f61894621313b9ccaaa36ac1dc50ea4d92257e83aa085d24ea44",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Price fell4%/volume rose50%/seller unknown preserves measured facts and uncertainty.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The revised sentence preserves−4% price and50% volume observations and explicitly leaves identity unknown, without predicting continuation/reversal.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-q10",
+    "text": "Separate observation from interpretation / q10",
+    "content": {
+      "prompt": "What evidence would directly address the institutional-seller claim?",
+      "options": [
+        "Only higher refresh frequency",
+        "Relevant attributable participant data with clear limits",
+        "Only another chart of the same price decline"
+      ],
+      "explanation": "Evidence about participants must actually bear on their identities or activity. Replotting the supplied price and volume does not add the missing attribution.",
+      "correctAnswer": 1
+    },
+    "sha256": "5f48f810f6c0134e0a4a59edf8ce47d49ae423641880e0a27ea39435d329e6a6",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Attributable participant data could address identity; another price chart or faster refresh cannot.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Attributable relevant participant data could address identity within its limits; replotting the same price/volume or checking faster cannot supply it.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-takeaway",
+    "text": "Separate observation from interpretation / takeaway",
+    "content": "Keep the −4% change and reported volume increase as observations. Label any participant explanation speculative, and identify missing evidence rather than promising the next direction.",
+    "sha256": "7361d1a1075c853bd7c6c22e0ebc56f951ace9a83b8d4b01b065b3e0fa1e648b",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide retains−4%/higher volume observations and labels participant explanations speculative.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide keeps measurement and speculation distinct, with no future-direction promise.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-sources",
+    "text": "Separate observation from interpretation / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The generic primary reference is real, but no actual issuer event or institutional-flow record is invented.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The contextual primary source is not a real issuer disclosure or record of institutions trading this fictional asset.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-47-unused-reflection",
+    "text": "Separate observation from interpretation / unused-reflection",
+    "content": "Rewrite the original journal note in three short parts.",
+    "sha256": "fa825de9af04e7764261690c17cf5e6cb464b5cba23495bdd071bb2ceea4b10e",
+    "contentReference": "published-bank.json#/exercises/34",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The journal-rewrite reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:48:45.554982+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only journal rewrite does not supply an actual user note, participant record or real investment recommendation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
   }
 ]
