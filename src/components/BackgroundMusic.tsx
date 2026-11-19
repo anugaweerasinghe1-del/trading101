@@ -17,15 +17,17 @@ export function BackgroundMusic() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const a = new Audio(TRACK_URL);
+    // Never download the optional audio file during the initial page load.
+    const a = new Audio();
     a.loop = true;
     a.volume = 0.18;
-    a.preload = "auto";
+    a.preload = "none";
     audioRef.current = a;
     setReady(true);
 
     const wanted = localStorage.getItem(STORAGE_KEY) === "1";
     if (wanted) {
+      a.src = TRACK_URL;
       a.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
     }
 
@@ -43,10 +45,9 @@ export function BackgroundMusic() {
       setPlaying(false);
       localStorage.setItem(STORAGE_KEY, "0");
     } else {
-      // Re-prime the source in case a previous load failed
-      if (a.error || a.readyState === 0) {
+      // Fetch the track only after a deliberate user action (or saved preference).
+      if (!a.getAttribute("src") || a.error) {
         a.src = TRACK_URL;
-        a.load();
       }
       a.play()
         .then(() => {

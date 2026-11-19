@@ -80,4 +80,16 @@ assert.match(roadmap, /Learn\. Practise\. Grow\./);
 assert.doesNotMatch(roadmap, /adsense/i);
 assert.match(roadmap, /status: "in-progress"/);
 assert.match(roadmap, /status: "shipped"/);
+// Performance regressions: core content must paint immediately on every visit,
+// and the optional audio must never preload across unrelated routes.
+const hero = read("src/components/PremiumHero.tsx");
+const music = read("src/components/BackgroundMusic.tsx");
+const challenge = read("src/components/home/DailyChallengeCard.tsx");
+assert.ok(hero.includes("min-h-[100svh]"));
+assert.ok(hero.includes("<h1") && !hero.includes("<motion.h1"));
+assert.ok(pageTransition.includes("initial={false}"));
+assert.ok(music.includes("new Audio()") && music.includes('a.preload = "none"'));
+assert.ok(!music.includes("new Audio(TRACK_URL)"));
+assert.ok(challenge.includes("useState(() => hasPlayedToday())"));
+
 console.log("PASS consistent desktop/mobile navigation, single newsletter form per route, contact footer, calculator deep link, market percent units and public November roadmap");
