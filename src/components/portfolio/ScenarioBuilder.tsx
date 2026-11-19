@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/assets";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -305,8 +306,8 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
                 <div key={a.symbol} className="grid grid-cols-5 gap-2 px-3 py-2 text-xs border-t border-white/[0.04]">
                   <span className="font-medium">{a.symbol}</span>
                   <span className="text-right tabular-nums text-muted-foreground">{a.quantity}</span>
-                  <span className="text-right tabular-nums">${a.currentPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
-                  <span className="text-right tabular-nums">${a.expectedPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                  <span className="text-right tabular-nums">${formatPrice(a.currentPrice, livePortfolio.positions.find(p => p.asset.symbol === a.symbol)?.asset.type ?? "stock")}</span>
+                  <span className="text-right tabular-nums">${formatPrice(a.expectedPrice, livePortfolio.positions.find(p => p.asset.symbol === a.symbol)?.asset.type ?? "stock")}</span>
                   <span className={cn("text-right tabular-nums", a.shockApplied >= 0 ? "text-success" : "text-destructive")}>
                     {a.shockApplied >= 0 ? "+" : ""}{a.shockApplied.toFixed(1)}%
                   </span>
