@@ -5,13 +5,13 @@
   "strictPageClosure": false,
   "closureCredit": 0,
   "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
-  "firstPass": 734,
-  "secondPass": 734,
+  "firstPass": 795,
+  "secondPass": 795,
   "quickExerciseGroups": 30,
   "quickFirstPass": 30,
   "quickSecondPass": 30,
   "bonusGroupsReviewed": 8,
-  "deepQuestionGroupsReviewed": 460,
+  "deepQuestionGroupsReviewed": 500,
   "publishedDeepExercises": 50,
   "publishedDeepQuestions": 500,
   "findings": [
@@ -26,20 +26,18 @@
     "STRICT-DAILY-FP-001"
   ],
   "activePR": 486,
-  "nextAction": "Continue P11 at published-bank.json#/exercises/46: practice-20, briefing/visual then questions 1\u201310. Remaining 4 cases/40 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.",
+  "nextAction": "All 50 published deep cases/500 questions have two substantive text reads, alongside 30 quick/eight bonus units. Next: publisher/framework reconciliation starting at production484-final-copy-readback.json#/rows/0/notes/0 against current live/code output, then complete control/date/conditional/source/citation/media and page-wide eligibility reconciliation. P11 remains partial; no strict closure or P12 credit.",
   "scope": "A quick quiz unit includes every label, context, rationale and insight. Counts are coherent reviewed units, not individual sentences or unique paragraphs. Extraction/bank publication does not prove editorial completion.",
   "bonusFirstPass": 8,
   "bonusSecondPass": 8,
-  "deepQuestionGroupsSecondRead": 460,
-  "deepExercisesSubstantivelyRead": 46,
-  "pendingDeepExercises": 4,
+  "deepQuestionGroupsSecondRead": 500,
+  "deepExercisesSubstantivelyRead": 50,
+  "pendingDeepExercises": 0,
   "candidateHead": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
-  "candidateStatus": "MERGED-NATIVE-PENDING",
+  "candidateStatus": "FIXED-RECHECKED",
   "confirmedProductDefects": 6,
-  "productionVerified": 5,
-  "releaseReceipt": "RELEASE-485.json",
-  "latestApplicationRelease": "45fb879ba6fc668e66d737d916a9a0488268ef06",
-  "confirmedButNotProductionVerified": [
-    "STRICT-DAILY-006"
-  ]
+  "productionVerified": 6,
+  "releaseReceipt": "RELEASE-486.json",
+  "latestApplicationRelease": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+  "confirmedButNotProductionVerified": []
 }

@@ -28,3 +28,7 @@ All21deep cases/210questions and their accompanying briefing/visual/takeaway/sou
 ## Verified continuation at26 deep cases
 
 434 recorded groups have both substantive passes;26 cases/260 questions. Next unread is index25, practice-06;24 cases/240 questions remain plus framework/state/source gates. Root005 is native/custom-domain verified in RELEASE-485.json. Root006 PR486 is protected-merged89b614c but native verification remains pending. No strict page closure.
+
+## Full published-bank text checkpoint
+
+All50deep cases/500questions now have both substantive same-assistant reads, including every option/explanation and all briefing/visual/takeaway/source-only fields. All30quick/eightbonus units retain their earlier passes. No repeated reading of unchanged completed cases is required. Root006 is now native/custom-domain verified in RELEASE-486.json; all six Daily roots are fixed/rechecked. P11 is still partial. Next genuinely unfinished scope: publisher/framework reconciliation beginning at `production484-final-copy-readback.json#/rows/0/notes/0` against current live/code output; then complete dates/conditional/controls/accessibility/media/source expression and eligible-block reconciliation. No P12 or page-closure credit yet.

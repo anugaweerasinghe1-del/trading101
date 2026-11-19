@@ -23146,5 +23146,2021 @@
       "reviewedAtUTC": "2026-11-19T11:53:55.592992+00:00"
     },
     "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-brief",
+    "text": "Small decimal quantities still need units / brief",
+    "content": "A hypothetical crypto quote is $40,000 per coin. A learner buys 0.025 coin before fees. The long decimal can make the purchase seem either tiny or expensive depending on which number is noticed. Translate the quantity into notional dollars and apply the 0.1% fee before comparing it with an account balance.\n\nAfter the 0.025-coin purchase, suppose the quote rises to $44,000 per whole coin. Sell the entire holding at that exact quote and charge 0.1% on the sale. No blockchain transfer or additional order occurs. Track the small quantity through both trades instead of treating the whole-coin price as the invested amount. Compare asset return with net gain after the entry and exit charges.",
+    "sha256": "6d542495df8ef051913a32e7c8d4aace0e4aa6ee47e836a6171cc5b897828ae0",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A0.025coin purchase at40k and fullsale44k use0.1% on each actual fractional notional. No blockchain transfer or extra order is implied.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The0.025coin quantity is held through the hypothetical40k→44k move and full sale; the case explicitly excludes on-chain transfer and charges each transaction's actual fractional notional.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-visual",
+    "text": "Small decimal quantities still need units / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Notional",
+          "value": 1000
+        },
+        {
+          "label": "Fee",
+          "value": 1
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "0f0e906254fcb02390d3f968696525598e52eda52178b4a71bf5475fedd96fda",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1knotional/1fee bars match the initial fractional trade with hypothetical caption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1knotional and1fee are separate labelled input quantities, not a1dollar quote or wholecoin40k exposure.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q01",
+    "text": "Small decimal quantities still need units / q01",
+    "content": {
+      "prompt": "What is the notional value of 0.025 coin at $40,000?",
+      "options": [
+        "$100",
+        "$40,000",
+        "$1,000"
+      ],
+      "explanation": "Multiply 0.025 coin by $40,000 per coin. The coin units cancel, leaving $1,000. A decimal quantity should always be read with its unit and the price per unit.",
+      "correctAnswer": 2
+    },
+    "sha256": "89c271240e6cb565d410a277179a7a0ab55b2ec6a9ace21f40059c4fccbbcc77",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.025coin×40k/coin=1,000dollars.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.025×40,000=1,000 with coin units cancelling. Neither wholecoin40k nor decimal0.025 is a dollar fee.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q02",
+    "text": "Small decimal quantities still need units / q02",
+    "content": {
+      "prompt": "What debit follows when the 0.1% fee is included?",
+      "options": [
+        "$1,000.10",
+        "$1,025",
+        "$1,001"
+      ],
+      "explanation": "The $1,000 trade has a $1 fee. The full debit is $1,001. Using the quantity 0.025 as a dollar fee would mix incompatible units and produce the wrong cash result.",
+      "correctAnswer": 2
+    },
+    "sha256": "2c1621dc3193eb4fe0a61dbb2b7b989b6569d6f54d1b6fcb8a580a5efb11c8b0",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,000+1fee=1,001 full debit.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,000×1.001=1,001 debit. The1,000.10 option would undercharge the stated0.1% rate.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q03",
+    "text": "Small decimal quantities still need units / q03",
+    "content": {
+      "prompt": "Does a high price per whole coin prevent a small dollar exposure?",
+      "options": [
+        "Yes; every purchase must cost a whole coin",
+        "No; fractional quantities eliminate losses",
+        "No; fractional quantity changes the exposure"
+      ],
+      "explanation": "Fractional quantities can represent smaller dollar amounts when the instrument supports them. They do not eliminate price risk. Verify supported precision and costs rather than inferring affordability from the whole-coin price.",
+      "correctAnswer": 2
+    },
+    "sha256": "088fdc805a0b1c82e3983e9a36304252e6dca8dccb63391bc7f5e392b8d75361",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Supported fractions permit smaller dollar exposure but do not eliminate price risk; precision/cost must be checked.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Fractional support is expressly conditional on instrument precision. Smaller quantity does not remove price risk or guarantee affordability after costs.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q04",
+    "text": "Small decimal quantities still need units / q04",
+    "content": {
+      "prompt": "What fraction of one whole coin is the original 0.025 quantity?",
+      "options": [
+        "25%",
+        "2.5%",
+        "0.025%"
+      ],
+      "explanation": "Multiply the decimal quantity by 100 to express it as a percentage of a coin. The purchase holds 2.5% of one coin, not the entire quoted unit.",
+      "correctAnswer": 1
+    },
+    "sha256": "8c6d7e5138b3e8818ad6e8ae0a609831d6d27a80be8a2bdfba66d7b28d9a394b",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.025×100=2.5% of onecoin.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.025 of onecoin equals2.5%, not25% or0.025%. This is a fraction of a coin rather than an account allocation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q05",
+    "text": "Small decimal quantities still need units / q05",
+    "content": {
+      "prompt": "What marked value does 0.025 coin have at the later $44,000 quote?",
+      "options": [
+        "$1,100",
+        "$44,000",
+        "$11,000"
+      ],
+      "explanation": "Multiply 0.025 by $44,000 to obtain $1,100. The whole-coin quote is a unit price, rather than the notional of this fractional holding.",
+      "correctAnswer": 0
+    },
+    "sha256": "ddeb5a92040d25f2c0ddd2a802affc1ddccbde746dc34e24b7eaebf41d43f091",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.025×44k=1,100 marked value.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.025×44k=1,100. The wholecoin price is not the value of this fractional holding.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q06",
+    "text": "Small decimal quantities still need units / q06",
+    "content": {
+      "prompt": "What is the whole-coin quote’s return from $40,000 to $44,000?",
+      "options": [
+        "4%",
+        "0.1%",
+        "10%"
+      ],
+      "explanation": "Divide the $4,000 quote increase by the $40,000 starting quote. The fractional position has the same gross percentage move before transaction fees.",
+      "correctAnswer": 2
+    },
+    "sha256": "7e9a411f9efbf7487464358b71efa96f715a1b1294a20bca4035faad8d196551",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "4k/40k=10% asset return before fees, also the fractional holding's grosspercentage move.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "4k/40k=10%. Fixed quantity gives the same gross holding percentage move, while net results differ after fees.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q07",
+    "text": "Small decimal quantities still need units / q07",
+    "content": {
+      "prompt": "What is the sale fee on this $1,100 holding?",
+      "options": [
+        "$1",
+        "$1.10",
+        "$44"
+      ],
+      "explanation": "Apply 0.1% to the actual $1,100 sale notional. Charging the fee against the $44,000 whole-coin price would overstate this fractional transaction’s cost.",
+      "correctAnswer": 1
+    },
+    "sha256": "cbfddbe204c529537baa88ab95ef429ce74533bc0027a03d84d9c591d75df22f",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,100×0.001=1.10 sale fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,100×0.001=1.10 exit fee. Applying it to44k would charge for an entire coin not sold.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q08",
+    "text": "Small decimal quantities still need units / q08",
+    "content": {
+      "prompt": "What net proceeds arrive from the full fractional sale?",
+      "options": [
+        "$1,098.90",
+        "$1,100",
+        "$1,099"
+      ],
+      "explanation": "Subtract the $1.10 exit fee from $1,100 gross proceeds. The earlier $1 purchase fee is accounted for separately in the initial cash debit.",
+      "correctAnswer": 0
+    },
+    "sha256": "64184765750a8ce59bdab6690cb8ecccb60293241a51fbda41cb132a0a2bb790",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,100−1.10=1,098.90 net sale proceeds.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,100−1.10=1,098.90 cash proceeds. The entry1 fee is already included separately in the initial1,001 debit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q09",
+    "text": "Small decimal quantities still need units / q09",
+    "content": {
+      "prompt": "What is net gain versus the original $1,001 entry debit?",
+      "options": [
+        "$100",
+        "$98.90",
+        "$97.90"
+      ],
+      "explanation": "Compare $1,098.90 net sale proceeds with $1,001 initial debit. Their $97.90 difference includes both the entry and exit fees.",
+      "correctAnswer": 2
+    },
+    "sha256": "4fec5656832723a35193512dcf1a13e8d010bd8d337678066802559f228e7b0c",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,098.90−1,001=97.90 net gain including both charges.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,098.90−1,001=97.90 net gain, also100gross−1entry−1.10exit.98.90 would omit entry cost.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-q10",
+    "text": "Small decimal quantities still need units / q10",
+    "content": {
+      "prompt": "Which detail is necessary to translate any whole-coin quote into exposure?",
+      "options": [
+        "Only the asset’s popularity",
+        "The owned fraction of the coin",
+        "Only the number of digits in its price"
+      ],
+      "explanation": "Units held multiplied by the per-unit quote determines exposure. A high whole-unit price alone does not indicate how much of the account is invested.",
+      "correctAnswer": 1
+    },
+    "sha256": "d321098af33c9fe2d40b22732dcd6051a9dba8ce162a55918193fceb66d5ed29",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Owned fraction times percoin quote determines exposure; nominal wholecoin price alone does not.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Exposure requires the owned fraction as well as percoin price. Popularity or digit count cannot establish invested dollars.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-takeaway",
+    "text": "Small decimal quantities still need units / takeaway",
+    "content": "Use “0.025 coin × $40,000 per coin = $1,000,” then add the $1 stated fee. Keep quantity, price, notional and fee as separately labelled fields.",
+    "sha256": "a680db9b748697ea18176576c13c13929ef526707c5be263053e7577fa6ba0c6",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide cancels coin units and keeps quantity/price/notional/fee labelled separately.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide explicitly carries quantity/unitprice/notional/fee labels and a valid dimensional calculation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-sources",
+    "text": "Small decimal quantities still need units / sources",
+    "content": [
+      {
+        "url": "https://www.finra.org/investors/investing/investment-products/crypto-assets",
+        "label": "FINRA — Crypto assets"
+      }
+    ],
+    "sha256": "60bcc313f3a1bf5ebc49a13bd88ef16e3045d1a0a1c6b467c131d767178184da",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "FINRA crypto-assets primary URL was retrieved; no real coinprice or current trade recommendation is attributed to it.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The FINRA source is primary educational context, not evidence that an actual coin trades40k/44k or that this is a real investment opportunity.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-20-unused-reflection",
+    "text": "Small decimal quantities still need units / unused-reflection",
+    "content": "Write the calculation so a beginner can follow the units.",
+    "sha256": "8e20165af58b1ec0e12a35c860a751a395f95e32ac897a1c39a6a94d5910ac10",
+    "contentReference": "published-bank.json#/exercises/46",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The units-calculation reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only units reflection is not a current freeform input or actual user transaction record.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-brief",
+    "text": "Price-change percentages need a window / brief",
+    "content": "A coin is quoted at $110. One page says +10% from a $100 reference; another says −8.33% from a $120 reference. Both reference values are hypothetical and represent different periods. An identical current price can have opposite signed changes when the start points differ. Identify the window before treating either percentage as contradictory.\n\nTreat the $100 and $120 reference prices as two different labelled windows ending at $110. Then add a third reference at $105. The current quote does not change across these calculations. Compare the signed dollar changes and percentage bases. A report that drops the reference window can make valid numbers look inconsistent, while a cached current quote introduces a separate freshness question.",
+    "sha256": "988a2bd6cefd22e90ed5dbdaea78fb0364f0b5a0d7831fa2ec8b2f2f7b417286",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Different100/120/105reference windows share110endpoint; opposite signed returns can be valid and endpoint freshness is a separate issue.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The same110 endpoint is compared with three different starting references. The example separates a return-window definition from endpoint freshness and does not treat opposite signs as a proven defect.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-visual",
+    "text": "Price-change percentages need a window / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Reference A",
+          "value": 100
+        },
+        {
+          "label": "Reference B",
+          "value": 120
+        },
+        {
+          "label": "Current",
+          "value": 110
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "b50cbc1e74c21ce7cb261742bfb791a40de6a2aa56cc840ef4429d7e37049f33",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "100/120references and110current are labelled fictional input values for distinct windows.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "100/120references and110current are labelled fictional inputs, not three current quotes for one instant.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q01",
+    "text": "Price-change percentages need a window / q01",
+    "content": {
+      "prompt": "What is the change from $100 to $110?",
+      "options": [
+        "−10%",
+        "+10%",
+        "+110%"
+      ],
+      "explanation": "The gain is $10 and the starting base is $100. Dividing $10 by $100 gives 10%. The current price alone is not sufficient to calculate a percentage change without a reference.",
+      "correctAnswer": 1
+    },
+    "sha256": "7172f2fc85e03182e05cc26cae45a1cbec1ccd57e5938ededfc624265fc41fec",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(110−100)/100=+10% fromreferenceA.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10/100=+10%; the current110 alone cannot supply a return without a reference.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q02",
+    "text": "Price-change percentages need a window / q02",
+    "content": {
+      "prompt": "What is the change from $120 to $110, approximately?",
+      "options": [
+        "+8.33%",
+        "−8.33%",
+        "−10%"
+      ],
+      "explanation": "The $10 loss is divided by the $120 starting reference, giving approximately −8.33%. Using $100 or the final $110 as the denominator would answer a different calculation.",
+      "correctAnswer": 1
+    },
+    "sha256": "404571f0e2e5ff939e603bea2fc1d90db4ce63defb9190ac11b075c98da00a6f",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(110−120)/120≈−8.33% fromreferenceB.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "−10/120=−8.333...%, correctly rounded−8.33%. Dividing by100 or110 would answer a different question.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q03",
+    "text": "Price-change percentages need a window / q03",
+    "content": {
+      "prompt": "What should the interface attach to a percentage-change label?",
+      "options": [
+        "Only an arrow color",
+        "Its reference period or start time",
+        "A promise that the trend continues"
+      ],
+      "explanation": "The time window explains what the percentage measures. Different valid windows can produce different signs. A color or arrow may summarize a result, but it cannot replace the reference definition.",
+      "correctAnswer": 1
+    },
+    "sha256": "1db95d9b8779f42974cd96ffc368e4f89650f1810d23645e604062e9cfcf8a6a",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Apercent label needs referencewindow/starttime, not only arrowcolor or a continuationpromise.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Aperiod/startdefinition explains what the change measures; arrowcolor or an unearned forecast cannot replace it.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q04",
+    "text": "Price-change percentages need a window / q04",
+    "content": {
+      "prompt": "What is the dollar change from the $100 reference?",
+      "options": [
+        "+$10",
+        "−$10",
+        "+$110"
+      ],
+      "explanation": "Subtract $100 from $110 to obtain a $10 rise. This change belongs to the window using $100 as its reference, not every period on the page.",
+      "correctAnswer": 0
+    },
+    "sha256": "2c6885657a01390a94128940491e08a42dab0460f9d767d52b8b3180fde873ac",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "110−100=+10 dollar change for thatwindow.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "110−100=+10 dollars for the100reference window only.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q05",
+    "text": "Price-change percentages need a window / q05",
+    "content": {
+      "prompt": "What is the dollar change from the $120 reference?",
+      "options": [
+        "+$10",
+        "−$120",
+        "−$10"
+      ],
+      "explanation": "Subtract $120 from the same $110 current quote. The $10 decline is compatible with the positive change measured from the different $100 reference.",
+      "correctAnswer": 2
+    },
+    "sha256": "996b0dd372c391215e4e242f4d247873b65bc290f634c4d1624ee92a3c0da0e9",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "110−120=−10 dollar change for itsdifferentwindow.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "110−120=−10 dollars for the120reference window, compatible with the other positive window.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q06",
+    "text": "Price-change percentages need a window / q06",
+    "content": {
+      "prompt": "From a third $105 reference, what is the percentage change, approximately?",
+      "options": [
+        "−4.76%",
+        "+4.76%",
+        "+5%"
+      ],
+      "explanation": "Divide the $5 rise by the $105 reference and multiply by 100. The reference denominator creates a third valid change for the same endpoint.",
+      "correctAnswer": 1
+    },
+    "sha256": "85d867cd690214bcd669c3e58c6d8bb39278a3fb7ea4647e73112018d346e329",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(110−105)/105≈+4.76% thirdwindow return.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "5/105=4.7619...%, rounded+4.76%;5% would use the wrong100 base.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q07",
+    "text": "Price-change percentages need a window / q07",
+    "content": {
+      "prompt": "What gain from $110 would restore the $120 reference, approximately?",
+      "options": [
+        "9.09%",
+        "8.33%",
+        "10%"
+      ],
+      "explanation": "The required $10 rise must be divided by current $110. It is not the same percentage as the earlier $10 loss divided by $120.",
+      "correctAnswer": 0
+    },
+    "sha256": "7000f773770e36f6465edfe579be049d718e160c4dae8b3100db162106631136",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10/110≈9.09% gain needed to restore120, using currentbase rather than earlier120lossbase.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10/110=9.0909...% recovery to120, distinct from the8.33% fall from120.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q08",
+    "text": "Price-change percentages need a window / q08",
+    "content": {
+      "prompt": "Does the shared $110 endpoint make the two original return windows equivalent?",
+      "options": [
+        "Yes; identical endpoints imply identical returns",
+        "Yes; signs should be removed to compare them",
+        "No; their reference points differ"
+      ],
+      "explanation": "A return depends on both starting reference and ending value. Equal endpoints do not erase different histories or justify replacing distinct window labels.",
+      "correctAnswer": 2
+    },
+    "sha256": "ba2cf575217cbc683000f727d51372344e197f1cf62c26026776a18fa019e02f",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Sharedendpoint does not erase different startreferences or histories.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Identical endpoints leave differing starts and histories intact; return signs should not be removed to create false equivalence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q09",
+    "text": "Price-change percentages need a window / q09",
+    "content": {
+      "prompt": "Which metadata pair would clarify these percentage labels?",
+      "options": [
+        "Only the newest page fetch time",
+        "Reference-window definition and quote observation time",
+        "Only the text colour and arrow direction"
+      ],
+      "explanation": "The window explains the return base, while observation time explains the endpoint’s age. A page-fetch timestamp alone cannot answer either question completely.",
+      "correctAnswer": 1
+    },
+    "sha256": "780b1647715ca8f95579fea0d28b82d05fb2568dbf0550ca36edbd908cbe58a4",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Windowdefinition and quoteobservationtime address returnbase and endpointage separately.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Referencewindow plus observationtime names both return base and endpoint age. A new page-fetch time cannot establish either completely.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-q10",
+    "text": "Price-change percentages need a window / q10",
+    "content": {
+      "prompt": "What would make a claimed contradiction stronger than this example?",
+      "options": [
+        "Different percentages with the same verified start, end and method",
+        "Opposite signs from different starting references",
+        "A longer number of decimal places"
+      ],
+      "explanation": "To establish inconsistency, compare calculations on identical inputs and definitions. This case supplies different references, so opposite signs are not themselves contradictory.",
+      "correctAnswer": 0
+    },
+    "sha256": "9233ff431bc9ce7ff706c3a2a5c498b56b097ee33e37ea1f3723fc8938db2f68",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Astronger inconsistency claim requires same verifiedstart/end/method but different results; differentwindows alone do not contradict.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An inconsistency needs identical verified inputs/method producing different results. This case deliberately uses different references and is not an actual provider-defect reproduction.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-takeaway",
+    "text": "Price-change percentages need a window / takeaway",
+    "content": "Show each starting value and divide the $10 change by that value. Mention that the windows differ and that neither past-window change is a guarantee of the next price move.",
+    "sha256": "88ca0495cd141b36d9aab49795cd660842e6ca24dbf166c04056aeee1b79179d",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide shows both initialreferences and10dollarchanges, with no nextmoveguarantee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide uses the original two10dollar changes with their respective denominators and preserves that past-window returns do not forecast the next move.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-sources",
+    "text": "Price-change percentages need a window / sources",
+    "content": [
+      {
+        "url": "https://www.coingecko.com/en/methodology",
+        "label": "CoinGecko — Price methodology"
+      }
+    ],
+    "sha256": "f7b2c49dcfaf4b3e88598f1d1f78d96b62f81ec8745469482ef68f1db893b92c",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "CoinGecko methodology is retained context, not a report of actual contradictory providerreturns.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The methodology source is contextual, not evidence that real services published contradictory values.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-30-unused-reflection",
+    "text": "Price-change percentages need a window / unused-reflection",
+    "content": "Explain how both percentages could be correct.",
+    "sha256": "fd3181c360d7918ea3149f023235b5d0100fb3dafb66a5816f8d5501cbfb2960",
+    "contentReference": "published-bank.json#/exercises/47",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The bothpercentages explanation is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only explanation prompt adds no actual incident or user response evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-brief",
+    "text": "A single stress test is not the worst case / brief",
+    "content": "A worksheet tests a $10,000 position against a 10% decline and obtains a $1,000 loss. The learner calls that the maximum possible loss. No contractual protection or price floor is stated. Stress testing one selected move shows sensitivity to that input, but the choice of scenario does not restrict what the asset can do.\n\nAdd separate stress branches of a 25% decline and a 100% decline to the same $10,000 unprotected spot position. Assume no leverage, no sale and no other account holdings for this worksheet. These are selected sensitivities, not assigned probabilities. Compare losses and remaining marks, then identify why neither a selected scenario list nor a journal threshold creates contractual downside protection.",
+    "sha256": "4cb6dce86a2132f4f93b45020d8bbf2a9bb259ca2730b2a9c5cb769c0df92bae",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k unleveragedspot exposure is stressed by separate10/25/100percent declines, without orders/probabilities or contractual protection. Selecting branches does not limit a real market.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The scenario rejects calling the initial10%test a maximum. The extension adds25/100% unleveraged spot branches with no additional liabilities, which quantify this model without making market probabilities or a journal-protection promise.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-visual",
+    "text": "A single stress test is not the worst case / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Position value",
+          "value": 10000
+        },
+        {
+          "label": "Test loss",
+          "value": 1000
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "4b9597a14d735d97d8fe8a0a7450a92b09c2f17b07c55a1dd8cfee2221524938",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10kposition/1kloss bars match the initial10%test and fictionalcaption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10kposition and1kloss are the initial10% sensitivity inputs, separately labelled and fictional.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q01",
+    "text": "A single stress test is not the worst case / q01",
+    "content": {
+      "prompt": "What loss follows from the selected 10% decline?",
+      "options": [
+        "$1,000",
+        "$10,000",
+        "$100"
+      ],
+      "explanation": "Multiply $10,000 by 0.10 to get $1,000. This is the loss in the supplied stress case. It should be labelled with the assumed move rather than described as a universal risk bound.",
+      "correctAnswer": 0
+    },
+    "sha256": "b40a339a69ecdd53bcac7e92bb63c17e5261c50bdcb45f6ae01a232ad9756250",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k×10%=1k selectedloss.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k×0.10=1k chosen loss. This does not restrict the market to that decline.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q02",
+    "text": "A single stress test is not the worst case / q02",
+    "content": {
+      "prompt": "Does choosing a 10% stress move cap the asset’s decline at 10%?",
+      "options": [
+        "No; the worksheet imposes no protection",
+        "Yes; selected scenarios limit markets",
+        "Yes; a journal creates a price floor"
+      ],
+      "explanation": "A chosen scenario is an analytical input, not an order or contractual guarantee. Larger declines remain possible, and missing data or execution constraints can complicate an actual exit.",
+      "correctAnswer": 0
+    },
+    "sha256": "3fd69f7608e8f5cc378c377d738184bfd77d26c37a1b909b8eb354adf7a09f3a",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Selecting10% neither places anorder nor creates a pricefloor.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Selecting a stress input is neither a protective order nor a contract. Larger losses than the first1k remain possible.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q03",
+    "text": "A single stress test is not the worst case / q03",
+    "content": {
+      "prompt": "What would make a sensitivity review more informative?",
+      "options": [
+        "Several labelled moves and the account impact of each",
+        "Only the most comfortable scenario",
+        "Deleting adverse outcomes from the record"
+      ],
+      "explanation": "Testing multiple selected conditions reveals how exposure responds across a wider range. Even a larger set is not exhaustive. Keep assumptions clear and avoid calling a scenario list a complete forecast distribution.",
+      "correctAnswer": 0
+    },
+    "sha256": "5d4db5d0af38a19a8c43ecde96b3b3a936aff5af2f8c4e076c01498791157c93",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Several labelledconditions improve sensitivityreview but are not a fullforecastdistribution.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Multiple selected cases broaden sensitivity coverage without supplying a full outcome distribution or all execution constraints.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q04",
+    "text": "A single stress test is not the worst case / q04",
+    "content": {
+      "prompt": "What value remains after the original 10% decline test?",
+      "options": [
+        "$1,000",
+        "$10,000",
+        "$9,000"
+      ],
+      "explanation": "The original selected loss is $1,000, leaving $9,000 marked value. A stress-loss amount and the remaining asset value are different quantities.",
+      "correctAnswer": 2
+    },
+    "sha256": "42fa17b216f072aa84bffcaa90fd854c94a25d983249d992a4f63ff9201c7264",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k−1k=9k remaining after the firsttest.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k−1k=9k remains after the initial branch, distinct from its1k loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q05",
+    "text": "A single stress test is not the worst case / q05",
+    "content": {
+      "prompt": "In the separate 25% decline branch, what dollar loss occurs?",
+      "options": [
+        "$7,500",
+        "$2,500",
+        "$250"
+      ],
+      "explanation": "Multiply $10,000 exposure by 25% to obtain a $2,500 loss. This larger chosen move demonstrates sensitivity beyond the first test without predicting likelihood.",
+      "correctAnswer": 1
+    },
+    "sha256": "c9d49a6e75bf15978ccbcb2cef2e1652e5827d242951a45a59b10df923326a42",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k×25%=2,500 selectedloss.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k×0.25=2,500 loss in the separate branch, not7,500 remaining value.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q06",
+    "text": "A single stress test is not the worst case / q06",
+    "content": {
+      "prompt": "What value remains in that 25% decline branch?",
+      "options": [
+        "$7,500",
+        "$2,500",
+        "$9,000"
+      ],
+      "explanation": "Subtract the $2,500 selected loss from $10,000. The $7,500 remaining mark is conditional on this specific decline, not a guaranteed minimum value.",
+      "correctAnswer": 0
+    },
+    "sha256": "033c7f46f8fa54713e349246edcf2a2856a4f97ea2e8331b2aeae445d0a0a9f3",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k−2,500=7,500 remaining in thatbranch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k−2,500=7,500 remains conditionally; it is not a guaranteed floor.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q07",
+    "text": "A single stress test is not the worst case / q07",
+    "content": {
+      "prompt": "Under the stated unleveraged 100% asset-decline branch, what holding value remains?",
+      "options": [
+        "$1,000",
+        "−$10,000",
+        "$0"
+      ],
+      "explanation": "A 100% decline takes the positive $10,000 asset value to zero in this unleveraged spot worksheet. No borrowed exposure or additional liabilities are supplied.",
+      "correctAnswer": 2
+    },
+    "sha256": "7b03a7084ba1fde50611b4bad9303a1b2ec6cf3b1f46d248e3539192e107824e",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A100%decline leaves0 in the explicit unleveragedspot model with no additional liabilities supplied.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A100% decline leaves0 in the explicitly unleveraged spot/no-additional-liability model. The answer does not invent a negative holding value or borrowed debt.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q08",
+    "text": "A single stress test is not the worst case / q08",
+    "content": {
+      "prompt": "Does choosing several stress branches assign probabilities to them?",
+      "options": [
+        "Yes; the most extreme branch always occurs",
+        "No; no likelihood model was supplied",
+        "Yes; every listed branch is equally likely"
+      ],
+      "explanation": "A scenario list organizes sensitivities. Probabilities need a separate stated model or supporting estimation method, rather than being inferred from the number of examples.",
+      "correctAnswer": 1
+    },
+    "sha256": "d01e7be493bc1b421882c78881984aa26a293203f5fb40c767ee42721e6eeff5",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A list ofscenarios assigns no likelihoods without a model/evidence.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The number of scenarios does not assign equal or any other probabilities; a likelihood model requires separate assumptions/evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q09",
+    "text": "A single stress test is not the worst case / q09",
+    "content": {
+      "prompt": "Would a written “sell after 10%” note itself cap this simulator position’s loss?",
+      "options": [
+        "No; it is not an executed or automatic stop order",
+        "Yes; journal text provides contractual protection",
+        "Yes; a stress test locks an exit price"
+      ],
+      "explanation": "A note expresses a plan, while TradeHQ requires supported manual orders. It neither executes automatically nor guarantees the quote available at an eventual sale.",
+      "correctAnswer": 0
+    },
+    "sha256": "3422daac5d4b5df4a148b9d8122053ce53b2e047709eae77baa609888760e181",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A written sell-after10% note does not execute a manualorder or guarantee anexitquote.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A written threshold cannot place a supported manual sale or protect its eventual quote. This matches reviewed simulator mechanics.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-q10",
+    "text": "A single stress test is not the worst case / q10",
+    "content": {
+      "prompt": "What is an honest description of the expanded stress review?",
+      "options": [
+        "An exhaustive prediction of future losses",
+        "A guarantee that all risks have been measured",
+        "Selected downside sensitivities with explicit assumptions"
+      ],
+      "explanation": "The tests show account impact under chosen moves and mechanics. Even a wider set is not a complete forecast or proof that every possible constraint has been captured.",
+      "correctAnswer": 2
+    },
+    "sha256": "dc0ad36700dcb768eaa6ba5c641e641513a19186dbbdd29dbee08553cb73ae12",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The honest label is selecteddownside sensitivities with assumptions, not exhaustiveriskmeasurement.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Selected downside sensitivities accurately describes the review; it does not certify exhaustive forecasting or every real constraint.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-takeaway",
+    "text": "A single stress test is not the worst case / takeaway",
+    "content": "Choose another explicitly hypothetical decline, multiply it by the position value and compare the account impact. State that neither test supplies a probability or a guaranteed maximum loss.",
+    "sha256": "9bbc9efc674f81be087b3e15919994e934b6ba07ae1efc24fe0b271da97f2df7",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide asks for a second hypotheticalstresscase and no probability/guaranteedriskbound claim from merely selecting cases.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide says merely selecting tests supplies no guaranteed risk bound. Within the explicitly supplied unleveraged model the100% branch reacheszero; this does not turn the earlier10%test into a contractual maximum-loss guarantee or assign likelihoods.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-sources",
+    "text": "A single stress test is not the worst case / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The real investingreference is generalcontext, not a contractualriskguarantee or evidence these shocks willoccur.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The primary educational link is not a contract, protection product or forecast that one stress event must happen.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-40-unused-reflection",
+    "text": "A single stress test is not the worst case / unused-reflection",
+    "content": "Design a second stress case without presenting it as a prediction.",
+    "sha256": "e60be7f1dde8de95d6d9823010e7aa79aad6b37609f008f4e01677f6aad391e6",
+    "contentReference": "published-bank.json#/exercises/48",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The secondstresscase prompt is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only second-case design prompt is not an actual executed order or real account stress measurement.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-brief",
+    "text": "Review an error without rewriting the score / brief",
+    "content": "You answer a hypothetical fee question incorrectly, then read the worked explanation and recognize that 0.1% equals 0.001 rather than 0.01. A tempting response is to erase the attempt so the record looks perfect. Keeping the original answer and writing the corrected reasoning gives the mistake an educational purpose.\n\nUse a second fee calculation to test transfer rather than merely remembering the corrected option. Charge 0.1% on $2,500 and compare it with 1% on the same notional. Then inspect the original wrong attempt and its corrected reasoning. Keep the historical score unchanged while recording what concept needs another review; learning progress does not require erasing evidence of the mistake.",
+    "sha256": "f31e862c368c66e634d2a9a31ef72c47a655dfadb33788d1891867d50c43eab6",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The case preserves a wrongpercentconversion attempt and tests transfer to2,500notional at0.1/1/0.01percent. It does not require rewriting a historicalscore.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The worksheet teaches retaining original mistakes while testing the same conversion on a new2,500base. It suggests corrected reasoning as a learning practice rather than promising a rendered freeform note control.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-visual",
+    "text": "Review an error without rewriting the score / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Correct fee",
+          "value": 1
+        },
+        {
+          "label": "Mistaken fee",
+          "value": 10
+        }
+      ],
+      "unit": "$ fee on $1,000",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "9a2aac3e54701041f340c9eb5cc2a49707ae04e0883fa1e228e8d5bd9ff9aecb",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Correct1/mistaken10dollarfee bars on1knotional match0.1versus1percent and hypotheticalcaption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The1correct/10mistaken fee bars on1knotional correspond to0.1% versus1%, with fictional caption.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q01",
+    "text": "Review an error without rewriting the score / q01",
+    "content": {
+      "prompt": "What is 0.1% expressed as a decimal multiplier?",
+      "options": [
+        "0.01",
+        "0.1",
+        "0.001"
+      ],
+      "explanation": "Divide the percentage number by 100: 0.1 ÷ 100 = 0.001. Multiplying $1,000 by that decimal gives a $1 fee. The mistaken 0.01 multiplier would represent 1%.",
+      "correctAnswer": 2
+    },
+    "sha256": "8b0a4563ce916e5bff0aad02a51e95dfbb45222259c121329a566bdee1705d23",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.1/100=0.001 decimalmultiplier.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.1/100=0.001. The wrong0.01 equals1%, explaining the tenfold expense error.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q02",
+    "text": "Review an error without rewriting the score / q02",
+    "content": {
+      "prompt": "How much larger is the mistaken $10 estimate than the correct $1 fee?",
+      "options": [
+        "Two times as large",
+        "The same amount",
+        "Ten times as large"
+      ],
+      "explanation": "Divide $10 by $1 to obtain a factor of ten. Identifying the source of a decimal conversion error is more useful than memorizing a corrected option without understanding how the units changed.",
+      "correctAnswer": 2
+    },
+    "sha256": "270bc7328f0f66c662909f9e17e86cca93879630b2682f6607d3dd0b419e25e6",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10/1=10 timesaslarge, identifying the conversionerror.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10/1=10 times as large; the answer/explanation specify the factor rather than claiming a2x increase.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q03",
+    "text": "Review an error without rewriting the score / q03",
+    "content": {
+      "prompt": "What is the most useful response after reviewing the error?",
+      "options": [
+        "Rewrite the original answer as correct",
+        "Ignore the explanation because the score is imperfect",
+        "Keep the attempt and explain the corrected conversion"
+      ],
+      "explanation": "A saved attempt preserves evidence of the learning gap. A short corrected explanation helps test understanding next time. Practice progress is not a certification and should not require a perfect record to be worthwhile.",
+      "correctAnswer": 2
+    },
+    "sha256": "76194c34121bdc855a41ff1ba2107a273a47ee1c0a095aae9cbeaa4d9b2c8d5b",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Keep originalattempt and correctedreasoning rather than erasing imperfectscores; this is educationalpractice, not certification.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Keeping an original attempt and explaining the correction preserves score integrity. No professional certification or perfect-record requirement is introduced.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q04",
+    "text": "Review an error without rewriting the score / q04",
+    "content": {
+      "prompt": "At 0.1%, what is the fee on a new $2,500 notional?",
+      "options": [
+        "$250",
+        "$2.50",
+        "$25"
+      ],
+      "explanation": "Multiply $2,500 by 0.001. Applying the corrected conversion to a different notional checks understanding beyond memorizing the earlier $1 answer.",
+      "correctAnswer": 1
+    },
+    "sha256": "ef15a1b63673185375b3485957fbaf542fb024806a37cf796db89cdd839514c2",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.001=2.50 at0.1%.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.001=2.50 tests the correct0.1% multiplier on a different notional.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q05",
+    "text": "Review an error without rewriting the score / q05",
+    "content": {
+      "prompt": "At 1%, what is the fee on the same $2,500?",
+      "options": [
+        "$25",
+        "$2.50",
+        "$250"
+      ],
+      "explanation": "Convert 1% to 0.01 and multiply by $2,500. The $25 result is ten times the fee at 0.1% on an identical notional.",
+      "correctAnswer": 0
+    },
+    "sha256": "4b5886bccaa5a90bfd0ca65d8167ee6c3f43022e86c2fc8225fdd3ae9d336305",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.01=25 at1%. This matches the stated rate and base.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.01=25 at1%, ten times the0.1% fee on the samebase.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q06",
+    "text": "Review an error without rewriting the score / q06",
+    "content": {
+      "prompt": "What is the difference between those two fee amounts?",
+      "options": [
+        "$2.50",
+        "$25",
+        "$22.50"
+      ],
+      "explanation": "Subtract $2.50 from $25 to obtain $22.50. Comparing both rates on the same notional isolates the percentage-conversion difference.",
+      "correctAnswer": 2
+    },
+    "sha256": "f8da4b469e9ae96f44eab1ff598dc8ff3ebcd842d3c4f3ab05a6db73ceecd1a0",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "25−2.50=22.50 fee difference on the samebase.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "25−2.50=22.50 dollar difference; it is distinct from a ratio or the individual25 fee.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q07",
+    "text": "Review an error without rewriting the score / q07",
+    "content": {
+      "prompt": "Which decimal multiplier represents 0.01%, one tenth of 0.1%?",
+      "options": [
+        "0.01",
+        "0.0001",
+        "0.001"
+      ],
+      "explanation": "Divide 0.01 by 100 to get 0.0001. The percentage and decimal forms must not be confused, especially when checking small transaction rates.",
+      "correctAnswer": 1
+    },
+    "sha256": "e54a91d68c0194ac6057241905ea4ddd1f1ae934785b4d2dd00b0e71659ae2b4",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "0.01/100=0.0001 decimal for0.01%.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.01% divided by100=0.0001, one tenth of the0.1% multiplier.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q08",
+    "text": "Review an error without rewriting the score / q08",
+    "content": {
+      "prompt": "What fee would 0.01% produce on $2,500?",
+      "options": [
+        "$0.25",
+        "$2.50",
+        "$25"
+      ],
+      "explanation": "Multiply $2,500 by 0.0001 to obtain $0.25. Moving the percentage rate down by a factor of ten also reduces the fee by ten on the same base.",
+      "correctAnswer": 0
+    },
+    "sha256": "5b5f3646572ab2540e8c6e058285dc0ca6f91bf1eb1e3901573ba4a7d7504755",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.0001=0.25 fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2,500×0.0001=0.25, one tenth of2.50 on the samebase.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q09",
+    "text": "Review an error without rewriting the score / q09",
+    "content": {
+      "prompt": "Which order-of-magnitude check would catch the original $10-versus-$1 error?",
+      "options": [
+        "Count the number of letters in the ticker",
+        "Assume every decimal answer should be rounded to ten",
+        "Compare the fee with 1% of the same notional"
+      ],
+      "explanation": "At $1,000, 1% is $10 and 0.1% must be one tenth of that. This benchmark reveals a tenfold conversion error before the ledger is interpreted.",
+      "correctAnswer": 2
+    },
+    "sha256": "b186404061a9ad3220af8ed216d65ffbca79fd837580d22b19dcd2dbc94431ba",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Comparing with1% ofsame1k gives10 and reveals0.1%must be one-tenth,1.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "At1k,1% is10 and0.1% is1. The benchmark catches the original factor-ten error without relying on ticker length or arbitrary rounding.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-q10",
+    "text": "Review an error without rewriting the score / q10",
+    "content": {
+      "prompt": "What should happen to the recorded original wrong answer after review?",
+      "options": [
+        "Delete every attempt containing an error",
+        "Keep it and use the explanation to identify the learning gap",
+        "Rewrite it as correct to improve the score"
+      ],
+      "explanation": "Preserving the original attempt keeps the score honest and the gap visible. Reviewing a new calculation can show progress without changing what happened earlier.",
+      "correctAnswer": 1
+    },
+    "sha256": "1fba89a4697aa0af349d924b3d5c5f42a24e662b58438631cb530b5ba73b5552",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Originalwrong answer staysrecorded; a newcalculation can show learning without revisingscore.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Original wrong answers remain recorded; a new calculation can demonstrate understanding without rewriting history. Actual saved-answer preservation is separately source/state checked.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-takeaway",
+    "text": "Review an error without rewriting the score / takeaway",
+    "content": "Divide the stated percent by 100, multiply by notional dollars, and check the order of magnitude. Keep the original attempt visible and note how the tenfold error occurred.",
+    "sha256": "a9fe9ca6736d58e310dcdbce4f0602a8c6d4f5822c4fbef903c530faa59f7d38",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide dividespercent by100 and checksnotional/orderofmagnitude while preserving the attempt.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide keeps percentage/decimal/notional/order-of-magnitude steps explicit and retains the original attempt.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-sources",
+    "text": "Review an error without rewriting the score / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is generalretainedcontext, not certification of a real user's correctedscore or financialperformance.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The general reference does not certify an actual learner's score, private response or future trading result.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-50-unused-reflection",
+    "text": "Review an error without rewriting the score / unused-reflection",
+    "content": "Write a reusable percent-to-decimal check for future fee calculations.",
+    "sha256": "27eb950d7a6331b30ae071e2ca400d56f1ad9a1cfaa7991fefef4ce5e853b10a",
+    "contentReference": "published-bank.json#/exercises/49",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The reusableconversion reflection is source-only, not a currentlyrendered savedfreeforminput.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:55:51.453874+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The reusable-check reflection is unrendered bank source; no saved freeform-input functionality is inferred.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:56:45.409324+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-RELEASE486-STREAK-STORAGE",
+    "text": "Streak persistence: baseline, injected failure, retry and reload after native release",
+    "content": {
+      "origin": "https://www.thetradehq.com",
+      "scope": "Actual URL/browser application. Explicit fixed date2026-11-19, disposable guests, injected quota exceptions and synthetic nine-answer approved-case snapshots for the deeper final-answer path. No genuine prior progress, real quota incident, account operation or publication is claimed. External/nonGET blocked.",
+      "rows": [
+        {
+          "atUTC": "2026-11-19T11:55:00.211595+00:00",
+          "width": 390,
+          "theme": "light",
+          "path": "quick",
+          "controlledWriteException": false,
+          "beforeRetry": {
+            "stats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+            "stored": "{\"current\":1,\"longest\":1,\"totalCompleted\":1,\"lastCompletedDate\":\"2026-11-19\",\"history\":[{\"date\":\"2026-11-19\",\"challengeId\":17,\"decision\":\"short\"}]}",
+            "alert": []
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 17,
+                "decision": "short"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": null
+        },
+        {
+          "atUTC": "2026-11-19T11:55:04.997905+00:00",
+          "width": 1440,
+          "theme": "dark",
+          "path": "quick",
+          "controlledWriteException": false,
+          "beforeRetry": {
+            "stats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+            "stored": "{\"current\":1,\"longest\":1,\"totalCompleted\":1,\"lastCompletedDate\":\"2026-11-19\",\"history\":[{\"date\":\"2026-11-19\",\"challengeId\":17,\"decision\":\"short\"}]}",
+            "alert": []
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 17,
+                "decision": "short"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": null
+        },
+        {
+          "atUTC": "2026-11-19T11:55:09.847367+00:00",
+          "width": 390,
+          "theme": "dark",
+          "path": "quick",
+          "controlledWriteException": true,
+          "beforeRetry": {
+            "stats": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+            "stored": null,
+            "alert": [
+              "Your streak update could not be saved in this browser. The practice feedback remains available.\n\nRetry saving streak"
+            ]
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 17,
+                "decision": "short"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": null
+        },
+        {
+          "atUTC": "2026-11-19T11:55:12.891022+00:00",
+          "width": 1440,
+          "theme": "light",
+          "path": "quick",
+          "controlledWriteException": true,
+          "beforeRetry": {
+            "stats": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+            "stored": null,
+            "alert": [
+              "Your streak update could not be saved in this browser. The practice feedback remains available.\n\nRetry saving streak"
+            ]
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 17,
+                "decision": "short"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": null
+        },
+        {
+          "atUTC": "2026-11-19T11:55:16.620252+00:00",
+          "width": 390,
+          "theme": "light",
+          "path": "deep",
+          "controlledWriteException": true,
+          "beforeRetry": {
+            "stats": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+            "stored": null,
+            "alert": [
+              "Your streak update could not be saved in this browser. The practice feedback remains available.\n\nRetry saving streak"
+            ]
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 0,
+                "decision": "hold"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": 10
+        },
+        {
+          "atUTC": "2026-11-19T11:55:20.566461+00:00",
+          "width": 1440,
+          "theme": "dark",
+          "path": "deep",
+          "controlledWriteException": true,
+          "beforeRetry": {
+            "stats": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+            "stored": null,
+            "alert": [
+              "Your streak update could not be saved in this browser. The practice feedback remains available.\n\nRetry saving streak"
+            ]
+          },
+          "finalStored": {
+            "current": 1,
+            "longest": 1,
+            "totalCompleted": 1,
+            "lastCompletedDate": "2026-11-19",
+            "history": [
+              {
+                "date": "2026-11-19",
+                "challengeId": 0,
+                "decision": "hold"
+              }
+            ]
+          },
+          "reloadedStats": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+          "deepSavedAnswers": 10
+        }
+      ]
+    },
+    "sha256": "3eddff80bd9e114e400591c1d86351080167055d5e298eebaa70a92782b08611",
+    "contentReference": "production486-final-streak-storage.json",
+    "source": "src/pages/Daily.tsx saveCompletion/unsavedCompletion",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Compiled candidate and exact final preview six-case matrix retain normal saved counts, show zero saved streak with warning on injected failures, and support successful one-time retry for quick/deep completion without losing ten case answers.",
+      "reviewer": "Codex assistant, substantive candidate/preview failure-state review"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Fresh actual-domain six-case results after native SHA confirmation were reread individually: two normal saves persist, two failed quick writes show zero/no record then retry to one, and two failed deeper streak writes preserve all ten answers then retry to one. Reload retains one day and no duplicate history. Faults and nine-answer snapshots are explicitly controlled guest fixtures, not natural incidents or real account operations.",
+      "reviewer": "Codex assistant, separate skeptical post-native actual-domain reread",
+      "reviewedAtUTC": "2026-11-19T11:55:20.566461+00:00"
+    },
+    "findingRefs": [
+      "STRICT-DAILY-006"
+    ],
+    "releaseReceipt": "RELEASE-486.json",
+    "outcome": "FIXED-RECHECKED"
   }
 ]

@@ -27,3 +27,9 @@ Practice-04/14/24/34/44 received both substantive passes: proceeds versus realiz
 ## Five more cases and grammar release
 
 Practice-05/15/25/35/45 now have both complete substantive reads, including all50questions/all options/explanations. No new root is established. Distinguish changing recovery denominators, external spreads from TradeHQ fees, instrument identity from arithmetic, sample observations from future probabilities and virtual results from real outcomes. Root005 is now production-verified by native485 and a later custom-domain reread preserving raw bank/snapshot/answer2. Total434 recorded groups;26/50deep cases260/500questions. Root006 native confirmation and all page-wide gates remain open.
+
+## Completed bank text scope; page still partial
+
+All50published deep cases/500questions now have separate substantive first and skeptical second reads by this same Codex assistant, with per-group content/version hashes and individual reasons. The final four add no new root; fractional unit/fee arithmetic, window denominators, selected stress assumptions and honest error-review scores are internally consistent under their explicitly stated limits. No Google certification, second human, real-user response or forecasting validation is claimed. Source-only reflection prompts remain explicitly unrendered.
+
+Root006 is protected-merged89b614c702f4f432131cf0fbd2672f2b6096f8ec, native production684274a9-faa1-49e9-a134-3a4935a73cc6 observed11:54:08UTC, with later actual-domain six-context reread11:55:00–11:55:20UTC. Normal saves, quota-failure zero saved counts/warnings, retry and reload pass for quick/deep paths; ten saved answers remain intact. All six Daily roots are production-verified, but publisher/framework and complete source/control/state/page eligibility coverage are still pending. The795recorded subset is not the full-page denominator. Strict scoreboard remains9/163.

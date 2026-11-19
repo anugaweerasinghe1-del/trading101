@@ -24,11 +24,13 @@ expected = {'brief', 'visual', 'takeaway', 'sources', 'unused-reflection'} | {f'
 assert all(groups == expected for groups in by_case.values()), 'A case is missing reviewed groups'
 case_ids = sorted(by_case)
 remaining = [i for i, case in enumerate(bank['exercises']) if case['id'] not in by_case]
-assert remaining, 'Full bank reading alone still requires separate framework/state closure; revise the exact pointer before continuing'
-next_index = remaining[0]
-next_id = bank['exercises'][next_index]['id']
 now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-next_action = f'Continue P11 at published-bank.json#/exercises/{next_index}: {next_id}, briefing/visual then questions 1–10. Remaining {len(remaining)} cases/{10 * len(remaining)} questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.'
+if remaining:
+    next_index = remaining[0]
+    next_id = bank['exercises'][next_index]['id']
+    next_action = f'Continue P11 at published-bank.json#/exercises/{next_index}: {next_id}, briefing/visual then questions 1–10. Remaining {len(remaining)} cases/{10 * len(remaining)} questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.'
+else:
+    next_action = 'All 50 published deep cases/500 questions have two substantive text reads, alongside 30 quick/eight bonus units. Next: publisher/framework reconciliation starting at production484-final-copy-readback.json#/rows/0/notes/0 against current live/code output, then complete control/date/conditional/source/citation/media and page-wide eligibility reconciliation. P11 remains partial; no strict closure or P12 credit.'
 index = dict(asOfUTC=now, expectedBlockIds=[r['id'] for r in rows], deepCasesReviewed=case_ids, deepQuestionsReviewed=10 * len(case_ids), publishedBankCanonicalSHA256=v.digest(bank), strictPageClosure=False, scope='Declared reviewed subset only. This does not prove all eligible P11 content or states were reviewed.')
 (p / 'REVIEW-INDEX.json').write_text(json.dumps(index, indent=2) + '\n')
 result = v.validate(p)
