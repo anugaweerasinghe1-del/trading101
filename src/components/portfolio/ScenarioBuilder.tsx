@@ -132,7 +132,7 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
       }
       const shocks: Shock[] = targets.map(h => ({ symbol: h.symbol, shockPercent: signedPct, confidence: 0.7 }));
       const targetDescription = allHoldings && !namedHoldings.length
-        ? "your full portfolio" : targets.map(h => h.symbol).join(", ");
+        ? "all held assets" : targets.map(h => h.symbol).join(", ");
       const narrative = [`Modeled a ${signedPct >= 0 ? "+" : ""}${signedPct}% move on ${targetDescription} over ${horizonLabel}.`];
       if (requestedPercent !== signedPct) {
         narrative.push(`The requested ${requestedPercent}% move was limited to ${signedPct}%.`);
