@@ -37,3 +37,7 @@ Two public guest browser cases reproduced a supported 0.00003 AAPL holding displ
 # Quantity production verification
 
 #481 passed all five required checks and protected-merged. Exact native Cloudflare proof and later public mobile and desktop cases verify the stored fractional quantity throughout positions and trade history. All seven confirmed Portfolio defects are production-verified. The page remains partial pending final applicability reconciliation and disposition of the captured singular-count wording. [Exact receipt](RELEASE-481.json)
+
+# Consolidated final copy candidate
+
+PR #482 combines the two documented quality wording concerns with reproduced singular-count grammar. Four compiled responsive browser contexts and the Cloudflare build passed. Three after-change records still require the protected release and production reread. Current coverage is 130 first-pass and 127 second-pass records. [Pre-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6996292975)

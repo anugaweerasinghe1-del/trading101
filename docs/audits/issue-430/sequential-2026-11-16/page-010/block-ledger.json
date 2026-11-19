@@ -4616,5 +4616,71 @@
       "reviewer": "Codex assistant, separate source and responsive judgment"
     },
     "limitations": "The captured singular counts have minor grammatical inflection issues. This does not change their arithmetic."
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0127",
+    "text": "1 trades with journal entries | 1 journal entries; 1 include emotion tags | 1 of 1 entries | 1 recorded orders, 1 open positions | 1 completed trades",
+    "sha256": "20f5504aa7ea4a477fe93e96145cfe9f21f47c2f345eff18705d454841123c65",
+    "source": "src/components/TradingJournal.tsx; src/components/TradeAnalytics.tsx; src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "contentReference": "production-current-journal-tags.json; local-verified-recovery.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The recorded one-entry and one-position states have reproduced count-inflection errors."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The exact source expressions append plural words unconditionally. The quantities and totals are accurate. This is a minor grammar defect and conveys no Google policy determination.",
+      "reviewer": "Codex assistant, separate skeptical source and recorded-state comparison"
+    },
+    "findingId": "STRICT-PORTFOLIO-008"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0128",
+    "text": "Singular and plural journal, completed-trade and account recovery labels",
+    "sha256": "3b678f18e33be78ca9b9d0ae054d82d06df9ed8a845b6eef4a885248ca1dfb91",
+    "source": "src/components/TradingJournal.tsx; src/components/TradeAnalytics.tsx; src/components/portfolio/VerifiedAccountRecovery.tsx",
+    "sourceRevision": "d8746d369a558cc293ec9328e7257bd4f5201fd4",
+    "contentReference": "local-copy-final-copy-journal.json; local-final-copy-account.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Four compiled responsive cases display singular words for one entry, tagged entry, recorded order, position and completed trade. Existing plural branches are retained."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-008"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0129",
+    "text": "Beyond raw P&L, the page calculates fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. These summarize recorded outcomes and exposures that can help you review your practice process. The chart can include generated history; it is not a verified sequence of account observations.",
+    "sha256": "88356ffe521f5396ef571cf1db832c4ed6c443f1f1447185b8fc9682c5272fcf",
+    "source": "scripts/staticCopy.ts /portfolio",
+    "sourceRevision": "d8746d369a558cc293ec9328e7257bd4f5201fd4",
+    "contentReference": "local-copy-final-copy-journal.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The revised lesson lists the metrics and describes them as outcome and exposure summaries used to review a practice process."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-RISK-001"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0130",
+    "text": "Unrealised P&L: the difference between an open position's current marked value and its cost basis. Closing the position turns that unrealised result into realised P&L. All balances and results here remain virtual.",
+    "sha256": "62e024405b58654c5ad4c98c0ee541be216392004911bb4cc394fd49ad8dc621",
+    "source": "scripts/staticCopyExtra.ts /portfolio",
+    "sourceRevision": "d8746d369a558cc293ec9328e7257bd4f5201fd4",
+    "contentReference": "local-copy-final-copy-journal.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The definition compares current mark and cost basis, distinguishes realization on closing, and keeps every result virtual."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-RISK-002"
   }
 ]

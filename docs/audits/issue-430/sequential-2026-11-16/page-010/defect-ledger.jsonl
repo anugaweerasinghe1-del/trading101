@@ -6,3 +6,4 @@
 {"id": "STRICT-PORTFOLIO-006", "status": "FIXED-RECHECKED", "receipt": "RELEASE-480.json", "policyViolation": false}
 {"id": "STRICT-PORTFOLIO-007", "status": "FIX-PENDING", "pr": 481, "classification": "CONFIRMED PRODUCT BUG", "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793", "blocks": ["STRICT-0010-BLOCK-0092", "STRICT-0010-BLOCK-0093"], "policyViolation": false}
 {"id": "STRICT-PORTFOLIO-007", "status": "FIXED-RECHECKED", "receipt": "RELEASE-481.json", "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c", "policyViolation": false}
+{"id": "STRICT-PORTFOLIO-008", "classification": "CONFIRMED PRODUCT BUG", "severity": "minor", "scope": "Count-inflection grammar", "pr": 482, "status": "FIX-PENDING", "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6996292975", "policyViolation": false}
