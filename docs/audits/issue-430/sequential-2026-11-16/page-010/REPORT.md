@@ -41,3 +41,9 @@ Two public guest browser cases reproduced a supported 0.00003 AAPL holding displ
 # Consolidated final copy candidate
 
 PR #482 combines the two documented quality wording concerns with reproduced singular-count grammar. Four compiled responsive browser contexts and the Cloudflare build passed. Three after-change records still require the protected release and production reread. Current coverage is 130 first-pass and 127 second-pass records. [Pre-edit evidence](https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6996292975)
+
+## Final Portfolio candidate and source reconciliation
+
+PR #482 final head `58486b806e26183a2adcfb2be5c8c81aec0ec6b0` consolidates singular count grammar, the two documented wording risks, scenario target fallback, tiny positive price display and a zero-value imported guest cash-share guard. All were logged before edits. Responsive compiled cases and the full Cloudflare build passed; final protected CI and native production remain pending.
+
+The source/control crosswalk maps 491 overlapping syntax projections from 12 components to existing individual reviews. Twenty-four additional source-only messages have separate first and skeptical reads; two are excluded by enclosing guards. These are not production runtime passes. Hash/reference validation resolves all 160 recorded content versions, with six candidate production second reads pending. No page closure credit is issued at this stage. Exact raw captures, source snapshots and reference resolutions are retained.

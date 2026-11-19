@@ -4682,5 +4682,563 @@
       "status": "PENDING-PRODUCTION"
     },
     "findingId": "STRICT-PORTFOLIO-RISK-002"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0131",
+    "text": "The stock/crypto/ETH example fallback shocks both held AAPL and BTC.",
+    "sha256": "98730500e48d793896eac7b170a5c8b3e54b85180edcfd63b0afda7aa4a1df43",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "contentReference": "before-targets-scenario-targets.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Read all three input, narrative and table projections at both widths: unrelated holdings receive the shock."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Source countercheck confirms a missing named match falls back to every holding. This is a target mismatch, separate from disclosed independent random variation.",
+      "reviewer": "Codex assistant, separate skeptical countercheck"
+    },
+    "findingId": "STRICT-PORTFOLIO-009"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0132",
+    "text": "Stock-only and crypto-only shocks; named multiple and all-held-assets targets; unmatched ETH, technology sector and unrecognized targets rejected.",
+    "sha256": "ca1ba844966e26690faf4718aecbcde2acf8037567c5612c5ca3486ca6c75847",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "local-final482-scenario-targets.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Seven responsive cases now have matching narrative and per-asset shock scope. Unsupported targets clear the prior result. The finite rule parser is not general natural-language understanding."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-009"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0133",
+    "text": "A positive PEPE price 0.00000388 is displayed as $0.0000 in Positions and $0 in the scenario price table.",
+    "sha256": "3b8cd34617f35557d0a100bb1086d503c736da25182cb910574d5bed03821757",
+    "source": "src/components/portfolio/PositionsTable.tsx; src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "contentReference": "before-edge-price-zero.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Read actual guest PEPE purchase and positive stored mark against both visible tables at two widths."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Independent source countercheck confirms four- and two-decimal truncation, while the shared formatter preserves small nonzero numbers. No policy determination.",
+      "reviewer": "Codex assistant, separate skeptical countercheck"
+    },
+    "findingId": "STRICT-PORTFOLIO-010"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0134",
+    "text": "Small nonzero PEPE entry/current/expected prices preserve significant digits.",
+    "sha256": "664d01c854a4a3d0ab96e2d8228f6f0c77a438055926800bd7074be16be7798d",
+    "source": "src/components/portfolio/PositionsTable.tsx; src/components/portfolio/ScenarioBuilder.tsx",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "local-final482-price-zero.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two responsive guest purchases keep nonzero position and scenario prices using the existing shared formatter."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-010"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0135",
+    "text": "Cash Reserve NaN% after accepting an explicitly unverified zero-value guest backup.",
+    "sha256": "de98a724bed7e9018bc99424e2cddb49b07f3d59793de786c8b88503663ad309",
+    "source": "src/components/PortfolioAnalytics.tsx; src/lib/portfolioRecovery.ts",
+    "sourceRevision": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "contentReference": "before-edge-price-zero.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The actual restore control accepts this zero-cash, zero-total empty backup at both widths, then renders NaN%."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The import validation explicitly accepts zero and the calculation divides zero by zero; neighboring exposure calculations already guard this case. This is not private production account evidence.",
+      "reviewer": "Codex assistant, separate skeptical countercheck"
+    },
+    "findingId": "STRICT-PORTFOLIO-011"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0136",
+    "text": "Cash Reserve 0.0% for the accepted zero-value guest portfolio.",
+    "sha256": "834355e0e2e6e6cc0ec4ac1b86bc9473ef7fb07b6cefdd5eac11e24f6c5c1f58",
+    "source": "src/components/PortfolioAnalytics.tsx",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "local-final482-price-zero.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The corrected zero denominator guard matches the neighboring descriptive exposure display at both widths."
+    },
+    "pass2": {
+      "status": "PENDING-PRODUCTION"
+    },
+    "findingId": "STRICT-PORTFOLIO-011"
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0137",
+    "text": "An earlier browser recovery copy was restored. Download a separate backup to protect it.",
+    "sha256": "64ef75e94dbfc58db920eac62875adbe46d79de854d99083678d7229aa1615cf",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:29",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The recovery event message recommends an external backup after a local fallback, without claiming durable cloud protection."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The event handler, not a cloud-account promise, sets this wording. The separate-download recommendation still applies if local data is later cleared; actual browser recovery was not observed.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613101+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0138",
+    "text": "Could not download the practice backup. Check your browser download permissions.",
+    "sha256": "423ee8be8146b87dab03e6fef122e2dbbb51dc8055d5b990b01e73a48195830e",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:55",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The failed-download instruction identifies browser permissions as a check rather than asserting a completed backup."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The instruction does not say permissions are the sole failure cause. The catch retains a failed state; no downloaded-file evidence is claimed for this branch.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613115+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0139",
+    "text": "The preserved original has been downloaded. It was not automatically interpreted or overwritten.",
+    "sha256": "b51eb841b810273a3ac225074852883a3652f8d7d8e345dfb1098fa8626d3111",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:63",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The original-byte download message distinguishes preservation from interpretation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The handler reads the preserved original bytes and creates a download without parsing them. This supports the wording as authored intent; the exceptional original-recovery branch remains unobserved.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613118+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0140",
+    "text": "The old record could not be downloaded in this browser.",
+    "sha256": "20ff39c60ca2e143f2bda6452114e612da1c0f58404ff69cade40e21d1b69963",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:64",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The unavailable-original fallback states the browser action did not complete."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The failure message is appropriately limited to this browser and does not assert corruption or loss of the source bytes.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613120+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0141",
+    "text": "This file exceeds the 5 MB backup limit.",
+    "sha256": "15afd3a1792c03e02c1faec39167d5f25c03aa47020c3f8a695c069b5b1757f4",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:70",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The 5 MB message matches the explicit File.size guard."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The code tests file.size > 5,000,000; decimal MB is consistent. This source-only variant is distinct from the parser string already reviewed in block 0099.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613121+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0142",
+    "text": "Choose a TradeHQ .json backup. Word documents and screenshots cannot restore simulated trades.",
+    "sha256": "1f97e126ed1bb0d5b7ebbdf7ab26fa91c761abb4eb175e5e5f715ba98e96cfb5",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:72",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The format message accurately limits the restore path to JSON practice records."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The .json extension guard runs before parsing, and parsing still checks envelope and arithmetic. The wording does not promise that every renamed JSON file is accepted.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613122+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0143",
+    "text": "This file cannot be restored as a TradeHQ practice portfolio.",
+    "sha256": "a4f36a1eab6e5517e100cb25992d9b93035f339ab865ba09ec55feb23fad8e65",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:82",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The generic parse fallback promises no successful import."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This is a fallback for a non-Error thrown during parsing. It reports failure without claiming the current portfolio changed.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613123+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0144",
+    "text": "Restore failed. The previous guest portfolio was preserved.",
+    "sha256": "55e9de000f058fa229d3b3cb747efed5a49e24f0ec1e794a2357275ad86645ea",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:100",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The catch message says the previous guest record was preserved; source review alone does not prove every storage-failure recovery path."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The normal helper errors are Error objects with their own messages; this is the generic fallback. Rollback is attempted and an undo copy retained if verification fails. Exceptional persistence recovery has no runtime pass here.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613125+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0145",
+    "text": "Could not save the previous guest portfolio.",
+    "sha256": "fd1db23dd2627a3015616f7216d565a0eab084519f1e67bfe2e7b80261c1d470",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:110",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The thrown undo-save failure identifies local persistence failure."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The undo handler checks savePortfolio and throws on false, so the failure is not presented as successful restoration.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613126+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0146",
+    "text": "Could not undo the restore. Download a copy of the current data and try again.",
+    "sha256": "cef5e7268c996c9968b9c6cd968169299c71ca0e15042e3ea2d39d6a268ee420",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:116",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The undo fallback asks for a copy and retry; it does not claim restored state."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The catch advises saving a separate copy and retrying. It does not promise that undo succeeded or that a private server record changed.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613127+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0147",
+    "text": "Verifying whether this is a guest or account portfolio.",
+    "sha256": "32074ab7f3366b9589673704b0220b563207e7f2e7042cdc0342d228fe30fdf4",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:143",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; excluded by enclosing guard",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "This branch sits inside a wrapper requiring !authLoading; its pending text is retained source-only and is not reachable here."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The enclosing !authLoading condition makes this pending branch inapplicable to the actual rendered guest section. No missing runtime coverage is represented as tested.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613128+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0148",
+    "text": "Signed-in portfolios come from server-recorded trades. Sign out to restore a separate guest backup; imports cannot replace account history.",
+    "sha256": "29782016de45ec8bc0a9acda8fb785e6c596c38cdf5091dad49e20f1fb4d8b72",
+    "source": "src/components/portfolio/PortfolioRecoveryPanel.tsx:144",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/PortfolioRecoveryPanel.tsx",
+    "scope": "SOURCE-ONLY; excluded by enclosing guard",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "This branch sits inside a wrapper requiring !signedIn; its account explanation is retained source-only and is not reachable here."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The enclosing !signedIn condition excludes this ternary arm. Actual signed-in recovery is the separate component tested only in loopback fixtures.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613129+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0149",
+    "text": "No server-recorded practice history was available.",
+    "sha256": "402938bd1f88831723a96136a7a420be40b33d18e4102e6bbf811ab05b01338e",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx:18",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/VerifiedAccountRecovery.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Missing account history is reported as unavailable; no successful export is claimed."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The no-history check is on !data or RPC error; it does not manufacture an empty signed history or investment certification.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613130+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0150",
+    "text": "The server did not return a verified export.",
+    "sha256": "7db6e49b1afcf26121896fdfc4c90d047308e5f0064f94c227b6ce4f9b68703c",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx:21",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/VerifiedAccountRecovery.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A missing key/signature/payload response is rejected rather than labelled verified."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The envelope field checks support rejecting an incomplete export. Cryptographic server operation and real signing rights remain outside this public editorial review.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613131+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0151",
+    "text": "Could not export signed account history.",
+    "sha256": "c3fcff4097ecd773c92dfc09da3112d9389a48f3a9f229dd08dc5ecf9a75ba5d",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx:30",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/VerifiedAccountRecovery.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The generic account export fallback discloses failure."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This generic failure fallback differs from the observed synthetic successful export and is not credited as a real production-account exercise.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613133+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0152",
+    "text": "The account snapshot could not be recovered.",
+    "sha256": "24b06b6376c3bef32a9348a88f1686e0366a745bad15d83ff0aec5288dcbad3b",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx:42",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/VerifiedAccountRecovery.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The generic account recovery fallback discloses failure."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The recovery catch reports unavailable recovery. The successful loopback snapshot fixture cannot prove this private operational failure path.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613134+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0153",
+    "text": "Could not verify this file. Check the account and file format. No data was imported.",
+    "sha256": "932a82ac22f99588c66ad7734e247606a8a40ef208e6e9176ed7ba5357ddc493",
+    "source": "src/components/portfolio/VerifiedAccountRecovery.tsx:62",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/VerifiedAccountRecovery.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The verification catch explicitly disclaims importing any data."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The catch confirms no import, matching the verify-only handler that has no portfolio mutation. A synthetic verified verdict is not treated as real signature proof.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613135+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0154",
+    "text": "You'll receive alerts when you hit milestones like +10%, +50%, or -20%",
+    "sha256": "76132b1e7173a0682d6dd3c0d987feda0f0a3f8bf2cdda96653d32a4e284e66f",
+    "source": "src/pages/Portfolio.tsx:312",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/Portfolio.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The threshold examples are sample virtual milestones, consistent with the notification handler and simulation context."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The examples are examples rather than an exhaustive threshold list. Delivery depends on permission and the persisted enable flag fixed in #478; actual OS notification delivery remains unverified.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613136+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0155",
+    "text": "Enable notifications in your browser settings",
+    "sha256": "c685697dbcdccafa50078396ef6c2cfa68bb7e5456ffc06850b1da3894c3840b",
+    "source": "src/pages/Portfolio.tsx:317",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/Portfolio.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The denied-permission instruction points to browser settings without claiming the app can change permission."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The app cannot grant denied browser permission itself. This wording gives a user-controlled next step rather than claiming permission was changed.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613137+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0156",
+    "text": "Checking quote sources for your holdings…",
+    "sha256": "e31f752026463e2a9ae4ffdb7f8db06fa6005715eb4aa9b4199a8f45ac16bc78",
+    "source": "src/pages/Portfolio.tsx:387",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/Portfolio.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The interim quote message discloses a pending source check."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The empty coverage-map branch is a loading label, while failure and stale provenance have separate messages. It does not label an unavailable price as live.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613138+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0157",
+    "text": "Enter a finite percentage and time horizon.",
+    "sha256": "50663757e0a875e19c0a326ba66039459a96c2c6ca9953030e61c9c7bc8ff984",
+    "source": "src/components/portfolio/ScenarioBuilder.tsx:110",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/ScenarioBuilder.tsx",
+    "scope": "SOURCE-ONLY; runtime branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The finite-input error rejects nonfinite parameters before simulation."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The handler checks Number.isFinite for both parsed inputs before clamping or running the model. The message does not imply that arbitrary natural language is understood.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613139+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0158",
+    "text": "Browser storage is unavailable. Nothing was restored.",
+    "sha256": "09c4a299104359ff7c7f2c5e2956862cb0ff384aacac34adda5719d71fd8db4f",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/portfolioRecovery.ts",
+    "scope": "SOURCE-ONLY; runtime error branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The storage probe rejects the operation before applying imported data."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The probe and thrown error precede savePreRestoreCopy and mutation. This is a source-reviewed guard, not a simulated successful recovery.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613140+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0159",
+    "text": "The browser could not verify the saved portfolio. Restore was cancelled.",
+    "sha256": "be7509fe5810d0fee32a30723c74f5242bc495ead554019e7746fdb39a16d6f7",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/portfolioRecovery.ts",
+    "scope": "SOURCE-ONLY; runtime error branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A persisted-versus-imported mismatch triggers rollback handling instead of reporting success."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The helper checks persisted equality and attempts rollback in catch, retaining undo when rollback cannot be confirmed. The message states cancellation; no durable storage guarantee is inferred.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613141+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0160",
+    "text": "Guest backups cannot replace a signed-in account portfolio.",
+    "sha256": "1441750188bfe05aaef508180e6c2d9659b9e4a5a56fbd6968b8d186d85d38a6",
+    "source": "src/lib/portfolioRecovery.ts",
+    "sourceRevision": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "contentReference": "source-snapshots/portfolioRecovery.ts",
+    "scope": "SOURCE-ONLY; runtime error branch not observed",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The mutation rechecks owner identity rather than relying only on disabled guest controls."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The ownership check occurs at mutation, including owner-key and view matching. The source supports scope protection; actual private account operations remain an explicit external limit.",
+      "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
+      "reviewedAtUTC": "2026-11-19T01:23:09.613143+00:00"
+    }
   }
 ]

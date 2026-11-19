@@ -1,0 +1,55 @@
+{
+  "scope": "Guest AAPL/BTC practice orders with both market prices intercepted. No real provider call or account operation.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-19T01:07:43.796034+00:00",
+      "held": [
+        "AAPL",
+        "BTC"
+      ],
+      "examples": [
+        {
+          "prompt": "Tech stocks crash 20%",
+          "narrative": "Modeled a -20% move on your full portfolio over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$224.84\n-20.0%\nBTC\n0.1\n$76,076\n$60,860.8\n-20.0%"
+        },
+        {
+          "prompt": "Crypto rallies 40% over 60 days",
+          "narrative": "Modeled a +40% move on your full portfolio over 60 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$393.48\n+40.0%\nBTC\n0.1\n$76,076\n$106,506.4\n+40.0%"
+        },
+        {
+          "prompt": "ETH gains 50% in 30 days",
+          "narrative": "Modeled a +50% move on your full portfolio over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$421.58\n+50.0%\nBTC\n0.1\n$76,076\n$114,114\n+50.0%"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-19T01:07:40.471324+00:00",
+      "held": [
+        "AAPL",
+        "BTC"
+      ],
+      "examples": [
+        {
+          "prompt": "Tech stocks crash 20%",
+          "narrative": "Modeled a -20% move on your full portfolio over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$224.84\n-20.0%\nBTC\n0.1\n$76,076\n$60,860.8\n-20.0%"
+        },
+        {
+          "prompt": "Crypto rallies 40% over 60 days",
+          "narrative": "Modeled a +40% move on your full portfolio over 60 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$393.48\n+40.0%\nBTC\n0.1\n$76,076\n$106,506.4\n+40.0%"
+        },
+        {
+          "prompt": "ETH gains 50% in 30 days",
+          "narrative": "Modeled a +50% move on your full portfolio over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$421.58\n+50.0%\nBTC\n0.1\n$76,076\n$114,114\n+50.0%"
+        }
+      ]
+    }
+  ]
+}

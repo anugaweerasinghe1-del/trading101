@@ -5,8 +5,8 @@
   "pageStatus": "PARTIAL-REVIEW",
   "strictPageClosure": false,
   "closureCredit": 0,
-  "firstPass": 130,
-  "secondPass": 127,
+  "firstPass": 160,
+  "secondPass": 154,
   "rawCaptures": [
     {
       "file": "production-portfolio-guest-capture-0.json",
@@ -67,11 +67,14 @@
     "STRICT-PORTFOLIO-005",
     "STRICT-PORTFOLIO-006",
     "STRICT-PORTFOLIO-007",
-    "STRICT-PORTFOLIO-008"
+    "STRICT-PORTFOLIO-008",
+    "STRICT-PORTFOLIO-009",
+    "STRICT-PORTFOLIO-010",
+    "STRICT-PORTFOLIO-011"
   ],
-  "confirmedProductDefectsReproduced": 8,
+  "confirmedProductDefectsReproduced": 11,
   "confirmedProductDefectsProductionVerified": 7,
-  "nextAction": "Verify #482 final-head hosted checks, then protected merge, native deployment and rereads of 0128–0130. Finish source/control applicability reconciliation and strict P10 closure decision before P11.",
+  "nextAction": "Finish final-head #482 release, production rereads, separate source-only skeptical reread and source/control crosswalk; strict closure decision, then P11.",
   "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
   "qualityRisks": [
     {
@@ -176,19 +179,23 @@
   "sourceOnlyRecoveryErrorRecords": 10,
   "currentFragmentCrosswalk": "CURRENT-FRAGMENT-CROSSWALK.json",
   "remainingReview": [
-    "Final source-expression and control applicability crosswalk, including source-only errors and inaccessible private states.",
-    "Record disposition of captured singular grammar in journal and account recovery, then consolidate any justified final copy fixes.",
-    "Run the final coverage validation and page-level skeptical eligibility decision."
+    "Protected #482 final-head release and six candidate after-change skeptical production rereads.",
+    "Final current capture occurrence tie-out, history search state review and page-level closure decision."
   ],
   "finalCopyPR": {
     "number": 482,
-    "headSHA": "d8746d369a558cc293ec9328e7257bd4f5201fd4",
-    "status": "OPEN; hosted validation and production readback pending",
+    "headSHA": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "status": "OPEN; final-head checks in progress; native and public rereads pending",
     "pendingBlocks": [
       "STRICT-0010-BLOCK-0128",
       "STRICT-0010-BLOCK-0129",
-      "STRICT-0010-BLOCK-0130"
+      "STRICT-0010-BLOCK-0130",
+      "STRICT-0010-BLOCK-0132",
+      "STRICT-0010-BLOCK-0134",
+      "STRICT-0010-BLOCK-0136"
     ],
     "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6996292975"
-  }
+  },
+  "sourceOnlyAdditionalRecords": 21,
+  "sourceAndControlCrosswalk": "SOURCE-STATE-CROSSWALK.json"
 }
