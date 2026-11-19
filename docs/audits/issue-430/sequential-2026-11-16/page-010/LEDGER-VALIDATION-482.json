@@ -1,17 +1,10 @@
 {
   "pageId": "STRICT-0010",
-  "records": 160,
-  "firstPass": 160,
-  "secondPass": 154,
+  "records": 161,
+  "firstPass": 161,
+  "secondPass": 161,
   "integrityErrors": [],
-  "pending": [
-    "STRICT-0010-BLOCK-0128:pass2",
-    "STRICT-0010-BLOCK-0129:pass2",
-    "STRICT-0010-BLOCK-0130:pass2",
-    "STRICT-0010-BLOCK-0132:pass2",
-    "STRICT-0010-BLOCK-0134:pass2",
-    "STRICT-0010-BLOCK-0136:pass2"
-  ],
+  "pending": [],
   "sourceSyntaxMappings": 491,
   "hashForms": {
     "STRICT-0010-BLOCK-0001": "text",
@@ -173,7 +166,8 @@
     "STRICT-0010-BLOCK-0157": "text",
     "STRICT-0010-BLOCK-0158": "text",
     "STRICT-0010-BLOCK-0159": "text",
-    "STRICT-0010-BLOCK-0160": "text"
+    "STRICT-0010-BLOCK-0160": "text",
+    "STRICT-0010-BLOCK-0161": "canonical-content"
   },
   "limitation": "Validates reference/hash coverage only. Editorial judgment, runtime scope and strict closure require the separate records."
 }

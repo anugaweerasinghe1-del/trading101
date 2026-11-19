@@ -856,5 +856,13 @@
         "STRICT-0010-BLOCK-0089"
       ]
     }
-  ]
+  ],
+  "finalReleaseReconciliation": {
+    "receipt": "RELEASE-482.json",
+    "mergeSHA": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "candidatePendingStatements": "Historical candidate timing above is superseded by the native receipt and separate final actual-domain judgments.",
+    "historySearch": "STRICT-0010-BLOCK-0161",
+    "currentRawTrace": "PRODUCTION482-RAW-TIEOUT.json",
+    "sourceOnlyGuardSupplement": "GUARD-SUPPLEMENT.json"
+  }
 }

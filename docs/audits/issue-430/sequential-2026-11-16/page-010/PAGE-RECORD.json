@@ -1,0 +1,79 @@
+{
+  "pageId": "STRICT-0010",
+  "path": "/portfolio",
+  "url": "https://www.thetradehq.com/portfolio",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": true,
+  "closedAtUTC": "2026-11-19T01:45:09.167796+00:00",
+  "reviewer": "Codex assistant; prior contributor; separate same-assistant substantive skeptical rereads, not a second human or Google review",
+  "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+  "nativeCloudflare": {
+    "id": "4789f353-a41a-4f71-a209-04200f93048c",
+    "sha": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-19T01:30:10.924772Z"
+  },
+  "nativeObservedAtUTC": "2026-11-19T01:40:59.420Z",
+  "liveRereadAtUTC": "2026-11-19T01:41:56.536881+00:00",
+  "scope": "Current public publisher page and identified authored source/state projections, with private operational and source-only evidence boundaries explicitly retained.",
+  "decision": "The authored lessons, FAQs, disclosures, metadata, controls, modeled arithmetic, responsive projections and identified source alternatives reconcile with the individual judgments and preserved captures. Eleven confirmed product roots and two quality wording risks are corrected and independently actual-domain reread after exact native release confirmation; two shared P09 roots are extensions, not new distinct defects. No further confirmed defect is established by the scoped evidence.",
+  "coverage": {
+    "textVersionStateGroups": 161,
+    "pass1": 161,
+    "pass2": 161,
+    "sourceSyntaxMappings": 491,
+    "finalRawOccurrences": 2580,
+    "finalRawTextGroups": 380,
+    "unreconciledRawGroups": 0,
+    "publicFinalViews": 5,
+    "sourceAlternativeRecords": 34,
+    "releaseReceipts": 5,
+    "overlap": "Text versions, source alternatives, responsive/state groups and syntax records overlap; none is a unique-paragraph count."
+  },
+  "evidence": {
+    "coverage": "COVERAGE.json",
+    "ledger": "block-ledger.json",
+    "sourceAndControls": "SOURCE-STATE-CROSSWALK.json",
+    "rawTieout": "PRODUCTION482-RAW-TIEOUT.json",
+    "integrity": "LEDGER-VALIDATION-482.json",
+    "policy": "POLICY-APPLICABILITY.md",
+    "inventory": "SITEMAP-482.json",
+    "releaseReceipts": [
+      "RELEASE-478.json",
+      "RELEASE-479.json",
+      "RELEASE-480.json",
+      "RELEASE-481.json",
+      "RELEASE-482.json"
+    ]
+  },
+  "findings": [
+    "STRICT-PORTFOLIO-001",
+    "STRICT-PORTFOLIO-002",
+    "STRICT-PORTFOLIO-003",
+    "STRICT-PORTFOLIO-004",
+    "STRICT-PORTFOLIO-005",
+    "STRICT-PORTFOLIO-006",
+    "STRICT-PORTFOLIO-007",
+    "STRICT-PORTFOLIO-008",
+    "STRICT-PORTFOLIO-009",
+    "STRICT-PORTFOLIO-010",
+    "STRICT-PORTFOLIO-011"
+  ],
+  "productDefectsProductionVerified": 11,
+  "qualityRisksFixed": 2,
+  "sharedRootExtensions": [
+    "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
+    "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
+  ],
+  "substantiatedQualityRisksOpen": [],
+  "confirmedGooglePolicyViolations": 0,
+  "limitations": [
+    "Actual private production account records, signature operation, provider contracts/delivery and operating-system notification delivery remain unverified. Authored account displays are source reviewed and explicitly loopback exercised; this gives no private production operational PASS.",
+    "Thirty-four source alternative/version records include unobserved errors and two excluded ternary arms. Separate public guest file guards and isolated permission denial are identified in GUARD-SUPPLEMENT.json. Source review does not claim every exceptional storage state ran.",
+    "The rule-based scenario accepts identified symbols/classes, not arbitrary natural-language meaning. Random independent moves and model/cost/correlation limitations are disclosed; outcomes are illustrative.",
+    "Linked destination bodies retain their canonical queue positions. User journals and guest file data are disposable fixtures, not publisher-authored financial histories.",
+    "Terms legal eligibility and Diversification publication retain owner gates. Actual Google account eligibility, ad serving, traffic/consent configuration and approval remain external."
+  ]
+}

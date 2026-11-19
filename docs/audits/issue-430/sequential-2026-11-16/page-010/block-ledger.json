@@ -4647,9 +4647,17 @@
       "reason": "Four compiled responsive cases display singular words for one entry, tagged entry, recorded order, position and completed trade. Existing plural branches are retained."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The actual-domain journal says 1 trade, 1 journal entry, 1 includes tags and 1 of 1 entry; completed-trade summary is singular. The account recovery source is byte-identical to the loopback-tested correction: 1 recorded order and 1 open position. No real production account operation is claimed.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-008"
+    "findingId": "STRICT-PORTFOLIO-008",
+    "productionEvidence": [
+      "production482-final-final-copy-journal.json",
+      "local-final-copy-account.json"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0129",
@@ -4663,9 +4671,17 @@
       "reason": "The revised lesson lists the metrics and describes them as outcome and exposure summaries used to review a practice process."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The full newly served paragraph describes fee-inclusive closed results, dispersion and practice drawdown as summaries of outcomes/exposure that inform process review. The generated-history qualification remains explicit. This resolves the wording concern without claiming process skill is measured directly.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-RISK-001"
+    "findingId": "STRICT-PORTFOLIO-RISK-001",
+    "productionEvidence": [
+      "production482-capture-0.json#notes/5",
+      "production482-capture-2.json#notes/5"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0130",
@@ -4679,9 +4695,17 @@
       "reason": "The definition compares current mark and cost basis, distinguishes realization on closing, and keeps every result virtual."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The published definition compares current marked value with cost basis and explains realization on closing while retaining the virtual status of every result. It no longer equates virtual unrealised P&L with spendable money.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-RISK-002"
+    "findingId": "STRICT-PORTFOLIO-RISK-002",
+    "productionEvidence": [
+      "production482-capture-0.json#notes/14",
+      "production482-capture-2.json#notes/14"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0131",
@@ -4713,9 +4737,16 @@
       "reason": "Seven responsive cases now have matching narrative and per-asset shock scope. Unsupported targets clear the prior result. The finite rule parser is not general natural-language understanding."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "Read all seven actual-domain cases at both widths. Crypto +40% affects BTC only; stocks -20% affects AAPL only; named multiple/all-held-assets cases affect both; unheld ETH, unsupported tech sector and unknown targets reject and clear the old result. Untargeted holdings still have disclosed model variability; this is not a general natural-language parser.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-009"
+    "findingId": "STRICT-PORTFOLIO-009",
+    "productionEvidence": [
+      "production482-final-scenario-targets.json"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0133",
@@ -4747,9 +4778,16 @@
       "reason": "Two responsive guest purchases keep nonzero position and scenario prices using the existing shared formatter."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The current mark $0.00000388 and fee-inclusive entry $0.00000388388 remain positive in both responsive positions layouts. A +10% scenario displays $0.000004268, which matches the stored mark times 1.1. Display precision is restored without changing actual prices or fee arithmetic.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-010"
+    "findingId": "STRICT-PORTFOLIO-010",
+    "productionEvidence": [
+      "production482-final-price-zero.json"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0135",
@@ -4781,9 +4819,16 @@
       "reason": "The corrected zero denominator guard matches the neighboring descriptive exposure display at both widths."
     },
     "pass2": {
-      "status": "PENDING-PRODUCTION"
+      "status": "REVIEWED",
+      "reason": "The actual published restore accepts the explicitly unverified zero-value guest file and now shows Cash Reserve 0.0%, with the same zero guard feeding the progress value. The neighboring exposure behavior is consistent; no real account loss or recommended cash allocation is asserted.",
+      "reviewer": "Codex assistant; separate skeptical actual-domain/source reread after native Cloudflare confirmation",
+      "reviewedAtUTC": "2026-11-19T01:43:10.040723+00:00"
     },
-    "findingId": "STRICT-PORTFOLIO-011"
+    "findingId": "STRICT-PORTFOLIO-011",
+    "productionEvidence": [
+      "production482-final-price-zero.json"
+    ],
+    "releaseReceipt": "RELEASE-482.json"
   },
   {
     "id": "STRICT-0010-BLOCK-0137",
@@ -5239,6 +5284,38 @@
       "reason": "The ownership check occurs at mutation, including owner-key and view matching. The source supports scope protection; actual private account operations remain an explicit external limit.",
       "reviewer": "Codex assistant; separate skeptical source reread; no second human or Google review",
       "reviewedAtUTC": "2026-11-19T01:23:09.613143+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0010-BLOCK-0161",
+    "text": "History symbol search: no match, case-insensitive match, and All reset",
+    "content": [
+      {
+        "width": 390,
+        "noMatch": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n  - text: NO_SUCH_SYMBOL\n- tablist:\n  - tab \"All\"\n  - tab \"Buys\" [selected]\n  - tab \"Sells\"\n- img\n- paragraph: No trades found matching your search",
+        "match": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n  - text: aapl\n- tablist:\n  - tab \"All\"\n  - tab \"Buys\" [selected]\n  - tab \"Sells\"\n- table:\n  - rowgroup:\n    - row \"Type Asset Quantity Price Total Date & Time Status\":\n      - columnheader \"Type\"\n      - columnheader \"Asset\"\n      - columnheader \"Quantity\"\n      - columnheader \"Price\"\n      - columnheader \"Total\"\n      - columnheader \"Date & Time\"\n      - columnheader \"Status\"\n  - rowgroup:\n    - row \"BUY AAPL 📝 Has notes 2 $255.25 -$511.01 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"BUY\":\n        - img\n        - text: BUY\n      - cell \"AAPL 📝 Has notes\"\n      - cell \"2\"\n      - cell \"$255.25\"\n      - cell \"-$511.01\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n- text: Showing 1 of 2 trades",
+        "all": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n- tablist:\n  - tab \"All\" [selected]\n  - tab \"Buys\"\n  - tab \"Sells\"\n- table:\n  - rowgroup:\n    - row \"Type Asset Quantity Price Total Date & Time Status\":\n      - columnheader \"Type\"\n      - columnheader \"Asset\"\n      - columnheader \"Quantity\"\n      - columnheader \"Price\"\n      - columnheader \"Total\"\n      - columnheader \"Date & Time\"\n      - columnheader \"Status\"\n  - rowgroup:\n    - row \"SELL AAPL 1 $255.25 +$254.99 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"SELL\":\n        - img\n        - text: SELL\n      - cell \"AAPL\"\n      - cell \"1\"\n      - cell \"$255.25\"\n      - cell \"+$254.99\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n    - row \"BUY AAPL 📝 Has notes 2 $255.25 -$511.01 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"BUY\":\n        - img\n        - text: BUY\n      - cell \"AAPL 📝 Has notes\"\n      - cell \"2\"\n      - cell \"$255.25\"\n      - cell \"-$511.01\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n- text: Showing 2 of 2 trades"
+      },
+      {
+        "width": 1440,
+        "noMatch": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n  - text: NO_SUCH_SYMBOL\n- tablist:\n  - tab \"All\"\n  - tab \"Buys\" [selected]\n  - tab \"Sells\"\n- img\n- paragraph: No trades found matching your search",
+        "match": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n  - text: aapl\n- tablist:\n  - tab \"All\"\n  - tab \"Buys\" [selected]\n  - tab \"Sells\"\n- table:\n  - rowgroup:\n    - row \"Type Asset Quantity Price Total Date & Time Status\":\n      - columnheader \"Type\"\n      - columnheader \"Asset\"\n      - columnheader \"Quantity\"\n      - columnheader \"Price\"\n      - columnheader \"Total\"\n      - columnheader \"Date & Time\"\n      - columnheader \"Status\"\n  - rowgroup:\n    - row \"BUY AAPL 📝 Has notes 2 $255.25 -$511.01 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"BUY\":\n        - img\n        - text: BUY\n      - cell \"AAPL 📝 Has notes\"\n      - cell \"2\"\n      - cell \"$255.25\"\n      - cell \"-$511.01\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n- text: Showing 1 of 2 trades",
+        "all": "- heading \"Trade History\" [level=2]\n- img\n- text: 1 Buys\n- img\n- text: \"1 Sells Traded notional (before fees): $765.75\"\n- img\n- textbox \"Filter trade history by symbol\":\n  - /placeholder: Search by symbol...\n- tablist:\n  - tab \"All\" [selected]\n  - tab \"Buys\"\n  - tab \"Sells\"\n- table:\n  - rowgroup:\n    - row \"Type Asset Quantity Price Total Date & Time Status\":\n      - columnheader \"Type\"\n      - columnheader \"Asset\"\n      - columnheader \"Quantity\"\n      - columnheader \"Price\"\n      - columnheader \"Total\"\n      - columnheader \"Date & Time\"\n      - columnheader \"Status\"\n  - rowgroup:\n    - row \"SELL AAPL 1 $255.25 +$254.99 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"SELL\":\n        - img\n        - text: SELL\n      - cell \"AAPL\"\n      - cell \"1\"\n      - cell \"$255.25\"\n      - cell \"+$254.99\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n    - row \"BUY AAPL 📝 Has notes 2 $255.25 -$511.01 Nov 19, 2026 1:41 AM ✓ Filled\":\n      - cell \"BUY\":\n        - img\n        - text: BUY\n      - cell \"AAPL 📝 Has notes\"\n      - cell \"2\"\n      - cell \"$255.25\"\n      - cell \"-$511.01\"\n      - cell \"Nov 19, 2026 1:41 AM\"\n      - cell \"✓ Filled\"\n- text: Showing 2 of 2 trades"
+      }
+    ],
+    "sha256": "325ad177198d207ba3b2f3167db3aebd6ff235939559ceb306f3c2ea37bcf950",
+    "source": "src/components/TradeHistory.tsx",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "contentReference": "production482-final-final-copy-journal.json",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Both actual guest views show the no-match message for NO_SUCH_SYMBOL, one buy for lowercase aapl under Buys, and both trades after All/reset. No account operation or order mutation is involved."
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source combines a case-insensitive symbol predicate with the selected type predicate, while the summary denominator remains all two recorded trades. The actual no-match state contains no row; lowercase aapl under Buys has one buy, and clearing/resetting All restores both rows. Values and notional remain unchanged. No functional or editorial issue found.",
+      "reviewer": "Codex assistant; separate skeptical source and actual-state countercheck",
+      "reviewedAtUTC": "2026-11-19T01:44:06.420173+00:00"
     }
   }
 ]
