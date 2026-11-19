@@ -41,12 +41,13 @@ export default function Daily() {
   const [selected, setSelected] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [bonusPick, setBonusPick] = useState<number | null>(null);
+  const [unsavedCompletion, setUnsavedCompletion] = useState<{ challengeId: number; decision: ChallengeDecision } | null>(null);
   const guidedStage = journeyStage(readJourney());
 
   useEffect(() => {
     setDeeperOpen(reviewMistakes);
     setStreak(getStreak());
-    setSubmitted(hasPlayedQuickToday()); setSelected(null); setBonusPick(null);
+    setSubmitted(hasPlayedQuickToday()); setSelected(null); setBonusPick(null); setUnsavedCompletion(null);
   }, [date]);
 
   useEffect(() => {
@@ -60,15 +61,27 @@ export default function Daily() {
     return () => { window.clearInterval(timer); document.removeEventListener("visibilitychange", tick); };
   }, []);
 
+  const saveCompletion = (challengeId: number, decision: ChallengeDecision) => {
+    recordChallenge(challengeId, decision);
+    // recordChallenge can return a proposed streak even when browser storage fails.
+    // Display only the reread saved state and keep the completion available to retry.
+    const saved = getStreak();
+    const today = practiceDate();
+    const persisted = saved.lastCompletedDate === today && (challengeId === 0 || saved.history.some(
+      entry => entry.date === today && entry.challengeId === challengeId && entry.decision === decision,
+    ));
+    setStreak(saved);
+    setUnsavedCompletion(persisted ? null : { challengeId, decision });
+  };
+
   const handleSubmit = (decision: ChallengeDecision, optionIndex: number) => {
     if (submitted) return;
     // The directional scenario is a reflection exercise, not a forecast quiz.
     // Completing the reasoning step advances the streak; no market direction is
     // presented as objectively correct.
-    const next = recordChallenge(challenge.id, decision);
+    saveCompletion(challenge.id, decision);
     setSelected(optionIndex);
     setSubmitted(true);
-    setStreak(next);
   };
 
   const unlocked = streak ? getUnlockedBadges(streak.longest) : [];
@@ -161,6 +174,15 @@ export default function Daily() {
                     <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/60 mt-2 font-semibold">{s.label}</div>
                   </div>
                 ))}
+              </div>
+            )}
+
+            {unsavedCompletion && (
+              <div role="alert" className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-sm">
+                <p>Your streak update could not be saved in this browser. The practice feedback remains available.</p>
+                <button type="button" onClick={() => saveCompletion(unsavedCompletion.challengeId, unsavedCompletion.decision)} className="mt-2 min-h-11 rounded-lg border border-border bg-background px-4 py-2 font-semibold">
+                  Retry saving streak
+                </button>
               </div>
             )}
 
@@ -344,7 +366,7 @@ export default function Daily() {
               </p>
             </article>
 
-            <DailyPractice key={date} date={date} reviewMissed={reviewMistakes} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
+            <DailyPractice key={date} date={date} reviewMissed={reviewMistakes} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => saveCompletion(0, "hold")} />
 
             {streak?.lastCompletedDate === date && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
