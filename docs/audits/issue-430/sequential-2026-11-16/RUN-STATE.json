@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-19T03:17:50.772542+00:00",
+  "updatedAtUTC": "2026-11-19T11:45:16.395844+00:00",
   "phase": "P11-STRICT-REVIEW-IN-PROGRESS",
   "currentPage": "https://www.thetradehq.com/daily",
   "newAuditCompletedPages": 9,
@@ -16,18 +16,18 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "ff0eacc9-0159-422d-8a75-ff9a28ff80d2",
+  "nativeCloudflareId": "8f9da971-bba6-4d12-b723-b560ace8fe17",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Continue P11 at published-bank.json#/exercises/20: practice-05, briefing/visual then questions 1\u201310. Remaining 29 cases/290 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.",
+  "nextStep": "Continue P11 at published-bank.json#/exercises/25: practice-06, briefing/visual then questions 1\u201310. Remaining 24 cases/240 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 75,
+  "freshReviewTotalClosedCases": 76,
   "latestClosedPageRecord": "page-010/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+  "latestCodeMergeSHA": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -36,18 +36,18 @@
     "closed": 3
   },
   "production": {
-    "mergeSHA": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+    "mergeSHA": "45fb879ba6fc668e66d737d916a9a0488268ef06",
     "nativeCloudflare": {
-      "id": "ff0eacc9-0159-422d-8a75-ff9a28ff80d2",
-      "sha": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+      "id": "8f9da971-bba6-4d12-b723-b560ace8fe17",
+      "sha": "45fb879ba6fc668e66d737d916a9a0488268ef06",
       "environment": "production",
       "branch": "main",
       "status": "success",
-      "createdAt": "2026-11-19T02:40:50.97435Z"
+      "createdAt": "2026-11-19T03:16:13.493409Z"
     },
-    "nativeObservedAtUTC": "2026-11-19T02:52:58.696Z",
-    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44446072016/job/135303002997",
-    "liveRereadAtUTC": "2026-11-19T02:54:02.512985+00:00"
+    "nativeObservedAtUTC": "2026-11-19T03:27:06.777Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44450249280/job/135316281141",
+    "liveRereadAtUTC": "2026-11-19T11:42:50.079615+00:00"
   },
   "resumeRestrictions": [
     "Ad serving disabled",
@@ -56,10 +56,10 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 485,
+    "number": 486,
     "status": "MERGED-NATIVE-PENDING",
-    "headSHA": "13d3669970259d8ba760414611844af041870f8f",
-    "mergeSHA": "45fb879ba6fc668e66d737d916a9a0488268ef06"
+    "headSHA": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+    "mergeSHA": "89b614c702f4f432131cf0fbd2672f2b6096f8ec"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -85,7 +85,7 @@
   },
   "publisherPagesRemaining": 154,
   "caseTotals": {
-    "confirmedFixedRechecked": 64,
+    "confirmedFixedRechecked": 65,
     "qualityRisksFixedRechecked": 10,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
@@ -113,7 +113,7 @@
   "activeAssignment": {
     "page": "STRICT-0011",
     "status": "PARTIAL-REVIEW",
-    "nextExactContentState": "Continue P11 at published-bank.json#/exercises/20: practice-05, briefing/visual then questions 1\u201310. Remaining 29 cases/290 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished."
+    "nextExactContentState": "Continue P11 at published-bank.json#/exercises/25: practice-06, briefing/visual then questions 1\u201310. Remaining 24 cases/240 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished."
   },
   "guideCoverage": {
     "publisherPages": 163,
@@ -176,7 +176,7 @@
     "ownerDecisionOpen": 1,
     "newCasesImplementedThisResume": 7
   },
-  "latestCodeReleaseReceipt": "page-011/RELEASE-484.json",
+  "latestCodeReleaseReceipt": "page-011/RELEASE-485.json",
   "sessionCaseTotals": {
     "confirmedProductErrorsFixedRechecked": 7,
     "confirmedPolicyIssues": 0,
@@ -305,7 +305,7 @@
   "technicalInitialHTMLURLsChecked": 480,
   "technicalCoverageEvidence": "resume-2026-11-17/technical-inventory-summary.json",
   "currentScoreboard": {
-    "asOfUTC": "2026-11-19T03:17:50.772542+00:00",
+    "asOfUTC": "2026-11-19T11:45:16.395844+00:00",
     "canonicalPublisherPages": 163,
     "strictlyCompletedPublisherPages": 9,
     "partialOrSupplementaryPublisherPages": 12,
@@ -314,7 +314,7 @@
     "initialHTMLTechnicalURLsChecked": 480,
     "technicalEvidence": "resume-2026-11-17/technical-inventory-summary.json",
     "confirmedProductRootsReproduced": 66,
-    "confirmedProductRootsFixedAndProductionVerified": 64,
+    "confirmedProductRootsFixedAndProductionVerified": 65,
     "qualityRisksFixed": 10,
     "qualityRisksOpen": 3,
     "qualityRiskOpenIds": [
@@ -328,7 +328,7 @@
     ],
     "privateOperationalLimits": "Google account/CMP, provider rights/delivery and actual authenticated operations remain unverified.",
     "currentPage": "STRICT-0011 /daily",
-    "currentBlock": "Continue P11 at published-bank.json#/exercises/20: practice-05, briefing/visual then questions 1\u201310. Remaining 29 cases/290 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished."
+    "currentBlock": "Continue P11 at published-bank.json#/exercises/25: practice-06, briefing/visual then questions 1\u201310. Remaining 24 cases/240 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished."
   },
   "sessionCaseTotalsScope": "Historical Guide-continuation counters retained; current aggregate metrics are in currentScoreboard.",
   "currentDailyCoverage": {
@@ -339,20 +339,19 @@
     "publicBankExercises": 50,
     "publicBankQuestions": 500,
     "confirmedProductDefects": 6,
-    "productionVerified": 4,
-    "firstPassRecords": 358,
-    "secondPassRecords": 358,
-    "scope": "30 complete quick units, eight complete bonus units, 21 deep cases of15 overlapping content/source groups each, four release-version groups and one control-failure group. Same-assistant separate substantive passes; no complete page/runtime coverage.",
-    "deepQuestionsReviewed": 210,
+    "productionVerified": 5,
+    "firstPassRecords": 434,
+    "secondPassRecords": 434,
+    "scope": "30 complete quick units, eight bonus units,26 deep cases of15 overlapping groups each, five release-version groups and one storage-failure control. Separate same-assistant substantive passes; full-page/runtime reconciliation remains unfinished.",
+    "deepQuestionsReviewed": 260,
     "deepQuestionsTotal": 500,
-    "deepCasesSubstantivelyRead": 21,
-    "pendingDeepCases": 29
+    "deepCasesSubstantivelyRead": 26,
+    "pendingDeepCases": 24
   },
   "activeDailyPR": {
-    "number": 484,
-    "headSHA": "1267e36dbcee6839f31d732c881ba0c2c773505a",
-    "status": "FIXED-RECHECKED",
-    "mergeSHA": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
-    "receipt": "page-011/RELEASE-484.json"
+    "number": 486,
+    "status": "MERGED-NATIVE-PENDING",
+    "headSHA": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+    "mergeSHA": "89b614c702f4f432131cf0fbd2672f2b6096f8ec"
   }
 }

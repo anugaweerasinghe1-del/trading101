@@ -23,3 +23,7 @@ Root005 is a reproduced plural-subject grammar error, being corrected in display
 ## Further five-case skeptical reread
 
 Practice-04/14/24/34/44 received both substantive passes: proceeds versus realized gain, changed-input fee arithmetic, observation versus fetch age, high win counts versus dollar losses, and dependent rumor sources. Both passes include all50questions/all alternatives/explanations. No additional root defect is established. Reuse the historical#238 minutes correction and existing display normalization of a unresolved; do not fabricate duplicates. The strict subset is now358groups (including one separately reproduced storage-failure control),21cases/210questions. Remaining29cases/290questions and framework/state/source closure remain open.
+
+## Five more cases and grammar release
+
+Practice-05/15/25/35/45 now have both complete substantive reads, including all50questions/all options/explanations. No new root is established. Distinguish changing recovery denominators, external spreads from TradeHQ fees, instrument identity from arithmetic, sample observations from future probabilities and virtual results from real outcomes. Root005 is now production-verified by native485 and a later custom-domain reread preserving raw bank/snapshot/answer2. Total434 recorded groups;26/50deep cases260/500questions. Root006 native confirmation and all page-wide gates remain open.

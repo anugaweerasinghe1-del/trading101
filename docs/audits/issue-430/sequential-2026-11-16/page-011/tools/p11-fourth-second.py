@@ -1,0 +1,91 @@
+import json,datetime
+from pathlib import Path
+p=Path('/workspace/trading101/docs/audits/issue-430/sequential-2026-11-16/page-011');rows=json.loads((p/'block-ledger.json').read_text())
+notes={
+'practice-05':[
+'The initial20% fall and20% rebound use different bases; no cash flow can explain away the4k remaining deficit. The later±5% scenarios are explicitly alternative96k-base branches.',
+'The three figure balances match100k×0.8×1.2=96k. They are account values, not a purported observed live price series.',
+'80k plus16k rebound is96k. A symmetric20% recovery does not restore the20k earlier loss.',
+'20k/80k=25% restores100k; the explanation explicitly declines to infer timing or likelihood.',
+'0.8×1.2−1=−4%, independently matching96k/100k−1. Adding interval percentages would be a real error the case rejects.',
+'The original loss is20k on100k; using the80k trough would select a different denominator.',
+'The stated rebound adds16k on80k, leaving4k of the20k decline unrecovered.',
+'The4k deficit is neither the16k second gain nor20k first loss; the question names its reference balance.',
+'4k/96k=4.1666...%, rounded4.17%. Four percent of96k would add only3,840 and leave a deficit.',
+'96k×1.05=100,800,800 over the original start. This demonstrates a sufficient selected interval without forecasting it.',
+'96k×0.95=91,200. The separate loss branch does not start after the gain branch.',
+'A positive interval is compatible with an unrecovered longer-period loss; an explicit original/peak reference is necessary.',
+'The guide explains changing dollar bases without jargon and does not imply a gain is guaranteed.',
+'The real primary URL is contextual; the invented account path is not presented as an externally verified performance history.',
+'The source-only reflection field is not a rendered user response or text-storage feature.'],
+'practice-15':[
+'The one-unit and ten-unit venue examples have fixed bid/ask, no commissions and explicit separation from TradeHQ’s single-mark simulator. No hidden spread or real routing feature is invented.',
+'99bid and101ask are the two market sides; the figure does not label100 midpoint as an executable quote.',
+'A buyer accepting the seller’s101 price crosses the ask under the exact premise. This does not claim all possible orders must cross.',
+'101 paid minus99 received is2 loss before commissions even though both quotes/midpoint stay unchanged.',
+'The product comparison preserves separate real-venue concepts versus simulator snapshot/fee behavior previously verified on Trade.',
+'101−99=2 spread per unit; midpoint arithmetic cannot shrink the separation.',
+'The arithmetic mean is100, but no supplied seller or buyer offers a crossing fill there.',
+'Ten units at101 cost1,010; assuming100 midpoint would understate this hypothetical buy.',
+'Ten units sold at99 yield990, not1,010 purchase cost or1,000 midpoint value.',
+'1,010−990=20, matching ten times2 per-unit spread and excluding commissions consistently.',
+'20/1,010=1.980198...%, correctly rounded1.98%. The2.02% alternative uses the explicitly wrong990 denominator.',
+'A separate commission, if applicable, adds its own charge; it does not reimburse a bid/ask spread.',
+'The takeaway repeats both side quotes and the excluded-commission assumption, with a clear simulator-boundary statement.',
+'The generic primary source does not certify an actual bid/ask venue or prove a TradeHQ order-book capability.',
+'The reflection prompt stays source-only; no private real-money execution is represented as observed.'],
+'practice-25':[
+'The case stipulates different provider IDs/projects sharing a ticker. Repair changes the mark for existingA units and does not silently convert ownership intoB.',
+'The2/20 dollar bars are separately labelled project quotes, not contradictory prices for one established identity.',
+'TenA units at2 give20. The200 distractor deliberately demonstrates the wrong-project quote.',
+'Provider identity and project information disambiguate a reused ticker; neither high price nor symbol alone establishes the instrument.',
+'Flagging uncertainty is appropriate. Averaging unrelated prices would preserve neither instrument’s valuation.',
+'Using B20 for ten units produces200 mathematically, but fails identity before arithmetic validation.',
+'200−20=180 overstatement; it is a mapping error, not a real900% market return.',
+'200/20=10. The erroneous value is ten times correct, while overstatement alone is nine times correct; the question asks total mark ratio.',
+'The original ten units remainA after repair; changing toB or adjusting quantity would alter the user holding without evidence.',
+'Provider/project/contract details are stronger evidence than colors or first letters. The explanation does not claim names alone are universally unique.',
+'Without defensible identity, a quote cannot be labelled verified; a fallback needs an explicit limitation rather than false certainty.',
+'Identifier reconciliation directly tests the described bug. Positive numbers and successful refreshes do not establish correct identity.',
+'The guide checks identity before currency/time and preserves unavailable/fallback status during investigation.',
+'CoinGecko methodology remains contextual primary reading; the worksheet’s two imaginary projects are not asserted as specific current listings.',
+'The source-only identity checklist does not certify that all actual catalog mappings have passed. Existing P09 mapping risks remain separately open.'],
+'practice-35':[
+'The scenario challenges copying a tiny100% record and then adds one loss. It does not reverse into claiming the method must always fail.',
+'The3/0 figure describes the initial sample. The later fourth attempt is a distinct continuation, not an inconsistency in the initial illustration.',
+'Three wins divided by three is100% observed, and the correct choice includes within this sample. Future certainty is a deliberately wrong alternative.',
+'Complete selection rules and broader records can expose omissions/chance; a strategy name or theme supplies no reliability evidence.',
+'Consistent prospective records reduce selection/hindsight bias without guaranteeing that a larger sample proves profitability.',
+'3×20=60 before costs, not a general expected payout.',
+'Adding one loser produces3/4=75% observed wins without changing the first three records.',
+'60−80=−20 before costs. Net gross is awkward but the full explanation clearly means winnings less losses before charges; it does not assert a fee-inclusive net result.',
+'−20/4=−5 per-attempt gross average; total loss−20 is not the average.',
+'Excluding the loss only after seeing it would bias the report. A previously defined inclusion rule must apply consistently.',
+'One loss leaves a small sample and does not invalidate actual earlier wins or prove all later attempts will lose.',
+'Costs/exposure/inclusion rules and more observations strengthen the assessment; selected winning screenshots do not.',
+'The guide rewrites the explicitly original three-attempt headline and names its sample limit. It does not report the expanded four-attempt sample as100% wins.',
+'The source is general investor context, not an actual strategy evaluation or evidence that copying these fictional trades is safe.',
+'The honest-headline prompt is source-only, not a fabricated user testimonial or actual return claim.'],
+'practice-45':[
+'The case treats10k as a virtual result under recorded rules, while the separate1,500 incremental-cost branch illustrates sensitivity only. No actual execution-cost estimate or real-return equivalence is claimed.',
+'The figure’s paper start/end labels and fictional caption prevent implying a real brokerage balance.',
+'10k/100k=10%. The result remains virtual and is not proof that funds were earned.',
+'Paper practice does not test every actual fill, cost, personal constraint or emotional response; these specific limits are clearly stated.',
+'A simulated result with process/assumptions/limitations is supported. Professional certification and impossibility of loss are deliberately false alternatives.',
+'110k−100k=10k virtual gain, not110k profit or a real cash receipt.',
+'Virtual balances are not redeemable funds; the correct option preserves the product’s educational-simulation boundary.',
+'10k−1,500=8,500 under this separately stipulated cost branch. It is not an estimate of what the learner would actually keep.',
+'8,500/100k=8.5%, still a hypothetical alternative before other real differences rather than a proven realized return.',
+'Personal liquidity/loss constraints cannot be inferred from an assigned virtual start balance or its profitable outcome.',
+'Financial stakes can alter behavior; the text states a possibility/limitation rather than claiming every learner must react the same way.',
+'Only the recorded virtual10% under simulator conditions is supported; future real performance and competence claims are excluded.',
+'The guide reports the virtual outcome and what can be learned while expressly declining real-execution/personal-risk validation.',
+'The real investing URL is context only. It neither certifies a10% actual result nor supplies the invented1,500 cost assumption.',
+'The source-only reflection instruction is not a generated user statement or a private account review.']}
+for r in rows:
+ for case,reasons in notes.items():
+  prefix='STRICT-0011-DEEP-'+case+'-'
+  if r['id'].startswith(prefix):
+   k=r['id'][len(prefix):];ix=0 if k=='brief' else 1 if k=='visual' else 12 if k=='takeaway' else 13 if k=='sources' else 14 if k=='unused-reflection' else int(k[1:])+1
+   assert r['pass2']['status']=='PENDING';r['pass2']=dict(status='REVIEWED',reason=reasons[ix],reviewer='Codex assistant; separate substantive skeptical full-case reread',reviewedAtUTC=datetime.datetime.now(datetime.timezone.utc).isoformat());r['outcome']='NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE'
+(p/'block-ledger.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n');print(len(rows),'groups, both passes;26cases/260questions;page remains partial')

@@ -11711,5 +11711,2344 @@
       "STRICT-DAILY-006"
     ],
     "outcome": "CONFIRMED PRODUCT/CONTENT DEFECT"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-brief",
+    "text": "A rebound that does not restore the balance / brief",
+    "content": "A hypothetical account begins at $100,000, falls to $80,000, and then rises 20% from that lower balance. No money enters or leaves. Someone adds −20% and +20% and declares the account even. Follow the dollar amounts instead: returns apply to the balance present at the start of each interval.\n\nFrom the $96,000 rebound balance, consider a 5% gain and a 5% loss as separate next intervals. Each starts at $96,000 and neither is a prediction. Compare the new balances with the original $100,000. A classmate says any profitable interval means recovery is complete. Check that claim using the actual gap: the reference point for one interval’s return is different from the reference point for full recovery.",
+    "sha256": "83b9862fd50fff0e407b34a39a9928795f2c5abe9a9a919c7cc8de7ecf026eef",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Changing percentage bases explain100k→80k→96k; later±5% are separate96k-base intervals, not predictions or consecutive moves.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331301+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The initial20% fall and20% rebound use different bases; no cash flow can explain away the4k remaining deficit. The later±5% scenarios are explicitly alternative96k-base branches.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876023+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-visual",
+    "text": "A rebound that does not restore the balance / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Start",
+          "value": 100000
+        },
+        {
+          "label": "After loss",
+          "value": 80000
+        },
+        {
+          "label": "After rebound",
+          "value": 96000
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "e69b9841e421c3bed24b553ffc2234eeb182863bca4b4fc7ec862eae83257a83",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The100k/80k/96k bars match the supplied start, loss and rebound balances and hypothetical caption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331390+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The three figure balances match100k×0.8×1.2=96k. They are account values, not a purported observed live price series.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876042+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q01",
+    "text": "A rebound that does not restore the balance / q01",
+    "content": {
+      "prompt": "What balance follows the 20% rebound from $80,000?",
+      "options": [
+        "$100,000",
+        "$120,000",
+        "$96,000"
+      ],
+      "explanation": "The rebound adds $80,000 × 0.20 = $16,000. The resulting $96,000 is still $4,000 below the initial balance. The rise and fall use different dollar bases.",
+      "correctAnswer": 2
+    },
+    "sha256": "15e77c990dfa706746b171bf85c9344a873441d53b436e34cf5cf6b674fdf622",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "80k×1.20=96k, leaving4k unrecovered.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331429+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "80k plus16k rebound is96k. A symmetric20% recovery does not restore the20k earlier loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876049+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q02",
+    "text": "A rebound that does not restore the balance / q02",
+    "content": {
+      "prompt": "What percentage gain from $80,000 would restore $100,000?",
+      "options": [
+        "20%",
+        "40%",
+        "25%"
+      ],
+      "explanation": "The missing $20,000 must be divided by the current $80,000: 0.25. A 25% rise recovers the original balance. This arithmetic says nothing about how likely or how soon such a rise is.",
+      "correctAnswer": 2
+    },
+    "sha256": "f8b4cd25ae8eee89e211cddcf655d9f82e1225c3f75559215eab9947b2d37259",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "20k/80k=25% required recovery without any probability claim.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331456+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "20k/80k=25% restores100k; the explanation explicitly declines to infer timing or likelihood.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876053+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q03",
+    "text": "A rebound that does not restore the balance / q03",
+    "content": {
+      "prompt": "What is the full-period return after the stated rebound?",
+      "options": [
+        "0%",
+        "+4%",
+        "−4%"
+      ],
+      "explanation": "Compare the final $96,000 with the original $100,000. The $4,000 shortfall is 4% of starting value. Compounding multiplies interval growth factors; adding the two percentages would give the wrong answer.",
+      "correctAnswer": 2
+    },
+    "sha256": "28cffe58acd428f7e8893f7bfc9b9a89928e24bfd6f7fcd98ff23c8d26c14ab2",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "96k/100k−1=−4% full-period return; adding−20/+20 would be wrong.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331483+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.8×1.2−1=−4%, independently matching96k/100k−1. Adding interval percentages would be a real error the case rejects.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876057+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q04",
+    "text": "A rebound that does not restore the balance / q04",
+    "content": {
+      "prompt": "How many dollars were lost in the initial fall?",
+      "options": [
+        "$25,000",
+        "$20,000",
+        "$16,000"
+      ],
+      "explanation": "Subtract the $80,000 trough from the $100,000 start. This $20,000 loss represents 20% of starting equity, rather than 20% of the later trough.",
+      "correctAnswer": 1
+    },
+    "sha256": "1496c3a4a142aef52f51a3ff3422595576a78f98048514d1c2870a32f71b9f6c",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "100k−80k=20k initial dollar loss.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331506+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The original loss is20k on100k; using the80k trough would select a different denominator.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876062+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q05",
+    "text": "A rebound that does not restore the balance / q05",
+    "content": {
+      "prompt": "How many dollars were gained in the stated 20% rebound?",
+      "options": [
+        "$16,000",
+        "$20,000",
+        "$4,000"
+      ],
+      "explanation": "Multiply the reduced $80,000 balance by 20%. The $16,000 gain is smaller than the earlier loss even though the interval percentages have the same magnitude.",
+      "correctAnswer": 0
+    },
+    "sha256": "d64bb478c8972d8e41c9b612edc5362d430f4f9bd77071db523b8df6b06df8d6",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "80k×20%=16k rebound gain.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331528+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The stated rebound adds16k on80k, leaving4k of the20k decline unrecovered.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876065+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q06",
+    "text": "A rebound that does not restore the balance / q06",
+    "content": {
+      "prompt": "How far below the original start is the $96,000 account?",
+      "options": [
+        "$16,000",
+        "$20,000",
+        "$4,000"
+      ],
+      "explanation": "Subtract current $96,000 from original $100,000. The $4,000 remaining gap is distinct from both the $20,000 first loss and $16,000 rebound gain.",
+      "correctAnswer": 2
+    },
+    "sha256": "08b27e438907cbee10913e8e145a6d539b5e1ac7076cbd11a0b3fbdfa1a51e37",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "100k−96k=4k remaining gap.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331551+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The4k deficit is neither the16k second gain nor20k first loss; the question names its reference balance.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876068+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q07",
+    "text": "A rebound that does not restore the balance / q07",
+    "content": {
+      "prompt": "What rise from $96,000 would exactly restore the start, approximately?",
+      "options": [
+        "20%",
+        "4.17%",
+        "4%"
+      ],
+      "explanation": "Divide the required $4,000 recovery by current $96,000 equity. Using the original balance as denominator would understate the next interval’s required return.",
+      "correctAnswer": 1
+    },
+    "sha256": "da8049f8085aaffd2c4a9da251e35dab207158563bc57e96d1febfabeb2bedbe",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "4k/96k≈4.17% required rise from the current balance.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331576+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "4k/96k=4.1666...%, rounded4.17%. Four percent of96k would add only3,840 and leave a deficit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876071+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q08",
+    "text": "A rebound that does not restore the balance / q08",
+    "content": {
+      "prompt": "In the separate 5% gain branch, what is the next balance?",
+      "options": [
+        "$100,800",
+        "$101,000",
+        "$96,005"
+      ],
+      "explanation": "Multiplying $96,000 by 1.05 gives $100,800. This branch goes $800 above the original account balance; the gain is calculated from its own interval start.",
+      "correctAnswer": 0
+    },
+    "sha256": "adecbafaaf2188164ffbab4ff915b17941e428bb958673a009beed7aebda709d",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "96k×1.05=100,800 in the separate gain branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331598+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "96k×1.05=100,800,800 over the original start. This demonstrates a sufficient selected interval without forecasting it.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876074+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q09",
+    "text": "A rebound that does not restore the balance / q09",
+    "content": {
+      "prompt": "In the separate 5% loss branch, what is the next balance?",
+      "options": [
+        "$90,000",
+        "$95,995",
+        "$91,200"
+      ],
+      "explanation": "Multiply $96,000 by 0.95 to get $91,200. The $4,800 interval loss should not be calculated from the original $100,000 account instead.",
+      "correctAnswer": 2
+    },
+    "sha256": "5f21a04ed13d8ed422d6803a469270dde8ce7ad29a18c703179e2fc398beeaaa",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "96k×0.95=91,200 in the separate loss branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331622+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "96k×0.95=91,200. The separate loss branch does not start after the gain branch.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876077+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-q10",
+    "text": "A rebound that does not restore the balance / q10",
+    "content": {
+      "prompt": "Why can a profitable interval still leave recovery incomplete?",
+      "options": [
+        "Recovery uses only the count of winning days",
+        "Equity may remain below the original reference balance",
+        "Every gain erases all previous losses"
+      ],
+      "explanation": "An interval can be positive while equity remains below its starting level or peak. Recovery requires comparing actual balances with an explicitly chosen reference.",
+      "correctAnswer": 1
+    },
+    "sha256": "587f396f8849ce245a9c5455e7b3dcf4e61d4d68c3dc815dc5a0c777dc1fb012",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "An interval gain may leave equity below the original reference or peak; recovery requires a named balance.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331647+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A positive interval is compatible with an unrecovered longer-period loss; an explicit original/peak reference is necessary.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876081+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-takeaway",
+    "text": "A rebound that does not restore the balance / takeaway",
+    "content": "Describe how losing $20,000 leaves a smaller amount to grow. A 20% gain on $80,000 adds only $16,000. Use the changing base to explain the remaining shortfall.",
+    "sha256": "a09f899ef877080db8b181bc318ff07eaef7bab4b004d396ae590c5c9741d5c5",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide explains the smaller growth base and16k versus20k using dollars.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331667+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide explains changing dollar bases without jargon and does not imply a gain is guaranteed.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876084+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-sources",
+    "text": "A rebound that does not restore the balance / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is retrieved general investing context; no historical real-account performance is attributed to it.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331690+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The real primary URL is contextual; the invented account path is not presented as an externally verified performance history.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876087+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-05-unused-reflection",
+    "text": "A rebound that does not restore the balance / unused-reflection",
+    "content": "Explain the mistake without using the word “compounding.”",
+    "sha256": "9d69d62d9040c16c5de24599fa2e5178917e6665386716729a1f3f55e92e1aa5",
+    "contentReference": "published-bank.json#/exercises/20",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The no-compounding-word reflection is source-only, not an observed user response.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331709+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only reflection field is not a rendered user response or text-storage feature.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876090+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-brief",
+    "text": "A spread is not a commission / brief",
+    "content": "Outside the simulator, a hypothetical venue shows a $99 bid and $101 ask. A buyer crosses the ask and immediately sells at the unchanged bid. Ignore commissions and use one unit. This worksheet isolates spread cost; TradeHQ’s single provider quote and 0.1% fee should not be described as a real bid-ask order book.\n\nRepeat the conceptual bid-ask example with ten units rather than one. Keep the $99 bid and $101 ask unchanged and continue excluding commissions. Then compare the $100 midpoint with the quotes at which this particular immediate buy and sale occur. These are external venue mechanics; do not assume TradeHQ offers this order book or executes at its midpoint.",
+    "sha256": "1b5b5fa4d52c6afe815892a590f84e694e964d2c19aa418c9aa6a50a785507ab",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The99bid/101ask example is expressly outside the simulator and excludes commissions. Ten units extend the same unchanged venue quotes without claiming actual TradeHQ order-book fills.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331742+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The one-unit and ten-unit venue examples have fixed bid/ask, no commissions and explicit separation from TradeHQ’s single-mark simulator. No hidden spread or real routing feature is invented.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876094+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-visual",
+    "text": "A spread is not a commission / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Bid",
+          "value": 99
+        },
+        {
+          "label": "Ask",
+          "value": 101
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "ee9525e8d8aaf6c8cc58afc9577e60b6a58be14ec2c34f8ae06a011fd0ba08b0",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The labelled99/101 bid/ask inputs and fictional caption agree with the premise.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331765+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "99bid and101ask are the two market sides; the figure does not label100 midpoint as an executable quote.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876100+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q01",
+    "text": "A spread is not a commission / q01",
+    "content": {
+      "prompt": "At which stated quote does this hypothetical buyer purchase?",
+      "options": [
+        "$100 midpoint",
+        "$101 ask",
+        "$99 bid"
+      ],
+      "explanation": "A buyer accepting the displayed seller’s price crosses the ask at $101. The midpoint is a comparison reference, not a guaranteed executable quote in this example.",
+      "correctAnswer": 1
+    },
+    "sha256": "8a401d10eef5ba46ca8d22dc6a26a276f1950909768a8eeaf354ab7ccddbbdd7",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A buyer crossing the ask purchases at101, not midpoint100 or bid99.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331816+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A buyer accepting the seller’s101 price crosses the ask under the exact premise. This does not claim all possible orders must cross.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876104+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q02",
+    "text": "A spread is not a commission / q02",
+    "content": {
+      "prompt": "What happens after immediately selling at the unchanged bid?",
+      "options": [
+        "A $2 gross gain",
+        "A $2 gross loss",
+        "No loss because the midpoint is stable"
+      ],
+      "explanation": "Paying $101 and receiving $99 produces a $2 loss before commissions. An unchanged midpoint does not remove the difference between the two sides of the market.",
+      "correctAnswer": 1
+    },
+    "sha256": "4471f357db64c35cef28a2ef74abe054ec062e474954b1853f468e2c49d25a21",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Immediate sale at99 after buying101 loses2 before commissions.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331842+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "101 paid minus99 received is2 loss before commissions even though both quotes/midpoint stay unchanged.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876107+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q03",
+    "text": "A spread is not a commission / q03",
+    "content": {
+      "prompt": "How should this worksheet be compared with TradeHQ?",
+      "options": [
+        "As the simulator’s hidden $2 fee",
+        "As a separate execution-cost concept",
+        "As proof TradeHQ fills at a real exchange ask"
+      ],
+      "explanation": "This exercise describes an explicitly hypothetical bid-ask venue. The simulator uses marked snapshots and its stated fee; a lesson must not invent exchange routing, order-book fills or costs that the product does not implement.",
+      "correctAnswer": 1
+    },
+    "sha256": "4a35deaf540393553c91db707b268561d93a2dc195ca5431a63d2fb643718ac0",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The case teaches a separate execution-cost concept and expressly denies hidden simulator spread fees or real exchange routing.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331868+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The product comparison preserves separate real-venue concepts versus simulator snapshot/fee behavior previously verified on Trade.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876110+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q04",
+    "text": "A spread is not a commission / q04",
+    "content": {
+      "prompt": "What is the dollar width between the stated bid and ask?",
+      "options": [
+        "$2 per unit",
+        "$1 per unit",
+        "$200 per unit"
+      ],
+      "explanation": "Subtract $99 bid from $101 ask to obtain a $2 spread. The midpoint is between the two quotes but does not reduce their actual separation.",
+      "correctAnswer": 0
+    },
+    "sha256": "dc3c4eacb01e6428662758d553dbbb5bbc67ce180fb6cab66defb26abc889b6b",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "101−99=2 spread per unit.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331891+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "101−99=2 spread per unit; midpoint arithmetic cannot shrink the separation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876113+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q05",
+    "text": "A spread is not a commission / q05",
+    "content": {
+      "prompt": "What is the arithmetic midpoint of the bid and ask?",
+      "options": [
+        "$99",
+        "$101",
+        "$100"
+      ],
+      "explanation": "Average $99 and $101 to get $100. A reference midpoint is not proof that either crossing transaction in this worksheet executes at that value.",
+      "correctAnswer": 2
+    },
+    "sha256": "b802614168c436e688ade9a54284c032d8d9e3b0deb6594587587a913f072fd7",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(99+101)/2=100 midpoint, not a guaranteed crossing fill.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331950+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The arithmetic mean is100, but no supplied seller or buyer offers a crossing fill there.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876116+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q06",
+    "text": "A spread is not a commission / q06",
+    "content": {
+      "prompt": "What does buying ten units at the ask cost before commissions?",
+      "options": [
+        "$990",
+        "$1,010",
+        "$1,000"
+      ],
+      "explanation": "Ten units at the $101 ask require $1,010. Using the midpoint instead would understate the explicit buy price supplied by the case.",
+      "correctAnswer": 1
+    },
+    "sha256": "ca1bdf97d24261bc0fe98a28239f2480aea3ac055b533ac941bfd0e4fd5cdbfe",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×101=1,010 purchase cost before commissions.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.331974+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units at101 cost1,010; assuming100 midpoint would understate this hypothetical buy.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876120+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q07",
+    "text": "A spread is not a commission / q07",
+    "content": {
+      "prompt": "What proceeds come from selling those ten units immediately at the bid?",
+      "options": [
+        "$990",
+        "$1,000",
+        "$1,010"
+      ],
+      "explanation": "Ten units at the unchanged $99 bid yield $990 before commissions. The proceeds use the buyer’s available bid, not the earlier ask.",
+      "correctAnswer": 0
+    },
+    "sha256": "3bb114f49eeaae196bbad5f2f611dc63c760ef02d644bc3e88cd1565ac02b61c",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×99=990 sale proceeds before commissions.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332000+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units sold at99 yield990, not1,010 purchase cost or1,000 midpoint value.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876123+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q08",
+    "text": "A spread is not a commission / q08",
+    "content": {
+      "prompt": "What is the ten-unit round-trip loss with quotes unchanged?",
+      "options": [
+        "$10",
+        "$0",
+        "$20"
+      ],
+      "explanation": "Subtract $990 sale proceeds from $1,010 purchase cost. The $20 difference is ten times the $2 per-unit spread, even without commissions.",
+      "correctAnswer": 2
+    },
+    "sha256": "9c1182e89b5b0b6245991e431690752786fab6bfd9e6fc3fb31cac7636161d92",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,010−990=20 ten-unit round-trip loss.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332023+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1,010−990=20, matching ten times2 per-unit spread and excluding commissions consistently.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876126+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q09",
+    "text": "A spread is not a commission / q09",
+    "content": {
+      "prompt": "What is that loss as a percentage of the $1,010 buy cost, approximately?",
+      "options": [
+        "0%",
+        "1.98%",
+        "2.02%"
+      ],
+      "explanation": "Divide the $20 loss by $1,010 cash spent. A percentage using the bid proceeds as denominator answers a different question and gives a different result.",
+      "correctAnswer": 1
+    },
+    "sha256": "a0bdb79cb6b219b72576b7642448a35a2918292c280f16f8d2dc0cbd7b31fea2",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "20/1,010≈1.98% loss on purchase outlay;2.02% would use sale proceeds instead.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332096+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "20/1,010=1.980198...%, correctly rounded1.98%. The2.02% alternative uses the explicitly wrong990 denominator.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876130+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-q10",
+    "text": "A spread is not a commission / q10",
+    "content": {
+      "prompt": "Would a separate commission eliminate the spread cost?",
+      "options": [
+        "No; it would be an additional cost under its own rule",
+        "Yes; commission replaces the bid-ask difference",
+        "Yes; the midpoint refunds every spread"
+      ],
+      "explanation": "A commission and spread arise from different mechanisms. If both apply, calculate each explicitly rather than treating one as compensation for the other.",
+      "correctAnswer": 0
+    },
+    "sha256": "fd700296304870a7f258cb7c92ee329abd7fda45a05a8e32fafd12f0ebe97ac4",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A commission is an additional cost under a separate rule rather than compensation for spread.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332121+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A separate commission, if applicable, adds its own charge; it does not reimburse a bid/ask spread.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876133+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-takeaway",
+    "text": "A spread is not a commission / takeaway",
+    "content": "Describe buying at one side and selling at the other, using the $101 and $99 inputs. Mention separately excluded commissions and identify that the worksheet is outside the simulator execution model.",
+    "sha256": "ece7dd3b3b491d5eb4a0c4ed6b6b0b499ef823f107339029b3c53ebccc7a5b2c",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The takeaway distinguishes buy/sell sides, excluded commissions and simulator boundaries.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332140+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The takeaway repeats both side quotes and the excluded-commission assumption, with a clear simulator-boundary statement.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876136+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-sources",
+    "text": "A spread is not a commission / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is appropriate general order education, not evidence that TradeHQ routes orders to this imaginary venue.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332160+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The generic primary source does not certify an actual bid/ask venue or prove a TradeHQ order-book capability.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876139+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-15-unused-reflection",
+    "text": "A spread is not a commission / unused-reflection",
+    "content": "Explain why a flat midpoint may coexist with a trading loss.",
+    "sha256": "ff088c0e5a1badc6c0db506dca49abe78ed0f4c794855001c197df09cb37e197",
+    "contentReference": "published-bank.json#/exercises/21",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The flat-midpoint explanation prompt is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332179+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The reflection prompt stays source-only; no private real-money execution is represented as observed.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876142+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-brief",
+    "text": "A ticker can identify more than one asset / brief",
+    "content": "A learner sees the same short symbol on two crypto listings. The listings have different provider identifiers and describe different projects. One is quoted at $2 and the other at $20. These are hypothetical projects. Choosing the first matching ticker would value ten units very differently, so identity must be checked before arithmetic.\n\nName the projects A and B and retain their separate provider identifiers. Project A is $2 and B is $20 per unit. Your account holds ten units of A. A lookup bug returns B’s quote solely because the ticker matches. Calculate the correct mark and the erroneous one, then identify which evidence is needed to repair the mapping without silently reclassifying the user’s holding.",
+    "sha256": "278f2aa08ebee5f4e50d5ddc0fb105dcd4037e52fe57a909398ef34ca453a65b",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two fictional projects share a ticker but different provider identities. The holding remains tenA units; wrongB mapping changes valuation, not instrument or quantity.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332208+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The case stipulates different provider IDs/projects sharing a ticker. Repair changes the mark for existingA units and does not silently convert ownership intoB.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876146+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-visual",
+    "text": "A ticker can identify more than one asset / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Project A quote",
+          "value": 2
+        },
+        {
+          "label": "Project B quote",
+          "value": 20
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "40b2573a648554a008e565466d854c5569a5ef9f30aa783324397d42214128ee",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The2/20 project quotes are labelled separately and hypothetical.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332233+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The2/20 dollar bars are separately labelled project quotes, not contradictory prices for one established identity.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876149+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q01",
+    "text": "A ticker can identify more than one asset / q01",
+    "content": {
+      "prompt": "What is the value of ten units of project A at its stated quote?",
+      "options": [
+        "$20",
+        "$200",
+        "$2"
+      ],
+      "explanation": "Ten units multiplied by project A’s $2 quote give $20. Using the other project’s $20 quote would value the holding at $200 and introduce a tenfold identity error.",
+      "correctAnswer": 0
+    },
+    "sha256": "804dc084ea2b3e4785b75758e97508ae1a7bc6af6023a4a6093052a6dbcaedfe",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×2=20 correct A value; using B20 produces200, a tenfold mark.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332257+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "TenA units at2 give20. The200 distractor deliberately demonstrates the wrong-project quote.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876152+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q02",
+    "text": "A ticker can identify more than one asset / q02",
+    "content": {
+      "prompt": "Which field helps distinguish the two listings?",
+      "options": [
+        "The explicit provider asset identifier",
+        "Only the shared ticker",
+        "The higher price"
+      ],
+      "explanation": "A short symbol can be ambiguous. A stable provider identifier and project information help establish which asset is meant. Price magnitude is not a dependable way to resolve an identity mismatch.",
+      "correctAnswer": 0
+    },
+    "sha256": "a2769488ae8b80f6b38573940fa2a8dcd22ffc3fda4a05e104c5160be22a77b6",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Provider asset ID plus project information is stronger identity evidence than ticker or price.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332282+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Provider identity and project information disambiguate a reused ticker; neither high price nor symbol alone establishes the instrument.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876155+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q03",
+    "text": "A ticker can identify more than one asset / q03",
+    "content": {
+      "prompt": "What should happen when an asset mapping is uncertain?",
+      "options": [
+        "Flag it instead of silently using another project",
+        "Use the first symbol match",
+        "Average the unrelated project prices"
+      ],
+      "explanation": "A wrong identity makes subsequent calculations misleading even if multiplication is correct. Flagging an unsupported or uncertain mapping is more honest than silently substituting a different asset with a familiar symbol.",
+      "correctAnswer": 0
+    },
+    "sha256": "bae6f0e0928fe355fa8db85f528fa4fdad1aefd1b58a604f12501f5cee5cbe62",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Uncertainty should be flagged rather than silently substituting another project or averaging unrelated prices.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332307+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Flagging uncertainty is appropriate. Averaging unrelated prices would preserve neither instrument’s valuation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876158+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q04",
+    "text": "A ticker can identify more than one asset / q04",
+    "content": {
+      "prompt": "What value would the incorrect B quote assign to ten A units?",
+      "options": [
+        "$20",
+        "$2",
+        "$200"
+      ],
+      "explanation": "Ten units times the incorrect $20 quote gives $200. The arithmetic is internally consistent, but the instrument identity feeding it is wrong.",
+      "correctAnswer": 2
+    },
+    "sha256": "6a13770c55952013aed57e91d70d571ca8810f484a31f865fedd3df68f61deb9",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×20=200 erroneous mark; internally correct multiplication does not fix a wrong instrument.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332330+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Using B20 for ten units produces200 mathematically, but fails identity before arithmetic validation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876162+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q05",
+    "text": "A ticker can identify more than one asset / q05",
+    "content": {
+      "prompt": "By how many dollars does that incorrect mark overstate the holding?",
+      "options": [
+        "$200",
+        "$180",
+        "$18"
+      ],
+      "explanation": "The correct A value is $20 and the incorrect value is $200. Subtract to obtain a $180 overstatement caused by the mapping, not market performance.",
+      "correctAnswer": 1
+    },
+    "sha256": "de1435fdef3faaccd15b1ee71f534bcad39a506c2f158c5af42f37ca5c029afc",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "200−20=180 valuation overstatement, not a market gain.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332392+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "200−20=180 overstatement; it is a mapping error, not a real900% market return.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876166+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q06",
+    "text": "A ticker can identify more than one asset / q06",
+    "content": {
+      "prompt": "How many times as large is the erroneous mark as the correct mark?",
+      "options": [
+        "Ten times",
+        "Two times",
+        "One hundred times"
+      ],
+      "explanation": "Divide the incorrect $200 mark by the correct $20 value. A shared ticker led to a tenfold valuation error in the selected example.",
+      "correctAnswer": 0
+    },
+    "sha256": "28b36e41e4238f17a07c8c75eb088ec159d373f87a49cf67502845badb0a3bda",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "200/20=10 times the correct mark.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332416+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "200/20=10. The erroneous value is ten times correct, while overstatement alone is nine times correct; the question asks total mark ratio.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876169+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q07",
+    "text": "A ticker can identify more than one asset / q07",
+    "content": {
+      "prompt": "What should a repaired mapping preserve about the original holding?",
+      "options": [
+        "It becomes ten units of B automatically",
+        "It becomes one unit of B to match dollars",
+        "It remains ten units of project A"
+      ],
+      "explanation": "Repairing a quote lookup should not change the owned instrument or quantity. The account bought A, so corrections must restore A’s appropriate mark.",
+      "correctAnswer": 2
+    },
+    "sha256": "c43d259ddc332b61e69ca963d0365616a838955e7f7088254eceb92e3119a055",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Repair preserves ten units ofA rather than silently converting ownership intoB.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332441+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The original ten units remainA after repair; changing toB or adjusting quantity would alter the user holding without evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876172+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q08",
+    "text": "A ticker can identify more than one asset / q08",
+    "content": {
+      "prompt": "Which information provides stronger identity evidence than the short ticker?",
+      "options": [
+        "Only a similar logo colour",
+        "Provider ID and project or contract details",
+        "Only a matching first letter"
+      ],
+      "explanation": "A unique provider identifier and project details help disambiguate reused symbols. A ticker or appearance alone cannot establish the instrument being valued.",
+      "correctAnswer": 1
+    },
+    "sha256": "924a1be1aad461299741a67b0a61068bb63fb06684678969664f1b43af235212",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Provider ID and project/contract information can distinguish reused tickers.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332465+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Provider/project/contract details are stronger evidence than colors or first letters. The explanation does not claim names alone are universally unique.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876175+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q09",
+    "text": "A ticker can identify more than one asset / q09",
+    "content": {
+      "prompt": "Should a lookup uncertainty be represented as a verified current quote?",
+      "options": [
+        "No; expose the uncertainty and use a labelled fallback if needed",
+        "Yes; the higher price is safer",
+        "Yes; any matching symbol is sufficient"
+      ],
+      "explanation": "Uncertain identity prevents a defensible provider mark. A clearly labelled fallback preserves the distinction between missing mapping evidence and a verified price.",
+      "correctAnswer": 0
+    },
+    "sha256": "a2eb89190817f32a87498cc8a2caf904d426e8cb58bd20fceea926eb9dcf4fb2",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Uncertainty must stay visible; any fallback must be labelled instead of called verified current data.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332488+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Without defensible identity, a quote cannot be labelled verified; a fallback needs an explicit limitation rather than false certainty.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876178+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-q10",
+    "text": "A ticker can identify more than one asset / q10",
+    "content": {
+      "prompt": "Which audit would reveal this identity error most directly?",
+      "options": [
+        "Count how many times the page refreshed",
+        "Check whether both numbers are positive",
+        "Compare the holding’s identifier with the fetched quote’s identifier"
+      ],
+      "explanation": "A positive numeric response can still describe the wrong asset. Matching identifiers across the holding and quote is necessary before validating the valuation arithmetic.",
+      "correctAnswer": 2
+    },
+    "sha256": "802d352add05979f774db400654e7e45ff06bd7207fee0b0ad71a28399cfd5b4",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Comparing holding and fetched quote identifiers directly tests the mapping.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332513+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Identifier reconciliation directly tests the described bug. Positive numbers and successful refreshes do not establish correct identity.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876181+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-takeaway",
+    "text": "A ticker can identify more than one asset / takeaway",
+    "content": "Match the provider ID, project name and supported asset mapping, then check currency and observation time. If these disagree, retain an explicit unavailable or fallback label while investigating.",
+    "sha256": "de3c89fce1c728c352c1849db5448236a79d0afb7c56861a22cc3bee9170171c",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide adds currency/time after identity and preserves explicit unavailable/fallback labels.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332532+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide checks identity before currency/time and preserves unavailable/fallback status during investigation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876184+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-sources",
+    "text": "A ticker can identify more than one asset / sources",
+    "content": [
+      {
+        "url": "https://www.coingecko.com/en/methodology",
+        "label": "CoinGecko — Price methodology"
+      }
+    ],
+    "sha256": "f7b2c49dcfaf4b3e88598f1d1f78d96b62f81ec8745469482ef68f1db893b92c",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "CoinGecko methodology is retrieved contextual primary reading; the projects and prices are invented exercise inputs.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332553+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "CoinGecko methodology remains contextual primary reading; the worksheet’s two imaginary projects are not asserted as specific current listings.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876187+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-25-unused-reflection",
+    "text": "A ticker can identify more than one asset / unused-reflection",
+    "content": "Write an identity checklist before accepting a quote.",
+    "sha256": "680999d6b01be6a1467a0db3ffab0885872ee5811a418014737f82e9b65675fd",
+    "contentReference": "published-bank.json#/exercises/22",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The identity checklist prompt is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332572+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only identity checklist does not certify that all actual catalog mappings have passed. Existing P09 mapping risks remain separately open.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876189+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-brief",
+    "text": "A few winners do not establish an edge / brief",
+    "content": "A new practice method has three hypothetical winning attempts and no recorded losses yet. Its author announces a 100% success rate and invites others to copy it. The count is mathematically true for the recorded sample, but evidence about repeatability is still weak. Consider sample size, selection and uncertainty before interpreting the headline.\n\nAssume each of the first three wins earned $20 before costs. Then add a fourth attempt losing $80 as a continuation, with no other attempts supplied. Compare the initial and expanded summaries. The new observation does not prove the method will fail forever, but it demonstrates how a very small sample’s headline can change abruptly.",
+    "sha256": "aa16dc718f0fde2d6d5e1c84557361abdbf719317d09bbc281545bc975038bd1",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Three20-dollar wins are a tiny selected sample, followed by an80-dollar loss. Neither initial success nor later loss is generalized into certainty.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332601+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The scenario challenges copying a tiny100% record and then adds one loss. It does not reverse into claiming the method must always fail.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876194+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-visual",
+    "text": "A few winners do not establish an edge / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Winners",
+          "value": 3
+        },
+        {
+          "label": "Losers",
+          "value": 0
+        }
+      ],
+      "unit": "recorded attempts",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "dc103a4e8365af1c1cd468d9c53337d81051dbb1ebd474133cb1e32f150f2c55",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The3winners/0losers bars describe the original three attempts only and are explicitly hypothetical.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332623+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The3/0 figure describes the initial sample. The later fourth attempt is a distinct continuation, not an inconsistency in the initial illustration.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876197+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q01",
+    "text": "A few winners do not establish an edge / q01",
+    "content": {
+      "prompt": "What is the observed win rate for the three recorded attempts?",
+      "options": [
+        "Proof of a guaranteed 100% future rate",
+        "33%",
+        "100% within this sample"
+      ],
+      "explanation": "Three winners divided by three recorded attempts is 100%. The qualifier matters: it describes these observations only. A tiny observed sample should not be treated as a promise about future outcomes.",
+      "correctAnswer": 2
+    },
+    "sha256": "129973bd188c794b1a4aad69ff1df5fa02d19ad726c414f879a9a81d5319efd8",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "3/3=100% within that sample, not a guaranteed future rate.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332647+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Three wins divided by three is100% observed, and the correct choice includes within this sample. Future certainty is a deliberately wrong alternative.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876200+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q02",
+    "text": "A few winners do not establish an edge / q02",
+    "content": {
+      "prompt": "What missing information most affects the claim?",
+      "options": [
+        "A more impressive strategy name",
+        "The author’s preferred chart theme",
+        "A complete, larger record with losses and selection rules"
+      ],
+      "explanation": "You need to know what was counted, whether failed attempts were omitted and how results behave across more conditions. Three selected winners alone cannot separate skill, chance and reporting bias.",
+      "correctAnswer": 2
+    },
+    "sha256": "8d956e7d65bbd43280ca80b713c6768c0d40cd8497abd4cbf4c366e57e6807bc",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A complete larger record with losses and selection rules addresses repeatability and reporting bias.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332673+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Complete selection rules and broader records can expose omissions/chance; a strategy name or theme supplies no reliability evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876203+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q03",
+    "text": "A few winners do not establish an edge / q03",
+    "content": {
+      "prompt": "What is an appropriate next practice step?",
+      "options": [
+        "Increase exposure because losses are impossible",
+        "Delete any later losing entry",
+        "Record prospective attempts under consistent rules"
+      ],
+      "explanation": "Define the method before observing results and record subsequent outcomes consistently. That reduces hindsight editing and cherry-picking. Practice remains simulated, and a broader record still carries uncertainty rather than a guarantee.",
+      "correctAnswer": 2
+    },
+    "sha256": "2febb840300f12f6c47dba10b66791760b5f284be2bfcd3e7500df4a336b5d0e",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Prospective consistent rules reduce hindsight editing and cherry-picking; more evidence still carries uncertainty.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332699+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Consistent prospective records reduce selection/hindsight bias without guaranteeing that a larger sample proves profitability.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876206+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q04",
+    "text": "A few winners do not establish an edge / q04",
+    "content": {
+      "prompt": "What total gross gain was recorded in the first three attempts?",
+      "options": [
+        "$100",
+        "$60",
+        "$20"
+      ],
+      "explanation": "Three wins at $20 each give $60 total gross gain. This statement describes the supplied observations and does not establish future payoff reliability.",
+      "correctAnswer": 1
+    },
+    "sha256": "056cef7e60dae8f5a8efee3c10534ab24cc01a070aab90a242cb7c878baae1a0",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "3×20=60 initial gross gain.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332722+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "3×20=60 before costs, not a general expected payout.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876209+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q05",
+    "text": "A few winners do not establish an edge / q05",
+    "content": {
+      "prompt": "After adding one losing attempt, what is the expanded observed win rate?",
+      "options": [
+        "75%",
+        "100%",
+        "25%"
+      ],
+      "explanation": "Three wins out of four total attempts produce 75%. A single added result changes the small-sample rate substantially without changing the first three records.",
+      "correctAnswer": 0
+    },
+    "sha256": "70704e4400a6573835df852a45cd4e1181b5b363465c8e28376402f804eb5502",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "3/4=75% expanded observed win rate.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332745+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Adding one loser produces3/4=75% observed wins without changing the first three records.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876212+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q06",
+    "text": "A few winners do not establish an edge / q06",
+    "content": {
+      "prompt": "What is net gross result across the three wins and one $80 loss?",
+      "options": [
+        "+$60",
+        "−$80",
+        "−$20"
+      ],
+      "explanation": "Subtract the $80 fourth-attempt loss from $60 earlier gains. The expanded sample loses $20 despite winning on three of four attempts.",
+      "correctAnswer": 2
+    },
+    "sha256": "22401333044207802e189b66dfd2f07b4d787c58bacec39f26fee5f801727d02",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "60−80=−20 combined result before costs; net here offsets gains/losses rather than implying a fee-inclusive result.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332769+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "60−80=−20 before costs. Net gross is awkward but the full explanation clearly means winnings less losses before charges; it does not assert a fee-inclusive net result.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876215+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q07",
+    "text": "A few winners do not establish an edge / q07",
+    "content": {
+      "prompt": "What is the expanded average gross result per attempt?",
+      "options": [
+        "−$20",
+        "−$5",
+        "+$15"
+      ],
+      "explanation": "Divide the $20 sample loss by four attempts. The −$5 average reflects payoff sizes as well as the counts of wins and losses.",
+      "correctAnswer": 1
+    },
+    "sha256": "b2ca2eefe582e62850b87865454e23e503158e84e4b8e559cf6f8b8aeee9eda6",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "−20/4=−5 average gross result.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332795+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "−20/4=−5 per-attempt gross average; total loss−20 is not the average.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876218+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q08",
+    "text": "A few winners do not establish an edge / q08",
+    "content": {
+      "prompt": "Would hiding the fourth attempt make the method’s reported evidence representative?",
+      "options": [
+        "No; it would select only favourable observations",
+        "Yes; losing attempts do not count",
+        "Yes; the original headline must stay unchanged"
+      ],
+      "explanation": "A transparent record includes the fourth result under the same inclusion rule. Removing it after seeing the outcome would introduce selection bias.",
+      "correctAnswer": 0
+    },
+    "sha256": "1b6ef278f114545f7469921fc5d2f81df0a4d7cab7622093542a649c25780876",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Hiding the fourth outcome would select favorable observations after the fact.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332822+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Excluding the loss only after seeing it would bias the report. A previously defined inclusion rule must apply consistently.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876222+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q09",
+    "text": "A few winners do not establish an edge / q09",
+    "content": {
+      "prompt": "Does the fourth attempt prove every future attempt will lose?",
+      "options": [
+        "Yes; one loss guarantees a permanent negative edge",
+        "Yes; the first three wins become invalid",
+        "No; the expanded sample is still small"
+      ],
+      "explanation": "The added loss weakens the initial success claim but does not establish all future outcomes. Keep uncertainty explicit and avoid reversing one absolute claim into another.",
+      "correctAnswer": 2
+    },
+    "sha256": "b8da105354eabae5c09793b9472e9c1d294bc3b0e3f5ed0400860ad8eb9bc662",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "One later loss does not establish every future outcome or invalidate the first three recorded wins.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332845+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "One loss leaves a small sample and does not invalidate actual earlier wins or prove all later attempts will lose.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876226+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-q10",
+    "text": "A few winners do not establish an edge / q10",
+    "content": {
+      "prompt": "What review would provide stronger evidence than either short headline?",
+      "options": [
+        "A promise to ignore future losses",
+        "A defined inclusion rule, more observations and costs/exposure records",
+        "Only more screenshots of wins"
+      ],
+      "explanation": "Broader consistently recorded evidence supports better assessment of repeatability. Costs, exposure and predetermined inclusion rules matter alongside the number of observations.",
+      "correctAnswer": 1
+    },
+    "sha256": "98a9726dc5ddcba490a845b9180ded0881df3c267631ba8d944f199f4416f3d3",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Costs/exposure/inclusion rules and more observations improve evidence rather than only screenshots of wins.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332869+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Costs/exposure/inclusion rules and more observations strengthen the assessment; selected winning screenshots do not.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876230+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-takeaway",
+    "text": "A few winners do not establish an edge / takeaway",
+    "content": "Say “three recorded attempts were profitable” and identify the sample limit. Add the requirement for a complete record and avoid language implying verified skill or recommending that others copy the trades.",
+    "sha256": "b41e2af7a6064e1f739ce4edf0596a6c885a517ff1981a329d1515a83dac3222",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The final guide rewrites the initial three-attempt headline with its scope; it does not claim a current full-four record of100% wins.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332890+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide rewrites the explicitly original three-attempt headline and names its sample limit. It does not report the expanded four-attempt sample as100% wins.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876233+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-sources",
+    "text": "A few winners do not establish an edge / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "General investing source is retained, not claimed as an actual strategy backtest or endorsement.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332910+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source is general investor context, not an actual strategy evaluation or evidence that copying these fictional trades is safe.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876235+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-35-unused-reflection",
+    "text": "A few winners do not establish an edge / unused-reflection",
+    "content": "How would you rewrite the author’s headline honestly?",
+    "sha256": "087a1284479a9431163fdb1aa82e39a33555ed1d238a1f667233cea693b027a2",
+    "contentReference": "published-bank.json#/exercises/23",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The honest-headline reflection prompt is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332949+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The honest-headline prompt is source-only, not a fabricated user testimonial or actual return claim.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876238+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-brief",
+    "text": "Paper results omit some real-money pressures / brief",
+    "content": "A learner grows a hypothetical paper balance from $100,000 to $110,000 and says this proves they would make $10,000 with real savings. The simulator uses virtual cash and marked snapshots. Real execution, personal constraints and emotional responses are not fully reproduced. Calculate the paper result, then state what the experiment actually tested.\n\nTreat the $10,000 paper gain as a result under the simulator’s actual recorded conditions. Then consider a hypothetical external execution where additional costs would reduce that gross gain by $1,500; this is a separate worksheet, not a forecast of real trading. Compare what the virtual ledger demonstrates with what remains untested, including personal liquidity needs and reactions when real savings are at stake.",
+    "sha256": "01385d79831e579cbfc42d899da83b467f1752d4573f5b5cb63428797c39105d",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The100k→110k paper result is limited to simulator conditions. The separate1,500 external-cost worksheet is illustrative, not an estimate of actual execution or a future real return.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.332978+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The case treats10k as a virtual result under recorded rules, while the separate1,500 incremental-cost branch illustrates sensitivity only. No actual execution-cost estimate or real-return equivalence is claimed.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876241+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-visual",
+    "text": "Paper results omit some real-money pressures / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Paper start",
+          "value": 100000
+        },
+        {
+          "label": "Paper end",
+          "value": 110000
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "bcdaf296cabc7d0903cf45a13e49504c9485d8f9ad0bd952d303d32d8d6f2d11",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The100k/110k bars are clearly labelled paper start/end and hypothetical.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333002+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The figure’s paper start/end labels and fictional caption prevent implying a real brokerage balance.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876244+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q01",
+    "text": "Paper results omit some real-money pressures / q01",
+    "content": {
+      "prompt": "What is the paper account’s stated return?",
+      "options": [
+        "1%",
+        "10%",
+        "110%"
+      ],
+      "explanation": "The hypothetical gain is $10,000 on $100,000, or 10%. It is a virtual result under the simulator’s inputs and rules, not evidence that real money has been earned.",
+      "correctAnswer": 1
+    },
+    "sha256": "258100fbdf32866afbaf8401f1c81c4b29c4f6f02c3038819bab3669a5fa3e53",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k/100k=10% virtual return, not real earned funds.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333027+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k/100k=10%. The result remains virtual and is not proof that funds were earned.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876247+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q02",
+    "text": "Paper results omit some real-money pressures / q02",
+    "content": {
+      "prompt": "What does this result fail to establish?",
+      "options": [
+        "Whether virtual positions were displayed",
+        "The same real-world outcome under different constraints",
+        "Whether subtraction is possible"
+      ],
+      "explanation": "The experiment does not reproduce every real cost, fill condition, emotional pressure or personal constraint. A paper gain can support learning while remaining insufficient to predict real returns.",
+      "correctAnswer": 1
+    },
+    "sha256": "40586be4c7dafa652f822ebe1a48ca9a04c1332e52048a925db3bd141f7ae2dc",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Different real costs, fills, emotional and personal constraints prevent inferring equivalent real outcomes.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333051+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Paper practice does not test every actual fill, cost, personal constraint or emotional response; these specific limits are clearly stated.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876250+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q03",
+    "text": "Paper results omit some real-money pressures / q03",
+    "content": {
+      "prompt": "What is the most useful description of the achievement?",
+      "options": [
+        "Proof that losses are no longer possible",
+        "A simulated result with a reviewable process and limitations",
+        "A certified real-money profit"
+      ],
+      "explanation": "Report the virtual outcome, the assumptions and the record of decisions. This preserves the educational value without turning one simulation into a guarantee or a certification of trading skill.",
+      "correctAnswer": 1
+    },
+    "sha256": "4dbd6d6b10ee4ee2ffc084e0ae522c48c89bbd0e4358bbeb8c5f2397b619836c",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A simulated outcome with assumptions/limitations is a useful description without certifying skill.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333076+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A simulated result with process/assumptions/limitations is supported. Professional certification and impossibility of loss are deliberately false alternatives.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876253+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q04",
+    "text": "Paper results omit some real-money pressures / q04",
+    "content": {
+      "prompt": "How many virtual dollars did the stated paper balance gain?",
+      "options": [
+        "$10,000",
+        "$110,000",
+        "$1,000"
+      ],
+      "explanation": "Subtract $100,000 starting virtual equity from $110,000 ending equity. The gain is a simulator result, rather than cash earned in a real account.",
+      "correctAnswer": 0
+    },
+    "sha256": "e85c77bd96bda8276b848abbaa63380534035c56cd906a139b245842d35eb3d8",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "110k−100k=10k virtual gain.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333102+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "110k−100k=10k virtual gain, not110k profit or a real cash receipt.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876257+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q05",
+    "text": "Paper results omit some real-money pressures / q05",
+    "content": {
+      "prompt": "Does this virtual result create $10,000 that can be withdrawn as real money?",
+      "options": [
+        "Yes; a profitable practice trade creates withdrawable cash",
+        "Yes; completing the course redeems it",
+        "No; the balance is virtual"
+      ],
+      "explanation": "TradeHQ’s paper holdings and cash are educational simulation records. Their returns do not create real funds or establish a withdrawable financial entitlement.",
+      "correctAnswer": 2
+    },
+    "sha256": "30f6d35f79885bd34f6bc490fb4615436e291f28ecd641c8ca3f6cc3679f48ab",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Virtual cash creates no withdrawable funds or financial entitlement.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333128+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Virtual balances are not redeemable funds; the correct option preserves the product’s educational-simulation boundary.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876260+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q06",
+    "text": "Paper results omit some real-money pressures / q06",
+    "content": {
+      "prompt": "In the separate $1,500-extra-cost worksheet, what gain remains?",
+      "options": [
+        "$11,500",
+        "$8,500",
+        "$10,000"
+      ],
+      "explanation": "Subtract the stipulated $1,500 additional cost from the $10,000 gross result. This arithmetic illustrates cost sensitivity without estimating actual execution expenses.",
+      "correctAnswer": 1
+    },
+    "sha256": "a15beb6ccaf5a87a8a9114962ea0e4936be647bd4c98448e3eed1cbaf673abc7",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10k−1,500=8,500 under the chosen extra-cost worksheet.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333152+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "10k−1,500=8,500 under this separately stipulated cost branch. It is not an estimate of what the learner would actually keep.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876263+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q07",
+    "text": "Paper results omit some real-money pressures / q07",
+    "content": {
+      "prompt": "What return would that $8,500 gain represent on $100,000, before other differences?",
+      "options": [
+        "8.5%",
+        "10%",
+        "1.5%"
+      ],
+      "explanation": "Divide the hypothetical $8,500 gain by the $100,000 reference capital. This alternative return reflects a chosen cost assumption, not a proven real-money outcome.",
+      "correctAnswer": 0
+    },
+    "sha256": "03157f400981e4596fd99fac9135fc6a2174a061eb07afbb286b57e1671fcf0e",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8,500/100k=8.5% hypothetical alternative return before other differences.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333176+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "8,500/100k=8.5%, still a hypothetical alternative before other real differences rather than a proven realized return.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876268+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q08",
+    "text": "Paper results omit some real-money pressures / q08",
+    "content": {
+      "prompt": "Which real-money constraint was not tested by the virtual starting balance alone?",
+      "options": [
+        "The written arithmetic of subtracting balances",
+        "Whether virtual cash is labelled virtual",
+        "The user’s actual liquidity needs and ability to bear loss"
+      ],
+      "explanation": "A virtual account does not reproduce the user’s real savings needs or personal loss constraints. Those factors cannot be inferred from a profitable simulated record.",
+      "correctAnswer": 2
+    },
+    "sha256": "dacd84c22fa9286bddb381fc1adf7e832dd18efdd68a34dea5e4dc740d30eef0",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The virtual balance alone does not test personal liquidity needs or ability to bear losses.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333201+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Personal liquidity/loss constraints cannot be inferred from an assigned virtual start balance or its profitable outcome.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876272+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q09",
+    "text": "Paper results omit some real-money pressures / q09",
+    "content": {
+      "prompt": "Could real-money emotions differ despite identical written trade rules?",
+      "options": [
+        "No; a streak badge fixes all reactions",
+        "Yes; financial stakes can change behaviour",
+        "No; paper gains guarantee identical behaviour"
+      ],
+      "explanation": "The simulator cannot establish that reactions with real savings will match practice behaviour. Keep this limitation explicit when describing what the exercise tested.",
+      "correctAnswer": 1
+    },
+    "sha256": "52ad195e033f665ef35bdecc48084f0bbfdb7dd4a38ad0b4bc7e1a7694c0b049",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Financial stakes can change behavior; identical written rules do not prove identical emotional responses.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333227+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Financial stakes can alter behavior; the text states a possibility/limitation rather than claiming every learner must react the same way.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876275+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-q10",
+    "text": "Paper results omit some real-money pressures / q10",
+    "content": {
+      "prompt": "Which achievement statement stays within the evidence?",
+      "options": [
+        "A 10% recorded virtual-account gain under simulator conditions",
+        "A verified 10% future return on real savings",
+        "Proof of professional trading competence"
+      ],
+      "explanation": "The virtual result supports a factual description of the recorded experiment. It does not establish real-money execution equivalence, future returns or professional credentials.",
+      "correctAnswer": 0
+    },
+    "sha256": "5b9f290c6707785fce3816109f640a89fb83b5c71c17a720e179132b1a970e80",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Only the recorded10% virtual result under simulator conditions is supported, not future real returns or credentials.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333252+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Only the recorded virtual10% under simulator conditions is supported; future real performance and competence claims are excluded.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876278+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-takeaway",
+    "text": "Paper results omit some real-money pressures / takeaway",
+    "content": "Include the 10% virtual return and the conditions used, then describe what you learned about decisions or fees. State that real execution and personal risk are not validated by the paper account.",
+    "sha256": "0de84f61f01098ca56bc832f5407d72f5af40a98ef1be404e15dbc07cf45a3d2",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide states the virtual10% return and learning scope while excluding real-execution/risk validation.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide reports the virtual outcome and what can be learned while expressly declining real-execution/personal-risk validation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876281+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-sources",
+    "text": "Paper results omit some real-money pressures / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is contextual education, not certification of a real account outcome or the hypothetical1,500 cost estimate.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333295+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The real investing URL is context only. It neither certifies a10% actual result nor supplies the invented1,500 cost assumption.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876284+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-45-unused-reflection",
+    "text": "Paper results omit some real-money pressures / unused-reflection",
+    "content": "Write a balanced description of this practice result.",
+    "sha256": "647f8f563241005362598e6b311a0c62da6fffcf3e438b44d57c833c081326c4",
+    "contentReference": "published-bank.json#/exercises/24",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The balanced-result reflection prompt is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:41:01.333315+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only reflection instruction is not a generated user statement or a private account review.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:43:35.876287+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-RELEASE485-PLURAL-PROMPT",
+    "text": "Plural-subject prompt: compiled correction and post-native custom-domain reread",
+    "content": {
+      "atUTC": "2026-11-19T11:42:50.079615+00:00",
+      "rows": [
+        {
+          "width": 390,
+          "theme": "light",
+          "controlledDate": "2026-10-17",
+          "origin": "https://www.thetradehq.com",
+          "title": "Correlation can change when you need it",
+          "prompt": "Do three earlier observations establish a permanent correlation?",
+          "options": [
+            "Yes; three is always enough",
+            "Yes; opposite moves guarantee independence",
+            "No; the sample and period are limited\nCorrect answer"
+          ],
+          "feedback": "That’s right.\n\nCorrelation is a sample-dependent statistic, not a fixed contract between assets. Three observations supply very little evidence, and a relationship estimated in one period may not hold in another.",
+          "rawBankPrompt": "Does three earlier observations establish a permanent correlation?",
+          "snapshotPrompt": "Does three earlier observations establish a permanent correlation?",
+          "savedAnswers": [
+            2
+          ],
+          "beforeStorage": null
+        },
+        {
+          "width": 1440,
+          "theme": "dark",
+          "controlledDate": "2026-10-17",
+          "origin": "https://www.thetradehq.com",
+          "title": "Correlation can change when you need it",
+          "prompt": "Do three earlier observations establish a permanent correlation?",
+          "options": [
+            "Yes; three is always enough",
+            "Yes; opposite moves guarantee independence",
+            "No; the sample and period are limited\nCorrect answer"
+          ],
+          "feedback": "That’s right.\n\nCorrelation is a sample-dependent statistic, not a fixed contract between assets. Three observations supply very little evidence, and a relationship estimated in one period may not hold in another.",
+          "rawBankPrompt": "Does three earlier observations establish a permanent correlation?",
+          "snapshotPrompt": "Does three earlier observations establish a permanent correlation?",
+          "savedAnswers": [
+            2
+          ],
+          "beforeStorage": null
+        }
+      ],
+      "scope": "Actual URL with controlled client date selecting an already published fictional case; disposable guest storage only. No bank publication or actual account operation."
+    },
+    "sha256": "1aac84eba3d5ebbeabab6415a52eb89861cf55456210336beba4849e9f84a56b",
+    "contentReference": "production485-final-correlation-prompt.json",
+    "source": "src/components/DailyPractice.tsx questionPromptCopy; approved bank snapshot retained",
+    "sourceRevision": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Compiled candidate and exact final preview show Do three on mobile/light and desktop/dark, while the guest answer remains2 and saved snapshot keeps the original bank prompt.",
+      "reviewer": "Codex assistant, substantive candidate/preview correction review"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Later custom-domain capture after native production confirmation again shows Do three, the same three alternatives and reasoning, answer2 and unchanged original snapshot prompt. This closes the narrow grammar defect without claiming a published-bank change or P11 closure.",
+      "reviewer": "Codex assistant, separate skeptical post-native actual-domain reread",
+      "reviewedAtUTC": "2026-11-19T11:42:50.079615+00:00"
+    },
+    "findingRefs": [
+      "STRICT-DAILY-005"
+    ],
+    "releaseReceipt": "RELEASE-485.json",
+    "outcome": "FIXED-RECHECKED"
   }
 ]

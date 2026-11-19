@@ -24,3 +24,7 @@ Both substantive passes now cover 282 recorded groups, including 16 deep cases/1
 ## Latest exact pointer after the next five cases
 
 All21deep cases/210questions and their accompanying briefing/visual/takeaway/source-only fields have both substantive passes;358recorded groups total. Cases practice-04/14/24/34/44 add no new root. Reuse#238 visual correction and the existing unresolved-article display correction. Next unread: `published-bank.json#/exercises/20`, practice-05. Remaining29cases/290questions and the broader framework/control/state/source gates are still unfinished. Root005 PR485 protected-merged45fb879, native confirmation still pending at this entry. Root006 is locally corrected and verified; its separate protected release is pending. No P11page closure.
+
+## Verified continuation at26 deep cases
+
+434 recorded groups have both substantive passes;26 cases/260 questions. Next unread is index25, practice-06;24 cases/240 questions remain plus framework/state/source gates. Root005 is native/custom-domain verified in RELEASE-485.json. Root006 PR486 is protected-merged89b614c but native verification remains pending. No strict page closure.
