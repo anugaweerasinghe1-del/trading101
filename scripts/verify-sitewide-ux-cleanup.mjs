@@ -80,4 +80,20 @@ assert.match(roadmap, /Learn\. Practise\. Grow\./);
 assert.doesNotMatch(roadmap, /adsense/i);
 assert.match(roadmap, /status: "in-progress"/);
 assert.match(roadmap, /status: "shipped"/);
+// Performance regressions: keep the important content paintable immediately,
+// avoid downloading optional music on every route, and avoid inserting the daily
+// practice card's saved progress only after mount.
+const hero = read("src/components/PremiumHero.tsx");
+const music = read("src/components/BackgroundMusic.tsx");
+const challenge = read("src/components/home/DailyChallengeCard.tsx");
+assert.match(hero, /min-h-\\[100svh\\]/);
+assert.match(hero, /<h1\\b/);
+assert.doesNotMatch(hero, /<motion\\.h1\\b/);
+assert.match(pageTransition, /initial=\\{false\\}/);
+assert.match(music, /new Audio\\(\\)/);
+assert.match(music, /preload = "none"/);
+assert.doesNotMatch(music, /new Audio\\(TRACK_URL\\)/);
+assert.match(challenge, /getStreak\\(\\)/);
+assert.match(challenge, /useState\\(\\(\\) => hasPlayedToday\\(\\)\\)/);
+
 console.log("PASS consistent desktop/mobile navigation, single newsletter form per route, contact footer, calculator deep link, market percent units and public November roadmap");
