@@ -5,32 +5,42 @@
   "strictPageClosure": false,
   "closureCredit": 0,
   "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
-  "firstPass": 53,
-  "secondPass": 53,
+  "firstPass": 358,
+  "secondPass": 358,
   "quickExerciseGroups": 30,
   "quickFirstPass": 30,
   "quickSecondPass": 30,
   "bonusGroupsReviewed": 8,
-  "deepQuestionGroupsReviewed": 10,
+  "deepQuestionGroupsReviewed": 210,
   "publishedDeepExercises": 50,
   "publishedDeepQuestions": 500,
   "findings": [
     "STRICT-DAILY-001",
     "STRICT-DAILY-002",
     "STRICT-DAILY-003",
-    "STRICT-DAILY-004"
+    "STRICT-DAILY-004",
+    "STRICT-DAILY-005",
+    "STRICT-DAILY-006"
   ],
   "rejectedFalsePositives": [
     "STRICT-DAILY-FP-001"
   ],
-  "activePR": 484,
-  "nextAction": "PR484 final-head hosted checks, protected/native/public release; source-bank next practice-01. Publisher framework, remaining49cases and state/source crosswalk still unfinished.",
+  "activePR": 485,
+  "nextAction": "Continue P11 at published-bank.json#/exercises/20: practice-05, briefing/visual then questions 1\u201310. Remaining 29 cases/290 questions plus publisher/framework, control/date/source/citation/media reconciliation and strict closure gates remain unfinished.",
   "scope": "A quick quiz unit includes every label, context, rationale and insight. Counts are coherent reviewed units, not individual sentences or unique paragraphs. Extraction/bank publication does not prove editorial completion.",
   "bonusFirstPass": 8,
   "bonusSecondPass": 8,
-  "deepQuestionGroupsSecondRead": 10,
-  "deepExercisesSubstantivelyRead": 1,
-  "pendingDeepExercises": 49,
-  "candidateHead": "1267e36dbcee6839f31d732c881ba0c2c773505a",
-  "candidateStatus": "OPEN-REQUIRED-CHECKS; no production closure yet"
+  "deepQuestionGroupsSecondRead": 210,
+  "deepExercisesSubstantivelyRead": 21,
+  "pendingDeepExercises": 29,
+  "candidateHead": "13d3669970259d8ba760414611844af041870f8f",
+  "candidateStatus": "MERGED-NATIVE-PENDING",
+  "confirmedProductDefects": 6,
+  "productionVerified": 4,
+  "releaseReceipt": "RELEASE-484.json",
+  "latestApplicationRelease": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+  "confirmedButNotProductionVerified": [
+    "STRICT-DAILY-005",
+    "STRICT-DAILY-006"
+  ]
 }

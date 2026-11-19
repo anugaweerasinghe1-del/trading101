@@ -1,0 +1,91 @@
+import json,datetime
+from pathlib import Path
+p=Path('/workspace/trading101/docs/audits/issue-430/sequential-2026-11-16/page-011');rows=json.loads((p/'block-ledger.json').read_text())
+notes={
+'practice-04':[
+'The later90 mark affects only the five unsold shares; it cannot retroactively change the five-share100 sale. Fees are excluded from the numeric bridge rather than silently omitted from a claimed net result.',
+'Per-share80/100 and remaining-total500 have explicit labels, so their shared dollar unit is not a claim that they are comparable asset prices.',
+'5×100=500 proceeds. Calling the full receipt profit is the error the question explicitly teaches against.',
+'Sold cost5×80=400;500−400=100 realized gross gain. Before the later decline the unsold gain is separately100.',
+'The fee answer does not prescribe a tax allocation method. It asks for relevant transaction charges once and distinguishes gross gain from net account result.',
+'Only half of the original800 cost belongs to the sold five shares; allocating800 would create a spurious loss.',
+'At the explicitly specified100 mark, the unsold500 less400 basis gives100. It is not the later90-mark gain.',
+'The later holding is450, while cash from the earlier sale remains500. No extra trade or deposit is assumed.',
+'450−400=50 unrealized gain; the50 fall from the previous mark is not a loss against the original cost.',
+'The final950 combines500 proceeds and450 unsold marked value, not two complete-sale receipts.',
+'950−800=150 reconciles independently with100 realized plus50 unrealized. Only the latter remains price-sensitive.',
+'400 of the receipt returns invested principal;100 is gross gain. The question does not equate all cash with profit.',
+'The takeaway separates principal, profit and remaining exposure. It does not promise that unrealized gains will remain available.',
+'The retrieved investing link is general context; no real-company price history or authoritative certification of the fictional ledger is claimed.',
+'The reflection remains an unrendered source field, not an observed response or freeform storage feature.'],
+'practice-14':[
+'Fixed quotes500/510/490 are explicit alternative inputs. The case disclaims order-book simulation and a guaranteed locked quote, matching the previously verified simulator scope.',
+'The figure labels two per-unit quotes and a two-unit notional, rather than pretending1,020 is another quote.',
+'2×510=1,020; using1,000 would ignore the newly specified quote.',
+'1,020×1.001=1,021.02. The1,020.10 distractor uses an inconsistent fee base or scale.',
+'An input discrepancy merits checking the record and timing, not presuming manipulation or a real-market fill guarantee.',
+'Original2×500=1,000 notional; the word original prevents conflating it with the later1,020.',
+'Original fee1 and full debit1,001 use the same0.1% rate as the changed-input branch.',
+'1,021.02−1,001=20.02, equal to20 notional change plus0.02 extra fee.',
+'10/500=2%. With fixed quantity, notional likewise grows2%; this is not a whole-account return.',
+'2×490=980 in the expressly separate branch, not a continuation from510.',
+'980×1.001=980.98. The0.98 fee follows its own actual notional.',
+'A completed receipt identifies quantity, price, fee and time; an older screenshot alone cannot establish those executed inputs.',
+'The guide keeps display and transaction timestamps distinct without inventing unsupported live order-book behavior.',
+'The general primary reference is not claimed to set TradeHQ fee rules or guarantee execution. Those product facts retain their own reviewed source evidence.',
+'The timestamp prompt is source-only; no private order receipt or user-written answer is represented as inspected.'],
+'practice-24':[
+'The worksheet intentionally uses a fixed-time Friday-to-Sunday span and omits exceptional sessions. It does not establish a universal exchange calendar or that a server fetch creates a trade.',
+'2,880 minutes/60=48 hours and crypto2 minutes share one correctly labelled unit. Reuse historical#238 correction rather than count a new root.',
+'The Sunday HTTP event and Friday market observation are different events; the correct option avoids attributing a new stock trade to retrieval.',
+'Crypto freshness is not transferable to a stock row. The source/time of each mark remains relevant.',
+'The precise last-observed label conveys age without asserting an executable Sunday quote.',
+'In this explicitly fixed-time worksheet the two-day span is48 hours; no particular real DST weekend is supplied or certified.',
+'Only the crypto observation is two minutes old. A recent fetch does not overwrite the stock observation age.',
+'Newly observed on Sunday is unsupported by the supplied Friday observation, while cached/retrieved labels preserve provenance.',
+'A cached mark can be a valuation input without determining the next opening price; the answer preserves that limit.',
+'Actual session calendars and provider coverage can alter eligibility. The exercise explicitly resists universalizing its simplified timing.',
+'Only retrieval time advances on another fetch of the same observation; changing its market timestamp would falsely imply freshness.',
+'Mixed-age summary with per-holding observation evidence is justified. One recent crypto asset cannot certify an entire portfolio current.',
+'The guide retains a stale-holdings summary plus per-asset evidence, without substituting fetch time for market time.',
+'The methodology URL is contextual further reading, not a verified schedule for every stock venue or a source for fictional Friday/Sunday times.',
+'The source-only display reflection is not actual private portfolio evidence or a rendered typed-note control.'],
+'practice-34':[
+'The two branches differ in loser magnitude only until the separate one-dollar cost is added. No calibrated future win rate or profitability claim is made.',
+'The80/120 bars are total gains/loss magnitudes, not average winner/loser sizes or signed returns.',
+'Eight10-dollar winners sum80; neither a count alone nor one10-dollar outcome gives the total.',
+'80−2×60=−40. The learner’s profitability claim is explicitly challenged despite an accurately stated80% count.',
+'Frequency, magnitude and costs explain net dollars; the answer does not assume a winning streak measures skill.',
+'The two60-dollar losers produce120 total loss, larger than all80 of gains.',
+'−40/10=−4 average gross result;−40 is the sample total rather than per-attempt mean.',
+'The outcome-size ratio10:60 simplifies1:6. It is correctly distinguished from8:2 win/loss counts.',
+'Reducing losses to2×30 gives80−60=20 gross. This is a separate sample, not erasure of the first sample’s losses.',
+'Costs apply to all ten attempts, not only eight winners, giving10. This is explicitly a conceptual fixed cost.',
+'20−10=10 net. The original branch after the same costs would be−50; branches must remain separate.',
+'Average losing amount changes while the80% win rate remains fixed. Equal winning counts do not fix net performance.',
+'The final guide describes the original sample and does not imply future success or inevitable failure from ten fictional observations.',
+'The primary investing reference is retained as general context, not a source of an actual backtest or approved strategy.',
+'The two-sentence reflection prompt is source-only and carries no inspected-response credit.'],
+'practice-44':[
+'The fourth message repeats the same origin; the separate company document is silent. Independence and relevance are both necessary distinctions, without assuming anonymous claims must be false.',
+'The3-to1 visual describes initial repost count versus origin count, not three independently verified events or a truth probability.',
+'Only one anonymous origin is supplied. Multiple copies do not make three independent observations.',
+'A relevant attributable primary record may leave the rumor unresolved as well as confirm or contradict; the answer does not treat primary status alone as proof.',
+'The correct uncertainty label preserves source attribution and does not turn price reaction or popularity into validation.',
+'A fourth dependent repost leaves one underlying origin. No independent source is introduced in that branch.',
+'The silent document offers no direct resolution. Silence alone is neither automatic confirmation nor disproof of every allegation.',
+'Attributable evidence addressing the specific allegation improves verification; more likes or duplicated text do not.',
+'The answer/explanation correctly identify common-source dependence, not necessary falsity. The singular phrasing considers the count as one comparison; no substantive claim defect or Google violation is inferred from that wording.',
+'The old a unresolved prompt is already normalized to an unresolved by the actual renderer; this accepted existing correction is preserved, not counted again as an open defect.',
+'Three shares supply no calibrated probability. The75% and guaranteed-accuracy options are deliberately false alternatives, not published factual promises.',
+'Separate origin/distribution/status records expose dependencies and make unresolved status visible to later readers.',
+'The guide asks for missing primary evidence and resolution conditions, rather than repeating an anonymous claim with confident language.',
+'The general reference does not verify a real company rumor. No named issuer or real event is invented.',
+'The reflection is unrendered bank source; no generated user note or private evidence trail is claimed.']}
+for r in rows:
+ for case,reasons in notes.items():
+  prefix='STRICT-0011-DEEP-'+case+'-'
+  if r['id'].startswith(prefix):
+   k=r['id'][len(prefix):];ix=0 if k=='brief' else 1 if k=='visual' else 12 if k=='takeaway' else 13 if k=='sources' else 14 if k=='unused-reflection' else int(k[1:])+1
+   assert r['pass2']['status']=='PENDING';r['pass2']=dict(status='REVIEWED',reason=reasons[ix],reviewer='Codex assistant; separate substantive skeptical full-case reread',reviewedAtUTC=datetime.datetime.now(datetime.timezone.utc).isoformat());r['outcome']='NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE'
+(p/'block-ledger.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n');print(len(rows),'recorded groups, both substantive passes;21cases/210questions;no page closure')

@@ -1,0 +1,91 @@
+import json,datetime
+from pathlib import Path
+p=Path('/workspace/trading101/docs/audits/issue-430/sequential-2026-11-16/page-011');ledger=json.loads((p/'block-ledger.json').read_text())
+notes={
+'practice-03':[
+'The example holds quantity fixed20 and uses an exact quote for the worksheet only; it does not promise a live futurefill. Bothfees use their respective notionals.',
+'The fee bar2 is an expense input, not holdings added to2k. Its label and briefing prevent double counting.',
+'The2,002 debit is2k notional plus0.1%;2,200 incorrectly substitutes the later sale value.',
+'Remainingcash7,998 and marked2k sum9,998. The9,998 distractor is equity, not cash.',
+'The correct statement retains2k holdings alongsidecash. Unchanged assetquote does not offset2 expense.',
+'The2dollar charge uses0.001, not0.01 or0.1; alternative20/200 are decimal mistakes.',
+'Purchasequantity remains20 becausefees are a separate cashdebit, consistent with productrules previously verified.',
+'The2,200 latermark is units×110; adding buyfees would misstate marketvaluation.',
+'The2.20exitfee uses later2,200 notional; retaining2 would undercount.',
+'Independent ledger10k−2,002+2,200−2.20=10,195.80, with no holding left after fullsale.',
+'Finalminusinitial gives195.80;197.80 omits the entryexpense.',
+'Accountdenominator10k gives1.958%; the10% assetreturn and9.79%ish investedreturn answerdifferent questions.',
+'The takeaway correctly says fees are already out ofcash. Subtracting them again fromtotal equity would be a newerror.',
+'The generic source supplies educationalcontext only; the notionalbasedfee premise is TradeHQ-specific and is not presented as a regulatorstandard.',
+'The source-only three-lineledger instruction is not represented as an actual saveduserresponse.'],
+'practice-13':[
+'The firstwholeunit task and later precisionfreefractional equation are explicitly separate, avoiding an unsupported claim that stocks always permitfractionalunits.',
+'Bars1k/900 describe rawquantity×quote beforefee; the fullparagraph and questions separately teach the extraexpense. These are not claimed finaldebits.',
+'Tenunits need1,001, so exactly1k cash is insufficient even thoughgrossnotional matches.',
+'Of the suppliedwholeunit alternatives,9cost900.90 andfits; this is not a claim that9 is the universal maximum fractionalquantity.',
+'Checkingquantity/currentquote/debit addresses the statedconstraint without treating rejection as an investment signal.',
+'The attempted1k order has1fee; the wrongdecimals are distinct and not plausible under0.1%.',
+'The1shortfall followsfromfull1,001debit; no cashloss or missingprices are inferred.',
+'9×100×1.001=900.90. The repeatedaffordability calculation scaffolds the laterfullcashbridge.',
+'1k−900.90=99.10, not100 or99; thefee is not omitted.',
+'Feeinclusive100.10 is expressly cashperunit, not a priceincrease oftheasset.',
+'The exactbound is9.990009990... .9.99001 is explicitly approximate; theequation inbriefing defines divisionbythe full100×1.001product and thetext warns actualquantitymust rounddown. No trueoverspendinstruction is established.',
+'Reducingquantity can address this fixedquote feeproblem; refresh cannotcreate funds. The statementdoes not guarantee everyreducedorderfits.',
+'The finalguide preserves changingquote risk, so the worksheetfixedquote doesnotpromise a laterfill at the preview.',
+'Generic reference is retained andnotmisrepresented as instrumentprecision orTradeHQfee documentation.',
+'The reflectionprompt is source-only; no hypothetical typedresponse gets renderedreviewcredit.'],
+'practice-23':[
+'BothFXbranches keep the underlying92EURquote fixed. Dollarvaluations change through rates rather than an assettransaction or priceforecast.',
+'The101.2 bar is explicitly dollar-equivalent despiteEURlabel; itscommonunit matches100comparison.',
+'92EUR×1.10USD/EUR=101.20USD, cancelling the correctunits.',
+'The1.20gap usescommon dollars; comparing raw100and92 wouldbe meaninglesswithoutcurrency conversion.',
+'Currencyconversion alone cannotrepair mismatchedtimestamps/assetidentities orsource conventions, as theexplanation states.',
+'100USD/(1.10USD/EUR)=90.909...EUR;90.91 iscorrectrounding.',
+'Thepremiumbase is100USD, giving1.2%; it is not an8% or10% currency-free difference.',
+'92×1.08=99.36 whiletheassetstillquotes92EUR; thealternativeisnot an observed currentrate.',
+'99.36is0.64below100. Thedifference changesign solely under theselectedFXbranch.',
+'100/92=1.0869565...USD/EUR, correctfive-decimal approximation andunits.',
+'Changingconversion doesnotcreate a neweuroquote or alterunitsheld; thecorrectanswer sticks tothefixedinput.',
+'Thereproduciblerecord retainsbothquotes/times/rate, not just thelargernumber orcurrencyglyph.',
+'Theguide explicitlyrequests hypotheticalratelabelling andsame-time-window comparison forrealuse.',
+'CoinGecko methodology is contextualfurtherreading; thecase doesnot falselyattribute the1.10/1.08inputs to currentproviderdata.',
+'The saved-input reflection remainsanunrenderedfield, withno assumedprivatenote or accountstate.'],
+'practice-33':[
+'Thecasespecifies realizedfixedpayoffs foreachbranch; it doesnot deriveguaranteedfutureprofit froma plannedratio. The5cost is addedafterthe initialcost-free comparison.',
+'300gain/100loss barsrepresent perwinner/perloser magnitudes, not equalnumbers ofwinners/losers or a fullreturn distribution.',
+'Four300winners produce1,200 only under thestatedfullpayoff premise; theexplanation names thatassumption.',
+'Six100losses subtract600from1,200, leaving600. Netbeforecosts means gainslesslosses here anddoesnotclaimfees included.',
+'Actualfrequency/payout/cost can differfromplan; theanswerrejects the promisedprofit inference.',
+'Fouroutoften is40%; thiscountalone doesnot determine expecteddollars.',
+'The600losscontribution is six100outcomes,not justone100loser or ten100attempts.',
+'600/10=60averagegross perattempt. It isexplicitly sampledescription,nota forecast ofrepeatability.',
+'Thelowerwinnerbranch gives800−600=200gross; countsunchanged do notpreserve thesame gain.',
+'Theconceptual5perattemptcost totals50 andisexplicitly separatefromthe simulatornotionalfee; no platformfeeconflict is established.',
+'200gross−50cost=150net,not550(whichwoulduseoriginalbranch) or200(whichomitscost).',
+'The originalplanned300gain doesnotguarantee therealized200payoffbranch. Same40%count permitsdifferentnetoutcomes.',
+'The guideincludesoversizedlosses andnonfittingattempts, preventing a misleadingselectedsample.',
+'The primarysource isgeneral contextanddoesnotcertify thissample as a strategytest orpromise.',
+'The source-only after-usereflectionisnot an inspecteduserrecord.'],
+'practice-43':[
+'Theoldhigh isonlyhistoricalreference; therise150/fall100/recovery200 arealternativecalculations. No futureprobability or fairvalue is invented.',
+'The200/120 bars arequotes, not valuesofatenunitholding; dollarunits andhypotheticalcaption agree.',
+'80/200=40%decline, correcthistoricalbase. Thisisnotpresentedas a40% valuationdiscount.',
+'80/120=66.666...% recoveryrequirement. Symmetric40%rebound wouldonlyreach168.',
+'Thepastquote establishesnopromise that200wasfairvalue or willrecur; thecorrectalternative isappropriately limited.',
+'10×120=1,200entrynotional, not thehistoric2,000positionvaluation.',
+'10×150=1,500selectedmarkedvalue; fees areexcludedexplicitly.',
+'30/120=25%entryreturn, not30%fromdollarincrease or40%fromolddecline.',
+'−20/120≈−16.67%, usingentry120ratherthanbranch100 asdenominator.',
+'Atoldhigh the10units wouldbe2k; minus1.2kentry gives800neededgain. Thisdoesnotforecast recovery.',
+'The40%offphrase ischallenged, notendorsed as an independentfairvalue estimate.',
+'Currentvaluationevidence isthenecessary inquiry; repeatingtheoldhigh suppliesneitherevidence norcertainty.',
+'Theguide preservesweaken/support alternatives andcorrect66.67%rise, withno unsupportedodds.',
+'Thefictionalprices arenotattributed toInvestor.gov as realissuerhistory orregulatoryvaluation.',
+'The source-onlyrewriteprompt isnot a renderedinput or asaveduserresponse.']}
+for r in ledger:
+ for case,reasons in notes.items():
+  pre='STRICT-0011-DEEP-'+case+'-'
+  if r['id'].startswith(pre):
+   k=r['id'][len(pre):];ix=0 if k=='brief' else 1 if k=='visual' else 12 if k=='takeaway' else 13 if k=='sources' else 14 if k=='unused-reflection' else int(k[1:])+1
+   assert r['pass2']['status']=='PENDING';r['pass2']=dict(status='REVIEWED',reason=reasons[ix],reviewer='Codex assistant; separate substantive skeptical full-case reread',reviewedAtUTC=datetime.datetime.now(datetime.timezone.utc).isoformat())
+(p/'block-ledger.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n');print(len(ledger),'groups, both substantive reads; page remains partial')

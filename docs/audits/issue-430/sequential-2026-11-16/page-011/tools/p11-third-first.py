@@ -1,0 +1,91 @@
+import json,hashlib,datetime
+from pathlib import Path
+p=Path('/workspace/trading101/docs/audits/issue-430/sequential-2026-11-16/page-011');ledger=json.loads((p/'block-ledger.json').read_text());bank=json.loads((p/'published-bank.json').read_text())
+notes={
+15:[
+'The case distinguishes proceeds, realized and remaining unrealized gain, then changes only the unsold mark. Fees are conceptual in Q3 and otherwise excluded explicitly.',
+'The bars label 80/100 as per-share prices and 500 as remaining marked value. They are different dollar quantities rather than a misleading unlabeled price series.',
+'Five sold shares at100 yield500 gross proceeds, including principal.',
+'The sold shares cost400, so500 proceeds yield100 gross realized gain; the other half remains unsold.',
+'Relevant buy/sell charges belong once in net performance, without subtracting proceeds as expenses.',
+'Five times80 gives400 cost attributable to the sold half, rather than the whole800 purchase.',
+'Unsold value500 minus400 cost gives100 unrealized gain at the original100 mark.',
+'Five remaining shares at90 give450 marked value; earlier sale cash stays500.',
+'450 value minus400 remaining cost leaves50 unrealized gain despite the later quote decline.',
+'500 sale cash plus450 remaining holding is950 combined value.',
+'100 realized plus50 unrealized equals150 gross total gain, also950 minus800.',
+'400 of the500 receipt recovers cost; only100 is gross gain.',
+'The guide correctly separates returned principal, realized gain and unsold marked gain.',
+'Investor.gov is retained general further reading, not claimed as the source of real shares having these fictional prices.',
+'The reflection question is source-only and not a current typed-note feature.'],
+16:[
+'The500/510 and separate490 quote branches are selected changing-input examples; the briefing expressly denies order-book slippage simulation or a locked real quote.',
+'500/510 are per-unit quotes while1,020 is two-unit notional, clearly labelled in the hypothetical dollar-input figure.',
+'Two units times510 give1,020 notional rather than the old1,000 estimate.',
+'1,020 times0.001 gives1.02 fee and1,021.02 full debit.',
+'Records and timestamps can explain changed inputs; a discrepancy alone is not proof of manipulation or a provider obligation to fill an old quote.',
+'Two units times500 give the original1,000 notional.',
+'0.1% of1,000 is1, making the initial full estimate1,001.',
+'1,021.02 minus1,001 equals20.02, including the changed fee.',
+'10 divided by500 is2% quote increase, also2% notional increase with fixed quantity.',
+'The separate490 branch has980 two-unit notional.',
+'980 plus0.98 fee gives980.98 full debit.',
+'Execution quantity, price, fee and time distinguish a receipt from an old display estimate.',
+'The guide keeps display time, transaction time and unsupported real execution assumptions separate.',
+'Generic investing reference is retrieved; actual simulator order/fee rules retain source evidence from the Trade review.',
+'The two-timestamp reflection prompt is source-only.'],
+17:[
+'The fixed worksheet compares Friday16:00 and Sunday16:00 in one timezone, with crypto Sunday15:58. Actual venue calendars are expressly not generalized.',
+'2,880 minutes equals the48-hour stock age and2 minutes matches crypto. Historical#238 already corrected these fields; no duplicate finding.',
+'A Sunday fetch can retrieve Friday data without proving a new trade.',
+'Freshness belongs to each observation, not the whole page or newest crypto quote.',
+'Last observed quote with Friday timestamp is defensible; live Sunday and guaranteed sale price are not supplied.',
+'The stated fixed-time two-day interval is48 hours.',
+'15:58 to16:00 is2 minutes for crypto only.',
+'Calling the stock newly observed on Sunday conflicts with the explicit earlier observation.',
+'An older mark does not establish a future reopening quote.',
+'Actual venue calendars and source rules determine eligibility beyond the simplified exercise.',
+'Fetch time can advance without changing the original observation timestamp.',
+'Mixed ages with per-holding observations is supported, rather than a universal real-time label.',
+'The guide retains observation/source age alongside fetch time without relabelling it market time.',
+'CoinGecko methodology is a retrieved contextual primary source, not claimed to establish every stock venue session.',
+'The mixed-freshness display reflection is source-only.'],
+18:[
+'Eight10-dollar wins and two60-dollar losses are a fixed sample. A separate30-dollar-loss branch and one-dollar-per-attempt costs preserve the80% win count without profit guarantees.',
+'80 total gains and120 total losses are labelled magnitudes, with a hypothetical caption.',
+'Eight times10 gives80 total wins, not800.',
+'80 minus120 equals−40 gross sample result despite80% wins.',
+'Frequency, outcome sizes and costs together give a fairer summary than a selected winning statistic.',
+'Two times60 gives120 loss contribution.',
+'−40 divided by10 gives−4 average gross result.',
+'10-to60 winner/loser magnitude is1:6, distinct from8:2 outcome count.',
+'80 wins minus60 alternative losses leaves20 gross gain at the same win rate.',
+'Ten attempts each cost1, including the two losers, for10 total.',
+'20 alternative gross minus10 costs leaves10 net gain.',
+'The average losing amount changed between samples, not count or percentage of winners.',
+'The guide reports both80% wins and40 gross loss, avoiding future predictions from the tiny invented sample.',
+'Investor.gov is general context with retained retrieval; the hypothetical sample is not an attributed performance record.',
+'The requested fair-review reflection is source-only.'],
+19:[
+'Three then four reposts share a single anonymous origin; a silent company document does not resolve the claim. The case distinguishes source independence from distribution.',
+'The3 reposts/1 original source bars describe the initial source chain, with a hypothetical caption.',
+'Only one original rumor source is stated; repetitions add visibility rather than independent evidence.',
+'A relevant primary statement may confirm, contradict or leave unresolved; mere repost count cannot verify.',
+'Unverified rumor with attribution is the honest label; no popularity-based truth claim is endorsed.',
+'After a fourth repost the same one origin remains; no new evidence source is added.',
+'A silent document neither confirms nor disproves this particular claim solely through its primary status.',
+'Relevant attributable evidence directly addressing the allegation would improve verification, unlike more reactions.',
+'The dependent reposts cannot count as independent confirmations. The wording treats their count as one comparison; no substantive misinformation is established.',
+'The raw approved bank has a unresolved, but the existing exact-match renderer already displays an unresolved. Preserve the accepted correction; do not recreate a defect.',
+'No calibrated reliability evidence supplies a truth probability from three shares;75% is a deliberately wrong option.',
+'Recording origin, repost links and verification separately preserves dependencies and uncertainty.',
+'The guide avoids spreading an anonymous claim as established fact and asks what evidence would resolve it.',
+'Investor.gov is general further reading, not proof of any real company rumor or source chain.',
+'The evidence-note reflection is source-only and no hypothetical user note is counted as inspected.']}
+for idx,reasons in notes.items():
+ e=bank['exercises'][idx];groups=[('brief',e['scenario']),('visual',e['visual'])]+[(f'q{i+1:02}',q) for i,q in enumerate(e['questions'])]+[('takeaway',e['reflectionGuide']),('sources',e['sources']),('unused-reflection',e['reflection'])]
+ assert len(reasons)==15
+ for (key,c),reason in zip(groups,reasons):
+  bid=f"STRICT-0011-DEEP-{e['id']}-{key}";assert not any(x['id']==bid for x in ledger)
+  ledger.append(dict(id=bid,text=e['title']+' / '+key,content=c,sha256=hashlib.sha256(json.dumps(c,ensure_ascii=False,sort_keys=True).encode()).hexdigest(),contentReference=f'published-bank.json#/exercises/{idx}',source='Published approved Daily bank; src/components/DailyPractice.tsx',sourceRevision='fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0',scope='Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.',pass1=dict(status='REVIEWED',reason=reason,reviewer='Codex assistant, substantive full-case first read',reviewedAtUTC=datetime.datetime.now(datetime.timezone.utc).isoformat()),pass2=dict(status='PENDING',reason='Separate skeptical reread not yet recorded.')))
+(p/'block-ledger.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n');print('75 additional first reads recorded; second read still pending.')
