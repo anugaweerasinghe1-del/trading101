@@ -1,0 +1,85 @@
+{
+  "pr": 480,
+  "finalHeadSHA": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+  "mergeSHA": "232e7daa3162e949186709036ccda8a83826a342",
+  "requiredChecks": [
+    {
+      "conclusion": "skipped",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163060/job/134748905058",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134748905058,
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163060/job/134748903632",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134748903632,
+      "name": "TradeHQ Release signals (read only)",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163060/job/134748821440",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134748821440,
+      "name": "TradeHQ Required validation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/f2eb1947-890b-483b-b715-3f10d517b330",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134743266683,
+      "name": "Cloudflare Pages",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://vercel.com/github",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134743099336,
+      "name": "Vercel Preview Comments",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163060/job/134742674335",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134742674335,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163060/job/134742673597",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134742673597,
+      "name": "TradeHQ Phase 3 tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44287163105/job/134742673334",
+      "head_sha": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+      "id": 134742673334,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "status": "completed"
+    }
+  ],
+  "mainWorkflow": 44337762133,
+  "status": "MERGED-NATIVE-AND-PUBLIC-READBACK-PENDING",
+  "pendingBlocks": [
+    "STRICT-0010-BLOCK-0058",
+    "STRICT-0010-BLOCK-0059",
+    "STRICT-0010-BLOCK-0060",
+    "STRICT-0010-BLOCK-0061"
+  ],
+  "hostedEvidence": [
+    "exact-preview480-ticker.json",
+    "exact-preview480-chart-access.json",
+    "exact-preview480-baseline.json"
+  ],
+  "pageClosureCredit": 0
+}

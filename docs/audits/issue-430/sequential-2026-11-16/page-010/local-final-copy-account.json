@@ -1,0 +1,74 @@
+{
+  "scope": "Loopback and synthetic read-only account snapshots only. No actual account or provider requests.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-19T00:58:13.725411+00:00",
+      "scope": "synthetic verdict only and no actual cryptographic verification",
+      "recovered": "Recovered your current server snapshot: 1 recorded order, 1 open position. Server trading history was not changed.",
+      "export": "Signed historical export downloaded. It contains your current-cycle server-recorded practice data; it is NOT a file that can overwrite ranked account history.",
+      "valid": "Signature valid: this historical file was issued by TradeHQ's server for your signed-in account and hasn't been changed. Verification does not import trades.",
+      "invalid": "Signature NOT verified. The file may have changed, belong to another account or use an unsupported format. No portfolio data was imported.",
+      "wrongFormat": "Choose a signed TradeHQ account-history JSON export under 2.1 MB.",
+      "confirmation": [
+        "Replace the browser's displayed account portfolio with your existing server-recorded snapshot? This does not modify server trades or rankings."
+      ],
+      "requests": [
+        {
+          "result": "fixture snapshot"
+        },
+        {
+          "result": "fixture snapshot"
+        },
+        {
+          "result": "synthetic export"
+        },
+        {
+          "result": "synthetic verification verdict",
+          "verifiedResponse": true
+        },
+        {
+          "result": "synthetic verification verdict",
+          "verifiedResponse": false
+        }
+      ],
+      "totalBeforeAndAfter": "$100007.49"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-19T00:58:13.415540+00:00",
+      "scope": "synthetic verdict only and no actual cryptographic verification",
+      "recovered": "Recovered your current server snapshot: 1 recorded order, 1 open position. Server trading history was not changed.",
+      "export": "Signed historical export downloaded. It contains your current-cycle server-recorded practice data; it is NOT a file that can overwrite ranked account history.",
+      "valid": "Signature valid: this historical file was issued by TradeHQ's server for your signed-in account and hasn't been changed. Verification does not import trades.",
+      "invalid": "Signature NOT verified. The file may have changed, belong to another account or use an unsupported format. No portfolio data was imported.",
+      "wrongFormat": "Choose a signed TradeHQ account-history JSON export under 2.1 MB.",
+      "confirmation": [
+        "Replace the browser's displayed account portfolio with your existing server-recorded snapshot? This does not modify server trades or rankings."
+      ],
+      "requests": [
+        {
+          "result": "fixture snapshot"
+        },
+        {
+          "result": "fixture snapshot"
+        },
+        {
+          "result": "fixture snapshot"
+        },
+        {
+          "result": "synthetic export"
+        },
+        {
+          "result": "synthetic verification verdict",
+          "verifiedResponse": true
+        },
+        {
+          "result": "synthetic verification verdict",
+          "verifiedResponse": false
+        }
+      ],
+      "totalBeforeAndAfter": "$100007.49"
+    }
+  ]
+}

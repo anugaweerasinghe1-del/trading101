@@ -1,0 +1,71 @@
+{
+  "pr": 478,
+  "finalHeadSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+  "mergeSHA": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+  "mergedTreeEqualsFinalHeadTree": "6229f58b6c5c12acfcd50e44df8e2cdeb417548c",
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+      "status": "success",
+      "id": 134721659203,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44281083587/job/134721659203"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+      "status": "success",
+      "id": 134721659424,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44281083587/job/134721659424"
+    },
+    {
+      "name": "TradeHQ Required validation",
+      "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+      "status": "success",
+      "id": 134727409178,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44281083587/job/134727409178"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+      "status": "success",
+      "id": 134721658557,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44281083528/job/134721658557"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+      "status": "success",
+      "id": 134722617299,
+      "url": "https://529207a0.tradehq-preview.pages.dev/",
+      "proof": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44281083587/job/134721659424"
+    }
+  ],
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-18T10:22:34.522Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "0c9549fd-7ec5-4dc0-ab7c-886f5ba2a94f",
+      "sha": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-18T10:11:23.75995Z"
+    },
+    "sourceGitHubRun": 44283000650,
+    "sourceGitHubJob": 134734504266,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44283000650/job/134734504266"
+  },
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-PORTFOLIO-001",
+    "STRICT-PORTFOLIO-002"
+  ],
+  "productionURL": "https://www.thetradehq.com/portfolio",
+  "liveEvidence": "production478-final-alerts.json",
+  "liveEvidenceSHA256": "b085dce8611cf154de421890a9f659d0b9aa0a9ef9a01b382893b44049cc58b7",
+  "liveRereadAtUTC": "2026-11-18T10:24:17.833325+00:00",
+  "scope": "Four fresh public browser contexts. Real site UI, local guest orders, intercepted quote inputs and in-memory Notification stand-in. No real provider or account activity."
+}

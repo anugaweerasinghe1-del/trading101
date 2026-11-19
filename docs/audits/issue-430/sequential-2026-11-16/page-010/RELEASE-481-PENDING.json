@@ -1,0 +1,50 @@
+{
+  "pr": 481,
+  "headSHA": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+  "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+  "mergedAt": "2026-11-18T17:41:04Z",
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135003090502,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44359485988/job/135003090502"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 134997298678,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/e1e1d840-f81a-4133-bc26-1118fcacf37f"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 134996579637,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44359485988/job/134996579637"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 134996579119,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44359485988/job/134996579119"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 134996578209,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44359485871/job/134996578209"
+    }
+  ],
+  "status": "MERGED-NATIVE-AND-PUBLIC-READBACK-PENDING",
+  "pendingBlock": "STRICT-0010-BLOCK-0093"
+}

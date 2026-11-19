@@ -1,0 +1,177 @@
+{
+  "scope": "Disposable guest portfolio with two locally bought AAPL virtual units, all requests scoped to same-origin GET, browser random generator seeded only for reproducibility.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T10:00:53.295284+00:00",
+      "cases": [
+        {
+          "prompt": "AAPL falls 20% in 3 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,898\n\n-0.10%\n\nP5 Model Percentile\n\n$99,880\n\nP95 Model Percentile\n\n$99,916\n\nModel Loss Frequency\n\n100%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n2\n3\nDay (horizon 3d)\n$99.9k\n$99.9k\n$99.9k\n$100.0k\n$100.0k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 3 days",
+          "ticks": [
+            "1",
+            "2",
+            "3"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 3 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 20% in 400 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,893\n\n-0.11%\n\nP5 Model Percentile\n\n$99,734\n\nP95 Model Percentile\n\n$100,104\n\nModel Loss Frequency\n\n84%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n25\n61\n97\n133\n181\n229\n277\n325\n365\nDay (horizon 400d)\n$99.7k\n$99.8k\n$99.9k\n$100.0k\n$100.2k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 400 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 400 days",
+          "ticks": [
+            "1",
+            "25",
+            "61",
+            "97",
+            "133",
+            "181",
+            "229",
+            "277",
+            "325",
+            "365"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 400 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 20% in 0 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,897\n\n-0.10%\n\nP5 Model Percentile\n\n$99,844\n\nP95 Model Percentile\n\n$99,956\n\nModel Loss Frequency\n\n99%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n3\n5\n7\n9\n12\n15\n18\n21\n24\n27\n30\nDay (horizon 0d)\n$99.8k\n$99.9k\n$99.9k\n$100.0k\n$100.0k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 0 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 0 days",
+          "ticks": [
+            "1",
+            "3",
+            "5",
+            "7",
+            "9",
+            "12",
+            "15",
+            "18",
+            "21",
+            "24",
+            "27",
+            "30"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 0 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 150% in 3 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,494\n\n-0.51%\n\nP5 Model Percentile\n\n$99,494\n\nP95 Model Percentile\n\n$99,494\n\nModel Loss Frequency\n\n100%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n2\n3\nDay (horizon 3d)\n$99.5k\n$99.5k\n$99.5k\n$99.6k\n$99.6k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$-127.63\n-150.0%\n\nModeled a -150% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -150% • Horizon 3 days",
+          "ticks": [
+            "1",
+            "2",
+            "3"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$-127.63\n-150.0%",
+          "narrative": "Modeled a -150% move on AAPL over 3 days. (Deterministic scenario — no AI required.)"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T10:00:52.960385+00:00",
+      "cases": [
+        {
+          "prompt": "AAPL falls 20% in 3 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,898\n\n-0.10%\n\nP5 Model Percentile\n\n$99,880\n\nP95 Model Percentile\n\n$99,916\n\nModel Loss Frequency\n\n100%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n2\n3\nDay (horizon 3d)\n$99.9k\n$99.9k\n$99.9k\n$100.0k\n$100.0k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 3 days",
+          "ticks": [
+            "1",
+            "2",
+            "3"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 3 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 20% in 400 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,893\n\n-0.11%\n\nP5 Model Percentile\n\n$99,734\n\nP95 Model Percentile\n\n$100,104\n\nModel Loss Frequency\n\n84%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n13\n25\n37\n49\n61\n73\n85\n97\n109\n121\n133\n145\n157\n169\n181\n193\n205\n217\n229\n241\n253\n265\n277\n289\n301\n313\n325\n337\n349\n361\n365\nDay (horizon 400d)\n$99.7k\n$99.8k\n$99.9k\n$100.0k\n$100.2k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 400 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 400 days",
+          "ticks": [
+            "1",
+            "13",
+            "25",
+            "37",
+            "49",
+            "61",
+            "73",
+            "85",
+            "97",
+            "109",
+            "121",
+            "133",
+            "145",
+            "157",
+            "169",
+            "181",
+            "193",
+            "205",
+            "217",
+            "229",
+            "241",
+            "253",
+            "265",
+            "277",
+            "289",
+            "301",
+            "313",
+            "325",
+            "337",
+            "349",
+            "361",
+            "365"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 400 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 20% in 0 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,897\n\n-0.10%\n\nP5 Model Percentile\n\n$99,844\n\nP95 Model Percentile\n\n$99,956\n\nModel Loss Frequency\n\n99%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\nDay (horizon 0d)\n$99.8k\n$99.9k\n$99.9k\n$100.0k\n$100.0k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%\n\nModeled a -20% move on AAPL over 0 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -20% • Horizon 0 days",
+          "ticks": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$204.2\n-20.0%",
+          "narrative": "Modeled a -20% move on AAPL over 0 days. (Deterministic scenario — no AI required.)"
+        },
+        {
+          "prompt": "AAPL falls 150% in 3 days",
+          "text": "Scenario Builder\nBeta\n\nEnter a hypothetical move for a rule-based simulation. Results are illustrative, not forecasts.\n\nAssumptions: the requested shock is spread across the chosen horizon with fixed daily variability: crypto 4.0%, stock 1.5%, etf 1.0%, commodity 1.2%, forex 0.6%. Asset moves are independent; cross-asset correlation, costs and market events are not modeled. The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies, not calibrated market probabilities. A frequency near 50% has about ±3 percentage points of simulation sampling uncertainty, before model uncertainty. Requested losses below −99% are clamped to −99%.\n\nRun Scenario\nWhat if BTC drops 30%?\nETH gains 50% in 30 days\nTech stocks crash 20%\nCrypto rallies 40% over 60 days\n\nModel Mean\n\n$99,494\n\n-0.51%\n\nP5 Model Percentile\n\n$99,494\n\nP95 Model Percentile\n\n$99,494\n\nModel Loss Frequency\n\n100%\n\nP5 and P95 are simulated distribution percentiles, not the worst or best outcomes that could occur.\n\n1\n2\n3\nDay (horizon 3d)\n$99.5k\n$99.5k\n$99.5k\n$99.6k\n$99.6k\nASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$-127.63\n-150.0%\n\nModeled a -150% move on AAPL over 3 days. (Deterministic scenario — no AI required.)\n\nBased on 1000 Monte Carlo paths • Shocks: AAPL -150% • Horizon 3 days",
+          "ticks": [
+            "1",
+            "2",
+            "3"
+          ],
+          "perAsset": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$255.25\n$-127.63\n-150.0%",
+          "narrative": "Modeled a -150% move on AAPL over 3 days. (Deterministic scenario — no AI required.)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "scope": "Record-integrity and release-gate negative controls; no editorial judgment is automated.",
+  "results": [
+    {
+      "case": "complete baseline",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "missing reviewed group",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "changed reviewed text",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "pending second pass",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "missing source mapping",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "wrong native SHA",
+      "accepted": false,
+      "expected": false
+    }
+  ]
+}

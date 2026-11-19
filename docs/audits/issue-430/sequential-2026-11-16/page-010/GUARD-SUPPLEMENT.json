@@ -1,0 +1,24 @@
+{
+  "scope": "Supplement existing source-reviewed strings with actual published guest control observations. No additional unique text or review-pass credit.",
+  "rows": [
+    {
+      "blockId": "STRICT-0010-BLOCK-0141",
+      "artifact": "production482-guards-guards.json",
+      "key": "over5MB",
+      "scope": "Published guest file-size guard"
+    },
+    {
+      "blockId": "STRICT-0010-BLOCK-0142",
+      "artifact": "production482-guards-guards.json",
+      "key": "wrongExtension",
+      "scope": "Published guest file-extension guard"
+    },
+    {
+      "blockId": "STRICT-0010-BLOCK-0155",
+      "artifact": "production482-guards-guards.json",
+      "key": "notificationMessage",
+      "scope": "Published UI with isolated Notification API denial; no OS permission/delivery claim"
+    }
+  ],
+  "observedBeforeNativeReceipt": true
+}
