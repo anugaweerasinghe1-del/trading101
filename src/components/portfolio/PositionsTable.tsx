@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatPrice } from "@/lib/assets";
 import { Position } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown, TrendingUp } from "lucide-react";
@@ -11,6 +12,7 @@ interface PositionsTableProps {
 }
 
 function formatMoney(value: number) {
+  if (value !== 0 && Math.abs(value) < 0.0001) return `$${formatPrice(value, "stock")}`;
   if (Math.abs(value) < 1) return `$${value.toFixed(4)}`;
   return `$${value.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
 }

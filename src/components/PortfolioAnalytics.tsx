@@ -54,6 +54,7 @@ export function PortfolioAnalytics({ portfolio, history }: PortfolioAnalyticsPro
       (portfolio.positions.length * 5)
     );
 
+    const cashPercent = portfolio.totalValue > 0 ? (portfolio.cash / portfolio.totalValue) * 100 : 0;
     const maxDrawdown = calculateMaxDrawdown(history);
     const realizedPnL = calculateRealizedPnL(portfolio);
 
@@ -68,6 +69,7 @@ export function PortfolioAnalytics({ portfolio, history }: PortfolioAnalyticsPro
       losers,
       allocationData,
       allocationBreadthScore,
+      cashPercent,
       maxDrawdown,
       realizedPnL,
     };
@@ -211,10 +213,10 @@ export function PortfolioAnalytics({ portfolio, history }: PortfolioAnalyticsPro
           <div>
             <div className="flex justify-between mb-2">
               <span className="text-muted-foreground">Cash Reserve</span>
-              <span className="font-medium">{((portfolio.cash / portfolio.totalValue) * 100).toFixed(1)}%</span>
+              <span className="font-medium">{analytics.cashPercent.toFixed(1)}%</span>
             </div>
             <Progress 
-              value={(portfolio.cash / portfolio.totalValue) * 100} 
+              value={analytics.cashPercent}
               aria-label="Cash Reserve"
               className="h-2"
             />

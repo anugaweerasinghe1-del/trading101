@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/assets";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ import type { Portfolio, Asset } from "@/lib/types";
 const EXAMPLES = [
   "What if BTC drops 30%?",
   "ETH gains 50% in 30 days",
-  "Tech stocks crash 20%",
+  "Stocks fall 20%",
   "Crypto rallies 40% over 60 days",
 ];
 
@@ -111,12 +112,29 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
       const signedPct = scenarioShockPercent(requestedPercent);
       const horizon = scenarioHorizonDays(requestedDays);
       const horizonLabel = `${horizon} ${horizon === 1 ? "day" : "days"}`;
-      // Try to match a specific symbol from holdings, otherwise apply to all
-      const targetSymbol = holdings.find(h => lower.includes(h.symbol.toLowerCase()) || lower.includes(h.name.toLowerCase()))?.symbol;
-      const shocks: Shock[] = targetSymbol
-        ? [{ symbol: targetSymbol, shockPercent: signedPct, confidence: 0.7 }]
-        : holdings.map(h => ({ symbol: h.symbol, shockPercent: signedPct, confidence: 0.7 }));
-      const narrative = [`Modeled a ${signedPct >= 0 ? "+" : ""}${signedPct}% move on ${targetSymbol ?? "your full portfolio"} over ${horizonLabel}.`];
+      const words = ` ${lower.replace(/[^a-z0-9]+/g, " ").trim()} `;
+      const mentions = (value: string) => words.includes(` ${value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `);
+      const namedHoldings = holdings.filter(h => mentions(h.symbol) || mentions(h.name));
+      const classNames: Record<Asset["type"], RegExp> = {
+        stock: /\bstocks?\b|\bequities\b/,
+        crypto: /\bcrypto(?:currencies|currency)?\b/,
+        etf: /\betfs?\b/,
+        forex: /\bforex\b|\bcurrencies\b/,
+        commodity: /\bcommodit(?:y|ies)\b/,
+      };
+      const allHoldings = /\b(?:portfolio|all holdings)\b/.test(lower);
+      if (!namedHoldings.length && /\btech(?:nology)? stocks?\b/.test(lower)) {
+        throw new Error("Sector targets are unavailable. Name a held stock or use all stocks.");
+      }
+      const targets = namedHoldings.length ? namedHoldings
+        : holdings.filter(h => allHoldings || classNames[h.type].test(lower));
+      if (!targets.length) {
+        throw new Error("No held assets match this scenario. Use a held asset symbol, an asset class, or all holdings.");
+      }
+      const shocks: Shock[] = targets.map(h => ({ symbol: h.symbol, shockPercent: signedPct, confidence: 0.7 }));
+      const targetDescription = allHoldings && !namedHoldings.length
+        ? "all held assets" : targets.map(h => h.symbol).join(", ");
+      const narrative = [`Modeled a ${signedPct >= 0 ? "+" : ""}${signedPct}% move on ${targetDescription} over ${horizonLabel}.`];
       if (requestedPercent !== signedPct) {
         narrative.push(`The requested ${requestedPercent}% move was limited to ${signedPct}%.`);
       }
@@ -158,7 +176,8 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
         The 1,000 random paths produce illustrative sample means, percentiles and loss frequencies,
         not calibrated market probabilities. A frequency near 50% has about ±3 percentage points
         of simulation sampling uncertainty, before model uncertainty. The horizon is limited to 1–365 days.
-        Requested losses below −99% are clamped to −99%.
+        Requested losses below −99% are clamped to −99%. Target a held symbol, an asset class, or all holdings.
+        Sector-specific targets are unavailable.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-2 mt-4">
@@ -287,8 +306,8 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
                 <div key={a.symbol} className="grid grid-cols-5 gap-2 px-3 py-2 text-xs border-t border-white/[0.04]">
                   <span className="font-medium">{a.symbol}</span>
                   <span className="text-right tabular-nums text-muted-foreground">{a.quantity}</span>
-                  <span className="text-right tabular-nums">${a.currentPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
-                  <span className="text-right tabular-nums">${a.expectedPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+                  <span className="text-right tabular-nums">${formatPrice(a.currentPrice, livePortfolio.positions.find(p => p.asset.symbol === a.symbol)?.asset.type ?? "stock")}</span>
+                  <span className="text-right tabular-nums">${formatPrice(a.expectedPrice, livePortfolio.positions.find(p => p.asset.symbol === a.symbol)?.asset.type ?? "stock")}</span>
                   <span className={cn("text-right tabular-nums", a.shockApplied >= 0 ? "text-success" : "text-destructive")}>
                     {a.shockApplied >= 0 ? "+" : ""}{a.shockApplied.toFixed(1)}%
                   </span>
