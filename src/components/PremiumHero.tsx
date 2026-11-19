@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
  */
 export function PremiumHero() {
   return (
-    <section className="thq-premium-hero relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="thq-premium-hero relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Deep space base */}
       <div className="absolute inset-0 bg-background" />
 
@@ -72,11 +72,8 @@ export function PremiumHero() {
           </div>
         </motion.div>
 
-        {/* Main headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+        {/* Main headline: immediately visible for mobile LCP. */}
+        <h1
           className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold mb-8 leading-[1.05] tracking-[-0.03em]"
         >
           <span className="text-foreground">Free Paper Trading.</span>
@@ -86,24 +83,17 @@ export function PremiumHero() {
           }}>
             Use Virtual Cash.
           </span>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+        <p
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 font-normal leading-relaxed"
         >
           Start with <span className="text-foreground font-medium">$100,000 virtual cash</span> — the free simulator for stocks, ETFs & crypto. No signup. No real-money trades.
-        </motion.p>
+        </p>
 
         {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
         >
           <Button
               size="lg"
@@ -126,7 +116,7 @@ export function PremiumHero() {
               Learn Trading
             </Link>
 </Button>
-        </motion.div>
+        </div>
 
         {/* Sub-CTA text */}
         <motion.p
