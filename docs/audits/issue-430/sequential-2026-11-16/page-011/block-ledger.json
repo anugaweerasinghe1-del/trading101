@@ -18596,5 +18596,2278 @@
       "reviewedAtUTC": "2026-11-19T11:49:36.626430+00:00"
     },
     "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-brief",
+    "text": "A small position loses half its value / brief",
+    "content": "The account starts with $95,000 cash and $5,000 in one hypothetical asset. The asset loses 50% while cash stays flat. A dramatic percentage in the asset headline can make the account loss feel equally dramatic. Use the actual exposure before describing the result, and remember that a smaller account loss is still a real simulated loss.\n\nAt the reduced $97,500 account, test a further 20% decline in the remaining asset and a separate 100% rise. Cash stays $95,000 in both branches. These unequal selected moves are sensitivity examples, not likelihood estimates. Compare the original and reduced allocations before interpreting the next headline. Position size changes how strongly an asset affects the account, but this arithmetic does not prove that any allocation is appropriate for a particular person.",
+    "sha256": "e5f50d0a155d8bd8513499a504b06e964c499bf319d2d43229418d766d31d5f3",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "95k cash/5k asset loses50%; later20% decline and100% rise are separate2,500-base sensitivity branches with no personal-allocation or likelihood claim.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The later20% loss and100% rise start independently from reduced2,500 exposure. Neither is assigned a likelihood or claimed to establish suitable personal allocation.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-visual",
+    "text": "A small position loses half its value / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Cash",
+          "value": 95000
+        },
+        {
+          "label": "Position start",
+          "value": 5000
+        },
+        {
+          "label": "Position end",
+          "value": 2500
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "bce803e3c1721f715503bbb5af029925e22d20dc894f8390fd09dd6fe77ca7fa",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "95k cash,5k start and2.5k end bars match the fictional inputs; start/end are not additive holdings.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The5k start/2.5k end labels are alternative position states alongside95k cash, not simultaneous additional assets.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q01",
+    "text": "A small position loses half its value / q01",
+    "content": {
+      "prompt": "What dollar loss occurs in the position?",
+      "options": [
+        "$50,000",
+        "$500",
+        "$2,500"
+      ],
+      "explanation": "Half of the $5,000 holding is $2,500. The remaining holding is also worth $2,500. The 50% decline applies to that position, not to the $95,000 cash balance.",
+      "correctAnswer": 2
+    },
+    "sha256": "9a8e3922786a78d93b6be31b5e8f1bd3bbc95d93cdbe9b1d7ae64984f982f4fe",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "5k×50%=2,500 position loss and2,500 remainder.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Half of5k is2,500 lost and2,500 retained; the95k cash is not exposed to the asset's50% move.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q02",
+    "text": "A small position loses half its value / q02",
+    "content": {
+      "prompt": "What is the resulting account return?",
+      "options": [
+        "−50%",
+        "−5%",
+        "−2.5%"
+      ],
+      "explanation": "The account becomes $95,000 + $2,500 = $97,500. The $2,500 loss divided by the initial $100,000 equals 2.5%. Keep asset return and account return explicitly labelled.",
+      "correctAnswer": 2
+    },
+    "sha256": "781da2d97f1f9490dce7c70476d3253f066a3e55d99097028d11ba274a8d1e9f",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(97,500−100k)/100k=−2.5% account return rather than−50% asset return.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "97,500/100k−1=−2.5%. The explanation's2.5% loss magnitude is consistent with the negative-return answer.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q03",
+    "text": "A small position loses half its value / q03",
+    "content": {
+      "prompt": "What lesson does this example support?",
+      "options": [
+        "Small positions cannot lose money",
+        "Holding cash predicts a market rebound",
+        "Position size affects the account impact"
+      ],
+      "explanation": "Size controls how much a particular asset move contributes to this account. It does not eliminate that asset’s risk or establish the best allocation. This single assumed outcome cannot prove a generally superior strategy.",
+      "correctAnswer": 2
+    },
+    "sha256": "105977a9841c8c3bbca724e64682e6f727fa595085cd7c70e3ef9a9b30024c14",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Position size affects account impact but does not remove risk or prove the allocation best.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Position size limits this specific contribution but cannot make small positions risk-free or forecast a rebound.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q04",
+    "text": "A small position loses half its value / q04",
+    "content": {
+      "prompt": "What remains invested after the initial 50% asset loss?",
+      "options": [
+        "$50,000",
+        "$2,500",
+        "$5,000"
+      ],
+      "explanation": "The original $5,000 asset holding loses half its value, leaving $2,500. The 50% decline does not apply to the unchanged cash balance.",
+      "correctAnswer": 1
+    },
+    "sha256": "87f1804423ce647370a565cca97c30df86f208f6f75ee31f08156a380cc05233",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "5k reduced by half leaves2,500 invested; cash remains95k.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The remaining invested amount is2,500, not original5k or50k from applying50% to the account.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q05",
+    "text": "A small position loses half its value / q05",
+    "content": {
+      "prompt": "What is total equity after the original decline?",
+      "options": [
+        "$97,500",
+        "$95,000",
+        "$50,000"
+      ],
+      "explanation": "Add $95,000 cash to $2,500 remaining asset value. The account’s $2,500 loss depends on the stated exposure and is not a general protection guarantee.",
+      "correctAnswer": 0
+    },
+    "sha256": "d3621ed4f9321176b076f572a0159020425f51c9b74d9d1287413246fb303b0c",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "95k+2,500=97,500 total equity.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "95k+2,500=97,500 equity. The case explicitly says this outcome is not a general protection guarantee.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q06",
+    "text": "A small position loses half its value / q06",
+    "content": {
+      "prompt": "What is the asset’s new allocation, approximately?",
+      "options": [
+        "5%",
+        "50%",
+        "2.56%"
+      ],
+      "explanation": "Divide remaining $2,500 value by current $97,500 total. Recompute the allocation denominator after the move rather than keeping the original account value.",
+      "correctAnswer": 2
+    },
+    "sha256": "7155a5b0380899d311eea396f0125d301bb0fae8424aaf154195e2d20d2eb713",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500/97,500≈2.56% new asset allocation.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2,500/97,500=2.5641...%, rounded2.56%; using initial100k would understate current allocation as2.5%.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q07",
+    "text": "A small position loses half its value / q07",
+    "content": {
+      "prompt": "In the further 20% decline branch, what additional loss occurs?",
+      "options": [
+        "$20,000",
+        "$500",
+        "$1,000"
+      ],
+      "explanation": "The next 20% move applies to current $2,500 exposure, creating a $500 loss. Applying it to the original $5,000 would overstate this interval’s loss.",
+      "correctAnswer": 1
+    },
+    "sha256": "d58c1a29ed5700afc75950d418300fd6e96e06883b251ac1ad8f3b5d2e7105b9",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500×20%=500 additional loss in the further-decline branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The next20% applies to2,500 and loses500; applying it to original5k would double the loss incorrectly.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q08",
+    "text": "A small position loses half its value / q08",
+    "content": {
+      "prompt": "In the separate 100% gain branch, what is the asset worth?",
+      "options": [
+        "$5,000",
+        "$7,500",
+        "$100,000"
+      ],
+      "explanation": "A 100% gain doubles $2,500 to $5,000. It restores the holding’s original value in this branch, without doubling the entire largely-cash account.",
+      "correctAnswer": 0
+    },
+    "sha256": "7d0517b4a6cbda36b35a3d6e7a5b0b33ac6cd26a6913f92f2d9252c306f2aca1",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500×2=5k asset value in the separate100% gain branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A100% rise doubles2,500 to5k without doubling the mostly-cash account. The branch restores original100k total only under these fixed no-cost inputs.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q09",
+    "text": "A small position loses half its value / q09",
+    "content": {
+      "prompt": "What percentage rise from $2,500 restores the original $5,000 holding?",
+      "options": [
+        "50%",
+        "25%",
+        "100%"
+      ],
+      "explanation": "The required $2,500 increase equals the reduced holding’s entire value. A 50% loss therefore requires a 100% rise for recovery when costs are excluded.",
+      "correctAnswer": 2
+    },
+    "sha256": "a0e8462391d691f88ce6db1b4ee59ea26e63489a6dfa6c9ec93829ac450ddcc6",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2,500 recovery gap/2,500 reduced value=100% required rise before costs.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2,500/2,500=100% recovery rise after a50% decline; symmetric50% rebound would leave only3,750.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-q10",
+    "text": "A small position loses half its value / q10",
+    "content": {
+      "prompt": "Does this example establish that small allocations cannot cause serious losses?",
+      "options": [
+        "Yes; cash guarantees all holdings recover",
+        "No; it quantifies only the supplied exposure and moves",
+        "Yes; every small position is risk-free"
+      ],
+      "explanation": "Position size affects sensitivity, but the example does not establish guaranteed recovery or an acceptable personal risk level. Other holdings and constraints also matter.",
+      "correctAnswer": 1
+    },
+    "sha256": "4a9906678d6f61e1fb04bd614dd96e83288187513f60c06be0579b957c4932d3",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The example quantifies chosen exposure/moves only and establishes no risk-free allocation or personal acceptability.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A selected exposure calculation cannot establish that all small allocations are safe or that a particular learner can bear the loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-takeaway",
+    "text": "A small position loses half its value / takeaway",
+    "content": "Give both figures: a 50% asset decline and a 2.5% account decline, with a $2,500 loss. Include the initial exposure and avoid treating one hypothetical outcome as proof of skill.",
+    "sha256": "2a801dcdcefde90f6e02991199c54aab62342981dd0fd0c0ca1e38ded8bfd323",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide gives50% asset/2.5% account declines and2,500 loss without minimizing or exaggerating either.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide reports both50% asset loss and2.5% account loss plus2,500 dollars, avoiding minimization and inflated account-loss claims.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-sources",
+    "text": "A small position loses half its value / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is general retained context, not a real account record or endorsement of95%cash.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The primary source is general context, not a recommendation to hold95% cash or evidence of a real user's outcome.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-08-unused-reflection",
+    "text": "A small position loses half its value / unused-reflection",
+    "content": "How could you report this result without either minimizing or exaggerating it?",
+    "sha256": "62736e4de1b9d7ab3e01f600c06654ddd59f1e65fb287b9806cab61745596b65",
+    "contentReference": "published-bank.json#/exercises/35",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The balanced-report reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The reflection is unrendered bank source and not an actual response or private account assessment.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-brief",
+    "text": "Turnover adds up across many small trades / brief",
+    "content": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+    "sha256": "267815c8cc37014a51dcdd2867ef4a7d908819655f1573cd43483f9dae06f092",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Twenty500-notional transactions are one-sided buys/sells, not twenty round trips. Gross8 is a stipulated combined result; doubling count and highergross12 are separate branches.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Gross8 is stipulated aggregate price result, not derived from supplied unit-level round trips. The separate if-evenly-paired question supplies its own pairing assumption; the text does not assert every500notional buy/sell pair is a completed identical-quantity round trip.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-visual",
+    "text": "Turnover adds up across many small trades / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Per transaction",
+          "value": 500
+        },
+        {
+          "label": "Total gross gain",
+          "value": 8
+        },
+        {
+          "label": "Total fees",
+          "value": 10
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "e4de091c1bb7995112aad42e85d064217bd848c24be38e7076737f847cbb949c",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "500pertransaction/8gross/10fees bars are separately labelled quantities. Historical#238 already corrected the10fee figure.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "500notional/8gross/10fees are different clearly labelled quantities. The10fee value matches historical#238; no duplicate root is created.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q01",
+    "text": "Turnover adds up across many small trades / q01",
+    "content": {
+      "prompt": "What is the total traded notional across these transactions?",
+      "options": [
+        "$5,000",
+        "$10,000",
+        "$500"
+      ],
+      "explanation": "Twenty transactions times $500 each give $10,000 turnover. This sum measures activity, not necessarily the largest simultaneous holding. Buys and sells each contribute to traded notional.",
+      "correctAnswer": 1
+    },
+    "sha256": "78dd51adcccfaed7e81f99272b9218975a24b48940de0a01923d8a1c0c131b87",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "20×500=10,000 turnover, not necessarily simultaneous exposure.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "20×500=10k turnover. This does not establish maximum concurrent holdings or starting equity.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q02",
+    "text": "Turnover adds up across many small trades / q02",
+    "content": {
+      "prompt": "What is the total fee for all 20 transactions?",
+      "options": [
+        "$20",
+        "$10",
+        "$1"
+      ],
+      "explanation": "Each $500 transaction costs $0.50 at 0.1%. Multiplying by 20 gives $10. A small per-transaction charge can exceed a small gross gain when repeated enough times.",
+      "correctAnswer": 1
+    },
+    "sha256": "11e55fb33b7afaa4f3b2dc428518d9a633d9144e585b345bf4378edd28fe9f9e",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "20×0.50=10 fees at0.1% on each transaction.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "0.5pertransaction×20=10 total fees. The old corrected fee figure remains consistent with both source and approved bank.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q03",
+    "text": "Turnover adds up across many small trades / q03",
+    "content": {
+      "prompt": "What is the net result after these fees?",
+      "options": [
+        "A $10 gain",
+        "A $2 loss",
+        "An $8 gain"
+      ],
+      "explanation": "The $8 gross gain minus $10 fees is −$2. Activity count and gross wins do not establish net profitability. The result follows the specified costs only; excluded real execution costs would need separate treatment.",
+      "correctAnswer": 1
+    },
+    "sha256": "87411ae855d69ae94da17728cd5dc30d26e9b2595f416dd7e836c599e79945be",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8−10=−2 net result before other excluded costs.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "8−10=−2. Excluded real execution costs are named rather than silently represented as captured.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q04",
+    "text": "Turnover adds up across many small trades / q04",
+    "content": {
+      "prompt": "What fee is charged on each $500 transaction?",
+      "options": [
+        "$0.50",
+        "$5",
+        "$0.05"
+      ],
+      "explanation": "Multiply $500 by 0.001 to obtain $0.50 per transaction. The 20-transaction total comes from adding this charge across buys and sells alike.",
+      "correctAnswer": 0
+    },
+    "sha256": "9251c37949ec5488740c5af5a217b8a4d10beea160cf9fd0808c4ddf98e91ed0",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "500×0.001=0.50 per transaction.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "500×0.001=0.50;0.05 or5 would be a decimal error.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q05",
+    "text": "Turnover adds up across many small trades / q05",
+    "content": {
+      "prompt": "If transactions were paired evenly, how many round trips could 20 transactions form?",
+      "options": [
+        "20 round trips",
+        "40 round trips",
+        "10 round trips"
+      ],
+      "explanation": "A round trip contains one purchase and one sale. Twenty transactions can form ten such pairs when the activity is paired evenly as assumed here.",
+      "correctAnswer": 2
+    },
+    "sha256": "7657cc6aa76fca036201b8cad519f49e778e08aa7d25eaed926983e02e9b860f",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "If evenly paired,20transactions form10 buy/sell round trips.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Under the explicit even-pairing assumption,20one-sided transactions can form10 buy/sell pairs. Twenty round trips would require40 transactions.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q06",
+    "text": "Turnover adds up across many small trades / q06",
+    "content": {
+      "prompt": "What average gross gain per transaction corresponds to the initial $8 total?",
+      "options": [
+        "$0.80",
+        "$0.40",
+        "$8"
+      ],
+      "explanation": "Divide $8 combined gross gain by 20 transactions. The $0.40 average is below the $0.50 fee per transaction in the selected worksheet.",
+      "correctAnswer": 1
+    },
+    "sha256": "632b69f8627b1d13c4ad0b0c86394a64f898e4ca82a7fd9a2d0e126c46a533e1",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8/20=0.40 average gross gain per transaction, below0.50 fee.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "8/20=0.40 average allocated gross result per transaction, versus0.50 expense; it is not a claim each individual trade earned that same amount.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q07",
+    "text": "Turnover adds up across many small trades / q07",
+    "content": {
+      "prompt": "With 40 transactions, what is total fee at $500 each?",
+      "options": [
+        "$20",
+        "$10",
+        "$40"
+      ],
+      "explanation": "Forty transactions times $0.50 fee gives $20. Equivalently, $20,000 turnover times 0.001 yields the same charge.",
+      "correctAnswer": 0
+    },
+    "sha256": "2c9932e5c39e2e753406732ca51c764eec6db400b1a92e2c6ff90f804a18d4f0",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "40×0.50=20 fees in the doubled-count branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "40×500×0.001=20 fees, twice the original count/base.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q08",
+    "text": "Turnover adds up across many small trades / q08",
+    "content": {
+      "prompt": "If gross gains stay $8 in that 40-transaction branch, what is net result?",
+      "options": [
+        "−$2",
+        "+$8",
+        "−$12"
+      ],
+      "explanation": "Subtract $20 charges from $8 gross gains. Increasing activity without increasing the stated gross result worsens this branch’s net outcome.",
+      "correctAnswer": 2
+    },
+    "sha256": "b76c7217203ecccb60c7962ca2fb2bef1c6e1748f022a8e47d14cc9fddd7c896",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "8−20=−12 net in that40transaction branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The40transaction branch keeps stipulated8 gross and loses12 after20 fees; it does not forecast extra trades' profitability.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q09",
+    "text": "Turnover adds up across many small trades / q09",
+    "content": {
+      "prompt": "With 20 transactions and $12 gross gains instead, what is net result?",
+      "options": [
+        "−$2",
+        "+$2",
+        "+$12"
+      ],
+      "explanation": "The original 20-transaction fee remains $10. Subtract it from the alternative $12 gross gain to obtain a $2 positive net result before other excluded costs.",
+      "correctAnswer": 1
+    },
+    "sha256": "7d25bc0c82424f9b4f361038cbab8b255b261ce80d897d95111c6442b52f22fc",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "12−10=+2 net in the separate20transaction highergross branch.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The separate12gross/20transaction branch has unchanged10fees and+2 net, not the40transaction branch's expenses.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-q10",
+    "text": "Turnover adds up across many small trades / q10",
+    "content": {
+      "prompt": "Which activity summary would permit a fairer comparison than trade count alone?",
+      "options": [
+        "Net outcome with turnover, costs and exposure",
+        "Only the larger transaction count",
+        "Only the count of asset symbols"
+      ],
+      "explanation": "Transaction count does not show costs or dollar returns. Recording turnover, exposure and net results supports a more meaningful comparison of the actual account activity.",
+      "correctAnswer": 0
+    },
+    "sha256": "e1edaaf4f7a4289a52e9a93419a88bd8b6f4a8232898efc8f36a918d3d7dd694",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Turnover/cost/exposure/net outcome gives a fairer summary than activity count alone.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Costs/turnover/exposure/net values support comparison beyond counts. More activity alone cannot certify skill.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-takeaway",
+    "text": "Turnover adds up across many small trades / takeaway",
+    "content": "Explain that activity is a count, while net performance includes gains and expenses. Show the $8 minus $10 result and avoid treating a frequent-trading statistic as a skill rating.",
+    "sha256": "79c3b4e2dd256709b10c2df2b1ad86cf6fd20f5d33c6e70fd6c9b924e7ff7fc9",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide compares8gross−10fees and rejects frequency as a skill rating.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide preserves the8−10 loss and separates an activity badge from a performance grade.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-sources",
+    "text": "Turnover adds up across many small trades / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The retrieved primary source is generic context; these totals are selected worksheet assumptions, not actual user trading data.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The general reference does not verify real trading activity or infer an actual account capital denominator from turnover.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-18-unused-reflection",
+    "text": "Turnover adds up across many small trades / unused-reflection",
+    "content": "What would a “most active” badge fail to tell you here?",
+    "sha256": "9864cf3bca5b95626cbb8af26f9985d611551bb3cf7d26842024125b3ea486e9",
+    "contentReference": "published-bank.json#/exercises/36",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The most-active-badge reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only badge reflection is not an observed trophy/account state.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-brief",
+    "text": "Offline valuation is not an offline trade / brief",
+    "content": "A user closes the browser holding two hypothetical units. A server refresh later changes the shared quote from $100 to $110. No order was submitted. Assume the server uses the newer quote to mark eligible cloud holdings. The account can show a different valuation when the user returns, while its units and trade history stay unchanged.\n\nContinue with two units held and the $110 server mark. A later refresh reports $90, still without any user order. Assume $800 unchanged cash and an original two-unit purchase at $100 per unit, excluding fees for this worksheet. Reconstruct total value at all three quotes. Valuation updates change profit and loss without changing quantity, cash or the recorded number of completed trades.",
+    "sha256": "2ef73851b61e03c71e6e3eebebb2d55e0c4f994b4b5cb31661c7e89c95f3349e",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two cloud-held units are revalued100→110→90 without orders;800cash and historical100entry are fixed and fees excluded.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The scenario assumes eligible cloud valuation and no submitted orders; it does not certify an actual logged-in account or uninterrupted provider delivery. Fixed800cash and two units preserve the arithmetic.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-visual",
+    "text": "Offline valuation is not an offline trade / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Earlier position",
+          "value": 200
+        },
+        {
+          "label": "Later position",
+          "value": 220
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "b2833ae304770bf58f626ad3590d301648bbacd02f50f01268b492392de4e810",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Earlier200/later220 position bars match two units at100/110 and are hypothetical.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The200/220 values represent the initial100/110 quote phases, not an omitted additional holding. The later90 phase is expressly a follow-up.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q01",
+    "text": "Offline valuation is not an offline trade / q01",
+    "content": {
+      "prompt": "What is the later marked value of two units at $110?",
+      "options": [
+        "$220",
+        "$200",
+        "$110"
+      ],
+      "explanation": "Two units times $110 equal $220. The $20 change arises from a different valuation input, not from acquiring another unit. Quantity and quote should be tracked as separate fields.",
+      "correctAnswer": 0
+    },
+    "sha256": "9f217eb5b27b0d4637cdfaeb305860af9408d198e2d0503d73f97b7afcbc39c7",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2×110=220 marked holding,20 higher without acquiring units.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2×110=220,20 more solely from quote change; quantity remains two.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q02",
+    "text": "Offline valuation is not an offline trade / q02",
+    "content": {
+      "prompt": "Does that mark change prove an order executed while the user was offline?",
+      "options": [
+        "No; no order was submitted",
+        "Yes; every refresh buys an asset",
+        "Yes; valuation and trading are identical"
+      ],
+      "explanation": "A price refresh can revalue an existing holding without changing ownership quantity. An order is a separate event with its own transaction record. Server-side valuation must not be described as automatic trading.",
+      "correctAnswer": 0
+    },
+    "sha256": "f56053c22489cd5231f5885e0617609b1be29c98867a53b9775d9930ab9ead31",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A mark update is not an executed order or change in ownership quantity.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A refresh can revalue ownership without executing a trade. An actual transaction needs its own supported order/record.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q03",
+    "text": "Offline valuation is not an offline trade / q03",
+    "content": {
+      "prompt": "What would you check when returning to the portfolio?",
+      "options": [
+        "Units, source, observation time and recorded trades",
+        "Only whether the number increased",
+        "Only the leaderboard position"
+      ],
+      "explanation": "The holding quantity and trade record verify activity; the quote source and timestamp explain valuation. An increase alone cannot tell you whether it came from a new trade, a price change or an input error.",
+      "correctAnswer": 0
+    },
+    "sha256": "ae8fe4c4f93c35556fae22ad361f0c14fd0ca74d562b2d8317033cffb98bdaa6",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Units/source/time/trade records help distinguish valuation from transactions.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Quantity/history check activity while source/time explains the mark; an increased total alone identifies neither.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q04",
+    "text": "Offline valuation is not an offline trade / q04",
+    "content": {
+      "prompt": "What was the two-unit holding worth at the initial $100 mark?",
+      "options": [
+        "$100",
+        "$800",
+        "$200"
+      ],
+      "explanation": "Two units times $100 gives $200. With $800 cash, the initial worksheet equity is $1,000 before any later provider-price changes.",
+      "correctAnswer": 2
+    },
+    "sha256": "f88922a07ad9a7f16b8ca8134edd72d48452a073d8646c1fbf068637b6c36cfb",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2×100=200 initial holding plus800cash=1,000equity.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2×100=200 plus800cash gives initial1,000 equity.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q05",
+    "text": "Offline valuation is not an offline trade / q05",
+    "content": {
+      "prompt": "What is total equity at the later $110 mark?",
+      "options": [
+        "$220",
+        "$1,020",
+        "$1,100"
+      ],
+      "explanation": "Add $800 unchanged cash to two units worth $220. Only the invested portion benefits from the quote increase; cash does not inherit the asset’s return.",
+      "correctAnswer": 1
+    },
+    "sha256": "e02007812f26b50a3b1a2fbbe5cdc8938db683d0f00c68080f98f730b693b3bd",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "800+220=1,020 equity at110; cash does not inherit the asset return.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2×110+800=1,020. The asset's10% gain contributes2% at its initial20% weight.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q06",
+    "text": "Offline valuation is not an offline trade / q06",
+    "content": {
+      "prompt": "At the subsequent $90 quote, what is the holding worth?",
+      "options": [
+        "$180",
+        "$200",
+        "$90"
+      ],
+      "explanation": "Two unchanged units times $90 gives $180. The falling mark affects valuation but does not reduce the number of units recorded in the account.",
+      "correctAnswer": 0
+    },
+    "sha256": "cadb83184d69b00256ffe4f8251a0f622af8e97a07e483f105d870f4ca22918f",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "2×90=180 holding value with quantity unchanged.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "2×90=180, with no unit reduction from marking down.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q07",
+    "text": "Offline valuation is not an offline trade / q07",
+    "content": {
+      "prompt": "What is total equity at that $90 observation?",
+      "options": [
+        "$900",
+        "$1,000",
+        "$980"
+      ],
+      "explanation": "Add $800 cash and $180 marked holdings to obtain $980. This is $20 below the original $1,000 equity under the no-fee assumptions.",
+      "correctAnswer": 2
+    },
+    "sha256": "b8af15bcf07ba43961d82fdebfeb33d9929b2c797ef41333b9b39ce54b7c8d33",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "800+180=980 equity at90.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "800+180=980 total,20 below initial1,000 under the stated fee exclusion.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q08",
+    "text": "Offline valuation is not an offline trade / q08",
+    "content": {
+      "prompt": "What is full-period account return from the initial $1,000 to $980?",
+      "options": [
+        "−20%",
+        "−2%",
+        "−10%"
+      ],
+      "explanation": "Divide the $20 account loss by the $1,000 start. The asset declined 10% from $100 to $90, but its initial account weight was only 20%.",
+      "correctAnswer": 1
+    },
+    "sha256": "8521eb08853d51dcdee0c900f5ec6f53cb5d5bc24e85b5d0578f3db20456bdf5",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "(980−1,000)/1,000=−2% account return; asset−10% initiallyweight20%.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "−20/1,000=−2% account return; the asset itself is−10% from100 to90.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q09",
+    "text": "Offline valuation is not an offline trade / q09",
+    "content": {
+      "prompt": "How many new completed trades do these two server refreshes imply?",
+      "options": [
+        "Zero",
+        "Two",
+        "One"
+      ],
+      "explanation": "A price refresh revalues existing holdings. Without a submitted order, it must not create trade records or imply buys and sells while the user is offline.",
+      "correctAnswer": 0
+    },
+    "sha256": "ede2e54d6f29e483a13fe281bc6233f14934a751e00264441f0b6aaf41cdc734",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The two refreshes imply zero new completed trades.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Neither of the two server price refreshes implies a new completed trade. No virtual order is placed by this review.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-q10",
+    "text": "Offline valuation is not an offline trade / q10",
+    "content": {
+      "prompt": "Which return-to-account check distinguishes valuation from execution?",
+      "options": [
+        "Look only at the larger account total",
+        "Assume every value change is a new trade",
+        "Compare units, cash, trade history and quote observation times"
+      ],
+      "explanation": "Stable units and cash with unchanged trade history can explain a pure mark update. Observation timestamps identify the pricing input responsible for the valuation change.",
+      "correctAnswer": 2
+    },
+    "sha256": "0b1af1728e4f3a1aa2987d2e0fc4b98f1bd21709c6f84b5ff25a5e2c2de76183",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Comparing units/cash/history/observation times can identify pure mark updates.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Stable units/cash/history plus different observation times supports a valuation-only explanation without assuming every discrepancy has that cause.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-takeaway",
+    "text": "Offline valuation is not an offline trade / takeaway",
+    "content": "Explain that eligible cloud holdings use shared periodically refreshed quotes, even when the browser is closed. State the observation time and preserve fallback or stale labels; avoid implying automated order execution.",
+    "sha256": "1502ad2e30ef2937a40d59e98a6ae28f596ded70acbf51f4da6e7c6725a443c2",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide limits the feature to eligible cloud holdings/shared periodic quotes and preserves stale/fallback labels, without promising ticks or automated trading.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide limits coverage to eligible cloud holdings, periodic shared quotes and preserved stale/fallback labels; it does not promise tick-level updates or automatic trading.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-sources",
+    "text": "Offline valuation is not an offline trade / sources",
+    "content": [
+      {
+        "url": "https://www.coingecko.com/en/methodology",
+        "label": "CoinGecko — Price methodology"
+      }
+    ],
+    "sha256": "f7b2c49dcfaf4b3e88598f1d1f78d96b62f81ec8745469482ef68f1db893b92c",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The generic methodology reference is retained; no actual closed-browser user account was inspected for this fictional exercise.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The methodology URL is contextual reading. No private production cloud record or actual closed-browser refresh was claimed as observed for this exercise.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-28-unused-reflection",
+    "text": "Offline valuation is not an offline trade / unused-reflection",
+    "content": "Describe the feature without promising constant tick-by-tick updates.",
+    "sha256": "555a7ad4caecb0fa227a97abc96adc8a21d9529f26fa693e1b1f61a5a176664a",
+    "contentReference": "published-bank.json#/exercises/37",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The feature-description reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only description prompt is not a test of authenticated operations or a generated personal account report.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-brief",
+    "text": "A pair trade can still lose together / brief",
+    "content": "A conceptual worksheet buys $1,000 of asset A and shorts $1,000 of asset B outside TradeHQ’s supported spot orders. A falls 10% while B rises 10%. Ignore borrowing costs and fees. The equal notionals do not guarantee the positions offset: the relative move in this case hurts both legs.\n\nKeep the short leg conceptual and outside TradeHQ. For the long, $1,000 at $100 per unit means ten units. For the short, assume ten borrowed units sold at $100 and later repurchased at $110. Exclude borrowing charges, fees and margin requirements only for the worksheet. Compare the losing branch with a separate branch where both asset prices rise 10%; equal initial notionals do not fix all possible outcomes.",
+    "sha256": "6f3c309e99c6ea0af331a7ef683a60fc3a9e220e85671ccef4f166926768152a",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A1k long/B1k borrowed short is explicitly conceptual and outside TradeHQ. Fixed units and two different price-move branches exclude fees/borrowing/margin only for arithmetic.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The short leg uses borrowed units solely in an external conceptual worksheet. Fees, borrow charges and margin are explicitly omitted, so its gross arithmetic is not a claim of executable net performance or capital requirements.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-visual",
+    "text": "A pair trade can still lose together / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "A long notional",
+          "value": 1000
+        },
+        {
+          "label": "B short notional",
+          "value": 1000
+        }
+      ],
+      "unit": "$",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "e599bbb9259c4090d9e8922478798e6ec41260d093e9a901ff8bc1a1fbb18bd9",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Equal1k long/short notionals are labelled fictional, not an actually supported paired order.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The two1k bars show initial long/short notionals, not two supported spot purchases or a risk-neutrality guarantee.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q01",
+    "text": "A pair trade can still lose together / q01",
+    "content": {
+      "prompt": "What is the assumed long-leg result when A falls 10%?",
+      "options": [
+        "+$100",
+        "$0",
+        "−$100"
+      ],
+      "explanation": "The $1,000 long loses 10%, or $100. A conceptual long gains when its marked asset rises and loses when it falls under these simple fixed-notional assumptions.",
+      "correctAnswer": 2
+    },
+    "sha256": "254369029f73d993cc962a60669843ca1b1fc9cab477a275639eae69a8fa76b2",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A1k long falling10% loses100.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A's1k long falling10% loses100, with ten units worth900.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q02",
+    "text": "A pair trade can still lose together / q02",
+    "content": {
+      "prompt": "What is the assumed short-leg result when B rises 10%?",
+      "options": [
+        "+$100",
+        "$0",
+        "−$100"
+      ],
+      "explanation": "The simplified short loses $100 when the borrowed asset rises 10%. Combining that with the long loss gives −$200 before excluded costs. Equal initial notional is not equal-and-opposite realized profit.",
+      "correctAnswer": 2
+    },
+    "sha256": "5afd5c232fb35972b63d998de7e32d166d52a5e8faf2c1193e62a35089b30598",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The conceptual B short rising10% also loses100, not offsets the long loss.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Borrowed B rising100→110 costs100more to cover; the short loses100 rather than offsetting the long's loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q03",
+    "text": "A pair trade can still lose together / q03",
+    "content": {
+      "prompt": "How should “market-neutral” be interpreted in education?",
+      "options": [
+        "A guarantee of profit in every market",
+        "A supported short order on TradeHQ",
+        "An exposure aim with residual risks, not guaranteed profits"
+      ],
+      "explanation": "Strategies may aim to reduce broad-market exposure, yet relative-price moves, hedge mismatch, costs and liquidity can create losses. TradeHQ does not execute the short leg; this remains a conceptual worksheet.",
+      "correctAnswer": 2
+    },
+    "sha256": "c151f5d883ea32f98431c0f7a53e4322db77cea0cf80322f67d9f850f1915994",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Market-neutral is an exposure aim with relative/hedge/cost/liquidity risks, not a profit promise or TradeHQ short feature.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Market-neutral is appropriately described as an exposure aim with residual risks. No TradeHQ short order or all-direction profit promise is asserted.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q04",
+    "text": "A pair trade can still lose together / q04",
+    "content": {
+      "prompt": "How many A units does a $1,000 long purchase at $100 buy?",
+      "options": [
+        "One hundred units",
+        "Ten units",
+        "One unit"
+      ],
+      "explanation": "Divide $1,000 notional by $100 per unit to get ten units. The holding quantity is needed to translate later quotes into dollar profit or loss.",
+      "correctAnswer": 1
+    },
+    "sha256": "0d11b02771e22586a3517a00e6b677c46912e5d8a4e489061bea84d29b6d6ab6",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "1,000/100=10 A units.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "1k/100=10long units, distinct from the1k gross notional.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q05",
+    "text": "A pair trade can still lose together / q05",
+    "content": {
+      "prompt": "After A falls to $90, what is the long holding’s value?",
+      "options": [
+        "$900",
+        "$1,100",
+        "$100"
+      ],
+      "explanation": "Ten units multiplied by the later $90 quote gives $900. Compared with $1,000 entry notional, this creates the stated $100 long-leg loss.",
+      "correctAnswer": 0
+    },
+    "sha256": "32b96d97fe39ae306e9ba77071e422a488b0fec2bbcc75f0885292018b25f79d",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×90=900 A long value,100 below entry.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten units at90=900,100 below the long entry notional.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q06",
+    "text": "A pair trade can still lose together / q06",
+    "content": {
+      "prompt": "What does repurchasing the ten conceptual B short units at $110 cost?",
+      "options": [
+        "$1,000",
+        "$900",
+        "$1,100"
+      ],
+      "explanation": "Ten borrowed units repurchased at $110 require $1,100. Comparing this with the $1,000 original short-sale proceeds yields a $100 loss before excluded costs.",
+      "correctAnswer": 2
+    },
+    "sha256": "a02d15d75f672d5dc7d00c3d60ae637f44559acf1706cf9b98492799f53cee4d",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "10×110=1,100 cost to cover B versus1k initial proceeds.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten borrowed units at110 require1,100 to repurchase versus1k initial proceeds, a100 gross short loss.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q07",
+    "text": "A pair trade can still lose together / q07",
+    "content": {
+      "prompt": "What is combined gross result when A falls 10% and B rises 10%?",
+      "options": [
+        "+$200",
+        "−$200",
+        "$0"
+      ],
+      "explanation": "The long loses $100 and the conceptual short also loses $100. Add both legs to obtain a $200 loss despite equal initial dollar notionals.",
+      "correctAnswer": 1
+    },
+    "sha256": "a044d460791f16a94c4b22322c6f22f5395d1083e45a6915abce1fd541e8e067",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "−100long−100short=−200 combined gross result.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "−100long plus−100short=−200 combined gross loss; equal initial notionals do not force opposite P&L.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q08",
+    "text": "A pair trade can still lose together / q08",
+    "content": {
+      "prompt": "In the separate both-rise-10% branch, what is the fee-free combined gross result?",
+      "options": [
+        "$0",
+        "+$200",
+        "−$200"
+      ],
+      "explanation": "The $100 long gain offsets the $100 short loss in this particular branch. This arithmetic is conditional on matching moves and the excluded costs.",
+      "correctAnswer": 0
+    },
+    "sha256": "3b125edd936818127d54f7e55e98d4c9c2270ed63a2ab2aeb9d814ed4b1a555d",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "In the separate both-rise10% branch,+100long−100short=0 gross before excluded costs.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The separate both-rise10% branch gives+100long−100short=0 before costs only under the selected matching moves.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q09",
+    "text": "A pair trade can still lose together / q09",
+    "content": {
+      "prompt": "Which omitted cost could make that zero-gross branch negative in an actual short product?",
+      "options": [
+        "Only the chart’s colour choice",
+        "The worksheet being printed twice",
+        "Borrowing charges and transaction costs"
+      ],
+      "explanation": "Real short products may charge costs absent from this conceptual example. Excluding them for arithmetic cannot justify a claim about actual net execution results.",
+      "correctAnswer": 2
+    },
+    "sha256": "45d48e44e556b17470df8d02dad8d67a1a0b862b99a61aaec4de47a22530d812",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Borrowing/transaction charges can make thatzero-gross branch negative in a real short product.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Borrow/transaction costs can turn zero gross negative. Their exclusion is not evidence that a real short product is free.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-q10",
+    "text": "A pair trade can still lose together / q10",
+    "content": {
+      "prompt": "Can this paired long-and-short position be opened using TradeHQ’s spot sell button?",
+      "options": [
+        "Yes; a Daily answer opens both positions",
+        "No; the short leg needs unsupported borrowed exposure",
+        "Yes; equal notionals unlock short selling"
+      ],
+      "explanation": "The simulator sells owned spot units and does not borrow assets to create shorts. The paired trade is an educational external-product worksheet.",
+      "correctAnswer": 1
+    },
+    "sha256": "bd7a177b1e75c6fa37705fcab8012af9e564b3ad4a445f89ae09800715be0f1e",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "TradeHQ owned-spot sell cannot borrow to create the short leg; equal notional does not unlock unsupported orders.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An owned-spot sell cannot open borrowed short exposure. The lesson's conceptual choice creates no paired position in the simulator.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-takeaway",
+    "text": "A pair trade can still lose together / takeaway",
+    "content": "Use the two $100 losses to show that the relative relationship can move adversely. Label the borrowed short conceptual and note excluded costs; reducing one type of exposure does not remove every risk.",
+    "sha256": "a0334da7c02c6d5556d88aafbefd18902164b5695cbaf417f5f80b7cee5e4483",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide shows two100losses and residual risk while keeping short exposure conceptual.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide uses the two100losses and preserves residual/cost/unsupported-order limits rather than claiming all pair trades always lose.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-sources",
+    "text": "A pair trade can still lose together / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Investor.gov is general educational context, not a real pair recommendation or supported TradeHQ order confirmation.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The primary source is general context, not verification of real borrowing availability or a recommendation to open this pair.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-38-unused-reflection",
+    "text": "A pair trade can still lose together / unused-reflection",
+    "content": "Why is “profits regardless of direction” misleading for this pair?",
+    "sha256": "0e009d37f3efda46b29a70a42afce563b107f3bc340ae807c9bef3eff96e35f5",
+    "contentReference": "published-bank.json#/exercises/38",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The profits-regardless reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The source-only reflection carries no actual order/account execution credit.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-brief",
+    "text": "Precommit a fair comparison window / brief",
+    "content": "A hypothetical learner tests two practice methods over ten recorded sessions. Method A leads after session four; method B leads after session ten. The learner chooses whichever ending date makes their favorite method look best. Changing the window after seeing results can produce a flattering summary without a fair comparison.\n\nUse hypothetical cumulative results: after session four, A is +$80 and B +$40; after session ten, A is +$20 and B +$60. Starting capital and exposure rules were intended to be comparable, but costs are not yet supplied. Decide what each fixed window supports and what changes when the endpoint is chosen after observing the winner. Keep both records rather than discarding the less flattering one.",
+    "sha256": "0256ee5eb6ffeada322a4bed8129dba39d6450b411568a3a3b5938a13e8091b2",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A/B cumulative80/40 atsession4 and20/60 atsession10 show endpoint-sensitive rankings. Comparable start/exposure is intended, costs omitted and future superiority unproven.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Gross endpoints favor different methods and costs are absent. The case challenges post-hoc window choice rather than claiming either endpoint false or a permanent winner.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-visual",
+    "text": "Precommit a fair comparison window / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Early window end",
+          "value": 4
+        },
+        {
+          "label": "Planned window end",
+          "value": 10
+        }
+      ],
+      "unit": "session number",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "45c52e6f62fb67b3e1b4a141561d34e2f4f71f612ce1926519eaa346778565da",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "4/10 bars describe session endpoints, not returns or profit amounts, with a hypothetical caption.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "4/10 bars are session numbers, not profit values. Their labels/caption match the comparison windows.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q01",
+    "text": "Precommit a fair comparison window / q01",
+    "content": {
+      "prompt": "What is the main problem with choosing the end date afterward?",
+      "options": [
+        "It guarantees a reliable comparison",
+        "It selects a favorable result after seeing outcomes",
+        "It creates more independent observations"
+      ],
+      "explanation": "Post-hoc window selection can cherry-pick a period that favors the preferred method. State the intended comparison window beforehand and disclose any later changes rather than hiding inconvenient intervals.",
+      "correctAnswer": 1
+    },
+    "sha256": "1ba17ed35440d69e20726a458016402852e8b4a760d27221868453d1ca1f09e0",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Choosing a favorable endpoint after results introduces selection rather than independent evidence.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Choosing after viewing outcomes can select favorable periods; it does not create independent observations or guarantee fairness.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q02",
+    "text": "Precommit a fair comparison window / q02",
+    "content": {
+      "prompt": "What should be held consistent in the comparison?",
+      "options": [
+        "Only the best individual session",
+        "Window, starting conditions and included costs",
+        "Only the method names"
+      ],
+      "explanation": "Comparable starting balances, timing and costs reduce avoidable differences between methods. The record should include the full chosen window, not just each method’s best moment.",
+      "correctAnswer": 1
+    },
+    "sha256": "cd6531a3edec816ab25a5cce109cf35d2f8a3f8121f578d17ae1721a68bc2e2b",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Window/start/cost treatment need consistency instead of each method's best session.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Same window/start/cost treatment reduces avoidable differences. Naming methods or selecting each best session cannot supply comparable evidence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q03",
+    "text": "Precommit a fair comparison window / q03",
+    "content": {
+      "prompt": "Does a fair ten-session window settle future superiority?",
+      "options": [
+        "Yes; the higher final balance is a certification",
+        "No; it still has limited sample and conditions",
+        "Yes; ten sessions prove every future result"
+      ],
+      "explanation": "A fair comparison improves evidence quality but does not eliminate uncertainty or regime dependence. Report the sample, path and limitations rather than declaring a permanent winner from a short simulated test.",
+      "correctAnswer": 1
+    },
+    "sha256": "9d68831eb96abd8705a0e8ac9ffe0737e10bfb2c983ec61507f3f8e3a6f5e95e",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A fair10-session sample still has limited conditions and cannot certify permanent superiority.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Even a preselected ten-session window remains a limited simulated sample with uncertainty/regime dependence.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q04",
+    "text": "Precommit a fair comparison window / q04",
+    "content": {
+      "prompt": "At session four, how far ahead is method A in cumulative dollars?",
+      "options": [
+        "$40",
+        "$80",
+        "$20"
+      ],
+      "explanation": "Subtract B’s $40 from A’s $80 to obtain A’s $40 lead at this specified endpoint. The lead does not establish the ranking at every other window.",
+      "correctAnswer": 0
+    },
+    "sha256": "e9c86b0b0098ad3fcb0a595fc8253b683be6c848753d181b0591294796106402",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "80−40=40 A lead atsession4.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "80−40=40 A lead atsession4, not a universal ranking across time.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q05",
+    "text": "Precommit a fair comparison window / q05",
+    "content": {
+      "prompt": "At session ten, how far ahead is method B in cumulative dollars?",
+      "options": [
+        "$60",
+        "$20",
+        "$40"
+      ],
+      "explanation": "Subtract A’s $20 from B’s $60. The final ten-session record has a $40 B lead, reversing the earlier ordering without making either record false.",
+      "correctAnswer": 2
+    },
+    "sha256": "6f32b5323baccd69e021a0bc60c481c462b1d91cb1864da641f1cc4676d76d05",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "60−20=40 B lead atsession10.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "60−20=40 B lead atsession10; reversal is consistent with both recorded cumulative totals.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q06",
+    "text": "Precommit a fair comparison window / q06",
+    "content": {
+      "prompt": "What change occurs in A’s cumulative result between sessions four and ten?",
+      "options": [
+        "−$80",
+        "−$60",
+        "+$20"
+      ],
+      "explanation": "A’s cumulative result falls from +$80 to +$20, a $60 decrease. This interval result is distinct from its still-positive full ten-session cumulative total.",
+      "correctAnswer": 1
+    },
+    "sha256": "e1b0676bf50060c5e4020efa55e7c2e373a9ed66ac07aa1218f2cc9da32b1cf6",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A20−80=−60 interval change, despite positive20 cumulative endpoint.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "20−80=−60 A interval change while its full-ten cumulative result stays+20. The explanation distinguishes interval versus total.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q07",
+    "text": "Precommit a fair comparison window / q07",
+    "content": {
+      "prompt": "What change occurs in B’s cumulative result over that same interval?",
+      "options": [
+        "+$20",
+        "+$60",
+        "−$40"
+      ],
+      "explanation": "B rises from +$40 to +$60, adding $20 between the two endpoints. Compare the same interval when assessing how the ranking changed.",
+      "correctAnswer": 0
+    },
+    "sha256": "ec7f3d592d87634d8695e50933c3bdf5ee920f589ed0ead67a1c9ae2e1221b35",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "B60−40=+20 over the same interval.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "60−40=+20 B interval change over the same window, not its full+60 cumulative result.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q08",
+    "text": "Precommit a fair comparison window / q08",
+    "content": {
+      "prompt": "Can these gross totals establish which method has the better net result?",
+      "options": [
+        "Yes; costs can never affect rankings",
+        "Yes; the method with more sessions always wins",
+        "Not without comparable cost records"
+      ],
+      "explanation": "Different costs can alter or reverse a gross-result comparison. The case has not supplied the charges needed to reconstruct net performance.",
+      "correctAnswer": 2
+    },
+    "sha256": "8dd948c0d96a592945c0716dcb73c3eccb935bdbe08e0499aba97af7be5fd545",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Missing cost records prevent reconstructing comparable net performance from gross totals.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Without comparable charges, gross ordering does not determine net ordering; the case does not invent fees or a net winner.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q09",
+    "text": "Precommit a fair comparison window / q09",
+    "content": {
+      "prompt": "Which endpoint rule reduces this particular hindsight-selection problem?",
+      "options": [
+        "Hide whichever endpoint reverses the ranking",
+        "Choose and record the window before viewing results",
+        "End whenever the favourite method leads"
+      ],
+      "explanation": "A predetermined comparison window prevents selecting the most flattering endpoint after observing the result. It does not eliminate all other statistical or execution limits.",
+      "correctAnswer": 1
+    },
+    "sha256": "5f851e413c68b94968bc610f7b52df7bd2ffba60bc153b853e34a27c36809dd0",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Recording the window beforehand reduces this specific hindsight-selection problem but not every statistical limit.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Predetermining the endpoint reduces this specific hindsight selection while the explanation preserves other statistical/execution limits.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-q10",
+    "text": "Precommit a fair comparison window / q10",
+    "content": {
+      "prompt": "What conclusion fits the two supplied endpoints?",
+      "options": [
+        "The ranking depends on the stated observation window",
+        "A is always superior",
+        "B is proven superior forever"
+      ],
+      "explanation": "A leads at the earlier endpoint and B at the later one. The case shows window sensitivity, not a complete demonstration of future superiority.",
+      "correctAnswer": 0
+    },
+    "sha256": "892728a955a26ad0cb33b745365500aca0038fbfaafa126be378d0dfb8cd88fe",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A leads earlier/B later supports window sensitivity only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "EarlierA/laterB supports window sensitivity only, not permanent superiority of either method.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-takeaway",
+    "text": "Precommit a fair comparison window / takeaway",
+    "content": "Specify the same observation window, starting account assumptions, fee treatment and decision rules for both methods. Commit to retaining all sessions and explaining changes to the protocol.",
+    "sha256": "0d4b77ac2fd7165c2c23219bb00f6354580fb97a651127a958f3400ff843eed9",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide specifies sharedwindow/start/fees/rules and retaining all sessions with disclosed changes.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide retains all sessions and requires disclosed protocol changes, rather than selectively deleting an unfavorable record.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-sources",
+    "text": "Precommit a fair comparison window / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The real investing reference is general context rather than an actual strategy experiment or certification.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The retrieved primary reference is general education, not a real ten-session backtest or professional certification.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-48-unused-reflection",
+    "text": "Precommit a fair comparison window / unused-reflection",
+    "content": "Create a short comparison protocol before viewing results.",
+    "sha256": "c923fe170c9d4d74cb2c426c4a2b5f308549608860772197eae8c355aae1becb",
+    "contentReference": "published-bank.json#/exercises/39",
+    "source": "Published approved Daily bank; src/components/DailyPractice.tsx",
+    "sourceRevision": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+    "scope": "Public date-selected bank data; not a natural-current-date browser observation. Reflection prompt is source-only.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The protocol reflection is source-only.",
+      "reviewer": "Codex assistant, substantive full-case first read",
+      "reviewedAtUTC": "2026-11-19T11:50:59.160272+00:00"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The protocol prompt is source-only and no actual user comparison or fabricated test result is recorded.",
+      "reviewer": "Codex assistant; separate substantive skeptical full-case reread",
+      "reviewedAtUTC": "2026-11-19T11:51:49.557671+00:00"
+    },
+    "outcome": "NO-ISSUE-IDENTIFIED-IN-STATED-SCOPE"
   }
 ]
