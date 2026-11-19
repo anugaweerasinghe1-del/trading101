@@ -1,0 +1,137 @@
+{
+  "atUTC": "2026-11-19T02:22:00.442401+00:00",
+  "origin": "https://www.thetradehq.com",
+  "bankId": "authored-2026-10-depth",
+  "bankCanonicalSHA256": "882c5b3eb9d09b2c90f9d467fac5ad035009fe1e47e96e638674b1dff8b7f500",
+  "exerciseId": "practice-19",
+  "title": "A short thesis does not create a short position",
+  "briefing": "Case briefing and follow-up situation\n\nA hypothetical asset is quoted at $100 and your research expects it could fall. You hold zero units. TradeHQ’s supported sell operation disposes of owned spot units; it does not borrow assets or open short positions. Use this case to distinguish a directional idea, a manual sale of a holding and a different product’s leveraged or borrowed exposure.\n\nFor a separate spot-account branch, suppose you own three units bought earlier and the quote is still $100. You choose to sell two owned units with the 0.1% fee. Calculate cash received and units remaining. Then let the quote fall to $90 without another order. The unowned-units branch and the owned-sale branch have different valid actions; a bearish thesis alone creates neither borrowed exposure nor an executed sale.\n\nHypothetical case inputs — not a live market chart · units\nOwned units\n0\nProposed sell units\n2",
+  "questions": [
+    {
+      "index": 1,
+      "prompt": "Can selling two unowned units open a short on TradeHQ?",
+      "options": [
+        "No; the simulator does not implement short selling",
+        "Yes; every sell button borrows units",
+        "Yes; a bearish note supplies collateral"
+      ],
+      "picked": 0,
+      "correctAnswer": 0,
+      "feedback": "That’s right.\n\nA bearish idea does not alter the product’s supported mechanics. Selling an owned spot holding and borrowing an asset to sell short are different operations; TradeHQ only implements the former."
+    },
+    {
+      "index": 2,
+      "prompt": "What supported action could reduce existing spot exposure?",
+      "options": [
+        "Manually sell some units already owned",
+        "Create a negative holding by journaling",
+        "Request borrowed assets from the leaderboard"
+      ],
+      "picked": 1,
+      "correctAnswer": 0,
+      "feedback": "Here’s the reasoning.\n\nSelling owned units reduces the quantity held and returns net proceeds to virtual cash. It does not create a profit from a future fall after the position is closed, nor does it establish a borrowed liability."
+    },
+    {
+      "index": 3,
+      "prompt": "How should an educational short-sale example be labelled?",
+      "options": [
+        "A conceptual worksheet outside supported simulator orders",
+        "A live TradeHQ execution guide",
+        "A guaranteed way to profit from a decline"
+      ],
+      "picked": 0,
+      "correctAnswer": 0,
+      "feedback": "That’s right.\n\nA lesson can explain short mechanics while clearly separating them from the available simulator. Borrowing costs, losses and execution constraints would also matter in a real short; a direction prediction alone is incomplete."
+    },
+    {
+      "index": 4,
+      "prompt": "In the owned-units branch, what is gross notional for selling two units at $100?",
+      "options": [
+        "$300",
+        "$100",
+        "$200"
+      ],
+      "picked": 0,
+      "correctAnswer": 2,
+      "feedback": "Here’s the reasoning.\n\nTwo owned units multiplied by the $100 quote gives $200 sale notional. The third unit remains held unless a separate valid sell order includes it."
+    },
+    {
+      "index": 5,
+      "prompt": "What fee applies to that $200 spot sale?",
+      "options": [
+        "$20",
+        "$0.20",
+        "$2"
+      ],
+      "picked": 1,
+      "correctAnswer": 1,
+      "feedback": "That’s right.\n\nMultiply $200 by 0.001 to obtain $0.20. The fee is charged on sale notional rather than on the number of units or an assumed future decline."
+    },
+    {
+      "index": 6,
+      "prompt": "What net sale cash is received in the owned-units branch?",
+      "options": [
+        "$199.80",
+        "$200",
+        "$198"
+      ],
+      "picked": 1,
+      "correctAnswer": 0,
+      "feedback": "Here’s the reasoning.\n\nSubtract the $0.20 transaction fee from $200 gross sale value. Net proceeds enter cash and are separate from the mark of any units remaining."
+    },
+    {
+      "index": 7,
+      "prompt": "How many spot units remain after selling two of three owned units?",
+      "options": [
+        "Negative two units",
+        "Three units",
+        "One unit"
+      ],
+      "picked": 2,
+      "correctAnswer": 2,
+      "feedback": "That’s right.\n\nSubtract the two sold units from the three previously owned. The result is one positive spot holding, not a borrowed short position."
+    },
+    {
+      "index": 8,
+      "prompt": "At a subsequent $90 quote, what is the remaining one-unit holding worth?",
+      "options": [
+        "$270",
+        "$90",
+        "$100"
+      ],
+      "picked": 2,
+      "correctAnswer": 1,
+      "feedback": "Here’s the reasoning.\n\nOne remaining unit times $90 gives $90 marked value. The completed two-unit sale’s cash receipt is not rewritten by this later quote."
+    },
+    {
+      "index": 9,
+      "prompt": "What is the remaining holding’s change from its $100 pre-move mark?",
+      "options": [
+        "−$10",
+        "+$20",
+        "−$30"
+      ],
+      "picked": 0,
+      "correctAnswer": 0,
+      "feedback": "That’s right.\n\nOnly one unit remains exposed to the $10 quote decline. Reducing spot exposure avoids some further loss but does not create a separate gain from unowned short units."
+    },
+    {
+      "index": 10,
+      "prompt": "Which feature would be required to profit directly from a new borrowed short position?",
+      "options": [
+        "A bearish Daily answer",
+        "A sell attempt with zero owned units",
+        "A product supporting borrowing and short exposure"
+      ],
+      "picked": 0,
+      "correctAnswer": 2,
+      "feedback": "Here’s the reasoning.\n\nOpening borrowed short exposure needs mechanics the simulator does not provide. A directional idea or invalid sale attempt cannot create that financial product."
+    }
+  ],
+  "completed": "- region \"A short thesis does not create a short position\":\n  - paragraph:\n    - img\n    - text: Daily case study\n  - text: 8–12 minutes · 10/10 reviewed\n  - heading \"A short thesis does not create a short position\" [level=2]\n  - paragraph: Costs and orders · 2026-11-19\n  - paragraph: Read the case first. Use its assumptions; these are not live market prices.\n  - button \"Close case\" [expanded]:\n    - text: Close case\n    - img\n  - group:\n    - text: Case briefing and follow-up situation\n    - paragraph: A hypothetical asset is quoted at $100 and your research expects it could fall. You hold zero units. TradeHQ’s supported sell operation disposes of owned spot units; it does not borrow assets or open short positions. Use this case to distinguish a directional idea, a manual sale of a holding and a different product’s leveraged or borrowed exposure.\n    - paragraph: For a separate spot-account branch, suppose you own three units bought earlier and the quote is still $100. You choose to sell two owned units with the 0.1% fee. Calculate cash received and units remaining. Then let the quote fall to $90 without another order. The unowned-units branch and the owned-sale branch have different valid actions; a bearish thesis alone creates neither borrowed exposure nor an executed sale.\n    - figure \"Hypothetical case inputs — not a live market chart · units\": Hypothetical case inputs — not a live market chart · units Owned units 0 Proposed sell units 2\n  - text: Case progress 10 of 10 answers checked\n  - progressbar \"Case progress\"\n  - paragraph: Question 10 of 10 · Check the conclusions\n  - group \"Which feature would be required to profit directly from a new borrowed short position?\":\n    - text: Which feature would be required to profit directly from a new borrowed short position?\n    - radio \"A bearish Daily answer Your answer\" [checked] [disabled]\n    - text: A bearish Daily answer Your answer\n    - radio \"A sell attempt with zero owned units\" [disabled]\n    - text: A sell attempt with zero owned units\n    - radio \"A product supporting borrowing and short exposure Correct answer\" [disabled]\n    - text: A product supporting borrowing and short exposure Correct answer\n  - status:\n    - paragraph: Here’s the reasoning.\n    - paragraph: Opening borrowed short exposure needs mechanics the simulator does not provide. A directional idea or invalid sale attempt cannot create that financial product.\n  - button \"Previous\":\n    - img\n    - text: Previous\n  - status:\n    - img\n    - text: Case complete · 5/10 correct\n  - paragraph: Your original answers stay recorded. Review the explanations for anything you missed; this is practice, not a trading qualification.\n  - navigation \"Review case answers\":\n    - 'button \"Review question 1: correct\"': \"1\"\n    - 'button \"Review question 2: needs review\"': \"2\"\n    - 'button \"Review question 3: correct\"': \"3\"\n    - 'button \"Review question 4: needs review\"': \"4\"\n    - 'button \"Review question 5: correct\"': \"5\"\n    - 'button \"Review question 6: needs review\"': \"6\"\n    - 'button \"Review question 7: correct\"': \"7\"\n    - 'button \"Review question 8: needs review\"': \"8\"\n    - 'button \"Review question 9: correct\"': \"9\"\n    - 'button \"Review question 10: needs review\"': \"10\"\n  - paragraph: Use the numbered questions above to read the explanations you missed. When you are done, note the review so your next recommendation can move forward. This does not change your score.\n  - button \"I've reviewed my missed answers\"\n  - paragraph: Case takeaway\n  - paragraph: Describe observation, a hypothetical worksheet or reducing an owned position with a manual sale. Do not promise a negative position, leverage or automated order execution that the simulator does not support.\n  - paragraph: Further reading\n  - list:\n    - listitem:\n      - link \"Investor.gov — Investing basics\":\n        - /url: https://www.investor.gov/introduction-investing\n  - paragraph: 50 reviewed cases. When you have saved earlier case-study mistakes on this browser, a new day can prioritize one of those topics; otherwise cases rotate by date. New banks require owner approval. Answers stay on this browser. Bank reviewed by Owner-approved editorial correction 2026-10-25.",
+  "textInputCount": 0,
+  "sourceReflectionPrompt": "Rewrite a bearish practice plan using only supported actions.",
+  "reflectionPromptRendered": false,
+  "localPracticeRecords": {},
+  "scope": "Real current published case and public read-only bank; disposable guest checked answers only, alternating correct/incorrect for state coverage. No account, scored trophy or ranking operation."
+}

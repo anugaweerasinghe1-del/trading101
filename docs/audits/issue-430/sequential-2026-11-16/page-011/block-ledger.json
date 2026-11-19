@@ -1,0 +1,2136 @@
+[
+  {
+    "id": "STRICT-0011-QUICK-001",
+    "text": "NVDA reports earnings tonight. Implied move is ±8%.",
+    "content": {
+      "id": 1,
+      "asset": "NVDA",
+      "assetName": "NVIDIA",
+      "scenario": "NVDA reports earnings tonight. Implied move is ±8%.",
+      "context": "Street expects $0.85 EPS on $36B revenue. Whisper number is $0.92. AI capex guidance from hyperscalers came in strong this week.",
+      "options": [
+        {
+          "label": "Go long ahead of earnings",
+          "value": "long",
+          "rationale": "Bullish setup + strong whisper"
+        },
+        {
+          "label": "Wait — close existing positions and react after the print",
+          "value": "hold",
+          "rationale": "Avoid the gap risk; expected move pricing is rich"
+        },
+        {
+          "label": "Short into the print",
+          "value": "short",
+          "rationale": "Bet on a sell-the-news reaction"
+        }
+      ],
+      "insight": "Earnings can create gap risk and uncertainty. Compare the case for reducing exposure before the report with the case for waiting for confirmed post-report information; no direction is guaranteed.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "232253e17423b648d139e825cb732ecd0e7fa805091070974c4d4d005d7c01ca",
+    "contentReference": "quick-and-bonus.json#/quick/0",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "EPS, revenue and whisper figures are hypothetical inputs. The review identifies earnings gap risk and compares exposure reduction with confirmed post-report information without certifying a direction.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The projected earnings/whisper numbers could look like market news in isolation, but the renderer permanently labels them hypothetical inputs before the context. All three choices are reflection options, not calibrated forecasts or submitted orders; no unsupported real analyst fact is claimed.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497062+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-002",
+    "text": "BTC breaks $100K resistance on heavy volume.",
+    "content": {
+      "id": 2,
+      "asset": "BTC",
+      "assetName": "Bitcoin",
+      "scenario": "BTC breaks $100K resistance on heavy volume.",
+      "context": "Funding rates are still neutral, open interest just hit ATH, and spot ETF inflows posted $1.2B yesterday.",
+      "options": [
+        {
+          "label": "Buy the breakout",
+          "value": "long",
+          "rationale": "Confirmed breakout with spot-driven flow"
+        },
+        {
+          "label": "Short — too extended",
+          "value": "short",
+          "rationale": "Mean revert play"
+        },
+        {
+          "label": "Hold and wait for a retest",
+          "value": "hold",
+          "rationale": "Patience on confirmation"
+        }
+      ],
+      "insight": "Treat volume, spot flow, funding and open interest as separate pieces of evidence. Compare a continuation case with a failed-breakout case instead of assuming the breakout must hold.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "c8c9de9623ab199f6a6e4daed90961844402fef3b13e971113c70dae99411665",
+    "contentReference": "quick-and-bonus.json#/quick/1",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The breakout setup separates reported volume, funding, open interest and spot flow. Its review explicitly considers a failed breakout rather than treating any of those inputs as proof of continuation.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The long rationale is one offered interpretation, not a scored correct answer. The insight explicitly separates activity/positioning measures and the failed-breakout alternative. This counters treating ETF inflows or volume as proof of a profitable breakout.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497074+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-003",
+    "text": "Tesla drops 12% on a weak delivery number.",
+    "content": {
+      "id": 3,
+      "asset": "TSLA",
+      "assetName": "Tesla",
+      "scenario": "Tesla drops 12% on a weak delivery number.",
+      "context": "Q3 deliveries missed by 4%. Stock gapped down at the open and is now consolidating at the day's low.",
+      "options": [
+        {
+          "label": "Buy the dip immediately",
+          "value": "long",
+          "rationale": "Reflexive bounce expected"
+        },
+        {
+          "label": "Wait for a higher-low intraday before going long",
+          "value": "hold",
+          "rationale": "Let the seller exhaust"
+        },
+        {
+          "label": "Add to a short",
+          "value": "short",
+          "rationale": "Trend continuation"
+        }
+      ],
+      "insight": "After a sharp gap down, a higher low can be one confirmation signal while continued weakness can invalidate a bounce case. The setup does not imply a fixed win rate.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "4b40e3890b1c7977f99e609fb7f29a54196c6de71050638abab28f46eae81c2b",
+    "contentReference": "quick-and-bonus.json#/quick/2",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A 12% price gap and 4% delivery miss describe different quantities. Higher-low and trend-follow choices are alternative reasoning; the insight disclaims a fixed bounce win rate.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The delivery percentage is not applied mechanically to the stock move. Both immediate-buy and trend-follow rationales are presented as choices; the review supplies an invalidation case and no quantified success claim.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497077+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-004",
+    "text": "ETH/BTC ratio breaks a 6-month downtrend.",
+    "content": {
+      "id": 4,
+      "asset": "ETH",
+      "assetName": "Ethereum",
+      "scenario": "ETH/BTC ratio breaks a 6-month downtrend.",
+      "context": "ETH has been underperforming BTC for half a year. Today the ratio crossed back above its 50-day MA.",
+      "options": [
+        {
+          "label": "Rotate from BTC into ETH",
+          "value": "long",
+          "rationale": "Trend reversal in relative strength"
+        },
+        {
+          "label": "Stay in BTC",
+          "value": "hold",
+          "rationale": "Wait for more confirmation"
+        },
+        {
+          "label": "Short ETH/BTC",
+          "value": "short",
+          "rationale": "Fade the move"
+        }
+      ],
+      "insight": "A relative-strength break and a moving-average cross can be studied as confirmation signals, but either can fail. Compare what would confirm the rotation with what would invalidate it.",
+      "difficulty": "Pro"
+    },
+    "sha256": "551543c1aa457c87939aa8b52061f1e03b440b264314d50dc37047d154479aeb",
+    "contentReference": "quick-and-bonus.json#/quick/3",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The ETH/BTC setup concerns relative strength rather than an outright dollar-return guarantee. The review correctly says a moving-average/relative-strength confirmation can fail.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Outperformance against BTC does not establish a positive ETH dollar return. The text stays with relative-strength signals and expressly allows failure; the long/short/hold values are exercise categories, not platform margin features.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497079+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-005",
+    "text": "Apple announces a $90B buyback expansion.",
+    "content": {
+      "id": 5,
+      "asset": "AAPL",
+      "assetName": "Apple",
+      "scenario": "Apple announces a $90B buyback expansion.",
+      "context": "Stock is up 2% premarket. RSI on the daily is already 71. iPhone unit growth has been flat for 4 quarters.",
+      "options": [
+        {
+          "label": "Buy — buybacks are bullish",
+          "value": "long",
+          "rationale": "Reduced float"
+        },
+        {
+          "label": "Hold — fundamentals haven't changed",
+          "value": "hold",
+          "rationale": "Buybacks ≠ growth"
+        },
+        {
+          "label": "Short into strength",
+          "value": "short",
+          "rationale": "Overbought + flat fundamentals"
+        }
+      ],
+      "insight": "A buyback can affect share count without proving future revenue growth or price direction. Compare the capital-return case with the company's operating fundamentals before forming a view.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "b0ebfa8f8bf8d9f7cbb4cdf8d4f713afe8c54f8d3cce19a6b2a4d9e966073019",
+    "contentReference": "quick-and-bonus.json#/quick/4",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The buyback and flat unit-growth inputs serve different analyses. The explanation distinguishes reducing share count from proving future business growth or price direction.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A buyback can reduce shares without improving revenue. The hypothetical90B/RSI71 data are not proof of a real current Apple announcement. The insight correctly avoids equating a buyback with future growth.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497080+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-006",
+    "text": "Fed pauses rate cuts. SPY drops 1.5% intraday.",
+    "content": {
+      "id": 6,
+      "asset": "SPY",
+      "assetName": "S&P 500 ETF",
+      "scenario": "Fed pauses rate cuts. SPY drops 1.5% intraday.",
+      "context": "Powell signaled 'higher for longer.' VIX spiked to 22. Volume is 1.4x the 20-day average.",
+      "options": [
+        {
+          "label": "Consider a rebound case — verify policy assumptions",
+          "value": "long",
+          "rationale": "Mean reversion"
+        },
+        {
+          "label": "Wait — VIX hasn't peaked yet",
+          "value": "hold",
+          "rationale": "Let volatility cool"
+        },
+        {
+          "label": "Short — more downside coming",
+          "value": "short",
+          "rationale": "Trend follow"
+        }
+      ],
+      "insight": "A volatility spike does not reveal the exact timing of a reversal. Compare evidence that volatility is stabilising with evidence that risk is still increasing before choosing a simulated response.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "96ac909dada1ff5c73bd414f50714c9daf89c4cf18bdf7ee3288e7870af7bb0f",
+    "contentReference": "quick-and-bonus.json#/quick/5",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The policy pause, volume and VIX inputs do not identify an exact turning point. The waiting/long/short rationales are hypotheses, and the review explicitly rejects timing certainty.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The waiting option's VIX-peak rationale is not verified future knowledge. The actual decision review says volatility does not reveal the exact reversal timing and asks for evidence, avoiding a deterministic market claim.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497081+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-007",
+    "text": "Solana network outage for 4 hours.",
+    "content": {
+      "id": 7,
+      "asset": "SOL",
+      "assetName": "Solana",
+      "scenario": "Solana network outage for 4 hours.",
+      "context": "Validator software bug. Price down 7%. Devs say a patch is rolling out within 24h.",
+      "options": [
+        {
+          "label": "Buy — overreaction to a fixable bug",
+          "value": "long",
+          "rationale": "Short-term FUD"
+        },
+        {
+          "label": "Sell — outages are a structural issue",
+          "value": "short",
+          "rationale": "Bearish narrative"
+        },
+        {
+          "label": "Hold and wait",
+          "value": "hold",
+          "rationale": "Avoid the volatility"
+        }
+      ],
+      "insight": "A network outage creates both technical-recovery and confidence risks. Compare evidence that the fault is resolved with evidence of lasting usage or reliability damage; neither a rebound nor further decline is guaranteed.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "39c539ceb1d7ca48f2300cb4d9d00422d36628e46db811a1c89045374547c74a",
+    "contentReference": "quick-and-bonus.json#/quick/6",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The outage and promised patch are fictional technical inputs. The explanation separates technical recovery from confidence/usage damage and guarantees neither a rebound nor continued decline.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An announced patch deadline does not prove repair or adoption recovery. The insight keeps technical resolution and lasting reliability/usage risk separate, challenging both easy-rebound and guaranteed-collapse assumptions.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497082+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-008",
+    "text": "DXY dollar index breaks below a 2-year support.",
+    "content": {
+      "id": 8,
+      "asset": "GOLD",
+      "assetName": "Gold",
+      "scenario": "DXY dollar index breaks below a 2-year support.",
+      "context": "Real yields are falling. Central banks added a record amount of gold to reserves last quarter.",
+      "options": [
+        {
+          "label": "Buy gold",
+          "value": "long",
+          "rationale": "Weak dollar = strong gold"
+        },
+        {
+          "label": "Short gold — too crowded",
+          "value": "short",
+          "rationale": "Contrarian"
+        },
+        {
+          "label": "Wait for a pullback",
+          "value": "hold",
+          "rationale": "Discipline"
+        }
+      ],
+      "insight": "Real yields, currency moves and central-bank demand are factors traders may compare when studying gold. Their direction and importance can change, so the combination is not a guaranteed price signal.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "ba0881490cb4ff3b9dbbd34d7b12466c1b57a6fcfe68ab6eebcbfb42edecb4d7",
+    "contentReference": "quick-and-bonus.json#/quick/7",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The dollar, real-yield and demand inputs are factors rather than a deterministic gold-price equation. The simple bullish option rationale is contextualized by an explicit non-guarantee insight.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The terse weak-dollar/strong-gold option wording is not the final lesson rule: the insight expressly says the relationship and factor importance can change. The fictional reserve claim is not attributed current research.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497083+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-009",
+    "text": "Meta announces $50B+ AI capex for next year.",
+    "content": {
+      "id": 9,
+      "asset": "META",
+      "assetName": "Meta Platforms",
+      "scenario": "Meta announces $50B+ AI capex for next year.",
+      "context": "Stock down 6% on the news. Wall Street worries about ROI. But internal metrics show Reels engagement up 40% YoY thanks to AI ranking.",
+      "options": [
+        {
+          "label": "Buy — Street is short-sighted",
+          "value": "long",
+          "rationale": "Long-term ROI"
+        },
+        {
+          "label": "Wait for the bottom",
+          "value": "hold",
+          "rationale": "Catch a knife"
+        },
+        {
+          "label": "Short — capex worries are valid",
+          "value": "short",
+          "rationale": "Margin compression"
+        }
+      ],
+      "insight": "Large capital-spending plans can create a trade-off between near-term costs and possible future returns. Compare evidence on margins, adoption and realised returns rather than assuming a fixed recovery pattern.",
+      "difficulty": "Pro"
+    },
+    "sha256": "341cf5473aba8a9a56a144ea3086c6b2f562730bf05001a344afc767bd2a003d",
+    "contentReference": "quick-and-bonus.json#/quick/8",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The capex and engagement changes do not prove investment ROI. The insight identifies near-term cost versus possible later returns and asks for evidence on margins, adoption and realized returns.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Engagement growth is not investment ROI, and price decline is not proof the stock is cheap. The review correctly separates near-term expenditure from uncertain realized returns rather than prescribing a purchase.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497084+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-010",
+    "text": "ECB hawkish surprise: Lagarde signals one more hike.",
+    "content": {
+      "id": 10,
+      "asset": "EURUSD",
+      "assetName": "EUR/USD",
+      "scenario": "ECB hawkish surprise: Lagarde signals one more hike.",
+      "context": "EUR/USD spikes 80 pips in 5 minutes. Pre-news positioning was net short EUR.",
+      "options": [
+        {
+          "label": "Buy EUR/USD — squeeze continues",
+          "value": "long",
+          "rationale": "Short squeeze"
+        },
+        {
+          "label": "Fade the spike",
+          "value": "short",
+          "rationale": "Mean reversion"
+        },
+        {
+          "label": "Wait",
+          "value": "hold",
+          "rationale": "Confirmation"
+        }
+      ],
+      "insight": "A policy surprise and crowded positioning can increase volatility, but they do not set a reliable duration or direction. Compare follow-through, positioning and later policy information before drawing a conclusion.",
+      "difficulty": "Pro"
+    },
+    "sha256": "5105386b5f9bf952b1e3e2cee868d6e483edcde2b8e8d61a401216d903109f5d",
+    "contentReference": "quick-and-bonus.json#/quick/9",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The currency spike and net-short positioning can describe a squeeze thesis without setting its duration. Alternatives and insight explicitly leave later policy/positioning information open.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Crowded short positioning can inform a squeeze hypothesis but cannot set its duration. The offered fade/wait choices and final qualification preserve uncertainty; no pip-to-profit arithmetic or outcome guarantee is asserted.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:16:39.497085+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-011",
+    "text": "Microsoft adds OpenAI o4 to all Copilot tiers.",
+    "content": {
+      "id": 11,
+      "asset": "MSFT",
+      "assetName": "Microsoft",
+      "scenario": "Microsoft adds OpenAI o4 to all Copilot tiers.",
+      "context": "Stock flat on the news. Enterprise Copilot adoption was already accelerating (40% QoQ).",
+      "options": [
+        {
+          "label": "Buy — moat deepens",
+          "value": "long",
+          "rationale": "Locks in enterprise"
+        },
+        {
+          "label": "Hold — priced in",
+          "value": "hold",
+          "rationale": "No reaction = priced in"
+        },
+        {
+          "label": "Short",
+          "value": "short",
+          "rationale": "Sell strength"
+        }
+      ],
+      "insight": "A muted reaction to news can have several explanations. Compare price, volume and later company information rather than treating a flat response as proof of accumulation or a coming breakout.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "2cd2b098fac154d9235d93e20174bcb06cdaf42275af703ee015c97e1847d6b6",
+    "contentReference": "quick-and-bonus.json#/quick/10",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The product-release/adoption statements are inside the labelled fictional exercise, not verified current news about OpenAI or Microsoft. Flat price does not prove accumulation or an imminent breakout.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The fictional platform/product claim does not require inventing real OpenAI availability or a current adoption statistic. A flat reaction is explicitly not proof of a breakout or accumulation; the options are reasoning alternatives.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304229+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-012",
+    "text": "DOJ proposes forcing Google to sell Chrome.",
+    "content": {
+      "id": 12,
+      "asset": "GOOGL",
+      "assetName": "Alphabet",
+      "scenario": "DOJ proposes forcing Google to sell Chrome.",
+      "context": "Stock down 5% premarket. Legal experts give it 30% odds of happening. Process would take 3+ years.",
+      "options": [
+        {
+          "label": "Buy — fear overdone",
+          "value": "long",
+          "rationale": "Low odds + long timeline"
+        },
+        {
+          "label": "Sell — regulatory risk is real",
+          "value": "short",
+          "rationale": "Tail risk"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Sit on hands"
+        }
+      ],
+      "insight": "Regulatory proposals can change, face legal review or take time to resolve. Separate the probability, timeline and business impact from the immediate price reaction instead of assuming a buy or sell outcome.",
+      "difficulty": "Pro"
+    },
+    "sha256": "a249f75694937477e4336b967acf7b35c64afdd88a314ca17544d4cbd1cdd98b",
+    "contentReference": "quick-and-bonus.json#/quick/11",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The expert probability and legal timeline are fictional scenario assumptions under the persistent hypothetical label. The review separates probability, timing and impact rather than endorsing the invented odds as research.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The hypothetical label is essential for the invented30% expert odds and3+year legal horizon. The lesson does not cite those as actual Google litigation research or a Google policy/account-review statement.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304244+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-013",
+    "text": "QQQ goes 5 days straight up. RSI hits 78.",
+    "content": {
+      "id": 13,
+      "asset": "QQQ",
+      "assetName": "Nasdaq 100 ETF",
+      "scenario": "QQQ goes 5 days straight up. RSI hits 78.",
+      "context": "AI-driven rally. No pullback in 2 weeks.",
+      "options": [
+        {
+          "label": "Buy more — momentum",
+          "value": "long",
+          "rationale": "Trend follow"
+        },
+        {
+          "label": "Trim and wait for a pullback",
+          "value": "hold",
+          "rationale": "Risk management"
+        },
+        {
+          "label": "Short the overbought signal",
+          "value": "short",
+          "rationale": "Mean reversion"
+        }
+      ],
+      "insight": "RSI describes recent price momentum; it does not guarantee a pullback or its size. Compare trend strength, breadth and risk limits rather than treating an overbought reading as a forecast.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "4560bba33cc770ac5110df972526064ff055486e73c9de9bc76ed90d4371a0d7",
+    "contentReference": "quick-and-bonus.json#/quick/12",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The RSI and recent rise describe momentum. The explanation correctly rejects treating an overbought reading as a guaranteed pullback, size or trading forecast.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "RSI78 and a run of rising sessions can coexist with continued strength or a failed trend. The explanation correctly avoids converting a conventional overbought label into a forecast or a fixed short-trade edge.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304298+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-014",
+    "text": "OPEC+ surprise production cut of 1M bpd.",
+    "content": {
+      "id": 14,
+      "asset": "OIL",
+      "assetName": "Crude Oil",
+      "scenario": "OPEC+ surprise production cut of 1M bpd.",
+      "context": "Crude jumps 4% on the announcement. Inventories have been building for 6 weeks.",
+      "options": [
+        {
+          "label": "Buy — supply shock",
+          "value": "long",
+          "rationale": "Lower supply"
+        },
+        {
+          "label": "Wait — demand is the issue",
+          "value": "hold",
+          "rationale": "Inventory builds = weak demand"
+        },
+        {
+          "label": "Short — fade OPEC",
+          "value": "short",
+          "rationale": "Fade jawboning"
+        }
+      ],
+      "insight": "Supply decisions and inventory trends can point in different directions. Compare both sides of the balance and later demand data instead of assuming an announcement will persist or fade on a fixed schedule.",
+      "difficulty": "Pro"
+    },
+    "sha256": "c16e81f3c036bf08514df99e219bb4c0cc34d60b1f73bad50743ac23f55b1f5e",
+    "contentReference": "quick-and-bonus.json#/quick/13",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The production cut and inventory build can point to different sides of supply/demand. The explanation does not assert an announcement must persist or fade on a fixed schedule.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Inventory builds do not prove weak demand by themselves because supply can also change. That claim appears as one proposed rationale; the final lesson expressly compares both sides rather than endorsing it as the only explanation.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304301+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-015",
+    "text": "Binance announces a major token burn.",
+    "content": {
+      "id": 15,
+      "asset": "BNB",
+      "assetName": "BNB",
+      "scenario": "Binance announces a major token burn.",
+      "context": "12% of supply removed. Volume already 3x average.",
+      "options": [
+        {
+          "label": "Buy — supply reduction is bullish",
+          "value": "long",
+          "rationale": "Lower float"
+        },
+        {
+          "label": "Sell the news",
+          "value": "short",
+          "rationale": "Buy rumor sell news"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Wait"
+        }
+      ],
+      "insight": "A token burn changes supply mechanics, but price also depends on demand, liquidity and broader market conditions. Treat the burn as one input rather than a guaranteed uptrend.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "abb97890cd6556537f03f9fde4da6d29edb7ad5b30983f0638efd4b6a96a4729",
+    "contentReference": "quick-and-bonus.json#/quick/14",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The hypothetical burn percentage is an exercise input, not a report of an actual Binance event. The insight separates supply mechanics from demand/liquidity and rejects a guaranteed uptrend.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The large burn and volume figures are visibly fictional inputs. A lower supply alone does not guarantee price appreciation, and the educational review states that limitation rather than certifying the bullish choice.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304304+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-016",
+    "text": "China announces 200% tariff on US chips.",
+    "content": {
+      "id": 16,
+      "asset": "NVDA",
+      "assetName": "NVIDIA",
+      "scenario": "China announces 200% tariff on US chips.",
+      "context": "NVDA -8% premarket. China is ~12% of NVDA revenue. Datacenter demand globally remains insatiable.",
+      "options": [
+        {
+          "label": "Buy the dip — global demand offsets China",
+          "value": "long",
+          "rationale": "Demand overwhelms"
+        },
+        {
+          "label": "Hold and wait",
+          "value": "hold",
+          "rationale": "Sit out volatility"
+        },
+        {
+          "label": "Short — bigger drop coming",
+          "value": "short",
+          "rationale": "Geopolitical risk"
+        }
+      ],
+      "insight": "Geopolitical shocks can change demand, supply access and risk premiums at the same time. Compare the size and persistence of those effects rather than assuming a fixed recovery window.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "69cb4bc46571b54774f0300be0e6e0b09497fb5e8e02cafee40c5faabdb940f8",
+    "contentReference": "quick-and-bonus.json#/quick/15",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The tariff, revenue share and price drop are not a formula establishing a recovery. The explanation explicitly considers multiple transmission channels and no fixed recovery window.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A200% tariff is not multiplied directly by a12% revenue share to predict a stock loss. The review keeps policy transmission and recovery uncertain, so no unsupported recovery arithmetic or deadline is present.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304306+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-017",
+    "text": "BTC funding rates spike to +0.15% (4-hour).",
+    "content": {
+      "id": 17,
+      "asset": "BTC",
+      "assetName": "Bitcoin",
+      "scenario": "BTC funding rates spike to +0.15% (4-hour).",
+      "context": "Price flat. Open interest at record highs. Spot volume below average.",
+      "options": [
+        {
+          "label": "Short — funding extreme",
+          "value": "short",
+          "rationale": "Contrarian on leverage"
+        },
+        {
+          "label": "Long — bulls are confident",
+          "value": "long",
+          "rationale": "Trend follow"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Wait it out"
+        }
+      ],
+      "insight": "High funding, flat price and weak spot volume can be studied as signs of leveraged positioning. They do not establish a fixed probability or deadline for a liquidation move.",
+      "difficulty": "Pro"
+    },
+    "sha256": "f9dea11a0fde5835072ffd5f35ae6c37a183d63bdc2f5de3e368d4aee7cb5f19",
+    "contentReference": "quick-and-bonus.json#/quick/16",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The current quick exercise uses an explicitly fictional four-hour funding interval, flat price and weak spot activity. The review does not turn those inputs into a liquidation probability or deadline.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The four-hour rate is a specified hypothetical input, not a universal BTC funding convention. High leverage indicators do not establish a liquidation deadline or fixed probability; the review explicitly rejects both.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304309+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-018",
+    "text": "Tesla unveils a sub-$25K model.",
+    "content": {
+      "id": 18,
+      "asset": "TSLA",
+      "assetName": "Tesla",
+      "scenario": "Tesla unveils a sub-$25K model.",
+      "context": "Stock spikes 9% on the news. Margins guidance unclear. Production starts in 18 months.",
+      "options": [
+        {
+          "label": "Sell into the spike",
+          "value": "short",
+          "rationale": "Sell-the-news"
+        },
+        {
+          "label": "Buy — TAM expansion",
+          "value": "long",
+          "rationale": "New market"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Patience"
+        }
+      ],
+      "insight": "A distant product catalyst with uncertain margins leaves multiple scenarios open. Compare the timing, economics and evidence of demand rather than treating the announcement as an automatic sell-the-news setup.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "ad408950a993f62f6a5bc4c65311ce4dc99b0e50515eeccae8bb26c431a3e186",
+    "contentReference": "quick-and-bonus.json#/quick/17",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The distant product timeline and unknown margin guidance leave multiple cases open. The explanation avoids asserting an automatic sell-the-news result.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The wording does not confuse a future product announcement with current delivered revenue. Unclear margins and the18-month horizon are evaluated as uncertainties, and no automatic post-news price pattern is asserted.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304313+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-019",
+    "text": "SPY tests the 200-day MA after a 10% correction.",
+    "content": {
+      "id": 19,
+      "asset": "SPY",
+      "assetName": "S&P 500 ETF",
+      "scenario": "SPY tests the 200-day MA after a 10% correction.",
+      "context": "VIX at 28 (elevated). Breadth: only 35% of stocks above their 50-day. Put/call ratio at 1.4.",
+      "options": [
+        {
+          "label": "Buy — capitulation signs",
+          "value": "long",
+          "rationale": "Sentiment extremes"
+        },
+        {
+          "label": "Wait",
+          "value": "hold",
+          "rationale": "Patience"
+        },
+        {
+          "label": "Short — more downside",
+          "value": "short",
+          "rationale": "Trend follow"
+        }
+      ],
+      "insight": "Moving averages, volatility and options-positioning measures can provide different context around a selloff. Their combination still does not prove that a durable low has formed.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "94cb5727e7fb9b5d1d253e84ca5ec6f8d8914fc6d8f4c8989f0914cb8fd20a6e",
+    "contentReference": "quick-and-bonus.json#/quick/18",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Moving-average, breadth, options and volatility inputs have separate meanings. Their combination is expressly insufficient to prove a durable market low.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The200-day average,35% breadth and1.4 put/call input are different indicators rather than a combined calibrated probability model. The text does not promise a durable low or a particular trade payoff.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304315+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-020",
+    "text": "Ethereum staking yield drops below 2.5%.",
+    "content": {
+      "id": 20,
+      "asset": "ETH",
+      "assetName": "Ethereum",
+      "scenario": "Ethereum staking yield drops below 2.5%.",
+      "context": "Validator queue is full. Restaking protocols (EigenLayer) absorbing capital. ETH spot ETF flows turned negative.",
+      "options": [
+        {
+          "label": "Sell — yield no longer compelling",
+          "value": "short",
+          "rationale": "Rotation out"
+        },
+        {
+          "label": "Buy — restaking is bullish",
+          "value": "long",
+          "rationale": "New use case"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Long-term"
+        }
+      ],
+      "insight": "Yield changes, restaking activity and fund flows can affect the case for holding ETH in different ways. Compare each factor and its persistence instead of assigning a fixed period of underperformance.",
+      "difficulty": "Pro"
+    },
+    "sha256": "ae59c758026ba5ab1c4c83ae3dd98023d7e19eca51313d29f514ba1244fa1c57",
+    "contentReference": "quick-and-bonus.json#/quick/19",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Staking yield, restaking and fund-flow assumptions are compared without claiming a fixed underperformance interval. No staking return or feature of TradeHQ is promised.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Staking/restaking terms and spot-fund flows are presented as different drivers, not equivalent yields or features offered by TradeHQ. The review avoids an assured yield or fixed period of market underperformance.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:17:11.304316+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-021",
+    "text": "BoJ intervenes verbally. USD/JPY at 158.",
+    "content": {
+      "id": 21,
+      "asset": "USDJPY",
+      "assetName": "USD/JPY",
+      "scenario": "BoJ intervenes verbally. USD/JPY at 158.",
+      "context": "Last actual intervention was at 152. MoF officials called move 'one-sided.' Carry trade flows still strong.",
+      "options": [
+        {
+          "label": "Wait — verbal isn't actual",
+          "value": "hold",
+          "rationale": "Discipline"
+        },
+        {
+          "label": "Short JPY weakening continues",
+          "value": "long",
+          "rationale": "Trend follow"
+        },
+        {
+          "label": "Short USD/JPY now",
+          "value": "short",
+          "rationale": "Front-run intervention"
+        }
+      ],
+      "insight": "Official comments, actual intervention and monetary-policy changes are different events. Compare what has actually changed in policy or flows instead of assuming comments alone determine the next move.",
+      "difficulty": "Pro"
+    },
+    "sha256": "f5756f3c5ee79e991595b93faf3ab0fda34e34e60b2bbd9d2ca446ae4a914a98",
+    "contentReference": "quick-and-bonus.json#/quick/20",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The asset is USD/JPY: a long pair thesis can express selling a weakening JPY, so the long direction paired with a short-JPY label is not a direction mismatch. Comments, intervention and policy changes remain distinct.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A short-JPY thesis corresponds to long USD/JPY when the quotation is yen per dollar. That label/value pairing is coherent, unlike the separate reproduced duplicate-option identity defect. The fictional intervention levels are not asserted current central-bank facts.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695792+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-022",
+    "text": "NVDA splits 10-for-1.",
+    "content": {
+      "id": 22,
+      "asset": "NVDA",
+      "assetName": "NVIDIA",
+      "scenario": "NVDA splits 10-for-1.",
+      "context": "Retail interest surges. Options activity hits records. Stock up 4% on the announcement.",
+      "options": [
+        {
+          "label": "Buy — retail flows incoming",
+          "value": "long",
+          "rationale": "Liquidity event"
+        },
+        {
+          "label": "Hold — splits don't change value",
+          "value": "hold",
+          "rationale": "Cosmetic"
+        },
+        {
+          "label": "Short the hype",
+          "value": "short",
+          "rationale": "Sell hype"
+        }
+      ],
+      "insight": "A stock split changes the number of shares and the per-share price proportionally; it does not by itself change the company's underlying value. Any later price move needs separate evidence.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "dbf4b2c5a860028f7075ad4200e4d472442275c30f28a0e5b4a3fa7291a4a8b5",
+    "contentReference": "quick-and-bonus.json#/quick/21",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "A ten-for-one split multiplies share count and proportionally divides per-share price without changing underlying company value by itself. Later returns are kept separate.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Ten-for-one arithmetic leaves theoretical company value unchanged: ten times the shares at one tenth the price. The4% hypothetical announcement reaction is separate market behavior, not a mechanical split profit.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695830+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-023",
+    "text": "BTC halving happens this week.",
+    "content": {
+      "id": 23,
+      "asset": "BTC",
+      "assetName": "Bitcoin",
+      "scenario": "BTC halving happens this week.",
+      "context": "In this invented scenario, price is already up 80% year to date. Compare possible price rises and falls after the event; the halving does not establish either outcome.",
+      "options": [
+        {
+          "label": "Hold through the event",
+          "value": "hold",
+          "rationale": "Avoid timing"
+        },
+        {
+          "label": "Buy more",
+          "value": "long",
+          "rationale": "Halving narrative"
+        },
+        {
+          "label": "Sell — buy the rumor",
+          "value": "short",
+          "rationale": "Sell event"
+        }
+      ],
+      "insight": "A scheduled halving changes Bitcoin's issuance rate, but it does not specify when or how price must react. Separate the known protocol event from uncertain market expectations.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "5956f9e91c08ac9f1277337e3528259b4a1cc1c969771de626651fd3850c1eaa",
+    "contentReference": "quick-and-bonus.json#/quick/22",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The scenario expressly calls the 80% prior rise invented. The known protocol issuance event does not establish a subsequent price direction or schedule.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This is not a real halving-date or80% return report: the context calls it invented and the renderer labels all inputs hypothetical. The issuance mechanism is kept separate from uncertain market pricing.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695834+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-024",
+    "text": "Apple beats earnings but guides Q1 lower.",
+    "content": {
+      "id": 24,
+      "asset": "AAPL",
+      "assetName": "Apple",
+      "scenario": "Apple beats earnings but guides Q1 lower.",
+      "context": "Stock down 4% after-hours. Services revenue grew 18%. iPhone guidance cut on China softness.",
+      "options": [
+        {
+          "label": "Buy — Services is the story",
+          "value": "long",
+          "rationale": "Quality narrative"
+        },
+        {
+          "label": "Sell — guidance is what matters",
+          "value": "short",
+          "rationale": "Forward looking"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Wait it out"
+        }
+      ],
+      "insight": "Revenue mix and forward guidance can point to different risks and opportunities. Compare margin effects, demand and management guidance without treating a short-term drop as an automatic buying opportunity.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "a0a0b56aae754f20157d866f1b61267b5f2912a4ff9944d2f1cb0bc26d72a957",
+    "contentReference": "quick-and-bonus.json#/quick/23",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Earnings, revenue mix and forward guidance can differ without inconsistency. The insight does not make a short-term drop an automatic buying opportunity.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An earnings beat and weaker guidance can coexist because they concern different periods/metrics. The review explicitly counters an automatic buy-the-drop conclusion rather than presenting either option as a forecast.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695838+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-025",
+    "text": "10-year yield crosses above 5%.",
+    "content": {
+      "id": 25,
+      "asset": "QQQ",
+      "assetName": "Nasdaq 100 ETF",
+      "scenario": "10-year yield crosses above 5%.",
+      "context": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+      "options": [
+        {
+          "label": "Rotate out of mega-cap into equal-weight",
+          "value": "hold",
+          "rationale": "Quality rotation"
+        },
+        {
+          "label": "Buy the dip in QQQ",
+          "value": "long",
+          "rationale": "Discount"
+        },
+        {
+          "label": "Short QQQ",
+          "value": "short",
+          "rationale": "Yield headwind"
+        }
+      ],
+      "insight": "Equal-weight versus cap-weighted performance can help describe market breadth. Use it as context rather than as a rule that one portfolio rotation must outperform.",
+      "difficulty": "Pro"
+    },
+    "sha256": "c08850633cf9bf831d87064e62896346586f2f3cf17cd6d7ee4c1f1869aacebb",
+    "contentReference": "quick-and-bonus.json#/quick/24",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Cap-weight/equal-weight performance is context for breadth, not a guaranteed profitable portfolio rotation. The fictional yield and price inputs are not presented as live ETF values.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The equal-weight comparison describes a different weighting of the same broad universe, not a claim that the actual QQQ fund changes its mandate. The lesson uses breadth context and does not promise a superior rotation.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695840+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-026",
+    "text": "Robotaxi event delivers underwhelming demo.",
+    "content": {
+      "id": 26,
+      "asset": "TSLA",
+      "assetName": "Tesla",
+      "scenario": "Robotaxi event delivers underwhelming demo.",
+      "context": "Stock down 9% the next session. Demo lacked details on regulatory path. But FSD subscription revenue grew 60% QoQ in background.",
+      "options": [
+        {
+          "label": "Wait for capitulation",
+          "value": "hold",
+          "rationale": "Let panic exhaust"
+        },
+        {
+          "label": "Buy the dip — FSD growth",
+          "value": "long",
+          "rationale": "Underlying business strong"
+        },
+        {
+          "label": "Short — Robotaxi was the catalyst",
+          "value": "short",
+          "rationale": "Trend follow"
+        }
+      ],
+      "insight": "After a disappointment, selling pressure can persist or reverse at different speeds. Compare new information, liquidity and price stabilisation instead of assuming a fixed exhaustion period.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "9df5dbb9b557292dad983e7e8cc74ebe803e8f7a7d6ebdaac0cdd65be4371480",
+    "contentReference": "quick-and-bonus.json#/quick/25",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The disappointing demo and subscription growth are different evidence. The review avoids a fixed capitulation/exhaustion window or a guaranteed recovery.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Subscription growth does not itself price regulatory risk or prove the event reaction is overdone. The final review leaves both reversal and continued selling possible rather than assigning a fixed exhaustion period.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695842+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-027",
+    "text": "Gold breaks $2,800 to new all-time highs.",
+    "content": {
+      "id": 27,
+      "asset": "GOLD",
+      "assetName": "Gold",
+      "scenario": "Gold breaks $2,800 to new all-time highs.",
+      "context": "Central bank buying + retail FOMO + miner shares lagging.",
+      "options": [
+        {
+          "label": "Buy gold but avoid miners",
+          "value": "long",
+          "rationale": "Follow the metal"
+        },
+        {
+          "label": "Buy miners — they'll catch up",
+          "value": "long",
+          "rationale": "Reversion"
+        },
+        {
+          "label": "Short — too extended",
+          "value": "short",
+          "rationale": "Mean reversion"
+        }
+      ],
+      "insight": "Gold and mining shares have different business and market drivers. A divergence can be investigated, but it does not by itself prove why capital is moving or how long the gap will last.",
+      "difficulty": "Pro"
+    },
+    "sha256": "95c11d09a73ccd33f36600ffd0b1340aed15eb404476eb256f23ed9f34e444c6",
+    "contentReference": "quick-and-bonus.json#/quick/26",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The metal and miners have different drivers. Two separate long choices reveal both rationales after one click in the current renderer; this independently reproduced control defect is STRICT-DAILY-003, not a guaranteed-return content claim.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The two long alternatives are substantively different metal-versus-miner theses and must not both appear selected. Their text/insight does not guarantee convergence; the reproduced renderer/key defect remains open under STRICT-DAILY-003 until PR484 native/public verification.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695843+00:00"
+    },
+    "findingIds": [
+      "STRICT-DAILY-003"
+    ]
+  },
+  {
+    "id": "STRICT-0011-QUICK-028",
+    "text": "Meta reports record ad revenue. Stock unchanged.",
+    "content": {
+      "id": 28,
+      "asset": "META",
+      "assetName": "Meta Platforms",
+      "scenario": "Meta reports record ad revenue. Stock unchanged.",
+      "context": "Beat top + bottom line by 8%. CEO commentary muted. Sector peers underperforming.",
+      "options": [
+        {
+          "label": "Hold — no reaction means top",
+          "value": "hold",
+          "rationale": "Distribution signal"
+        },
+        {
+          "label": "Buy more — accumulation",
+          "value": "long",
+          "rationale": "Quiet strength"
+        },
+        {
+          "label": "Short — exhaustion",
+          "value": "short",
+          "rationale": "Top signal"
+        }
+      ],
+      "insight": "A strong report with a muted price reaction can have several explanations. Compare expectations, volume and subsequent information instead of treating the reaction as proof of distribution.",
+      "difficulty": "Pro"
+    },
+    "sha256": "5e374ca8c249821f3896c42004559337041197bbb0f328e3b7840603d4d24e4e",
+    "contentReference": "quick-and-bonus.json#/quick/27",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The strong report and muted price response admit multiple explanations. The insight explicitly challenges the option rationale that a flat response proves distribution or accumulation.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Flat price after a positive report does not establish either distribution or accumulation. The final insight explicitly challenges those offered rationales rather than endorsing a fixed signal from the quiet reaction.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695845+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-029",
+    "text": "Solana memecoin volume crashes 70% in a week.",
+    "content": {
+      "id": 29,
+      "asset": "SOL",
+      "assetName": "Solana",
+      "scenario": "Solana memecoin volume crashes 70% in a week.",
+      "context": "Network revenue down 50%. Validators struggling. Real-app usage still growing.",
+      "options": [
+        {
+          "label": "Sell — revenue collapse",
+          "value": "short",
+          "rationale": "Bearish"
+        },
+        {
+          "label": "Hold — real usage growing",
+          "value": "hold",
+          "rationale": "Long-term thesis"
+        },
+        {
+          "label": "Buy aggressively",
+          "value": "long",
+          "rationale": "Contrarian"
+        }
+      ],
+      "insight": "Network revenue, speculative activity and application usage measure different parts of an ecosystem. Compare them separately rather than treating one short-term activity measure as the whole investment case.",
+      "difficulty": "Intermediate"
+    },
+    "sha256": "9dc14e12aa28f0846ed86fabd6265f65cafdcef345ef310f0bcb194f8a286db2",
+    "contentReference": "quick-and-bonus.json#/quick/28",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The changes in speculative activity, network revenue and application use measure different quantities and can coexist. The review rejects treating one as the complete investment case.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "A70% activity drop and50% network-revenue drop have different denominators; they need not match or negate growth in another use category. The source does not convert any of them into an assured return.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695847+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-QUICK-030",
+    "text": "First red Monday after 8 green weeks.",
+    "content": {
+      "id": 30,
+      "asset": "SPY",
+      "assetName": "S&P 500 ETF",
+      "scenario": "First red Monday after 8 green weeks.",
+      "context": "SPY -1.2%. Breadth -3:1 negative. No specific catalyst. Bond yields stable.",
+      "options": [
+        {
+          "label": "Buy the dip — trend intact",
+          "value": "long",
+          "rationale": "Buy weakness in uptrend"
+        },
+        {
+          "label": "Sell — trend break starting",
+          "value": "short",
+          "rationale": "Distribution"
+        },
+        {
+          "label": "Hold",
+          "value": "hold",
+          "rationale": "Indecision"
+        }
+      ],
+      "insight": "One down day is not enough to establish either a healthy reset or a trend reversal. Compare breadth, follow-through and new information before updating the simulated thesis.",
+      "difficulty": "Beginner"
+    },
+    "sha256": "2ec5d1427d4c59d7c8585e3aa8e3f38406cceb0ca0f3758bd106a309cac8978b",
+    "contentReference": "quick-and-bonus.json#/quick/29",
+    "source": "src/lib/dailyChallenge.ts CHALLENGES; src/pages/Daily.tsx quick renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "One coherent quick-exercise unit: asset/difficulty, scenario, context, all three option labels/rationales and decision review. Source/date-selected alternatives are not claimed as natural-current-date browser observations.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "One red day and negative breadth do not establish either an intact trend or a durable reversal. The exercise is fictional and explicitly requires follow-through/new information.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The negative-breadth shorthand expresses a decliner-heavy session, not a calculation with negative stock counts. One session after eight rising weeks still cannot prove either a reversal or continuation, as the insight states.",
+      "reviewer": "Codex assistant; separate skeptical complete quick-unit reread",
+      "reviewedAtUTC": "2026-11-19T02:18:21.695848+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-001",
+    "text": "What does a sell stop order generally do when its trigger price is reached?",
+    "content": {
+      "id": 1,
+      "prompt": "What does a sell stop order generally do when its trigger price is reached?",
+      "options": [
+        {
+          "label": "Triggers a market order when the stop price is reached",
+          "correct": true,
+          "explain": "A stop becomes a market order at its trigger. Gaps and slippage can produce a worse fill, so it does not guarantee a maximum loss. TradeHQ does not execute stop orders; this is a conceptual question. See SEC Investor.gov, Types of Orders."
+        },
+        {
+          "label": "Guarantees you exit at the exact price you set",
+          "correct": false,
+          "explain": "Slippage in fast markets means stops can fill worse than the trigger."
+        },
+        {
+          "label": "Doubles your position when price drops",
+          "correct": false,
+          "explain": "That's averaging down — the opposite of stop-losses."
+        }
+      ]
+    },
+    "sha256": "184f4dced31ad1ace729c9c05c1169bf7c9f8a743c68696193c6e06302db57b7",
+    "contentReference": "quick-and-bonus.json#/bonus/0",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The correct stop-order description explains a trigger becoming a market order, possible gaps/slippage and no guaranteed maximum loss. It explicitly says TradeHQ does not execute stops; distractors are not represented as features.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "This is a sell stop-market concept, not a stop-limit promise. It explicitly disclaims exact fills/maximum-loss protection and says TradeHQ does not execute stops, so the conceptual question does not invent a simulator feature.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679634+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-002",
+    "text": "If RSI reads 80, the asset is generally considered…",
+    "content": {
+      "id": 2,
+      "prompt": "If RSI reads 80, the asset is generally considered…",
+      "options": [
+        {
+          "label": "Oversold — likely bounce",
+          "correct": false,
+          "explain": "Oversold is RSI <30, not 80."
+        },
+        {
+          "label": "Conventionally called overbought; not a forecast",
+          "correct": true,
+          "explain": "RSI >70 signals overbought; >80 is extreme."
+        },
+        {
+          "label": "Neutral — keep buying",
+          "correct": false,
+          "explain": "Neutral RSI is around 50."
+        }
+      ]
+    },
+    "sha256": "e50ca4ddaf956b5851592db2ac86e9f35a96a424f712e883ee56d9e0ce478522",
+    "contentReference": "quick-and-bonus.json#/bonus/1",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "RSI80 is conventionally overbought and the correct label explicitly says not a forecast. The oversold and neutral alternatives are marked incorrect, with conventional reference levels rather than promised returns.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The correct answer is a conventional overbought classification rather than a predicted reversal.80 exceeds70; the threshold wording does not assert a calibrated bounce probability, and both competing labels are explicitly false.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679647+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-003",
+    "text": "What's the '2% rule' in risk management?",
+    "content": {
+      "id": 3,
+      "prompt": "What's the '2% rule' in risk management?",
+      "options": [
+        {
+          "label": "Use 2% of current equity as this lesson's example risk budget",
+          "correct": true,
+          "explain": "If 2% is recalculated from remaining equity, 10 consecutive full-risk losses leave about 81.7% of the starting balance — roughly an 18.3% drawdown before other effects."
+        },
+        {
+          "label": "Always target 2% profit per trade",
+          "correct": false,
+          "explain": "Profit targets aren't the rule — risk per trade is."
+        },
+        {
+          "label": "Trade only 2% of the day",
+          "correct": false,
+          "explain": "Not a real risk concept."
+        }
+      ]
+    },
+    "sha256": "d4c44701affc33681f1238e91e32e4189c182acc8b07fd3753166702b7bbf70f",
+    "contentReference": "quick-and-bonus.json#/bonus/2",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The correct answer describes2% as this lesson's example risk budget. Recalculating from remaining equity gives0.98^10=0.81707, matching81.7%remaining and18.3%drawdown before other effects. It is not a universal allocation prescription.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The arithmetic compounds remaining equity, not the original balance:1-0.98^10≈18.2927%loss. The correct choice calls it an example budget, not a mandated or universally suitable risk rule.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679650+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-004",
+    "text": "Why do traders watch the VIX?",
+    "content": {
+      "id": 4,
+      "prompt": "Why do traders watch the VIX?",
+      "options": [
+        {
+          "label": "It measures expected S&P 500 volatility (the 'fear gauge')",
+          "correct": true,
+          "explain": "VIX reflects option-implied S&P 500 volatility over roughly 30 days. It does not predict the direction of the next market move."
+        },
+        {
+          "label": "It tracks Bitcoin dominance",
+          "correct": false,
+          "explain": "That's BTC.D, not VIX."
+        },
+        {
+          "label": "It signals interest-rate decisions",
+          "correct": false,
+          "explain": "Rate signals come from Fed funds futures."
+        }
+      ]
+    },
+    "sha256": "7d054dbcd9c029a5d7888f3ab3a63cd548323d2ae48c0a8f1ea3ef3d0f3a13a0",
+    "contentReference": "quick-and-bonus.json#/bonus/3",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The VIX definition identifies option-implied S&P500 volatility over roughly30days and disclaims direction prediction. Bitcoin dominance and policy-rate interpretations are distinct distractors.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "An implied-volatility index is not the realized next price direction or Bitcoin dominance. The roughly30-day description is appropriately qualified; the policy-rate distractor is not represented as the VIX's defined output.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679652+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-005",
+    "text": "What does higher reported volume during a breakout establish?",
+    "content": {
+      "id": 5,
+      "prompt": "What does higher reported volume during a breakout establish?",
+      "options": [
+        {
+          "label": "More reported trading activity during the move",
+          "correct": true,
+          "explain": "Volume measures activity under the data source’s definition. It does not prove conviction or guarantee that the move continues."
+        },
+        {
+          "label": "A trap — short immediately",
+          "correct": false,
+          "explain": "Volume alone does not establish a reliable forecast or justify an immediate directional order."
+        },
+        {
+          "label": "The trend is ending",
+          "correct": false,
+          "explain": "The amount of reported volume does not by itself establish that a trend is ending."
+        }
+      ]
+    },
+    "sha256": "29610122c0f4a77b4ec7780d100e93520ae8e50c03889c1d134528af9072e734",
+    "contentReference": "quick-and-bonus.json#/bonus/4",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The correct volume interpretation is reported activity under the source definition. Every explanation rejects using volume alone to guarantee continuation, forecast a reversal or justify an immediate directional order.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Higher reported activity alone cannot prove who is trading, conviction, continuation or an ending trend. All three explanations maintain that distinction rather than certifying the breakout or a short entry.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679653+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-006",
+    "text": "What does 'diversification' protect you from?",
+    "content": {
+      "id": 6,
+      "prompt": "What does 'diversification' protect you from?",
+      "options": [
+        {
+          "label": "Single-asset blow-up risk",
+          "correct": true,
+          "explain": "Spreading exposure can reduce concentration in one asset, but correlated holdings can still lose together and no allocation prevents every loss."
+        },
+        {
+          "label": "All market crashes",
+          "correct": false,
+          "explain": "In a broad crash, most assets fall together — diversification helps but isn't bulletproof."
+        },
+        {
+          "label": "Inflation",
+          "correct": false,
+          "explain": "Diversification alone does not guarantee protection against inflation. Any proposed inflation-sensitive exposure needs its own assumptions, costs and risks."
+        }
+      ]
+    },
+    "sha256": "d603bce2d0842381ef6bc7dd4038d1168f8477ddd1d411ef34f855d7fa7ce778",
+    "contentReference": "quick-and-bonus.json#/bonus/5",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The diversification answer is qualified as concentration reduction, with correlated-loss and inflation limitations. The explanations do not promise protection from every market loss.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The correct answer's wording is qualified by its explanation: concentration can be reduced, correlated assets can still fall and inflation protection is not assured. It does not promise that diversification removes all loss.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679654+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-007",
+    "text": "What's 'slippage'?",
+    "content": {
+      "id": 7,
+      "prompt": "What's 'slippage'?",
+      "options": [
+        {
+          "label": "Difference between expected price and actual fill",
+          "correct": true,
+          "explain": "Common in fast or thin markets — eats into edge."
+        },
+        {
+          "label": "A broker fee",
+          "correct": false,
+          "explain": "Fees are separate — slippage is execution cost."
+        },
+        {
+          "label": "Profit you didn't take",
+          "correct": false,
+          "explain": "That's opportunity cost, not slippage."
+        }
+      ]
+    },
+    "sha256": "2d61493a40cf073e5956d72ca49ebdc600606485d75d653dc2d0b143af9dcd02",
+    "contentReference": "quick-and-bonus.json#/bonus/6",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The correct slippage definition separates expected-versus-filled price from an explicit broker fee. The brief illustration discusses adverse execution; the forgone-profit distractor is not treated as an execution-price difference.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The definition describes the fill-price difference and keeps explicit fees separate. The brief adverse-slippage example is not a claim that favorable fills are impossible; the forgone alternative is not reclassified as a fill-price difference.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679655+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-BONUS-008",
+    "text": "Why is 'risk-reward ratio' so important?",
+    "content": {
+      "id": 8,
+      "prompt": "Why is 'risk-reward ratio' so important?",
+      "options": [
+        {
+          "label": "Fixed realized +3R wins and −1R losses at 40% wins average +0.6R before costs",
+          "correct": true,
+          "explain": "For those exact realized inputs, 0.4×3−0.6×1=0.6R before costs. Planned targets, actual outcomes and fees can differ; a stated ratio does not guarantee profit."
+        },
+        {
+          "label": "Higher win rate always = more profit",
+          "correct": false,
+          "explain": "Not if the wins are tiny and losses huge."
+        },
+        {
+          "label": "It tells you which asset to trade",
+          "correct": false,
+          "explain": "It's about trade structure, not asset selection."
+        }
+      ]
+    },
+    "sha256": "0d858234b5230599e75ac2bb0f188999cea1ef676c6a578d5d3320f4b2a013be",
+    "contentReference": "quick-and-bonus.json#/bonus/7",
+    "source": "src/lib/dailyChallenge.ts BONUS_BANK; src/pages/Daily.tsx conditional bonus renderer",
+    "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "scope": "Complete quiz unit including three options, correctness flags and every conditional explanation; source/date alternatives not all observed live yet.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The stated realized +3R/-1R outcomes at40%wins yield0.4*3-0.6*1=+0.6R before costs. The explanation distinguishes planned targets, actual outcomes and fees and gives no guaranteed profit.",
+      "reviewer": "Codex assistant, substantive first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "For the exact realized inputs, four3R wins minus six1R losses over ten outcomes gives6R/10=0.6R before costs. This is conditional arithmetic, not a claim that a planned ratio or future40%win rate will materialize.",
+      "reviewer": "Codex assistant; separate skeptical full bonus-unit reread including every distractor explanation",
+      "reviewedAtUTC": "2026-11-19T02:19:28.679656+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-brief",
+    "text": "A short thesis does not create a short position / brief",
+    "content": "A hypothetical asset is quoted at $100 and your research expects it could fall. You hold zero units. TradeHQ’s supported sell operation disposes of owned spot units; it does not borrow assets or open short positions. Use this case to distinguish a directional idea, a manual sale of a holding and a different product’s leveraged or borrowed exposure.\n\nFor a separate spot-account branch, suppose you own three units bought earlier and the quote is still $100. You choose to sell two owned units with the 0.1% fee. Calculate cash received and units remaining. Then let the quote fall to $90 without another order. The unowned-units branch and the owned-sale branch have different valid actions; a bearish thesis alone creates neither borrowed exposure nor an executed sale.",
+    "sha256": "01da9a9035444a4e9dfc17aaec25bfd8e6038bd06b34984256ebb63b99fc701b",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The two branches are explicitly separate: zero owned units versus three owned units. A bearish thesis does not grant borrowing, and the spot-sale branch specifies the same0.1% practice fee used by the reviewed Trade flow.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The unowned and owned branches must not be combined: selling two units is invalid in the first, valid in the second. The case says the quote and fee are hypothetical and does not present an educational short as an available order.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858102+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-visual",
+    "text": "A short thesis does not create a short position / visual",
+    "content": {
+      "bars": [
+        {
+          "label": "Owned units",
+          "value": 0
+        },
+        {
+          "label": "Proposed sell units",
+          "value": 2
+        }
+      ],
+      "unit": "units",
+      "caption": "Hypothetical case inputs — not a live market chart"
+    },
+    "sha256": "610db892f75430431afbb19ef71015de448a67610035aa2b6f7511976b400cfa",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The labelled bars show0owned versus2proposed units for the unowned branch; this is an impossible supported sale, not a fabricated executed short or a live chart.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The zero-versus-two bars describe the unsupported proposal in the first branch, not an executed sale or the later three-owned-unit branch. Units are explicit and zero is an appropriate shown value.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858113+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q01",
+    "text": "A short thesis does not create a short position / q01",
+    "content": {
+      "prompt": "Can selling two unowned units open a short on TradeHQ?",
+      "options": [
+        "No; the simulator does not implement short selling",
+        "Yes; every sell button borrows units",
+        "Yes; a bearish note supplies collateral"
+      ],
+      "explanation": "A bearish idea does not alter the product’s supported mechanics. Selling an owned spot holding and borrowing an asset to sell short are different operations; TradeHQ only implements the former.",
+      "correctAnswer": 0
+    },
+    "sha256": "d554d075ae1c1770b62f4f3e2fff5fec1147c24cb385976079d0859216ba7f23",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The key correctly denies an unowned two-unit sale. Owning and disposing of spot units differs from borrowing to sell short, matching the reviewed product mechanics.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The actual product claim is supported by the reviewed Trade source/guest execution: sells dispose of owned units. A bearish Daily direction does not invoke a trade or create negative ownership.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858116+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q02",
+    "text": "A short thesis does not create a short position / q02",
+    "content": {
+      "prompt": "What supported action could reduce existing spot exposure?",
+      "options": [
+        "Manually sell some units already owned",
+        "Create a negative holding by journaling",
+        "Request borrowed assets from the leaderboard"
+      ],
+      "explanation": "Selling owned units reduces the quantity held and returns net proceeds to virtual cash. It does not create a profit from a future fall after the position is closed, nor does it establish a borrowed liability.",
+      "correctAnswer": 0
+    },
+    "sha256": "ceb6292fff7f8b611992e72c4b7b421162298129579d30e45e60cd3f1078bbcd",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Selling owned spot units can reduce exposure and add net virtual cash. The explanation correctly separates avoiding a later decline from profiting on borrowed exposure.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The cash receipt is not profit from subsequently unowned exposure. With the specified sale, cash199.80 and one retained unit are separate from any later90quote.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858118+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q03",
+    "text": "A short thesis does not create a short position / q03",
+    "content": {
+      "prompt": "How should an educational short-sale example be labelled?",
+      "options": [
+        "A conceptual worksheet outside supported simulator orders",
+        "A live TradeHQ execution guide",
+        "A guaranteed way to profit from a decline"
+      ],
+      "explanation": "A lesson can explain short mechanics while clearly separating them from the available simulator. Borrowing costs, losses and execution constraints would also matter in a real short; a direction prediction alone is incomplete.",
+      "correctAnswer": 0
+    },
+    "sha256": "cef5aaced07628aaeaa334725ee7f4a5b443d5815b8181dfec083b3dd239219c",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The conceptual-worksheet label is correct. Neither a bearish prediction nor an educational example creates a real TradeHQ short or a guaranteed-profit feature.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The worksheet label explicitly keeps conceptual short mechanics outside supported orders and states that borrowing costs, losses and constraints matter. It does not equate education with executable platform functionality.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858119+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q04",
+    "text": "A short thesis does not create a short position / q04",
+    "content": {
+      "prompt": "In the owned-units branch, what is gross notional for selling two units at $100?",
+      "options": [
+        "$300",
+        "$100",
+        "$200"
+      ],
+      "explanation": "Two owned units multiplied by the $100 quote gives $200 sale notional. The third unit remains held unless a separate valid sell order includes it.",
+      "correctAnswer": 2
+    },
+    "sha256": "e31259cea24181f81299bec9c7c006d03fdbc2a92e333d2a43a353cc70a78809",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Two units at100 give200notional, with the third remaining held.300and100 are clear incorrect alternatives for this specified sale.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Two times100equals200. The incorrect300answer wrongly includes the retained third unit; the explanation keeps that unit separate.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858120+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q05",
+    "text": "A short thesis does not create a short position / q05",
+    "content": {
+      "prompt": "What fee applies to that $200 spot sale?",
+      "options": [
+        "$20",
+        "$0.20",
+        "$2"
+      ],
+      "explanation": "Multiply $200 by 0.001 to obtain $0.20. The fee is charged on sale notional rather than on the number of units or an assumed future decline.",
+      "correctAnswer": 1
+    },
+    "sha256": "037a2bd42796407572c5324c4d2948283c9e29054bbf2bcd03a2dc948f0d3e6a",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "200*0.001=0.20.20and2 are wrong fee magnitudes; fee base is sale notional, not unit count or later price change.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The0.1%fee is0.001times200=0.20, not2or20. This is the simulator's stipulated fee rather than a universal broker pricing claim.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858121+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q06",
+    "text": "A short thesis does not create a short position / q06",
+    "content": {
+      "prompt": "What net sale cash is received in the owned-units branch?",
+      "options": [
+        "$199.80",
+        "$200",
+        "$198"
+      ],
+      "explanation": "Subtract the $0.20 transaction fee from $200 gross sale value. Net proceeds enter cash and are separate from the mark of any units remaining.",
+      "correctAnswer": 0
+    },
+    "sha256": "fa3336c042a2a6395d431aad3dc4d316efd35a3c957978d6d615c8d870d74eb4",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "200-0.20=199.80net proceeds. This is cash from the two-unit sale, independent of a later mark on the retained unit.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The quoted199.80net amount follows200gross minus0.20fee. It is not rewritten when the remaining unit later changes mark.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858122+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q07",
+    "text": "A short thesis does not create a short position / q07",
+    "content": {
+      "prompt": "How many spot units remain after selling two of three owned units?",
+      "options": [
+        "Negative two units",
+        "Three units",
+        "One unit"
+      ],
+      "explanation": "Subtract the two sold units from the three previously owned. The result is one positive spot holding, not a borrowed short position.",
+      "correctAnswer": 2
+    },
+    "sha256": "e879ea4b97b14e8e57fb5d4aeb5c1e61314bea587ac8ed779e18646d55f95b5f",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Three minus two owned units leaves one positive holding, not a negative borrowed position.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "Three owned units minus two sold leaves one, so neither a negative-two short nor an unchanged three-unit answer fits the case.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858123+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q08",
+    "text": "A short thesis does not create a short position / q08",
+    "content": {
+      "prompt": "At a subsequent $90 quote, what is the remaining one-unit holding worth?",
+      "options": [
+        "$270",
+        "$90",
+        "$100"
+      ],
+      "explanation": "One remaining unit times $90 gives $90 marked value. The completed two-unit sale’s cash receipt is not rewritten by this later quote.",
+      "correctAnswer": 1
+    },
+    "sha256": "a6f5d2303d86ff1dd24c5a9837220fadee475c4fb5b1e7cb8ccf5e475f3f2a8d",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "One remaining unit times90 is90marked value. The earlier completed cash receipt is not retrospectively rewritten.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "At90, the remaining one unit is worth90.270would incorrectly retain all three units and100would ignore the specified mark change.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858124+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q09",
+    "text": "A short thesis does not create a short position / q09",
+    "content": {
+      "prompt": "What is the remaining holding’s change from its $100 pre-move mark?",
+      "options": [
+        "−$10",
+        "+$20",
+        "−$30"
+      ],
+      "explanation": "Only one unit remains exposed to the $10 quote decline. Reducing spot exposure avoids some further loss but does not create a separate gain from unowned short units.",
+      "correctAnswer": 0
+    },
+    "sha256": "c807d7644bbbe5d93651d0c11116ad98ec73a429515ec78ca63a7732ce19531e",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The remaining holding changes by1*(90-100)=-10. The two sold units no longer create exposure to this later move.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "From the retained unit's100mark to90is a10loss. Avoided exposure on two already-sold units is not a new borrowed-short profit.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858125+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-q10",
+    "text": "A short thesis does not create a short position / q10",
+    "content": {
+      "prompt": "Which feature would be required to profit directly from a new borrowed short position?",
+      "options": [
+        "A bearish Daily answer",
+        "A sell attempt with zero owned units",
+        "A product supporting borrowing and short exposure"
+      ],
+      "explanation": "Opening borrowed short exposure needs mechanics the simulator does not provide. A directional idea or invalid sale attempt cannot create that financial product.",
+      "correctAnswer": 2
+    },
+    "sha256": "c82d0890dbf19b5c6696ee779b82b9c402247f3a6587818de3ff128dae86232b",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "Borrowing/short exposure requires a product that supports those mechanics. The wording identifies a necessary capability and does not guarantee that any short would profit.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The feature answer states a necessary product capability, not a promise of profits from shorting. Neither a note nor an invalid sell attempt can manufacture that capability.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858127+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-takeaway",
+    "text": "A short thesis does not create a short position / takeaway",
+    "content": "Describe observation, a hypothetical worksheet or reducing an owned position with a manual sale. Do not promise a negative position, leverage or automated order execution that the simulator does not support.",
+    "sha256": "04cee177dc6e198c73d4f830dc464d620234a85e0706dc0fc3d3b4f04d04c092",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The guide correctly distinguishes observation, hypothetical worksheets and a manual sale of owned units. It promises no unsupported leverage, negative position or automated execution.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The guide remains within observation, a worksheet or a manual owned-unit sale. It does not introduce automation, leverage or negative positions inconsistent with the product.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858128+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-sources",
+    "text": "A short thesis does not create a short position / sources",
+    "content": [
+      {
+        "url": "https://www.investor.gov/introduction-investing",
+        "label": "Investor.gov — Investing basics"
+      }
+    ],
+    "sha256": "66ee5a4136537778363b2d62d83b8c895265ecbdf4ab47b83d3b4aca251fd284",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "Actual current public case with synthetic guest answer choices; no account/rank operation.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The reference names the official Investor.gov investing-basics resource. Destination/body/link verification remains a separate pending task; the label alone is not a source retrieval receipt.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The general Investor.gov reference supplies investing context; the product-specific facts are grounded in TradeHQ's reviewed mechanics. HTTP/destination verification is still explicitly pending rather than inferred from the official-looking URL.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858130+00:00"
+    }
+  },
+  {
+    "id": "STRICT-0011-DEEP-practice-19-unused-reflection",
+    "text": "A short thesis does not create a short position / unused-reflection",
+    "content": "Rewrite a bearish practice plan using only supported actions.",
+    "sha256": "8083b4a0a4ecec9337ae3d7c5751032f9d6061ad5bf01bd8642eea3aaea9cc88",
+    "contentReference": "published-bank.json#/exercises/41; production-current-complete-case.json",
+    "source": "src/components/DailyPractice.tsx; published approved Daily bank",
+    "sourceRevision": "411087a904458f596f41d9546647c4344232f6ff",
+    "scope": "SOURCE-ONLY unused bank prompt; not an observed available reflection feature.",
+    "pass1": {
+      "status": "REVIEWED",
+      "reason": "The source prompt is benign conceptual review, but it is not rendered in the completed current component. The false input/save claim is logged as STRICT-DAILY-004.",
+      "reviewer": "Codex assistant, substantive current-case first read"
+    },
+    "pass2": {
+      "status": "REVIEWED",
+      "reason": "The bank prompt itself is benign but is not exposed as a current input. This confirms the distinction behind STRICT-DAILY-004; a hidden stored field is not evidence that freeform notes can currently be entered.",
+      "reviewer": "Codex assistant; separate skeptical current-case/source and arithmetic reread",
+      "reviewedAtUTC": "2026-11-19T02:34:26.858131+00:00"
+    }
+  }
+]

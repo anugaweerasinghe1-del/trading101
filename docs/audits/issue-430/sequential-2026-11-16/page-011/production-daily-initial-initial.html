@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
+
+    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
+    <title>Daily Trading Challenge — Build Your Streak | TradeHQ</title>
+    <meta data-static-head name="description" content="A fictional daily scenario plus an optional 10-question case study with labelled visuals and worked explanations. 50 exercises rotate and may repeat." />
+
+    <meta name="author" content="TradeHQ" />
+    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />
+    <!-- Advertising requests are disabled pending verified site approval and a
+         reviewed inventory/consent/placement release. The account meta above
+         verifies ownership without executing ad code. Publication of a course
+         never enables ads. Optional analytics consent is a separate choice. -->
+    <meta data-static-head name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />
+    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />
+
+    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).
+         Homepage canonical is added by the prerender pass; do NOT hardcode
+         here or every subroute inherits it and dedupes to the homepage. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <meta name="theme-color" content="#0A0A0F" />
+
+    <!-- OPEN GRAPH (maximum shares) -->
+    <meta data-static-head property="og:type" content="website" />
+    <meta data-static-head property="og:site_name" content="TradeHQ" />
+    <meta data-static-head property="og:url" content="https://www.thetradehq.com/daily" />
+    <meta data-static-head property="og:title" content="Daily Trading Challenge — Build Your Streak | TradeHQ" />
+    <meta data-static-head property="og:description" content="A fictional daily scenario plus an optional 10-question case study with labelled visuals and worked explanations. 50 exercises rotate and may repeat." />
+    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+    <meta data-static-head property="og:locale" content="en_US" />
+
+    <!-- TWITTER CARD -->
+    <meta data-static-head name="twitter:card" content="summary_large_image" />
+    <meta data-static-head name="twitter:title" content="Daily Trading Challenge — Build Your Streak | TradeHQ" />
+    <meta data-static-head name="twitter:description" content="A fictional daily scenario plus an optional 10-question case study with labelled visuals and worked explanations. 50 exercises rotate and may repeat." />
+    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+
+    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->
+
+    <!-- SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": "https://www.thetradehq.com/about" },
+      "publisher": { "@type": "Organization", "name": "TradeHQ", "url": "https://www.thetradehq.com/" }
+    }
+    </script>
+
+    <!-- EducationalOrganization (kept — gives Google rich education cards) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Dkqscz1U.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C_scprEY.css">
+    <link rel="canonical" href="https://www.thetradehq.com/daily" data-static-head />
+  </head>
+
+  <body>
+    <div id="root"><div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
+    <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/" style="color:#00E396;">Home</a></li><li><a href="/markets" style="color:#00E396;">Markets</a></li><li><a href="/trade" style="color:#00E396;">Practice desk</a></li><li><a href="/courses" style="color:#00E396;">Courses</a></li><li><a href="/learn" style="color:#00E396;">Learn</a></li><li><a href="/wiki" style="color:#00E396;">Glossary</a></li><li><a href="/how-to-trade" style="color:#00E396;">Asset guides</a></li><li><a href="/strategy" style="color:#00E396;">Strategies</a></li><li><a href="/compare" style="color:#00E396;">Comparisons</a></li><li><a href="/about" style="color:#00E396;">About</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li></ul></nav>
+    <main><h1>Daily Trading Challenge</h1><article data-publisher-notes="/daily" aria-label="Learning and reference notes" style="max-width:820px;margin:0 auto;padding:40px 24px 100px;color:hsl(var(--foreground, 220 10% 80%));line-height:1.7;overflow-wrap:anywhere"><h2 style="font-size:1.6rem;color:hsl(var(--foreground, 220 10% 96%))">Learning notes: Daily Trading Challenge</h2><p>Practise a quick scenario or go deeper with a hypothetical case, labelled visual, 10 linked questions and worked explanations. 50 exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser.</p><p style="font-size:0.875rem">Published by TradeHQ, created by Anuga Weerasinghe. <a href="/about" style="text-decoration:underline">Publisher background and editorial approach</a>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">How the daily challenge works</h3><p>Daily offers a quick hypothetical market scenario alongside a longer ten-question case study. You choose a response, compare the reasoning and trade-offs, then answer a short bonus knowledge question about market basics. Completing the quick reasoning step or all ten case-study questions advances the browser-stored streak at most once per local day. Directional reflections are not forecast scores.</p><p>The scenario&#x27;s prices, news events and dates are exercise inputs, not a report of what happened in today&#x27;s markets. Choosing long, short or hold records a reflection; it does not place an order. Use the explanation to compare assumptions and uncertainty rather than treating completion as evidence of forecasting skill.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Using a daily habit to support review</h3><ul style="padding-left:24px"><li>Skill in trading comes from repetition and review, and both need frequency.</li><li>A small daily task is easier to sustain than a weekly marathon session.</li><li>Streaks make the boring parts — journaling, reviewing, sizing — habitual.</li><li>After a missed day, resume when your schedule allows; a streak is a participation aid, not a skill grade.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">A longer daily practice session</h3><p>The deeper exercise develops one case across ten linked questions, so the learner can calculate an input, interpret the result and identify a limitation. Topics rotate between portfolio arithmetic, transaction costs and supported orders, price-data freshness, risk and uncertainty, and decision habits. The visuals show selected hypothetical inputs with numeric labels; they are not live market charts. Worked explanations appear after each submitted answer, including when the answer was wrong.</p><p>An optional reflection asks you to explain the case in your own words. Its review guide helps you check the reasoning without sending your note to an AI grader. Answers and reflections are saved on this browser, and the started exercise keeps its own snapshot if a new bank is approved while you are working. Clearing site data removes this local history; an account does not synchronize these notes to another device.</p><p>A new 50-exercise bank is prepared every two calendar months in five parts using the configured free-tier Gemini API. Each completed bank remains private and editable in the owner’s admin panel until final review and approval. If generation hits a quota limit, fails validation or awaits review, the approved bank continues rotating. Fifty exercises can therefore repeat before the next bank begins; revisits are review practice rather than a claim of brand-new daily content. The feature does not use a paid provider fallback.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">What the challenges cover</h3><ul style="padding-left:24px"><li>A hypothetical market scenario with stated exercise inputs, rather than current market news.</li><li>Comparing long, short and hold reasoning without grading one market direction as objectively correct.</li><li>A bank of 50 deeper exercises, each with a substantial hypothetical case, a labelled visual and ten linked questions with worked explanations.</li><li>The existing short bonus quiz plus an optional longer reflection and a review guide.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">How the streak is counted</h3><p>A streak advances once per calendar day in your own local time zone, so completing a challenge late one evening and early the next morning still counts as two consecutive days. The counter lives in your browser, which means clearing site data resets it and using a different device starts a separate count even when you have an account; sign-in does not back up local streaks.</p><p>There is no penalty for missing a day beyond the counter resetting, and longer streaks unlock browser-local completion badges, not prizes or qualifications. Nothing about the challenge involves money, prizes or entry fees.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">If you miss a day</h3><p>Nothing bad happens beyond the counter going back to one. The purpose of the streak is to make practice frequent, not to punish a missed evening, and restarting after a gap is the normal experience rather than a failure. The counter is not a judgment about you or a measurement of future returns.</p><p>If daily practice does not fit your schedule, choose a workable review rhythm. A record of what you learned is more informative than a raw session count.</p></section><nav aria-label="Learning notes references"><h3 style="font-size:1.2rem;margin-top:28px">References and related pages</h3><ul style="padding-left:24px"><li><a href="/trade" style="color:inherit;text-decoration:underline">Practice desk</a></li><li><a href="/wiki" style="color:inherit;text-decoration:underline">Glossary</a></li><li><a href="/challenge" style="color:inherit;text-decoration:underline">Challenge a friend</a></li></ul></nav><p style="font-size:0.875rem;margin-top:28px">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p></article></main>
+    <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/about" style="color:#00E396;">About TradeHQ</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li><li><a href="/privacy" style="color:#00E396;">Privacy policy</a></li><li><a href="/terms" style="color:#00E396;">Terms of service</a></li><li><a href="/whats-new" style="color:#00E396;">What’s New</a></li><li><a href="/roadmap" style="color:#00E396;">Roadmap</a></li><li><a href="/learn/country" style="color:#00E396;">Country guides</a></li></ul></footer>
+  </div></div>
+  <script id="publisher-notes-data" type="application/json">{"path":"/daily","heading":"Daily Trading Challenge","summary":"Practise a quick scenario or go deeper with a hypothetical case, labelled visual, 10 linked questions and worked explanations. 50 exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser.","sections":[{"h":"How the daily challenge works","p":["Daily offers a quick hypothetical market scenario alongside a longer ten-question case study. You choose a response, compare the reasoning and trade-offs, then answer a short bonus knowledge question about market basics. Completing the quick reasoning step or all ten case-study questions advances the browser-stored streak at most once per local day. Directional reflections are not forecast scores.","The scenario's prices, news events and dates are exercise inputs, not a report of what happened in today's markets. Choosing long, short or hold records a reflection; it does not place an order. Use the explanation to compare assumptions and uncertainty rather than treating completion as evidence of forecasting skill."]},{"h":"Using a daily habit to support review","list":["Skill in trading comes from repetition and review, and both need frequency.","A small daily task is easier to sustain than a weekly marathon session.","Streaks make the boring parts — journaling, reviewing, sizing — habitual.","After a missed day, resume when your schedule allows; a streak is a participation aid, not a skill grade."]},{"h":"A longer daily practice session","p":["The deeper exercise develops one case across ten linked questions, so the learner can calculate an input, interpret the result and identify a limitation. Topics rotate between portfolio arithmetic, transaction costs and supported orders, price-data freshness, risk and uncertainty, and decision habits. The visuals show selected hypothetical inputs with numeric labels; they are not live market charts. Worked explanations appear after each submitted answer, including when the answer was wrong.","An optional reflection asks you to explain the case in your own words. Its review guide helps you check the reasoning without sending your note to an AI grader. Answers and reflections are saved on this browser, and the started exercise keeps its own snapshot if a new bank is approved while you are working. Clearing site data removes this local history; an account does not synchronize these notes to another device.","A new 50-exercise bank is prepared every two calendar months in five parts using the configured free-tier Gemini API. Each completed bank remains private and editable in the owner’s admin panel until final review and approval. If generation hits a quota limit, fails validation or awaits review, the approved bank continues rotating. Fifty exercises can therefore repeat before the next bank begins; revisits are review practice rather than a claim of brand-new daily content. The feature does not use a paid provider fallback."]},{"h":"What the challenges cover","list":["A hypothetical market scenario with stated exercise inputs, rather than current market news.","Comparing long, short and hold reasoning without grading one market direction as objectively correct.","A bank of 50 deeper exercises, each with a substantial hypothetical case, a labelled visual and ten linked questions with worked explanations.","The existing short bonus quiz plus an optional longer reflection and a review guide."]},{"h":"How the streak is counted","p":["A streak advances once per calendar day in your own local time zone, so completing a challenge late one evening and early the next morning still counts as two consecutive days. The counter lives in your browser, which means clearing site data resets it and using a different device starts a separate count even when you have an account; sign-in does not back up local streaks.","There is no penalty for missing a day beyond the counter resetting, and longer streaks unlock browser-local completion badges, not prizes or qualifications. Nothing about the challenge involves money, prizes or entry fees."]},{"h":"If you miss a day","p":["Nothing bad happens beyond the counter going back to one. The purpose of the streak is to make practice frequent, not to punish a missed evening, and restarting after a gap is the normal experience rather than a failure. The counter is not a judgment about you or a measurement of future returns.","If daily practice does not fit your schedule, choose a workable review rhythm. A record of what you learned is more informative than a raw session count."]}],"links":[{"href":"/trade","label":"Practice desk"},{"href":"/wiki","label":"Glossary"},{"href":"/challenge","label":"Challenge a friend"}]}</script><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1d431bc5969944b4b6489c3d4c788298"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
