@@ -1,0 +1,35 @@
+{
+  "scope": "Disposable guest PEPE orders and explicitly unverified zero-value file imports. Same-origin GET only; no provider or account operation.",
+  "rows": [
+    {
+      "width": 390,
+      "kind": "small-price",
+      "atUTC": "2026-11-19T01:41:56.536881+00:00",
+      "storedPrice": 3.88e-06,
+      "positions": "Positions\nPEPE\nCRYPTO\n\nPepe\n\nChecking quote source…\n-0.10%\n\nEntry\n\n$0.00000388388\n\nCurrent\n\n$0.00000388\n\nQty\n\n100000\n\nValue\n\n$0.3880\n\nP&L\n\n$-0.0004",
+      "scenario": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nPEPE\n100000\n$0.00000388\n$0.000004268\n+10.0%"
+    },
+    {
+      "width": 390,
+      "kind": "zero-value",
+      "atUTC": "2026-11-19T01:41:52.844756+00:00",
+      "restoredUnverifiedGuest": true,
+      "riskAssessment": "Risk Assessment\nOpen P&L Dispersion\n0.00 percentage points\n\nSpread of current open-position returns around their average; this is not time-series volatility or a Sharpe ratio.\n\nCash Reserve\n0.0%\n\nCash reserve is shown descriptively only; TradeHQ does not prescribe a target cash percentage."
+    },
+    {
+      "width": 1440,
+      "kind": "small-price",
+      "atUTC": "2026-11-19T01:41:56.178007+00:00",
+      "storedPrice": 3.88e-06,
+      "positions": "Positions\nASSET\tENTRY\tCURRENT\tQTY\tCOST BASIS\tVALUE\tP&L\tRETURN\n\nPEPE\nCRYPTO\nPepe\nChecking quote source…\n\t$0.00000388388\t$0.00000388\t100000\t$0.3884\t$0.3880\t$-0.0004\t\n-0.10%",
+      "scenario": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nPEPE\n100000\n$0.00000388\n$0.000004268\n+10.0%"
+    },
+    {
+      "width": 1440,
+      "kind": "zero-value",
+      "atUTC": "2026-11-19T01:41:52.436952+00:00",
+      "restoredUnverifiedGuest": true,
+      "riskAssessment": "Risk Assessment\nOpen P&L Dispersion\n0.00 percentage points\n\nSpread of current open-position returns around their average; this is not time-series volatility or a Sharpe ratio.\n\nCash Reserve\n0.0%\n\nCash reserve is shown descriptively only; TradeHQ does not prescribe a target cash percentage."
+    }
+  ]
+}

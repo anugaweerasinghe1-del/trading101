@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
+
+    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
+    <title>Your Practice Portfolio — Positions, P&amp;L, Analytics | TradeHQ</title>
+    <meta data-static-head name="description" content="Track simulated positions, realised and unrealised P&amp;L, max drawdown, open-position P&amp;L dispersion and allocation snapshots." />
+
+    <meta name="author" content="TradeHQ" />
+    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />
+    <!-- Advertising requests are disabled pending verified site approval and a
+         reviewed inventory/consent/placement release. The account meta above
+         verifies ownership without executing ad code. Publication of a course
+         never enables ads. Optional analytics consent is a separate choice. -->
+    <meta data-static-head name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />
+    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />
+
+    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).
+         Homepage canonical is added by the prerender pass; do NOT hardcode
+         here or every subroute inherits it and dedupes to the homepage. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <meta name="theme-color" content="#0A0A0F" />
+
+    <!-- OPEN GRAPH (maximum shares) -->
+    <meta data-static-head property="og:type" content="website" />
+    <meta data-static-head property="og:site_name" content="TradeHQ" />
+    <meta data-static-head property="og:url" content="https://www.thetradehq.com/portfolio" />
+    <meta data-static-head property="og:title" content="Your Practice Portfolio — Positions, P&amp;L, Analytics | TradeHQ" />
+    <meta data-static-head property="og:description" content="Track simulated positions, realised and unrealised P&amp;L, max drawdown, open-position P&amp;L dispersion and allocation snapshots." />
+    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+    <meta data-static-head property="og:locale" content="en_US" />
+
+    <!-- TWITTER CARD -->
+    <meta data-static-head name="twitter:card" content="summary_large_image" />
+    <meta data-static-head name="twitter:title" content="Your Practice Portfolio — Positions, P&amp;L, Analytics | TradeHQ" />
+    <meta data-static-head name="twitter:description" content="Track simulated positions, realised and unrealised P&amp;L, max drawdown, open-position P&amp;L dispersion and allocation snapshots." />
+    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+
+    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->
+
+    <!-- SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": "https://www.thetradehq.com/about" },
+      "publisher": { "@type": "Organization", "name": "TradeHQ", "url": "https://www.thetradehq.com/" }
+    }
+    </script>
+
+    <!-- EducationalOrganization (kept — gives Google rich education cards) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-Dkqscz1U.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C_scprEY.css">
+    <link rel="canonical" href="https://www.thetradehq.com/portfolio" data-static-head />
+  </head>
+
+  <body>
+    <div id="root"><div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
+    <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/" style="color:#00E396;">Home</a></li><li><a href="/markets" style="color:#00E396;">Markets</a></li><li><a href="/trade" style="color:#00E396;">Practice desk</a></li><li><a href="/courses" style="color:#00E396;">Courses</a></li><li><a href="/learn" style="color:#00E396;">Learn</a></li><li><a href="/wiki" style="color:#00E396;">Glossary</a></li><li><a href="/how-to-trade" style="color:#00E396;">Asset guides</a></li><li><a href="/strategy" style="color:#00E396;">Strategies</a></li><li><a href="/compare" style="color:#00E396;">Comparisons</a></li><li><a href="/about" style="color:#00E396;">About</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li></ul></nav>
+    <main><h1>Practice Portfolio</h1><article data-publisher-notes="/portfolio" aria-label="Learning and reference notes" style="max-width:820px;margin:0 auto;padding:40px 24px 100px;color:hsl(var(--foreground, 220 10% 80%));line-height:1.7;overflow-wrap:anywhere"><h2 style="font-size:1.6rem;color:hsl(var(--foreground, 220 10% 96%))">Learning notes: Practice Portfolio</h2><p>Review simulated positions, trades, P&amp;L, drawdown and allocation snapshots. Guest records stay in your browser; account cash, positions and server-recorded trades restore when the service is available. Server-recorded account trades restore across devices; earlier guest history and journals remain browser-held.</p><p style="font-size:0.875rem">Published by TradeHQ, created by Anuga Weerasinghe. <a href="/about" style="text-decoration:underline">Publisher background and editorial approach</a>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">What the practice portfolio tracks</h3><p>The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser&#x27;s history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.</p><p>Beyond raw P&amp;L, the page calculates fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. These summarize recorded outcomes and exposures that can help you review your practice process. The chart can include generated history; it is not a verified sequence of account observations.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">How to read your own numbers honestly</h3><ul style="padding-left:24px"><li>Compare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.</li><li>Maximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.</li><li>A short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.</li><li>If one position drives most of the return, you learned about that position, not about your method.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Why results here do not transfer one-to-one</h3><p>The simulator applies a 0.1% practice transaction fee, rather than a real broker fee schedule. It does not model financing costs, taxes or actual market execution. Review practice results alongside these limits; they do not predict real-money results.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">The metrics explained in plain language</h3><ul style="padding-left:24px"><li>Unrealised P&amp;L: the difference between an open position&#x27;s current marked value and its cost basis. Closing the position turns that unrealised result into realised P&amp;L. All balances and results here remain virtual.</li><li>Realised P&amp;L: the result of trades you have actually closed. This is the number that measures decisions you finished making.</li><li>Open positions in profit: the share of current open positions showing positive unrealised P&amp;L. This is not a closed-trade win rate.</li><li>Open-position P&amp;L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.</li><li>Practice maximum drawdown: the largest fall from a peak in locally stored snapshots, which can include generated hourly backfill. It is not an observed market record or proof that a strategy is survivable.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Reviewing the portfolio weekly</h3><p>Choose a repeatable review interval for virtual results and compare the information recorded before each order with what became known later. A loss alone cannot establish whether the original reasoning was sound.</p><p>Compare the largest virtual gain with its position size, price change, quotation source and costs. A large one-off outcome does not by itself establish skill or predict a similar future result.</p></section><nav aria-label="Learning notes references"><h3 style="font-size:1.2rem;margin-top:28px">References and related pages</h3><ul style="padding-left:24px"><li><a href="/trade" style="color:inherit;text-decoration:underline">Place a practice trade</a></li><li><a href="/learn-trading-guide" style="color:inherit;text-decoration:underline">Risk management guide</a></li><li><a href="/wiki/drawdown" style="color:inherit;text-decoration:underline">What drawdown means</a></li></ul></nav><p style="font-size:0.875rem;margin-top:28px">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p></article></main>
+    <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/about" style="color:#00E396;">About TradeHQ</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li><li><a href="/privacy" style="color:#00E396;">Privacy policy</a></li><li><a href="/terms" style="color:#00E396;">Terms of service</a></li><li><a href="/whats-new" style="color:#00E396;">What’s New</a></li><li><a href="/roadmap" style="color:#00E396;">Roadmap</a></li><li><a href="/learn/country" style="color:#00E396;">Country guides</a></li></ul></footer>
+  </div></div>
+  <script id="publisher-notes-data" type="application/json">{"path":"/portfolio","heading":"Practice Portfolio","summary":"Review simulated positions, trades, P&L, drawdown and allocation snapshots. Guest records stay in your browser; account cash, positions and server-recorded trades restore when the service is available. Server-recorded account trades restore across devices; earlier guest history and journals remain browser-held.","sections":[{"h":"What the practice portfolio tracks","p":["The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser's history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.","Beyond raw P&L, the page calculates fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. These summarize recorded outcomes and exposures that can help you review your practice process. The chart can include generated history; it is not a verified sequence of account observations."]},{"h":"How to read your own numbers honestly","list":["Compare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.","Maximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.","A short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.","If one position drives most of the return, you learned about that position, not about your method."]},{"h":"Why results here do not transfer one-to-one","p":["The simulator applies a 0.1% practice transaction fee, rather than a real broker fee schedule. It does not model financing costs, taxes or actual market execution. Review practice results alongside these limits; they do not predict real-money results."]},{"h":"The metrics explained in plain language","list":["Unrealised P&L: the difference between an open position's current marked value and its cost basis. Closing the position turns that unrealised result into realised P&L. All balances and results here remain virtual.","Realised P&L: the result of trades you have actually closed. This is the number that measures decisions you finished making.","Open positions in profit: the share of current open positions showing positive unrealised P&L. This is not a closed-trade win rate.","Open-position P&L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.","Practice maximum drawdown: the largest fall from a peak in locally stored snapshots, which can include generated hourly backfill. It is not an observed market record or proof that a strategy is survivable."]},{"h":"Reviewing the portfolio weekly","p":["Choose a repeatable review interval for virtual results and compare the information recorded before each order with what became known later. A loss alone cannot establish whether the original reasoning was sound.","Compare the largest virtual gain with its position size, price change, quotation source and costs. A large one-off outcome does not by itself establish skill or predict a similar future result."]}],"links":[{"href":"/trade","label":"Place a practice trade"},{"href":"/learn-trading-guide","label":"Risk management guide"},{"href":"/wiki/drawdown","label":"What drawdown means"}]}</script><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1d431bc5969944b4b6489c3d4c788298"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

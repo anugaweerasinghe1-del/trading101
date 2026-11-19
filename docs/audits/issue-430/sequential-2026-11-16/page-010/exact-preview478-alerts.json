@@ -1,0 +1,111 @@
+{
+  "scope": "Disposable guest browser; same-origin GET, synthetic quote responses and in-memory Notification stand-in. No real accounts, alerts or provider requests.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T10:06:39.549435+00:00",
+      "enabled": false,
+      "control": "Alerts",
+      "browserNotifications": [],
+      "milestoneToastCount": 0,
+      "milestoneReached": true,
+      "visibleRefreshCopy": "Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+      "quoteFixture": [
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:37.326840+00:00",
+          "observed_at": "2026-11-18T10:06:37.326840+00:00",
+          "quote_status": "provider"
+        },
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:39.012925+00:00",
+          "observed_at": "2026-11-18T10:06:39.012925+00:00",
+          "quote_status": "provider"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "atUTC": "2026-11-18T10:06:38.399712+00:00",
+      "enabled": true,
+      "control": "Alerts On",
+      "browserNotifications": [
+        {
+          "title": "📈 Portfolio Milestone: +10%",
+          "body": "Your portfolio is now worth $124449.48 (+$24475.00)"
+        }
+      ],
+      "milestoneToastCount": 1,
+      "milestoneReached": true,
+      "visibleRefreshCopy": "Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+      "quoteFixture": [
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:38.021404+00:00",
+          "observed_at": "2026-11-18T10:06:38.021404+00:00",
+          "quote_status": "provider"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T10:06:38.949884+00:00",
+      "enabled": false,
+      "control": "Alerts",
+      "browserNotifications": [],
+      "milestoneToastCount": 0,
+      "milestoneReached": true,
+      "visibleRefreshCopy": "Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+      "quoteFixture": [
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:36.896280+00:00",
+          "observed_at": "2026-11-18T10:06:36.896280+00:00",
+          "quote_status": "provider"
+        },
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:38.533334+00:00",
+          "observed_at": "2026-11-18T10:06:38.533334+00:00",
+          "quote_status": "provider"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-18T10:06:37.951301+00:00",
+      "enabled": true,
+      "control": "Alerts On",
+      "browserNotifications": [
+        {
+          "title": "📈 Portfolio Milestone: +10%",
+          "body": "Your portfolio is now worth $124449.48 (+$24475.00)"
+        }
+      ],
+      "milestoneToastCount": 1,
+      "milestoneReached": true,
+      "visibleRefreshCopy": "Confirmed virtual trades update cash, holdings and trade history immediately. Guest records stay in this browser, and holding prices can refresh while TradeHQ is open. Signed-in accounts sync about every minute while TradeHQ is open and when relevant server updates arrive. The server checks supported account holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.",
+      "quoteFixture": [
+        {
+          "asset_id": "aapl",
+          "price": 500,
+          "source": "synthetic-audit-fixture",
+          "updated_at": "2026-11-18T10:06:37.340294+00:00",
+          "observed_at": "2026-11-18T10:06:37.340294+00:00",
+          "quote_status": "provider"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "pageId": "STRICT-0010",
+  "url": "https://www.thetradehq.com/portfolio",
+  "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+  "pageStatus": "FIXED-RECHECKED",
+  "strictPageClosure": true,
+  "closureCredit": 1,
+  "firstPass": 161,
+  "secondPass": 161,
+  "rawCaptures": [
+    {
+      "file": "production-portfolio-guest-capture-0.json",
+      "atUTC": "2026-11-18T09:41:48.036938+00:00",
+      "layout": "390px dark",
+      "javaScript": false,
+      "rawOccurrences": 48,
+      "expandedFAQCount": 0,
+      "artifactSHA256": "efd6cf3ff824f30273a2fc6c17a1df1218fb42d6d341fd199daa1b0bbe4a6c36",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-1.json",
+      "atUTC": "2026-11-18T09:42:03.668141+00:00",
+      "layout": "390px light",
+      "javaScript": true,
+      "rawOccurrences": 629,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "c56c74bc05fae5291af7a1691ef35119f2cb140c3a668fb3dd9cda43e8aefb41",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-2.json",
+      "atUTC": "2026-11-18T09:41:55.423363+00:00",
+      "layout": "1440px dark",
+      "javaScript": true,
+      "rawOccurrences": 631,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "790744461517cbf5b84472060235dde7b33e9a3a7b079a63a97506f326b7be7e",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-3.json",
+      "atUTC": "2026-11-18T09:41:55.755214+00:00",
+      "layout": "1440px light",
+      "javaScript": true,
+      "rawOccurrences": 630,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "e239423f34b2cfa8dacc4276ba97281ac5bb3f95a3e5676f46918d8d5982f533",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    },
+    {
+      "file": "production-portfolio-guest-capture-4.json",
+      "atUTC": "2026-11-18T09:41:55.638254+00:00",
+      "layout": "390px dark",
+      "javaScript": true,
+      "rawOccurrences": 631,
+      "expandedFAQCount": 3,
+      "artifactSHA256": "b3e195b3a9aacb3f4faac880cb417b2a7e5921670259beb996cfd0983a574a81",
+      "responseSHA256": "5109fa2893e50a706c467279795a5492b6e13d53894f0c224001fc4911f74ac3"
+    }
+  ],
+  "findings": [
+    "STRICT-PORTFOLIO-001",
+    "STRICT-PORTFOLIO-002",
+    "STRICT-PORTFOLIO-003",
+    "STRICT-PORTFOLIO-004",
+    "STRICT-PORTFOLIO-005",
+    "STRICT-PORTFOLIO-006",
+    "STRICT-PORTFOLIO-007",
+    "STRICT-PORTFOLIO-008",
+    "STRICT-PORTFOLIO-009",
+    "STRICT-PORTFOLIO-010",
+    "STRICT-PORTFOLIO-011"
+  ],
+  "confirmedProductDefectsReproduced": 11,
+  "confirmedProductDefectsProductionVerified": 11,
+  "nextAction": "Proceed to P11 /daily; preserve its prior supplementary judgments, verify #455 history and complete missing strict text/state coverage.",
+  "scope": "Current unmodified production in five public guest views, with separate controlled notification and quote fixtures. Raw occurrences give no editorial credit.",
+  "qualityRisks": [
+    {
+      "id": "STRICT-PORTFOLIO-RISK-001",
+      "block": "STRICT-0010-BLOCK-0006",
+      "status": "FIXED-RECHECKED",
+      "scope": "The text describes measurements of outcomes as measurements of a process.",
+      "receipt": "RELEASE-482.json"
+    },
+    {
+      "id": "STRICT-PORTFOLIO-RISK-002",
+      "block": "STRICT-0010-BLOCK-0015",
+      "status": "FIXED-RECHECKED",
+      "scope": "The local curriculum uses money where gains and losses are always virtual.",
+      "receipt": "RELEASE-482.json"
+    }
+  ],
+  "historicalDisposition": {
+    "id": "IND-P10-001",
+    "status": "SUBJECTIVE; NO CONFIRMED DEFECT",
+    "source": "../../independent-2026-11-17/LIVE-BROWSER-RESULTS.md"
+  },
+  "candidatePR": {
+    "number": 478,
+    "headSHA": "d54b98f4a6826bc177a3aa80dcef2eff613ab58a",
+    "status": "FIXED-RECHECKED",
+    "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/478",
+    "findingIds": [
+      "STRICT-PORTFOLIO-001",
+      "STRICT-PORTFOLIO-002"
+    ],
+    "previewURL": "https://529207a0.tradehq-preview.pages.dev",
+    "hostedEvidence": "exact-preview478-alerts.json",
+    "mergeSHA": "04f853729f2cf46e9223866251c5fa71c9e540a6",
+    "receipt": "RELEASE-478.json"
+  },
+  "beforeEditIssueComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6974926389",
+  "localCandidateEvidence": "local-candidate-alerts.json",
+  "localScenarioCandidate": {
+    "commitSHA": "0b59b4c4b867dfaa0411482a50ec391ca1364268",
+    "report": "FINDINGS-BEFORE.md",
+    "beforeIssue": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975244810",
+    "localEvidence": "local-scenario-scenario.json",
+    "pendingBlocks": [
+      "STRICT-0010-BLOCK-0035",
+      "STRICT-0010-BLOCK-0037"
+    ]
+  },
+  "scenarioPR": {
+    "number": 479,
+    "headSHA": "73ef82c1d9ba8d15fc8b30ebe5d9ae5e79efdc63",
+    "status": "FIXED-RECHECKED",
+    "previewURL": "https://30a11869.tradehq-preview.pages.dev",
+    "hostedEvidence": "exact-preview479-scenario.json",
+    "mergeSHA": "939cbc2ae3b9338e7eb79a296ae19d6d5b13b5c4",
+    "mainWorkflow": 44285375247,
+    "receipt": "RELEASE-479.json"
+  },
+  "guestAndAccountFixtureEvidence": [
+    "production-current-guest-recovery.json",
+    "local-signed-portfolio.json"
+  ],
+  "latestApplicationRelease": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+  "existingRootExtensions": [
+    "STRICT-TRADE-018-PORTFOLIO-EXTENSION",
+    "STRICT-TRADE-019-PORTFOLIO-EXTENSION"
+  ],
+  "controlsPR": {
+    "number": 480,
+    "status": "FIXED-RECHECKED",
+    "beforeEditComments": [
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975692434",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975870097",
+      "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6975934096"
+    ],
+    "headSHA": "5f5af206a8239189e890923dd6a13a4a1073d9fa",
+    "requiredWorkflow": 44287163060,
+    "localEvidence": [
+      "local-final480-ticker.json",
+      "local-final480-ticker.json",
+      "local-final480-chart-access.json",
+      "local-final480-baseline.json"
+    ],
+    "pendingBlocks": [],
+    "mergeSHA": "232e7daa3162e949186709036ccda8a83826a342",
+    "mainWorkflow": 44337762133,
+    "receipt": "RELEASE-480.json"
+  },
+  "mentorScope": {
+    "fullyReadRecords": 13,
+    "evidence": "production-current-mentor.json",
+    "sharedTopicSource": "The unchanged fallback topic library retains the previously reviewed P09 word-level evidence."
+  },
+  "quantityPR": {
+    "number": 481,
+    "headSHA": "6a67ac28b82e1a650344a7a3ff8c3e3115e79cd1",
+    "status": "FIXED-RECHECKED",
+    "pendingBlock": "STRICT-0010-BLOCK-0093",
+    "beforeEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6986272793",
+    "localEvidence": "local-quantity-tiny-position.json",
+    "mergeSHA": "f0870e5083b8db0400a539b90b64a8d7c909cd9c",
+    "receipt": "RELEASE-481.json"
+  },
+  "sourceOnlyRecoveryErrorRecords": 10,
+  "currentFragmentCrosswalk": "CURRENT-FRAGMENT-CROSSWALK.json",
+  "remainingReview": [],
+  "finalCopyPR": {
+    "number": 482,
+    "headSHA": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+    "status": "FIXED-RECHECKED",
+    "pendingBlocks": [],
+    "beforeEditEvidence": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6996292975",
+    "mergeSHA": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+    "exactRequiredChecks": "PR482-REQUIRED-CHECKS.json",
+    "mergedAtUTC": "2026-11-19T01:30:09Z",
+    "receipt": "RELEASE-482.json"
+  },
+  "sourceOnlyAdditionalRecords": 21,
+  "sourceAndControlCrosswalk": "SOURCE-STATE-CROSSWALK.json",
+  "closedAtUTC": "2026-11-19T01:45:09.167796+00:00",
+  "pageRecord": "PAGE-RECORD.json",
+  "finalRawOccurrences": 2580,
+  "finalRawGroups": 380,
+  "rawUnreconciledGroups": 0,
+  "finalRawTrace": "PRODUCTION482-RAW-TIEOUT.json",
+  "ledgerValidation": "LEDGER-VALIDATION-482.json",
+  "sourceOnlyAlternativeRecords": 34,
+  "finalCaptures": [
+    {
+      "file": "production482-capture-0.json",
+      "atUTC": "2026-11-19T01:41:37.065304+00:00",
+      "layout": "390px dark",
+      "javaScript": false,
+      "rawOccurrences": 48,
+      "artifactSHA256": "fc4d5b5ac083cc4f69dfcf2d1ef723b6b17af869c984c1c4655d00c351b49d7e",
+      "responseSHA256": "0c5fabcc551ccc023a8a743094af53fdd5b7737404a4c9e61ebce243e3d18f22"
+    },
+    {
+      "file": "production482-capture-1.json",
+      "atUTC": "2026-11-19T01:41:53.445221+00:00",
+      "layout": "390px light",
+      "javaScript": true,
+      "rawOccurrences": 632,
+      "artifactSHA256": "92747009638ed363c6eb6dd27f8f49586fc908a5a088e42b228d477c3a05b081",
+      "responseSHA256": "0c5fabcc551ccc023a8a743094af53fdd5b7737404a4c9e61ebce243e3d18f22"
+    },
+    {
+      "file": "production482-capture-2.json",
+      "atUTC": "2026-11-19T01:41:45.171339+00:00",
+      "layout": "1440px dark",
+      "javaScript": true,
+      "rawOccurrences": 634,
+      "artifactSHA256": "8c8e23be86514fbe658ab2430cf43becb2e832879959e64e3bf84528983632c0",
+      "responseSHA256": "0c5fabcc551ccc023a8a743094af53fdd5b7737404a4c9e61ebce243e3d18f22"
+    },
+    {
+      "file": "production482-capture-3.json",
+      "atUTC": "2026-11-19T01:41:47.028788+00:00",
+      "layout": "1440px light",
+      "javaScript": true,
+      "rawOccurrences": 633,
+      "artifactSHA256": "6bf2357db08a77cd059a957b786b9894bd32b10a03050d23ed41ae2b80634857",
+      "responseSHA256": "0c5fabcc551ccc023a8a743094af53fdd5b7737404a4c9e61ebce243e3d18f22"
+    },
+    {
+      "file": "production482-capture-4.json",
+      "atUTC": "2026-11-19T01:41:45.618175+00:00",
+      "layout": "390px dark",
+      "javaScript": true,
+      "rawOccurrences": 633,
+      "artifactSHA256": "e3995a5bb3fc22a01054a15f190ca1836ef2b34d8060a082ba39cbce6106ba77",
+      "responseSHA256": "0c5fabcc551ccc023a8a743094af53fdd5b7737404a4c9e61ebce243e3d18f22"
+    }
+  ]
+}

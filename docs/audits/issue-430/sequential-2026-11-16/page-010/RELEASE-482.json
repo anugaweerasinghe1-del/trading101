@@ -1,0 +1,107 @@
+{
+  "pr": 482,
+  "headSHA": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+  "mergeSHA": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+  "mergedAt": "2026-11-19T01:30:09Z",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-19T01:40:59.420Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "4789f353-a41a-4f71-a209-04200f93048c",
+      "sha": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-19T01:30:10.924772Z"
+    },
+    "sourceGitHubRun": 44437371573,
+    "sourceGitHubJob": 135273930958
+  },
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135269002107,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44435920101/job/135269002107"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135265070189,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/d6b1a0ac-0646-441d-bbae-833ba82d8dd9"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135264634573,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44435920101/job/135264634573"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135264634120,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44435920101/job/135264634120"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "58486b806e26183a2adcfb2be5c8c81aec0ec6b0",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135264633989,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44435920090/job/135264633989"
+    }
+  ],
+  "headAndMergeTreeSHA": "0a3ac27768a1de4352a080dfa525ac64a53bdd52",
+  "liveEvidence": [
+    {
+      "file": "production482-final-scenario-targets.json",
+      "sha256": "ebd3f0a79c112a80ae0326cf4e8f2aae66e772143c91b4956040092a68269854",
+      "observedAtUTC": [
+        "2026-11-19T01:41:22.233662+00:00",
+        "2026-11-19T01:41:21.724398+00:00"
+      ]
+    },
+    {
+      "file": "production482-final-final-copy-journal.json",
+      "sha256": "0d093246727eef9c76404710d578630dea5bac1211843821a1a28a3a6409fb8d",
+      "observedAtUTC": [
+        "2026-11-19T01:41:42.511026+00:00",
+        "2026-11-19T01:41:41.463557+00:00"
+      ]
+    },
+    {
+      "file": "production482-final-price-zero.json",
+      "sha256": "5770095646f279b64ba08aaf22973b3ede8f3635e13fa26fd81fcd689b4838b5",
+      "observedAtUTC": [
+        "2026-11-19T01:41:56.536881+00:00",
+        "2026-11-19T01:41:52.844756+00:00",
+        "2026-11-19T01:41:56.178007+00:00",
+        "2026-11-19T01:41:52.436952+00:00"
+      ]
+    }
+  ],
+  "liveRereadAtUTC": "2026-11-19T01:41:56.536881+00:00",
+  "nativeReceiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44437371573/job/135273930958",
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-PORTFOLIO-008",
+    "STRICT-PORTFOLIO-009",
+    "STRICT-PORTFOLIO-010",
+    "STRICT-PORTFOLIO-011"
+  ],
+  "qualityRisks": [
+    "STRICT-PORTFOLIO-RISK-001",
+    "STRICT-PORTFOLIO-RISK-002"
+  ],
+  "scope": "Actual custom-domain guest UI after native API observation. All orders/files are disposable local practice; quotes and notification APIs are isolated as stated. Private account copy labels retain unchanged tested source and loopback fixtures, not private production execution."
+}

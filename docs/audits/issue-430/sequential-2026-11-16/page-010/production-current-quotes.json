@@ -1,0 +1,257 @@
+{
+  "scope": "Public guest asset valuation with controlled synthetic shared cache results. No provider or authenticated request leaves the browser.",
+  "rows": [
+    {
+      "width": 390,
+      "state": "provider",
+      "atUTC": "2026-11-18T10:45:36.816666+00:00",
+      "label": "Provider snapshot",
+      "title": "Recent provider snapshot; not a streaming quote · Fetched 11/18/2026, 10:44:36 AM",
+      "ariaLabel": "Quote status: Recent provider snapshot; not a streaming quote",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:36.231739+00:00",
+              "observed_at": "2026-11-18T10:43:36.231739+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "previous_close",
+      "atUTC": "2026-11-18T10:45:36.996861+00:00",
+      "label": "Previous close",
+      "title": "Previous trading-session close; not a live price · Fetched 11/18/2026, 10:44:36 AM",
+      "ariaLabel": "Quote status: Previous trading-session close; not a live price",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:36.609981+00:00",
+              "observed_at": "2026-11-16T10:45:36.609981+00:00",
+              "quote_status": "previous_close"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "delayed",
+      "atUTC": "2026-11-18T10:45:37.021885+00:00",
+      "label": "Delayed quote",
+      "title": "Latest observed provider price is delayed or undated · Fetched 11/18/2026, 10:44:36 AM",
+      "ariaLabel": "Quote status: Latest observed provider price is delayed or undated",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:36.211316+00:00",
+              "observed_at": "2026-11-18T10:20:36.211316+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "stale",
+      "atUTC": "2026-11-18T10:45:43.919756+00:00",
+      "label": "Stale quote",
+      "title": "Provider cache last refreshed over 15 minutes ago · Fetched 11/18/2026, 10:23:43 AM",
+      "ariaLabel": "Quote status: Provider cache last refreshed over 15 minutes ago",
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:23:43.338475+00:00",
+              "observed_at": "2026-11-18T10:10:43.338475+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "simulator",
+      "atUTC": "2026-11-18T10:45:43.853904+00:00",
+      "label": "Simulator-only",
+      "title": "No provider quote; fixed simulator reference used",
+      "ariaLabel": "Quote status: No provider quote; fixed simulator reference used",
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": []
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "state": "unavailable",
+      "atUTC": "2026-11-18T10:45:43.756365+00:00",
+      "label": "Provider status could not be checked; valuations may rely on older data.",
+      "title": null,
+      "ariaLabel": null,
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 503,
+          "rows": []
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "provider",
+      "atUTC": "2026-11-18T10:45:50.475938+00:00",
+      "label": "Provider snapshot",
+      "title": "Recent provider snapshot; not a streaming quote · Fetched 11/18/2026, 10:44:49 AM",
+      "ariaLabel": "Quote status: Recent provider snapshot; not a streaming quote",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:49.761646+00:00",
+              "observed_at": "2026-11-18T10:43:49.761646+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "previous_close",
+      "atUTC": "2026-11-18T10:45:49.501490+00:00",
+      "label": "Previous close",
+      "title": "Previous trading-session close; not a live price · Fetched 11/18/2026, 10:44:49 AM",
+      "ariaLabel": "Quote status: Previous trading-session close; not a live price",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:49.046099+00:00",
+              "observed_at": "2026-11-16T10:45:49.046099+00:00",
+              "quote_status": "previous_close"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "delayed",
+      "atUTC": "2026-11-18T10:45:50.021064+00:00",
+      "label": "Delayed quote",
+      "title": "Latest observed provider price is delayed or undated · Fetched 11/18/2026, 10:44:49 AM",
+      "ariaLabel": "Quote status: Latest observed provider price is delayed or undated",
+      "portfolioValue": "$100014.99",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:44:49.437329+00:00",
+              "observed_at": "2026-11-18T10:20:49.437329+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "stale",
+      "atUTC": "2026-11-18T10:45:56.631075+00:00",
+      "label": "Stale quote",
+      "title": "Provider cache last refreshed over 15 minutes ago · Fetched 11/18/2026, 10:23:55 AM",
+      "ariaLabel": "Quote status: Provider cache last refreshed over 15 minutes ago",
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": [
+            {
+              "asset_id": "aapl",
+              "price": 263,
+              "source": "audit quote fixture",
+              "updated_at": "2026-11-18T10:23:55.633948+00:00",
+              "observed_at": "2026-11-18T10:10:55.633948+00:00",
+              "quote_status": "provider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "simulator",
+      "atUTC": "2026-11-18T10:45:58.764439+00:00",
+      "label": "Simulator-only",
+      "title": "No provider quote; fixed simulator reference used",
+      "ariaLabel": "Quote status: No provider quote; fixed simulator reference used",
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 200,
+          "rows": []
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "state": "unavailable",
+      "atUTC": "2026-11-18T10:45:56.501289+00:00",
+      "label": "Provider status could not be checked; valuations may rely on older data.",
+      "title": null,
+      "ariaLabel": null,
+      "portfolioValue": "$99999.49",
+      "inputs": [
+        {
+          "status": 503,
+          "rows": []
+        }
+      ]
+    }
+  ]
+}

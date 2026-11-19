@@ -1,0 +1,127 @@
+{
+  "scope": "Guest AAPL/BTC practice orders with both market prices intercepted. No real provider call or account operation.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-19T01:17:54.431636+00:00",
+      "held": [
+        "AAPL",
+        "BTC"
+      ],
+      "examples": [
+        {
+          "prompt": "Stocks fall 20%",
+          "narrative": "Modeled a -20% move on AAPL over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$224.84\n-20.0%\nBTC\n0.1\n$76,076.00\n$76,076.00\n+0.0%",
+          "expectedShockBySymbol": {
+            "AAPL": -20,
+            "BTC": 0
+          }
+        },
+        {
+          "prompt": "Crypto rallies 40% over 60 days",
+          "narrative": "Modeled a +40% move on BTC over 60 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$281.06\n+0.0%\nBTC\n0.1\n$76,076.00\n$106,506.40\n+40.0%",
+          "expectedShockBySymbol": {
+            "AAPL": 0,
+            "BTC": 40
+          }
+        },
+        {
+          "prompt": "AAPL and BTC rise 10%",
+          "narrative": "Modeled a +10% move on AAPL, BTC over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$309.16\n+10.0%\nBTC\n0.1\n$76,076.00\n$83,683.60\n+10.0%",
+          "expectedShockBySymbol": {
+            "AAPL": 10,
+            "BTC": 10
+          }
+        },
+        {
+          "prompt": "All holdings fall 15%",
+          "narrative": "Modeled a -15% move on all held assets over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$238.90\n-15.0%\nBTC\n0.1\n$76,076.00\n$64,664.60\n-15.0%",
+          "expectedShockBySymbol": {
+            "AAPL": -15,
+            "BTC": -15
+          }
+        },
+        {
+          "prompt": "ETH gains 50% in 30 days",
+          "error": "No held assets match this scenario. Use a held asset symbol, an asset class, or all holdings.",
+          "previousResultCleared": true
+        },
+        {
+          "prompt": "Tech stocks crash 20%",
+          "error": "Sector targets are unavailable. Name a held stock or use all stocks.",
+          "previousResultCleared": true
+        },
+        {
+          "prompt": "Unrecognized asset rises 10%",
+          "error": "No held assets match this scenario. Use a held asset symbol, an asset class, or all holdings.",
+          "previousResultCleared": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-19T01:17:53.861120+00:00",
+      "held": [
+        "AAPL",
+        "BTC"
+      ],
+      "examples": [
+        {
+          "prompt": "Stocks fall 20%",
+          "narrative": "Modeled a -20% move on AAPL over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$224.84\n-20.0%\nBTC\n0.1\n$76,076.00\n$76,076.00\n+0.0%",
+          "expectedShockBySymbol": {
+            "AAPL": -20,
+            "BTC": 0
+          }
+        },
+        {
+          "prompt": "Crypto rallies 40% over 60 days",
+          "narrative": "Modeled a +40% move on BTC over 60 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$281.06\n+0.0%\nBTC\n0.1\n$76,076.00\n$106,506.40\n+40.0%",
+          "expectedShockBySymbol": {
+            "AAPL": 0,
+            "BTC": 40
+          }
+        },
+        {
+          "prompt": "AAPL and BTC rise 10%",
+          "narrative": "Modeled a +10% move on AAPL, BTC over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$309.16\n+10.0%\nBTC\n0.1\n$76,076.00\n$83,683.60\n+10.0%",
+          "expectedShockBySymbol": {
+            "AAPL": 10,
+            "BTC": 10
+          }
+        },
+        {
+          "prompt": "All holdings fall 15%",
+          "narrative": "Modeled a -15% move on all held assets over 30 days.",
+          "table": "ASSET\nQTY\nNOW\nEXPECTED\nSHOCK\nAAPL\n2\n$281.06\n$238.90\n-15.0%\nBTC\n0.1\n$76,076.00\n$64,664.60\n-15.0%",
+          "expectedShockBySymbol": {
+            "AAPL": -15,
+            "BTC": -15
+          }
+        },
+        {
+          "prompt": "ETH gains 50% in 30 days",
+          "error": "No held assets match this scenario. Use a held asset symbol, an asset class, or all holdings.",
+          "previousResultCleared": true
+        },
+        {
+          "prompt": "Tech stocks crash 20%",
+          "error": "Sector targets are unavailable. Name a held stock or use all stocks.",
+          "previousResultCleared": true
+        },
+        {
+          "prompt": "Unrecognized asset rises 10%",
+          "error": "No held assets match this scenario. Use a held asset symbol, an asset class, or all holdings.",
+          "previousResultCleared": true
+        }
+      ]
+    }
+  ]
+}

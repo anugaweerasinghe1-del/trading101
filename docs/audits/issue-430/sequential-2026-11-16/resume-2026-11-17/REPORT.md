@@ -91,3 +91,7 @@ STRICT-GUIDE-005, 006 and 007 now have exact native Cloudflare deployment receip
 The [Guide page record](./guide/PAGE-RECORD.json) closes P08 within the verified publisher scope. It links the reconciled public and conditional captures, 866 overlapping text/version records reviewed twice, 155 control projections and seven media records. Live account records and private provider operations remain outside the verified scope. The current score is **7 of 163 strictly completed**, with 156 outstanding. The 480 technical URL checks and the 15 historical supplementary inspections retain their original separate scope.
 
 P09 `/trade` is the next unfinished canonical review. Retain the two P09 wordings already verified after #454. Terms and the prior Diversification publication decision remain on their documented owner paths.
+
+## 19 November continuation: Portfolio closed
+
+P10 has scoped strict closure with 161/161 separate block/version/state judgments, 491 overlapping source projections and five final public views. Eleven product roots and two wording risks have exact native production and later custom-domain evidence, including #482 merge `3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b`. [Final page record](../page-010/PAGE-RECORD.json) preserves private/source-only limitations. Current scoreboard is 9/163 strict, 12 partial/supplementary, one owner-blocked Terms and 141 unread. The 480 initial-HTML technical checks add no editorial credit. Next: P11 Daily; no duplicate #455 implementation.
