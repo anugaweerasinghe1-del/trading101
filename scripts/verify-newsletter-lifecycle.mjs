@@ -99,6 +99,44 @@ assert.equal(lab.contacts[0].status, 'confirmed');assert.equal(lab.contacts[0].c
 assert.equal(lab.emails.length, 1, 'Confirmation sends no newsletter');
 assert.deepEqual(await (await lab.request(input('reader@example.invalid'))).json(), accepted);
 assert.equal(lab.emails.length, 1, 'Confirmed address cannot be resent confirmation');
+// A six-digit code is an alternative to the existing single-use confirmation link.
+// The code is delivered only by the synthetic email provider, never stored in plaintext
+// or returned to the browser. Incorrect, old, and consumed codes cannot subscribe.
+const codeLab = fixture();
+const codeResponse = await (await codeLab.request(input("code-reader@example.invalid"))).json();
+assert.match(codeResponse.message, /If the address is eligible/);
+const codeMessage = codeLab.emails[0].text;
+const shortCode = /Verification code: ([0-9]{6})/.exec(codeMessage)?.[1];
+const codeLinkToken = /#token=([a-f0-9]{64})/.exec(codeMessage)?.[1];
+assert.ok(shortCode && codeLinkToken, "Both code and link must be sent");
+assert.equal(codeLab.contacts[0].status, "pending");
+assert.equal(codeLab.contacts[0].confirmation_expires_at !== null, true);
+assert.ok(!JSON.stringify(codeLab.contacts[0]).includes(shortCode), "Code must not be stored");
+assert.ok(!JSON.stringify(codeResponse).includes(shortCode), "Code must not be returned to client");
+const correctAttempt = { action: "confirm-code", email: "CODE-READER@example.invalid", code: shortCode };
+assert.equal((await codeLab.request({ ...correctAttempt, code: "bad" })).status, 400);
+let badCode = shortCode === "000000" ? "000001" : "000000";
+assert.equal((await (await codeLab.request({ ...correctAttempt, code: badCode })).json()).confirmed, false);
+assert.equal(codeLab.contacts[0].status, "pending");
+codeLab.contacts[0].confirmation_sent_at = new Date(Date.now() - 21*60_000).toISOString();
+assert.equal((await (await codeLab.request(correctAttempt)).json()).confirmed, false,
+  "Old email codes expire even when the link is still valid");
+codeLab.contacts[0].confirmation_sent_at = new Date().toISOString();
+const codes = await Promise.all(Array.from({length: 2}, async () =>
+  (await codeLab.request(correctAttempt)).json()));
+assert.equal(codes.filter(r => r.confirmed).length, 1, "Code may only confirm once");
+assert.equal(codeLab.contacts[0].status, "confirmed");
+assert.equal(codeLab.contacts[0].confirmation_token_hash, null);
+assert.equal((await (await codeLab.request({ action: "confirm", token: codeLinkToken })).json()).confirmed, false,
+  "After code confirmation the backup link must also be invalid");
+assert.equal(codeLab.emails.length, 1, "Verifying a code sends no additional email");
+const phantomLab = fixture();
+assert.equal((await (await phantomLab.request({
+  action: "confirm-code", email: "unknown@example.invalid", code: "000000",
+})).json()).confirmed, false);
+assert.equal(phantomLab.contacts.length, 0);
+assert.equal(phantomLab.emails.length, 0);
+
 const unsubscribeToken = lab.contacts[0].unsubscribe_token;
 assert.equal((await lab.request(null, { method: 'GET', url: 'https://fixture.invalid/newsletter-public?token=' + unsubscribeToken })).status, 405);
 assert.equal(lab.contacts[0].status, 'confirmed', 'GET/link scanners cannot unsubscribe');
