@@ -1,0 +1,36 @@
+{
+  "atUTC": "2026-11-19T03:18:30.785745+00:00",
+  "baselineErrors": [],
+  "cases": [
+    {
+      "case": "missing-record",
+      "rejected": true,
+      "errors": [
+        "Reviewed subset differs from the declared index"
+      ]
+    },
+    {
+      "case": "changed-content",
+      "rejected": true,
+      "errors": [
+        "STRICT-0011-QUICK-001: content hash mismatch",
+        "STRICT-0011-QUICK-001: quick/bonus source mismatch"
+      ]
+    },
+    {
+      "case": "pending-second-pass",
+      "rejected": true,
+      "errors": [
+        "STRICT-0011-QUICK-001: incomplete pass2"
+      ]
+    },
+    {
+      "case": "wrong-bank-reference",
+      "rejected": true,
+      "errors": [
+        "STRICT-0011-DEEP-practice-19-brief: invalid bank reference"
+      ]
+    }
+  ],
+  "scope": "Validator mutation controls only; no editorial reread or page closure credit."
+}
