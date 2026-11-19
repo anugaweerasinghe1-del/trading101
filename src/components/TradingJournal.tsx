@@ -21,7 +21,7 @@ export function TradingJournal({ trades }: TradingJournalProps) {
         <div>
           <h2 className="text-3xl font-bold mb-2">Trading Journal</h2>
           <p className="text-muted-foreground">
-            {journalTrades.length} trades with journal entries
+            {journalTrades.length} {journalTrades.length === 1 ? "trade" : "trades"} with journal entries
           </p>
         </div>
 
@@ -133,7 +133,7 @@ export function TradingJournal({ trades }: TradingJournalProps) {
               <p>No journal entries yet. Add a note to a practice trade to begin reviewing your decisions.</p>
             ) : (
               <>
-                <p>{summary.totalEntries} journal entries; {summary.taggedEntries} include emotion tags.</p>
+                <p>{summary.totalEntries} journal {summary.totalEntries === 1 ? "entry" : "entries"}; {summary.taggedEntries} {summary.taggedEntries === 1 ? "includes" : "include"} emotion tags.</p>
                 {summary.emotions.length === 0 ? (
                   <p className="text-muted-foreground">No emotion tags recorded.</p>
                 ) : (
@@ -141,7 +141,7 @@ export function TradingJournal({ trades }: TradingJournalProps) {
                     {summary.emotions.map(({ emotion, count }) => (
                       <li key={emotion} className="flex flex-wrap items-center justify-between gap-2">
                         <Badge variant="outline">{emotion}</Badge>
-                        <span>{count} of {summary.totalEntries} entries</span>
+                        <span>{count} of {summary.totalEntries} {summary.totalEntries === 1 ? "entry" : "entries"}</span>
                       </li>
                     ))}
                   </ul>

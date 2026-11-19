@@ -107,7 +107,7 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               {hasCompletedTrades ? formatCurrency(analytics.avgProfitPerTrade) : '—'}
             </div>
             <div className="text-xs text-muted-foreground mt-1">
-              {analytics.completedTrades.length} completed trades
+              {analytics.completedTrades.length} completed {analytics.completedTrades.length === 1 ? "trade" : "trades"}
             </div>
           </CardContent>
         </Card>

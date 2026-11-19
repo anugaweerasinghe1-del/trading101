@@ -37,7 +37,7 @@ export function VerifiedAccountRecovery({ userId }: { userId: string }) {
     setBusy("restore");setMessage("");
     try {
       const p=await restoreAccountPortfolioFromServer(userId);
-      setMessage(`Recovered your current server snapshot: ${p.trades.length} recorded orders, ${p.positions.length} open positions. Server trading history was not changed.`);
+      setMessage(`Recovered your current server snapshot: ${p.trades.length} recorded ${p.trades.length === 1 ? "order" : "orders"}, ${p.positions.length} open ${p.positions.length === 1 ? "position" : "positions"}. Server trading history was not changed.`);
     } catch(e) {
       setMessage(e instanceof Error?e.message:"The account snapshot could not be recovered.");
     } finally {setBusy(null);}

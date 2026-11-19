@@ -177,7 +177,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "What the practice portfolio tracks",
         p: [
           "The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser's history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.",
-          "Beyond raw P&L, the page calculates the metrics that actually describe a process rather than an outcome: fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. The chart can include generated history; it is not a verified sequence of account observations.",
+          "Beyond raw P&L, the page calculates fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. These summarize recorded outcomes and exposures that can help you review your practice process. The chart can include generated history; it is not a verified sequence of account observations.",
         ],
       },
       {
