@@ -69,7 +69,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "The metrics explained in plain language",
       list: [
-        "Unrealised P&L: what an open position is worth right now versus what you paid. It is not money until you close.",
+        "Unrealised P&L: the difference between an open position's current marked value and its cost basis. Closing the position turns that unrealised result into realised P&L. All balances and results here remain virtual.",
         "Realised P&L: the result of trades you have actually closed. This is the number that measures decisions you finished making.",
         "Open positions in profit: the share of current open positions showing positive unrealised P&L. This is not a closed-trade win rate.",
         "Open-position P&L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.",
