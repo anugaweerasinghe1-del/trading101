@@ -186,7 +186,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "A longer daily practice session",
       p: [
         "The deeper exercise develops one case across ten linked questions, so the learner can calculate an input, interpret the result and identify a limitation. Topics rotate between portfolio arithmetic, transaction costs and supported orders, price-data freshness, risk and uncertainty, and decision habits. The visuals show selected hypothetical inputs with numeric labels; they are not live market charts. Worked explanations appear after each submitted answer, including when the answer was wrong.",
-        "An optional reflection asks you to explain the case in your own words. Its review guide helps you check the reasoning without sending your note to an AI grader. Answers and reflections are saved on this browser, and the started exercise keeps its own snapshot if a new bank is approved while you are working. Clearing site data removes this local history; an account does not synchronize these notes to another device.",
+        "After you finish, the case takeaway provides a review guide for checking the reasoning. Checked answers are saved on this browser. After the first saved answer, the case keeps its own snapshot if a new bank is approved while you are working. Clearing site data removes this local history; an account does not synchronize this case history to another device.",
         "A new 50-exercise bank is prepared every two calendar months in five parts using the configured free-tier Gemini API. Each completed bank remains private and editable in the owner’s admin panel until final review and approval. If generation hits a quota limit, fails validation or awaits review, the approved bank continues rotating. Fifty exercises can therefore repeat before the next bank begins; revisits are review practice rather than a claim of brand-new daily content. The feature does not use a paid provider fallback.",
       ],
     },
@@ -196,7 +196,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "A hypothetical market scenario with stated exercise inputs, rather than current market news.",
         "Comparing long, short and hold reasoning without grading one market direction as objectively correct.",
         "A bank of 50 deeper exercises, each with a substantial hypothetical case, a labelled visual and ten linked questions with worked explanations.",
-        "The existing short bonus quiz plus an optional longer reflection and a review guide.",
+        "The existing short bonus quiz plus a case takeaway with a review guide.",
       ],
     },
     {
