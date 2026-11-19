@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
  * Designed to be the "come back daily" trigger.
  */
 export function DailyChallengeCard() {
-  const [streak, setStreak] = useState<StreakState | null>(null);
-  const [played, setPlayed] = useState(false);
+  const [streak, setStreak] = useState<StreakState | null>(() => getStreak());
+  const [played, setPlayed] = useState(() => hasPlayedToday());
   const [challenge, setChallenge] = useState(() => getTodayChallenge());
 
   useEffect(() => {
