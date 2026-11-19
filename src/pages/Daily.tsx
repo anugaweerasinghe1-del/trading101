@@ -12,6 +12,7 @@ import {
   recordChallenge,
   getUnlockedBadges,
   getNextBadge,
+  BADGES,
   getChallengeCount,
   getTodayBonus,
   type ChallengeDecision,
@@ -37,7 +38,7 @@ export default function Daily() {
   const challenge = getTodayChallenge();
   const bonus = getTodayBonus();
   const [streak, setStreak] = useState<StreakState | null>(null);
-  const [selected, setSelected] = useState<ChallengeDecision | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [bonusPick, setBonusPick] = useState<number | null>(null);
   const guidedStage = journeyStage(readJourney());
@@ -59,13 +60,13 @@ export default function Daily() {
     return () => { window.clearInterval(timer); document.removeEventListener("visibilitychange", tick); };
   }, []);
 
-  const handleSubmit = (decision: ChallengeDecision) => {
+  const handleSubmit = (decision: ChallengeDecision, optionIndex: number) => {
     if (submitted) return;
     // The directional scenario is a reflection exercise, not a forecast quiz.
     // Completing the reasoning step advances the streak; no market direction is
     // presented as objectively correct.
     const next = recordChallenge(challenge.id, decision);
-    setSelected(decision);
+    setSelected(optionIndex);
     setSubmitted(true);
     setStreak(next);
   };
@@ -218,12 +219,12 @@ export default function Daily() {
 
               {/* Options */}
               <div className="space-y-2.5 mb-6">
-                {challenge.options.map((opt) => {
-                  const isSelected = selected === opt.value;
+                {challenge.options.map((opt, optionIndex) => {
+                  const isSelected = selected === optionIndex;
                   return (
                     <button
-                      key={opt.value}
-                      onClick={() => handleSubmit(opt.value)}
+                      key={`${challenge.id}-${optionIndex}`}
+                      onClick={() => handleSubmit(opt.value, optionIndex)}
                       disabled={submitted}
                       className={cn(
                         "group w-full text-left p-4 md:p-5 rounded-2xl border transition-all duration-200 active:scale-[0.98]",
@@ -374,7 +375,9 @@ export default function Daily() {
             <section
               className="rounded-[24px] p-6 md:p-7 border border-white/[0.08] backdrop-blur-xl"
               style={{
-                background:
+                ...dailyDarkPalette,
+                backgroundColor: "hsl(0 0% 4%)",
+                backgroundImage:
                   "linear-gradient(140deg, hsl(38 90% 55% / 0.04) 0%, hsl(0 0% 5% / 0.8) 100%)",
               }}
             >
@@ -389,13 +392,7 @@ export default function Daily() {
                 </div>
               </div>
               <div className="grid grid-cols-5 gap-2 md:gap-3">
-                {[
-                  { th: 3, label: "Spark", emoji: "✨" },
-                  { th: 7, label: "Iron", emoji: "🔥" },
-                  { th: 14, label: "Diamond", emoji: "💎" },
-                  { th: 30, label: "Master", emoji: "🏆" },
-                  { th: 100, label: "Legend", emoji: "👑" },
-                ].map(({ th, label, emoji }) => {
+                {BADGES.map(({ threshold: th, label, emoji }) => {
                   const got = streak ? streak.longest >= th : false;
                   return (
                     <div
@@ -404,7 +401,7 @@ export default function Daily() {
                         "relative p-3 md:p-4 rounded-2xl text-center border transition-all",
                         got
                           ? "bg-amber-500/10 border-amber-500/40 shadow-[0_4px_20px_-6px_hsl(38_90%_55%/0.3)]"
-                          : "bg-white/[0.02] border-white/[0.05]",
+                          : "bg-foreground/[0.02] border-white/[0.05]",
                       )}
                     >
                       <div className={cn("text-2xl md:text-3xl mb-1", !got && "grayscale opacity-40")}>
