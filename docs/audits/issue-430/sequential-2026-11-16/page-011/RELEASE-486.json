@@ -1,0 +1,77 @@
+{
+  "pr": 486,
+  "headSHA": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+  "mergeSHA": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+  "mergedAt": "2026-11-19T11:43:32Z",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-19T11:54:08.358Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "684274a9-faa1-49e9-a134-3a4935a73cc6",
+      "sha": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-19T11:43:34.212695Z"
+    },
+    "sourceGitHubRun": 44517371557,
+    "sourceGitHubJob": 135542000907
+  },
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135316169035,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44450368997/job/135316169035"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135313026343,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/68d31874-f210-46fc-8315-eca5381304da"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135312516926,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44450368997/job/135312516926"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135312516407,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44450368997/job/135312516407"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135312516224,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44450368990/job/135312516224"
+    }
+  ],
+  "previewURL": "https://68d31874.tradehq-preview.pages.dev",
+  "liveEvidence": {
+    "file": "production486-final-streak-storage.json",
+    "sha256": "ffc2dda5215183142737526ac405fed62bb70cd490f10aba2e092ba2524fb457"
+  },
+  "liveRereadAtUTC": "2026-11-19T11:55:20.566461+00:00",
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-DAILY-006"
+  ],
+  "nativeReceiptAccess": "GitHub connector decoded final readiness-job logs; local gh redirect download was unavailable.",
+  "scope": "Actual URL/browser application. Explicit fixed date2026-11-19, disposable guests, injected quota exceptions and synthetic nine-answer approved-case snapshots for the deeper final-answer path. No genuine prior progress, real quota incident, account operation or publication is claimed. External/nonGET blocked.",
+  "googlePolicyViolationClaim": false
+}

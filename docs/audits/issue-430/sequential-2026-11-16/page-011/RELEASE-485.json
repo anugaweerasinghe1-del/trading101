@@ -1,0 +1,77 @@
+{
+  "pr": 485,
+  "headSHA": "13d3669970259d8ba760414611844af041870f8f",
+  "mergeSHA": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+  "mergedAt": "2026-11-19T03:16:11Z",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-19T03:27:06.777Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "8f9da971-bba6-4d12-b723-b560ace8fe17",
+      "sha": "45fb879ba6fc668e66d737d916a9a0488268ef06",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-19T03:16:13.493409Z"
+    },
+    "sourceGitHubRun": 44450249280,
+    "sourceGitHubJob": 135316281141
+  },
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "13d3669970259d8ba760414611844af041870f8f",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135311896640,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44448960978/job/135311896640"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "13d3669970259d8ba760414611844af041870f8f",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135308433806,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/d39d68df-cd74-4208-adf1-572880b4be36"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "13d3669970259d8ba760414611844af041870f8f",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135307893733,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44448960978/job/135307893733"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "13d3669970259d8ba760414611844af041870f8f",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135307893376,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44448960972/job/135307893376"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "13d3669970259d8ba760414611844af041870f8f",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135307893212,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44448960978/job/135307893212"
+    }
+  ],
+  "previewURL": "https://d39d68df.tradehq-preview.pages.dev",
+  "liveEvidence": {
+    "file": "production485-final-correlation-prompt.json",
+    "sha256": "8891f84656e48e27e8a0309eff1d79c18eab3a409b313495ce983dad84a1717d"
+  },
+  "liveRereadAtUTC": "2026-11-19T11:42:50.079615+00:00",
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-DAILY-005"
+  ],
+  "nativeReceiptAccess": "GitHub connector decoded workflow-job logs after local gh log download returned empty output/blocked redirect; native observation preserved unchanged.",
+  "scope": "Exact-match displayed grammar correction only; raw approved bank, saved prompt and answer key/options/explanation retained. Controlled client date selects an existing fictional case; no natural historical browser observation or real account operation. P11 remains partial.",
+  "googlePolicyViolationClaim": false
+}

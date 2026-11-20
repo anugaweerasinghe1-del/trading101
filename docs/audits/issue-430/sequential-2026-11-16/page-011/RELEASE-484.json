@@ -1,0 +1,115 @@
+{
+  "pr": 484,
+  "headSHA": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+  "mergeSHA": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+  "mergedAt": "2026-11-19T02:40:48Z",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-19T02:52:58.696Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "ff0eacc9-0159-422d-8a75-ff9a28ff80d2",
+      "sha": "fd72fb28aa5a5fc47cce7b1bc9da61a23212c4e0",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-19T02:40:50.97435Z"
+    },
+    "sourceGitHubRun": 44446072016,
+    "sourceGitHubJob": 135303002997
+  },
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135298006820,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44444700881/job/135298006820"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135294326004,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/2658731b-23ae-460b-9420-9ce41e77396b"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135293911458,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44444700881/job/135293911458"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135293910723,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44444700881/job/135293910723"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "1267e36dbcee6839f31d732c881ba0c2c773505a",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135293910173,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44444700879/job/135293910173"
+    }
+  ],
+  "previewURL": "https://2658731b.tradehq-preview.pages.dev",
+  "liveEvidence": [
+    {
+      "file": "production484-final-badge-labels.json",
+      "sha256": "ca3f28b9f54f13095fc05a9208005c792b77d9387f31e374d8796be2a227559b",
+      "atUTC": [
+        "2026-11-19T02:53:39.153987+00:00",
+        "2026-11-19T02:53:39.049310+00:00",
+        "2026-11-19T02:53:39.230814+00:00",
+        "2026-11-19T02:53:39.271326+00:00"
+      ]
+    },
+    {
+      "file": "production484-final-badge-contrast.json",
+      "sha256": "f281f4a1f476282ffcdcf896340a2a919fd48771715639e8b40f091704bba3d8",
+      "atUTC": [
+        "2026-11-19T02:53:53.260818+00:00",
+        "2026-11-19T02:53:43.447669+00:00"
+      ]
+    },
+    {
+      "file": "production484-final-gold-selection.json",
+      "sha256": "35a93f30fe2829d9b69ea118292977a8b261a406c34e5cafe0d6483938ac3b46",
+      "atUTC": [
+        "2026-11-19T02:54:00.656850+00:00",
+        "2026-11-19T02:54:00.426374+00:00",
+        "2026-11-19T02:54:00.427386+00:00",
+        "2026-11-19T02:53:59.957027+00:00",
+        "2026-11-19T02:54:00.010864+00:00",
+        "2026-11-19T02:54:00.667800+00:00"
+      ]
+    },
+    {
+      "file": "production484-final-copy-readback.json",
+      "sha256": "98b7bae88d9c6eb49213d6864dba0edbd1af13b1fe63cd79e5f5aa8d9c539202",
+      "atUTC": [
+        "2026-11-19T02:54:02.236117+00:00",
+        "2026-11-19T02:54:02.512985+00:00"
+      ]
+    }
+  ],
+  "liveRereadAtUTC": "2026-11-19T02:54:02.512985+00:00",
+  "status": "FIXED-RECHECKED",
+  "findings": [
+    "STRICT-DAILY-001",
+    "STRICT-DAILY-002",
+    "STRICT-DAILY-003",
+    "STRICT-DAILY-004"
+  ],
+  "policyViolation": false,
+  "scope": "Four scoped product/content corrections. Actual custom-domain UI and publisher notes after native confirmation; guest dates/streaks are controlled fixtures, not real histories, accounts or future market observations. P11 page closure remains false."
+}

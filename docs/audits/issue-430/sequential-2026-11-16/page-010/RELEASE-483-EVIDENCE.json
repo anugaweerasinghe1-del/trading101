@@ -1,0 +1,76 @@
+{
+  "pr": 483,
+  "headSHA": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+  "mergeSHA": "411087a904458f596f41d9546647c4344232f6ff",
+  "mergedAt": "2026-11-19T01:58:06Z",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-19T02:08:23.950Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "9eb44293-1e9d-484d-960c-50cc49e00188",
+      "sha": "411087a904458f596f41d9546647c4344232f6ff",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-19T01:58:08.256826Z"
+    },
+    "sourceGitHubRun": 44440824021,
+    "sourceGitHubJob": 135285082678
+  },
+  "requiredChecks": [
+    {
+      "name": "TradeHQ Required validation",
+      "head_sha": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135280822596,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44439588084/job/135280822596"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "head_sha": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135277655044,
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/635ae9a9-66f6-46c4-b7f1-6eaa6c1fcdd4"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135276807913,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44439588084/job/135276807913"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135276807622,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44439588084/job/135276807622"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "bc3d50a6d91616def8baa8953736fd5c487d6e36",
+      "status": "completed",
+      "conclusion": "success",
+      "id": 135276807549,
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44439587942/job/135276807549"
+    }
+  ],
+  "publicReadback": {
+    "atUTC": "2026-11-19T02:08:46.757338+00:00",
+    "http": 200,
+    "url": "https://www.thetradehq.com/portfolio",
+    "canonical": "https://www.thetradehq.com/portfolio",
+    "noteBlocks": 27,
+    "unchangedP10Notes": true,
+    "notesSHA256": "616c53fc192e7c672880cc2105dabf424970c723442ae93d43f7640bbc0e2aca",
+    "scope": "After docs-only native deployment; unchanged notes reused, no new editorial credit."
+  },
+  "status": "EVIDENCE-PUBLICATION-VERIFIED",
+  "scope": "Docs-only publication; P10 application corrections retain RELEASE-478 through RELEASE-482. No extra product or page closure credit."
+}
