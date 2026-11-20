@@ -73,6 +73,8 @@ for (const term of tradingGlossary) {
   const route = routes.find((r) => r.path === path);
   assert.equal(route?.title, `${term.term} — Explanation & Learning Exercise | TradeHQ Wiki`, path + ": misleading or inconsistent glossary title");
   assert.ok(map.get(path)?.sections.some((section) => section.h === "Worked exercise and its limits"), path + ": promised exercise missing");
+  assert.ok(!map.get(path)?.sections.some((section) => section.h === `What ${term.term} means`),
+    path + ": first definition must not be duplicated in crawler notes");
 }
 
 const audited = [
