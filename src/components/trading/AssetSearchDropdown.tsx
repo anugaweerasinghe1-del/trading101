@@ -1,4 +1,5 @@
 import { quoteDisplay } from "@/lib/quoteDisplay";
+import { assetPickerLabel, pickerQuoteOriginLabel, type PickerQuoteOrigin } from "@/lib/assetPickerPresentation";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Asset } from "@/lib/types";
 import { Search, ChevronDown, Star, TrendingUp, TrendingDown } from "lucide-react";
@@ -9,6 +10,7 @@ interface AssetSearchDropdownProps {
   assets: Asset[];
   selectedAsset: Asset | null;
   favorites: string[];
+  quoteOrigins: Record<string, PickerQuoteOrigin>;
   onSelectAsset: (asset: Asset) => void;
   onToggleFavorite: (assetId: string) => void;
 }
@@ -19,6 +21,7 @@ export function AssetSearchDropdown({
   assets,
   selectedAsset,
   favorites,
+  quoteOrigins,
   onSelectAsset,
   onToggleFavorite,
 }: AssetSearchDropdownProps) {
@@ -52,7 +55,7 @@ export function AssetSearchDropdown({
       const searchLower = search.toLowerCase();
       result = result.filter(a => 
         a.symbol.toLowerCase().includes(searchLower) ||
-        a.name.toLowerCase().includes(searchLower)
+        assetPickerLabel(a).toLowerCase().includes(searchLower)
       );
     }
     
@@ -95,9 +98,9 @@ export function AssetSearchDropdown({
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <span className="text-sm font-bold text-primary">{selectedAsset.symbol.charAt(0)}</span>
             </div>
-            <div className="text-left">
+            <div className="text-left min-w-0">
               <p className="font-semibold">{selectedAsset.symbol}</p>
-              <p className="text-xs text-muted-foreground">{selectedAsset.name}</p>
+              <p className="text-xs text-muted-foreground truncate max-w-[16rem]" title={assetPickerLabel(selectedAsset)}>{assetPickerLabel(selectedAsset)}</p>
             </div>
           </div>
         ) : (
@@ -147,6 +150,10 @@ export function AssetSearchDropdown({
             ))}
           </div>
 
+          <p className="px-3 py-2 border-b border-white/5 text-[11px] leading-relaxed text-muted-foreground">
+            Price labels: Fixed practice uses a catalogue input; Saved quote is browser-held; Provider snapshot may be delayed. Simulated quotes are not market observations. Changes on fixed inputs are practice values. None are executable prices.
+          </p>
+
           {/* Asset List */}
           <div className="max-h-80 overflow-y-auto scrollbar-thin">
             {filteredAssets.length === 0 ? (
@@ -157,7 +164,7 @@ export function AssetSearchDropdown({
               filteredAssets.map((asset) => (
                 <div key={asset.id} className={cn("flex items-center px-3 hover:bg-white/5", selectedAsset?.id === asset.id && "bg-primary/10")}>
                   <button
-                    aria-label={`${favorites.includes(asset.id) ? 'Remove' : 'Add'} ${asset.name} (${asset.symbol}) ${favorites.includes(asset.id) ? 'from' : 'to'} favorites`}
+                    aria-label={`${favorites.includes(asset.id) ? 'Remove' : 'Add'} ${assetPickerLabel(asset)} (${asset.symbol}) ${favorites.includes(asset.id) ? 'from' : 'to'} favorites`}
                     aria-pressed={favorites.includes(asset.id)}
                     onClick={() => onToggleFavorite(asset.id)}
                     className="p-2 shrink-0"
@@ -168,12 +175,15 @@ export function AssetSearchDropdown({
                     onClick={() => { onSelectAsset(asset); setIsOpen(false); setSearch(""); triggerRef.current?.focus(); }}
                     className="flex-1 min-w-0 flex items-center justify-between gap-3 py-3 pl-2 text-left"
                   >
-                    <span className="min-w-0"><span className="block font-medium">{asset.symbol}</span><span className="block text-xs text-muted-foreground">{asset.name}</span></span>
+                    <span className="min-w-0"><span className="block font-medium">{asset.symbol}</span><span className="block text-xs text-muted-foreground break-words">{assetPickerLabel(asset)}</span></span>
                     <span className="text-right shrink-0">
                       <span className="block font-medium tabular-nums">{quoteDisplay(asset, formatPrice(asset.price, asset.type))}</span>
                       <span className={cn("text-xs tabular-nums flex items-center gap-1 justify-end", (asset.changePercent ?? 0) >= 0 ? "text-profit" : "text-loss")}>
                         {(asset.changePercent ?? 0) >= 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                         {(asset.changePercent ?? 0) >= 0 ? '+' : ''}{(asset.changePercent ?? 0).toFixed(2)}%
+                      </span>
+                      <span data-quote-origin={quoteOrigins[asset.id] ?? 'fixed'} className="block text-[10px] leading-4 text-muted-foreground mt-0.5">
+                        {pickerQuoteOriginLabel(quoteOrigins[asset.id] ?? 'fixed')}
                       </span>
                     </span>
                   </button>
