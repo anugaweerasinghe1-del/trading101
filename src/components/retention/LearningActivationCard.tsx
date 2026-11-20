@@ -7,6 +7,8 @@ import { useMasteryNextAction } from "@/hooks/useMasteryNextAction";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { JOURNEY_EVENT, JOURNEY_KEY, readJourney } from "@/lib/beginnerJourney";
 import { chooseLearningActivation } from "@/lib/learningActivation";
+import { getLastVisit } from "@/lib/lastVisit";
+import { chooseReturnDestination } from "@/lib/learnerResume";
 
 /** One contextual next step. No popups, emails, new analytics or extra stored data. */
 export function LearningActivationCard({ placement = "home" }: { placement?: "home" | "profile" }) {
@@ -14,6 +16,10 @@ export function LearningActivationCard({ placement = "home" }: { placement?: "ho
   const { tracks } = useCourseCatalog();
   const mastery = useMasteryNextAction();
   const [snapshot, setSnapshot] = useState(() => ({ course: loadProgress(), journey: readJourney() }));
+  const [previousRoute] = useState(() => {
+    const visit = getLastVisit();
+    return visit.daysAgo !== null && visit.daysAgo >= 1 ? visit.route : null;
+  });
 
   useEffect(() => {
     const refresh = () => setSnapshot({ course: loadProgress(), journey: readJourney() });
@@ -34,6 +40,7 @@ export function LearningActivationCard({ placement = "home" }: { placement?: "ho
   }, [user?.id]);
 
   const action = chooseLearningActivation(tracks, snapshot.course, snapshot.journey, mastery);
+  const optionalResume = previousRoute ? chooseReturnDestination(tracks, snapshot.course, snapshot.journey, previousRoute) : null;
   const id = "learning-activation-" + placement;
 
   return (
@@ -52,6 +59,11 @@ export function LearningActivationCard({ placement = "home" }: { placement?: "ho
               {action.heading}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{action.description}</p>
+            {optionalResume && optionalResume.href !== action.href && (
+              <p className="mt-3 text-xs text-muted-foreground">
+                Prefer where you left off? <Link to={optionalResume.href} className="underline underline-offset-4 hover:text-foreground">Resume {optionalResume.label}</Link>
+              </p>
+            )}
             <p className="mt-3 flex items-start gap-1.5 text-xs text-muted-foreground">
               <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               {user ? "Your saved learning progress can sync privately when online." : "Free to explore without signing up. Guest progress stays in this browser."}
