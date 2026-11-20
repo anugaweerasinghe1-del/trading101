@@ -204,7 +204,8 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Publisher and editorial transparency", p: [GLOSSARY_WORKSHEETS[g.slug]?.sourceCheck
           ? `Published by TradeHQ. Site creator: Anuga Weerasinghe. Limited source check: ${GLOSSARY_WORKSHEETS[g.slug].sourceCheck!.date}. ${GLOSSARY_WORKSHEETS[g.slug].sourceCheck!.scope} This is not independent professional review.`
           : "Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date; the About page explains the site's editorial approach."] },
-        { h: `What ${g.term} means`, p: [g.definition] },
+        // The route summary already displays g.definition; repeating it here
+        // creates an identical paragraph in crawler HTML but not the hydrated glossary.
         { h: "In depth", p: splitParagraphs(g.expertDefinition) },
         { h: "Key points", list: g.keyPoints },
         { h: "Why it matters when you are learning", p: [g.studentPerspective] },
