@@ -30,6 +30,7 @@ import { recordLoss } from "@/components/trading/RevengeTradingBlocker";
 import { useToast } from "@/hooks/use-toast";
 import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { refreshAssetSnapshots } from "@/lib/marketDataClient";
+import type { PickerQuoteOrigin } from "@/lib/assetPickerPresentation";
 import { markJourneyTrade, readJourney } from "@/lib/beginnerJourney";
 
 export default function Trade() {
@@ -52,6 +53,7 @@ export default function Trade() {
   const isRefreshing = useRef(false);
   const assetsRef = useRef<Asset[]>([]);
   const [snapshotAssetIds, setSnapshotAssetIds] = useState<Set<string>>(new Set());
+  const [quoteOrigins, setQuoteOrigins] = useState<Record<string, PickerQuoteOrigin>>({});
 
   useEffect(() => {
     assetsRef.current = assets;
@@ -67,6 +69,11 @@ export default function Trade() {
         setAssets(result.assets);
         setPortfolio(current => updatePositionPrices(current, result.assets));
         setSnapshotAssetIds(previous => new Set([...previous, ...result.providerIds]));
+        setQuoteOrigins(previous => {
+          const next = { ...previous };
+          for (const id of result.providerIds) next[id] = "provider";
+          return next;
+        });
       }
     } catch { /* Keep the last known prices without fabricating movement. */ }
     finally { isRefreshing.current = false; }
@@ -88,10 +95,12 @@ export default function Trade() {
     // Hydrate from persisted prices
     const cached = getPersistedPrices();
     const cachedSnapshotIds = new Set<string>();
+    const initialQuoteOrigins: Record<string, PickerQuoteOrigin> = {};
     const hydratedAssets = validAssets.map(a => {
       const p = cached[a.id];
       if (!p || p.source === 'simulated') return a;
       cachedSnapshotIds.add(a.id);
+      initialQuoteOrigins[a.id] = "saved";
       return { ...a, price: p.price, change: p.change, changePercent: p.changePercent };
     });
 
@@ -100,6 +109,7 @@ export default function Trade() {
 
       setAssets(hydratedAssets);
       setSnapshotAssetIds(cachedSnapshotIds);
+      setQuoteOrigins(initialQuoteOrigins);
       setPortfolio(updatePositionPrices(getPortfolio(), hydratedAssets));
 
       if (symbol) {
@@ -271,6 +281,7 @@ export default function Trade() {
               assets={assets}
               selectedAsset={selectedAsset}
               favorites={favorites}
+              quoteOrigins={quoteOrigins}
               onSelectAsset={handleAssetSelect}
               onToggleFavorite={handleToggleFavorite}
             />
@@ -278,6 +289,9 @@ export default function Trade() {
             <LiveDataToggle
               asset={selectedAsset}
               onLiveDataReceived={(livePrice, isLive) => {
+                if (isLive && selectedAsset && Number.isFinite(livePrice) && livePrice > 0) {
+                  setQuoteOrigins(previous => previous[selectedAsset.id] === "provider" ? previous : { ...previous, [selectedAsset.id]: "provider" });
+                }
                 if (
                   isLive &&
                   selectedAsset &&

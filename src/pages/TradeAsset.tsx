@@ -22,6 +22,7 @@ import { AIMentor } from "@/components/trading/AIMentor";
 import { ChartSkeleton } from "@/components/trading/ChartSkeleton";
 import { MobileOrderDrawer } from "@/components/trading/MobileOrderDrawer";
 import { ASSETS } from "@/lib/assets";
+import type { PickerQuoteOrigin } from "@/lib/assetPickerPresentation";
 import { Asset } from "@/lib/types";
 import { getPortfolio, executeTrade, updatePositionPrices } from "@/lib/portfolio";
 import { portfolioOwnerIs } from '@/lib/portfolioOwner';
@@ -65,6 +66,7 @@ export default function TradeAsset() {
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [dataSource, setDataSource] = useState<'live' | 'delayed' | 'cached' | 'simulated'>('simulated');
+  const [quoteOrigins, setQuoteOrigins] = useState<Record<string, PickerQuoteOrigin>>({});
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const { toast } = useToast();
    
@@ -119,11 +121,16 @@ export default function TradeAsset() {
       if (!isMounted.current) return;
       // Hydrate from persisted prices before displaying
       const cached = getPersistedPrices();
+      const initialQuoteOrigins: Record<string, PickerQuoteOrigin> = {};
+      for (const asset of ASSETS) {
+        if (cached[asset.id] && cached[asset.id].source !== "simulated") initialQuoteOrigins[asset.id] = "saved";
+      }
       const hydratedAssets = ASSETS.map(a => {
         const p = cached[a.id];
         return p && p.source !== 'simulated' ? { ...a, price: p.price, change: p.change, changePercent: p.changePercent } : a;
       });
       setAssets(hydratedAssets);
+      setQuoteOrigins(initialQuoteOrigins);
       setPortfolio(updatePositionPrices(getPortfolio(), hydratedAssets));
       setSelectedAsset(targetAsset ? (cached[targetAsset.id] && cached[targetAsset.id].source !== 'simulated' ? { ...targetAsset, price: cached[targetAsset.id].price, change: cached[targetAsset.id].change, changePercent: cached[targetAsset.id].changePercent } : targetAsset) : null);
       if (targetAsset && cached[targetAsset.id]) {
@@ -165,6 +172,10 @@ export default function TradeAsset() {
             return nextAssets;
           });
           setDataSource(quote.status);
+          if (quote.status !== "cached") {
+            const origin: PickerQuoteOrigin = quote.status === "simulated" ? "simulated" : "provider";
+            setQuoteOrigins(previous => ({ ...previous, [updated.id]: origin }));
+          }
         }
         setLastUpdated(new Date());
       }
@@ -551,6 +562,7 @@ export default function TradeAsset() {
               assets={assets}
               selectedAsset={selectedAsset}
               favorites={favorites}
+              quoteOrigins={quoteOrigins}
               onSelectAsset={(asset) => navigate(`/trade/${asset.id}`)}
               onToggleFavorite={handleToggleFavorite}
             />
