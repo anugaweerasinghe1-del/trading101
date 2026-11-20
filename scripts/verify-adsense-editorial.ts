@@ -5,6 +5,7 @@
  * Passing it is necessary, not sufficient, for AdSense approval.
  */
 import assert from "node:assert/strict";
+import { assetPickerLabel, pickerQuoteOriginLabel } from "../src/lib/assetPickerPresentation";
 import { readFileSync } from "node:fs";
 import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
@@ -321,3 +322,27 @@ for (const [price, gross] of [[175, -200], [182, 0], [190, 300]]) {
   close(payoff, gross); close(payoff - 8, gross - 8);
 }
 console.log("PASS residual glossary/hub/quiz claims, catalogue schema and independent strategy/payoff/fee arithmetic");
+
+
+// Strict Trade quality-risk regressions: visual copy and catalogue provenance
+// are distinguished from a hypothetical Google policy violation.
+const legacyBlock = ASSETS.find(asset => asset.id === "sq");
+const legacyMatic = ASSETS.find(asset => asset.id === "matic");
+const currentPol = ASSETS.find(asset => asset.id === "pol");
+assert.ok(legacyBlock && legacyMatic && currentPol, "Historical symbols and current POL must remain in the simulator");
+assert.equal(legacyBlock.symbol, "SQ", "Do not change historical portfolio identifier");
+assert.equal(legacyMatic.symbol, "MATIC", "Do not mutate legacy POL migration holdings");
+assert.equal(currentPol.symbol, "POL");
+assert.match(assetPickerLabel(legacyBlock), /legacy SQ \(current ticker XYZ\)/);
+assert.match(assetPickerLabel(legacyMatic), /legacy MATIC \(current Polygon token POL\)/);
+assert.equal(assetPickerLabel(currentPol), currentPol.name);
+for (const [origin, label] of [["fixed", "Fixed practice"], ["saved", "Saved quote"], ["provider", "Provider snapshot"], ["simulated", "Simulated quote"]] as const) {
+  assert.equal(pickerQuoteOriginLabel(origin), label);
+}
+const tradePicker = readFileSync("src/components/trading/AssetSearchDropdown.tsx", "utf8");
+assert.match(tradePicker, /data-quote-origin=\{quoteOrigins\[asset\.id\]/);
+assert.match(tradePicker, /assetPickerLabel\(asset\)/);
+for (const file of ["src/pages/Trade.tsx", "src/pages/TradeAsset.tsx"]) {
+  assert.match(readFileSync(file, "utf8"), /quoteOrigins=\{quoteOrigins\}/, file + ": per-row provenance wiring required");
+}
+console.log("PASS legacy SQ/MATIC labels, current POL, unchanged portfolio IDs, quote labels and both Trade picker routes");
