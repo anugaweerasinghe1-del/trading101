@@ -15,7 +15,7 @@ import { SocialProofTicker } from "@/components/SocialProofTicker";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Sparkles, ArrowRight, Instagram, Globe } from "lucide-react";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "@/lib/seoData";
-import { ContinueBanner } from "@/components/retention/ContinueBanner";
+import { LearningActivationCard } from "@/components/retention/LearningActivationCard";
 import { WatchlistAlerts } from "@/components/retention/WatchlistAlerts";
 import { WeeklyRecap } from "@/components/retention/WeeklyRecap";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
@@ -177,19 +177,8 @@ const Index = () => {
           <PremiumHero />
         </div>
 
-        <section aria-label="Guided beginner journey" className="container mx-auto max-w-7xl px-6 pt-8">
-          <Link to="/start" className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-primary/30 bg-primary/5 px-6 py-5 hover:border-primary/60 transition-colors">
-            <div>
-              <p className="text-xs font-semibold text-primary uppercase tracking-wider">New to TradeHQ? Start here</p>
-              <h2 className="mt-1 text-xl font-semibold">Your first practice trade, step by step</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Start with Daily Practice, then learn, make a voluntary virtual trade and review what happened. No account needed.</p>
-            </div>
-            <span className="flex items-center gap-2 text-primary font-semibold text-sm shrink-0">Start or continue <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
-          </Link>
-        </section>
-
-        {/* Retention hooks — silent unless the user is returning */}
-        <ContinueBanner />
+        {/* One contextual educational action replaces competing generic and return banners. */}
+        <LearningActivationCard />
         <WatchlistAlerts />
         <WeeklyRecap />
 
