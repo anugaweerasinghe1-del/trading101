@@ -4,6 +4,7 @@ import type { CourseProgressState } from "./courseProgress";
 export interface LearningTrack {
   slug: string;
   title: string;
+  level?: "Beginner" | "Intermediate" | "Advanced";
   lessons: { slug: string; title: string; readingMinutes: number }[];
 }
 export interface LearningNextStep {
@@ -78,7 +79,11 @@ export function buildLearningOverview(
   }
   if (!next) {
     const unfinished = (t: LearningTrack) => t.lessons.some(l => course.tracks[t.slug]?.lessons[l.slug]?.status !== "completed");
-    const beginner = tracks.find(t => t.slug === "trading-psychology-mastery" && unfinished(t)) ??
+    // Prefer an approved beginner trading-practice course when available;
+    // complex theory and psychology should not be the default first course.
+    const beginner = tracks.find(t => t.level === "Beginner" && t.slug === "bitcoin-simulator-practice-trading" && unfinished(t)) ??
+      tracks.find(t => t.level === "Beginner" && t.slug !== "trading-psychology-mastery" && unfinished(t)) ??
+      tracks.find(t => t.level === "Beginner" && unfinished(t)) ??
       tracks.find(unfinished);
     if (beginner) {
       const first = beginner.lessons.find(l => course.tracks[beginner.slug]?.lessons[l.slug]?.status !== "completed");
