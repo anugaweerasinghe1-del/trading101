@@ -11,13 +11,14 @@ export function assetPickerLabel(asset: Pick<Asset, "id" | "symbol" | "name">): 
   return asset.name;
 }
 
-export type PickerQuoteOrigin = "fixed" | "saved" | "provider";
+export type PickerQuoteOrigin = "fixed" | "saved" | "provider" | "simulated";
 
 /** Classify the displayed *price*, not a potentially different change interval. */
 export function pickerQuoteOriginLabel(origin: PickerQuoteOrigin): string {
   switch (origin) {
     case "saved": return "Saved quote";
     case "provider": return "Provider snapshot";
+    case "simulated": return "Simulated quote";
     default: return "Fixed practice";
   }
 }
