@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { chooseLearningActivation } from "../src/lib/learningActivation.ts";
+import { buildLearningOverview } from "../src/lib/learningOverview.ts";
 import type { CourseProgressState } from "../src/lib/courseProgress.ts";
 import type { BeginnerJourneyProgress } from "../src/lib/beginnerJourney.ts";
 
@@ -28,6 +29,13 @@ delete progress.lastLesson;
 assert.deepEqual([choose().state, choose().href], ["mastery", "/daily"]);
 tracks[0].lessons.push({ slug: "three", title: "New Reviewed Lesson", readingMinutes: 5 });
 assert.equal(choose().href, "/courses/approved-basics/three", "Approved new lessons must be eligible automatically");
+const approvedNewCourses = [
+  { slug: "trading-psychology-mastery", title: "Psychology", level: "Beginner" as const, lessons: [{ slug: "biases", title: "Biases", readingMinutes: 6 }] },
+  { slug: "bitcoin-simulator-practice-trading", title: "Bitcoin Practice", level: "Beginner" as const, lessons: [{ slug: "orders", title: "Orders", readingMinutes: 6 }] },
+  { slug: "options-trading-fundamentals", title: "Options", level: "Intermediate" as const, lessons: [{ slug: "options", title: "Options", readingMinutes: 8 }] },
+];
+assert.equal(buildLearningOverview(approvedNewCourses, { v: 1, tracks: {}, updatedAt: progress.updatedAt }, journey).next?.href,
+  "/courses/bitcoin-simulator-practice-trading/orders", "A newly published beginner practice course outranks psychology/advanced theory");
 const files = (name: string) => readFileSync(name, "utf8");
 const home = files("src/pages/Index.tsx");
 const profile = files("src/pages/TraderProfile.tsx");
