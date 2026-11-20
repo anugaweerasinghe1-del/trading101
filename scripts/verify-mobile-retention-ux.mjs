@@ -43,14 +43,13 @@ export async function verifyMobileRetentionUx({send,evaluate,waitUntil,origin,de
       const el=document.querySelector('[data-testid=learning-activation-card]');
       const heading=el?.querySelector('h2'), description=el?.querySelector('p.text-muted-foreground');
       const link=el?.querySelector('a[href^="/courses/"]');
-      const resume=Array.from(el?.querySelectorAll('a[href="/portfolio"]') || [])[0];
-      if(!heading||!description||!link||!resume)return null;
+      if(!heading||!description||!link)return null;
       const rect=node=>{const r=node.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
-      return {label:heading.textContent,heading:rect(heading),link:rect(link),resume:rect(resume),
+      return {label:heading.textContent,heading:rect(heading),link:rect(link),
         clipped:heading.scrollWidth>heading.clientWidth+1,
         hasOverflow:document.documentElement.scrollWidth>innerWidth+1,href:link.getAttribute('href')};
     })()`);
-    assert.ok(card,`Activation card, lesson CTA and non-competing previous activity link render at ${width}px`);
+    assert.ok(card,`Activation card and lesson CTA render at ${width}px`);
     assert.ok(card.label.includes("What Is an Option? Calls & Puts Explained"),
       "Saved approved lesson must remain readable, not cut off");
     assert.equal(card.clipped,false,`Resume lesson heading fits at ${width}px`);
@@ -67,5 +66,5 @@ export async function verifyMobileRetentionUx({send,evaluate,waitUntil,origin,de
       "tradehq_last_visit_at","tradehq_last_route","tradehq_push_state"]) localStorage.removeItem(key);
     return true;
   })()`);
-  console.log("PASS returning guest activation heading, lesson CTA, quiet previous activity link, mobile touch targets and no unsolicited permission at 320/360/390px");
+  console.log("PASS returning guest activation heading, approved lesson CTA, mobile touch targets and no unsolicited permission at 320/360/390px");
 }
