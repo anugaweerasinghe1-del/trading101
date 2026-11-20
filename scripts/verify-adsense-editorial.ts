@@ -78,6 +78,25 @@ for (const term of tradingGlossary) {
     path + ": first definition must not be duplicated in crawler notes");
 }
 
+// Each comparison should add its own specific worksheet, not the shared
+// search-facing closing paragraph previously repeated on every pair.
+const compareNotes = Array.from(map.entries())
+  .filter(([path]) => path.startsWith("/compare/"));
+assert.equal(compareNotes.length, 8, "All eight authored comparison worksheets must remain");
+const worksheetCopies = compareNotes.map(([path, page]) => {
+  const worksheet = page.sections.find(section => section.h === "How to compare a practice worksheet");
+  assert.ok(worksheet && worksheet.p?.length === 1 && typeof worksheet.p[0] === "string" && worksheet.p[0].length > 200,
+    path + ": require one substantive, pair-specific worksheet, not filler");
+  assert.ok(!worksheet.p[0].startsWith("Equal dollar values do not establish equal risk."),
+    path + ": generic repeat should not replace the worksheet");
+  assert.ok(page.sections.some(section => section.h === "Common mistakes with this comparison"),
+    path + ": pair-specific limitations must remain");
+  return worksheet.p[0];
+});
+assert.equal(new Set(worksheetCopies).size, compareNotes.length,
+  "Every named pair requires a distinct exercise");
+console.log("PASS all comparison pages retain unique teaching exercises without duplicate boilerplate");
+
 const audited = [
   "/how-to-trade/sol",
   "/strategy/dca-dollar-cost-averaging",

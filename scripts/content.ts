@@ -362,10 +362,11 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Common mistakes with this comparison", list: p.mistakes },
         {
           h: "How to compare a practice worksheet",
-          p: [
-            p.worksheet,
-            "Equal dollar values do not establish equal risk. Record unfavorable as well as favorable cases. Provider observations and generated history are different; simulated portfolio metrics do not establish real-account drawdowns or suitability.",
-          ],
+          // A comparison needs its own substantive exercise; a repeated
+          // global closing paragraph adds no extra instruction here.
+          // Safety and quote-provenance caveats remain in the pair worksheet
+          // and the site's educational disclaimer.
+          p: [p.worksheet],
         },
       ],
       links: [
