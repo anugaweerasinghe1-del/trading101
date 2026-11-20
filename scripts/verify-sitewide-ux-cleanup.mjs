@@ -54,7 +54,7 @@ assert.ok(
   "Homepage follow invitation belongs after core product features and before long exploration links"
 );
 assert.ok(
-  home.indexOf('aria-label="Guided beginner journey"') < followSectionPosition &&
+  home.indexOf("<LearningActivationCard />") < followSectionPosition &&
   home.indexOf('aria-label="Daily engagement"') < followSectionPosition,
   "Beginner journey and Daily Practice must remain ahead of social promotion"
 );

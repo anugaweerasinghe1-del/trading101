@@ -16,6 +16,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
+import { LearningActivationCard } from "@/components/retention/LearningActivationCard";
 
 const DOMAIN = "https://www.thetradehq.com";
 
@@ -133,6 +134,9 @@ export default function TraderProfile() {
               </button>
             </div>
           </header>
+
+          {/* Registration lands here: make the next learning step obvious. */}
+          {user && <LearningActivationCard placement="profile" />}
 
           {user && profile && (
             <Card className="p-5 mb-8 bg-white/[0.02] border-white/10">
