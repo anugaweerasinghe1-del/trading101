@@ -135,7 +135,7 @@ export default function Learn() {
           }}
         />
         <main className="relative pt-32 pb-20">
-          <div className="container mx-auto px-6 max-w-7xl">
+          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
 
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8 animate-fade-in" aria-label="Breadcrumb">
@@ -144,27 +144,17 @@ export default function Learn() {
               <span className="text-foreground font-medium">Learning</span>
             </nav>
 
+            <header className="mb-7 max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Free trading education</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Learn Trading, One Step at a Time</h1>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Pick up your next lesson, or begin with a simple explanation of orders and fees.
+                All lessons are educational; the simulator uses virtual money only.
+              </p>
+            </header>
+
             {/* One recommendation hub; course progress and optional paths stay available below it. */}
             <LearningJourneyDashboard tracks={tracks} />
-
-            <Link to="/achievements" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between
-              rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6
-              hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary
-              transition-colors" aria-label="Open your private Trophy Cabinet and personal learning milestones">
-              <span className="flex gap-4 items-center">
-                <span className="shrink-0 rounded-xl bg-primary/10 p-3 text-primary">
-                  <Trophy className="w-6 h-6" aria-hidden="true" />
-                </span>
-                <span>
-                  <span className="block text-xs font-semibold uppercase tracking-[0.13em] text-primary">Learning milestones</span>
-                  <span className="block mt-1 text-lg font-bold text-foreground">Your Trophy Cabinet</span>
-                  <span className="block mt-1 text-sm text-muted-foreground">See your private course badges and lessons completed. No public rankings or profit trophies.</span>
-                </span>
-              </span>
-              <span className="inline-flex items-center gap-2 shrink-0 text-sm font-semibold text-primary">
-                Open my cabinet <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </span>
-            </Link>
 
             {/* Structured Courses — top-of-page discovery */}
             <section className="mb-14" aria-label="Structured Courses">
@@ -197,6 +187,26 @@ export default function Learn() {
                 ))}
               </div>
              </section>
+
+            {/* Milestones are secondary to finding and starting a lesson. */}
+            <Link to="/achievements" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between
+              rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6
+              hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary
+              transition-colors" aria-label="Open your private Trophy Cabinet and personal learning milestones">
+              <span className="flex gap-4 items-center">
+                <span className="shrink-0 rounded-xl bg-primary/10 p-3 text-primary">
+                  <Trophy className="w-6 h-6" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold uppercase tracking-[0.13em] text-primary">Learning milestones</span>
+                  <span className="block mt-1 text-lg font-bold text-foreground">Your Trophy Cabinet</span>
+                  <span className="block mt-1 text-sm text-muted-foreground">See your private course badges and lessons completed. No public rankings or profit trophies.</span>
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-2 shrink-0 text-sm font-semibold text-primary">
+                Open my cabinet <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </span>
+            </Link>
 
             {/* Courses vs Quick Reads — removes the "why are there two?" confusion */}
             <section className="mb-14" aria-label="How this page is organised">
@@ -240,53 +250,6 @@ export default function Learn() {
                 <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition" />
               </div>
             </Link>
-
-            {/* Premium hero */}
-            <div
-              className="relative mb-16 overflow-hidden rounded-[32px] border border-white/[0.08] p-10 md:p-16 text-center animate-fade-in"
-              style={{
-                ...({
-                  "--foreground": "220 15% 93%",
-                  "--muted-foreground": "220 14% 68%",
-                  "--primary": "168 100% 50%",
-                } as CSSProperties),
-                backgroundColor: "hsl(0 0% 4%)",
-                backgroundImage:
-                  "linear-gradient(140deg, hsl(168 100% 50% / 0.06) 0%, hsl(0 0% 6% / 0.85) 50%, hsl(280 60% 55% / 0.05) 100%)",
-                backdropFilter: "blur(28px) saturate(160%)",
-                boxShadow: "0 24px 80px -20px hsl(0 0% 0% / 0.6), inset 0 1px 0 0 hsl(0 0% 100% / 0.06)",
-              }}
-            >
-              <div
-                aria-hidden
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px"
-                style={{ background: "linear-gradient(90deg, transparent, hsl(168 100% 50% / 0.5), transparent)" }}
-              />
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 mb-6 backdrop-blur-xl">
-                <GraduationCap className="w-3.5 h-3.5 text-primary" />
-                <span className="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">Structured Learning · 100% Free</span>
-              </div>
-              <h1
-                className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.05]"
-                style={{
-                  background: "linear-gradient(135deg, hsl(220 15% 98%) 0%, hsl(168 70% 75%) 50%, hsl(220 15% 85%) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Learn Trading — From Zero to Confident
-              </h1>
-              <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6">
-                Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-foreground/60">
-                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">⚡ {tracks.length} available courses · {lessons.length} quick reads</span>
-                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">📚 21 wiki terms</span>
-                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">🎯 Daily challenge</span>
-                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">💸 $100K virtual cash</span>
-              </div>
-            </div>
 
             {/* Learning Path Overview */}
             <section className="mb-16" aria-label="Learning path">
