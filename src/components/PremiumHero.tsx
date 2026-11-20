@@ -110,10 +110,10 @@ export function PremiumHero() {
           <Button
               size="lg"
               variant="outline"
-              className="text-base px-10 py-7 bg-white/[0.06] border-white/20 text-foreground hover:bg-white/[0.10] hover:border-primary/40 transition-all duration-300 rounded-2xl min-h-[60px] backdrop-blur-xl font-semibold"
+              className="text-base px-8 py-7 bg-white/[0.06] border-white/20 text-foreground hover:bg-white/[0.10] hover:border-primary/40 transition-all duration-300 rounded-2xl min-h-[60px] backdrop-blur-xl font-semibold"
              asChild>
-<Link to="/courses">
-              Learn Trading
+<Link to="/learn">
+              Explore Learning
             </Link>
 </Button>
         </div>

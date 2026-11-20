@@ -38,6 +38,7 @@ export default function Trade() {
   const [query] = useSearchParams();
   const guidedPractice = query.get("journey") === "1";
   const [guidedOrderComplete, setGuidedOrderComplete] = useState(() => Boolean(readJourney().tradeId));
+  const [postTradeLesson, setPostTradeLesson] = useState<{ symbol: string; side: "buy" | "sell" } | null>(null);
   const [portfolio, setPortfolio] = useState(getPortfolio());
   useEffect(() => {
     const refresh = () => setPortfolio(getPortfolio());
@@ -186,6 +187,7 @@ export default function Trade() {
         }
 
         setPortfolio(getPortfolio());
+        setPostTradeLesson({ symbol: asset.symbol, side: type });
         if (guidedPractice && result.portfolio.trades[0]) {
           markJourneyTrade(result.portfolio.trades[0]);
           setGuidedOrderComplete(true);
@@ -262,6 +264,30 @@ export default function Trade() {
             <div><strong>Beginner journey · guided virtual trade</strong><p className="text-muted-foreground mt-1">{guidedOrderComplete ? "Your order has been recorded. Return to understand its effect on cash, holdings and fees." : "AAPL is preselected as an example, not a recommendation. Review the quote source, quantity and costs. You decide whether to submit a practice order."}</p></div>
             <Link to="/start" className="font-semibold text-primary whitespace-nowrap underline underline-offset-4">Back to my journey</Link>
           </div>}
+          {postTradeLesson && (
+            <section aria-label="Learn from this simulated order" role="status"
+              className="flex flex-col gap-3 rounded-2xl border border-primary/30 bg-primary/[0.06] p-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <p className="font-semibold text-foreground">Your virtual {postTradeLesson.side} order was recorded.</p>
+                <p className="mt-1 text-muted-foreground">
+                  {postTradeLesson.side === "buy"
+                    ? "A purchase uses virtual cash for the position and the simulated fee. The displayed quote may not be the execution price."
+                    : "A sale reduces your virtual holdings and changes cash after the simulated fee. Review the recorded price rather than assume the earlier quote."}
+                  {" "}Want to understand how this works?
+                </p>
+              </div>
+              <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+                <Link to={guidedPractice ? "/start" : "/learn/1"}
+                  className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-4 py-2 font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  {guidedPractice ? "Review my journey" : "Learn how orders work"}
+                </Link>
+                <button type="button" onClick={() => setPostTradeLesson(null)}
+                  className="min-h-11 rounded-xl px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  Dismiss
+                </button>
+              </div>
+            </section>
+          )}
           <header className="pt-2">
             <h1 className="text-xl md:text-2xl font-bold tracking-tight">
               Practice Trading Terminal{selectedAsset ? ` — ${selectedAsset.name} (${selectedAsset.symbol})` : ""}
