@@ -220,7 +220,7 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
             </Button>
             {confirmationFailed && (
               <p role="alert" className="rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-sm text-foreground">
-                This virtual order was not confirmed. Your inputs are preserved. Check the error above and try again when ready.
+                This virtual order was not confirmed in this view. Your inputs are preserved. Check your portfolio before trying again, especially after a connection error.
               </p>
             )}
           </div>
