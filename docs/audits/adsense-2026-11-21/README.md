@@ -1,5 +1,6 @@
 # TradeHQ — strict AdSense audit (21 November 2026)
 
+> **SECOND-PASS UPDATE (2026-11-21):** The original 70-page/93-pending assessment below is retained as a dated evidence stage, not the current coverage conclusion. The remaining 93 sitemap pages have now been fetched and source-checked. Final evidence: **163/163 live-text pages, 1,807 content blocks, 25 manually full-text-reviewed samples, 138 mechanically screened, and published-course revision checks in Supabase**. The authoritative current URL ledger is [FULL-URL-LEDGER.csv](FULL-URL-LEDGER.csv) and the updated decision is [FINAL-READINESS-REPORT.md](FINAL-READINESS-REPORT.md) / [SECOND-PASS-CLOSEOUT.md](SECOND-PASS-CLOSEOUT.md). The judgment is **conditional GO** on site-content grounds; it is not a Google approval or live browser certification. \n\n
 **Status: read-only website/code investigation; findings are NOT a Google decision.** This audit is deliberately isolated on branch `audit/adsense-strict-2026-11-21`. It does not enable advertising, deploy, change site copy, or submit an application. Production source baseline: `bca65c8bb2c982b66e354c8874f3f3a3dc8f7918` (main snapshot 2026-11-21 07:40 UTC).
 
 ## Mandate and reviewer stance
