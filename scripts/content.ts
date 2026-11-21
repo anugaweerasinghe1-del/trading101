@@ -567,7 +567,8 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Publisher and editorial transparency", p: [a.sourceCheck
           ? `Published by TradeHQ. Site creator: Anuga Weerasinghe. A limited source check dated ${a.sourceCheck.date} is documented below, with its precise scope. This is not a full independent editorial or professional review; no independent professional review is claimed.`
           : "Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date. No independent professional review is claimed; see About for the editorial approach."] },
-        { h: "Summary", p: [a.summary] },
+        // The page intro already publishes a.summary before these sections.
+        // Do not render it again as a crawler-visible Summary paragraph.
         ...(a.sourceCheck ? [{ h: "Source-check scope", p: [`Source check: ${a.sourceCheck.date}. ${a.sourceCheck.scope}`] }] : []),
         ...a.sections.map((s: any) => ({ h: s.heading, p: s.paragraphs })),
         { h: "Practise what you just read", p: [`Apply this in the simulator with ${BALANCE} in virtual cash. ${DISCLAIMER}`] },
