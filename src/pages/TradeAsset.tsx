@@ -296,9 +296,10 @@ export default function TradeAsset() {
     ]
   } : null;
 
-  // Schema varies by asset type: Crypto=FinancialProduct, Stocks/ETFs=SoftwareApplication(Simulation)
+  // These URLs describe the free simulator, not custody or a tradable financial product.
+  // Keep existing asset-class schemas outside the BTC pilot until independently reviewed.
   const assetSchema = selectedAsset ? (
-    selectedAsset.type === 'crypto' || selectedAsset.type === 'commodity' || selectedAsset.type === 'forex'
+    (selectedAsset.id !== "btc" && (selectedAsset.type === 'crypto' || selectedAsset.type === 'commodity' || selectedAsset.type === 'forex'))
       ? {
           "@context": "https://schema.org",
           "@type": "FinancialProduct",
@@ -323,7 +324,7 @@ export default function TradeAsset() {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           "name": `${selectedAsset.name} Trading Simulator`,
-          "description": assetContent?.whatIs || metaDescription || `Practice ${selectedAsset.name} trading with simulated data`,
+          "description": selectedAsset.id === "btc" ? BITCOIN_SIMULATOR_SEO.description : (assetContent?.whatIs || metaDescription || `Practice ${selectedAsset.name} trading with simulated data`),
           "url": canonicalUrl,
           "applicationCategory": "FinanceApplication",
           "applicationSubCategory": "Trading Simulator (Educational)",
