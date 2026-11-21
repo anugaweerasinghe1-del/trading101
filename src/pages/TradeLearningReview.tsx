@@ -10,6 +10,7 @@ import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortf
 import { markLessonCompleted } from "@/lib/courseProgress";
 import { TRADE_REVIEW_TRACK, TRADE_REVIEW_LESSON, TRADE_RECALL_LESSON } from "@/lib/retentionLearning";
 import { tradeReviewQuestion } from "@/lib/tradeReviewQuestions";
+import { recordConsentedLearningVisit, trackLearningMilestone } from "@/lib/learningTelemetry";
 
 const money = (n: number) => Number.isFinite(n)
   ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n)
@@ -25,6 +26,11 @@ export default function TradeLearningReview() {
   const [selected, setSelected] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    recordConsentedLearningVisit();
+    trackLearningMilestone("Trade Review Viewed");
+  }, [recall]);
 
   useEffect(() => {
     const refresh = () => setPortfolio(getPortfolio());
@@ -61,16 +67,20 @@ export default function TradeLearningReview() {
   }, [recall]);
 
 
+  function persistReview(): boolean {
+    if (selected === null) return false;
+    // A wrong response records an attempt, never proof of mastery.
+    const stored = markLessonCompleted(
+      TRADE_REVIEW_TRACK, recall ? TRADE_RECALL_LESSON : TRADE_REVIEW_LESSON,
+      didAnswerCorrectly ? 100 : 0,
+    );
+    if (stored) trackLearningMilestone("Trade Review Completed");
+    return stored;
+  }
+
   function submit() {
     if (selected === null || submitted) return;
-    const correct = didAnswerCorrectly;
-    // Recording completion is separate from trading, badges and portfolios.
-    // A wrong answer is stored as a review attempt, not proof of mastery.
-    const persisted = markLessonCompleted(
-      TRADE_REVIEW_TRACK, recall ? TRADE_RECALL_LESSON : TRADE_REVIEW_LESSON,
-      correct ? 100 : 0,
-    );
-    setSaved(persisted);
+    setSaved(persistReview());
     setSubmitted(true);
   }
 
@@ -145,7 +155,7 @@ export default function TradeLearningReview() {
               </button>
             ) : (
               <>
-                {!saved && <button type="button" onClick={() => setSaved(markLessonCompleted(TRADE_REVIEW_TRACK, recall ? TRADE_RECALL_LESSON : TRADE_REVIEW_LESSON, didAnswerCorrectly ? 100 : 0))} className="inline-flex min-h-11 items-center rounded-xl border border-primary/30 px-4 py-2 text-sm font-medium">Retry saving</button>}
+                {!saved && <button type="button" onClick={() => setSaved(persistReview())} className="inline-flex min-h-11 items-center rounded-xl border border-primary/30 px-4 py-2 text-sm font-medium">Retry saving</button>}
                 <Link to="/learn" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">Continue learning <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 <Link to="/portfolio" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-border px-5 py-3 text-sm font-medium">Review portfolio</Link>
               </>
