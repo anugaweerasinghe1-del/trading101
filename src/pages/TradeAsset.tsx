@@ -531,23 +531,27 @@ export default function TradeAsset() {
           )}
 
           {selectedAsset?.id === "btc" && (
-            <section aria-labelledby="btc-practice-steps" className="rounded-2xl border border-primary/25 bg-card/70 p-5 sm:p-6">
-              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <section aria-labelledby="btc-practice-steps" className="rounded-2xl border border-primary/25 bg-card/70 p-4 sm:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div className="max-w-2xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Free Bitcoin simulator · No signup required</p>
-                  <h2 id="btc-practice-steps" className="mt-2 text-xl font-semibold text-foreground">Practise a BTC order, then understand what changed</h2>
-                  <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
-                    <li>Review the BTC reference quote and its source or simulated-data label before choosing any quantity.</li>
-                    <li>Preview an optional virtual buy or sell with $100,000 starting practice cash; no real Bitcoin is purchased.</li>
-                    <li>After saving an order, open your portfolio to examine cash movement, the simulated 0.1% fee and what remains uncertain.</li>
-                  </ol>
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Practice fills do not reproduce exchange spreads, slippage, custody or the emotions of risking real money. A simulated return cannot predict a real return.</p>
+                  <h2 id="btc-practice-steps" className="mt-1 text-lg font-semibold text-foreground">Practise BTC virtually. Understand each result.</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Use the order panel below, then review saved virtual cash, fees and holdings. No actual Bitcoin is purchased.</p>
                 </div>
-                <div className="flex shrink-0 flex-col gap-2 text-sm md:w-48">
-                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-4 py-2 text-center font-semibold text-primary-foreground transition-colors hover:bg-primary/90">Bitcoin beginner guide</Link>
-                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-4 py-2 text-center font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
+                <div className="flex shrink-0 flex-wrap items-center gap-2 text-sm">
+                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
+                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
                 </div>
               </div>
+              <details className="mt-3 border-t border-border/60 pt-3 text-sm">
+                <summary className="min-h-9 cursor-pointer font-medium text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">How does virtual Bitcoin practice work?</summary>
+                <ol className="mt-2 list-decimal space-y-1.5 pl-5 leading-relaxed text-muted-foreground">
+                  <li>Check whether the quote and chart are provider-based, delayed, cached or simulated.</li>
+                  <li>Preview an optional virtual market order using the displayed quantity and practice price.</li>
+                  <li>In your portfolio, compare the recorded cash movement, simulated 0.1% fee and remaining holdings.</li>
+                </ol>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Practice fills do not reproduce real spreads, slippage, custody or the emotions of risking money. Simulated returns cannot predict real trading outcomes.</p>
+              </details>
             </section>
           )}
 
