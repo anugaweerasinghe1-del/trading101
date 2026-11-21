@@ -90,6 +90,26 @@ export function chooseLearningActivation(
     buttonLabel: "Review my quick read",
     state: "recall",
   };
+  // A returning trader who already reviewed an order should never be sent
+  // back to a \"first trade\" prompt. Offer an approved lesson, or general
+  // learning practice if the current catalog is unavailable.
+  if (activity.hasPracticeTrade) {
+    return overview.next
+      ? {
+        href: overview.next.href,
+        heading: "Build on what you've practised",
+        description: overview.next.reason + " · " + overview.next.trackTitle,
+        buttonLabel: "Continue with a lesson",
+        state: "lesson",
+      }
+      : {
+        href: "/daily",
+        heading: "Keep learning at your own pace",
+        description: "Try an optional educational scenario. You do not need to place another order.",
+        buttonLabel: "Open Daily Practice",
+        state: "mastery",
+      };
+  }
   if (!overview.journeyFinished) {
     return overview.journeyDone > 0
       ? {
