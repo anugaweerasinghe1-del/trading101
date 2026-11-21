@@ -278,7 +278,6 @@ try {
     const expectedUrl = 'https://www.thetradehq.com/trade/' + assetId;
     return await evaluate(`Array.from(document.querySelectorAll('script[type="application/ld+json"]')).some(el => { try { const schema=JSON.parse(el.textContent); return schema?.['@type'] === 'SoftwareApplication' && schema?.url === ${JSON.stringify(expectedUrl)} && schema?.offers?.price === '0'; } catch { return false; } })`);
   };
-  assert.equal(await validSimulationSchema('btc'), true, 'BTC page must describe its free virtual software, not a financial product');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
   await waitUntil(`!!document.querySelector('#asset-search-panel input')`, 'Asset search must open');
   assert.equal(await evaluate(`!!document.querySelector('#asset-search-panel button button')`), false);
@@ -300,6 +299,7 @@ try {
   // its publisher notes as well as the visible instrument; no order is placed.
   await send('Page.navigate', {url:origin+'/trade/btc'});
   await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Bitcoin Trading Simulator — Free Virtual Practice') && document.querySelector('h1')?.textContent.trim() === 'Bitcoin Trading Simulator — Free Virtual Practice'`, 'Bitcoin route must mount before selection');
+  assert.equal(await validSimulationSchema('btc'), true, 'BTC page must describe its free virtual software, not a financial product');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
   await waitUntil(`!!document.querySelector('#asset-search-panel')`, 'Dedicated route asset search opens');
   await evaluate(`Array.from(document.querySelectorAll('#asset-search-panel button')).find(button => button.textContent.startsWith('ETHEthereum')).click()`);
