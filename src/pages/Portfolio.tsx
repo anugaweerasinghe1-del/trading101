@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { AIAssistant } from "@/components/AIAssistant";
 import { PortfolioChart } from "@/components/PortfolioChart";
@@ -467,6 +468,17 @@ export default function Portfolio() {
                </div>
               </div>
             </header>
+
+            {!accountUnavailable && portfolio.trades.length > 0 && (
+              <section aria-label="Understand a recorded virtual order" className="mb-8 flex flex-col gap-3 rounded-2xl border border-primary/25 bg-primary/[0.05] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+                <div className="max-w-2xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.13em] text-primary">Learn from your last trade</p>
+                  <h2 className="mt-1 text-lg font-semibold">Know where your virtual cash went?</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">See your recorded trade's cost and fees, then answer one short question. Optional and free; this does not place another order.</p>
+                </div>
+                <Link to="/learn/trade-review" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">Understand my trade</Link>
+              </section>
+            )}
 
             {accountUnavailable ? <p role="status" className="mb-12 text-sm text-muted-foreground">
               {account?.error ? "No confirmed account valuation is available." : "Loading your portfolio…"}
