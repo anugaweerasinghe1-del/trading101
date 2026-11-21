@@ -42,7 +42,7 @@ export default function LessonDetail() {
     const row = getTrackProgress(QUICK_READ_TRACK).lessons[lessonKey];
     const completed = row?.status === "completed"
       ? lesson.subtopics.length
-      : Math.min(lesson.subtopics.length, Math.floor((row?.scrolledPct ?? 0) * lesson.subtopics.length / 100 + 0.001));
+      : Math.min(lesson.subtopics.length, Math.round((row?.scrolledPct ?? 0) * lesson.subtopics.length / 100));
     setCompletedSubtopics(new Set(Array.from({ length: completed }, (_, index) => index)));
     setCurrentSubtopic(Math.min(completed, lesson.subtopics.length - 1));
     setShowQuiz(false);
