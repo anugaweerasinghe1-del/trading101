@@ -302,7 +302,7 @@ try {
   await waitUntil(`!!document.querySelector('[data-testid="asset-mobile-order-launcher"] button[aria-label="Open BTC virtual practice order"]')`, 'Mobile Bitcoin simulator offers a clearly labelled virtual-order entry before the chart');
   assert.equal(await evaluate(`(() => {
     const trigger = document.querySelector('[data-testid="asset-mobile-order-launcher"]');
-    const chart = document.querySelector('.grid.grid-cols-1.lg\\:grid-cols-3');
+    const chart = document.querySelector('[data-testid="asset-chart"]');
     return Boolean(trigger && chart && (trigger.compareDocumentPosition(chart) & Node.DOCUMENT_POSITION_FOLLOWING));
   })()`), true, 'Virtual-order action must precede the chart and secondary content in the DOM');
 
