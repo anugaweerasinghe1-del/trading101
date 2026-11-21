@@ -294,7 +294,7 @@ try {
   // Selecting an instrument on a dedicated route must update the route and
   // its publisher notes as well as the visible instrument; no order is placed.
   await send('Page.navigate', {url:origin+'/trade/btc'});
-  await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Bitcoin')`, 'Bitcoin route must mount before selection');
+  await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Bitcoin Trading Simulator — Free Virtual Practice') && document.querySelector('h1')?.textContent.trim() === 'Bitcoin Trading Simulator — Free Virtual Practice'`, 'Bitcoin route must mount before selection');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
   await waitUntil(`!!document.querySelector('#asset-search-panel')`, 'Dedicated route asset search opens');
   await evaluate(`Array.from(document.querySelectorAll('#asset-search-panel button')).find(button => button.textContent.startsWith('ETHEthereum')).click()`);

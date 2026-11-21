@@ -12,6 +12,7 @@ import { lessonData } from "@/lib/lessonData";
 import { Quiz } from "@/components/Quiz";
 import { getTrackProgress, markLessonStarted, markLessonCompleted, saveLessonPosition } from "@/lib/courseProgress";
 import { QUICK_READ_TRACK, quickReadKey } from "@/lib/retentionLearning";
+import { recordConsentedLearningVisit, trackLearningMilestone } from "@/lib/learningTelemetry";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 
 // Eagerly import every lesson image so Vite fingerprints them and the src
@@ -40,6 +41,8 @@ export default function LessonDetail() {
   useEffect(() => {
     if (!lesson) return;
     const row = getTrackProgress(QUICK_READ_TRACK).lessons[lessonKey];
+    recordConsentedLearningVisit();
+    if (!row) trackLearningMilestone("Quick Read Started");
     const completed = row?.status === "completed"
       ? lesson.subtopics.length
       : Math.min(lesson.subtopics.length, Math.round((row?.scrolledPct ?? 0) * lesson.subtopics.length / 100));
@@ -68,7 +71,11 @@ export default function LessonDetail() {
   };
 
   const handleQuizComplete = () => navigate("/learn");
-  const handleQuizResult = (score: number): boolean => markLessonCompleted(QUICK_READ_TRACK, lessonKey, score);
+  const handleQuizResult = (score: number): boolean => {
+    const saved = markLessonCompleted(QUICK_READ_TRACK, lessonKey, score);
+    if (saved) trackLearningMilestone("Quick Read Completed");
+    return saved;
+  };
 
   if (showQuiz) {
     return (

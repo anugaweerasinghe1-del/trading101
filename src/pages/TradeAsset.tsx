@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { RelatedMarkets } from "@/components/RelatedMarkets";
 import { AssetFAQSection } from "@/components/AssetFAQSection";
+import { BITCOIN_SIMULATOR_SEO } from "@/lib/bitcoinSimulatorSeo";
 import { RecentAnalysis } from "@/components/RecentAnalysis";
 import { AssetIntelligence } from "@/components/AssetIntelligence";
 import { AIReadySummary } from "@/components/AIReadySummary";
@@ -295,9 +296,10 @@ export default function TradeAsset() {
     ]
   } : null;
 
-  // Schema varies by asset type: Crypto=FinancialProduct, Stocks/ETFs=SoftwareApplication(Simulation)
+  // These URLs describe the free simulator, not custody or a tradable financial product.
+  // Keep existing asset-class schemas outside the BTC pilot until independently reviewed.
   const assetSchema = selectedAsset ? (
-    selectedAsset.type === 'crypto' || selectedAsset.type === 'commodity' || selectedAsset.type === 'forex'
+    (selectedAsset.id !== "btc" && (selectedAsset.type === 'crypto' || selectedAsset.type === 'commodity' || selectedAsset.type === 'forex'))
       ? {
           "@context": "https://schema.org",
           "@type": "FinancialProduct",
@@ -322,7 +324,7 @@ export default function TradeAsset() {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           "name": `${selectedAsset.name} Trading Simulator`,
-          "description": assetContent?.whatIs || metaDescription || `Practice ${selectedAsset.name} trading with simulated data`,
+          "description": selectedAsset.id === "btc" ? BITCOIN_SIMULATOR_SEO.description : (assetContent?.whatIs || metaDescription || `Practice ${selectedAsset.name} trading with simulated data`),
           "url": canonicalUrl,
           "applicationCategory": "FinanceApplication",
           "applicationSubCategory": "Trading Simulator (Educational)",
@@ -492,7 +494,7 @@ export default function TradeAsset() {
           {selectedAsset && (
             <header className="pb-2">
               <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">
-                {selectedAsset.name} — Practice Trading Simulator
+                {selectedAsset.id === "btc" ? BITCOIN_SIMULATOR_SEO.h1 : `${selectedAsset.name} — Practice Trading Simulator`}
               </h1>
               <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
                 Explore {selectedAsset.symbol} with $100,000 in virtual cash. Read simulated charts, compare position sizes, and review practice gains and losses. No real money is traded.
@@ -526,6 +528,31 @@ export default function TradeAsset() {
                 )}
               </div>
             </header>
+          )}
+
+          {selectedAsset?.id === "btc" && (
+            <section aria-labelledby="btc-practice-steps" className="rounded-2xl border border-primary/25 bg-card/70 p-4 sm:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div className="max-w-2xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Free Bitcoin simulator · No signup required</p>
+                  <h2 id="btc-practice-steps" className="mt-1 text-lg font-semibold text-foreground">Practise BTC virtually. Understand each result.</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Use the order panel below, then review saved virtual cash, fees and holdings. No actual Bitcoin is purchased.</p>
+                </div>
+                <div className="flex shrink-0 flex-wrap items-center gap-2 text-sm">
+                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
+                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
+                </div>
+              </div>
+              <details className="mt-3 border-t border-border/60 pt-3 text-sm">
+                <summary className="min-h-9 cursor-pointer font-medium text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">How does virtual Bitcoin practice work?</summary>
+                <ol className="mt-2 list-decimal space-y-1.5 pl-5 leading-relaxed text-muted-foreground">
+                  <li>Check whether the quote and chart are provider-based, delayed, cached or simulated.</li>
+                  <li>Preview an optional virtual market order using the displayed quantity and practice price.</li>
+                  <li>In your portfolio, compare the recorded cash movement, simulated 0.1% fee and remaining holdings.</li>
+                </ol>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Practice fills do not reproduce real spreads, slippage, custody or the emotions of risking money. Simulated returns cannot predict real trading outcomes.</p>
+              </details>
+            </section>
           )}
 
           {selectedAsset?.type === "forex" && <DailyFxReference assetId={selectedAsset.id} />}

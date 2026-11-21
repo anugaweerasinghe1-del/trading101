@@ -18,6 +18,7 @@ import { lessonData } from "../src/lib/lessonData";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
 import { countryLocationName } from "../src/lib/countryDisplay";
 import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
+import { BITCOIN_SIMULATOR_SEO } from "../src/lib/bitcoinSimulatorSeo";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -413,9 +414,9 @@ export function buildRoutes(): RouteMeta[] {
   for (const a of extractAssets()) {
     routes.push({
       path: `/trade/${a.id}`,
-      title: `Paper Trade ${a.name} (${a.symbol}) Free — ${BALANCE} Simulator | TradeHQ`,
-      description: `Practise ${a.name} (${a.symbol}) with ${BALANCE} virtual cash. Simulated charts, portfolio tracking, no signup. Educational only.`,
-      h1: `Paper Trade ${a.name} (${a.symbol})`,
+      title: a.id === "btc" ? BITCOIN_SIMULATOR_SEO.title : `Paper Trade ${a.name} (${a.symbol}) Free — ${BALANCE} Simulator | TradeHQ`,
+      description: a.id === "btc" ? BITCOIN_SIMULATOR_SEO.description : `Practise ${a.name} (${a.symbol}) with ${BALANCE} virtual cash. Simulated charts, portfolio tracking, no signup. Educational only.`,
+      h1: a.id === "btc" ? BITCOIN_SIMULATOR_SEO.h1 : `Paper Trade ${a.name} (${a.symbol})`,
       summary: `Simulate buying and selling ${a.name} (${a.symbol}) with ${BALANCE} in virtual cash. Charts and prices are for education only — no real money, no brokerage relationship.`,
       priority: "0.8",
       changefreq: "daily",
