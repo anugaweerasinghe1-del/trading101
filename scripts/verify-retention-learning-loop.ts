@@ -79,6 +79,7 @@ const assetTrade = read("src/pages/TradeAsset.tsx");
 const portfolio = read("src/pages/Portfolio.tsx");
 const app = read("src/App.tsx");
 assert.match(detail, /saveLessonPosition\(QUICK_READ_TRACK/, "Subtopic progress must persist");
+assert.match(detail, /Math\.round\(\(row\?\.scrolledPct/, "Rounded saved progress must restore the correct subtopic");
 assert.match(detail, /markLessonCompleted\(QUICK_READ_TRACK/, "Quiz result must persist");
 assert.match(quiz, /setResultSaved\(onResult\(score\)\)/, "Save on result, not only when leaving quiz");
 assert.match(quiz, /Retry saving/, "Unsuccessful storage never gives a false saved message");
