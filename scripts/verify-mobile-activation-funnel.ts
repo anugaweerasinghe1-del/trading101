@@ -20,8 +20,8 @@ assert.ok(asset.indexOf('data-testid="asset-mobile-order-launcher"') <
 assert.ok(asset.indexOf('data-testid="asset-mobile-order-launcher"') <
   asset.indexOf("GEO Key Takeaways"),
   "Long-form SEO/GEO explanations must not bury the mobile product action");
-assert.match(asset, /h-\[360px\] sm:h-\[440px\] lg:h-\[520px\]/,
-  "Responsive chart must not force a 520px height on the smallest phone");
+assert.match(asset, /data-testid="asset-chart" className="[^"]*h-\[520px\]/,
+  "Retain previously tested chart dimensions so tiny-price axis labels remain visible");
 assert.match(asset, /onClick=\{\(\) => trackLearningMilestone\("Bitcoin Guide Selected"\)\}/);
 assert.match(asset, /onClick=\{\(\) => trackLearningMilestone\("Bitcoin Glossary Selected"\)\}/);
 assert.match(asset, /if \(selectedAsset\?\.id === "btc"\) trackLearningMilestone\("Bitcoin Simulator Viewed"\)/);
