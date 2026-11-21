@@ -1,0 +1,2278 @@
+{
+  "sourceSnapshot": "5dbd364b4b0aff28c44c3d4a1e8805675fbd5cd2",
+  "comparedPages": 93,
+  "notSourceEqualDoesNotMeanDefect": true,
+  "entries": [
+    {
+      "url": "https://www.thetradehq.com/trade/bnb",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 339,
+          "excerpt": "BNB is used within the BNB Chain ecosystem, including transaction-fee and staking-related "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/xrp",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 327,
+          "excerpt": "XRP is the native asset of the XRP Ledger. The ledger supports payments and other transact"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/msft",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 399,
+          "excerpt": "Microsoft provides software, cloud services and devices. Azure and Microsoft 365 illustrat"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/googl",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 423,
+          "excerpt": "Alphabet is the parent company of Google. Its reporting distinguishes Google Services, Goo"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/amzn",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 411,
+          "excerpt": "Amazon operates online and physical stores, advertising services and Amazon Web Services, "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/meta",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 435,
+          "excerpt": "Meta operates services including Facebook, Instagram and WhatsApp and reports its Family o"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/qqq",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 671,
+          "excerpt": "QQQ seeks to track the Nasdaq-100 Index before expenses. The index covers large non-financ"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/gbpusd",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/assetContent.ts",
+          "line": 489,
+          "excerpt": "GBP/USD expresses the number of US dollars per pound sterling. A pound-based receipt trans"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/assetContent.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/golden-cross",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 37,
+          "excerpt": "A golden cross labels a shorter moving average crossing above a longer one, often the 50-d"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 38,
+          "excerpt": "A golden cross labels a shorter moving average crossing above a longer one; 50-day and 200"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 38,
+          "excerpt": "A generated practice chart cannot establish how a rule performed in real historical market"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/death-cross",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 54,
+          "excerpt": "A death cross labels a shorter moving average crossing below a longer one, often the 50-da"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 55,
+          "excerpt": "A death cross labels a shorter moving average crossing below a longer one, commonly a 50-d"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 65,
+          "excerpt": "Mark when the selected averages cross, then compare later continuations and reversals. Rec"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 71,
+          "excerpt": "A liquidation cascade is feedback in which forced position reductions add price pressure t"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 72,
+          "excerpt": "In a leveraged market, falling collateral value or adverse price changes can cause positio"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 72,
+          "excerpt": "TradeHQ does not provide leveraged positions or a liquidation engine; examples remain sepa"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 88,
+          "excerpt": "Fibonacci retracement plots conventional fractions of a selected price swing, often 23.6%,"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 89,
+          "excerpt": "A retracement drawing selects a price high and low, then marks fractions of their differen"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 90,
+          "excerpt": "Calculate the levels from a clearly identified high and low, then compare how changing tho"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 105,
+          "excerpt": "RSI divergence describes a mismatch between selected price swings and RSI swings. It can b"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 106,
+          "excerpt": "Standard RSI compares smoothed upward and downward price changes over a selected lookback "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 107,
+          "excerpt": "Compare the price swings and RSI swings over the same dates and settings. Record both dive"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd-histogram",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 122,
+          "excerpt": "The MACD histogram represents the difference between the MACD line and signal line as vert"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 123,
+          "excerpt": "The MACD histogram is MACD minus its signal line. Under common defaults, MACD is a 12-peri"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 133,
+          "excerpt": "Reproduce the difference between a MACD line and its signal line before interpreting the b"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 139,
+          "excerpt": "A Bollinger Band squeeze describes a narrow distance between the bands relative to a selec"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 140,
+          "excerpt": "Bollinger Bands place upper and lower bands around a moving average using a selected measu"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 146,
+          "excerpt": "Narrow bands describe lower recent volatility; they do not establish when a breakout will "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/order-block",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 156,
+          "excerpt": "An order block is a chart-defined zone used in some technical-analysis frameworks; candles"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 157,
+          "excerpt": "An order block is a chart-zone label used in some trading frameworks, often for the last o"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 158,
+          "excerpt": "Label the candle zone and the rule used to select it. Price candles alone cannot identify "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bull-trap",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 190,
+          "excerpt": "A retrospective label for a move above selected resistance followed by a downward reversal"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 191,
+          "excerpt": "A bull trap is a retrospective label for a price move above a selected resistance area tha"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 191,
+          "excerpt": "No pattern label guarantees that an intended stop can execute at its trigger price."
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bear-trap",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 207,
+          "excerpt": "A retrospective label for a move below selected support followed by an upward reversal. Th"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 208,
+          "excerpt": "A bear trap is a retrospective description of a move below a chosen support area followed "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 218,
+          "excerpt": "Define the chosen support level before reviewing the later candles. A close below that lev"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 241,
+          "excerpt": "Support and resistance are price areas where traders look for repeated buying or selling r"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 242,
+          "excerpt": "Support and resistance describe price areas selected from earlier reactions or other chart"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 242,
+          "excerpt": "The drawing is a description, not evidence of hidden demand or a guaranteed exit."
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 258,
+          "excerpt": "Candlestick patterns are names for formations built from opening, high, low and closing pr"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 259,
+          "excerpt": "A candlestick summarizes opening, high, low and closing prices for a stated interval. Its "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 265,
+          "excerpt": "Single-candle examples include doji, hammer and shooting star; engulfing needs two candles"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 275,
+          "excerpt": "A head and shoulders pattern has three peaks, with a higher central peak and two lower sho"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 276,
+          "excerpt": "The head and shoulders pattern is a commonly described reversal formation in technical ana"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 276,
+          "excerpt": "Phase one: the market trends upward and creates the left shoulder, a normal swing high. Ph"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/double-bottom",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 292,
+          "excerpt": "A double bottom is a W-shaped chart pattern with two troughs near a similar level. A later"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 293,
+          "excerpt": "The double bottom is a bullish reversal pattern that forms after a sustained downtrend, ch"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 293,
+          "excerpt": "The subsequent rally creates the neckline — the intermediate peak between the two bottoms."
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 309,
+          "excerpt": "MACD compares exponential moving averages of past prices. Its line, signal line and histog"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 310,
+          "excerpt": "MACD compares exponential moving averages. With common defaults, the MACD line equals the "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 320,
+          "excerpt": "Calculate each MACD component from stated data and settings. The resulting crossings descr"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 326,
+          "excerpt": "Market orders seek prompt execution at available prices. Limit orders set a price boundary"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 327,
+          "excerpt": "A market order requests execution at available prices without setting a maximum buy or min"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 327,
+          "excerpt": "Compare prices, completion, delays and modeled costs separately rather than assume an orde"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/leverage-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 360,
+          "excerpt": "Control a larger market position with borrowed funds or margin. At 10x leverage, $1,000 of"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 361,
+          "excerpt": "Leverage describes notional exposure relative to the equity or collateral supporting it. A"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 361,
+          "excerpt": "An advertised maximum is neither permission for a particular user nor a recommendation. Tr"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fomo",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 378,
+          "excerpt": "FOMO is the anxiety-driven urge to trade because a price is moving or others appear to be "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 379,
+          "excerpt": "FOMO means fear of missing out. In market discussions it can describe concern about missin"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 389,
+          "excerpt": "Compare the recorded reason for a virtual decision with the information available at that "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fud",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 395,
+          "excerpt": "FUD means fear, uncertainty and doubt. The label is often applied to negative claims; it d"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 396,
+          "excerpt": "FUD means fear, uncertainty and doubt. It is often applied to negative claims about a comp"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 406,
+          "excerpt": "Check a negative claim’s original source and date. A concern can be material, mistaken or "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 412,
+          "excerpt": "HODL is a buy-and-hold expression associated with a Bitcoin forum typo. Holding through vo"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 413,
+          "excerpt": "HODL is informal language for retaining a crypto holding through price fluctuations. It is"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 423,
+          "excerpt": "Compare a hypothetical holding period with an exit case, including permanent loss. Holding"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-price",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 464,
+          "excerpt": "A liquidation price is an estimate of the level at which a leveraged position may be close"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 465,
+          "excerpt": "A liquidation price is a venue-calculated threshold used in managing a collateralized posi"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 475,
+          "excerpt": "Compare the inputs in a venue’s documented estimate rather than treating one displayed pri"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 481,
+          "excerpt": "Dollar-cost averaging means contributing fixed amounts at regular intervals regardless of "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 482,
+          "excerpt": "Dollar Cost Averaging (DCA) is an investment strategy where a fixed dollar amount is inves"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 482,
+          "excerpt": "In a volatile asset like Bitcoin, a $500 monthly investment over 12 months will purchase m"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/swing-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 498,
+          "excerpt": "Holding positions across sessions, commonly for days or weeks. Review schedules and chart "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 499,
+          "excerpt": "Swing trading describes a holding-period style in which positions commonly remain open acr"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 509,
+          "excerpt": "Compare a multi-day holding window with a shorter one, including gaps between observations"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/day-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 515,
+          "excerpt": "Day trading means opening and closing positions within a trading day. It reduces exposure "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 516,
+          "excerpt": "Day trading describes opening and closing positions within the same trading day. Fully clo"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 526,
+          "excerpt": "Compare the time demands and assumptions of swing and intraday examples; practice profit a"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/volume-profile",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 549,
+          "excerpt": "A volume profile groups recorded volume into price bins over a chosen interval. Its point "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 550,
+          "excerpt": "A volume profile groups observed trading volume into price bins over a stated sample. The "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 560,
+          "excerpt": "Volume Profile allocates observed trading volume to price bins; it does not identify who s"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/vwap",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 566,
+          "excerpt": "VWAP is the average observed trading price weighted by volume over a stated period. Price "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 567,
+          "excerpt": "Volume-weighted average price divides the sum of transaction price times quantity by total"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 568,
+          "excerpt": "Recalculate the volume-weighted average for the chosen session or anchor. VWAP is a histor"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 583,
+          "excerpt": "Ichimoku Cloud displays several historical-price calculations with differing lookbacks and"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 584,
+          "excerpt": "The Ichimoku Cloud combines five historical-price calculations with different lookbacks an"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 584,
+          "excerpt": "Senkou Span A (Leading Span A) — the average of Tenkan and Kijun lines, plotted 26 periods"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 600,
+          "excerpt": "Elliott wave theory interprets price patterns using impulse and corrective wave counts. Di"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 601,
+          "excerpt": "Elliott Wave Theory is an interpretive chart framework that labels selected movements as f"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 601,
+          "excerpt": "No labelled wave reveals hidden orders or guarantees that a forecast will occur by a parti"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 617,
+          "excerpt": "The Wyckoff method interprets price and volume through phases such as accumulation, markup"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 618,
+          "excerpt": "Wyckoff's historical framework describes selected price and volume changes with labels suc"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 618,
+          "excerpt": "A chosen phase does not establish a reliable entry probability. Generated practice charts "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/market-maker",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 634,
+          "excerpt": "A market maker posts bid and ask quotes under venue rules to facilitate trading. A quoted "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 635,
+          "excerpt": "A market maker quotes prices at which it is prepared to buy and sell under applicable venu"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 645,
+          "excerpt": "Compare quoted bid and ask prices with actual executions. Spread changes can have multiple"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dark-pool",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 651,
+          "excerpt": "A non-displayed trading venue where orders generally do not appear in public pre-trade quo"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 652,
+          "excerpt": "A dark pool is a trading venue whose resting orders generally are not displayed in public "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 652,
+          "excerpt": "A large reported transaction confirms an execution, not which participant was optimistic o"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/slippage",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 668,
+          "excerpt": "Slippage is the difference between a stated reference price and an actual execution price."
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 669,
+          "excerpt": "Slippage compares an actual execution price with a defined expected or reference price. Th"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 679,
+          "excerpt": "Compare expected and weighted-average fill prices, with fees stated separately. A limit pr"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 685,
+          "excerpt": "Impermanent loss compares the value of a liquidity-provider position with simply holding t"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 686,
+          "excerpt": "For a fee-free, full-range constant-product pool initially balanced by value, compare the "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 696,
+          "excerpt": "Compare liquidity provision with holding the same initial assets under a stated pool model"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/flash-crash",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 719,
+          "excerpt": "A very rapid price decline, sometimes followed by a partial or full recovery. Its causes a"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 720,
+          "excerpt": "A flash crash describes a very rapid price decline, often with at least a partial rebound."
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 730,
+          "excerpt": "Use separately dated records to compare the price path and available liquidity. A sharp de"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/circuit-breaker",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 736,
+          "excerpt": "A rule-defined trading pause. US market-wide thresholds use S&P 500 declines of 7%, 13% an"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 737,
+          "excerpt": "Circuit breakers are rule-defined trading pauses. In the US market-wide example described "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 737,
+          "excerpt": "Neither mechanism guarantees an exit price or prevents losses, and a reopening can occur a"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/pump-and-dump",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 754,
+          "excerpt": "A fraud scheme in which promoters use false or misleading claims to inflate an asset's pri"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 755,
+          "excerpt": "Pump-and-dump schemes use false or misleading promotion to stimulate buying and inflate a "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 755,
+          "excerpt": "Check the original claim, its date, the promoter's disclosed interests and the relevant is"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 789,
+          "excerpt": "The risk-reward ratio compares a trade's planned loss with its planned gain. A 1:3 ratio m"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 790,
+          "excerpt": "The risk-reward ratio (R:R or RRR) is a measurement that compares the potential loss on a "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 790,
+          "excerpt": "A break-even calculation requires realised payoff sizes and costs; the planned ratio alone"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/drawdown",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 806,
+          "excerpt": "Drawdown measures a decline from a previously observed peak to a later lower value, includ"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 807,
+          "excerpt": "Drawdown measures a decline from an observed peak to a later lower value within a defined "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 808,
+          "excerpt": "Calculate the decline from the relevant peak and state the observation period. Historical "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/backtesting",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 823,
+          "excerpt": "Backtesting applies stated rules to historical data to examine hypothetical results. It ca"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 824,
+          "excerpt": "Backtesting applies predefined rules to historical observations under stated execution and"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 834,
+          "excerpt": "Keep rule development separate from evaluation on unseen historical data. Record costs and"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/correlation-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 840,
+          "excerpt": "Studying sampled relationships between asset returns. Correlations vary with the interval "
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 841,
+          "excerpt": "Correlation summarizes a linear relationship in a chosen sample; it does not establish cau"
+        },
+        {
+          "file": "src/lib/tradingGlossary.ts",
+          "line": 851,
+          "excerpt": "Calculate correlations with matching dates, return intervals and data sources. Relationshi"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/tradingGlossary.ts",
+        "src/lib/glossaryWorksheets.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/stock-market-index-etfs",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 187,
+          "excerpt": "Compare three different stock-index methodologies and learn how index-tracking ETFs provid"
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 187,
+          "excerpt": "Compare three different stock-index methodologies and learn how index-tracking ETFs provid"
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 195,
+          "excerpt": "A stock index summarizes a selected set of securities using published rules. The S&P 500 m"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/learnArticles.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 227,
+          "excerpt": "Learn the fundamentals of portfolio construction — asset allocation, diversification, and "
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 227,
+          "excerpt": "Learn the fundamentals of portfolio construction — asset allocation, diversification, and "
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 235,
+          "excerpt": "Asset allocation divides a portfolio across selected asset classes or holdings. Its effect"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/learnArticles.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 307,
+          "excerpt": "Compare market and limit order mechanics, fill uncertainty and the situations each order t"
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 307,
+          "excerpt": "Compare market and limit order mechanics, fill uncertainty and the situations each order t"
+        },
+        {
+          "file": "src/lib/learnArticles.ts",
+          "line": 315,
+          "excerpt": "A market order seeks execution at available prices rather than specifying a limit price. E"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/learnArticles.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/tesla-vs-nvidia",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 49,
+          "excerpt": "Tesla reports automotive and energy businesses; NVIDIA sells compute products and supporti"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 58,
+          "excerpt": "NVIDIA reporting separates compute and networking from graphics and discusses customer con"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 59,
+          "excerpt": "A useful reporting worksheet separates revenue, margin, capital spending and forward-looki"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/bitcoin-vs-gold",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 76,
+          "excerpt": "Gold and Bitcoin have different ownership, custody and market arrangements. A gold fund al"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 85,
+          "excerpt": "Gold exposure can mean physical holdings, an exchange-traded fund or a derivative, each wi"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 86,
+          "excerpt": "In a hypothetical stress exercise, compare several possible price changes for gold and Bit"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/apple-vs-microsoft",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 103,
+          "excerpt": "Apple and Microsoft are both large technology companies, but their business mixes differ. "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 112,
+          "excerpt": "Apple's economics combine device sales with recurring services tied to its installed base."
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 113,
+          "excerpt": "Microsoft's economics are heavily connected to enterprise software, subscriptions and clou"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/ethereum-vs-solana",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 130,
+          "excerpt": "Ethereum and Solana use different designs for processing transactions and supporting appli"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 139,
+          "excerpt": "A network comparison should identify where execution happens and how results are verified."
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 140,
+          "excerpt": "Network activity and token returns are different measures. A comparison can examine where "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/stocks-vs-crypto",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 157,
+          "excerpt": "Equities and crypto represent very different kinds of exposure: equities are ownership cla"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 166,
+          "excerpt": "Identify the instrument before comparing ownership or disclosures. A company share represe"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 167,
+          "excerpt": "For a virtual comparison, use equal starting values, matching dates and a stated calculati"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/eth",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 301,
+          "excerpt": "Ethereum is a network for running applications and smart contracts; ether, or ETH, is its "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 309,
+          "excerpt": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whos"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 313,
+          "excerpt": "Network use and ETH price measure different things. Gas is the unit used to measure transa"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/tsla",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 341,
+          "excerpt": "Tesla is a listed company. A simulated TSLA holding represents a stock-price exercise and "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 349,
+          "excerpt": "Read deliveries, revenue and profit margins as separate measurements. A hypothetical rise "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 353,
+          "excerpt": "Distinguish reported deliveries, revenue, margins and management statements. Their relatio"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/nvda",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 377,
+          "excerpt": "Nvidia supplies computing products and services. Its share price and its operating busines"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 385,
+          "excerpt": "Separate company operating measures from the share-price return. A hypothetical 20% sales "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 389,
+          "excerpt": "Company results, customer spending statements, supply constraints and export rules can pro"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/spy",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 413,
+          "excerpt": "SPY is an exchange-traded fund designed to track the S&P 500. An index methodology, a fund"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 421,
+          "excerpt": "An ETF unit represents fund exposure; it is not a direct account row for each constituent "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 425,
+          "excerpt": "Fund holdings, index methodology, distributions and expenses describe the instrument. Cons"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/swing-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 557,
+          "excerpt": "Swing trading describes positions held across sessions, often over days or weeks. The labe"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 558,
+          "excerpt": "An apparent trend or pullback is a description of selected past data. A later continuation"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 546,
+          "excerpt": "A worksheet comparing multi-day observation windows and overnight exposure; no work schedu"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/day-trading",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 588,
+          "excerpt": "Day trading usually means opening and closing positions within the same trading day. If a "
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 589,
+          "excerpt": "Ranges, spreads and traded volumes differ across sessions and events. Selecting only sessi"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 577,
+          "excerpt": "A study of same-session accounting and transaction costs, rather than a recommendation for"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 607,
+          "excerpt": "Investing equal amounts on a predetermined schedule rather than selecting each purchase da"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 620,
+          "excerpt": "Dollar-cost averaging describes a recurring cash-flow rule, not a method that removes mark"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 621,
+          "excerpt": "In a steadily rising example market, earlier investment of already-available cash can outp"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/macd-strategy",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 682,
+          "excerpt": "MACD subtracts a 26-period exponential moving average from a 12-period average and compare"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 683,
+          "excerpt": "A sustained historical move and a sideways sample can produce different numbers of crossov"
+        },
+        {
+          "file": "src/lib/seoData.ts",
+          "line": 671,
+          "excerpt": "Studying differences between moving averages, signal-line crossings and alternative exit a"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/seoData.ts",
+        "scripts/routes.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 115,
+          "excerpt": "The four Greeks quantify how an option's price reacts to stock moves, volatility, and the "
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 115,
+          "excerpt": "The four Greeks quantify how an option's price reacts to stock moves, volatility, and the "
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 119,
+          "excerpt": "Greeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describe"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 153,
+          "excerpt": "Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution an"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 153,
+          "excerpt": "Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution an"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 157,
+          "excerpt": "A spread combines long and short options. Certain vertical spreads have bounded theoretica"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 191,
+          "excerpt": "Implied volatility is a model-implied input derived from option prices, with limits as a f"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 191,
+          "excerpt": "Implied volatility is a model-implied input derived from option prices, with limits as a f"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 195,
+          "excerpt": "Implied volatility (IV) is the volatility figure that, plugged into an option pricing mode"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 226,
+          "excerpt": "Options losses can be amplified by position size, leverage, volatility and time decay. Thi"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 226,
+          "excerpt": "Options losses can be amplified by position size, leverage, volatility and time decay. Thi"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 230,
+          "excerpt": "For simulation, choose a small predefined risk budget before entering a position and compa"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 266,
+          "excerpt": "A ground-up guide to exchange-listed futures — how contracts are specified, how margin act"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 271,
+          "excerpt": "Explain what a futures contract standardises and who the natural counterparties in a marke"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 278,
+          "excerpt": "Some familiarity with charts and with the idea of buying and selling an asset. The margin "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 287,
+          "excerpt": "A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed qua"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 287,
+          "excerpt": "A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed qua"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 291,
+          "excerpt": "A futures contract is a standardised, exchange-traded agreement with a specified underlyin"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 356,
+          "excerpt": "Compare prices across delivery dates and study carrying costs, supply conditions and the a"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 356,
+          "excerpt": "Compare prices across delivery dates and study carrying costs, supply conditions and the a"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 360,
+          "excerpt": "A futures curve compares quoted prices across the delivery dates available for a specified"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 391,
+          "excerpt": "Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and fu"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 391,
+          "excerpt": "Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and fu"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 395,
+          "excerpt": "Hypothetical cross-hedge: an airline with future jet-fuel costs considers a crude-oil futu"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 424,
+          "excerpt": "Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 424,
+          "excerpt": "Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 428,
+          "excerpt": "CME's Micro E-mini S&P 500, Nasdaq-100, Dow and Russell 2000 contracts are one-tenth the s"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 462,
+          "excerpt": "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar in"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 467,
+          "excerpt": "Read a CPI release and identify which component drove the surprise, rather than reacting t"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 474,
+          "excerpt": "No economics background is assumed. You should know what an interest rate is and be willin"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 483,
+          "excerpt": "CPI measures selected consumer-price changes. Read the release, its definitions and compon"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 483,
+          "excerpt": "CPI measures selected consumer-price changes. Read the release, its definitions and compon"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 487,
+          "excerpt": "The Consumer Price Index is a monthly Bureau of Labor Statistics survey of prices paid by "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 552,
+          "excerpt": "Yield-curve inversion has historically been associated with elevated US recession risk, bu"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 552,
+          "excerpt": "Yield-curve inversion has historically been associated with elevated US recession risk, bu"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 556,
+          "excerpt": "The yield curve plots the yield on US Treasury securities across maturities — from 3 month"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 585,
+          "excerpt": "DXY tracks the dollar against six currencies and offers context for studying currency expo"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 585,
+          "excerpt": "DXY tracks the dollar against six currencies and offers context for studying currency expo"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 589,
+          "excerpt": "ICE's US Dollar Index measures the dollar against six currencies: euro (57.6%), Japanese y"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 624,
+          "excerpt": "Compare growth, inflation and financial indicators in a documented worksheet, without trea"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 624,
+          "excerpt": "Compare growth, inflation and financial indicators in a documented worksheet, without trea"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 629,
+          "excerpt": "A four-quadrant worksheet can classify selected observations by whether growth and inflati"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 662,
+          "excerpt": "Understand decision biases, review assumptions and practise reflective exercises."
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 664,
+          "excerpt": "This educational track examines research on decision biases alongside fictional trading ex"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 669,
+          "excerpt": "Name the specific biases most likely to affect your own decisions, with an example from yo"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 722,
+          "excerpt": "Tilt is the emotional state where a trader tries to recover a loss immediately with larger"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 722,
+          "excerpt": "Tilt is the emotional state where a trader tries to recover a loss immediately with larger"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 726,
+          "excerpt": "Tilt describes an emotional reaction to recent outcomes that can pull decisions away from "
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 758,
+          "excerpt": "Use a decision record to review assumptions without claiming it proves profitable skill."
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 766,
+          "excerpt": "A journal is a dated record of choices and the information available when they were made. "
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 768,
+          "excerpt": "TradeHQ stores virtual transactions in portfolio history. The user can separately record a"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 845,
+          "excerpt": "Prepare and review educational exercises without prescribing a professional routine or pro"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 845,
+          "excerpt": "Prepare and review educational exercises without prescribing a professional routine or pro"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 853,
+          "excerpt": "A checklist may help a learner remember what an exercise is meant to test. It is not a pro"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 932,
+          "excerpt": "Calculate declines from a previous portfolio peak and compare hypothetical sizing and reco"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 932,
+          "excerpt": "Calculate declines from a previous portfolio peak and compare hypothetical sizing and reco"
+        },
+        {
+          "file": "src/lib/coursesData.ts",
+          "line": 940,
+          "excerpt": "A drawdown compares a portfolio's value with an earlier peak, using the same measurement b"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/philippines",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 111,
+          "excerpt": "TradeHQ provides a free paper-trading environment for people in the Philippines who want t"
+        },
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 113,
+          "excerpt": "Paper trading lets you learn market mechanics without opening or funding a real-money brok"
+        },
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 121,
+          "excerpt": "For real-money market access, check the Philippine SEC's current registry of capital-marke"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/countryGuides.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/pakistan",
+      "repoMatch": true,
+      "matchedExcerpts": [
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 146,
+          "excerpt": "TradeHQ provides a free paper-trading environment for people in Pakistan who want to learn"
+        },
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 148,
+          "excerpt": "Paper trading lets users practise global-market mechanics without relying on a particular "
+        },
+        {
+          "file": "src/lib/countryGuides.ts",
+          "line": 159,
+          "excerpt": "For real-money market access, check the SECP's current licensed-broker and intermediary in"
+        }
+      ],
+      "expectedFileCandidates": [
+        "src/lib/countryGuides.ts"
+      ],
+      "dynamicPublished": false,
+      "meaning": "literal live prose matched source"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
+      "repoMatch": false,
+      "matchedExcerpts": [],
+      "expectedFileCandidates": [
+        "src/lib/coursesData.ts"
+      ],
+      "dynamicPublished": true,
+      "meaning": "live database-provided publication (not stored verbatim in git)"
+    }
+  ]
+}
