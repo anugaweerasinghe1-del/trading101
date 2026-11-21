@@ -8,6 +8,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { RelatedMarkets } from "@/components/RelatedMarkets";
 import { AssetFAQSection } from "@/components/AssetFAQSection";
 import { BITCOIN_SIMULATOR_SEO } from "@/lib/bitcoinSimulatorSeo";
+import { trackLearningMilestone } from "@/lib/learningTelemetry";
 import { RecentAnalysis } from "@/components/RecentAnalysis";
 import { AssetIntelligence } from "@/components/AssetIntelligence";
 import { AIReadySummary } from "@/components/AIReadySummary";
@@ -65,6 +66,9 @@ export default function TradeAsset() {
   }, []);
   const [assets, setAssets] = useState<Asset[]>([]);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
+  useEffect(() => {
+    if (selectedAsset?.id === "btc") trackLearningMilestone("Bitcoin Simulator Viewed");
+  }, [selectedAsset?.id]);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [dataSource, setDataSource] = useState<'live' | 'delayed' | 'cached' | 'simulated'>('simulated');
@@ -209,22 +213,33 @@ export default function TradeAsset() {
     orderType?: 'market' | 'limit',
     limitPrice?: number
   ) => {
-    const result = await executeTrade(portfolio, asset, type, quantity);
+    let result: Awaited<ReturnType<typeof executeTrade>>;
+    try {
+      result = await executeTrade(portfolio, asset, type, quantity);
+    } catch {
+      toast({ title: "Virtual order not confirmed", description: "A service error interrupted this practice order. No success was confirmed.", variant: "destructive" });
+      trackLearningMilestone("Virtual Practice Order Rejected");
+      return false;
+    }
     
     if (result.success && result.portfolio) {
-      if (!portfolioOwnerIs(result.ownerId ?? null)) return;
+      if (!portfolioOwnerIs(result.ownerId ?? null)) return false;
       setPortfolio(getPortfolio());
       setPostTradeLesson({ symbol: asset.symbol, side: type });
       toast({
         title: `${type === 'buy' ? '🟢' : '🔴'} Order Executed`,
         description: result.message,
       });
+      trackLearningMilestone("Virtual Practice Order Confirmed");
+      return true;
     } else {
       toast({
         title: "Order Failed",
         description: result.message,
         variant: "destructive",
       });
+      trackLearningMilestone("Virtual Practice Order Rejected");
+      return false;
     }
   }, [portfolio, toast]);
 
@@ -520,8 +535,8 @@ export default function TradeAsset() {
                   <p className="mt-1 text-sm text-muted-foreground">Use the order panel below, then review saved virtual cash, fees and holdings. No actual Bitcoin is purchased.</p>
                 </div>
                 <div className="flex shrink-0 flex-wrap items-center gap-2 text-sm">
-                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
-                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
+                  <Link to="/how-to-trade/btc" onClick={() => trackLearningMilestone("Bitcoin Guide Selected")} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
+                  <Link to="/wiki/paper-trading" onClick={() => trackLearningMilestone("Bitcoin Glossary Selected")} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
                 </div>
               </div>
               <details className="mt-3 border-t border-border/60 pt-3 text-sm">
