@@ -6,6 +6,7 @@
  */
 import assert from "node:assert/strict";
 import { assetPickerLabel, pickerQuoteOriginLabel } from "../src/lib/assetPickerPresentation";
+import { courseMetaDescription, coursePracticeScope } from "../src/lib/courseOverviewPresentation";
 import { readFileSync } from "node:fs";
 import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
@@ -13,6 +14,21 @@ import { buildContentMap } from "./content";
 
 const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES, tradingGlossary } = await loadSiteData();
 const routes = uniqueRoutes();
+
+// AdSense editorial cleanup: unrelated courses must not inherit derivatives
+// metadata. Initial HTML and hydrated meta text use one shared description.
+for (const track of courseTracks) {
+  const route = routes.find(item => item.path === `/courses/${track.slug}`);
+  assert.ok(route, `Missing publisher overview: ${track.slug}`);
+  assert.equal(route.description, courseMetaDescription(track), `${track.slug}: metadata must match hydrated page`);
+  assert.ok(route.description.length <= 158, `${track.slug}: avoid truncated metadata`);
+  assert.ok(route.summary.includes(coursePracticeScope(track.slug)), `${track.slug}: preserve accurate practice scope`);
+  if (!["options-trading-fundamentals", "futures-and-derivatives"].includes(track.slug)) {
+    assert.doesNotMatch(route.description + " " + route.summary, /derivatives|options and futures contract mechanics/i,
+      `${track.slug}: irrelevant derivatives disclaimer reintroduced`);
+  }
+}
+
 const map = await buildContentMap();
 
 // A production URL-by-URL sweep on 20 October found these two initial HTML
