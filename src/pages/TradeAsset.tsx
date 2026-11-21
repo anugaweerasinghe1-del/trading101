@@ -594,6 +594,17 @@ export default function TradeAsset() {
             </div>
           </div>
 
+          {/* The virtual-order launcher must precede charts and all long-form
+              educational/SEO sections on phones. One accessible drawer only. */}
+          <div className="lg:hidden" data-testid="asset-mobile-order-launcher">
+            <MobileOrderDrawer
+              asset={selectedAsset}
+              availableCash={portfolio.cash}
+              portfolio={portfolio}
+              onTrade={handleTrade}
+            />
+          </div>
+
           {/* Trading Terminal Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2">
@@ -697,14 +708,6 @@ export default function TradeAsset() {
             </div>
           </div>
 
-          <div className="lg:hidden">
-            <MobileOrderDrawer
-              asset={selectedAsset}
-              availableCash={portfolio.cash}
-              portfolio={portfolio}
-              onTrade={handleTrade}
-            />
-          </div>
           <EducationalDisclaimer variant="footer" className="mb-10" />
         </main>
 
