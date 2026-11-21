@@ -79,7 +79,7 @@ const LEARNING_PATH = [
 /** Explains the difference between /courses (structured) and /learn (quick reads). */
 const FORMAT_GUIDE = [
   { label: "Full Courses", where: "/courses", detail: "Multi-lesson tracks with quizzes, saved progress and completion badges. Best if you want to learn in order, start to finish." },
-  { label: "Quick Reads", where: "this page", detail: "Standalone topic explainers, plus featured guides and glossary links. Choose one topic at a time; reading estimates appear on the relevant cards." },
+  { label: "Quick Reads", where: "this page", detail: "Standalone topic explainers and short quizzes. Quick-read progress can be saved privately, while full courses offer longer structured tracks and badges." },
 ];
 
 const difficultyColors: Record<string, string> = {
@@ -267,14 +267,14 @@ export default function Learn() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Want the full, progress-tracked version instead? <Link to="/courses" className="text-emerald-400 [.light_&]:text-emerald-800 hover:underline">Take a course</Link>.</p>
+              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Your quiz progress can be saved here too. Want a longer structured course? <Link to="/courses" className="text-emerald-400 [.light_&]:text-emerald-800 hover:underline">Take a course</Link>.</p>
             </section>
 
             {/* Start Here CTA */}
             <div className="mb-16 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] flex flex-col sm:flex-row items-center gap-4" style={{ backdropFilter: "blur(12px)" }}>
               <div className="flex-1">
                 <h3 className="text-lg font-bold mb-1">New to trading?</h3>
-                <p className="text-sm text-muted-foreground">Start with Quick Read 1 — it covers everything you need to place your first simulated trade.</p>
+                <p className="text-sm text-muted-foreground">Start with Quick Read 1 for basic order mechanics. A trade is optional; you can also follow the guided first-trade journey.</p>
               </div>
                 <Button className="bg-primary hover:bg-primary/90 !text-black px-6 py-3 rounded-xl font-bold whitespace-nowrap shadow-[0_0_24px_hsl(168_100%_50%/0.3)]" asChild>
 <Link to="/learn/1">
