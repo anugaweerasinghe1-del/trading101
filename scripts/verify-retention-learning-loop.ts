@@ -74,6 +74,7 @@ const detail = read("src/pages/LessonDetail.tsx");
 const quiz = read("src/components/Quiz.tsx");
 const reviewPage = read("src/pages/TradeLearningReview.tsx");
 const trade = read("src/pages/Trade.tsx");
+const assetTrade = read("src/pages/TradeAsset.tsx");
 const portfolio = read("src/pages/Portfolio.tsx");
 const app = read("src/App.tsx");
 assert.match(detail, /saveLessonPosition\(QUICK_READ_TRACK/, "Subtopic progress must persist");
@@ -85,6 +86,8 @@ assert.match(reviewPage, /getPortfolio/, "Trade review must use the user's owner
 assert.match(reviewPage, /markLessonCompleted/, "Reviews must store private learning, not mutate a portfolio");
 assert.doesNotMatch(reviewPage, /executeTrade|record_practice_trade|sendEmail|sendNotification|localStorage\.setItem/, "Review does not place orders or force messaging");
 assert.match(trade, /guidedPractice \? "\/start" : "\/learn\/trade-review"/);
+assert.match(assetTrade, /setPostTradeLesson/, "Successful asset-specific orders must offer contextual learning");
+assert.match(assetTrade, /to="\\/learn\\/trade-review"/, "Asset-specific terminal must link to optional review");
 assert.match(portfolio, /portfolio\.trades\.length > 0/, "Existing traders can find the lesson from their portfolio");
 assert.match(read("src/components/LearningJourneyDashboard.tsx"), /suggested\.state === "trade"/);
 console.log("PASS contextual learning loop: durable quick reads, existing-trade review, voluntary spaced recall, no-order guardrails");
