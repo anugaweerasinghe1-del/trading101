@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, CheckCircle2, Compass, RotateCcw, ShieldCheck } from "lucide-react";
@@ -7,6 +7,8 @@ import { MegaFooter } from "@/components/MegaFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getPortfolio } from "@/lib/portfolio";
+import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
+import { useAuth } from "@/hooks/useAuth";
 import { loadArena } from "@/lib/practiceArena";
 import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beginnerJourney";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
@@ -26,7 +28,16 @@ const money = (value: number) => value.toLocaleString("en-US", { style: "currenc
 
 export default function BeginnerJourney() {
   const [progress, setProgress] = useState(readJourney);
-  const [portfolio, setPortfolio] = useState<Portfolio>(getPortfolio);
+  const { user } = useAuth();
+  const [guestPortfolio, setGuestPortfolio] = useState<Portfolio>(getPortfolio);
+  const account = useSyncExternalStore(
+    subscribeAccountPortfolio,
+    () => getAccountPortfolio(user?.id),
+    () => null,
+  );
+  // Never substitute a potentially stale browser cache for a signed-in account.
+  // Server-recorded trades are authoritative; guests still use browser storage.
+  const portfolio = user ? (account?.portfolio ?? null) : guestPortfolio;
   const [answer, setAnswer] = useState("");
   const [reflection, setReflection] = useState(() => readJourney().reflection);
   const stage = journeyStage(progress);
@@ -47,7 +58,7 @@ export default function BeginnerJourney() {
       const savedJourney = readJourney();
       setProgress(savedJourney);
       setReflection(savedJourney.reflection);
-      setPortfolio(getPortfolio());
+      setGuestPortfolio(getPortfolio());
       setCourseProgress(loadProgress());
     };
     const onStorage = (event: StorageEvent) => {
@@ -70,7 +81,7 @@ export default function BeginnerJourney() {
   }, []);
 
   const update = (patch: Parameters<typeof saveJourney>[0]) => setProgress(saveJourney(patch));
-  const trade = portfolio.trades.find(t => t.id === progress.tradeId);
+  const trade = portfolio?.trades.find(t => t.id === progress.tradeId);
   const gross = trade ? trade.quantity * trade.price : 0;
   const estimatedFee = trade ? Math.abs(trade.total - gross) : 0;
   const totalSteps = stage === 4 ? 5 : stage;
@@ -194,19 +205,21 @@ export default function BeginnerJourney() {
           {stage === 2 && <>
             <h2 className="text-2xl font-bold">Where did your virtual money go?</h2>
             <p className="text-muted-foreground">These figures come from your saved simulated portfolio, not a sample screenshot.</p>
-            <div className="grid sm:grid-cols-2 gap-3">
+            {portfolio ? <div className="grid sm:grid-cols-2 gap-3">
               {[
                 ["Cash remaining", money(portfolio.cash)],
                 ["Portfolio total", money(portfolio.totalValue)],
                 ["Open positions", String(portfolio.positions.length)],
                 ["Practice trades", String(portfolio.trades.length)],
               ].map(([label, value]) => <div key={label} className="p-4 bg-muted/40 rounded-xl"><p className="text-xs text-muted-foreground">{label}</p><p className="mt-1 font-bold text-xl tabular-nums">{value}</p></div>)}
-            </div>
+            </div> : <p role="status" className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+              {account?.error ? "Your verified account portfolio is unavailable. Open Portfolio to retry before completing this step." : "Restoring your signed-in practice portfolio. Your progress will resume when the recorded trade is available."}
+            </p>}
             {trade ? <div className="rounded-xl border border-border p-4 text-sm space-y-2">
               <p><strong>Recorded {trade.type}:</strong> {trade.quantity} {trade.symbol} × {money(trade.price)} = {money(gross)} before fees.</p>
               <p>Calculated fee: {money(estimatedFee)}. Total recorded cash movement: {money(trade.total)}.</p>
               <p className="text-muted-foreground">An open position's value changes with displayed practice prices. Unrealized P&L is not cash received or guaranteed.</p>
-            </div> : <p className="text-amber-500 text-sm">Your guided order is not currently available in this browser. Refresh your account portfolio or place another guided practice order before reflecting.</p>}
+            </div> : portfolio ? <p className="text-amber-500 text-sm">Your guided order is not in the currently verified practice portfolio. Review your saved transactions before placing another order.</p> : null}
             <div className="flex gap-2 flex-wrap">
               <Button variant="outline" asChild><Link to="/portfolio">Open full portfolio</Link></Button>
               <Button disabled={!trade} onClick={() => update({ portfolioExplained: true })}>I understand my portfolio <ArrowRight className="ml-2 h-4 w-4" /></Button>
