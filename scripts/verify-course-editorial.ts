@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { applyCourseEditorialCorrections } from "../src/lib/courseEditorialCorrections";
-import { renderApprovedCourse } from "../src/lib/courseHtml";
+import { renderApprovedCourse, escapeCourseHtml } from "../src/lib/courseHtml";
+import { courseMetaDescription, coursePageTitle } from "../src/lib/courseOverviewPresentation";
 import { validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument";
 const rows = JSON.parse(readFileSync("scripts/fixtures/published-course-editorial.json", "utf8")) as {slug: string; document: CourseDocument}[];
 for (const row of rows) {
@@ -64,6 +65,12 @@ assert.equal(finalEquity / 99980, 0.4); assert.equal(finalBonds / 99980, 0.4);
 for (const row of rows) {
   const candidate = applyCourseEditorialCorrections(row.document);
   const trackHtml = renderApprovedCourse('<html><head></head><body><div id="root"></div></body></html>', row.document)!;
+  assert.ok(trackHtml.includes("<title>" + escapeCourseHtml(coursePageTitle(candidate)) + "</title>"),
+    candidate.slug + ": initial and hydrated titles must agree");
+  assert.ok(trackHtml.includes('name="description" content="' + escapeCourseHtml(courseMetaDescription(candidate)) + '"'),
+    candidate.slug + ": original published description must survive hydration");
+  assert.ok(!courseMetaDescription(candidate).includes("Futures contracts are worksheet-only."),
+    candidate.slug + ": do not add derivative boilerplate to unrelated approved courses");
   assert.match(trackHtml, /Who this course is not for/);
   assert.doesNotMatch(trackHtml, /<h2>Scope<\/h2>/);
   if (row.slug === "diversification-and-position-sizing") {

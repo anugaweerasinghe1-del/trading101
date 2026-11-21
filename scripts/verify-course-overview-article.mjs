@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {loadSiteData} from './loadData.ts';
+import {coursePracticeScope} from '../src/lib/courseOverviewPresentation.ts';
 
 /** Preserve all authored overview information while removing its second article. */
 export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origin,delay,dist}) {
@@ -34,7 +35,7 @@ export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origi
     for(const link of page.links)assert.ok(row.links.includes(new URL(link.href,origin).href),'Preserve destination '+link.href);
     assert.ok(row.text.includes('published by tradehq')&&row.text.includes('no independent professional review is claimed'));
     assert.ok(row.text.includes('includes '+track.lessons.length+' lessons, quizzes, sources, and a completion badge.'));
-    assert.ok(row.text.includes('options and futures contract mechanics are worksheet exercises.'));
+    assert.ok(row.text.includes(normalize(coursePracticeScope(track.slug))), 'Scope copy must match course '+path);
     assert.ok(row.text.includes('quotes may be delayed, cached, unavailable or fixed simulator values')&&row.text.includes('practice results do not predict investment outcomes'));
     assert.equal(row.overflow,false);
   }
