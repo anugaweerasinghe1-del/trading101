@@ -12,7 +12,7 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { getTrackProgress, trackCompletionPct } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
-import { hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
+import { courseMetaDescription, coursePracticeScope, hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
 
 const DOMAIN = "https://www.thetradehq.com";
 
@@ -31,7 +31,7 @@ function CourseTrackContent({ track }: { track: Track }) {
   const path = `/courses/${track.slug}`;
   const integratedOverview = hasIntegratedCourseOverview(path);
   const title = `${track.title} — Free Trading Course | TradeHQ`;
-  const description = `${track.tagline} ${track.lessons.length} free lessons with quizzes and a completion badge. Derivatives examples are conceptual; simulator practice uses spot instruments.`;
+  const description = courseMetaDescription(track);
 
   const courseSchema = {
     "@context": "https://schema.org",
@@ -98,7 +98,7 @@ function CourseTrackContent({ track }: { track: Track }) {
           )}
 
           {integratedOverview && <div className="mb-8 space-y-3 text-sm text-muted-foreground leading-relaxed">
-            <p>Includes {track.lessons.length} lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.</p>
+            <p>Includes {track.lessons.length} lessons, quizzes, sources, and a completion badge. {coursePracticeScope(track.slug)}</p>
             <p>Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
           </div>}
 
