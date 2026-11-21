@@ -56,11 +56,15 @@ import {
 import { useAuth } from "@/hooks/useAuth";
 import { getAccountPortfolio, pushPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
 import { portfolioOwnerIs } from "@/lib/portfolioOwner";
+import { useCourseProgress } from "@/hooks/useCourseProgress";
+import { tradeReviewStage } from "@/lib/retentionLearning";
 import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel, snapshotPriceInfo } from "@/lib/practicePricing";
 const emptyPortfolio = { cash: 0, totalValue: 0, positions: [], trades: [] };
 
 export default function Portfolio() {
   const { user, loading: authLoading } = useAuth();
+  const learningProgress = useCourseProgress();
+  const tradeReview = tradeReviewStage(learningProgress);
   const userRef = useRef(user);
   userRef.current = user;
   const refreshBusy = useRef(false);
@@ -469,14 +473,14 @@ export default function Portfolio() {
               </div>
             </header>
 
-            {!accountUnavailable && portfolio.trades.length > 0 && (
+            {!accountUnavailable && portfolio.trades.length > 0 && tradeReview !== "recent" && (
               <section aria-label="Understand a recorded virtual order" className="mb-8 flex flex-col gap-3 rounded-2xl border border-primary/25 bg-primary/[0.05] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
                 <div className="max-w-2xl">
                   <p className="text-xs font-semibold uppercase tracking-[0.13em] text-primary">Learn from your last trade</p>
-                  <h2 className="mt-1 text-lg font-semibold">Know where your virtual cash went?</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">See your recorded trade's cost and fees, then answer one short question. Optional and free; this does not place another order.</p>
+                  <h2 className="mt-1 text-lg font-semibold">{tradeReview === "recall" ? "Can you recall what your trade taught you?" : "Know where your virtual cash went?"}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">{tradeReview === "recall" ? "Try one optional recall question after a break. No streaks or trading targets." : "See your recorded trade's cost and fees, then answer one short question. Optional and free; this does not place another order."}</p>
                 </div>
-                <Link to="/learn/trade-review" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">Understand my trade</Link>
+                <Link to={tradeReview === "recall" ? "/learn/trade-review?review=1" : "/learn/trade-review"} className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">{tradeReview === "recall" ? "Review one concept" : "Understand my trade"}</Link>
               </section>
             )}
 
