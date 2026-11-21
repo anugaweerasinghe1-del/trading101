@@ -13,11 +13,22 @@ export const hasIntegratedCourseOverview = (path: string) => integratedPaths.has
  * the hydrated React page. Derivatives warnings are relevant to derivatives
  * teaching, but repeating them on unrelated tracks obscures the actual topic.
  */
-export function courseMetaDescription(track: { slug: string; tagline: string; lessons: readonly unknown[] }): string {
+export function courseMetaDescription(track: { slug: string; tagline: string; description?: string; lessons: readonly unknown[] }): string {
+  // Dynamic, owner-approved courses serve their own description in initial HTML.
+  // Keep the hydrated head identical rather than swapping in a generic tagline.
+  if (!hasIntegratedCourseOverview(`/courses/${track.slug}`) && track.description) {
+    return track.description.slice(0, 155);
+  }
   const core = `${track.tagline} ${track.lessons.length} free lessons with quizzes and a completion badge.`;
   return track.slug === "futures-and-derivatives"
     ? `${core} Futures contracts are worksheet-only.`
     : core;
+}
+
+export function coursePageTitle(track: { slug: string; title: string }): string {
+  return hasIntegratedCourseOverview(`/courses/${track.slug}`)
+    ? `${track.title} — Free Trading Course | TradeHQ`
+    : `${track.title} | TradeHQ`;
 }
 
 export function coursePracticeScope(slug: string): string {
