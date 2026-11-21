@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, ShieldCheck } from "lucide-react";
@@ -9,6 +9,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
 import { markLessonCompleted } from "@/lib/courseProgress";
 import { TRADE_REVIEW_TRACK, TRADE_REVIEW_LESSON, TRADE_RECALL_LESSON } from "@/lib/retentionLearning";
+import { tradeReviewQuestion } from "@/lib/tradeReviewQuestions";
 
 const money = (n: number) => Number.isFinite(n)
   ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n)
@@ -50,20 +51,19 @@ export default function TradeLearningReview() {
   const cashMovement = trade ? trade.total : gross + fee;
   const goodNumbers = [gross, fee, cashMovement].every(Number.isFinite);
 
-  const question = recall
-    ? "Which value should you check to understand a completed practice order?"
-    : side === "buy"
-      ? "What happens to virtual cash when a buy order is recorded?"
-      : "What happens to virtual cash when a sell order is recorded?";
-  const options = recall
-    ? ["The confirmed transaction price and fee", "The quote displayed at a different time", "The asset's highest past price"]
-    : side === "buy"
-      ? ["It decreases by the recorded cost including the fee", "It increases by the share value", "It remains unchanged"]
-      : ["It increases by the recorded proceeds after the fee", "It decreases by the gross sale price", "It remains unchanged"];
+  const lessonQuestion = useMemo(() => tradeReviewQuestion(side, recall), [side, recall]);
+  const didAnswerCorrectly = selected === lessonQuestion.correctIndex;
+
+  useEffect(() => {
+    setSelected(null);
+    setSubmitted(false);
+    setSaved(false);
+  }, [recall]);
+
 
   function submit() {
     if (selected === null || submitted) return;
-    const correct = selected === 0;
+    const correct = didAnswerCorrectly;
     // Recording completion is separate from trading, badges and portfolios.
     // A wrong answer is stored as a review attempt, not proof of mastery.
     const persisted = markLessonCompleted(
@@ -123,10 +123,10 @@ export default function TradeLearningReview() {
 
         <section className="mt-5 rounded-2xl border border-primary/30 bg-primary/[0.04] p-5 sm:p-7" aria-labelledby="review-question">
           <div className="mb-4 flex items-center gap-2 text-primary"><BookOpenCheck className="h-5 w-5" /><span className="text-xs font-semibold uppercase tracking-widest">Check your understanding</span></div>
-          <h2 id="review-question" className="text-lg font-semibold">{question}</h2>
+          <h2 id="review-question" className="text-lg font-semibold">{lessonQuestion.question}</h2>
           <fieldset className="mt-5 space-y-2" disabled={submitted}>
             <legend className="sr-only">Select one answer</legend>
-            {options.map((option, index) => (
+            {lessonQuestion.options.map((option, index) => (
               <label key={option} className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border p-3 text-sm transition-colors ${selected === index ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"}`}>
                 <input type="radio" name="review-answer" value={index} checked={selected === index} onChange={() => setSelected(index)} className="accent-primary" />
                 <span>{option}</span>
@@ -134,8 +134,8 @@ export default function TradeLearningReview() {
             ))}
           </fieldset>
           {submitted && <div role="status" aria-live="polite" className="mt-5 rounded-xl border border-border bg-background/70 p-4">
-            <p className="flex items-center gap-2 font-semibold"><CheckCircle2 className="h-4 w-4 text-primary" />{selected === 0 ? "That's correct." : "Thanks for checking your understanding."}</p>
-            <p className="mt-2 text-sm text-muted-foreground">The confirmed order numbers, rather than a later quote, show what was recorded. A buy consumes cash including fees; a sell returns net proceeds after fees.</p>
+            <p className="flex items-center gap-2 font-semibold"><CheckCircle2 className="h-4 w-4 text-primary" />{didAnswerCorrectly ? "That's correct." : "Not quite—here's the key idea."}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{lessonQuestion.explanation}</p>
             <p className="mt-2 text-xs text-muted-foreground">{saved ? "Your review is saved in this browser and can synchronize privately when signed in." : "Your answer was checked, but browser storage was unavailable; this result was not saved."}</p>
           </div>}
           <div className="mt-6 flex flex-wrap gap-3">
@@ -145,7 +145,7 @@ export default function TradeLearningReview() {
               </button>
             ) : (
               <>
-                {!saved && <button type="button" onClick={() => setSaved(markLessonCompleted(TRADE_REVIEW_TRACK, recall ? TRADE_RECALL_LESSON : TRADE_REVIEW_LESSON, selected === 0 ? 100 : 0))} className="inline-flex min-h-11 items-center rounded-xl border border-primary/30 px-4 py-2 text-sm font-medium">Retry saving</button>}
+                {!saved && <button type="button" onClick={() => setSaved(markLessonCompleted(TRADE_REVIEW_TRACK, recall ? TRADE_RECALL_LESSON : TRADE_REVIEW_LESSON, didAnswerCorrectly ? 100 : 0))} className="inline-flex min-h-11 items-center rounded-xl border border-primary/30 px-4 py-2 text-sm font-medium">Retry saving</button>}
                 <Link to="/learn" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">Continue learning <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 <Link to="/portfolio" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-border px-5 py-3 text-sm font-medium">Review portfolio</Link>
               </>
