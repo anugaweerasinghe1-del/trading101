@@ -46,6 +46,8 @@ export function tradeReviewStage(progress: CourseProgressState, now = Date.now()
   const recall = lessons[TRADE_RECALL_LESSON];
   const last = recall?.status === "completed" ? recall.completedAt : first.completedAt;
   const elapsed = now - Date.parse(last ?? "");
-  const interval = recall?.status === "completed" ? 3 * DAY : DAY;
+  // Wrong answers remain an optional recall opportunity after a day,
+  // while a correct review rests for three days. No notification or streak.
+  const interval = recall?.status === "completed" && recall.score === 100 ? 3 * DAY : DAY;
   return Number.isFinite(elapsed) && elapsed >= interval ? "recall" : "recent";
 }
