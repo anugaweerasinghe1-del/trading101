@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { RelatedMarkets } from "@/components/RelatedMarkets";
 import { AssetFAQSection } from "@/components/AssetFAQSection";
+import { BITCOIN_SIMULATOR_SEO } from "@/lib/bitcoinSimulatorSeo";
 import { RecentAnalysis } from "@/components/RecentAnalysis";
 import { AssetIntelligence } from "@/components/AssetIntelligence";
 import { AIReadySummary } from "@/components/AIReadySummary";
@@ -492,7 +493,7 @@ export default function TradeAsset() {
           {selectedAsset && (
             <header className="pb-2">
               <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">
-                {selectedAsset.name} — Practice Trading Simulator
+                {selectedAsset.id === "btc" ? BITCOIN_SIMULATOR_SEO.h1 : `${selectedAsset.name} — Practice Trading Simulator`}
               </h1>
               <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
                 Explore {selectedAsset.symbol} with $100,000 in virtual cash. Read simulated charts, compare position sizes, and review practice gains and losses. No real money is traded.
@@ -526,6 +527,27 @@ export default function TradeAsset() {
                 )}
               </div>
             </header>
+          )}
+
+          {selectedAsset?.id === "btc" && (
+            <section aria-labelledby="btc-practice-steps" className="rounded-2xl border border-primary/25 bg-card/70 p-5 sm:p-6">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="max-w-2xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Free Bitcoin simulator · No signup required</p>
+                  <h2 id="btc-practice-steps" className="mt-2 text-xl font-semibold text-foreground">Practise a BTC order, then understand what changed</h2>
+                  <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+                    <li>Review the BTC reference quote and its source or simulated-data label before choosing any quantity.</li>
+                    <li>Preview an optional virtual buy or sell with $100,000 starting practice cash; no real Bitcoin is purchased.</li>
+                    <li>After saving an order, open your portfolio to examine cash movement, the simulated 0.1% fee and what remains uncertain.</li>
+                  </ol>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Practice fills do not reproduce exchange spreads, slippage, custody or the emotions of risking real money. A simulated return cannot predict a real return.</p>
+                </div>
+                <div className="flex shrink-0 flex-col gap-2 text-sm md:w-48">
+                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-4 py-2 text-center font-semibold text-primary-foreground transition-colors hover:bg-primary/90">Bitcoin beginner guide</Link>
+                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-4 py-2 text-center font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
+                </div>
+              </div>
+            </section>
           )}
 
           {selectedAsset?.type === "forex" && <DailyFxReference assetId={selectedAsset.id} />}
