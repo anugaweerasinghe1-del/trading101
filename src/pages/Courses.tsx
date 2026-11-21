@@ -61,7 +61,7 @@ const WHY_TRUST = [
 ];
 
 const HOW_IT_WORKS = [
-  { step: "1", title: "Pick a track", body: "Choose the topic that matches your level. Beginners typically start with Trading Psychology or Macro Reading." },
+  { step: "1", title: "Pick a track", body: "Choose the topic that matches your level. For the first order and fees explanation, use Start Here; then choose a course based on interest." },
   { step: "2", title: "Read the lesson", body: "Check each lesson’s reading-time estimate. Read the worked examples, assumptions and linked sources at your own pace." },
   { step: "3", title: "Take the quiz", body: "A 4–6 question knowledge check. Explanations for every answer — you learn from mistakes." },
   { step: "4", title: "Work through an example", body: "Practise supported spot trades with virtual cash. For options and futures, calculate hypothetical contract payoffs and margin changes in a worksheet." },
@@ -79,7 +79,7 @@ const FAQ = [
   },
   {
     q: "Do I need prior trading experience?",
-    a: "No. Every track starts at fundamentals. A new learner can start with 'Trading Decisions and Behaviour' or the first lesson of 'Options Trading Fundamentals'.",
+    a: "No. If you're completely new to trading, Start Here explains order mechanics first with no real money or required order. Then choose a beginner-level track. Options and futures are specialized topics, not the recommended first step.",
   },
   {
     q: "How long does a track take?",

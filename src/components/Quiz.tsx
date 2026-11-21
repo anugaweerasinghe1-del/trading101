@@ -8,14 +8,16 @@ import type { Lesson } from "@/lib/lessonData";
 interface QuizProps {
   lesson: Lesson;
   onComplete: (score: number) => void;
+  onResult: (score: number) => boolean;
 }
 
-export function Quiz({ lesson, onComplete }: QuizProps) {
+export function Quiz({ lesson, onComplete, onResult }: QuizProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [score, setScore] = useState(0);
+  const [resultSaved, setResultSaved] = useState<boolean | null>(null);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
   const question = lesson.quiz[currentQuestion];
@@ -40,6 +42,7 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
     setSelectedAnswer(null);
 
     if (isLastQuestion) {
+      setResultSaved(onResult(score));
       setShowSummary(true);
     } else {
       setCurrentQuestion(currentQuestion + 1);
@@ -64,13 +67,15 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
           <div className="text-6xl font-bold text-primary mb-2">{percentage}%</div>
           <p className="text-muted-foreground">
             {percentage >= 80
-              ? "Your quiz result is recorded. Review the explanations and test the concepts with another example."
+              ? "You've finished the quiz. Review the explanations and try another example when ready."
               : percentage >= 60
               ? "Good job! Review the material for better retention."
               : "Keep learning! Try reviewing the lesson again."}
           </p>
         </div>
 
+        <p role="status" className="mb-4 text-sm text-muted-foreground">{resultSaved ? "Saved to this browser. Signed-in progress can sync privately when online." : "Your result was checked but could not be saved in this browser."}</p>
+        {resultSaved === false && <Button variant="outline" className="mr-3 mb-3" onClick={() => setResultSaved(onResult(score))}>Retry saving</Button>}
         <Button onClick={() => onComplete(score)} size="lg">
           Back to Lessons
         </Button>

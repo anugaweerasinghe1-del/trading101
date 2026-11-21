@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Quote, TrendingUp, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { lessonData } from "@/lib/lessonData";
 import { Quiz } from "@/components/Quiz";
+import { getTrackProgress, markLessonStarted, markLessonCompleted, saveLessonPosition } from "@/lib/courseProgress";
+import { QUICK_READ_TRACK, quickReadKey } from "@/lib/retentionLearning";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 
 // Eagerly import every lesson image so Vite fingerprints them and the src
@@ -33,6 +35,19 @@ export default function LessonDetail() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   const lesson = lessonData.find((l) => l.id === Number(lessonId));
+  const lessonKey = quickReadKey(Number(lessonId));
+
+  useEffect(() => {
+    if (!lesson) return;
+    const row = getTrackProgress(QUICK_READ_TRACK).lessons[lessonKey];
+    const completed = row?.status === "completed"
+      ? lesson.subtopics.length
+      : Math.min(lesson.subtopics.length, Math.round((row?.scrolledPct ?? 0) * lesson.subtopics.length / 100));
+    setCompletedSubtopics(new Set(Array.from({ length: completed }, (_, index) => index)));
+    setCurrentSubtopic(Math.min(completed, lesson.subtopics.length - 1));
+    setShowQuiz(false);
+    if (row?.status !== "completed") markLessonStarted(QUICK_READ_TRACK, lessonKey);
+  }, [lessonId, lessonKey, lesson]);
 
   if (!lesson) return <NotFound />;
 
@@ -43,6 +58,7 @@ export default function LessonDetail() {
     const newCompleted = new Set(completedSubtopics);
     newCompleted.add(currentSubtopic);
     setCompletedSubtopics(newCompleted);
+    saveLessonPosition(QUICK_READ_TRACK, lessonKey, newCompleted.size / lesson.subtopics.length * 100);
 
     if (currentSubtopic < lesson.subtopics.length - 1) {
       setCurrentSubtopic(currentSubtopic + 1);
@@ -51,10 +67,8 @@ export default function LessonDetail() {
     }
   };
 
-  const handleQuizComplete = (score: number) => {
-    console.log("Quiz completed with score:", score);
-    navigate("/learn");
-  };
+  const handleQuizComplete = () => navigate("/learn");
+  const handleQuizResult = (score: number): boolean => markLessonCompleted(QUICK_READ_TRACK, lessonKey, score);
 
   if (showQuiz) {
     return (
@@ -62,7 +76,7 @@ export default function LessonDetail() {
         <Navigation />
         <main className="pt-24 pb-12">
           <div className="container mx-auto px-6 max-w-4xl">
-            <Quiz lesson={lesson} onComplete={handleQuizComplete} />
+            <Quiz lesson={lesson} onComplete={handleQuizComplete} onResult={handleQuizResult} />
           </div>
         </main>
       </div>

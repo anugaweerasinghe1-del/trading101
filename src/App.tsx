@@ -26,6 +26,7 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Learn = lazy(() => import("./pages/Learn"));
 const BeginnerJourney = lazy(() => import("./pages/BeginnerJourney"));
 const LessonDetail = lazy(() => import("./pages/LessonDetail"));
+const TradeLearningReview = lazy(() => import("./pages/TradeLearningReview"));
 const LearnTradingGuide = lazy(() => import("./pages/LearnTradingGuide"));
 const AIMentor = lazy(() => import("./pages/AIMentor"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -185,6 +186,7 @@ function AnimatedRoutes() {
           <Route path="/markets" element={<Markets />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/learn" element={<Learn />} />
+          <Route path="/learn/trade-review" element={<TradeLearningReview />} />
           <Route path="/start" element={<BeginnerJourney />} />
           <Route path="/learn/article/:slug" element={<LearnArticle />} />
           <Route path="/learn/how-to-read-stock-charts" element={<Navigate to="/learn/article/how-to-read-stock-charts" replace />} />

@@ -277,9 +277,9 @@ export default function Trade() {
                 </p>
               </div>
               <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
-                <Link to={guidedPractice ? "/start" : "/learn/1"}
+                <Link to={guidedPractice ? "/start" : "/learn/trade-review"}
                   className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-4 py-2 font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                  {guidedPractice ? "Review my journey" : "Learn how orders work"}
+                  {guidedPractice ? "Review my journey" : "Understand this virtual trade"}
                 </Link>
                 <button type="button" onClick={() => setPostTradeLesson(null)}
                   className="min-h-11 rounded-xl px-3 py-2 text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">

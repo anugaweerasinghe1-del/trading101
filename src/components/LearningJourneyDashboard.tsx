@@ -4,6 +4,7 @@ import { ArrowRight, BookOpenCheck, Compass, RotateCcw, ShieldCheck } from "luci
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { JOURNEY_EVENT, JOURNEY_KEY, readJourney } from "@/lib/beginnerJourney";
 import { buildLearningOverview, type LearningTrack } from "@/lib/learningOverview";
+import { chooseLearningActivation } from "@/lib/learningActivation";
 import { useAuth } from "@/hooks/useAuth";
 import { useMasteryNextAction } from "@/hooks/useMasteryNextAction";
 
@@ -32,13 +33,17 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
   const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0 || overview.next?.inProgress === true;
+  const quickReadsFinished = Object.values(snapshot.course.tracks["quick-reads"]?.lessons ?? {}).filter(lesson => lesson.status === "completed").length;
   const mastery = useMasteryNextAction();
+  const suggested = chooseLearningActivation(tracks, snapshot.course, snapshot.journey, mastery, { hasPracticeTrade: mastery.tradeCount !== null && mastery.tradeCount > 0 });
   // A single primary action. The learner's other progress remains visible
   // without requiring a choice between competing equally prominent CTAs.
   const action = overview.next && (hasCourseHistory || overview.journeyFinished)
     ? { href: overview.next.href, title: overview.next.title, label: overview.next.inProgress ? "Resume your saved lesson" : "Continue to your next lesson", reason: overview.next.reason }
     : hasCourseHistory && !overview.next
     ? { href: mastery.href, label: mastery.label, reason: mastery.reason }
+    : (suggested.state === "trade" || suggested.state === "quick-read" || suggested.state === "recall")
+    ? { href: suggested.href, title: suggested.heading, label: suggested.buttonLabel, reason: suggested.description }
     : !overview.journeyFinished
     ? { href: "/start", label: overview.journeyDone ? "Continue your first-trade journey" : "Start your learning journey", reason: "Begin with Daily Practice, learn an order, and reflect on your first voluntary virtual trade." }
     : { href: "/daily", label: "Open Daily Practice", reason: "Start a general trading scenario and build understanding at your own pace." };
@@ -53,6 +58,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             Pick up your five-step first-trade journey and any unfinished course. Your learning progress is stored on this browser and, when signed in, synchronized privately to your account.
           </p>
+          {quickReadsFinished > 0 && <p className="mt-2 text-xs font-medium text-primary" role="status">{quickReadsFinished} {quickReadsFinished === 1 ? "quick read" : "quick reads"} completed · Saved separately from structured-course badges.</p>}
         </div>
         <Link to="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">
           All courses <ArrowRight className="w-4 h-4" />
