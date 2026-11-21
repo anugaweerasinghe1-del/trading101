@@ -20,7 +20,7 @@
 
 ## Implementation / success criteria
 
-- On asset pages, show one clearly labelled mobile virtual-order launcher immediately after the short asset intro and before the chart and long-form SEO material. The chart uses a 360px height on the smallest screens and retains 520px desktop.
+- On asset pages, show one clearly labelled mobile virtual-order launcher immediately after the short asset intro and before the chart and long-form SEO material. The chart retains its previously validated 520px height: the speculative 360px reduction coincided with a SHIB tiny-price axis test timeout and was reverted as a precaution. The mobile action remains above the chart.
 - The drawer retains inputs on explicitly rejected or thrown outcomes; both /trade and /trade/:symbol return a boolean outcome. Do not report "executed" to the drawer on failed saves or owner mismatches. There must be no automatic trade, sign-up requirement, streak, reminder, ranking reward or deceptive success state.
 - The learning hub now counts as a consented entry point, as distinct from a quick-read completion. Measure (consented): Bitcoin simulator viewed → mobile order panel opened → virtual practice outcome → learning hub/review → saved lesson completion → later-day educational return.
 - Guardrails: ensure the user can read charts without an order, preserve all SEO blocks and disclaimers, keep mobile order drawer out of the desktop view, retain recovery prompts and quote-provenance labels, verify declined analytics consent suppresses all new milestones.
