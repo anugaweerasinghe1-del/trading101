@@ -1,7 +1,7 @@
 import { DailyFxReference } from "@/components/trading/DailyFxReference";
 import NotFound from "./NotFound";
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -56,6 +56,7 @@ export default function TradeAsset() {
   const { symbol } = useParams<{ symbol: string }>();
   const navigate = useNavigate();
   const [portfolio, setPortfolio] = useState(getPortfolio());
+  const [postTradeLesson, setPostTradeLesson] = useState<{ symbol: string; side: "buy" | "sell" } | null>(null);
   useEffect(() => {
     const refresh = () => setPortfolio(getPortfolio());
     window.addEventListener("tradehq:portfolio-updated", refresh);
@@ -212,6 +213,7 @@ export default function TradeAsset() {
     if (result.success && result.portfolio) {
       if (!portfolioOwnerIs(result.ownerId ?? null)) return;
       setPortfolio(getPortfolio());
+      setPostTradeLesson({ symbol: asset.symbol, side: type });
       toast({
         title: `${type === 'buy' ? '🟢' : '🔴'} Order Executed`,
         description: result.message,
@@ -474,6 +476,18 @@ export default function TradeAsset() {
 
         <main className="flex-1 container mx-auto px-4 py-6 space-y-6 max-w-7xl pt-20">
           {selectedAsset && <Breadcrumb items={breadcrumbItems} />}
+          {postTradeLesson && (
+            <section aria-label="Understand your recorded simulated order" role="status" className="flex flex-col gap-3 rounded-2xl border border-primary/30 bg-primary/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold">Your virtual {postTradeLesson.side} order for {postTradeLesson.symbol} was recorded.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Want to understand what changed in your cash and fees? Review your saved trade and answer one short, optional question. This does not place another order.</p>
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <Link to="/learn/trade-review" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Understand my trade</Link>
+                <button type="button" onClick={() => setPostTradeLesson(null)} className="inline-flex min-h-11 items-center justify-center rounded-xl px-3 text-sm text-muted-foreground hover:bg-muted">Not now</button>
+              </div>
+            </section>
+          )}
           
           {selectedAsset && (
             <header className="pb-2">
