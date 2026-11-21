@@ -647,6 +647,18 @@ function extraRoutes(): RouteMeta[] {
     out.push({ path: entry[0], title: entry[1] + " | TradeHQ", description: "Restricted TradeHQ administration utility.", h1: entry[1], summary: "Owner-only workspace for TradeHQ administration.", priority: "0.1", changefreq: "monthly", noindex: true });
   }
   out.push({ path: "/admin/daily", title: "Daily Practice Administration | TradeHQ", description: "Private owner editing and approval for daily practice banks.", h1: "Daily practice administration", summary: "Owner administration requires the master key.", priority: "0.1", changefreq: "monthly", noindex: true });
+  // A contextual learning review is linked from the virtual trade desk and portfolio.
+  // It must have a directly served document on Cloudflare, even without SPA navigation.
+  // The review is user-specific and stays out of all search sitemaps.
+  out.push({
+    path: "/learn/trade-review",
+    title: "Understand a Virtual Trade | TradeHQ",
+    description: "Review a simulated order's cash movement and fees, then check your understanding. Optional, private educational practice.",
+    h1: "Understand what your virtual order did",
+    summary: "Review an existing simulated order or a clearly fictional example, then answer one optional learning question. This page never places a trade, touches real money or publishes a score.",
+    changefreq: "monthly",
+    noindex: true,
+  });
   out.push({ path: "/achievements", title: "My Trophy Cabinet — Personal Learning | TradeHQ", description: "Private, personal progress and learning milestones. No independently verified public trophies.", h1: "My Trophy Cabinet", summary: "A personal, private reflection of saved course lessons. No public trophies or rankings are awarded here.", priority: "0.1", changefreq: "monthly", noindex: true });
   out.push({ path: "/certificate/verify", title: "Certificate verification | The Trade HQ", description: "Verify an opted-in Foundations certificate.", h1: "Certificate verification", summary: "Check the validity of a shared Foundations certificate link.", priority: "0.1", changefreq: "monthly", noindex: true });
   return out;
