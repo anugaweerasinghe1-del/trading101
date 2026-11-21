@@ -299,6 +299,13 @@ try {
   // its publisher notes as well as the visible instrument; no order is placed.
   await send('Page.navigate', {url:origin+'/trade/btc'});
   await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Bitcoin Trading Simulator — Free Virtual Practice') && document.querySelector('h1')?.textContent.trim() === 'Bitcoin Trading Simulator — Free Virtual Practice'`, 'Bitcoin route must mount before selection');
+  await waitUntil(`!!document.querySelector('[data-testid="asset-mobile-order-launcher"] button[aria-label="Open BTC virtual practice order"]')`, 'Mobile Bitcoin simulator offers a clearly labelled virtual-order entry before the chart');
+  assert.equal(await evaluate(`(() => {
+    const trigger = document.querySelector('[data-testid="asset-mobile-order-launcher"]');
+    const chart = document.querySelector('.grid.grid-cols-1.lg\\:grid-cols-3');
+    return Boolean(trigger && chart && (trigger.compareDocumentPosition(chart) & Node.DOCUMENT_POSITION_FOLLOWING));
+  })()`), true, 'Virtual-order action must precede the chart and secondary content in the DOM');
+
   assert.equal(await validSimulationSchema('btc'), true, 'BTC page must describe its free virtual software, not a financial product');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
   await waitUntil(`!!document.querySelector('#asset-search-panel')`, 'Dedicated route asset search opens');
