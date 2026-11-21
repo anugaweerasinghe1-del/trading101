@@ -58,6 +58,26 @@ export function chooseLearningActivation(
   // Someone who has already begun the guided journey should complete the
   // saved stage before seeing an unrelated new recommendation.
   if (overview.journeyDone > 0 && !overview.journeyFinished) {
+    // A recorded practice trade is not the end of learning. Resume the exact
+    // saved educational step rather than asking returning users to trade again.
+    if (journey.tradeId && !journey.portfolioExplained) {
+      return {
+        href: "/start",
+        heading: "Understand your recorded virtual trade",
+        description: "Your guided order is saved. Review what happened to virtual cash and fees before continuing. No new order is needed.",
+        buttonLabel: "Review my practice trade",
+        state: "journey",
+      };
+    }
+    if (journey.portfolioExplained && !journey.completedAt) {
+      return {
+        href: "/start",
+        heading: "Finish your optional trade reflection",
+        description: "Your saved portfolio review is complete. Return to reflect on one lesson, or come back whenever you prefer.",
+        buttonLabel: "Continue my reflection",
+        state: "journey",
+      };
+    }
     return {
       href: "/start",
       heading: "Continue your first-trade lesson",

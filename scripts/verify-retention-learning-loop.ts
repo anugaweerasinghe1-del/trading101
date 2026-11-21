@@ -48,6 +48,17 @@ assert.equal(tradeReviewStage(withTrade, NOW), "recall", "Offer a later optional
 
 const begun = { ...journey, lessonCompleted: true };
 assert.equal(choose(fresh, begun, true).href, "/start", "Do not interrupt a begun five-step journey");
+const traded = { ...begun, tradeId: "verified-simulated-order" };
+assert.deepEqual([choose(fresh, traded, true).href, choose(fresh, traded, true).heading,
+  choose(fresh, traded, true).buttonLabel], ["/start", "Understand your recorded virtual trade", "Review my practice trade"],
+  "Saved first-trade users must resume the educational review, not be sent to trade again");
+assert.match(choose(fresh, traded, true).description, /No new order is needed/,
+  "Return card must not pressure visitors to trade again");
+const explained = { ...traded, portfolioExplained: true };
+assert.deepEqual([choose(fresh, explained, true).href, choose(fresh, explained, true).heading],
+  ["/start", "Finish your optional trade reflection"],
+  "After reviewing cash and fees, returning users should see the optional reflection step");
+assert.equal(choose(fresh, explained, true).state, "journey");
 const inCourse = { ...fresh, tracks: { published: { lessons: { one: { status: "in-progress" as const } } } } };
 assert.equal(choose(inCourse, journey, true).href, "/courses/published/one", "Existing structured courses stay higher priority");
 
