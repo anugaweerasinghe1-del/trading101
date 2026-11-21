@@ -31,6 +31,24 @@ for (const track of courseTracks) {
 
 const map = await buildContentMap();
 
+// Prevent search-visible learning notes from repeating the same introductory
+// summary as a second paragraph. Hydrated LearnArticle already displays one
+// natural introduction; all substantive teaching sections remain untouched.
+for (const article of LEARN_ARTICLES) {
+  const publisher = map.get(`/learn/article/${article.slug}`);
+  assert.ok(publisher?.sections.length, article.slug + ": publisher sections missing");
+  assert.equal(
+    publisher.sections.filter(section => section.h === "Summary" && section.p?.includes(article.summary)).length,
+    0,
+    article.slug + ": duplicate introductory summary must not return"
+  );
+  assert.ok(publisher.sections.some(section => section.h === "Publisher and editorial transparency"),
+    article.slug + ": editorial transparency must remain");
+  assert.ok(publisher.sections.some(section => section.h === "Practise what you just read"),
+    article.slug + ": practice guidance must remain");
+}
+console.log("PASS learning articles: no duplicate SSR summary; authored sections and disclosures retained");
+
 // A production URL-by-URL sweep on 20 October found these two initial HTML
 // descriptions too short to explain the page. Preserve meaningful previews.
 for (const [path, expectedTopic] of [
