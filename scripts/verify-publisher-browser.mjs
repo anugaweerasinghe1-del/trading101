@@ -274,6 +274,11 @@ try {
   if (phase === null || phase === 4) {
   await send('Page.navigate', {url:origin+'/trade'});
   await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio educational mentor"]')`, 'Trade interface must mount');
+  const validSimulationSchema = async assetId => {
+    const expectedUrl = 'https://www.thetradehq.com/trade/' + assetId;
+    return await evaluate(`Array.from(document.querySelectorAll('script[type="application/ld+json"]')).some(el => { try { const schema=JSON.parse(el.textContent); return schema?.['@type'] === 'SoftwareApplication' && schema?.url === ${JSON.stringify(expectedUrl)} && schema?.offers?.price === '0'; } catch { return false; } })`);
+  };
+  assert.equal(await validSimulationSchema('btc'), true, 'BTC page must describe its free virtual software, not a financial product');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
   await waitUntil(`!!document.querySelector('#asset-search-panel input')`, 'Asset search must open');
   assert.equal(await evaluate(`!!document.querySelector('#asset-search-panel button button')`), false);
@@ -299,6 +304,7 @@ try {
   await waitUntil(`!!document.querySelector('#asset-search-panel')`, 'Dedicated route asset search opens');
   await evaluate(`Array.from(document.querySelectorAll('#asset-search-panel button')).find(button => button.textContent.startsWith('ETHEthereum')).click()`);
   await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('link[rel="canonical"]')?.href === 'https://www.thetradehq.com/trade/eth' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Selection must align URL, heading, canonical and reference notes');
+  assert.equal(await validSimulationSchema('eth'), true, 'ETH page must describe its free virtual software, not a financial product');
   await send('Page.reload');
   await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Reload must preserve selected instrument route');
   }
