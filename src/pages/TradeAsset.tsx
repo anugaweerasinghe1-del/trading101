@@ -495,6 +495,9 @@ export default function TradeAsset() {
               <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
                 Explore {selectedAsset.symbol} with $100,000 in virtual cash. Read simulated charts, compare position sizes, and review practice gains and losses. No real money is traded.
               </p>
+              {selectedAsset.id === "eth" && <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
+                New to Ethereum? <Link to="/how-to-trade/eth" className="font-medium text-primary underline underline-offset-4">Read the step-by-step Ethereum trading practice guide</Link> to understand ETH orders, costs and virtual portfolio review before using the simulator.
+              </p>}
               {selectedAsset.id === "gold" && <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
                 Provider quotes use a PAXG token proxy, not a dedicated XAU/USD spot feed.
                 Practice charts and fixed fallback prices have their own data-status labels.

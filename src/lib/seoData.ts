@@ -300,11 +300,11 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "type": "crypto",
     "whyTrade": "Ethereum is a network for running applications and smart contracts; ether, or ETH, is its native currency. People use ETH to pay network fees, transfer value and participate in staking. Trading ETH means exchanging that currency at a market price. TradeHQ lets you practise the price and quantity calculations with virtual funds; it does not send coins to a wallet or stake them.",
     "steps": [
-      "Keep ETH quantity, simulator transaction fees and conceptual network charges in separate ledger fields.",
+      "Identify ether (ETH) as Ethereum’s native currency. Read the ETH/USD quote, its timestamp and the source before considering a hypothetical order; an indicative price is not a guaranteed execution price.",
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
       "Use 0.5 ETH at an illustrative $3,200 quote to calculate $1,600 of virtual exposure and a $1.60 simulator entry fee. That is separate from real blockchain gas charges, which TradeHQ does not execute.",
       "Record a second hypothetical ETH price and calculate the change for the same 0.5 ETH. Check the page's quote timestamp; a price screenshot cannot reveal the gas or exchange costs of a real transfer.",
-      "Separate the virtual spot transaction fee from any Solana- or Ethereum-style on-chain network charge, which the simulator does not execute."
+      "After virtual practice, review changes in ETH units, cash and simulator fees. Keep real Ethereum network gas and staking separate: TradeHQ neither transfers nor stakes coins."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
     "risk": "Network fees, staking mechanics and ETH market-price exposure are different risks and activities. TradeHQ illustrates only the supported virtual spot accounting; it does not stake ETH, transfer coins or pay staking rewards. A correct network explanation cannot establish which direction the market price will move. Include the actual simulator fees when assessing a paper outcome.",
