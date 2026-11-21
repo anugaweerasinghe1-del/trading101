@@ -5,6 +5,6 @@
  */
 export const BITCOIN_SIMULATOR_SEO = {
   title: "Bitcoin Simulator — Free $100K Virtual Practice | TradeHQ",
-  description: "Try TradeHQ's free Bitcoin simulator with $100K virtual cash. Practise BTC orders, fees and portfolio tracking with simulated charts. No signup or real money.",
+  description: "Free Bitcoin simulator: practise BTC orders with $100K virtual cash. Explore fees, portfolios and simulated charts. No signup or real money.",
   h1: "Bitcoin Trading Simulator — Free Virtual Practice",
 } as const;
