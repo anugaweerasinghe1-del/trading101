@@ -94,13 +94,14 @@ export function replaceCourseProgressSnapshot(progress: CourseProgressState) {
   } catch { /* Keep existing browser data when storage is unavailable. */ }
 }
 
-function save(state: CourseProgressState) {
-  if (typeof window === "undefined") return;
+function save(state: CourseProgressState): boolean {
+  if (typeof window === "undefined") return false;
   state.updatedAt = new Date().toISOString();
   try {
     localStorage.setItem(KEY, JSON.stringify(state));
     window.dispatchEvent?.(new Event(COURSE_PROGRESS_EVENT));
-  } catch { /* Disabled browser storage must not claim persistence. */ }
+    return true;
+  } catch { /* Disabled browser storage must not claim persistence. */ return false; }
 }
 
 export function markLessonStarted(track: string, lesson: string) {
@@ -150,7 +151,7 @@ export function readLessonDraft(track: string, lesson: string) {
   return { answers: row?.status === "completed" ? {} : { ...(row?.quizAnswers ?? {}) }, scrolledPct: row?.scrolledPct ?? 0 };
 }
 
-export function markLessonCompleted(track: string, lesson: string, score: number) {
+export function markLessonCompleted(track: string, lesson: string, score: number): boolean {
   const s = loadProgress();
   s.tracks[track] ??= emptyTrack();
   s.tracks[track].lessons[lesson] = {
@@ -160,7 +161,7 @@ export function markLessonCompleted(track: string, lesson: string, score: number
     scrolledPct: 100,
   };
   s.lastLesson = { track, lesson, at: new Date().toISOString() };
-  save(s);
+  return save(s);
 }
 
 export function awardBadge(track: string) {
