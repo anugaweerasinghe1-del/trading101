@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Asset, Portfolio } from "@/lib/types";
 import { formatPrice } from "@/lib/assets";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,7 @@ import {
   Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger,
 } from "@/components/ui/drawer";
 import { GhostJournalToggle } from "./GhostJournalToggle";
+import { trackLearningMilestone } from "@/lib/learningTelemetry";
 import { RevengeTradingBlocker, isRevengeTrade } from "./RevengeTradingBlocker";
 
 interface MobileOrderDrawerProps {
@@ -25,7 +26,7 @@ interface MobileOrderDrawerProps {
     orderType?: 'market' | 'limit',
     limitPrice?: number,
     rationale?: string
-  ) => void;
+  ) => Promise<boolean | void> | boolean | void;
 }
 
 export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: MobileOrderDrawerProps) {
@@ -37,6 +38,17 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
   const [journalEnabled, setJournalEnabled] = useState(false);
   const [rationale, setRationale] = useState("");
   const [showRevengeBlocker, setShowRevengeBlocker] = useState(false);
+  const [confirmationFailed, setConfirmationFailed] = useState(false);
+  const submittingRef = useRef(false);
+  useEffect(() => {
+    // Never carry a quantity or pending confirmation into a different asset.
+    setSide("buy");
+    setAmount("");
+    setSliderValue([0]);
+    setRationale("");
+    setIsOpen(false);
+    setConfirmationFailed(false);
+  }, [asset?.id]);
 
   const lastSubmitTime = useRef<number>(0);
   const DEBOUNCE_MS = 1000;
@@ -63,16 +75,27 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
   }, [handleSliderChange]);
 
   const executeTrade = useCallback(async () => {
-    if (!asset || !quantity || quantity <= 0) return;
+    if (!asset || !Number.isFinite(quantity) || quantity <= 0 || submittingRef.current) return;
+    submittingRef.current = true;
     setIsSubmitting(true);
+    setConfirmationFailed(false);
     try {
-      await onTrade(asset, side, quantity, 'market', undefined, journalEnabled ? rationale : undefined);
+      // A rejected order must leave the drawer open and preserve the user's
+      // quantity and journal entry so they can review or correct the input.
+      const confirmed = await onTrade(asset, side, quantity, 'market', undefined, journalEnabled ? rationale : undefined);
+      if (confirmed === false) {
+        setConfirmationFailed(true);
+        return;
+      }
       setAmount("");
       setSliderValue([0]);
       setRationale("");
       setIsOpen(false);
+    } catch {
+      setConfirmationFailed(true);
     } finally {
-      setTimeout(() => setIsSubmitting(false), 300);
+      submittingRef.current = false;
+      setIsSubmitting(false);
     }
   }, [asset, side, quantity, onTrade, journalEnabled, rationale]);
 
@@ -103,10 +126,16 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
 
   return (
     <>
-      <Drawer open={isOpen} onOpenChange={setIsOpen}>
+      <Drawer open={isOpen} onOpenChange={(nextOpen) => {
+        setIsOpen(nextOpen);
+        if (nextOpen) {
+          setConfirmationFailed(false);
+          trackLearningMilestone("Mobile Order Panel Opened");
+        }
+      }}>
         <DrawerTrigger asChild>
-          <Button className="w-full h-14 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
-            <span>Trade {asset.symbol}</span>
+          <Button aria-label={`Open ${asset.symbol} virtual practice order`} className="w-full h-14 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
+            <span>Practice ${asset.symbol} (virtual)</span>
             <ChevronUp className="w-5 h-5 ml-2" />
           </Button>
         </DrawerTrigger>
@@ -189,6 +218,11 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
             >
               {isSubmitting ? (<><Loader2 className="w-5 h-5 mr-2 animate-spin" />Processing...</>) : (<>{side === 'buy' ? 'Buy' : 'Sell'} {asset.symbol}</>)}
             </Button>
+            {confirmationFailed && (
+              <p role="alert" className="rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-sm text-foreground">
+                This virtual order was not confirmed in this view. Your inputs are preserved. Check your portfolio before trying again, especially after a connection error.
+              </p>
+            )}
           </div>
         </DrawerContent>
       </Drawer>

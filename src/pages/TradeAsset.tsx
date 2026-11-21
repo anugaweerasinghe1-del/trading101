@@ -8,6 +8,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { RelatedMarkets } from "@/components/RelatedMarkets";
 import { AssetFAQSection } from "@/components/AssetFAQSection";
 import { BITCOIN_SIMULATOR_SEO } from "@/lib/bitcoinSimulatorSeo";
+import { trackLearningMilestone } from "@/lib/learningTelemetry";
 import { RecentAnalysis } from "@/components/RecentAnalysis";
 import { AssetIntelligence } from "@/components/AssetIntelligence";
 import { AIReadySummary } from "@/components/AIReadySummary";
@@ -65,6 +66,9 @@ export default function TradeAsset() {
   }, []);
   const [assets, setAssets] = useState<Asset[]>([]);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
+  useEffect(() => {
+    if (selectedAsset?.id === "btc") trackLearningMilestone("Bitcoin Simulator Viewed");
+  }, [selectedAsset?.id]);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [dataSource, setDataSource] = useState<'live' | 'delayed' | 'cached' | 'simulated'>('simulated');
@@ -209,22 +213,33 @@ export default function TradeAsset() {
     orderType?: 'market' | 'limit',
     limitPrice?: number
   ) => {
-    const result = await executeTrade(portfolio, asset, type, quantity);
+    let result: Awaited<ReturnType<typeof executeTrade>>;
+    try {
+      result = await executeTrade(portfolio, asset, type, quantity);
+    } catch {
+      toast({ title: "Virtual order not confirmed", description: "A service error interrupted this practice order. No success was confirmed.", variant: "destructive" });
+      trackLearningMilestone("Virtual Practice Order Rejected");
+      return false;
+    }
     
     if (result.success && result.portfolio) {
-      if (!portfolioOwnerIs(result.ownerId ?? null)) return;
+      if (!portfolioOwnerIs(result.ownerId ?? null)) return false;
       setPortfolio(getPortfolio());
       setPostTradeLesson({ symbol: asset.symbol, side: type });
       toast({
         title: `${type === 'buy' ? '🟢' : '🔴'} Order Executed`,
         description: result.message,
       });
+      trackLearningMilestone("Virtual Practice Order Confirmed");
+      return true;
     } else {
       toast({
         title: "Order Failed",
         description: result.message,
         variant: "destructive",
       });
+      trackLearningMilestone("Virtual Practice Order Rejected");
+      return false;
     }
   }, [portfolio, toast]);
 
@@ -520,8 +535,8 @@ export default function TradeAsset() {
                   <p className="mt-1 text-sm text-muted-foreground">Use the order panel below, then review saved virtual cash, fees and holdings. No actual Bitcoin is purchased.</p>
                 </div>
                 <div className="flex shrink-0 flex-wrap items-center gap-2 text-sm">
-                  <Link to="/how-to-trade/btc" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
-                  <Link to="/wiki/paper-trading" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
+                  <Link to="/how-to-trade/btc" onClick={() => trackLearningMilestone("Bitcoin Guide Selected")} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-3 py-2 font-semibold text-primary-foreground hover:bg-primary/90">Bitcoin beginner guide</Link>
+                  <Link to="/wiki/paper-trading" onClick={() => trackLearningMilestone("Bitcoin Glossary Selected")} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-3 py-2 font-medium text-foreground hover:bg-muted/70">What is paper trading?</Link>
                 </div>
               </div>
               <details className="mt-3 border-t border-border/60 pt-3 text-sm">
@@ -535,6 +550,17 @@ export default function TradeAsset() {
               </details>
             </section>
           )}
+
+          {/* The virtual-order launcher must precede charts and all long-form
+              educational/SEO sections on phones. One accessible drawer only. */}
+          <div className="lg:hidden" data-testid="asset-mobile-order-launcher">
+            <MobileOrderDrawer
+              asset={selectedAsset}
+              availableCash={portfolio.cash}
+              portfolio={portfolio}
+              onTrade={handleTrade}
+            />
+          </div>
 
           {selectedAsset?.type === "forex" && <DailyFxReference assetId={selectedAsset.id} />}
 
@@ -557,27 +583,6 @@ export default function TradeAsset() {
             </section>
           )}
 
-          {/* GEO Key Takeaways - machine-readable for AI Overviews */}
-          {selectedAsset?.id === "sq" && (
-            <section aria-labelledby="legacy-stock-label" className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
-              <h2 id="legacy-stock-label" className="font-semibold text-foreground mb-2">Legacy practice label</h2>
-              <p>
-                This simulator retains Block's legacy SQ label. Block's investor stock page
-                identifies the company as XYZ. The practice label and generated prices do
-                not establish a current XYZ market quote.
-              </p>
-              <a href="https://investors.block.xyz/stock-info/default.aspx" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary underline underline-offset-2">
-                Block investor stock information
-              </a>
-            </section>
-          )}
-
-          {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
-          
-          {selectedAsset && showSeoBlocks && (
-            <AIReadySummary asset={selectedAsset} />
-          )}
-          
           {/* Command Center: Search + Portfolio Bar */}
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
             <AssetSearchDropdown
@@ -597,7 +602,7 @@ export default function TradeAsset() {
           {/* Trading Terminal Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2">
-              <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl h-[520px] overflow-hidden" style={{ backdropFilter: 'blur(12px)', boxShadow: '0 8px 40px -12px hsl(0 0% 0% / 0.5)' }}>
+              <div data-testid="asset-chart" className="bg-white/[0.02] border border-white/[0.08] rounded-2xl h-[520px] overflow-hidden" style={{ backdropFilter: 'blur(12px)', boxShadow: '0 8px 40px -12px hsl(0 0% 0% / 0.5)' }}>
                 {isLoading ? (
                   <ChartSkeleton />
                 ) : (
@@ -620,6 +625,29 @@ export default function TradeAsset() {
             </div>
           </div>
 
+          {/* Educational context remains visible and indexable but follows
+              the product controls on mobile rather than delaying entry. */}
+          {/* GEO Key Takeaways - machine-readable for AI Overviews */}
+          {selectedAsset?.id === "sq" && (
+            <section aria-labelledby="legacy-stock-label" className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+              <h2 id="legacy-stock-label" className="font-semibold text-foreground mb-2">Legacy practice label</h2>
+              <p>
+                This simulator retains Block's legacy SQ label. Block's investor stock page
+                identifies the company as XYZ. The practice label and generated prices do
+                not establish a current XYZ market quote.
+              </p>
+              <a href="https://investors.block.xyz/stock-info/default.aspx" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary underline underline-offset-2">
+                Block investor stock information
+              </a>
+            </section>
+          )}
+
+          {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
+          
+          {selectedAsset && showSeoBlocks && (
+            <AIReadySummary asset={selectedAsset} />
+          )}
+          
           {/* Asset Intelligence - shown for seed assets */}
           {showSeoBlocks && selectedAsset && (
             <AssetIntelligenceWithLiveData asset={selectedAsset} />
@@ -697,14 +725,6 @@ export default function TradeAsset() {
             </div>
           </div>
 
-          <div className="lg:hidden">
-            <MobileOrderDrawer
-              asset={selectedAsset}
-              availableCash={portfolio.cash}
-              portfolio={portfolio}
-              onTrade={handleTrade}
-            />
-          </div>
           <EducationalDisclaimer variant="footer" className="mb-10" />
         </main>
 

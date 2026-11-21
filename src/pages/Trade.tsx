@@ -32,6 +32,7 @@ import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { refreshAssetSnapshots } from "@/lib/marketDataClient";
 import type { PickerQuoteOrigin } from "@/lib/assetPickerPresentation";
 import { markJourneyTrade, readJourney } from "@/lib/beginnerJourney";
+import { trackLearningMilestone } from "@/lib/learningTelemetry";
 
 export default function Trade() {
   const { symbol } = useParams();
@@ -162,10 +163,17 @@ export default function Trade() {
       _limitPrice?: number,
       rationale?: string,
     ) => {
-      const result = await executeTrade(portfolio, asset, type, quantity);
+      let result: Awaited<ReturnType<typeof executeTrade>>;
+      try {
+        result = await executeTrade(portfolio, asset, type, quantity);
+      } catch {
+        toast({ title: "Virtual order not confirmed", description: "A service error interrupted this practice order. No success was confirmed.", variant: "destructive" });
+        trackLearningMilestone("Virtual Practice Order Rejected");
+        return false;
+      }
 
       if (result.success && result.portfolio) {
-        if (!portfolioOwnerIs(result.ownerId ?? null)) return;
+        if (!portfolioOwnerIs(result.ownerId ?? null)) return false;
         if (rationale && result.portfolio.trades.length > 0) {
           const journalEntry: JournalEntry = {
             notes: "",
@@ -197,12 +205,16 @@ export default function Trade() {
           title: `${type === "buy" ? "🟢" : "🔴"} Order Executed`,
           description: result.message,
         });
+        trackLearningMilestone("Virtual Practice Order Confirmed");
+        return true;
       } else {
         toast({
           title: "Order Failed",
           description: result.message,
           variant: "destructive",
         });
+        trackLearningMilestone("Virtual Practice Order Rejected");
+        return false;
       }
     },
     [portfolio, toast, guidedPractice],

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Card } from "@/components/ui/card";
@@ -11,6 +12,7 @@ import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { LearningJourneyDashboard } from "@/components/LearningJourneyDashboard";
+import { recordConsentedLearningVisit, trackLearningMilestone } from "@/lib/learningTelemetry";
 import { COUNTRY_GUIDES } from "@/lib/countryGuides";
 import tradingBasics from "@/assets/course-trading-basics.jpg";
 import riskManagement from "@/assets/course-risk-management.jpg";
@@ -90,6 +92,12 @@ const difficultyColors: Record<string, string> = {
 
 export default function Learn() {
   const { tracks } = useCourseCatalog();
+  useEffect(() => {
+    // The learning hub is a valid voluntary education entry point, not only
+    // completed lessons or reviews. Count it only under existing consent.
+    recordConsentedLearningVisit();
+    trackLearningMilestone("Learning Hub Viewed");
+  }, []);
   const courseLessonCount = tracks.reduce((count, track) => count + track.lessons.length, 0);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
