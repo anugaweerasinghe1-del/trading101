@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { uniqueRoutes } from "./routes";
 import { ASSETS } from "../src/lib/assets";
 import { BITCOIN_SIMULATOR_SEO } from "../src/lib/bitcoinSimulatorSeo";
@@ -25,6 +25,14 @@ assert.equal(generateAssetMetaTitle(btc), route.title, "Hydrated document title 
 assert.equal(generateAssetMetaDescription(btc), route.description, "Hydrated description matches no-JS metadata");
 assert.equal(route.description.length <= 165, true);
 assert.equal(route.title.includes("Bitcoin Simulator"), true);
+const prerenderPath = "dist/trade/btc/index.html";
+if (existsSync(prerenderPath)) {
+  const html = files(prerenderPath);
+  assert.ok(html.includes(`<title>${route.title}</title>`), "Actual static HTML head must match manifest title");
+  assert.ok(html.includes(`<h1>${route.h1}</h1>`), "Actual raw HTML must contain a genuine visible Bitcoin H1");
+  assert.ok(html.includes(`content="${route.description}"`), "Static description must not be truncated inconsistently");
+  assert.match(html, /<link rel="canonical" href="https:\/\/www\.thetradehq\.com\/trade\/btc"/, "Preserve the indexed canonical");
+}
 const eth = routes.find(row => row.path === "/trade/eth");
 assert.ok(eth && eth.title.includes("Paper Trade"), "Do not mass rewrite other existing search winners");
 const asset = files("src/pages/TradeAsset.tsx");
