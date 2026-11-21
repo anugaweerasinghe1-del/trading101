@@ -10,7 +10,14 @@ export type LearningMilestone =
   | "Quick Read Started"
   | "Quick Read Completed"
   | "Trade Review Viewed"
-  | "Trade Review Completed";
+  | "Trade Review Completed"
+  | "Learning Hub Viewed"
+  | "Bitcoin Simulator Viewed"
+  | "Bitcoin Guide Selected"
+  | "Bitcoin Glossary Selected"
+  | "Mobile Order Panel Opened"
+  | "Virtual Practice Order Confirmed"
+  | "Virtual Practice Order Rejected";
 
 type LearningAmplitude = { track: (name: string, properties?: Record<string, number>) => unknown };
 type LearningWindow = Window & { amplitude?: LearningAmplitude; __tradehqAmplitudeStarted?: boolean };
