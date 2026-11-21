@@ -1,6 +1,9 @@
 # TradeHQ — final second-pass AdSense readiness closeout
 **21 November 2026 | strict, evidence-first review | read-only production**
 
+> **ADDITIONAL POLICY RULEBREACH RECHECK (2026-11-21):** A new Google-policy/live-page/source check found **0 confirmed active AdSense policy violations**, **1 unconfirmed editorial quality-risk cluster**, and **1 high-risk historical ad-script issue already fixed**. The 12 original findings are **categories of investigation, not 12 rule breaks**. The 16-row [POLICY-BREACH-MATRIX.csv](POLICY-BREACH-MATRIX.csv) explicitly identifies whether each item actually violates an AdSense rule; the human-readable counts and new probe evidence are in [POLICY-BREACH-COUNT.md](POLICY-BREACH-COUNT.md). Actual hydrated browser/network testing remains unknown because the browser provider has insufficient credits. No production code changed.
+
+
 **Conclusion: CONDITIONAL GO for a fifth AdSense site-review request on the basis of site content and publicly testable evidence.** No currently substantiated critical or high-severity Google Publisher Policy violation was found. This is a **risk assessment, not a promise of approval**, and Google's four prior generic rejection messages remain non-diagnostic. Do not invent any Google reason. Do not change production merely to satisfy speculative findings. If the adult-account/owner and live account gates are truly in order as the owner reports, there is no site-content defect proven here that justifies indefinitely delaying the request. The unresolved checks below are limitations, not alleged violations.
 
 ## Exact scope and independently preserved evidence
