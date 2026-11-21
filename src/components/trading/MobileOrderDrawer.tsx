@@ -134,8 +134,8 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
         }
       }}>
         <DrawerTrigger asChild>
-          <Button className="w-full h-14 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
-            <span>Trade {asset.symbol}</span>
+          <Button aria-label={`Open ${asset.symbol} virtual practice order`} className="w-full h-14 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
+            <span>Practice ${asset.symbol} (virtual)</span>
             <ChevronUp className="w-5 h-5 ml-2" />
           </Button>
         </DrawerTrigger>
