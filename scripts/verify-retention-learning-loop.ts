@@ -87,7 +87,7 @@ assert.match(reviewPage, /markLessonCompleted/, "Reviews must store private lear
 assert.doesNotMatch(reviewPage, /executeTrade|record_practice_trade|sendEmail|sendNotification|localStorage\.setItem/, "Review does not place orders or force messaging");
 assert.match(trade, /guidedPractice \? "\/start" : "\/learn\/trade-review"/);
 assert.match(assetTrade, /setPostTradeLesson/, "Successful asset-specific orders must offer contextual learning");
-assert.match(assetTrade, /to="\\/learn\\/trade-review"/, "Asset-specific terminal must link to optional review");
+assert.match(assetTrade, /to="\/learn\/trade-review"/, "Asset-specific terminal must link to optional review");
 assert.match(portfolio, /portfolio\.trades\.length > 0/, "Existing traders can find the lesson from their portfolio");
 assert.match(read("src/components/LearningJourneyDashboard.tsx"), /suggested\.state === "trade"/);
 console.log("PASS contextual learning loop: durable quick reads, existing-trade review, voluntary spaced recall, no-order guardrails");
