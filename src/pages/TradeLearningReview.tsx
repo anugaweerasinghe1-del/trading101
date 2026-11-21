@@ -26,6 +26,7 @@ export default function TradeLearningReview() {
   const [selected, setSelected] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [useExample, setUseExample] = useState(false);
 
   useEffect(() => {
     recordConsentedLearningVisit();
@@ -44,8 +45,8 @@ export default function TradeLearningReview() {
 
   // Signed-in transactions come from their own confirmed account snapshot;
   // never substitute another browser user's cached trade while auth loads.
-  const trade = (user ? account?.portfolio?.trades : portfolio.trades)?.[0];
-  const accountPending = authLoading || Boolean(user && !account?.portfolio);
+  const trade = useExample ? undefined : (user ? account?.portfolio?.trades : portfolio.trades)?.[0];
+  const accountPending = !useExample && (authLoading || Boolean(user && !account?.portfolio));
   const illustrative = !trade;
   const side = trade?.type ?? "buy";
   // A standalone fictitious example lets non-traders learn without placing an
@@ -64,8 +65,7 @@ export default function TradeLearningReview() {
     setSelected(null);
     setSubmitted(false);
     setSaved(false);
-  }, [recall]);
-
+  }, [recall, side, useExample]);
 
   function persistReview(): boolean {
     if (selected === null) return false;
@@ -107,7 +107,12 @@ export default function TradeLearningReview() {
         <section className="rounded-2xl border border-border bg-card/70 p-5 sm:p-7" aria-labelledby="review-transaction">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary">{accountPending ? "Fictional example while account history loads" : illustrative ? "Fictional example — no trade placed" : "Your last recorded virtual order"}</p>
           <h2 id="review-transaction" className="mt-2 text-xl font-semibold">{illustrative ? "Two imaginary shares" : `${trade?.type === "buy" ? "Bought" : "Sold"} ${trade?.symbol}`}</h2>
-          {accountPending && <p role="status" className="mt-2 text-xs text-muted-foreground">Checking your private account history. This example is fictional until a confirmed snapshot becomes available.</p>}
+          {accountPending && (
+            <div role="status" className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center">
+              <p className="text-xs text-muted-foreground">Checking your private account history. You can also learn from an explicitly fictional example.</p>
+              <button type="button" onClick={() => setUseExample(true)} className="min-h-11 rounded-xl border border-border px-3 py-2 text-xs font-medium hover:bg-muted">Use fictional example</button>
+            </div>
+          )}
           <p className="mt-2 text-sm text-muted-foreground">
             {goodNumbers ? `${quantity} × ${money(price)} = ${money(gross)} before the simulated fee of ${money(fee)}.` : "This transaction has an unavailable numeric value. Review its record in your portfolio."}
           </p>
@@ -134,7 +139,7 @@ export default function TradeLearningReview() {
         <section className="mt-5 rounded-2xl border border-primary/30 bg-primary/[0.04] p-5 sm:p-7" aria-labelledby="review-question">
           <div className="mb-4 flex items-center gap-2 text-primary"><BookOpenCheck className="h-5 w-5" /><span className="text-xs font-semibold uppercase tracking-widest">Check your understanding</span></div>
           <h2 id="review-question" className="text-lg font-semibold">{lessonQuestion.question}</h2>
-          <fieldset className="mt-5 space-y-2" disabled={submitted}>
+          <fieldset className="mt-5 space-y-2" disabled={submitted || accountPending}>
             <legend className="sr-only">Select one answer</legend>
             {lessonQuestion.options.map((option, index) => (
               <label key={option} className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border p-3 text-sm transition-colors ${selected === index ? "border-primary bg-primary/10" : "border-border hover:border-primary/40"}`}>
@@ -150,7 +155,7 @@ export default function TradeLearningReview() {
           </div>}
           <div className="mt-6 flex flex-wrap gap-3">
             {!submitted ? (
-              <button type="button" disabled={selected === null} onClick={submit} className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50">
+              <button type="button" disabled={selected === null || accountPending} onClick={submit} className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50">
                 Check my answer <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             ) : (
