@@ -35,6 +35,11 @@ if (existsSync(prerenderPath)) {
 }
 const eth = routes.find(row => row.path === "/trade/eth");
 assert.ok(eth && eth.title.includes("Paper Trade"), "Do not mass rewrite other existing search winners");
+const aiIndex = files("public/llms.txt");
+assert.match(aiIndex, /170 practice instruments/, "Existing AI-readable index must match the documented inventory");
+assert.match(aiIndex, /rule-based educational mentor/, "Do not claim an unsupported generative mentor");
+assert.doesNotMatch(aiIndex, /149 practice|AI responses when available/, "Remove stale capability claims");
+assert.match(aiIndex, /https:\/\/www\.thetradehq\.com\/trade\/btc/, "Surface the already indexable Bitcoin simulator, not a new page");
 const asset = files("src/pages/TradeAsset.tsx");
 assert.match(asset, /BITCOIN_SIMULATOR_SEO\.h1/, "Hydrated H1 uses the same text");
 assert.match(asset, /id === "btc"/, "Only BTC gets this entry block");
