@@ -1,13 +1,14 @@
 import type { CourseProgressState } from "./courseProgress";
 import type { BeginnerJourneyProgress } from "./beginnerJourney";
 import { buildLearningOverview, type LearningTrack } from "./learningOverview";
+import { suggestedQuickRead, tradeReviewStage } from "./retentionLearning";
 
 export interface LearningActivation {
   href: string;
   heading: string;
   description: string;
   buttonLabel: string;
-  state: "start" | "journey" | "lesson" | "mastery";
+  state: "start" | "journey" | "lesson" | "mastery" | "quick-read" | "trade" | "recall";
 }
 
 /**
@@ -19,6 +20,7 @@ export function chooseLearningActivation(
   course: CourseProgressState,
   journey: BeginnerJourneyProgress,
   mastery: { href: string; label: string; reason: string },
+  activity: { hasPracticeTrade?: boolean; now?: number } = {},
 ): LearningActivation {
   const overview = buildLearningOverview(tracks, course, journey);
   const hasLessonHistory = overview.lessonsDone > 0 ||
@@ -43,6 +45,51 @@ export function chooseLearningActivation(
       state: "mastery",
     };
   }
+  const quick = suggestedQuickRead(course, activity.now);
+  if (quick?.state === "resume") {
+    return {
+      href: "/learn/" + quick.id,
+      heading: "Pick up your saved quick read",
+      description: "Continue where you left off. Your reading and quiz progress stays private.",
+      buttonLabel: "Resume my reading",
+      state: "quick-read",
+    };
+  }
+  // Someone who has already begun the guided journey should complete the
+  // saved stage before seeing an unrelated new recommendation.
+  if (overview.journeyDone > 0 && !overview.journeyFinished) {
+    return {
+      href: "/start",
+      heading: "Continue your first-trade lesson",
+      description: "Resume your saved step. Every simulated trade remains voluntary.",
+      buttonLabel: "Continue my journey",
+      state: "journey",
+    };
+  }
+  if (activity.hasPracticeTrade) {
+    const review = tradeReviewStage(course, activity.now);
+    if (review === "first") return {
+      href: "/learn/trade-review",
+      heading: "You've traded. Now understand the numbers.",
+      description: "Review a saved virtual order's cash movement and fees, then answer one optional question. No new trade is required.",
+      buttonLabel: "Understand my trade",
+      state: "trade",
+    };
+    if (review === "recall") return {
+      href: "/learn/trade-review?review=1",
+      heading: "Can you recall what your trade taught you?",
+      description: "A short, optional knowledge refresh based on your earlier review. No streaks or trading targets.",
+      buttonLabel: "Review one concept",
+      state: "recall",
+    };
+  }
+  if (quick?.state === "recall") return {
+    href: "/learn/" + quick.id,
+    heading: "Revisit something you learned",
+    description: "A short review after a break helps you check what you still remember.",
+    buttonLabel: "Review my quick read",
+    state: "recall",
+  };
   if (!overview.journeyFinished) {
     return overview.journeyDone > 0
       ? {
