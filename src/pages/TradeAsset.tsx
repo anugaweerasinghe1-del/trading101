@@ -296,52 +296,33 @@ export default function TradeAsset() {
     ]
   } : null;
 
-  // These URLs describe the free simulator, not custody or a tradable financial product.
-  // Keep existing asset-class schemas outside the BTC pilot until independently reviewed.
-  const assetSchema = selectedAsset ? (
-    (selectedAsset.id !== "btc" && (selectedAsset.type === 'crypto' || selectedAsset.type === 'commodity' || selectedAsset.type === 'forex'))
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FinancialProduct",
-          "name": `${selectedAsset.name} Trading Simulator`,
-          "description": assetContent?.whatIs || metaDescription || `${selectedAsset.name} trading simulator`,
-          "url": canonicalUrl,
-          "category": selectedAsset.type === 'crypto' ? 'Cryptocurrency' : selectedAsset.type === 'commodity' ? 'Commodity' : 'Currency',
-          "provider": {
-            "@type": "Organization",
-            "name": "TradeHQ",
-            "url": "https://www.thetradehq.com/",
-            "logo": "https://www.thetradehq.com/logo.png"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
-        }
-      : {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": `${selectedAsset.name} Trading Simulator`,
-          "description": selectedAsset.id === "btc" ? BITCOIN_SIMULATOR_SEO.description : (assetContent?.whatIs || metaDescription || `Practice ${selectedAsset.name} trading with simulated data`),
-          "url": canonicalUrl,
-          "applicationCategory": "FinanceApplication",
-          "applicationSubCategory": "Trading Simulator (Educational)",
-          "operatingSystem": "Web Browser",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          },
-          "provider": {
-            "@type": "Organization",
-            "name": "TradeHQ",
-            "url": "https://www.thetradehq.com/"
-          }
-        }
-  ) : null;
+  // Every /trade/:symbol route presents a browser-based virtual simulator,
+  // never a security, financial service, broker offer, currency conversion or
+  // token issued to the visitor. Match structured data to the visible app.
+  // Schema.org FinancialProduct refers to financial services supplied by
+  // financial institutions; listing a fictional order exercise as one would
+  // imply an offering that TradeHQ does not make.
+  const assetSchema = selectedAsset ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": `${selectedAsset.name} Trading Simulator`,
+    "description": metaDescription || `Practise ${selectedAsset.symbol} with virtual cash and source-labelled simulated data. Educational only.`,
+    "url": canonicalUrl,
+    "applicationCategory": "FinanceApplication",
+    "applicationSubCategory": "Educational trading simulator",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png"
+    }
+  } : null;
 
   // Organization schema
   const organizationSchema = {
