@@ -42,6 +42,7 @@ withTrade.tracks[TRADE_REVIEW_TRACK].lessons[TRADE_RECALL_LESSON] = {
   status: "completed", score: 0, completedAt: new Date(NOW - 2 * HOUR).toISOString(),
 };
 assert.equal(tradeReviewStage(withTrade, NOW), "recent", "Recall is never represented as mastery or required daily");
+assert.equal(choose(withTrade, journey, true).href, "/courses/published/one", "A reviewing trader must never restart first-trade onboarding");
 withTrade.tracks[TRADE_REVIEW_TRACK].lessons[TRADE_RECALL_LESSON].completedAt = new Date(NOW - 74 * HOUR).toISOString();
 assert.equal(tradeReviewStage(withTrade, NOW), "recall", "Offer a later optional retrieval review");
 
@@ -90,4 +91,5 @@ assert.match(assetTrade, /setPostTradeLesson/, "Successful asset-specific orders
 assert.match(assetTrade, /to="\/learn\/trade-review"/, "Asset-specific terminal must link to optional review");
 assert.match(portfolio, /portfolio\.trades\.length > 0/, "Existing traders can find the lesson from their portfolio");
 assert.match(read("src/components/LearningJourneyDashboard.tsx"), /suggested\.state === "trade"/);
+assert.match(read("src/components/LearningJourneyDashboard.tsx"), /quickReadsFinished/, "Learning hub must display saved quick-read completions");
 console.log("PASS contextual learning loop: durable quick reads, existing-trade review, voluntary spaced recall, no-order guardrails");
