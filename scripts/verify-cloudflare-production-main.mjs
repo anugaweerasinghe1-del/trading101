@@ -27,7 +27,7 @@ export function assertActiveCloudflareProject(project, sha) {
   const actual = d.deployment_trigger.metadata.commit_hash;
   assert.ok(SHA.test(actual || ""), "Cloudflare deployment has no immutable commit identity");
   assert.ok(d.latest_stage?.status === "success", "Active Cloudflare deployment is not successful");
-  assert.equal(actual, sha, "Cloudflare active main deployment has not reached this SHA");
+  assert.ok(actual === sha, "Cloudflare active main deployment has not reached this SHA");
   const domains = Array.isArray(project.domains) ? project.domains.filter(d => typeof d === "string") : [];
   return Object.freeze({ sha: actual, deploymentId: d.id,
     customDomainBound: domains.includes("www.thetradehq.com"), domainsReported: domains.length > 0 });
