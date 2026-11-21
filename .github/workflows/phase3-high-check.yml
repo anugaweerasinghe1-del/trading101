@@ -38,6 +38,7 @@ jobs:
       - run: npm ci
       - run: node scripts/verify-ci-validation.mjs
       - run: node scripts/verify-release-recovery-readiness.mjs
+      - run: node scripts/verify-cloudflare-production-main.test.mjs
       - run: node scripts/verify-ai-agents.mjs
       - run: node scripts/verify-gemini-models.mjs
       - run: node scripts/verify-agent-monitor-ideas.mjs

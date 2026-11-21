@@ -158,6 +158,9 @@ export default function Learn() {
                 Pick up your next lesson, or begin with a simple explanation of orders and fees.
                 All lessons are educational; the simulator uses virtual money only.
               </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                New to paper trading? <Link to="/start" className="font-medium text-primary underline underline-offset-4">Follow the five-step first virtual trade guide</Link>, or <Link to="/daily" className="font-medium text-primary underline underline-offset-4">try a free hypothetical Daily Practice exercise</Link> before choosing a course.
+              </p>
             </header>
 
             {/* One recommendation hub; course progress and optional paths stay available below it. */}

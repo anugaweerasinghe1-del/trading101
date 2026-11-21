@@ -96,4 +96,12 @@ assert.match(portfolio, /portfolio\.trades\.length > 0/, "Existing traders can f
 assert.match(portfolio, /tradeReview !== "recent"/, "Do not repeatedly push a completed review on portfolio visits");
 assert.match(read("src/components/LearningJourneyDashboard.tsx"), /suggested\.state === "trade"/);
 assert.match(read("src/components/LearningJourneyDashboard.tsx"), /quickReadsFinished/, "Learning hub must display saved quick-read completions");
+const beginner = read("src/pages/BeginnerJourney.tsx");
+assert.match(beginner, /getAccountPortfolio/, "Guided trade reflection must use account-confirmed portfolio");
+assert.match(beginner, /useSyncExternalStore/, "Guided account portfolio should update on authoritative snapshots");
+assert.match(beginner, /user \? \(account\?\.portfolio \?\? null\) : guestPortfolio/, "Signed-in learners must never see a stale guest trade or balance");
+assert.match(beginner, /trade = portfolio\?\.trades/, "Saved guided trade must be resolved from the owner-safe portfolio");
+assert.match(beginner, /disabled=\{!trade\}/, "Do not allow unverified reflection completion");
+assert.match(read("src/pages/Learn.tsx"), /Follow the five-step first virtual trade guide/, "Learning hub must link first-time visitors to the existing guide");
+assert.match(read("src/pages/Learn.tsx"), /try a free hypothetical Daily Practice exercise/, "The learning hub must keep Daily Practice discoverable");
 console.log("PASS contextual learning loop: durable quick reads, existing-trade review, voluntary spaced recall, no-order guardrails");
