@@ -33,18 +33,17 @@ assert.match(footer, /mailto:anugaweerasinghe1@gmail\.com/);
 assert.match(footer, /<NewsletterSignup\s*\/>/);
 assert.match(footer, /to="\/privacy"/);
 assert.match(footer, /to="\/terms"/);
-const socialProfiles = [
-  "https://www.instagram.com/thetradehq_1/",
-  "https://www.instagram.com/anw_008/",
-  "https://bsky.app/profile/anugaweerasinghe.bsky.social",
-];
-for (const url of socialProfiles) {
-  assert.ok(footer.includes(`href="${url}"`), `Footer social link missing: ${url}`);
-  assert.ok(home.includes(`href="${url}"`), `Homepage social link missing: ${url}`);
+const personalInstagram = "https://www.instagram.com/anw_008/";
+for (const [label, page] of [["footer", footer], ["homepage", home]]) {
+  assert.ok(page.includes(`href="${personalInstagram}"`), `${label} personal Instagram link is missing`);
+  assert.ok(page.includes("@anw_008"), `${label} must identify the personal handle`);
+  assert.equal((page.match(/href="https:\/\/www\.instagram\.com\/anw_008\/"/g) || []).length, 1, `${label} should link the personal account only once`);
+  assert.doesNotMatch(page, /thetradehq_1|instagram\.com\/(?!anw_008\/)|bsky\.app\/profile/i,
+    `${label} must not promote the retired TradeHQ social or any other social account`);
 }
+assert.match(footer, /Founder · personal Instagram/);
+assert.match(home, /Connect with the founder/);
 assert.match(footer, /tel:\+94714897346/);
-assert.match(footer, /Founder · personal accounts/);
-assert.match(home, /Founder · personal:/);
 assert.match(home, /aria-labelledby="follow-tradehq-heading"/);
 assert.equal((home.match(/id="follow-tradehq-heading"/g) || []).length, 1, "Only one homepage follow section");
 const followSectionPosition = home.indexOf('aria-labelledby="follow-tradehq-heading"');
