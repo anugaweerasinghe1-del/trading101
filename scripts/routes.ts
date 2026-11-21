@@ -13,6 +13,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { tradingGlossary } from "../src/lib/tradingGlossary";
+import { courseMetaDescription, coursePracticeScope } from "../src/lib/courseOverviewPresentation";
 import { LEARN_ARTICLES } from "../src/lib/learnArticles";
 import { lessonData } from "../src/lib/lessonData";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
@@ -578,9 +579,9 @@ export function buildRoutes(): RouteMeta[] {
     routes.push({
       path: `/courses/${t.slug}`,
       title: `${t.title} — Free Trading Course | TradeHQ`,
-      description: `${t.tagline} ${t.lessons.length} free lessons with quizzes and a completion badge. Derivatives examples are conceptual; simulator practice uses spot instruments.`,
+      description: courseMetaDescription(t),
       h1: t.title,
-      summary: `${t.tagline} Includes ${t.lessons.length} lessons, quizzes, sources, and a completion badge. The ${BALANCE} simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.`,
+      summary: `${t.tagline} Includes ${t.lessons.length} lessons, quizzes, sources, and a completion badge. ${coursePracticeScope(t.slug)}`,
       priority: "0.75",
       changefreq: "weekly",
     });
