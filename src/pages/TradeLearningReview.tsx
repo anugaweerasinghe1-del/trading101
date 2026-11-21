@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { getPortfolio } from "@/lib/portfolio";
+import { useAuth } from "@/hooks/useAuth";
+import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
 import { markLessonCompleted } from "@/lib/courseProgress";
 import { TRADE_REVIEW_TRACK, TRADE_REVIEW_LESSON, TRADE_RECALL_LESSON } from "@/lib/retentionLearning";
 
@@ -16,6 +18,8 @@ const money = (n: number) => Number.isFinite(n)
 export default function TradeLearningReview() {
   const [query] = useSearchParams();
   const recall = query.get("review") === "1";
+  const { user, loading: authLoading } = useAuth();
+  const account = useSyncExternalStore(subscribeAccountPortfolio, () => getAccountPortfolio(user?.id), () => null);
   const [portfolio, setPortfolio] = useState(getPortfolio);
   const [selected, setSelected] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -31,7 +35,10 @@ export default function TradeLearningReview() {
     };
   }, []);
 
-  const trade = portfolio.trades[0];
+  // Signed-in transactions come from their own confirmed account snapshot;
+  // never substitute another browser user's cached trade while auth loads.
+  const trade = (user ? account?.portfolio?.trades : portfolio.trades)?.[0];
+  const accountPending = authLoading || Boolean(user && !account?.portfolio);
   const illustrative = !trade;
   const side = trade?.type ?? "buy";
   // A standalone fictitious example lets non-traders learn without placing an
@@ -88,8 +95,9 @@ export default function TradeLearningReview() {
         </header>
 
         <section className="rounded-2xl border border-border bg-card/70 p-5 sm:p-7" aria-labelledby="review-transaction">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary">{illustrative ? "Fictional example — no trade placed" : "Your last recorded virtual order"}</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary">{accountPending ? "Fictional example while account history loads" : illustrative ? "Fictional example — no trade placed" : "Your last recorded virtual order"}</p>
           <h2 id="review-transaction" className="mt-2 text-xl font-semibold">{illustrative ? "Two imaginary shares" : `${trade?.type === "buy" ? "Bought" : "Sold"} ${trade?.symbol}`}</h2>
+          {accountPending && <p role="status" className="mt-2 text-xs text-muted-foreground">Checking your private account history. This example is fictional until a confirmed snapshot becomes available.</p>}
           <p className="mt-2 text-sm text-muted-foreground">
             {goodNumbers ? `${quantity} × ${money(price)} = ${money(gross)} before the simulated fee of ${money(fee)}.` : "This transaction has an unavailable numeric value. Review its record in your portfolio."}
           </p>
