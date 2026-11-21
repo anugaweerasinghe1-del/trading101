@@ -1,6 +1,7 @@
 // Unique SEO content for each asset - Anti-thin content blocks
 import { Asset } from './types';
 import { ASSETS } from './assets';
+import { BITCOIN_SIMULATOR_SEO } from "./bitcoinSimulatorSeo";
 
 interface AssetFAQ {
   question: string;
@@ -826,7 +827,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
 
 // CTR-optimized titles — Variant A (active): "Learn & Practice" benefit-first
 const CUSTOM_META_TITLES: Record<string, string> = {
-  btc: "Learn & Practice Bitcoin Trading Free — $100K Simulator | Simulated BTC Data",
+  btc: BITCOIN_SIMULATOR_SEO.title,
   eth: "Learn & Practice Ethereum Trading Free — $100K Simulator | Simulated ETH Data",
   nvda: "Learn & Practice NVDA Trading Free — $100K Simulator | Simulated Data",
   aapl: "Learn & Practice Apple Stock Trading Free — $100K Simulator",
@@ -868,7 +869,7 @@ export const META_TITLE_VARIANTS_B: Record<string, string> = {
 
 // Descriptions match the educational simulator without outcome claims.
 const CUSTOM_META_DESCRIPTIONS: Record<string, string> = {
-  btc: "Practise Bitcoin (BTC) with $100K virtual cash, simulated charts and educational mentor explanations. Guest access; no real trades.",
+  btc: BITCOIN_SIMULATOR_SEO.description,
   eth: "Practise Ethereum (ETH) with $100K virtual cash, simulated charts and educational mentor explanations. Guest access; no real trades.",
   nvda: "Practise NVIDIA (NVDA) with $100K virtual cash, simulated charts and educational mentor explanations. Guest access; no real trades.",
   aapl: "Practise Apple (AAPL) with $100K virtual cash, simulated charts and educational mentor explanations. Guest access; no real trades.",
