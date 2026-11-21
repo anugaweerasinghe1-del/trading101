@@ -33,6 +33,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
   const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0 || overview.next?.inProgress === true;
+  const quickReadsFinished = Object.values(snapshot.course.tracks["quick-reads"]?.lessons ?? {}).filter(lesson => lesson.status === "completed").length;
   const mastery = useMasteryNextAction();
   const suggested = chooseLearningActivation(tracks, snapshot.course, snapshot.journey, mastery, { hasPracticeTrade: mastery.tradeCount !== null && mastery.tradeCount > 0 });
   // A single primary action. The learner's other progress remains visible
@@ -57,6 +58,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             Pick up your five-step first-trade journey and any unfinished course. Your learning progress is stored on this browser and, when signed in, synchronized privately to your account.
           </p>
+          {quickReadsFinished > 0 && <p className="mt-2 text-xs font-medium text-primary" role="status">{quickReadsFinished} {quickReadsFinished === 1 ? "quick read" : "quick reads"} completed · Saved separately from structured-course badges.</p>}
         </div>
         <Link to="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">
           All courses <ArrowRight className="w-4 h-4" />
