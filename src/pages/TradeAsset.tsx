@@ -551,6 +551,17 @@ export default function TradeAsset() {
             </section>
           )}
 
+          {/* The virtual-order launcher must precede charts and all long-form
+              educational/SEO sections on phones. One accessible drawer only. */}
+          <div className="lg:hidden" data-testid="asset-mobile-order-launcher">
+            <MobileOrderDrawer
+              asset={selectedAsset}
+              availableCash={portfolio.cash}
+              portfolio={portfolio}
+              onTrade={handleTrade}
+            />
+          </div>
+
           {selectedAsset?.type === "forex" && <DailyFxReference assetId={selectedAsset.id} />}
 
           {(selectedAsset?.id === "ftm" || selectedAsset?.id === "matic") && (
@@ -572,27 +583,6 @@ export default function TradeAsset() {
             </section>
           )}
 
-          {/* GEO Key Takeaways - machine-readable for AI Overviews */}
-          {selectedAsset?.id === "sq" && (
-            <section aria-labelledby="legacy-stock-label" className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
-              <h2 id="legacy-stock-label" className="font-semibold text-foreground mb-2">Legacy practice label</h2>
-              <p>
-                This simulator retains Block's legacy SQ label. Block's investor stock page
-                identifies the company as XYZ. The practice label and generated prices do
-                not establish a current XYZ market quote.
-              </p>
-              <a href="https://investors.block.xyz/stock-info/default.aspx" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary underline underline-offset-2">
-                Block investor stock information
-              </a>
-            </section>
-          )}
-
-          {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
-          
-          {selectedAsset && showSeoBlocks && (
-            <AIReadySummary asset={selectedAsset} />
-          )}
-          
           {/* Command Center: Search + Portfolio Bar */}
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
             <AssetSearchDropdown
@@ -609,21 +599,10 @@ export default function TradeAsset() {
             </div>
           </div>
 
-          {/* The virtual-order launcher must precede charts and all long-form
-              educational/SEO sections on phones. One accessible drawer only. */}
-          <div className="lg:hidden" data-testid="asset-mobile-order-launcher">
-            <MobileOrderDrawer
-              asset={selectedAsset}
-              availableCash={portfolio.cash}
-              portfolio={portfolio}
-              onTrade={handleTrade}
-            />
-          </div>
-
           {/* Trading Terminal Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2">
-              <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl h-[520px] overflow-hidden" style={{ backdropFilter: 'blur(12px)', boxShadow: '0 8px 40px -12px hsl(0 0% 0% / 0.5)' }}>
+              <div className="bg-white/[0.02] border border-white/[0.08] rounded-2xl h-[360px] sm:h-[440px] lg:h-[520px] overflow-hidden" style={{ backdropFilter: 'blur(12px)', boxShadow: '0 8px 40px -12px hsl(0 0% 0% / 0.5)' }}>
                 {isLoading ? (
                   <ChartSkeleton />
                 ) : (
@@ -646,6 +625,29 @@ export default function TradeAsset() {
             </div>
           </div>
 
+          {/* Educational context remains visible and indexable but follows
+              the product controls on mobile rather than delaying entry. */}
+          {/* GEO Key Takeaways - machine-readable for AI Overviews */}
+          {selectedAsset?.id === "sq" && (
+            <section aria-labelledby="legacy-stock-label" className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+              <h2 id="legacy-stock-label" className="font-semibold text-foreground mb-2">Legacy practice label</h2>
+              <p>
+                This simulator retains Block's legacy SQ label. Block's investor stock page
+                identifies the company as XYZ. The practice label and generated prices do
+                not establish a current XYZ market quote.
+              </p>
+              <a href="https://investors.block.xyz/stock-info/default.aspx" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary underline underline-offset-2">
+                Block investor stock information
+              </a>
+            </section>
+          )}
+
+          {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
+          
+          {selectedAsset && showSeoBlocks && (
+            <AIReadySummary asset={selectedAsset} />
+          )}
+          
           {/* Asset Intelligence - shown for seed assets */}
           {showSeoBlocks && selectedAsset && (
             <AssetIntelligenceWithLiveData asset={selectedAsset} />
