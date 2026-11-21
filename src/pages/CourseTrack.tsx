@@ -12,7 +12,7 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { getTrackProgress, trackCompletionPct } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
-import { courseMetaDescription, coursePracticeScope, hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
+import { courseMetaDescription, coursePageTitle, coursePracticeScope, hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
 
 const DOMAIN = "https://www.thetradehq.com";
 
@@ -30,7 +30,7 @@ function CourseTrackContent({ track }: { track: Track }) {
   const url = `${DOMAIN}/courses/${track.slug}`;
   const path = `/courses/${track.slug}`;
   const integratedOverview = hasIntegratedCourseOverview(path);
-  const title = `${track.title} — Free Trading Course | TradeHQ`;
+  const title = coursePageTitle(track);
   const description = courseMetaDescription(track);
 
   const courseSchema = {
