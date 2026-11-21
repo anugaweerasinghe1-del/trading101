@@ -89,7 +89,7 @@ export default function TradeLearningReview() {
 
         <section className="rounded-2xl border border-border bg-card/70 p-5 sm:p-7" aria-labelledby="review-transaction">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary">{illustrative ? "Fictional example — no trade placed" : "Your last recorded virtual order"}</p>
-          <h2 id="review-transaction" className="mt-2 text-xl font-semibold">{illustrative ? "Two imaginary shares" : `${trade.type === "buy" ? "Bought" : "Sold"} ${trade.symbol}`}</h2>
+          <h2 id="review-transaction" className="mt-2 text-xl font-semibold">{illustrative ? "Two imaginary shares" : `${trade?.type === "buy" ? "Bought" : "Sold"} ${trade?.symbol}`}</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             {goodNumbers ? `${quantity} × ${money(price)} = ${money(gross)} before the simulated fee of ${money(fee)}.` : "This transaction has an unavailable numeric value. Review its record in your portfolio."}
           </p>
