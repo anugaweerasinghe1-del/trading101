@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { markLessonCompleted, parseCourseProgress, type CourseProgressState } from "../src/lib/courseProgress";
 import { chooseLearningActivation } from "../src/lib/learningActivation";
 import { QUICK_READ_TRACK, TRADE_REVIEW_LESSON, TRADE_RECALL_LESSON, TRADE_REVIEW_TRACK, quickReadKey, suggestedQuickRead, tradeReviewStage } from "../src/lib/retentionLearning";
@@ -95,6 +95,17 @@ assert.match(detail, /markLessonCompleted\(QUICK_READ_TRACK/, "Quiz result must 
 assert.match(quiz, /setResultSaved\(onResult\(score\)\)/, "Save on result, not only when leaving quiz");
 assert.match(quiz, /Retry saving/, "Unsuccessful storage never gives a false saved message");
 assert.match(app, /path="\/learn\/trade-review"/, "A public non-indexed review route must be registered");
+// The Cloudflare custom domain serves only built static files or explicitly
+// allowed function fallbacks. A React Router entry alone can still be a live 404.
+const reviewDoc = ["dist/learn/trade-review/index.html", "dist/learn/trade-review.html"].find(existsSync);
+assert.ok(reviewDoc, "Contextual learning review must have a direct-entry HTML build artifact");
+const reviewHtml = read(reviewDoc);
+assert.match(reviewHtml, /<meta[^>]+name="robots"[^>]+content="noindex, follow"/,
+  "A private trade-specific review cannot be indexed");
+assert.match(reviewHtml, /<link rel="canonical" href="https:\/\/www\.thetradehq\.com\/learn\/trade-review"/,
+  "The direct-entry document should have its own canonical URL");
+assert.doesNotMatch(read("public/sitemap.xml"), /<loc>https:\/\/www\.thetradehq\.com\/learn\/trade-review<\/loc>/,
+  "Personal practice reflections must not enter the published sitemap");
 assert.match(reviewPage, /getAccountPortfolio/, "Signed-in reviews must use the account's confirmed portfolio");
 assert.match(reviewPage, /user \? account\?\.portfolio\?\.trades : portfolio\.trades/, "Do not render another account's cached trade");
 assert.match(reviewPage, /getPortfolio/, "Trade review must use the user's owner-safe existing cache");
