@@ -13,7 +13,7 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { MegaFooter } from "@/components/MegaFooter";
 import { SocialProofTicker } from "@/components/SocialProofTicker";
 import { HowItWorks } from "@/components/HowItWorks";
-import { Sparkles, ArrowRight, Instagram, Globe } from "lucide-react";
+import { Sparkles, ArrowRight, Instagram } from "lucide-react";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "@/lib/seoData";
 import { LearningActivationCard } from "@/components/retention/LearningActivationCard";
 import { WatchlistAlerts } from "@/components/retention/WatchlistAlerts";
@@ -214,34 +214,22 @@ const Index = () => {
         <HowItWorks />
         <PremiumFeatures />
 
-        {/* Secondary social invitation after product value, before the long asset directory. */}
-          <section aria-labelledby="follow-tradehq-heading" className="container mx-auto max-w-7xl px-6 py-6 md:py-8">
-            <div className="flex flex-col gap-5 rounded-2xl border border-border/60 bg-card/40 px-6 py-5 md:flex-row md:items-center md:justify-between md:px-8">
-              <div className="max-w-lg">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">Beyond the simulator</p>
-                <h2 id="follow-tradehq-heading" className="mt-2 text-lg font-semibold text-foreground">Follow TradeHQ</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Find TradeHQ updates on Instagram, or connect with the founder directly.</p>
-              </div>
-              <div className="flex flex-col items-start gap-3 md:items-end">
-                <a href="https://www.instagram.com/thetradehq_1/" target="_blank" rel="noopener noreferrer" aria-label="Follow TradeHQ on Instagram, @thetradehq_1" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  <Instagram className="h-4 w-4" aria-hidden="true" />
-                  Follow @thetradehq_1
-                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted-foreground">
-                  <span>Founder · personal:</span>
-                  <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Founder's Instagram, @anw_008" className="inline-flex min-h-9 items-center gap-1.5 rounded-sm hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <Instagram className="h-3.5 w-3.5" aria-hidden="true" />
-                    Instagram
-                  </a>
-                  <a href="https://bsky.app/profile/anugaweerasinghe.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Founder's Bluesky, @anugaweerasinghe.bsky.social" className="inline-flex min-h-9 items-center gap-1.5 rounded-sm hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <Globe className="h-3.5 w-3.5" aria-hidden="true" />
-                    Bluesky
-                  </a>
-                </div>
-              </div>
+        {/* Only the founder's personal Instagram is linked publicly. */}
+        <section aria-labelledby="follow-tradehq-heading" className="container mx-auto max-w-7xl px-6 py-6 md:py-8">
+          <div className="flex flex-col gap-5 rounded-2xl border border-border/60 bg-card/40 px-6 py-5 md:flex-row md:items-center md:justify-between md:px-8">
+            <div className="max-w-lg">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">Behind the project</p>
+              <h2 id="follow-tradehq-heading" className="mt-2 text-lg font-semibold text-foreground">Connect with the founder</h2>
+              <p className="mt-1 text-sm text-muted-foreground">Follow the founder on his personal Instagram account.</p>
             </div>
-          </section>
+            <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Instagram, @anw_008"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 self-start rounded-xl border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto">
+              <Instagram className="h-4 w-4" aria-hidden="true" />
+              Follow @anw_008
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
 
         <TopAssetsGrid />
         <MarketTrends2026 />

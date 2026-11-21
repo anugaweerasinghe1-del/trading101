@@ -199,27 +199,14 @@ export function MegaFooter() {
                 +94 71 489 7346
               </a>
             </div>
-            <div aria-label="TradeHQ and founder social profiles" className="mt-5 space-y-3 border-t border-border/50 pt-4">
-              <div>
-                <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Follow TradeHQ</p>
-                <a href="https://www.instagram.com/thetradehq_1/" target="_blank" rel="noopener noreferrer" aria-label="TradeHQ on Instagram, @thetradehq_1" className="inline-flex min-h-9 items-center gap-2 rounded-md text-sm text-foreground/80 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  <Instagram className="h-4 w-4" aria-hidden="true" />
-                  @thetradehq_1
-                </a>
-              </div>
-              <div>
-                <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Founder · personal accounts</p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1">
-                  <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Instagram, @anw_008" className="inline-flex min-h-9 items-center gap-2 rounded-md text-xs text-foreground/70 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <Instagram className="h-4 w-4" aria-hidden="true" />
-                    Instagram
-                  </a>
-                  <a href="https://bsky.app/profile/anugaweerasinghe.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Bluesky, @anugaweerasinghe.bsky.social" className="inline-flex min-h-9 items-center gap-2 rounded-md text-xs text-foreground/70 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <Globe className="h-4 w-4" aria-hidden="true" />
-                    Bluesky
-                  </a>
-                </div>
-              </div>
+            <div aria-label="Founder Instagram" className="mt-5 border-t border-border/50 pt-4">
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Founder · personal Instagram</p>
+              <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer"
+                aria-label="Founder's personal Instagram, @anw_008"
+                className="inline-flex min-h-11 items-center gap-2 rounded-md text-sm text-foreground/80 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+                @anw_008
+              </a>
             </div>
           </div>
 
