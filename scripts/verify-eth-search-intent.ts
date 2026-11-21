@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { HOWTO_ASSETS } from "../src/lib/seoData.ts";
+const eth=HOWTO_ASSETS.find(asset=>asset.symbol==="eth");
+assert.ok(eth,"Published ETH how-to guide must remain available");
+assert.equal(eth.steps.length,5,"Preserve the established five-step educational guide");
+assert.match(eth.steps[0],/ETH\/USD quote/,"Beginner search intent must be answered with quote mechanics");
+assert.match(eth.steps[0],/not a guaranteed execution price/,"Never promise a live or virtual fill price");
+assert.match(eth.steps.at(-1) || "",/neither transfers nor stakes/,"Keep on-chain and staking caveats");
+const trade=readFileSync("src/pages/TradeAsset.tsx","utf8");
+assert.match(trade,/selectedAsset\.id === "eth" && <p/,"The link only appears for published ETH guide");
+assert.match(trade,/to="\/how-to-trade\/eth"/,"Link must use the existing indexable page, not a generated URL");
+assert.match(trade,/Read the step-by-step Ethereum trading practice guide/,"Use descriptive anchor text");
+assert.doesNotMatch(trade,/HowToStep.*revenue|ETH guarantees profit/,"Avoid invented trading returns");
+console.log("PASS ETH existing-page search intent, truthful quote/fees, relevant internal link and preserved route");
