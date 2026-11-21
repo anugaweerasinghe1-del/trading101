@@ -83,6 +83,8 @@ assert.match(detail, /markLessonCompleted\(QUICK_READ_TRACK/, "Quiz result must 
 assert.match(quiz, /setResultSaved\(onResult\(score\)\)/, "Save on result, not only when leaving quiz");
 assert.match(quiz, /Retry saving/, "Unsuccessful storage never gives a false saved message");
 assert.match(app, /path="\/learn\/trade-review"/, "A public non-indexed review route must be registered");
+assert.match(reviewPage, /getAccountPortfolio/, "Signed-in reviews must use the account's confirmed portfolio");
+assert.match(reviewPage, /user \? account\?\.portfolio\?\.trades : portfolio\.trades/, "Do not render another account's cached trade");
 assert.match(reviewPage, /getPortfolio/, "Trade review must use the user's owner-safe existing cache");
 assert.match(reviewPage, /markLessonCompleted/, "Reviews must store private learning, not mutate a portfolio");
 assert.doesNotMatch(reviewPage, /executeTrade|record_practice_trade|sendEmail|sendNotification|localStorage\.setItem/, "Review does not place orders or force messaging");
