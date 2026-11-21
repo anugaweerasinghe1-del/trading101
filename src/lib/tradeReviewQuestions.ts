@@ -13,7 +13,7 @@ export interface TradeReviewQuestion {
 
 const FIRST_BUY: TradeReviewQuestion = {
   id: "buy-cash",
-  question: "What happens to your virtual cash when a simulated Bitcoin buy is recorded?",
+  question: "What happens to your virtual cash when a simulated buy order is recorded?",
   options: [
     "It increases by the displayed Bitcoin value.",
     "It decreases by the confirmed purchase cost including the simulated fee.",
