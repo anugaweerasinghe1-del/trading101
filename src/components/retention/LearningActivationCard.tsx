@@ -39,7 +39,7 @@ export function LearningActivationCard({ placement = "home" }: { placement?: "ho
     };
   }, [user?.id]);
 
-  const action = chooseLearningActivation(tracks, snapshot.course, snapshot.journey, mastery);
+  const action = chooseLearningActivation(tracks, snapshot.course, snapshot.journey, mastery, { hasPracticeTrade: mastery.tradeCount !== null && mastery.tradeCount > 0 });
   const optionalResume = previousRoute ? chooseReturnDestination(tracks, snapshot.course, snapshot.journey, previousRoute) : null;
   const id = "learning-activation-" + placement;
 
