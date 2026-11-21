@@ -47,7 +47,12 @@ assert.match(asset, /Bitcoin beginner guide/, "Guide is reachable from the exist
 assert.match(asset, /to="\/wiki\/paper-trading"/, "Educational glossary context is one click away");
 assert.match(asset, /No signup required/, "The user can practise without a forced account");
 assert.match(asset, /simulated 0\.1% fee/, "Simulation scope and fees remain explicit");
-assert.doesNotMatch(asset, /setTimeout\(|autoExecuteTrade/, "No forced or timed trades");
+const btcSection = asset.slice(
+  asset.indexOf('{selectedAsset?.id === "btc" && ('),
+  asset.indexOf('{selectedAsset?.type === "forex" && <DailyFxReference'),
+);
+assert.ok(btcSection.length > 300, "Only inspect the introduced BTC guidance block");
+assert.doesNotMatch(btcSection, /setTimeout\(|autoExecuteTrade|executeTrade\(/, "BTC guidance cannot place or schedule orders");
 
 const DAY = 86_400_000;
 const buy = tradeReviewQuestion("buy", false, 2 * DAY);
