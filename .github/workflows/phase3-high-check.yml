@@ -98,6 +98,33 @@ jobs:
           VALIDATION_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
           VALIDATION_NEEDS: ${{ toJSON(needs) }}
 
+  native-cloudflare-receipt:
+    name: TradeHQ Native Cloudflare production receipt (read only)
+    # Independent observational evidence; not a release authorization or substitute
+    # for the stricter provider/recovery gate below. Never runs on PR previews.
+    needs: [validation]
+    if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Require authenticated exact-main Cloudflare Pages production receipt
+        run: node scripts/verify-cloudflare-production-main.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+          GITHUB_SHA: ${{ github.sha }}
+
   release-signals:
     name: TradeHQ Release signals (read only)
     # Do not run for PR previews. This records completed main release evidence.
