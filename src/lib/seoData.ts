@@ -511,7 +511,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "scalping",
     "name": "Scalping",
-    "oneLiner": "Capturing small price moves on the 1-5 minute timeframe.",
+    "oneLiner": "A short-horizon price and transaction-cost comparison; no fixed interval defines the concept.",
     "bestFor": "A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.",
     "worstFor": "Simplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.",
     "steps": [
@@ -521,7 +521,7 @@ export const STRATEGIES: Strategy[] = [
       "Record all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions."
     ],
     "example": "Hypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.",
-    "successRate": "No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.",
+    "successRate": "No universal win rate or sufficient sample size applies. Recorded hypothetical outcomes depend on the sample design, assumptions and costs.",
     "depth": {
       "context": "Scalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.",
       "regime": "Liquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.",
@@ -542,7 +542,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "swing-trading",
     "name": "Swing Trading",
-    "oneLiner": "Holding positions 2-10 days to capture intermediate moves.",
+    "oneLiner": "A comparison of multi-session price observations and overnight exposure.",
     "bestFor": "A worksheet comparing multi-day observation windows and overnight exposure; no work schedule establishes suitability.",
     "worstFor": "Manual review leaves exposure between observations, and an intended exit can be crossed by a gap.",
     "steps": [
@@ -551,10 +551,10 @@ export const STRATEGIES: Strategy[] = [
       "Compare different gap sizes and exit distances, including an unfilled or worse-than-planned exit.",
       "Keep fixed, partial and trailing exit rules in separate conceptual comparisons. TradeHQ does not place automatic stops."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: Bought NVDA at $145 after a pullback, stop $138, target $165 — risked $7 to make $20. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "Performance depends on market regime, entry/exit rules, costs and sample size. Use the simulator to measure your own distribution of outcomes.",
+    "example": "In a fictional multi-session price series, compare an initial observation with a later higher observation and a later lower observation. A price gap can cross an assumed review threshold. Neither a threshold nor a selected favorable case establishes actual execution or likely returns.",
+    "successRate": "The distribution of a hypothetical sample depends on its dates, observation rules, costs and assumptions. TradeHQ does not validate a method's performance.",
     "depth": {
-      "context": "Swing trading describes positions held across sessions, often over days or weeks. The label does not determine a suitable position size or make the decision less consequential. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
+      "context": "Swing trading describes positions held across sessions, often over days or weeks. The label does not determine a suitable position size or make the decision less consequential. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. Overnight gaps are possible when information arrives between sessions; a worksheet threshold is not an execution guarantee.",
       "regime": "An apparent trend or pullback is a description of selected past data. A later continuation and a reversal are both possible. Earnings and other announcements can introduce overnight gaps; a planned exit does not guarantee a fill at that price.",
       "mistakes": [
         "Treating a round-number exit or volatility multiple as guaranteed loss protection.",
@@ -582,7 +582,7 @@ export const STRATEGIES: Strategy[] = [
       "Calculate how repeated fees and worse fills change the same gross price outcome.",
       "Record whether the hypothetical exit occurred. Do not assume an outage or trading halt permits a closing transaction."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: Long SPY at VWAP reclaim, stop below VWAP, target the day's prior high. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "example": "In a fictional same-session dataset, compare an observed price with its volume-weighted average and with another observation later in the session. Compare positive and negative differences, then record the extra cost of repeated transactions. No indicator-based order is required.",
     "successRate": "There is no dependable universal win-rate range. Evaluate the method by expectancy, drawdown, costs and consistency across a larger sample.",
     "depth": {
       "context": "Day trading usually means opening and closing positions within the same trading day. If a position is fully closed, it has no later overnight exposure, but an intended close is not guaranteed during a halt, outage or loss of liquidity. A short holding period does not make a position low risk. Frequency, costs, execution and behavior all affect the outcome.",
@@ -645,7 +645,7 @@ export const STRATEGIES: Strategy[] = [
       "Compare later continuation and reversal cases under the same sampling and cost assumptions.",
       "Treat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "example": "In a fictional price dataset, an oscillator crosses a selected descriptive threshold. Compare a later continuation and a later reversal. Neither the reading nor a candlestick label establishes a price prediction or an instruction to transact.",
     "successRate": "RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.",
     "depth": {
       "context": "RSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.",
@@ -667,7 +667,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "macd-strategy",
     "name": "MACD Crossover",
-    "oneLiner": "Trading the signal-line cross on the MACD indicator.",
+    "oneLiner": "A conceptual study of historical indicator crossings and their limitations.",
     "bestFor": "Studying differences between moving averages, signal-line crossings and alternative exit assumptions.",
     "worstFor": "Lag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.",
     "steps": [
@@ -676,11 +676,11 @@ export const STRATEGIES: Strategy[] = [
       "Choose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.",
       "Compare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.",
+    "example": "In a fictional indicator sequence, mark a crossing and compare two alternative subsequent price paths. A selected favorable path is not an observed return, an execution guarantee or a rule for an actual order.",
+    "successRate": "MACD results vary by timeframe, market and exit rule. A selected sample's payoff distribution and drawdown describe those assumptions, not expected future performance.",
     "depth": {
       "context": "MACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.",
-      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.",
+      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. When calculated from closing prices alone, the indicator does not directly incorporate bid-ask spreads, execution priority or transaction fees.",
       "mistakes": [
         "Reporting only favorable crossings while excluding costly reversals.",
         "Treating a planned reward-to-risk ratio as a realized payoff.",
