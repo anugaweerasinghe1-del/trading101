@@ -1182,6 +1182,43 @@ corrections.push(
   },
 );
 
+// Owner-authorized cautious wording: describe the exercise without promising behavioral change.
+corrections.push(...[
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      1
+    ],
+    "expected": "When you first access a trading simulator, the platform typically provisions a fixed amount of virtual capital to enable practice without committing real funds. This starting balance serves as your primary accounting ledger for all subsequent buy and sell transactions across supported spot assets. Users must recognize that this currency holds no real-world monetary value and cannot be withdrawn or converted into fiat money under any circumstances. Understanding this foundational boundary ensures you treat the simulation strictly as an educational sandbox rather than a speculative wealth-generation tool.",
+    "replacement": "When you first access a trading simulator, the platform typically provisions a fixed amount of virtual capital to enable practice without committing real funds. This starting balance serves as your primary accounting ledger for all subsequent buy and sell transactions across supported spot assets. Users must recognize that this currency holds no real-world monetary value and cannot be withdrawn or converted into fiat money under any circumstances. Treat the balance as an educational accounting input, not as money that can be withdrawn or evidence of future wealth."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      10
+    ],
+    "expected": "Evaluating your simulator performance requires establishing clear benchmarks before executing your very first virtual trade order. Rather than focusing solely on raw portfolio growth, you should track metrics such as trade frequency, asset allocation balance, and drawdown depth. Documenting your strategic rationale for each simulated purchase creates a reliable historical record for subsequent performance reviews. This structured approach transforms casual experimentation into a rigorous, repeatable educational process.",
+    "replacement": "For a virtual-practice review, choose which observations to compare, such as recorded fees, position weights and sampled drawdowns. Write down the question and assumptions before comparing the result. A journal can retain the rationale you actually record for later review; it does not establish that a learning process is rigorous, remove bias or demonstrate improved financial decisions."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      11
+    ],
+    "expected": "To solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.",
+    "replacement": "To solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Record the discrepancy and the two observation times before interpreting this fictional valuation. The arithmetic alone does not establish how a learner will act."
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;

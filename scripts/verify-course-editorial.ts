@@ -15,6 +15,8 @@ for (const row of currentRows) {
   assert.equal(JSON.stringify(row.document), original, "Published source must remain unchanged");
   assert.deepEqual(applyCourseEditorialCorrections(corrected), corrected);
   if (row.slug === "bitcoin-simulator-practice-trading") {
+    assert.doesNotMatch(corrected.lessons[0].body[1], /ensures you treat/);
+    assert.doesNotMatch(corrected.lessons[0].body[10], /creates a reliable historical record|transforms casual experimentation/);
     const lesson = corrected.lessons[1];
     assert.equal(lesson.body[6], "## Executing Market Sell Orders", "Preserve the heading beside the corrected sale paragraph");
     assert.match(lesson.body[7], /Guest and signed-in pricing paths differ/);
@@ -28,6 +30,11 @@ for (const row of currentRows) {
     const later = structuredClone(row.document);
     later.lessons[1].body[7] = "A later owner-authored sale description.";
     assert.equal(applyCourseEditorialCorrections(later).lessons[1].body[7], later.lessons[1].body[7]);
+  }
+  if (row.slug === "cryptocurrency-price-feeds-and-valuation") {
+    assert.doesNotMatch(corrected.lessons[1].body[11], /prevents you from making hasty/);
+    assert.match(corrected.lessons[1].body[11], /one thousand one hundred fifty dollars/);
+    assert.match(corrected.lessons[1].body[11], /one thousand two hundred dollars/);
   }
   if (row.slug === "diversification-and-position-sizing") {
     assert.match(corrected.lessons[0].body[8], /server-selected eligible quotes/);
