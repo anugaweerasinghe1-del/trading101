@@ -83,3 +83,64 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+
+const reviewedOptionsTrack = data.courseTracks.find(track => track.slug === "options-trading-fundamentals");
+assert.ok(reviewedOptionsTrack);
+assert.match(reviewedOptionsTrack.prerequisites, /No prior trade or minimum practice time is required/);
+const reviewedOptionsLessons = reviewedOptionsTrack.lessons;
+assert.equal(reviewedOptionsLessons.length, 5);
+assert.ok(reviewedOptionsLessons.every(lesson => lesson.quiz.length === 4));
+const reviewedIntro = reviewedOptionsLessons.find(lesson => lesson.slug === "what-is-an-option");
+assert.ok(reviewedIntro);
+assert.match(reviewedIntro.body.join(" "), /total premium can rise or fall/);
+assert.match(reviewedIntro.body.join(" "), /gross break-even/);
+const reviewedIV = reviewedOptionsLessons.find(lesson => lesson.slug === "implied-volatility-and-earnings");
+assert.ok(reviewedIV);
+assert.match(reviewedIV.body.join(" "), /usual calculation is undefined/);
+assert.equal(reviewedIV.quiz[0].correctAnswer, 1);
+assert.match(reviewedIV.quiz[0].options[1], /observed range/);
+const reviewedGreeks = reviewedOptionsLessons.find(lesson => lesson.slug === "the-greeks-delta-gamma-theta-vega");
+assert.ok(reviewedGreeks);
+assert.equal(reviewedGreeks.quiz[2].correctAnswer, 1);
+assert.match(reviewedGreeks.quiz[2].explanation, /not inevitable/);
+
+
+const reviewedMacroTrack = data.courseTracks.find(track => track.slug === "macro-reading-for-traders");
+assert.ok(reviewedMacroTrack);
+assert.equal(reviewedMacroTrack.lessons.length, 5);
+assert.ok(reviewedMacroTrack.lessons.every(lesson => lesson.quiz.length === 4));
+const checkedMacroCpi = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "reading-cpi-and-inflation");
+assert.ok(checkedMacroCpi);
+assert.match(checkedMacroCpi.body.join(" "), /sampled prices and expenditure weights/);
+assert.ok(checkedMacroCpi.sources.some(source => source.url === "https://www.bls.gov/schedule/news_release/cpi.htm"));
+const checkedMacroFed = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-fed-and-fomc-cycle");
+assert.ok(checkedMacroFed);
+assert.match(checkedMacroFed.body.join(" "), /strategy-only meeting/);
+assert.match(checkedMacroFed.body.join(" "), /November 12, 2026/);
+assert.ok(checkedMacroFed.sources.some(source => source.url.endsWith("monetary20261112a.htm")));
+const checkedMacroCurve = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-yield-curve-and-recession");
+assert.ok(checkedMacroCurve);
+assert.match(checkedMacroCurve.body.join(" "), /one month through thirty years/);
+assert.match(checkedMacroCurve.body.join(" "), /twelve months ahead/);
+assert.match(checkedMacroCurve.body.join(" "), /official Federal Reserve forecasts/);
+
+
+const reviewedBehaviourTrack = data.courseTracks.find(track => track.slug === "trading-psychology-mastery");
+assert.ok(reviewedBehaviourTrack);
+assert.equal(reviewedBehaviourTrack.lessons.length, 5);
+const reviewedReminder = reviewedBehaviourTrack.lessons.find(lesson => lesson.slug === "revenge-trading-and-tilt");
+assert.ok(reviewedReminder);
+assert.match(reviewedReminder.summary, /does not reveal someone's emotional state/);
+assert.equal(reviewedReminder.quiz[0].correctAnswer, 1);
+const reviewedFuturesTrack = data.courseTracks.find(track => track.slug === "futures-and-derivatives");
+assert.ok(reviewedFuturesTrack);
+assert.equal(reviewedFuturesTrack.lessons.length, 5);
+for (const lesson of reviewedFuturesTrack.lessons) {
+  assert.equal(lesson.quiz.length, 4);
+  assert.equal(new Set(lesson.sources.map(s => s.url)).size, lesson.sources.length);
+}
+const reviewedMicro = reviewedFuturesTrack.lessons.find(lesson => lesson.slug === "micro-futures-for-beginners");
+assert.ok(reviewedMicro);
+assert.match(reviewedMicro.keyTakeaways.join(" "), /not a complete product catalogue/);
+assert.doesNotMatch(reviewedMicro.keyTakeaways.join(" "), /let beginners scale/);

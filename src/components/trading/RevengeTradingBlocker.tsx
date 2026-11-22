@@ -68,8 +68,7 @@ export function RevengeTradingBlocker({ isOpen, onComplete, onCancel }: RevengeT
         </DialogTitle>
 
         <DialogDescription className="text-sm text-muted-foreground leading-relaxed">
-          You're attempting a large trade shortly after a loss. This pattern is associated with
-          <span className="text-warning font-semibold"> revenge trading</span> — an emotional response that often leads to larger losses.
+          This virtual order matches a recent-loss reminder rule. The rule cannot establish your intentions, emotional state or future results. You can cancel the exercise or take more time to review it.
         </DialogDescription>
 
         {/* Breath & Reset */}
