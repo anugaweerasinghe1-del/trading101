@@ -292,7 +292,7 @@ try {
   let documentsBefore = whatsNewDocuments;
   missingWhatsNewChunk = 1;
   await evaluate(`document.querySelector('a[href="/whats-new"]').click(); true`);
-  await waitUntil(`location.pathname === '/whats-new' && !!document.querySelector('main h1') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*="theme"]')`, "Missing chunk recovers on exactly one reload");
+  await waitUntil(`location.pathname === '/whats-new' && /what.s new/i.test(document.querySelector('main h1')?.textContent || '') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*="theme"]')`, "Missing chunk recovers on exactly one reload");
   assert.equal(missingWhatsNewRequests-missingBefore,1,"Actual chunk request failed");
   assert.equal(whatsNewDocuments-documentsBefore,1,"Exactly one fresh document navigation");
   assert.equal(await evaluate(`localStorage.getItem('tradehq:route-recovery-test')`),"retained","Recovery preserves stored data");
@@ -315,7 +315,7 @@ try {
   assert.equal(await evaluate(`document.body.innerText.includes('Unexpected Application Error!')`),false);
   missingWhatsNewChunk = 0;
   await evaluate(`document.querySelector('[data-route-recovery] button').click(); true`);
-  await waitUntil(`location.pathname === '/whats-new' && !!document.querySelector('button[aria-label*="theme"]') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo')`, "Explicit retry restores real page");
+  await waitUntil(`location.pathname === '/whats-new' && /what.s new/i.test(document.querySelector('main h1')?.textContent || '') && !!document.querySelector('button[aria-label*="theme"]') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo')`, "Explicit retry restores real page");
   await evaluate(`localStorage.removeItem('tradehq:route-recovery-test'); true`);
   await send("Network.setCacheDisabled", {cacheDisabled:false});
   console.log("PASS actual Chromium missing lazy chunk: SPA recovery, one automatic refresh, persistent failure fallback and manual recovery");
