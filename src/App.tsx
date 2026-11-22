@@ -18,6 +18,7 @@ import { PortfolioLiveUpdates } from "@/components/PortfolioLiveUpdates";
 
 import Index from "./pages/Index";
 import { RoutePublisherNotes } from "./components/RoutePublisherNotes";
+import { RouteLoadError } from "./components/RouteLoadError";
 
 const Trade = lazy(() => import("./pages/Trade"));
 const TradeAsset = lazy(() => import("./pages/TradeAsset"));
@@ -292,7 +293,7 @@ function AppRuntime() {
 
 // The data router supplies supported blockers for SPA links and history traversal.
 // Existing route definitions and application providers retain their boundaries.
-const appRouter = createBrowserRouter([{ path: "*", element: <AppRuntime /> }]);
+const appRouter = createBrowserRouter([{ path: "*", element: <AppRuntime />, errorElement: <RouteLoadError /> }]);
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>

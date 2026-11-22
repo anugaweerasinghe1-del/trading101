@@ -43,8 +43,18 @@ const routes = [...readFileSync("dist/sitemap.xml", "utf8").matchAll(/<loc>https
 for (const { document: doc } of docs) routes.push("/courses/" + doc.slug, ...doc.lessons.map(lesson => "/courses/" + doc.slug + "/" + lesson.slug));
 assert.equal(new Set(routes).size, routes.length);
 const mime = { ".js": "application/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".html": "text/html" };
+let missingWhatsNewChunk = 0;
+let missingWhatsNewRequests = 0;
+let whatsNewDocuments = 0;
 const server = createServer((request, response) => {
   const path = new URL(request.url, "http://localhost").pathname;
+  if (path === "/whats-new") whatsNewDocuments++;
+  if (/^\/assets\/WhatsNew-[^/]+\.js$/.test(path) && missingWhatsNewChunk !== 0) {
+    missingWhatsNewRequests++;
+    if (missingWhatsNewChunk > 0) missingWhatsNewChunk--;
+    response.writeHead(404, {"Content-Type":"text/plain", "Cache-Control":"no-store"});
+    response.end("Simulated removed deployment chunk"); return;
+  }
   if(path==='/api/fx-reference'){
     const date=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
     response.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});
@@ -273,6 +283,43 @@ try {
     assert.fail(label + " (navigation/hydration did not settle within the existing deadline)");
   };
   if (phase === null || phase === 4) {
+  // Reproduce the reported old-deployment behavior with a real missing lazy
+  // chunk in an isolated browser. No requests or writes to production.
+  await send("Network.setCacheDisabled", {cacheDisabled:true});
+  await send("Page.navigate", {url:origin+"/about"});
+  await waitUntil(`location.pathname === '/about' && !!document.querySelector('button[aria-label*="theme"]') && !!document.querySelector('a[href="/whats-new"]') && !document.querySelector('#prerender-seo')`, "About mounted before failed SPA navigation");
+  await evaluate(`sessionStorage.removeItem('tradehq:route-load-recovery:v1:/whats-new'); localStorage.setItem('tradehq:route-recovery-test','retained'); true`);
+  let missingBefore = missingWhatsNewRequests;
+  let documentsBefore = whatsNewDocuments;
+  missingWhatsNewChunk = 1;
+  await evaluate(`document.querySelector('a[href="/whats-new"]').click(); true`);
+  await waitUntil(`location.pathname === '/whats-new' && /what.s new/i.test(document.querySelector('main h1')?.textContent || '') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*="theme"]')`, "Missing chunk recovers on exactly one reload");
+  assert.equal(missingWhatsNewRequests-missingBefore,1,"Actual chunk request failed");
+  assert.equal(whatsNewDocuments-documentsBefore,1,"Exactly one fresh document navigation");
+  assert.equal(await evaluate(`localStorage.getItem('tradehq:route-recovery-test')`),"retained","Recovery preserves stored data");
+  await send("Page.navigate", {url:origin+"/about"});
+  await waitUntil(`location.pathname === '/about' && !!document.querySelector('a[href="/whats-new"]') && !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*="theme"]')`, "Fresh old-tab fixture for persistent failure");
+  await evaluate(`sessionStorage.removeItem('tradehq:route-load-recovery:v1:/whats-new'); true`);
+  missingBefore = missingWhatsNewRequests;
+  documentsBefore = whatsNewDocuments;
+  missingWhatsNewChunk = -1;
+  await evaluate(`document.querySelector('a[href="/whats-new"]').click(); true`);
+  await waitUntil(`location.pathname === '/whats-new' && !!document.querySelector('[data-route-recovery] button') && sessionStorage.getItem('tradehq:route-load-recovery:v1:/whats-new') === '1'`, "Persistent failure displays usable recovery fallback");
+  // First error can briefly render before the reload. Wait for the new
+  // document and its second rejected module before asserting the fallback.
+  const recoveryDeadline = Date.now()+12000;
+  while (Date.now()<recoveryDeadline && (whatsNewDocuments-documentsBefore<1 || missingWhatsNewRequests-missingBefore<2)) await delay(50);
+  await waitUntil(`!!document.querySelector('[data-route-recovery] button') && !document.querySelector('#prerender-seo') && document.querySelector('[data-route-recovery]').innerText.includes('Refresh page')`, "Fallback remains after second missing chunk");
+  await delay(400);
+  assert.equal(whatsNewDocuments-documentsBefore,1,"Persistent failure cannot reload-loop");
+  assert.equal(missingWhatsNewRequests-missingBefore,2);
+  assert.equal(await evaluate(`document.body.innerText.includes('Unexpected Application Error!')`),false);
+  missingWhatsNewChunk = 0;
+  await evaluate(`document.querySelector('[data-route-recovery] button').click(); true`);
+  await waitUntil(`location.pathname === '/whats-new' && /what.s new/i.test(document.querySelector('main h1')?.textContent || '') && !!document.querySelector('button[aria-label*="theme"]') && !document.querySelector('[data-route-recovery]') && !document.querySelector('#prerender-seo')`, "Explicit retry restores real page");
+  await evaluate(`localStorage.removeItem('tradehq:route-recovery-test'); true`);
+  await send("Network.setCacheDisabled", {cacheDisabled:false});
+  console.log("PASS actual Chromium missing lazy chunk: SPA recovery, one automatic refresh, persistent failure fallback and manual recovery");
   await send('Page.navigate', {url:origin+'/trade'});
   await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio educational mentor"]')`, 'Trade interface must mount');
   const validSimulationSchema = async assetId => {
