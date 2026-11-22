@@ -58,7 +58,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Things that trip beginners on a markets screen",
       list: [
         "Assuming a large recent gain predicts the next price move; an observed change does not determine future returns or a suitable entry.",
-        "Assuming a low nominal price means an asset is 'cheap' — price per unit says nothing about value.",
+        "Assuming a low nominal price alone establishes whether an asset is inexpensive; the units and method of valuation matter.",
         "Treating any ETF as automatically low-risk: sector funds and concentrated funds still carry market and holding-specific risks.",
         "Ignoring market hours: equities gap overnight, crypto trades continuously, forex has session-driven liquidity.",
       ],
@@ -98,7 +98,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       list: [
         "Good material explains mechanics and probability; bad material promises returns.",
         "Good material shows losing examples; bad material only shows winners.",
-        "Good material cites exchanges, regulators and primary documents; bad material cites screenshots.",
+        "Check whether a source actually supports the claim. A primary document can provide useful evidence; a screenshot without verifiable context is insufficient on its own.",
         "Good material tells you who it is not for; bad material claims to suit everyone.",
         "A credible educational source separates observations from forecasts, documents data limitations and does not use time pressure as evidence.",
       ],
@@ -221,14 +221,14 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       list: [
         "Browser storage and server-side duplicate checks limit repeat submissions; these checks do not verify identity.",
         "New reviews are held for moderation before appearing publicly; truthful critical feedback may be approved.",
-        "We publish criticism. A page of only five-star reviews would tell you nothing.",
+        "The moderation process can publish critical feedback; ratings alone cannot establish how submissions were selected.",
         "Reviews are about the software — usability, content quality, bugs — not about trading returns.",
       ],
     },
     {
       h: "What we would rather you sent us",
       p: [
-        "A specific bug report or a specific content correction is worth more to the project than a rating. If a lesson is wrong, if a page renders badly on your phone, or if a term is missing from the glossary, the contact page reaches the maintainer directly and those messages are what actually change the site.",
+        "A specific bug report or content correction can help the maintainer investigate a problem. Use the contact page to describe the affected page, your device or the disputed sentence.",
         "Core educational features are free and require no account or real-money deposit. Optional account and community features involve separate data processing, described in the Privacy Policy.",
       ],
     },
@@ -263,7 +263,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Each participant uses their own recorded starting balance; those balances can differ.",
         "The scoreboard compares percentage changes from recorded starting values. Different exposure, costs and activity can limit comparability.",
         "The page shows a 30-day countdown based on the recorded duel dates.",
-        "There is no fee, no stake, no prize and no real money — running a duel for money would be gambling, and this is not that.",
+        "There is no fee, stake, prize or real-money exchange. This feature is for an optional educational comparison of simulated records.",
       ],
     },
     {
@@ -282,7 +282,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "How features get prioritised",
       p: [
-        "Requests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.",
+        "Contact feedback can help identify broken features, unclear explanations and barriers to learning. The roadmap records priorities rather than a measured ranking of how every request is weighted.",
         "Historical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.",
       ],
     },
@@ -298,7 +298,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "How to influence it",
       p: [
         "Guest portfolios, journals and learning progress use browser storage. Signed-in lessons and journey progress can additionally sync to a private account record. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.",
-        "The contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.",
+        "Use the contact page to describe the learning task and where you encountered a problem. Specific feedback can inform future roadmap updates.",
       ],
     },
   ],
@@ -318,7 +318,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "No invented statistics, testimonials, credentials or performance figures.",
         "Numbers in lessons are worked examples and are labelled as such.",
         "Educational content distinguishes simulation from real financial activity; some account and utility screens do not repeat the full educational disclaimer.",
-        "Corrections are made promptly when a factual error is reported.",
+        "Reported factual errors can be checked against relevant evidence; correction timing depends on the scope and maintainer availability.",
       ],
     },
     {
@@ -336,14 +336,14 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "My portfolio disappeared — check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest trade history and journals stay on the original browser; signed-in lesson and journey progress can sync privately. If sync fails, contact the maintainer before resetting the practice account.",
         "How do I reset my practice balance? The portfolio help explains browser-held guest records and account restoration. Clearing site data removes the local copy, including browser-only history and progress, but does not delete or reset the server account copy.",
         "A price looks wrong — quotes refresh periodically, can be stale or use a labelled fixed fallback, and need not match a broker’s executable price.",
-        "Can I use TradeHQ on my phone? Yes, the whole site works on mobile browsers; there is no app to install.",
+        "Can I use TradeHQ on my phone? TradeHQ is designed for mobile browsers; no app installation is required. Report device-specific layout or interaction problems through the contact page.",
         "Do you have an affiliate or partnership programme? No.",
       ],
     },
     {
       h: "Reporting a content error",
       p: [
-        "Content corrections are the most valuable messages we receive. Send the page URL, quote the sentence you believe is wrong, and where possible link a primary source such as an exchange rule book, a regulator page or a central-bank release. Corrections are applied to the live lesson rather than buried in an errata list.",
+        "For a content correction, send the page URL, the sentence you believe is wrong and, when available, a relevant primary source. After review, confirmed corrections can be incorporated into the published lesson.",
       ],
     },
     {

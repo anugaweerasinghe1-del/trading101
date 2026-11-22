@@ -263,7 +263,7 @@ export default function Challenge() {
             <p className="text-sm text-muted-foreground mt-3 max-w-xl mx-auto">
               Send a link, both of you trade the simulator for 30 days, and the scoreboard
               compares server-recorded percentage change from each participant's own starting value at acceptance.
-              Final scores use the last server-cached quotes available at the deadline. Scores are simulated. No real money is involved.
+              Final scores use the last server-cached quotes available at the deadline. Scores are simulated. No real money is involved. Public profiles are required to create or join. Eligible duel records and scores can be viewed by other visitors while the applicable profiles are public.
             </p>
           </header>
 

@@ -1,0 +1,7 @@
+# Second-pass reconciliation — 22 November 2026
+
+Current protected base: 6375830a2ac1c8ee5d095cbf5728aa0393c32d37. The three PR #521 source files were byte-identical to its original base; carried its exact 11 edits forward rather than overwriting concurrent work. PR #521's passing checks were insufficient for merge under current protection (HTTP 405), not bypassed. This PR requires fresh exact-head validation.
+
+Coverage: 12 distinct complete extracted article bodies in 032 plus 68 new unique routes in 033 = 80/163 bodies reviewed. The 50-page previous checkpoint counted glossary coverage alone; Swing Trading was already in 032. No full closure credit for raw text alone. Privacy full source inspected but live extraction incomplete and not counted; dynamic lessons, media, external source verification, technical/rendered checks remain open. No authentic user records inspected. Source metadata and prior existing tests corroborate public profile requirements / participant visibility and review duplicate-prevention identifier. Supabase migration 20261122053117 independently verified: anon/authenticated internal identifier SELECT false, service role true, public content true. Policy language is a disclosure improvement, not legal certification. AI image provenance is owner-reported, not independently certified. Keep ads disabled.
+
+No source-link availability, originality, per-block hash completeness, or legal compliance inferred from this body sample. Do not close #430.
