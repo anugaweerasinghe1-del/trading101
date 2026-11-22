@@ -97,8 +97,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "How to tell good trading education from bad",
       list: [
         "Good material explains mechanics and probability; bad material promises returns.",
-        "Good material shows losing examples; bad material only shows winners.",
-        "Good material cites exchanges, regulators and primary documents; bad material cites screenshots.",
+        "Check whether examples include unfavorable outcomes and explain how they were selected.",
+        "Check whether sources support the particular claim. A screenshot alone may omit its date, method or context.",
         "Good material tells you who it is not for; bad material claims to suit everyone.",
         "A credible educational source separates observations from forecasts, documents data limitations and does not use time pressure as evidence.",
       ],
