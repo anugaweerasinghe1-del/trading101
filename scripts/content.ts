@@ -590,7 +590,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
     const f = faqs[a.id] || [];
     const stats = Object.entries(c.stats || {})
       .filter(([k, v]) => k !== "source" && v !== "live_sourced_at_runtime")
-      .map(([k, v]) => `${humanise(k)}: ${v}`);
+      .map(([k, v]) => `${k === "sector" ? "Site grouping" : k === "primaryDriver" ? "Research topic" : humanise(k)}: ${v}`);
     map.set(`/trade/${a.id}`, {
       sections: [
         { h: `What ${a.name} is`, p: [c.whatIs] },

@@ -5,6 +5,7 @@ import { BookOpen, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown } from 'luci
 import { supabase } from '@/integrations/supabase/client';
 import { starterPracticeBank } from '@/lib/dailyPracticeBank';
 import { DAILY_PROGRESS_EVENT } from '@/lib/dailyChallenge';
+import { dailyPracticeDisplay } from '@/lib/dailyPracticeEditorial';
 import { acknowledgeDailyMistakes, hasReviewedDailyMistakes } from '@/lib/dailyPracticeReviewReceipt';
 import { newPractice, readPractice, readPracticeHistory, savePractice, savedPracticeComplete, upgradePractice } from '@/lib/dailyPracticeProgress';
 import { practiceDate, validateBatch, type DailyBatch, type DailyExercise } from '../../supabase/functions/_shared/dailyPractice';
@@ -65,7 +66,7 @@ export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClos
     if (open) { heading.current?.focus({ preventScroll: true }); heading.current?.scrollIntoView({ block: 'start', behavior: 'instant' }); }
   }, [open]);
   const persist = (next: typeof progress) => { const result = savePractice(next); setStorageOk(result.saved); if (result.saved) setProgress(result.progress); return result; };
-  const exercise = progress.exercise, answered = progress.answers.length, total = exercise.questions.length, done = answered === total;
+  const exercise = dailyPracticeDisplay(progress.exercise), answered = progress.answers.length, total = exercise.questions.length, done = answered === total;
   const index = Math.min(question, answered, total - 1), q = exercise.questions[index], reviewed = index < answered;
   const score = progress.answers.filter((a, i) => a === exercise.questions[i].correctAnswer).length;
   const move = (i: number) => { setQuestion(i); setPick(null); };

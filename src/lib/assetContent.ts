@@ -39,7 +39,7 @@ interface InstitutionalDrivers {
 
 // Category intro text for SEO multiplier
 export const CATEGORY_INTROS: Record<string, string> = {
-  crypto: "Cryptocurrencies are decentralized digital assets known for 24/7 market cycles and high volatility.",
+  crypto: "Digital assets differ in network governance, issuance and custody. Many crypto venues operate around the clock, but access and price risk vary.",
   stock: "Equities represent ownership in public companies and are driven by earnings, macro trends, and sector performance.",
   etf: "ETFs pool exposure according to a fund objective; concentration, leverage and the underlying holdings determine their risks.",
   forex: "Global currencies reflect macroeconomic health and geopolitical shifts, trading 24/5 across global markets.",

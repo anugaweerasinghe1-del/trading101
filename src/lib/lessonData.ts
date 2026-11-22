@@ -263,7 +263,7 @@ export const lessonData: Lesson[] = [
         "explanation": "Regular trading hours for US markets are 9:30 AM to 4:00 PM Eastern Time, Monday through Friday (excluding holidays)."
       },
       {
-        "question": "What does a green/white candlestick indicate?",
+        "question": "Under the stated green-up/white-up chart convention, what does that candlestick body indicate?",
         "options": [
           "The price went down",
           "No trading occurred",
@@ -271,7 +271,7 @@ export const lessonData: Lesson[] = [
           "The stock is overvalued"
         ],
         "correctAnswer": 2,
-        "explanation": "A green or white candlestick means the closing price was higher than the opening price - the stock went up that period!"
+        "explanation": "Under this chart convention, the body indicates a close above the open. Check the chart legend: colors and hollow-candle conventions can differ, and the shape does not forecast the next price."
       }
     ],
     "references": [
@@ -603,7 +603,7 @@ export const lessonData: Lesson[] = [
     ],
     "quiz": [
       {
-        "question": "What does a green/white candlestick indicate?",
+        "question": "Under the stated green-up/white-up chart convention, what does that candlestick body indicate?",
         "options": [
           "Opening price was higher than closing",
           "Closing price was higher than opening",
@@ -611,7 +611,7 @@ export const lessonData: Lesson[] = [
           "Volume is high"
         ],
         "correctAnswer": 1,
-        "explanation": "Green or white candlesticks show bullish movement - the closing price was higher than the opening price."
+        "explanation": "Under the stated convention, the closing price is above the opening price. Check the chart legend because colors and hollow-candle conventions vary; this describes the interval rather than a future move."
       },
       {
         "question": "What RSI level typically indicates an oversold condition?",

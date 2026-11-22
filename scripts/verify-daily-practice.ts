@@ -2,6 +2,7 @@ import { dailyProviderExercises } from "./daily-provider-fixture";
 import assert from 'node:assert/strict';
 import './verify-daily-correlation-visual.ts';
 import './verify-daily-chart-units.ts';
+import './verify-daily-editorial-display.ts';
 import './verify-adaptive-daily.ts';
 import { readFileSync } from 'node:fs';
 import { PGlite } from '@electric-sql/pglite';
@@ -100,6 +101,15 @@ const oldWindow = Object.getOwnPropertyDescriptor(globalThis, 'window'), oldStor
 try {
   Object.defineProperty(globalThis, 'window', { configurable: true, value: {} });
   Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: storage });
+  for (const broken of [{}, [], { current: 1, longest: 1, totalCompleted: 1, lastCompletedDate: null, history: null },
+    { current: 1, longest: 1, totalCompleted: 1, lastCompletedDate: '2026-02-30', history: [] },
+    { current: '1', longest: 1, totalCompleted: 1, lastCompletedDate: null, history: [] },
+    { current: 1, longest: 1, totalCompleted: 1, lastCompletedDate: null, history: [null] }]) {
+    memory.set('tradehq:daily-streak', JSON.stringify(broken));
+    assert.equal(hasPlayedQuickToday(), false, 'Malformed persisted shapes must recover without crashing Daily');
+    assert.deepEqual(getStreak(), { current: 0, longest: 0, totalCompleted: 0, lastCompletedDate: null, history: [] });
+  }
+  memory.clear();
   const deeper = recordChallenge(0, 'hold'); assert.equal(deeper.totalCompleted, 1); assert.equal(hasPlayedQuickToday(), false);
   const quick = recordChallenge(getTodayChallenge().id, 'long'); assert.equal(quick.totalCompleted, 1); assert.equal(quick.current, 1);
   assert.equal(hasPlayedQuickToday(), true); assert.equal(getStreak().history[0].decision, 'long');
