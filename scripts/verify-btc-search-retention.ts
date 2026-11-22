@@ -112,14 +112,12 @@ store.set(ARENA_ANALYTICS_CONSENT_KEY, "accepted");
 recordConsentedLearningVisit(new Date("2026-11-20T10:00:00Z"));
 recordConsentedLearningVisit(new Date("2026-11-21T09:00:00Z"));
 trackLearningMilestone("Quick Read Completed");
-assert.deepEqual(events.map(e => e.name), [
-  "TradeHQ Learning Viewed", "TradeHQ Learning Viewed", "TradeHQ Learning Returned", "TradeHQ Quick Read Completed",
-]);
-assert.deepEqual(events[2].props, { days_since_learning_visit: 1 });
+assert.equal(events.length, 0, "Scoped v3 Arena/leaderboard permission cannot authorize learning telemetry");
+assert.equal(store.has(LEARNING_VISIT_KEY), false, "No learning marker under v3 consent");
 store.set(ARENA_ANALYTICS_CONSENT_KEY, "rejected");
 trackLearningMilestone("Trade Review Completed");
-assert.equal(events.length, 4, "Consent withdrawal immediately blocks later analytics");
+assert.equal(events.length, 0, "Consent withdrawal cannot enable learning analytics");
 (globalThis as { window?: unknown }).window = oldWindow;
 assert.match(files("src/pages/LessonDetail.tsx"), /recordConsentedLearningVisit/);
 assert.match(review, /recordConsentedLearningVisit/);
-console.log("PASS BTC SEO consistency, educational on-ramp, varied recall and consent-gated return signals");
+console.log("PASS BTC SEO consistency, educational on-ramp, varied recall and suspended out-of-scope learning telemetry");

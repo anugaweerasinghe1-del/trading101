@@ -20,4 +20,13 @@ assert.match(review, /is_visible: false/);
 assert.match(review, /status: "pending_moderation"/);
 assert.match(privacy, /New accounts start with a private profile/);
 assert.match(userReviews, /awaiting moderation before public display/);
-console.log("PASS: new-account and new-review defaults; existing rows preserved");
+// Private educational certificates are a distinct data flow from trophies.
+for (const term of [/Foundations assessments and certificates/, /recipient name/, /revision history/, /hash of the verification credential/, /programme version, milestone and issue date/, /Account deletion cascades/]) {
+  assert.match(privacy, term);
+}
+const staticCopy = read("scripts/staticCopy.ts");
+const privacyPage = read("src/pages/Privacy.tsx");
+assert.match(staticCopy, /PRIVACY_SECTIONS\.map/);
+assert.match(privacyPage, /PRIVACY_SECTIONS\.map/);
+assert.match(read("src/components/ConsentBanner.tsx"), /removeItem\(LEARNING_VISIT_KEY\)/);
+console.log("PASS: new-account and new-review defaults; existing rows preserved; Foundations privacy disclosure shared by both renderers");
