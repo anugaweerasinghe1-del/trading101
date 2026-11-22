@@ -83,3 +83,15 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+
+const countryPageSource = (await import("node:fs/promises")).readFile;
+const countryPageCopy = await countryPageSource("src/pages/CountryGuide.tsx", "utf8");
+assert.doesNotMatch(countryPageCopy, /no geo lock|accessible from \$\{locationName\} with no required signup/);
+assert.match(countryPageCopy, /availability can depend on location, network and service conditions/);
+for (const country of data.COUNTRY_GUIDES) {
+  assert.doesNotMatch(JSON.stringify(country), /no geo-restriction|100% free and simulated/);
+  for (const reference of country.sources) {
+    assert.ok(content.get(`/learn/country/${country.slug}`)?.links.some(link => link.href === reference.href), `${country.slug}: missing public reference`);
+  }
+}
