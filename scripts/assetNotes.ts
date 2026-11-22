@@ -63,19 +63,19 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   nvda: {
-    why: "NVIDIA's chips sit at the centre of AI and data-centre demand, so its share price has become a bellwether for the whole AI theme. That makes it a useful case study in how expectations, not just results, drive a stock.",
+    why: "NVIDIA reports data-centre and other business activities. Its share price is not a universal measure of artificial intelligence demand; compare dated company disclosures with separate market observations.",
     watch: "Quarterly earnings and forward guidance are scheduled company-information sources; they do not determine the next price move. Large technology customers' capital-spending plans and export restrictions on advanced chips are other frequently cited drivers.",
     gap: "Real earnings-night gaps can open far beyond a stop. A worksheet can compare hypothetical pre-report and post-report prices with several chosen exposures. Generated practice history does not reproduce a real earnings event.",
     checklist: [
-      "Find the next earnings date and decide whether you will hold through it.",
-      "Note how far the stock has moved over the last month before chasing it.",
-      "Size so that a 10% gap would cost no more than you have pre-decided.",
+      "Identify an announced earnings date and label the source and observation window.",
+      "Describe the dated historical movement without treating it as a forecast.",
+      "Compare how an illustrative 10% price change affects fictional positions of different sizes.",
     ],
   },
   aapl: {
     why: "Apple combines device sales with services and a broad supplier network. Its stock offers a case study in product demand, recurring revenue and valuation assumptions. Company size does not guarantee steadier price moves or establish a suitable holding period.",
-    watch: "Product cycles, services revenue and results from its largest markets, including China, are the themes most coverage returns to. Its annual autumn product event and quarterly reports are predictable calendar dates.",
-    gap: "TradeHQ fills at the displayed practice price with a simulated fee. Real fills depend on venue, liquidity, spread and timing. Holding a large position in a familiar name can also feel safer than its concentration risk warrants.",
+    watch: "Product cycles, services revenue and geographic results are examples of research topics. Use dated issuer reports and announced event dates rather than assume a fixed schedule.",
+    gap: "TradeHQ records a virtual execution price and simulated fee. An earlier displayed quote is not a guarantee of that price. Real execution depends on venue, liquidity, spread and timing; familiarity with a company does not eliminate concentration risk.",
     checklist: [
       "Mark the date of the next product event and earnings report.",
       "Compare its move to the broader Nasdaq before attributing it to Apple news.",
@@ -84,8 +84,8 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   tsla: {
     why: "Tesla provides an example for separating vehicle deliveries, revenue, margins and a company narrative. Those measures need not change together, and a simulated price shock does not reproduce an actual announcement.",
-    watch: "Quarterly delivery figures, earnings, margins and public statements from its chief executive all tend to move the price. Competition in electric vehicles and progress on autonomy are recurring debates.",
-    gap: "Tesla's volatility makes real stops prone to slippage, and social-media sentiment can make holding a losing position harder than it looks on a practice screen.",
+    watch: "Quarterly delivery figures, earnings, margins and public statements are possible research topics. Electric-vehicle competition and autonomy claims require separate, dated evidence; none guarantees a price reaction.",
+    gap: "Real execution may differ from a requested price, especially when prices gap. A virtual outcome cannot establish how a real position would execute or affect its owner.",
     checklist: [
       "Check the date of the next quarterly delivery report.",
       "Compare equal hypothetical exposures to Tesla and another company over a stated window, then vary the size assumptions.",
@@ -93,13 +93,13 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   amzn: {
-    why: "Amazon combines retail, advertising and the AWS cloud business, so the share price reflects several very different businesses at once. Learning which segment the market is focused on is the core skill here.",
-    watch: "AWS growth rates, retail margins and advertising revenue are the segments analysts discuss most in each quarterly report. Consumer spending trends around major shopping seasons also attract attention.",
-    gap: "A practice account makes holding through earnings painless; in reality, a large gap after a cloud-growth miss can be stressful. Treat earnings as a separate decision from the trade itself.",
+    why: "Amazon combines retail, advertising and cloud activities. Its operating results and its share price are distinct observations, and published results do not establish what caused a market move.",
+    watch: "Cloud growth, retail margins and advertising revenue are different business metrics, not interchangeable reporting segments. Compare dated company disclosures.",
+    gap: "A fictional account does not reproduce the financial consequences of a real position. Distinguish reported earnings from observed prices and hypothetical price gaps.",
     checklist: [
       "Identify which business segment today's news is about.",
       "Look at how the stock reacted to its last two earnings reports.",
-      "Set an exit rule before the report, not after.",
+      "Document assumptions before comparing alternative fictional outcomes.",
     ],
   },
   msft: {
@@ -107,14 +107,14 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     watch: "Azure cloud growth, enterprise software subscriptions and its investments in AI are the recurring themes in its results. Check dated fund holdings before estimating Microsoft exposure through an index fund.",
     gap: "A familiar company can still create a concentrated position. In real accounts, concentration in one name is a risk even when that company is large and profitable.",
     checklist: [
-      "Compare MSFT's monthly move with the S&P 500 to see how much is market-wide.",
+      "Compare the same dated observation windows for Microsoft and a broad-market index; co-movement does not establish causation.",
       "Note the date of its next quarterly report.",
       "Compare two stated review windows and record how they change the observations, without treating either as a universal schedule.",
     ],
   },
   googl: {
-    why: "Alphabet earns most of its revenue from search and YouTube advertising, with a growing cloud business alongside. It shows how a company's main revenue engine shapes how the market reacts to news.",
-    watch: "Advertising growth, cloud profitability, regulatory cases and competition in AI-assisted search are the topics most coverage focuses on. The listed GOOGL and GOOG tickers represent different share classes; check the company documents for voting rights.",
+    why: "Alphabet reports advertising, cloud and other activities. Dated reports help distinguish those revenue sources; they do not establish why a share price moved.",
+    watch: "Advertising, cloud profitability, regulation and search competition are examples of research questions. GOOGL and GOOG represent different share classes; company documents describe their voting rights.",
     gap: "Regulatory headlines can arrive without warning in the real market. A simulator cannot reproduce the uncertainty of waiting on a court decision.",
     checklist: [
       "Note which share class you are practising with and why.",
@@ -125,11 +125,11 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   meta: {
     why: "Meta owns Facebook, Instagram and WhatsApp and is primarily an advertising business, with large spending on AI and virtual-reality projects. Its history includes both steep declines and strong recoveries, which makes it instructive for studying drawdowns.",
     watch: "User engagement, advertising pricing, capital-expenditure plans and spending on its Reality Labs division are the recurring themes in its reports.",
-    gap: "Holding a real position through a large drawdown is far harder than watching one in practice. Use separately sourced historical observations for a real drawdown study; generated chart history does not reproduce Meta’s market record.",
+    gap: "A virtual drawdown does not reproduce a real financial loss. Use separately sourced historical observations for a real drawdown study; generated chart history does not reproduce Meta’s market record.",
     checklist: [
-      "Look at the stock's largest drawdown in the past few years and note how long recovery took.",
+      "Specify a historical sample and calculate its drawdown from dated observations; a recovery may not occur within that sample.",
       "Check the next earnings date and any spending guidance updates.",
-      "Decide your maximum tolerable drawdown before entry.",
+      "Compare alternative fictional drawdown scenarios without inferring a suitable personal risk limit.",
     ],
   },
   spy: {
