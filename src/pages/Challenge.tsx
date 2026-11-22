@@ -265,6 +265,7 @@ export default function Challenge() {
               compares server-recorded percentage change from each participant's own starting value at acceptance.
               Final scores use the last server-cached quotes available at the deadline. Scores are simulated. No real money is involved.
             </p>
+            <p className="text-xs text-muted-foreground mt-3 max-w-xl mx-auto">Community duels require public profiles when created or joined. Other visitors may see open duels of public creators and joined duels while both profiles are public, including simulated scores and record information. Participants retain access to their duel records. See the <Link to="/privacy" className="underline">Privacy Policy</Link> for details.</p>
           </header>
 
           {loading ? (
