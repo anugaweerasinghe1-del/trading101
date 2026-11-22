@@ -455,7 +455,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         p: [
           "This page collects visitor-submitted feedback about the practice simulator. New submissions are not publicly displayed while awaiting moderation; approved reviews may appear publicly, including criticism. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
           "Signed-in visitors can like or unlike reviews once per account. Like totals are public; individual liker identities are private. Replies from the site owner are labelled separately from visitor feedback.",
-          "A visible rating summarises the submissions currently displayed; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
+          "The displayed average covers the returned sample of up to 100 visible reviews, with featured reviews first and then newest first; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
         ],
       },
       {
@@ -544,7 +544,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "TradeHQ uses AI-assisted drafting and editing for educational material and software. Content is prepared for this site rather than syndicated; AI assistance does not establish accuracy or originality by itself.",
           "Factual claims about market mechanics cite exchange, regulator or central-bank documentation where possible.",
           "Illustrative chart-pattern labels, calculated indicators and hypothetical scenarios should not be interpreted as verified price forecasts or personalised instrument recommendations.",
-          "Errors are corrected when reported; the contact page is the fastest route.",
+          "Report suspected errors through the contact page; the maintainer can review the evidence and correct verified errors.",
         ],
       },
       {

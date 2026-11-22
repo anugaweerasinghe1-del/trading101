@@ -352,7 +352,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "Moving Averages: The Foundation of Trend Analysis",
         paragraphs: [
-          "Moving averages (MAs) smooth out price data to reveal the underlying trend. The two most common types are the Simple Moving Average (SMA), which gives equal weight to all prices in the period, and the Exponential Moving Average (EMA), which gives more weight to recent prices and reacts faster to changes.",
+          "Moving averages smooth a selected price series rather than establish a hidden or future trend. Two commonly used calculations are the simple moving average (SMA), which weights observations in its window equally, and the exponential moving average (EMA), which gives greater weight to recent observations.",
           "A 50-period average crossing above a 200-period average is called a golden cross; the reverse is a death cross. The period might mean days or another chart interval. These lagging observations describe the selected series and do not establish that a rally or decline will follow.",
           "Shorter averages such as a 9-period or 21-period EMA react differently from longer averages. A price above an average describes its position relative to that calculation, not a guaranteed trend. TradeHQ chart controls include moving-average and volume overlays; indicator examples should match the actual chart features."
         ]
