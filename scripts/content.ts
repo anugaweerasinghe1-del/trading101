@@ -393,7 +393,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         h: "What every one of these guides has in common",
         p: [
           "The guides separate instrument mechanics, hypothetical price inputs and whole-account arithmetic. A practice order demonstrates an interface, while the worksheet records quantity, costs and alternative outcomes. None of those steps establishes an appropriate real-money size, execution time or future return.",
-          "So each guide spends most of its length on those parts. None of them tell you whether to buy, none contain price targets, and none imply that following the steps produces a profit. They aim to make your first practice trade in an instrument an informed one rather than a random one.",
+          "So each guide spends most of its length on those parts. None of them tell you whether to buy, none contain price targets, and none imply that following the steps produces a profit. Their purpose is to make the underlying accounting assumptions and limitations understandable without requiring an order.",
         ],
       },
       {
@@ -402,7 +402,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
           "Read the drivers section before looking at a chart, so the chart does not supply your opinion.",
           "Reproduce the stated hypothetical arithmetic, then compare a different quantity or adverse price path. The numbers are teaching inputs, not orders you must place.",
           "Record quote timestamps and data provenance. A simulated fill cannot establish actual venue liquidity or an optimal trading time.",
-          "Come back to the review section a day after the trade closes, not while it is open.",
+          "Review the recorded assumptions and alternative outcomes at a time that suits your learning schedule.",
         ],
       },
     ],
@@ -413,12 +413,12 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
     map.set(`/how-to-trade/${h.symbol}`, {
       sections: [
         { h: `Understanding ${h.fullName}`, p: [h.beginnerTip] },
-        { h: "What actually moves it", list: h.drivers },
+        { h: "Factors to distinguish when studying the instrument", list: h.drivers },
         { h: "Step by step", list: h.steps },
-        { h: "A realistic first practice trade", p: [h.firstTrade] },
+        { h: "Worked hypothetical accounting example", p: [h.firstTrade] },
         { h: "Timing and liquidity", p: [h.timing] },
         { h: "Mistakes specific to this instrument", list: h.mistakes },
-        { h: "Reviewing the trade afterwards", p: [h.review] },
+        { h: "Reviewing the worksheet", p: [h.review] },
         { h: "Risk", p: [h.risk] },
         { h: "If you are learning from outside the US", p: [h.studentNote, DISCLAIMER] },
       ],
