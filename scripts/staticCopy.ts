@@ -25,7 +25,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "Paper trade 170 instruments across stocks, crypto, ETFs, forex and commodities using market orders.",
           "Track a full practice portfolio — open positions, realised and unrealised P&L, maximum drawdown, open-position P&L dispersion and allocation snapshots.",
-          "Work through four structured courses (options, futures, macro reading and trading psychology) with quizzes and completion badges.",
+          "Explore four bundled course tracks (options, futures, macroeconomics and decision behaviour) and additional approved catalog releases, with quizzes and completion badges.",
           "Read a 49-term trading glossary written in plain language, each entry with a detailed explanation and a worked example.",
           "Follow step-by-step guides for individual assets, side-by-side asset comparisons, and named strategy walkthroughs.",
           "Keep a trading journal, build daily streaks with the daily challenge, and run a 30-day practice duel against a friend.",
@@ -39,13 +39,13 @@ export const STATIC_COPY: Record<string, PageContent> = {
         ],
       },
       {
-        h: "How to start in five minutes",
+        h: "Ways to begin learning",
         list: [
           "Open the markets page and pick one instrument you already recognise.",
-          "Read its guide page so you know what actually moves it before you trade it.",
-          "Choose a deliberately small practice position first, then compare how different simulated position sizes affect drawdown and volatility.",
-          "Write down, before you enter, where you would exit if you are wrong.",
-          "Come back the next day, review the trade in the journal, and repeat.",
+          "Read its available educational notes and distinguish identified facts from hypotheses about price changes.",
+          "Compare fictional quantities and price changes to understand their effect on a virtual account.",
+          "Record the assumptions and limitations of the selected worksheet.",
+          "Review what the example illustrates at a time that suits your schedule; no transaction is required.",
         ],
       },
     ],
@@ -72,9 +72,9 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "What to practise on the desk",
         list: [
           "Position sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.",
-          "Stop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.",
+          "Exit assumptions: compare the stated hypothetical price with alternative observations; an assumption is not a resting order.",
           "Entry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.",
-          "Concentration: run a week with five positions and a week with one, and compare the drawdown.",
+          "Concentration: compare otherwise identical hypothetical portfolios with different holdings and state the assumptions.",
         ],
       },
       {
@@ -147,9 +147,9 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "How to choose what to practise first",
         list: [
           "Start with something you already understand as a customer or user — a retailer, an index ETF, or a currency you have actually spent.",
-          "Prefer liquid, well-covered instruments. Thin instruments punish beginners with wide spreads and erratic prices.",
+          "The generated list cannot measure actual liquidity or spreads; study those concepts separately using dated reference material.",
           "Choose a manageable set of instruments and record what each exercise tests. No fixed study period establishes competence.",
-          "Read the instrument's guide page before the first practice order so you know what typically moves it.",
+          "Use the linked educational notes to distinguish an instrument's definition from uncertain explanations of price changes.",
         ],
       },
       {
@@ -157,8 +157,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "Stocks: fractional ownership of a listed company; move on earnings, guidance, sector rotation and rates.",
           "ETFs: funds with stated holdings and objectives. Diversification, concentration, leverage and product structure affect risk.",
-          "Crypto: 24/7 markets with no closing bell, high volatility and a strong link to overall market liquidity.",
-          "Forex: relative pricing of two currencies; driven by rate differentials, inflation prints and risk appetite.",
+          "Crypto: digital assets traded on venues with varying operating schedules, liquidity and risks. No fixed volatility or price relationship is implied.",
+          "Forex: relative pricing of two currencies; central-bank announcements, economic data and other conditions are possible research topics.",
           "Commodities: exposures linked to physical goods, supply, demand and seasonal conditions. Company earnings and equity prices can also have seasonal influences.",
         ],
       },
@@ -176,7 +176,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "What the practice portfolio tracks",
         p: [
-          "The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser's history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.",
+          "The portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus eligible recorded transaction history. Guest records live in local storage. Signed-in cash, positions and server-recorded transactions can restore when the service is available; clearing browser data does not delete that account copy. Earlier guest records and journals remain browser-held.",
           "Beyond raw P&L, the page calculates fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. These summarize recorded outcomes and exposures that can help you review your practice process. The chart can include generated history; it is not a verified sequence of account observations.",
         ],
       },
@@ -186,7 +186,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "Compare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.",
           "Maximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.",
           "A short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.",
-          "If one position drives most of the return, you learned about that position, not about your method.",
+          "If one position contributes most of a measured result, that observation alone cannot establish the effect of a method.",
         ],
       },
       {
@@ -282,7 +282,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "What the leaderboard shows",
         p: [
-          "All public practice profiles can appear without a minimum trade count. Comparable portfolios receive numbered practice ranks after their first server-recorded trade, ordered by simulated return. Unranked members appear separately. New accounts start private and may opt in to public visibility from their profile. Values use a $100,000 virtual starting balance and display quote freshness and simulation status.",
+          "Public practice profiles can appear without a minimum trade count. The current board requests up to 500 current member records. Comparable portfolios receive numbered practice ranks after their first server-recorded trade, ordered by simulated return. Unranked members appear separately. New accounts start private and may opt in to public visibility from their profile. Values use a $100,000 virtual starting balance and display quote freshness and simulation status.",
           "There is no prize, no fee and no real money involved. Use the scoreboard as a prompt to review exposure, costs and assumptions; rank alone does not measure a reliable method.",
         ],
       },
@@ -290,7 +290,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "How to read a ranking without fooling yourself",
         list: [
           "A large return over a handful of trades is insufficient evidence of skill; inspect exposure and the full record.",
-          "Compare drawdown alongside return — a 60% gain that survived a 40% drawdown is a fragile method.",
+          "Compare drawdown alongside return where comparable records exist. Neither statistic alone measures method reliability.",
           "Short windows can hide adverse paths and sample uncertainty. Compare consistent periods before drawing a conclusion.",
           "Nobody's practice ranking is a recommendation to copy their trades.",
         ],
@@ -434,8 +434,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Using a daily habit to support review",
         list: [
-          "Skill in trading comes from repetition and review, and both need frequency.",
-          "A small daily task is easier to sustain than a weekly marathon session.",
+          "Review the reasoning and arithmetic when it is useful; no particular frequency establishes skill.",
+          "A short exercise is optional. Choose a study interval that fits your schedule.",
           "Streaks make the boring parts — journaling, reviewing, sizing — habitual.",
           "After a missed day, resume when your schedule allows; a streak is a participation aid, not a skill grade.",
         ],
@@ -453,7 +453,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Community reviews",
         p: [
-          "This page collects visitor-submitted feedback about the practice simulator. New submissions remain private pending moderation; approved reviews may appear publicly, including criticism. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
+          "This page collects visitor-submitted feedback about the practice simulator. New submissions are not publicly displayed while awaiting moderation; approved reviews may appear publicly, including criticism. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
           "Signed-in visitors can like or unlike reviews once per account. Like totals are public; individual liker identities are private. Replies from the site owner are labelled separately from visitor feedback.",
           "A visible rating summarises the submissions currently displayed; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
         ],
@@ -462,7 +462,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "What we do not do",
         list: [
           "We do not pay for reviews or offer anything in exchange for one.",
-          "We do not delete negative reviews that are honest about the product.",
+          "Critical reviews can be approved under the same moderation process; the displayed sample does not establish how every submission was handled.",
           "Visitor reviews and leaderboards concern simulated activity; they are not independent evidence of actual investment skill, performance or income.",
         ],
       },
@@ -479,7 +479,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "How a practice duel works",
         p: [
           "Create an invite link and send it to a friend. Both starting values are recorded when the invitation is accepted; the values can differ. The page shows a 30-day countdown and compares server-recorded simulated percentage changes. Final scores use trades and the last cached valuation quotes available at the deadline and are then frozen. Older client-summary duels are labelled legacy because reliable final values cannot be recovered.",
-          "Nothing is wagered and nothing is won. There is no entry fee, no prize pool and no real money at any point — this is a study device that uses mild competition to make daily practice stick.",
+          "Nothing is wagered and nothing is won. There is no entry fee, no prize pool and no real money at any point — this is an optional comparison of simulated records; participation is not required and no improvement in study habits is established.",
         ],
       },
       {

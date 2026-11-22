@@ -83,3 +83,17 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+const finalUtilityPaths = ["/", "/trade", "/markets", "/portfolio", "/start", "/learn", "/learn-trading-guide", "/leaderboard", "/ai-mentor", "/daily", "/practice", "/newsletter", "/reviews", "/challenge"];
+for (const path of finalUtilityPaths) {
+  assert.ok(routes.some(route => route.path === path && !route.noindex), path + ": publisher route retained");
+  assert.ok(content.get(path)?.sections.length, path + ": publisher notes retained");
+}
+const publicBoardCopy = JSON.stringify(content.get("/leaderboard"));
+assert.match(publicBoardCopy, /up to 500/);
+assert.match(publicBoardCopy, /country if supplied/);
+assert.match(publicBoardCopy, /new leaderboard requests/);
+assert.match(JSON.stringify(content.get("/portfolio")), /server-recorded transactions can restore/);
+assert.match(JSON.stringify(content.get("/markets")), /generated practice price/);
+assert.match(JSON.stringify(content.get("/daily")), /target schedule is not a publication guarantee/);
+console.log("PASS application publisher disclosure scope");

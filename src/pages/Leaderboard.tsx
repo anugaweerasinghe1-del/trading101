@@ -57,7 +57,7 @@ const LEADERBOARD_FAQS = [
   {
     question: "How do I climb the leaderboard?",
     answer:
-      "Every public member appears, including accounts with no trades yet. Ranked members appear first in return-rank order; unranked members follow, ordered by practice activity. Comparable ranked portfolios receive a rank after their first server-recorded trade, calculated from simulated return against a $100,000 virtual starting balance. Ranks and display order update automatically when this page refreshes. Previous activity never changes a return rank. A rank is not evidence of real-money skill.",
+      "Public members, including accounts with no trades yet, are eligible to appear. The current board requests up to 500 records. Ranked members appear first in return-rank order; unranked members follow, ordered by practice activity. Comparable ranked portfolios receive a rank after their first server-recorded trade, calculated from simulated return against a $100,000 virtual starting balance. Ranks and display order update automatically when this page refreshes. Previous activity never changes a return rank. A rank is not evidence of real-money skill.",
   },
   {
     question: "Do I need an account to compete?",
@@ -426,7 +426,7 @@ export default function Leaderboard() {
                   <h2 className="text-lg font-semibold mt-1">Learn from how people practise</h2>
                   <p className="mt-2 text-sm text-muted-foreground max-w-2xl">These are educational practice results, not evidence of real-money investing skill. Ranked members have server-recorded simulated trades; unranked members are shown separately.</p>
                   {!loading && !loadError && <p className="mt-2 text-sm font-medium" role="status">{rows.length} public members · {rankedMemberCount} with return ranks · {learningMemberCount} learning members</p>}
-                  <p className="mt-1 text-xs text-muted-foreground">Position numbers include every public member. They are not verified simulated-return ranks. Private accounts never appear.</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Position numbers describe the public member records returned to this board. They are not verified simulated-return ranks. Private accounts never appear.</p>
                 </div>
                 <div className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 px-4 sm:px-6 py-3 text-xs font-semibold text-muted-foreground border-b bg-muted/20">
                   <span>Position</span><span>Member</span><span className="text-right">Sim. return</span><span className="text-right">Trades</span>
@@ -474,7 +474,7 @@ export default function Leaderboard() {
                 </div>}
                 <details className="border-t border-border px-4 sm:px-6 py-4 text-sm text-muted-foreground">
                   <summary className="cursor-pointer font-medium text-foreground">How are practice returns and rankings calculated?</summary>
-                  <p className="mt-3 leading-relaxed">The Position column counts all public members, including people who have not traded. It is separate from verified return ranking. Return compares the marked simulated portfolio value against a $100,000 virtual starting balance. A rank is available after the first server-recorded trade in the current comparable practice cycle. Positions may use live, delayed, cached or simulated reference prices. The percent shown does not account for the many risks and frictions of real trading.</p>
+                  <p className="mt-3 leading-relaxed">The Position column counts public members in the returned list, including people who have not traded. It is separate from verified return ranking. Return compares the marked simulated portfolio value against a $100,000 virtual starting balance. A rank is available after the first server-recorded trade in the current comparable practice cycle. Positions may use live, delayed, cached or simulated reference prices. The percent shown does not account for the many risks and frictions of real trading.</p>
                   <p className="mt-2">Previous browser-reported results and head-to-head duels are available in separate tabs. Trade history appears on a public profile only when the member has independently opted in.</p>
                 </details>
               </section>

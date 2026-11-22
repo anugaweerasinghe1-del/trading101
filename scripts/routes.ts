@@ -193,7 +193,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Practice Markets — Stocks, Crypto, ETFs, Forex | TradeHQ",
     description: `Browse 170 simulated markets across stocks, crypto, ETFs, forex and commodities. Practice trading with ${BALANCE} virtual cash — free, no signup.`,
     h1: "Markets Overview",
-    summary: `Browse 170 simulated markets across major asset classes. Explore movers, sentiment-style indicators and sector groupings, then practise with ${BALANCE} virtual cash. Data may be simulated or delayed and is for education only.`,
+    summary: `Browse 170 simulated markets across major asset classes. Explore movers, sentiment-style indicators and sector groupings, then practise with ${BALANCE} virtual cash. This page uses generated display data for education, not live market observations.`,
     priority: "0.9",
     changefreq: "daily",
   });
