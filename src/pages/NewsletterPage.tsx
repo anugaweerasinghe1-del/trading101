@@ -48,12 +48,12 @@ export default function NewsletterPage() {
           onClick={execute} className="rounded-xl bg-primary px-6 py-3 text-primary-foreground disabled:opacity-50">
           {busy ? "Processing…" : confirm ? "Confirm my subscription" : "Unsubscribe"}
         </button>}
-        {!token && <p className="text-sm text-destructive">Your link is missing a valid token.</p>}
+        {!/^[a-f0-9]{64}$/.test(token) && <p role="alert" className="text-sm text-destructive">This link is missing a valid token. Check the original email or contact TradeHQ.</p>}
         {status && <p role="status" className="text-foreground">{status}</p>}
         <Link to="/" className="block text-primary underline text-sm">Return to TradeHQ</Link>
       </section> : <>
         <h1 className="text-4xl font-semibold mb-5">TradeHQ Newsletter</h1>
-        <p className="text-muted-foreground mb-8">One genuinely useful financial-literacy lesson every week. Written for beginners. Each issue stands alone, without visiting the site.</p>
+        <p className="text-muted-foreground mb-8">Beginner-friendly financial-literacy lessons, intended weekly and subject to editorial approval and delivery availability. Each issue is designed to stand alone.</p>
         <NewsletterSignup prominent/>
       </>}
     </main>
