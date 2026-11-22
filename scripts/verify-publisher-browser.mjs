@@ -9,6 +9,7 @@ import { tmpdir } from "node:os";
 import { once } from "node:events";
 import { setTimeout as delay } from "node:timers/promises";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
+import { applyCourseEditorialCorrections } from "../src/lib/courseEditorialCorrections.ts";
 import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
 import { ASSETS } from "../src/lib/assets.ts";
@@ -517,7 +518,8 @@ try {
   const completedProgress = await evaluate(`localStorage.getItem('tradehq_course_progress_v1')`);
   for (const slug of Object.keys(badgeSeed.tracks)) assert.deepEqual(JSON.parse(completedProgress).tracks[slug],badgeSeed.tracks[slug],'Existing badge record remains intact');
   await send('Page.navigate',{url:origin+'/trader/me'});
-  await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[0].document.badge.name)}) && document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[1].document.badge.name)})`, 'Own profile displays both published-course badges');
+  const correctedBadgeNames = docs.map(({ document }) => applyCourseEditorialCorrections(document).badge.name);
+  await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(correctedBadgeNames[0])}) && document.querySelector('main')?.innerText.includes(${JSON.stringify(correctedBadgeNames[1])})`, 'Own profile displays both corrected published-course completion badges');
   assert.ok(await evaluate(`document.querySelector('main').innerText.includes('Options Fundamentals Completion') && document.querySelector('main').innerText.includes('Course completion: retired study track')`), 'Native and retired completion records remain visible');
   assert.equal(await evaluate(`[...document.querySelectorAll('main section')].find(s=>s.innerText.includes('PORTFOLIO VALUE'))?.innerText`),financialTiles,'Badge display does not change financial tiles');
   // The new private Trophy Cabinet must hydrate, remain noindex and preserve

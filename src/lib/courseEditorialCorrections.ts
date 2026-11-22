@@ -903,6 +903,163 @@ corrections.push(...[
   }
 ]);
 
+// Independent November 22 review: exact-text corrections, preserving later owner edits.
+corrections.push(...[
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "badge",
+      "name"
+    ],
+    "expected": "Crypto Data Specialist",
+    "replacement": "Crypto Price Data Course Completion"
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "badge",
+      "description"
+    ],
+    "expected": "Demonstrates an understanding of cryptocurrency price aggregation, volume-weighted pricing, and mock portfolio valuation.",
+    "replacement": "Records completion of the course lessons and quizzes; not proof of specialist competence or real-world trading ability."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "badge",
+      "name"
+    ],
+    "expected": "Portfolio Architect Badge",
+    "replacement": "Portfolio Mathematics Course Completion"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "badge",
+      "description"
+    ],
+    "expected": "Demonstrated proficiency in calculating spot position sizes, managing concentration risk, and rebalancing virtual asset portfolios.",
+    "replacement": "Records completion of the course lessons and quizzes; not a professional credential or evidence of investment proficiency."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      4
+    ],
+    "expected": "In paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.",
+    "replacement": "A marked holding value is its recorded virtual quantity multiplied by its selected valuation input. Total virtual portfolio equity includes all marked holdings and remaining cash. A delayed observation may postpone a displayed change; it does not remove exposure to falling prices. State the observation time and distinguish cached or fixed simulator inputs from contemporary market evidence."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      5
+    ],
+    "expected": "To maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.",
+    "replacement": "A historical close or snapshot can provide a valuation reference. It does not necessarily determine the recorded practice execution price. TradeHQ labels chart and practice price inputs separately; a delayed reference does not model an actual venue fill or its liquidity costs. Keep the valuation timestamp, recorded simulation fill and fee separate when interpreting the fictional ledger."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      5
+    ],
+    "expected": "Let us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.",
+    "replacement": "Consider two marked holdings and a virtual cash balance. In this hypothetical example the marked values are $30,000 in an equity ETF, $10,000 in a cryptocurrency and $60,000 cash, summing to $100,000. Their respective weights are 30%, 10% and 60%. These are arithmetic inputs, not recommended allocations."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "keyTakeaways",
+      2
+    ],
+    "expected": "Setting strict exposure limits and drift thresholds helps maintain an intentional risk profile.",
+    "replacement": "A hypothetical review threshold can make a worksheet comparison consistent; no universal threshold guarantees an appropriate risk profile."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "quiz",
+      2,
+      "question"
+    ],
+    "expected": "If your target weight for a token is 15% and its current weight has drifted to 27%, what should you do to manage risk?",
+    "replacement": "In a hypothetical worksheet a token weight changes from the chosen 15% target to 27%. What is a useful educational review?"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "quiz",
+      2,
+      "options",
+      2
+    ],
+    "expected": "Assess the drift threshold and consider rebalancing the position back to target",
+    "replacement": "Compare the change with the stated classroom threshold and costs, without assuming an order is required"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      0,
+      "question"
+    ],
+    "expected": "What does a trader do to correct an asset whose weight has grown too large?",
+    "replacement": "If a hypothetical worksheet specifically calls for reducing a holding by selling some of its units, which simulated order represents that reduction?"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      0,
+      "explanation"
+    ],
+    "expected": "To reduce an overweight position, you must sell a portion of the asset via a market sell order, returning the proceeds to your virtual cash balance.",
+    "replacement": "A simulated sale reduces held units and returns net virtual proceeds. A weight above a chosen target does not by itself require a transaction."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      3,
+      "question"
+    ],
+    "expected": "If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?",
+    "replacement": "In a fixed-price hypothetical exercise comparing 25% cash with a chosen 10% cash target, which action would reduce the cash share?"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      3,
+      "explanation"
+    ],
+    "expected": "To reduce excess cash and return to a 10% target, you must deploy the surplus cash by purchasing underweight assets.",
+    "replacement": "A hypothetical purchase reduces cash; the exact percentage also depends on fees and the total marked value. The chosen target is an exercise assumption, not a required action."
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;
