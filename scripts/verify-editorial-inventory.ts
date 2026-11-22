@@ -93,3 +93,14 @@ for (const route of assetGuideRoutes) {
   assert.ok(content.get(route.path)?.sections.some(section => section.h === "Worked hypothetical accounting example"));
 }
 assert.match(routes.find(route => route.path === "/how-to-trade")!.summary, /No transaction is required/);
+
+
+const strategyRoutes = routes.filter(route => route.path.startsWith("/strategy/"));
+assert.equal(strategyRoutes.length, 6);
+for (const route of strategyRoutes) {
+  const notes = content.get(route.path);
+  const example = notes?.sections.find(section => section.h === "Worked example")?.p?.join(" ") ?? "";
+  assert.ok(example.length > 80);
+  assert.doesNotMatch(example, /VWAP reclaim|bullish engulfing — buy|MACD crosses up at|after a pullback, stop/i);
+  assert.match(notes?.sections.find(section => section.h === "Scope and source limitations")?.p?.join(" ") ?? "", /Educational simulation only/i);
+}
