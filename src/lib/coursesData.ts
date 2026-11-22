@@ -471,7 +471,7 @@ const macroTrack: CourseTrack = {
     "Combine several macro signals into one written view instead of trading each release in isolation.",
   ],
   prerequisites:
-    "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself.",
+    "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Lessons link to selected official statistics, central-bank publications and index-provider documentation. Check the scope and date of each source; the links do not independently validate every claim.",
   progression:
     "Start by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations.",
   notFor:
@@ -484,7 +484,7 @@ const macroTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## What CPI actually measures",
-        "The Consumer Price Index is a monthly Bureau of Labor Statistics survey of prices paid by urban consumers for a basket of goods and services. It has two headline flavours: headline CPI (includes food and energy) and core CPI (excludes them, because they're volatile). Core readings are used to study trends, while the FOMC states its longer-run 2% inflation goal in terms of the annual change in the PCE price index.",
+        "The US Bureau of Labor Statistics publishes CPI indexes measuring changes in consumer prices over time using sampled prices and expenditure weights. This lesson focuses on the all-urban-consumers index (CPI-U) and its all-items and all-items-less-food-and-energy measures, often called headline and core CPI. Core readings are used to study trends, while the FOMC states its longer-run 2% inflation goal in terms of the annual change in the PCE price index.",
         "## The release mechanics",
         "Check the current BLS release calendar for CPI timing; scheduled releases are generally at 8:30 AM Eastern. Market reactions depend on expectations and other information. No fixed first-minute percentage move or single class of participant is established by this lesson.",
         "## Consensus, surprise and market reaction",
@@ -502,10 +502,13 @@ const macroTrack: CourseTrack = {
       sources: [
         { label: "BLS — CPI", url: "https://www.bls.gov/cpi/" },
         { label: "FRED — CPI-U", url: "https://fred.stlouisfed.org/series/CPIAUCSL" },
+        { label: "BLS — CPI definitions and limitations", url: "https://www.bls.gov/cpi/questions-and-answers.htm" },
+        { label: "BLS — CPI release calendar", url: "https://www.bls.gov/schedule/news_release/cpi.htm" },
+        { label: "Federal Reserve — PCE inflation goal", url: "https://www.federalreserve.gov/economy-at-a-glance-inflation-pce.htm" },
       ],
       quiz: [
         { question: "The Fed's 2% longer-run inflation goal is measured using:", options: ["Headline CPI", "Core CPI", "PCE price index", "PPI"], correctAnswer: 2, explanation: "The FOMC states its 2% longer-run inflation goal in terms of the annual change in the PCE price index." },
-        { question: "CPI is released at:", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "8:30 AM Eastern." },
+        { question: "What release time is generally listed on the BLS CPI release calendar?", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "The published calendar generally lists 8:30 AM Eastern. Consult the current calendar because schedules can change." },
         { question: "What distinguishes core CPI from headline CPI?", options: ["Core is always higher", "Core excludes food and energy", "Headline CPI is not reported", "Core predicts future inflation"], correctAnswer: 1, explanation: "Core CPI excludes food and energy, whose prices can be volatile. It offers one view of underlying inflation; headline CPI covers the full specified basket. Neither series alone establishes future inflation." },
         { question: "A CPI result above one survey’s median forecast establishes:", options: ["The next stock return", "A difference from that specified forecast", "A guaranteed rate increase", "Which participant moved the market"], correctAnswer: 1, explanation: "A forecast difference alone does not identify market participants or determine the next price move." },
       ],
@@ -519,7 +522,7 @@ const macroTrack: CourseTrack = {
         "## The mandate",
         "The Federal Reserve conducts monetary policy under statutory goals that include maximum employment and stable prices. The FOMC states a 2% longer-run inflation goal measured by the annual change in the PCE price index and considers a wide range of economic information when making decisions.",
         "## The eight-meeting cycle",
-        "The Federal Open Market Committee (FOMC) schedules eight regular meetings a year and can hold additional meetings when needed. A policy statement follows each regular meeting, and the Chair holds a press briefing after each meeting. Economic projections are discussed four times a year.",
+        "The Federal Open Market Committee (FOMC) schedules eight regular meetings a year and can hold additional meetings when needed. In 2026, regular policy-setting meetings have been followed by a policy statement and Chair press conference, with four scheduled projection releases. The Federal Reserve's November 12, 2026 revised tentative 2027 calendar designates October 26–27 as a strategy-only meeting; a policy decision is not scheduled for that meeting. Use the current official calendar for meeting types, statements and projection dates.",
         "## Market pricing of Fed decisions",
         "The CME FedWatch Tool converts federal-funds futures prices into implied probabilities for possible policy outcomes. Those probabilities describe market pricing, not certainty. Market reactions depend on the decision, accompanying statement, economic outlook and what participants had already expected.",
         "## Reading the statement vs the presser",
@@ -530,17 +533,18 @@ const macroTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "The Fed pursues its statutory employment and price-stability goals; the FOMC states a 2% longer-run PCE inflation goal.",
-        "FOMC schedules 8 regular meetings a year; economic projections are discussed four times a year.",
+        "The FOMC schedules eight regular meetings a year; meeting types and projection release schedules can change. The revised tentative 2027 calendar includes a strategy-only meeting.",
         "CME FedWatch shows futures-implied probabilities, not certain outcomes.",
         "The press conference can add information beyond the written statement.",
       ],
       sources: [
         { label: "Federal Reserve — FOMC", url: "https://www.federalreserve.gov/monetarypolicy/fomc.htm" },
+        { label: "Federal Reserve — revised tentative 2027 FOMC schedule (November 12, 2026)", url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm" },
         { label: "Federal Reserve — projections and participant policy assessments (September 2026)", url: "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm" },
         { label: "CME — FedWatch", url: "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" },
       ],
       quiz: [
-        { question: "How many FOMC meetings per year?", options: ["4", "6", "8", "12"], correctAnswer: 2, explanation: "Eight scheduled." },
+        { question: "How many regularly scheduled FOMC meetings are ordinarily planned per year?", options: ["4", "6", "8", "12"], correctAnswer: 2, explanation: "Eight regularly scheduled meetings are ordinarily planned; extra meetings are possible, and not every scheduled meeting is necessarily a policy-setting meeting." },
         { question: "Fed's dual mandate:", options: ["Low rates + growth", "Max employment + price stability", "Full employment + stock gains", "Low inflation + strong dollar"], correctAnswer: 1, explanation: "Set by Congress." },
         { question: "The 'dot plot' shows:", options: ["Historical rates", "Each participant's assessment of appropriate policy", "Balance sheet", "Sentiment"], correctAnswer: 1, explanation: "The dots record individual participants’ assessments of an appropriate policy path, not only voting members and not a Committee promise." },
         { question: "FedWatch derives probabilities from:", options: ["Analyst surveys", "Fed funds futures pricing", "Twitter", "Reuters polls"], correctAnswer: 1, explanation: "Fed funds futures embed implied rate probabilities." },
@@ -553,17 +557,17 @@ const macroTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## What the yield curve is",
-        "The yield curve plots the yield on US Treasury securities across maturities — from 3 months out to 30 years. In normal times it's upward-sloping: you get paid more for lending longer. When short-term yields exceed long-term yields, the curve is inverted.",
-        "## Why inversion signals recession",
+        "A Treasury yield curve describes yields across maturities at a stated time. The US Treasury currently publishes daily estimated par yields for maturities from one month through thirty years. An upward-sloping curve has higher longer-term yields than shorter-term yields; a selected spread is inverted when the shorter-term yield exceeds the longer-term yield. The shape can vary over time and across maturity pairs.",
+        "## Why inversion can indicate recession risk",
         "An inverted curve can reflect expectations for slower growth, lower future policy rates, or changing term premia. Historically, commonly watched Treasury-curve inversions have often preceded US recessions, but the lead time varies and the relationship is not a deterministic forecast.",
         "## The 10Y-2Y vs 10Y-3M",
-        "The linked New York Fed model uses the ten-year minus three-month Treasury yield spread to estimate a probability for a stated future horizon. The ten-year minus two-year spread is a different series. Model probabilities depend on the model and sample and are not certain outcomes; the two spreads need not invert on the same date.",
+        "The linked New York Fed research model uses the ten-year minus three-month Treasury yield spread to estimate recession probability twelve months ahead; the researchers explicitly distinguish these estimates from official Federal Reserve forecasts. The ten-year minus two-year spread is a different series. Model probabilities depend on the model and sample and are not certain outcomes; the two spreads need not invert on the same date.",
         "## Trading around the curve",
         "The curve is a slow-moving macro indicator. Treat it as one piece of economic context rather than as an intraday timing tool or an automatic instruction to change a portfolio.",
         DISC,
       ],
       keyTakeaways: [
-        "The yield curve is normally upward-sloping.",
+        "An upward-sloping curve has higher longer-term yields than shorter-term yields; curve shapes can vary.",
         "Inversions have historically been associated with elevated recession risk, with timing that varies across cycles.",
         "The linked NY Fed recession model uses the ten-year minus three-month Treasury yield spread.",
         "Use the curve as one macro indicator alongside other evidence.",
@@ -571,6 +575,7 @@ const macroTrack: CourseTrack = {
       sources: [
         { label: "NY Fed — Yield Curve Recession Probability", url: "https://www.newyorkfed.org/research/capital_markets/ycfaq" },
         { label: "FRED — T10Y2Y", url: "https://fred.stlouisfed.org/series/T10Y2Y" },
+        { label: "US Treasury — daily par yield curve and methodology", url: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=yield" },
       ],
       quiz: [
         { question: "Inverted curve =", options: ["Short < long", "Short > long", "Flat", "Negative yields"], correctAnswer: 1, explanation: "Short-term exceeds long-term." },
@@ -606,7 +611,7 @@ const macroTrack: CourseTrack = {
         "Dollar debt exposure depends on the borrower's income currency and hedges.",
       ],
       sources: [
-        { label: "ICE — US Dollar Index Composition", url: "https://www.ice.com/insights/indexation-and-etfs/managing-us-dollar-risk-in-uncertain-times" },
+        { label: "ICE — US Dollar Index Composition", url: "https://www.ice.com/insights/indexation-and-etfs/managing-us-dollar-risk-in-uncertain_times" },
         { label: "Federal Reserve — Dollar Appreciation and Corporate Profits (2015)", url: "https://www.federalreserve.gov/econresdata/notes/ifdp-notes/2015/how-much-has-dollar-appreciation-affected-us-corporate-profits-20150717.html" },
         { label: "BIS — Exchange Rates and Financial Conditions in EMEs (2023)", url: "https://www.bis.org/publications/bulletin-79-lessons-recent-experiences-exchange-rates-capital-flows-and-financial-conditions-emes" },
         { label: "FRED — Broad Trade-Weighted US Dollar Index", url: "https://fred.stlouisfed.org/series/DTWEXBGS" },
@@ -630,7 +635,7 @@ const macroTrack: CourseTrack = {
         "## Building a personal dashboard",
         "FRED provides economic time series and links to their sources and releases. Start a practice dashboard by selecting a few series relevant to a specific question, then record each series' units, frequency, observation date and release date. Check revisions and definitions before comparing values. A dashboard is an aid to study; no measured percentage of useful information or advantage over other traders is established here.",
         "## The weekly ritual",
-        "For a hypothetical study, choose a review date and record selected yields, exchange rates and price indices. Keep observation dates separate from release dates: GDP is not measured weekly, and later revisions can change the growth story. Record what was actually available at the time. Comparing a later revised series with an earlier trading decision can introduce look-ahead bias.",
+        "For a hypothetical study, choose a review date and record selected yields, exchange rates and price indices. Keep observation dates separate from release dates: GDP is not measured weekly, and later revisions can change the growth story. Record what was actually available at the time. Later revised data can introduce look-ahead bias in a historical analysis; ALFRED archives data vintages where available.",
         "## Don't over-trade macro",
         "A macro label cannot determine an appropriate position size or entry time. Scheduled releases can affect prices quickly even when the underlying economic series changes slowly. Compare alternative explanations and unfavorable cases; a dashboard neither proves causation nor guarantees investment outcomes.",
         DISC,
@@ -643,6 +648,7 @@ const macroTrack: CourseTrack = {
       ],
       sources: [
         { label: "FRED", url: "https://fred.stlouisfed.org/" },
+        { label: "St. Louis Fed — ALFRED archival data vintages", url: "https://fred.stlouisfed.org/docs/api/fred/alfred.html" },
         { label: "BEA — GDP", url: "https://www.bea.gov/data/gdp/gross-domestic-product" },
         { label: "BLS — Consumer Price Index", url: "https://www.bls.gov/cpi/" },
       ],
