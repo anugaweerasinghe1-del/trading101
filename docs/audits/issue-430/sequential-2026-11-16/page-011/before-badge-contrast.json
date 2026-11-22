@@ -1,0 +1,131 @@
+{
+  "scope": "Actual light-theme public UI with explicitly synthetic guest streak14. Background sampled adjacent to text; no account or real completion history.",
+  "rows": [
+    {
+      "width": 390,
+      "atUTC": "2026-11-19T01:59:57.256138+00:00",
+      "labels": [
+        {
+          "index": 0,
+          "css": {
+            "text": "SPARK",
+            "color": "rgb(251, 191, 36)",
+            "opacity": "1",
+            "fontSize": "10px",
+            "fontWeight": "700",
+            "textShadow": "none"
+          },
+          "box": {
+            "x": 62,
+            "y": 458.28125,
+            "width": 26,
+            "height": 15
+          },
+          "sampledBackground": [
+            189,
+            180,
+            164
+          ],
+          "compositedText": [
+            251,
+            191,
+            36
+          ],
+          "contrast": 1.2298817927348593
+        },
+        {
+          "index": 4,
+          "css": {
+            "text": "LEGEND",
+            "color": "rgba(23, 30, 43, 0.5)",
+            "opacity": "1",
+            "fontSize": "10px",
+            "fontWeight": "700",
+            "textShadow": "none"
+          },
+          "box": {
+            "x": 302,
+            "y": 446.28125,
+            "width": 26,
+            "height": 15
+          },
+          "sampledBackground": [
+            239,
+            239,
+            238
+          ],
+          "compositedText": [
+            131,
+            134,
+            140
+          ],
+          "contrast": 3.1720590688204577
+        }
+      ],
+      "screenshot": "before-badge-contrast-390.png"
+    },
+    {
+      "width": 1440,
+      "atUTC": "2026-11-19T01:59:47.114875+00:00",
+      "labels": [
+        {
+          "index": 0,
+          "css": {
+            "text": "SPARK",
+            "color": "rgb(251, 191, 36)",
+            "opacity": "1",
+            "fontSize": "10px",
+            "fontWeight": "700",
+            "textShadow": "none"
+          },
+          "box": {
+            "x": 278,
+            "y": 460.84375,
+            "width": 140,
+            "height": 15
+          },
+          "sampledBackground": [
+            207,
+            198,
+            181
+          ],
+          "compositedText": [
+            251,
+            191,
+            36
+          ],
+          "contrast": 1.0146547941733632
+        },
+        {
+          "index": 4,
+          "css": {
+            "text": "LEGEND",
+            "color": "rgba(23, 30, 43, 0.5)",
+            "opacity": "1",
+            "fontSize": "10px",
+            "fontWeight": "700",
+            "textShadow": "none"
+          },
+          "box": {
+            "x": 1022,
+            "y": 444.84375,
+            "width": 140,
+            "height": 15
+          },
+          "sampledBackground": [
+            236,
+            236,
+            236
+          ],
+          "compositedText": [
+            130,
+            133,
+            140
+          ],
+          "contrast": 3.1279952553901396
+        }
+      ],
+      "screenshot": "before-badge-contrast-1440.png"
+    }
+  ]
+}

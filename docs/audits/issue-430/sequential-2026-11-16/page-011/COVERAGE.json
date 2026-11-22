@@ -1,0 +1,43 @@
+{
+  "pageId": "STRICT-0011",
+  "url": "https://www.thetradehq.com/daily",
+  "pageStatus": "PARTIAL-REVIEW",
+  "strictPageClosure": false,
+  "closureCredit": 0,
+  "sourceRevision": "3ba72a8d91d4649e22da0b1e88d2b11bbc2a118b",
+  "firstPass": 795,
+  "secondPass": 795,
+  "quickExerciseGroups": 30,
+  "quickFirstPass": 30,
+  "quickSecondPass": 30,
+  "bonusGroupsReviewed": 8,
+  "deepQuestionGroupsReviewed": 500,
+  "publishedDeepExercises": 50,
+  "publishedDeepQuestions": 500,
+  "findings": [
+    "STRICT-DAILY-001",
+    "STRICT-DAILY-002",
+    "STRICT-DAILY-003",
+    "STRICT-DAILY-004",
+    "STRICT-DAILY-005",
+    "STRICT-DAILY-006"
+  ],
+  "rejectedFalsePositives": [
+    "STRICT-DAILY-FP-001"
+  ],
+  "activePR": 486,
+  "nextAction": "All 50 published deep cases/500 questions have two substantive text reads, alongside 30 quick/eight bonus units. Next: publisher/framework reconciliation starting at production484-final-copy-readback.json#/rows/0/notes/0 against current live/code output, then complete control/date/conditional/source/citation/media and page-wide eligibility reconciliation. P11 remains partial; no strict closure or P12 credit.",
+  "scope": "A quick quiz unit includes every label, context, rationale and insight. Counts are coherent reviewed units, not individual sentences or unique paragraphs. Extraction/bank publication does not prove editorial completion.",
+  "bonusFirstPass": 8,
+  "bonusSecondPass": 8,
+  "deepQuestionGroupsSecondRead": 500,
+  "deepExercisesSubstantivelyRead": 50,
+  "pendingDeepExercises": 0,
+  "candidateHead": "a1bba2076cca871edbf4b6e29d3ca6ba4d8f949e",
+  "candidateStatus": "FIXED-RECHECKED",
+  "confirmedProductDefects": 6,
+  "productionVerified": 6,
+  "releaseReceipt": "RELEASE-486.json",
+  "latestApplicationRelease": "89b614c702f4f432131cf0fbd2672f2b6096f8ec",
+  "confirmedButNotProductionVerified": []
+}

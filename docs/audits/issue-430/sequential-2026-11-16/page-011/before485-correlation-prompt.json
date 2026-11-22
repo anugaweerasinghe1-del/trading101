@@ -1,0 +1,46 @@
+{
+  "atUTC": "2026-11-19T03:03:11.605729+00:00",
+  "rows": [
+    {
+      "width": 390,
+      "theme": "light",
+      "controlledDate": "2026-10-17",
+      "origin": "https://www.thetradehq.com",
+      "title": "Correlation can change when you need it",
+      "prompt": "Does three earlier observations establish a permanent correlation?",
+      "options": [
+        "Yes; three is always enough",
+        "Yes; opposite moves guarantee independence",
+        "No; the sample and period are limited\nCorrect answer"
+      ],
+      "feedback": "That\u2019s right.\n\nCorrelation is a sample-dependent statistic, not a fixed contract between assets. Three observations supply very little evidence, and a relationship estimated in one period may not hold in another.",
+      "rawBankPrompt": "Does three earlier observations establish a permanent correlation?",
+      "snapshotPrompt": "Does three earlier observations establish a permanent correlation?",
+      "savedAnswers": [
+        2
+      ],
+      "beforeStorage": null
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "controlledDate": "2026-10-17",
+      "origin": "https://www.thetradehq.com",
+      "title": "Correlation can change when you need it",
+      "prompt": "Does three earlier observations establish a permanent correlation?",
+      "options": [
+        "Yes; three is always enough",
+        "Yes; opposite moves guarantee independence",
+        "No; the sample and period are limited\nCorrect answer"
+      ],
+      "feedback": "That\u2019s right.\n\nCorrelation is a sample-dependent statistic, not a fixed contract between assets. Three observations supply very little evidence, and a relationship estimated in one period may not hold in another.",
+      "rawBankPrompt": "Does three earlier observations establish a permanent correlation?",
+      "snapshotPrompt": "Does three earlier observations establish a permanent correlation?",
+      "savedAnswers": [
+        2
+      ],
+      "beforeStorage": null
+    }
+  ],
+  "scope": "Actual URL with controlled client date selecting an already published fictional case; disposable guest storage only. No bank publication or actual account operation."
+}

@@ -1,0 +1,24 @@
+{
+  "origin": "https://www.thetradehq.com",
+  "scope": "Actual public code in disposable guest browsers. One baseline; one explicitly injected storage-write exception, not an observed natural quota incident. All external/nonGET requests blocked.",
+  "rows": [
+    {
+      "controlledStreakWriteFailure": false,
+      "before": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+      "after": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+      "saved": "{\"current\":1,\"longest\":1,\"totalCompleted\":1,\"lastCompletedDate\":\"2026-11-19\",\"history\":[{\"date\":\"2026-11-19\",\"challengeId\":17,\"decision\":\"short\"}]}",
+      "alerts": [],
+      "reloaded": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+      "atUTC": "2026-11-19T03:09:54.980686+00:00"
+    },
+    {
+      "controlledStreakWriteFailure": true,
+      "before": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+      "after": "1\nCURRENT STREAK\n1\nPERSONAL BEST\n1\nTOTAL PLAYED",
+      "saved": null,
+      "alerts": [],
+      "reloaded": "0\nCURRENT STREAK\n0\nPERSONAL BEST\n0\nTOTAL PLAYED",
+      "atUTC": "2026-11-19T03:09:57.516975+00:00"
+    }
+  ]
+}
