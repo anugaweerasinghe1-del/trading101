@@ -27,7 +27,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   {
     slug: "sri-lanka",
     sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
-    sources: [{"label": "SEC Sri Lanka — rules and licensing", "href": "https://www.sec.gov.lk/"}],
+    sources: [{"label": "SEC Sri Lanka — regulated activities and licensing", "href": "https://www.sec.gov.lk/who-we-regulate/"}],
     country: "Sri Lanka",
     flag: "🇱🇰",
     currency: "LKR",
@@ -89,7 +89,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "Nifty 50 and Bank Nifty as the reference indices for Indian equity sentiment",
       "USD/INR, which changes the rupee equivalent of a USD-denominated amount",
       "Gold as a worksheet for distinguishing a dollar price from its rupee translation",
-      "US technology large-caps, widely followed by Indian retail investors through international platforms",
+      "US company reports as international study examples, separate from individual market access",
     ],
     practicePlan:
       "Optional study worksheet: read the linked SEBI FY22–FY24 derivatives study and record its population, dates and definition of loss. Compare a virtual share purchase with the leverage and contract obligations discussed in the futures course. Do not apply the study percentage to every investor, cash-equity holder or later period. Use the journal to distinguish observed sample results from an individual prediction; successful simulation does not validate a real-money strategy.",
@@ -102,7 +102,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   {
     slug: "philippines",
     sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
-    sources: [{"label": "Philippine SEC — eRAMP capital-market participants", "href": "https://eramp.sec.gov.ph/capital-market-participants"}],
+    sources: [{"label": "Philippine SEC — eRAMP capital-market participants", "href": "https://eramp.sec.gov.ph/capital-market-participants"}, {"label": "Philippine Stock Exchange — index definitions", "href": "https://www.pse.com.ph/indices/"}],
     country: "Philippines",
     flag: "🇵🇭",
     currency: "PHP",
@@ -137,7 +137,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   {
     slug: "pakistan",
     sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
-    sources: [{"label": "SECP — capital-market licensing", "href": "https://www.secp.gov.pk/licensing/capital-markets/"}],
+    sources: [{"label": "SECP — capital-market licensing", "href": "https://www.secp.gov.pk/licensing/capital-markets/"}, {"label": "PSX — index definitions", "href": "https://www.psx.com.pk/psx/product-and-services/indices"}],
     country: "Pakistan",
     flag: "🇵🇰",
     currency: "PKR",
@@ -163,12 +163,12 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "The KSE-100 as the headline domestic index",
       "USD/PKR as a currency-translation worksheet input for USD-denominated amounts",
       "Dated PSX constituent and sector information to distinguish index weights from a claim about what caused a move",
-      "Global oil prices, given their outsized effect on the Pakistani import bill",
+      "Global oil prices as context for a hypothetical import-cost worksheet",
     ],
     practicePlan:
       "Optional study worksheet: assume a fictional dollar-priced oil import and two hypothetical PKR-per-USD rates. Calculate the rupee cost with the dollar oil price fixed, then change the oil price while holding the exchange rate constant. This isolates two arithmetic effects rather than predicting inflation or policy. Compare the assumptions with separately dated official observations and record any differences. The exercise does not establish permission to open or fund a foreign-market account.",
     faqs: [
-      { q: "Can I use TradeHQ without a Pakistani bank account?", a: "Yes. TradeHQ never asks for any payment or bank details — it is 100% free and simulated." },
+      { q: "Can I use TradeHQ without a Pakistani bank account?", a: "A bank account or payment is not required for TradeHQ's educational simulator." },
       { q: "Do you cover PSX-listed shares?", a: "Not yet. The current catalogue focuses on US and global tickers. Check Markets for available instruments; no PSX-listed release date is confirmed." },
     ],
   },
@@ -200,13 +200,13 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     localAssets: [
       "The NGX All-Share Index as the domestic benchmark",
       "USD/NGN as a currency-translation worksheet input, separate from a measured inflation effect",
-      "Brent crude, given the weight of oil in national revenue",
+      "Brent crude as context for a hypothetical export-receipt worksheet",
       "US company reporting as study material, separate from eligibility to use an overseas provider",
     ],
     practicePlan:
       "Optional study worksheet: model a fictional USD 100 oil receipt at two hypothetical NGN-per-USD rates. Next hold the rate fixed and change the dollar receipt. Compare currency translation with a change in export proceeds. Local inflation, production volumes, fiscal decisions and costs introduce further effects, so the worksheet cannot forecast the naira or a listed company. Keep a virtual stock-order exercise separate from any real account or funding decision.",
     faqs: [
-      { q: "Is TradeHQ accessible from Nigeria?", a: "Yes. TradeHQ is a global free website. No signup, no payment, no geo-restriction." },
+      { q: "Is TradeHQ accessible from Nigeria?", a: "This guide is written for learners in Nigeria. Core guest practice requires no signup or payment when the website is available; local network and service conditions may vary." },
       { q: "Can I trade NGX-listed stocks here?", a: "Not yet. Current coverage focuses on US and global tickers." },
     ],
   },
