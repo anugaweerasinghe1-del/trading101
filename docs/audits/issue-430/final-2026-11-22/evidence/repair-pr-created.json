@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/534",
+    "number": 534,
+    "state": "open",
+    "merged": false,
+    "mergeable": false,
+    "draft": false,
+    "body": "A current published Bitcoin lesson retained a displayed-price-only sale description because its exact-text correction targeted the adjacent heading at body[6] instead of the paragraph at body[7]. Correct that index and align three related summaries with guest browser inputs versus signed-in server-selected quotes.\n\nPreserves published database documents, financial examples and quiz keys/options. The new regression uses the current approved public snapshot: it fails before the fix and passes afterward, checks SSR/bootstrap parity, idempotence and later owner-edit preservation. Local Cloudflare build and its regression suite pass. Production closure remains pending exact-head protected CI, native Cloudflare receipt and live reread. Related to #430; keep the master audit open.",
+    "title": "Fix skipped course sale disclosure and inconsistent execution summaries",
+    "base": "main",
+    "base_sha": "0e5db6f9c4ab22e0f8ed38663c484c92afa4f48b",
+    "head": "audit/430-final-2026-11-22",
+    "head_sha": "f9b5de54c0f0cfbd96bf9bebb6384b19ebfb63c2",
+    "head_repo_id": 1130435580,
+    "head_repo_full_name": "anugaweerasinghe1-del/trading101",
+    "merge_commit_sha": null,
+    "user": {
+      "login": "anugaweerasinghe1-del",
+      "name": "anugaweerasinghe1-del",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/297117529?v=4",
+      "id": 297117529
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-11-22T10:44:02Z",
+    "updated_at": "2026-11-22T10:44:02Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 1,
+    "changed_files": 3,
+    "additions": 51,
+    "deletions": 2,
+    "display_url": "https://github.com/anugaweerasinghe1-del/trading101/pull/534",
+    "display_title": "Fix skipped course sale disclosure and inconsistent execution summaries"
+  },
+  "isError": false
+}

@@ -1,0 +1,226 @@
+[
+  {
+    "claim": "Two-venue VWAP",
+    "expression": "(10*1000+11*100)/1100",
+    "calculated": "10.09090909090909090909090909",
+    "expected": "10.09090909",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Three-venue worksheet",
+    "expression": "(5*50+5.2*30+4.8*20)/100",
+    "calculated": "5.02",
+    "expected": "5.02",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "VWAP quiz",
+    "expression": "(100*10+200*13)/300",
+    "calculated": "12",
+    "expected": "12",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Delayed valuation",
+    "expression": "100*11.5",
+    "calculated": "1150.0",
+    "expected": "1150",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Comparison valuation",
+    "expression": "100*12",
+    "calculated": "1200",
+    "expected": "1200",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Valuation difference",
+    "expression": "1200-1150",
+    "calculated": "50",
+    "expected": "50",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Delayed valuation quiz",
+    "expression": "50*8",
+    "calculated": "400",
+    "expected": "400",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Cash rising comparison",
+    "expression": "80000*1.1+20000",
+    "calculated": "108000.0",
+    "expected": "108000",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Cash falling comparison",
+    "expression": "80000*.9+20000",
+    "calculated": "92000.0",
+    "expected": "92000",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Bitcoin buy fee",
+    "expression": "80000*.001",
+    "calculated": "80.000",
+    "expected": "80",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Bitcoin remaining cash",
+    "expression": "100000-80000-80",
+    "calculated": "19920",
+    "expected": "19920",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Bitcoin marked equity",
+    "expression": "19920+2*41000",
+    "calculated": "101920",
+    "expected": "101920",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Second buy cash",
+    "expression": "100000-5000*1.001",
+    "calculated": "94995.000",
+    "expected": "94995",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Sell proceeds",
+    "expression": "5100*.999",
+    "calculated": "5094.900",
+    "expected": "5094.90",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Round trip gain",
+    "expression": "5094.9-5005",
+    "calculated": "89.9",
+    "expected": "89.9",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Round trip loss",
+    "expression": "4900*.999-5005",
+    "calculated": "-109.900",
+    "expected": "-109.9",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Peak drawdown",
+    "expression": "(110000-88000)/110000",
+    "calculated": "0.2",
+    "expected": ".2",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Starting return",
+    "expression": "(88000-100000)/100000",
+    "calculated": "-0.12",
+    "expected": "-.12",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Drift weight",
+    "expression": "90/130",
+    "calculated": "69.23076923076923076923076923",
+    "expected": "69.230769",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Concentration shock",
+    "expression": ".8*.5",
+    "calculated": "0.40",
+    "expected": ".4",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "ETF units",
+    "expression": "15000/300",
+    "calculated": "50",
+    "expected": "50",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Naive buy weight",
+    "expression": "25000/99975",
+    "calculated": "25.00625156289072268067016754",
+    "expected": "25.00625156",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Exact 25 percent buy",
+    "expression": "25000/1.00025",
+    "calculated": "24993.75156210947263184203949",
+    "expected": "24993.7515621",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Fee-aware half sale",
+    "expression": "10000/.9995",
+    "calculated": "10005.00250125062531265632816",
+    "expected": "10005.00250125",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Fee-aware sixty percent sale",
+    "expression": "10000/.9994",
+    "calculated": "10006.00360216129677806684010",
+    "expected": "10006.00360216",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Two-leg fees",
+    "expression": "(10008+9992)*.001",
+    "calculated": "20.000",
+    "expected": "20",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Two-leg final cash",
+    "expression": "20000+10008*.999-9992*1.001",
+    "calculated": "19996.000",
+    "expected": "19996",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  },
+  {
+    "claim": "Two-leg equity fraction",
+    "expression": "39992/99980",
+    "calculated": "0.4",
+    "expected": ".4",
+    "result": "PASS",
+    "method": "Independent Python Decimal arithmetic; hypothetical inputs only"
+  }
+]

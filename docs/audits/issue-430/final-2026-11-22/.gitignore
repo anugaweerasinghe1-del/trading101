@@ -1,0 +1,6 @@
+# Full third-party reference text is a local read cache, not republished content.
+evidence/policies/*.txt
+evidence/music-license-source.txt
+__pycache__/
+# These bounded, reviewed test/provider logs are intentional audit evidence.
+!evidence/*.log

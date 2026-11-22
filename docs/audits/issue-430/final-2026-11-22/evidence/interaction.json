@@ -1,0 +1,174 @@
+[
+  {
+    "case": "Optional analytics rejection",
+    "width": 1280,
+    "result": "PASS",
+    "adAttempts": []
+  },
+  {
+    "case": "Keyboard Tab sample (12 steps; no full accessibility certification)",
+    "width": 1280,
+    "focus": [
+      {
+        "tag": "LI",
+        "text": "Understanding Cryptocurrency Price Feeds and Portfolio ValuationSee What’s New"
+      },
+      {
+        "tag": "A",
+        "text": "See What’s New"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Dismiss release announcement"
+      },
+      {
+        "tag": "A",
+        "text": "TradeHQ home"
+      },
+      {
+        "tag": "A",
+        "text": "Home"
+      },
+      {
+        "tag": "A",
+        "text": "Learn"
+      },
+      {
+        "tag": "A",
+        "text": "Trade"
+      },
+      {
+        "tag": "A",
+        "text": "Portfolio"
+      },
+      {
+        "tag": "A",
+        "text": "Newsletter"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "More site pages"
+      },
+      {
+        "tag": "A",
+        "text": "Daily"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Switch to light theme"
+      }
+    ],
+    "result": "PASS"
+  },
+  {
+    "case": "Hydrated shared footer external links",
+    "width": 1280,
+    "links": [
+      {
+        "url": "https://www.instagram.com/anw_008/",
+        "label": "Follow @anw_008"
+      },
+      {
+        "url": "https://www.instagram.com/anw_008/",
+        "label": "@anw_008"
+      },
+      {
+        "url": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+        "label": "Long Road Ahead by Kevin MacLeod (incompetech.com)"
+      },
+      {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "label": "Creative Commons Attribution 4.0"
+      }
+    ]
+  },
+  {
+    "case": "Optional analytics rejection",
+    "width": 360,
+    "result": "PASS",
+    "adAttempts": []
+  },
+  {
+    "case": "Keyboard Tab sample (12 steps; no full accessibility certification)",
+    "width": 360,
+    "focus": [
+      {
+        "tag": "LI",
+        "text": "Understanding Cryptocurrency Price Feeds and Portfolio ValuationSee What’s New"
+      },
+      {
+        "tag": "A",
+        "text": "See What’s New"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Dismiss release announcement"
+      },
+      {
+        "tag": "A",
+        "text": "TradeHQ home"
+      },
+      {
+        "tag": "A",
+        "text": "Daily"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Switch to light theme"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open menu"
+      },
+      {
+        "tag": "A",
+        "text": "Start Trading Free"
+      },
+      {
+        "tag": "A",
+        "text": "Explore Learning"
+      },
+      {
+        "tag": "A",
+        "text": "Follow the first-trade journey"
+      },
+      {
+        "tag": "A",
+        "text": "Explore the Practice Arena"
+      },
+      {
+        "tag": "A",
+        "text": "Start learning: Understand your first virtual trade"
+      }
+    ],
+    "result": "PASS"
+  },
+  {
+    "case": "Mobile navigation menu and More disclosure",
+    "width": 360,
+    "result": "PASS",
+    "accessibleSnapshot": "Menu role snapshot not available; expansion attribute checked"
+  },
+  {
+    "case": "Hydrated shared footer external links",
+    "width": 360,
+    "links": [
+      {
+        "url": "https://www.instagram.com/anw_008/",
+        "label": "Follow @anw_008"
+      },
+      {
+        "url": "https://www.instagram.com/anw_008/",
+        "label": "@anw_008"
+      },
+      {
+        "url": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+        "label": "Long Road Ahead by Kevin MacLeod (incompetech.com)"
+      },
+      {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "label": "Creative Commons Attribution 4.0"
+      }
+    ]
+  }
+]
