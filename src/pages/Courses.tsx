@@ -71,7 +71,7 @@ const HOW_IT_WORKS = [
 const FAQ = [
   {
     q: "Are the TradeHQ courses really free?",
-    a: "Yes. Every lesson, quiz, badge and the $100,000 practice account are free forever, with no signup and no credit card. TradeHQ is an educational simulator and does not sell trading services or investment products.",
+    a: "Yes. Every lesson, quiz, badge and the $100,000 practice account are currently free, with no signup and no credit card. TradeHQ is an educational simulator and does not sell trading services or investment products.",
   },
   {
     q: "Is this financial advice?",
@@ -266,7 +266,7 @@ export default function Courses() {
                 <BookOpen className="w-6 h-6 text-emerald-400" /> Course tracks
               </h2>
               <span className="text-xs text-muted-foreground">
-                {lessonCount} lessons · Free forever
+                {lessonCount} lessons · Free access
               </span>
             </div>
 
