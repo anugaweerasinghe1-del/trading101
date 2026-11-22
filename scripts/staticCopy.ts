@@ -208,7 +208,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Two different ways to learn here",
         p: [
-          "TradeHQ separates learning into two formats on purpose. Full courses are structured multi-lesson tracks with quizzes, cited sources and a completion badge — use them when you want to actually learn a subject end to end. Quick reads are standalone articles that answer one question well; use them when you have a specific gap to fill.",
+          "TradeHQ separates learning into two formats on purpose. Full courses organize related topics into multi-lesson tracks with quizzes, source notes and completion badges. Quick reads address narrower questions. Neither format certifies complete mastery.",
           "Both formats link to the virtual practice desk. Reading explains concepts; a simulated order can illustrate the arithmetic and interface, but the resulting virtual performance cannot validate financial competence.",
         ],
       },
@@ -356,7 +356,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "Before revealing the next scenario observation, you may write what you are trying to test or why you would prefer to observe without placing an order. Afterward, the review panel compares the recorded action with the next invented mark, the modelled fee, remaining cash and the value of any held units. A profitable fictional decision is not declared a good decision, and an unprofitable one is not automatically described as a mistake. The purpose is to examine what is known, what was assumed and how the decision affects the ledger.",
           "The first path focuses on basic cash and fee accounting, the second on the dollar effect of position quantity, and the intermediate path on distinguishing evidence from unsupported claims under changing conditions. The next step can be an existing beginner journey, a risk-management lesson or a deeper Daily Practice case. The three paths are finite and can be repeated; TradeHQ does not advertise unlimited new historical market scenarios.",
           "After completing five rounds, the review separates the value effect of fictional price changes from the virtual fees charged for buying or selling. The price effect includes changes in units still held, so it is not necessarily a realized trading result. Learners can expand a chronological record of every decision and its optional stated reason, then write a private closing reflection about what to test again. This information remains on their device.",
-          "The optional usefulness prompt lets a learner choose whether an exercise was useful, confusing or too easy. Choosing an option does not transmit it. If a learner explicitly opens the Contact page, TradeHQ can prefill an email draft that they may edit and decide whether to send. There is no automatic feedback submission or silent visitor tracking in this flow.",
+          "The optional usefulness prompt lets a learner choose whether an exercise was useful, confusing or too easy. Choosing an option does not transmit it. If a learner explicitly opens the Contact page, TradeHQ can prefill an email draft that they may edit and decide whether to send. Selecting a usefulness response does not automatically submit the response. Separate performance and optional analytics requests are described in the Privacy Policy.",
         ],
       },
       {
@@ -436,7 +436,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "Review the reasoning and arithmetic when it is useful; no particular frequency establishes skill.",
           "A short exercise is optional. Choose a study interval that fits your schedule.",
-          "Streaks make the boring parts — journaling, reviewing, sizing — habitual.",
+          "A streak counts participation; it does not establish that a particular study habit has formed.",
           "After a missed day, resume when your schedule allows; a streak is a participation aid, not a skill grade.",
         ],
       },
@@ -455,7 +455,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         p: [
           "This page collects visitor-submitted feedback about the practice simulator. New submissions are not publicly displayed while awaiting moderation; approved reviews may appear publicly, including criticism. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
           "Signed-in visitors can like or unlike reviews once per account. Like totals are public; individual liker identities are private. Replies from the site owner are labelled separately from visitor feedback.",
-          "A visible rating summarises the submissions currently displayed; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
+          "The displayed average covers the returned sample of up to 100 visible reviews, with featured reviews first and then newest first; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
         ],
       },
       {
@@ -478,7 +478,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How a practice duel works",
         p: [
-          "Create an invite link and send it to a friend. Both starting values are recorded when the invitation is accepted; the values can differ. The page shows a 30-day countdown and compares server-recorded simulated percentage changes. Final scores use trades and the last cached valuation quotes available at the deadline and are then frozen. Older client-summary duels are labelled legacy because reliable final values cannot be recovered.",
+          "An optional practice duel requires public profiles for creation and joining. Both starting values are recorded when the invitation is accepted; the values can differ. While the applicable profiles are public, other visitors can view eligible duel records and scores, not only the invited participant. Making a profile private restricts new public access, while participants may retain access. The page shows a 30-day countdown and compares server-recorded simulated percentage changes. Final scores use trades and the last cached valuation quotes available at the deadline and are then frozen. Older client-summary duels are labelled legacy because reliable final values cannot be recovered.",
           "Nothing is wagered and nothing is won. There is no entry fee, no prize pool and no real money at any point — this is an optional comparison of simulated records; participation is not required and no improvement in study habits is established.",
         ],
       },
@@ -544,7 +544,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "TradeHQ uses AI-assisted drafting and editing for educational material and software. Content is prepared for this site rather than syndicated; AI assistance does not establish accuracy or originality by itself.",
           "Factual claims about market mechanics cite exchange, regulator or central-bank documentation where possible.",
           "Illustrative chart-pattern labels, calculated indicators and hypothetical scenarios should not be interpreted as verified price forecasts or personalised instrument recommendations.",
-          "Errors are corrected when reported; the contact page is the fastest route.",
+          "Report suspected errors through the contact page; the maintainer can review the evidence and correct verified errors.",
         ],
       },
       {

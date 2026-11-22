@@ -45,7 +45,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Calculated from past prices; a crossover can lag or reverse",
       "Does not establish future buying activity or a profitable entry"
     ],
-    studentPerspective: "The golden cross is one of the first indicators beginners learn. It compares historical averages; the crossover does not establish what price will do next.",
+    studentPerspective: "The golden cross compares historical averages; the crossover does not establish what price will do next.",
     relatedTerms: ["death-cross", "macd", "support-and-resistance"]
   },
   {
@@ -194,7 +194,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "3 min",
     category: "Market Mechanics",
     keyPoints: [
-      "False breakout above resistance that reverses quickly",
+      "A move above selected resistance followed by a reversal within the defined observation window",
       "Define the resistance area and reversal window before counting examples or claiming a frequency",
       "A later close below a chosen level can satisfy a stated retrospective rule; definitions vary"
     ],
@@ -211,7 +211,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "3 min",
     category: "Market Mechanics",
     keyPoints: [
-      "False breakdown below support that reverses sharply upward",
+      "A move below selected support followed by a rebound within the defined observation window",
       "Can cross intended exit levels; a price pattern does not establish deliberate intent",
       "A rebound can occur, but its size and cause are not established by this label"
     ],
@@ -640,7 +640,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Quote bid and ask prices under venue rules; liquidity is not guaranteed for every order",
       "A quoted spread is not guaranteed net profit",
-      "AMMs on decentralized exchanges use algorithms instead of human market makers"
+      "Automated market makers use protocol pricing rules and liquidity pools rather than conventional dealer quotes"
     ],
     studentPerspective: "Compare quoted bid and ask prices with actual executions. Spread changes can have multiple explanations and do not establish a participant’s intent or sophistication.",
     relatedTerms: ["limit-order-vs-market-order", "whale-manipulation", "slippage"]
@@ -666,7 +666,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "slippage",
     term: "Slippage",
     definition: "Slippage is the difference between a stated reference price and an actual execution price. It can be favorable or adverse; volatile conditions, limited liquidity and delays may increase it.",
-    expertDefinition: "Slippage compares an actual execution price with a defined expected or reference price. The comparison requires a side, quantity and timestamp. Paying more than the reference on a purchase is adverse; paying less is favorable. A changing quote, limited available quantity or a delay can contribute to a difference, but a price series alone cannot isolate the cause. A limit price constrains eligible fills and may leave the order unfilled. It does not guarantee both execution and a particular outcome. TradeHQ fills supported market orders at a displayed practice input and does not model actual exchange liquidity.",
+    expertDefinition: "Slippage compares an actual execution price with a defined expected or reference price. The comparison requires a side, quantity and timestamp. Paying more than the reference on a purchase is adverse; paying less is favorable. A changing quote, limited available quantity or a delay can contribute to a difference, but a price series alone cannot isolate the cause. A limit price constrains eligible fills and may leave the order unfilled. It does not guarantee both execution and a particular outcome. TradeHQ's guest orders use a browser practice input; signed-in fills use a server-selected eligible quote, which can differ from the estimate. Neither models actual exchange liquidity.",
     proTip: "Compare the expected price with the weighted average fill and include fees separately. A limit order constrains its execution price but may remain unfilled and cannot remove every execution risk.",
     difficulty: "Novice",
     readTime: "3 min",

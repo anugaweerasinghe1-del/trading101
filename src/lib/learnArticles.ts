@@ -249,7 +249,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Rebalancing and Ongoing Management",
         paragraphs: [
           "Portfolio weights can drift as holdings change in value. In a hypothetical portfolio with no cash flows, a 50% crypto gain and a 10% stock gain increase crypto's relative weight. This changes sensitivity to crypto; the calculation alone does not determine the portfolio's overall risk. Rebalancing adjusts toward selected target weights through purchases, sales or new contributions where available. Targets are study assumptions, and fees, taxes and subsequent price changes affect the comparison. Rebalancing does not guarantee smaller losses or higher returns.",
-          "Rebalancing restores selected target weights. Timing and thresholds are choices to compare, not universal quarterly or five-percent rules. Rebalancing can add costs and can reduce returns in a continuing trend, so record turnover and compare against a portfolio left unchanged.",
+          "Rebalancing adjusts holdings toward selected target weights, subject to fills, rounding and costs. Timing and thresholds are choices to compare, not universal quarterly or five-percent rules. Rebalancing can add costs and can reduce returns in a continuing trend, so record turnover and compare against a portfolio left unchanged.",
           "For an educational rebalancing worksheet, set hypothetical weights, recalculate them after invented price changes and quantify the effect of virtual transaction fees. Compare the adjusted portfolio with one left unchanged. No allocation, monthly schedule or calculated benefit should be treated as a recommendation for a real account."
         ]
       }
@@ -303,7 +303,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   },
   {
     slug: "market-orders-vs-limit-orders",
-    title: "Market Orders vs Limit Orders: Which Should You Use and When?",
+    title: "Market Orders vs Limit Orders: Price Control and Execution Uncertainty",
     summary: "Compare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.",
     metaDescription: "Compare market and limit orders, price uncertainty, slippage and unfilled orders. TradeHQ simulates market orders only; limit orders are explained conceptually.",
     sourceCheck: { date: "2026-10-31", scope: "Limited source check: market, limit and stop order definitions and execution/price uncertainty were compared with the SEC Investor.gov Types of Orders page. Hypothetical BTC prices are illustrative, not a verified market quotation." },
@@ -352,7 +352,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "Moving Averages: The Foundation of Trend Analysis",
         paragraphs: [
-          "Moving averages (MAs) smooth out price data to reveal the underlying trend. The two most common types are the Simple Moving Average (SMA), which gives equal weight to all prices in the period, and the Exponential Moving Average (EMA), which gives more weight to recent prices and reacts faster to changes.",
+          "Moving averages smooth a selected price series rather than establish a hidden or future trend. Two commonly used calculations are the simple moving average (SMA), which weights observations in its window equally, and the exponential moving average (EMA), which gives greater weight to recent observations.",
           "A 50-period average crossing above a 200-period average is called a golden cross; the reverse is a death cross. The period might mean days or another chart interval. These lagging observations describe the selected series and do not establish that a rally or decline will follow.",
           "Shorter averages such as a 9-period or 21-period EMA react differently from longer averages. A price above an average describes its position relative to that calculation, not a guaranteed trend. TradeHQ chart controls include moving-average and volume overlays; indicator examples should match the actual chart features."
         ]

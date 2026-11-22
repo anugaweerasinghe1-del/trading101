@@ -591,7 +591,7 @@ export default function Leaderboard() {
                 },
                 {
                   title: "Everyone can appear",
-                  body: "All public members appear. Accounts with no trades and imported portfolios remain unranked; comparable portfolios receive a rank after their first server-recorded trade.",
+                  body: "Public members are eligible; the board requests up to 500 records. Accounts with no trades and imported portfolios remain unranked; comparable portfolios receive a rank after their first server-recorded trade.",
                 },
                 {
                   title: "You control visibility",

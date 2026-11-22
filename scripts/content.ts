@@ -181,7 +181,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         h: "Why a glossary matters more in trading than in most subjects",
         p: [
           "Trading vocabulary is unusually hostile to beginners because the same word often carries a precise technical meaning and a loose marketing meaning at the same time. 'Leverage' is a neutral description of borrowed exposure in a textbook and a sales pitch in an advertisement. 'Support' is a level where buyers previously appeared, not a floor that holds. Reading material without pinning down which meaning is in play is how people end up confident about something they have misunderstood.",
-          "Each entry here therefore gives a plain definition first, then a longer expert explanation of the mechanics, then the practical caveat that matters when you try to use the idea. Where a concept is popular but weakly evidenced, the entry says so instead of repeating the folklore.",
+          "Each entry here therefore gives a plain definition first, then a longer educational explanation of the mechanics, then the practical caveat that matters when you try to use the idea. Where a concept is popular but weakly evidenced, the entry says so instead of repeating the folklore.",
         ],
       },
       {
