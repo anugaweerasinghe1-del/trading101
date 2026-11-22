@@ -1,3 +1,4 @@
+import "./verify-first32-reference-scope";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import React from "react";
