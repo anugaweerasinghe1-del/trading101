@@ -20,3 +20,5 @@ After that receipt, independent native HTML checks reread all three changed URLs
 The strict gate is not inferred to pass from Cloudflare success, and an absent Vercel status is not proof that visitors receive stale content. No DNS, provider, CMP or protection rule changed. Five bounded release controls pass; one remains blocked. Dated broad HTTP/browser checks in the preceding directory retain their actual SHAs.
 
 A subsequent documentation-only PR packages this continuation. Its merge/release metadata belongs in a final release appendix or its PR description; code parity must be checked so documentation publication cannot silently replace the verified application. Do not create an infinite documentation-commit/receipt cycle.
+
+The known 481-URL cohort was refreshed after native verification: 480 HTTP200 and one intentional404. All 78 profile bodies were discarded, retaining pseudonymized status-only records. The refresh records current metadata and redirect chains; old browser/indexability evidence is separately identified and is not silently advanced to the new SHA. Protected main remained `810d1a975b138331d1a55f1760fb7474ea1295a4` after collection.

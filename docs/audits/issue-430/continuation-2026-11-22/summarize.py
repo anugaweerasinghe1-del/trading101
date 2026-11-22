@@ -42,7 +42,20 @@ for url in sorted({b['url'] for b in current}):
 csvwrite('EDITORIAL-PAGE-COVERAGE.csv',coverage)
 # Existing HTTP and browser receipts are dated evidence; do not relabel their deployment SHA.
 with (OLD/'CURRENT-URL-INVENTORY.csv').open() as f:urls=list(csv.DictReader(f))
-for r in urls:r['continuationStatus']='Carried dated HTTP metadata; route topology unchanged by #536. Full technical acceptance not certified.'
+freshFile=E/'current-release-http.json'
+if freshFile.exists():
+ fresh={r['url']:r for r in json.loads(freshFile.read_text())}
+ currentViews={r['route'] for r in json.loads((E/'production-browser.json').read_text())}
+ for r in urls:
+  n=fresh[r['url']];r['priorBrowserEvidenceSha']=r['observedReleaseSha']
+  r.update(httpStatus=n['status'],observedAt=n['checkedAt'],redirectChain=json.dumps(n['redirectChain']),finalUrl=n['finalUrl'],observedReleaseSha=n['sha'])
+  for field,newfield in [('canonical','canonical'),('metaRobots','robots'),('title','title'),('description','description'),('mainHeading','h1')]:
+   if newfield in n:r[field]=n[newfield]
+  changed=r['url'].removeprefix('https://www.thetradehq.com') in currentViews
+  r['desktopStatus']=r['mobileStatus']='CURRENT_CHANGED_ROUTE_OBSERVED' if changed else 'PRIOR_BOUNDED_OBSERVATION; not rerun on current release'
+  r['continuationStatus']='Fresh known-cohort HTTP/metadata only; prior indexability/template evidence retained separately; full technical acceptance not certified.'
+else:
+ for r in urls:r['continuationStatus']='Carried dated HTTP metadata; route topology unchanged by #536. Full technical acceptance not certified.'
 csvwrite('CURRENT-URL-INVENTORY.csv',urls)
 with (OLD/'SOURCE-AND-MEDIA-LEDGER.csv').open() as f:media=list(csv.DictReader(f))
 for r in media:r['continuationStatus']='Prior bounded observation retained; not full rights or source-support closure'
