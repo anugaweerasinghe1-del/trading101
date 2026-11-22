@@ -229,7 +229,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       {
         h: `${tracks.length} bundled tracks, ${tracks.reduce((total, track) => total + track.lessons.length, 0)} bundled lessons`,
         p: [
-          "These notes describe the bundled course inventory. Additional approved courses may appear in the live catalogue and its separate course sitemap. Courses on TradeHQ are sequential tracks. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. Every lesson ends with key takeaways, cited sources and a short quiz, and each completed track awards a badge.",
+          "These notes describe the bundled course inventory. Additional approved courses may appear in the live catalogue and its separate course sitemap. Courses on TradeHQ are sequential tracks. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. The bundled lessons include key takeaways, sources and quizzes. Completion badges record participation, not professional competence.",
         ],
       },
       ...tracks.map((t) => ({
@@ -242,7 +242,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         list: [
           "Do one lesson per session and take the quiz before moving on.",
           `Practise supported spot instruments with ${BALANCE} of virtual cash. Work through options and futures contract examples in a separate worksheet.`,
-          "Re-read the key takeaways a week later; recall beats re-reading for retention.",
+          "Optionally try recalling key definitions before reviewing the notes. Choose a study interval that suits the learner; no fixed schedule is required.",
           `Nothing in these courses is a recommendation. ${DISCLAIMER}`,
         ],
       },

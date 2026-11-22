@@ -1060,6 +1060,111 @@ corrections.push(...[
   }
 ]);
 
+// Second-pass source review: explain execution/valuation boundaries and avoid competence claims.
+corrections.push(...[
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      7
+    ],
+    "expected": "A separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.",
+    "replacement": "A separate worksheet can compare hypothetical execution differences, not actual venue liquidity. TradeHQ distinguishes guest browser price inputs from signed-in server-selected eligible quotes and charges a simulated transaction fee. The estimate displayed before submission can differ from the recorded fill. Neither mode models exchange order-book priority or calibrated slippage."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "outcomes",
+      3
+    ],
+    "expected": "Value a paper-trading portfolio using real-time and snapshot price feeds",
+    "replacement": "Explain the difference between a timestamped practice valuation and a contemporaneous reference observation."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      1
+    ],
+    "expected": "To place a virtual Bitcoin market purchase, select the supported instrument and enter the intended amount. TradeHQ records the simulated transaction using its displayed practice price input, not a real exchange's executable bid or ask. The virtual cash debit includes both the purchase notional and a 0.1% simulator transaction fee. A successful simulated order increases fictional Bitcoin exposure in the account ledger rather than transferring ownership of an on-chain token. Review the recorded quantity, cash and price source after submission. These calculations are educational and cannot establish actual exchange fill quality.",
+    "replacement": "A successful virtual purchase records a fictional position and associated cash debit, including the simulated fee. Guest orders use a browser price input; signed-in orders use a server-selected eligible quote, so the earlier displayed estimate can differ from the recorded fill. No exchange order or on-chain token transfer occurs. These records illustrate accounting, not actual exchange execution quality."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      6
+    ],
+    "expected": "A virtual market sale reduces the recorded Bitcoin quantity and adds net proceeds to the remaining practice cash balance after a 0.1% sale fee. The simulator uses its displayed practice input, not an order-book fill from a real venue. A sale may be used to practise reconciling cash and positions, calculating a gain or loss, or comparing hypothetical outcomes under different prices. The calculation does not prove that comparable real liquidity would be available or that an actual sale would execute instantly. Keep virtual accounting and real market execution as different questions.",
+    "replacement": "A completed virtual sale reduces the recorded fictional holding and adds net simulated proceeds after the fee. Guest and signed-in pricing paths differ; neither represents an actual venue order-book fill. This record can illustrate a cash-ledger reconciliation but cannot establish real execution price, timing or liquidity."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      0,
+      "quiz",
+      2,
+      "options",
+      2
+    ],
+    "expected": "Instant spot market orders",
+    "replacement": "Simulated spot market orders"
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "outcomes",
+      0
+    ],
+    "expected": "Calculate exact position sizes in dollars and units based on target percentage weights.",
+    "replacement": "Explain how hypothetical portfolio values and weights relate, including the effect of fees and valuation inputs."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "outcomes",
+      1
+    ],
+    "expected": "Identify and mitigate concentration risk within a spot paper trading portfolio.",
+    "replacement": "Identify concentration and shared exposures in fictional portfolio examples."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "outcomes",
+      2
+    ],
+    "expected": "Execute systematic rebalancing using TradeHQ's virtual cash and market orders.",
+    "replacement": "Compare hypothetical account records before and after a stated allocation change."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "outcomes",
+      3
+    ],
+    "expected": "Formulate a target asset allocation plan suited for a $100,000 virtual balance.",
+    "replacement": "Distinguish a classroom allocation assumption from claims about suitability or actual risk."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "summary"
+    ],
+    "expected": "Learn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.",
+    "replacement": "Study hypothetical portfolio weights, cash-inclusive valuation and the limits of fixed-price accounting examples."
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;
