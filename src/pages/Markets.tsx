@@ -127,12 +127,12 @@ export default function Markets() {
     <>
       <Helmet>
         <title>Practice Markets — Stocks, Crypto, ETFs & Forex | TradeHQ</title>
-        <meta name="description" content="Browse 170 practice markets across stocks, crypto, ETFs, forex and commodities. Quotes may be simulated, cached or delayed. Trade with $100K virtual cash." />
+        <meta name="description" content="Browse 170 practice markets across stocks, crypto, ETFs, forex and commodities. This page uses generated display prices and changes, not live market observations." />
         <link rel="canonical" href="https://www.thetradehq.com/markets" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Practice Markets — 170 Stocks, Crypto, ETFs & Forex | TradeHQ" />
-        <meta property="og:description" content="Explore simulated, cached or delayed market data across stocks, crypto, ETFs, forex and commodities." />
+        <meta property="og:description" content="Explore generated display data across stocks, crypto, ETFs, forex and commodities." />
         <meta property="og:url" content="https://www.thetradehq.com/markets" />
         <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1731" />
@@ -140,7 +140,7 @@ export default function Markets() {
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Practice Markets — 170 Assets | TradeHQ" />
-        <meta name="twitter:description" content="Track stocks, crypto, ETFs, forex & commodities. Free market dashboard." />
+        <meta name="twitter:description" content="Explore generated practice display data. Educational only." />
         <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
       </Helmet>
 
@@ -202,7 +202,7 @@ export default function Markets() {
               <div className="bg-card rounded-xl border border-border p-3 md:p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/20">
                 <div className="flex items-center gap-2 mb-3 md:mb-4">
                   <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-profit" />
-                  <h2 className="font-semibold text-sm md:text-base">Top Gainers</h2>
+                  <h2 className="font-semibold text-sm md:text-base">Simulated gainers</h2>
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
                   {gainers.map((asset, i) => (
@@ -232,7 +232,7 @@ export default function Markets() {
               <div className="bg-card rounded-xl border border-border p-3 md:p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/20">
                 <div className="flex items-center gap-2 mb-3 md:mb-4">
                   <TrendingDown className="h-4 w-4 md:h-5 md:w-5 text-loss" />
-                  <h2 className="font-semibold text-sm md:text-base">Top Losers</h2>
+                  <h2 className="font-semibold text-sm md:text-base">Simulated losers</h2>
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
                   {losers.map((asset, i) => (
@@ -278,7 +278,7 @@ export default function Markets() {
                   {/* Table Header */}
                   <div className="hidden md:grid grid-cols-5 gap-4 px-4 py-3 bg-muted/30 border-b border-border">
                     <SortButton field="name" label="Asset" />
-                    <SortButton field="price" label="Price" />
+                    <SortButton field="price" label="Practice price" />
                     <SortButton field="change" label="Practice Change" />
                     <SortButton field="volume" label="Demo activity" />
                     <span className="text-xs text-muted-foreground">Action</span>

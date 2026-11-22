@@ -16,16 +16,15 @@ export default function HowToTrade() {
   const asset = HOWTO_ASSETS.find((a) => a.symbol === symbol?.toLowerCase());
   if (!asset) return <NotFound />;
 
-  const title = `How to Trade ${asset.fullName} (${asset.name}) — Step-by-Step Guide | TradeHQ`;
-  const description = `Learn how to trade ${asset.fullName} step-by-step with $100,000 virtual cash. Free practice account, no signup. (Educational simulation only — not financial advice.)`;
+  const title = `Learn ${asset.fullName} — Virtual Practice Guide | TradeHQ`;
+  const description = `Study ${asset.fullName} instrument mechanics, fictional accounting examples and quote limitations. Free educational worksheets; no real-money transactions.`;
   const url = `${SITE_DOMAIN}/how-to-trade/${asset.symbol}`;
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: `How to trade ${asset.fullName}`,
+    name: `Study ${asset.fullName} with a hypothetical worksheet`,
     description,
-    totalTime: "PT15M",
     step: asset.steps.map((s, i) => ({
       "@type": "HowToStep",
       position: i + 1,
@@ -52,7 +51,7 @@ export default function HowToTrade() {
         <main data-publisher-notes={`/how-to-trade/${asset.symbol}`} className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
           <header className="mb-10">
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3">{asset.type} guide</p>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">How to Trade {asset.fullName}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Learn {asset.fullName} — Virtual Practice</h1>
             <p className="mt-4 text-lg text-muted-foreground">{asset.whyTrade}</p>
             <p className="mt-3 text-sm text-muted-foreground">Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
             <Button className="mt-6" asChild>
@@ -61,8 +60,8 @@ export default function HowToTrade() {
           </header>
 
           <AIAnswerBlock
-            question={`How do you trade ${asset.fullName} step by step?`}
-            answer={`To trade ${asset.fullName}: ${asset.steps.slice(0, 3).join(" → ")} Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)`}
+            question={`What does the ${asset.fullName} virtual practice guide explain?`}
+            answer={`${asset.whyTrade} The worksheet compares fictional quantities, prices and costs; no transaction is required to study it. (Educational simulation only — not financial advice.)`}
             className="mb-6"
           />
 
@@ -96,7 +95,7 @@ export default function HowToTrade() {
           </Card>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">What actually moves {asset.fullName}</h2>
+            <h2 className="text-2xl font-semibold mb-4">Factors to distinguish when studying {asset.fullName}</h2>
             <ul className="space-y-3">
               {asset.drivers.map((d, i) => (
                 <li key={i} className="text-sm leading-relaxed text-muted-foreground flex gap-3">
@@ -136,7 +135,7 @@ export default function HowToTrade() {
             {asset.symbol === "eth" && (
               <p className="mt-3 text-sm text-muted-foreground">
                 Network concepts: <a href="https://ethereum.org/what-is-ether/" className="underline">Ethereum.org on ether</a>
-                {" and "}<a href="https://ethereum.org/gas/" className="underline">Ethereum.org on gas and fees</a>.
+                {" and "}<a href="https://ethereum.org/developers/docs/gas/" className="underline">Ethereum.org on gas and fees</a>.
               </p>
             )}
           </section>
@@ -169,7 +168,7 @@ export default function HowToTrade() {
             ]}
             faqs={[
               { question: `Can I learn to trade ${asset.fullName} for free?`, answer: `Yes. TradeHQ gives you $100,000 in virtual cash with no signup for ${asset.fullName} practice. Simulated results do not predict real returns.` },
-              { question: `How much money do I need to start trading ${asset.fullName}?`, answer: `On TradeHQ — zero. You get $100K practice capital instantly. For real trading, never start with more than you can afford to lose.` },
+              { question: `Does the ${asset.fullName} worksheet require real money?`, answer: `No. TradeHQ provides educational examples and virtual guest practice without real funds. This guide does not recommend a starting amount, establish eligibility or assess suitability for real transactions.` },
               { question: `Is trading ${asset.fullName} risky?`, answer: asset.risk },
             ]}
             faqHeading={`${asset.fullName} FAQ`}
@@ -200,8 +199,8 @@ export default function HowToTrade() {
 }
 
 export function HowToTradeIndex() {
-  const title = "How to Trade — Step-by-Step Asset Guides | TradeHQ";
-  const description = "Free step-by-step guides on how to trade Bitcoin, Ethereum, Tesla, Nvidia and more. Practise with $100K virtual cash, no signup.";
+  const title = "Asset Learning Guides — Virtual Worksheets | TradeHQ";
+  const description = "Free educational instrument guides with fictional accounting examples and quote-source limitations. No real-money transactions.";
   return (
     <>
       <Helmet>
@@ -212,8 +211,8 @@ export function HowToTradeIndex() {
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
         <main className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
-          <h1 className="text-4xl font-bold mb-2">How to Trade — Guides</h1>
-          <p className="text-muted-foreground mb-8">Pick an asset and learn step-by-step on the free $100K practice account.</p>
+          <h1 className="text-4xl font-bold mb-2">Asset Learning Guides</h1>
+          <p className="text-muted-foreground mb-8">Explore instrument definitions and fictional accounting examples. No transaction is required.</p>
           <div className="grid md:grid-cols-2 gap-4">
             {HOWTO_ASSETS.map((a) => (
               <Link key={a.symbol} to={`/how-to-trade/${a.symbol}`}>

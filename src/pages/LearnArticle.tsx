@@ -134,7 +134,7 @@ export default function LearnArticle() {
                 <h3 className="text-xl font-semibold mb-2">Ready to practice?</h3>
                 <p className="text-muted-foreground mb-4">Study what you learned with $100,000 in virtual cash. No real money is traded.</p>
                 <Link to="/trade" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold !text-black transition-opacity hover:opacity-90 shadow-[0_0_22px_hsl(168_100%_50%/0.3)]">
-                  Start Trading Free <ArrowRight className="w-4 h-4" />
+                  Open the virtual simulator <ArrowRight className="w-4 h-4" />
                 </Link>
               </section>
 
@@ -161,7 +161,7 @@ export default function LearnArticle() {
                   {
                     question: "How can I practice what I just read?",
                     answer:
-                      "Open the trading simulator with $100,000 in virtual cash and study the concepts from this article without spending real money. Provider references and practice charts have separate source labels. The educational mentor uses a built-in answer library and does not call an AI provider.",
+                      "Use the virtual simulator for supported concepts; other topics, including pending orders and unsupported indicators, are separate classroom examples. No real money is traded. Provider references and practice charts have separate source labels. The educational mentor uses a built-in answer library and does not call an AI provider.",
                   },
                   {
                     question: "What should I read next?",

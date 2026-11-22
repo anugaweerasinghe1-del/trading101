@@ -157,7 +157,7 @@ export default function About() {
               {
                 question: "Is TradeHQ free?",
                 answer:
-                  "Yes. TradeHQ is free to use, with no signup required. Every account starts with $100,000 of virtual cash.",
+                  "Yes. TradeHQ's core educational pages and guest simulator are free without signup. Optional account features require an account; the practice balance is virtual.",
               },
               {
                 question: "Does TradeHQ give financial advice?",

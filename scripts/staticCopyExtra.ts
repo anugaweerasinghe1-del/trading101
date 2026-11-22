@@ -9,10 +9,10 @@ import type { PageSection } from "./content";
 export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
   "/": [
     {
-      h: "Why practice first, honestly",
+      h: "What educational simulation can and cannot show",
       p: [
-        "The argument for a simulator is not that practice guarantees profit — it does not. It is that the cost of learning market mechanics is unavoidable, and you get to choose whether you pay it in money or in time. A beginner can practice buying and selling holdings with virtual capital, then review those decisions without risking savings. TradeHQ currently supports market orders only; it does not simulate resting limit orders or short positions.",
-        "There is a real limitation to be honest about: a simulator removes the emotional weight of losing your own money, and that weight changes behaviour. Treat practice as the place to build a repeatable process — sizing, exits, journaling, review — and expect the emotional part to still be new when real money is involved.",
+        "Fictional examples can explain market mechanics without requiring a real transaction. Practice does not guarantee profit or replace independent education. A beginner can practice buying and selling holdings with virtual capital, then review those decisions without risking savings. TradeHQ currently supports market orders only; it does not simulate resting limit orders or short positions.",
+        "A simulator does not reproduce the financial or personal consequences of a real loss. A written record can support review, but no pattern of participation establishes the quality of future decisions.",
       ],
     },
     {
@@ -38,7 +38,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       ],
     },
     {
-      h: "A practice routine that actually builds skill",
+      h: "Optional review of fictional examples",
       p: [
         "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.",
         "A sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.",
@@ -69,8 +69,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "The metrics explained in plain language",
       list: [
-        "Unrealised P&L: the difference between an open position's current marked value and its cost basis. Closing the position turns that unrealised result into realised P&L. All balances and results here remain virtual.",
-        "Realised P&L: the result of trades you have actually closed. This is the number that measures decisions you finished making.",
+        "Unrealised P&L: the difference between an open position's current marked value and its cost basis. Closing a position records realised P&L using its actual recorded proceeds and cost basis, which can differ from the earlier mark. All balances and results here remain virtual.",
+        "Realised P&L: the result of trades you have actually closed. It is an accounting result, not a measure of decision quality.",
         "Open positions in profit: the share of current open positions showing positive unrealised P&L. This is not a closed-trade win rate.",
         "Open-position P&L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.",
         "Practice maximum drawdown: the largest fall from a peak in locally stored snapshots, which can include generated hourly backfill. It is not an observed market record or proof that a strategy is survivable.",
@@ -139,8 +139,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Privacy on the leaderboard",
       list: [
         "New accounts start private. Only profiles that their owners explicitly make public show selected profile fields and simulated statistics.",
-        "Only your chosen display name and simulated statistics appear — never an email address.",
-        "You can stop publishing at any time and the entry is removed.",
+        "Public board entries may show your chosen username, country if supplied, selected virtual statistics and separately enabled eligible trophy flair. Email addresses are not displayed by the board.",
+        "Switching to private hides the entry from new leaderboard requests; already open pages reflect changes when refreshed.",
       ],
     },
     {
@@ -150,7 +150,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Is there a prize? No. There is no money, no entry fee and nothing to win.",
         "Can I see someone's trades? Only if that member independently opts in to showing recent current-cycle server-recorded practice orders on an otherwise public profile. Private journal entries and browser-only history never appear.",
         "How often does it update? Held assets are checked in the background every five minutes, with traditional instruments rotating through a limited batch. The visible board refreshes every minute. Provider delays and outages can leave older quotes; unsupported assets use fixed simulator prices.",
-        "Who appears? All public members, including accounts with no trades. Only comparable server-recorded portfolios receive practice ranks after a first trade; imported portfolios stay unranked.",
+        "Who appears? Public members, including accounts without trades, are eligible; the current board requests up to 500 records. Only comparable server-recorded portfolios receive practice ranks after a first trade; imported portfolios stay unranked.",
       ],
     },
   ],
@@ -163,7 +163,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "What is the difference between a stop-loss order and a stop-limit order, and when does each fail?",
         "My practice win rate is 60% but I am down overall — what does that imply about my exits?",
         "Why do forex pairs move on interest-rate announcements?",
-        "Walk me through how position size is calculated from account risk and stop distance.",
+        "Explain the distinction between a fictional holding's marked value and the total account value.",
       ],
     },
     {
@@ -187,7 +187,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       p: [
         "The deeper exercise develops one case across ten linked questions, so the learner can calculate an input, interpret the result and identify a limitation. Topics rotate between portfolio arithmetic, transaction costs and supported orders, price-data freshness, risk and uncertainty, and decision habits. The visuals show selected hypothetical inputs with numeric labels; they are not live market charts. Worked explanations appear after each submitted answer, including when the answer was wrong.",
         "After you finish, the case takeaway provides a review guide for checking the reasoning. Checked answers are saved on this browser. After the first saved answer, the case keeps its own snapshot if a new bank is approved while you are working. Clearing site data removes this local history; an account does not synchronize this case history to another device.",
-        "A new 50-exercise bank is prepared every two calendar months in five parts using the configured free-tier Gemini API. Each completed bank remains private and editable in the owner’s admin panel until final review and approval. If generation hits a quota limit, fails validation or awaits review, the approved bank continues rotating. Fifty exercises can therefore repeat before the next bank begins; revisits are review practice rather than a claim of brand-new daily content. The feature does not use a paid provider fallback.",
+        "The configured generation workflow targets a new 50-exercise bank every two calendar months in five parts using the configured Gemini API. A target schedule is not a publication guarantee. Each completed bank remains private and editable in the owner’s admin panel until final review and approval. If generation hits a quota limit, fails validation or awaits review, the approved bank continues rotating. Fifty exercises can therefore repeat before the next bank begins; revisits are review practice rather than a claim of brand-new daily content. The feature does not use a paid provider fallback.",
       ],
     },
     {
@@ -229,7 +229,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "What we would rather you sent us",
       p: [
         "A specific bug report or a specific content correction is worth more to the project than a rating. If a lesson is wrong, if a page renders badly on your phone, or if a term is missing from the glossary, the contact page reaches the maintainer directly and those messages are what actually change the site.",
-        "If you are considering whether to use TradeHQ at all: it costs nothing, requires no account for the core features, and holds no money. The only thing at stake is your time.",
+        "Core educational features are free and require no account or real-money deposit. Optional account and community features involve separate data processing, described in the Privacy Policy.",
       ],
     },
     {
@@ -254,14 +254,14 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "What a duel does and does not prove",
       p: [
         "A 30-day simulated result cannot separate skill from luck or predict who would lead over a year. Concentrated exposure can produce large gains or losses. Compare the stated assumptions and drawdowns without inferring a reliable future ranking.",
-        "The useful output of a duel is not the winner but the comparison of two journals covering the same market conditions. Two people who traded the same month and disagreed about what to do will each learn more from the other's reasoning than from the scoreboard.",
+        "If participants independently choose to discuss their fictional records, they can compare assumptions and limitations. No participation, ranking or journal comparison guarantees learning.",
       ],
     },
     {
       h: "Practical details",
       list: [
         "Each participant uses their own recorded starting balance; those balances can differ.",
-        "The scoreboard tracks percentage return so different activity levels stay comparable.",
+        "The scoreboard compares percentage changes from recorded starting values. Different exposure, costs and activity can limit comparability.",
         "The page shows a 30-day countdown based on the recorded duel dates.",
         "There is no fee, no stake, no prize and no real money — running a duel for money would be gambling, and this is not that.",
       ],
@@ -317,7 +317,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Education-first positioning: illustrations of market indicators or price scenarios do not constitute verified trade signals, profitable strategies or personal financial recommendations.",
         "No invented statistics, testimonials, credentials or performance figures.",
         "Numbers in lessons are worked examples and are labelled as such.",
-        "Every page states that the platform is educational and simulated.",
+        "Educational content distinguishes simulation from real financial activity; some account and utility screens do not repeat the full educational disclaimer.",
         "Corrections are made promptly when a factual error is reported.",
       ],
     },
@@ -365,7 +365,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Data you can send us, and what happens to it",
       list: [
-        "Contact messages: kept only as long as needed to answer you.",
+        "Contact messages: contact delivery and retention depend on the email services and provider settings described in the full policy.",
         "Reviews: published with your chosen display name, and removable on request.",
         "Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes and Daily reflections remain browser-specific; signed-in lessons and beginner-journey progress can sync privately between devices when online.",
         "Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start private; you can make your profile public from your profile page.",

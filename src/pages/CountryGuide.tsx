@@ -22,7 +22,7 @@ export default function CountryGuide() {
   const path = `/learn/country/${guide.slug}`;
   const locationName = countryLocationName(guide.country);
   const title = `Learn Trading in ${locationName} — Free Guide for Students in ${locationName} | TradeHQ`;
-  const description = `Free trading education for learners in ${locationName}. Practice with $100,000 virtual cash, learn how global markets work, and understand local rules from ${guide.regulator.name}. Educational simulation only — not financial advice.`;
+  const description = `Free trading education for learners in ${locationName}. Practice with $100,000 virtual cash, learn how global markets work, and find official sources for local rules. Educational simulation only — not financial advice.`;
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -69,7 +69,7 @@ export default function CountryGuide() {
           <AIAnswerBlock
             className="mb-10"
             question={`Is TradeHQ suitable for learners in ${locationName}?`}
-            answer={`Yes. TradeHQ is a free educational trading simulator accessible from ${locationName} with no required signup or payment. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. Every account starts with $100,000 in virtual cash for an educational worksheet; access does not establish eligibility for a real account. Educational simulation only — not financial advice.`}
+            answer={`TradeHQ offers free educational guest practice without signup or payment. This guide is written for learners in ${locationName}; availability can depend on location, network and service conditions. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. New practice portfolios start with $100,000 in virtual cash; access does not establish eligibility for a real account. Educational simulation only — not financial advice.`}
           />
 
           <section className="mb-10 text-sm text-muted-foreground" aria-label="Publisher and regulatory references">
@@ -100,7 +100,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-3">Why practise before you fund a real account</h2>
+            <h2 className="text-2xl font-bold mb-3">Why practise with fictional money</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">{guide.whyPractice}</p>
           </section>
 
@@ -110,7 +110,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-3">How much capital do you really need?</h2>
+            <h2 className="text-2xl font-bold mb-3">Why this guide does not recommend real-money starting amounts</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">{guide.startingCapital}</p>
           </section>
 
@@ -165,13 +165,13 @@ export default function CountryGuide() {
           <Card className="p-6 bg-gradient-to-br from-emerald-500/10 to-fuchsia-500/10 border-emerald-500/25 text-center">
             <h3 className="text-xl font-bold mb-2">Ready to practise?</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Open a free $100,000 practice account instantly — no signup, no card, no geo lock.
+              Explore a free guest practice portfolio with an initial $100,000 in virtual cash. No registration or payment needed for core guest practice.
             </p>
             <Link
               to="/trade"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition"
             >
-              Start paper trading <ArrowRight className="w-4 h-4" />
+              Open the educational simulator <ArrowRight className="w-4 h-4" />
             </Link>
           </Card>
 
@@ -224,7 +224,7 @@ export function CountryGuideIndex() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Learn trading in your country</h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Local regulator, local exchange, local tax context — plus the same free $100,000 virtual practice account.
+              Local regulatory sources, local exchanges and tax context — plus free guest practice with an initial $100,000 in virtual cash.
             </p>
           </header>
           <div className="grid md:grid-cols-2 gap-4">

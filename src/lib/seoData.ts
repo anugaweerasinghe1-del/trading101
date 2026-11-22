@@ -17,7 +17,7 @@ export interface ComparePair {
 export const COMPARE_PAIRS: ComparePair[] = [
   {
     slug: "bitcoin-vs-ethereum",
-    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital gold" },
+    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital network asset" },
     b: { symbol: "ETH", name: "Ethereum", tag: "Smart-contract platform" },
     intro: "Bitcoin and Ethereum are digital networks with different transaction and application designs. Compare their supply rules, uses and costs without treating either token as a savings plan or predicting its price.",
     verdict: "Practice comparison: contrast Bitcoin supply rules and settlement design with Ethereum execution, issuance and staking mechanics. Neither profile establishes the better investment, an assured hedge or future upside.",
@@ -71,7 +71,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "bitcoin-vs-gold",
-    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital store of value" },
+    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital network asset" },
     b: { symbol: "GLD", name: "Gold (GLD fund)", tag: "Gold fund exposure" },
     intro: "Gold and Bitcoin have different ownership, custody and market arrangements. A gold fund also differs from physical gold. Compare specified exposures over matching dates; neither a long history nor a digital supply rule guarantees a hedge.",
     verdict: "Practice comparison: contrast physical gold exposure, costs and custody with Bitcoin network and custody risks. Neither is assured currency-crisis insurance or a guarantee of asymmetric upside.",
@@ -92,7 +92,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
     ],
     worksheet: "Label the gold column GLD fund exposure, not a bar in a vault. Read the fund's expense and custody descriptions alongside Bitcoin's transaction and wallet documentation. Compare equal hypothetical starting values under both rising and falling price scenarios, with a separate column for costs excluded by the simulator. Do not label either result an inflation hedge without matching dated market and inflation data.",
     sources: [
-      { label: "SPDR Gold Shares: fund information", href: "https://www.spdrgoldshares.com/usa/" },
+      { label: "SPDR Gold Shares: fund information", href: "https://www.spdrgoldshares.com/usa/gld/" },
       { label: "Bitcoin: transactions and wallets", href: "https://bitcoin.org/en/how-it-works" },
     ],
   },
@@ -126,7 +126,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   {
     slug: "ethereum-vs-solana",
     a: { symbol: "ETH", name: "Ethereum", tag: "L1 + L2 ecosystem" },
-    b: { symbol: "SOL", name: "Solana", tag: "Monolithic high-throughput chain" },
+    b: { symbol: "SOL", name: "Solana", tag: "Integrated execution network" },
     intro: "Ethereum and Solana use different designs for processing transactions and supporting applications. Compare current network documentation, transaction definitions and fee measurements rather than assigning permanent leadership or token-price upside.",
     verdict: "Practice comparison: contrast network design, execution, reliability and supply assumptions using current Ethereum and Solana documentation. Throughput or a fee comparison does not establish token-price upside.",
     bullets: [
@@ -140,7 +140,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
       "Network activity and token returns are different measures. A comparison can examine where fees are charged, how supply changes and which security assumptions apply without presuming that greater activity raises price. Staking rewards are denominated in the token and can be affected by costs, issuance, protocol rules and market-price losses. Comparing nominal reward percentages alone does not establish an inflation-adjusted investment return. Document the source and period and separate the network’s design from a forecast of its token’s value.",
     ],
     mistakes: [
-      "Choosing on transactions per second alone. Sustained throughput under real load, and what happens when the chain is congested, matter far more than a benchmark figure.",
+      "Choosing on transactions per second alone. A benchmark describes its test conditions. Observed throughput, congestion and reliability must be compared using consistent definitions.",
       "Reading a token reward percentage as a cash return. State the period, token-price change, fees, penalties and supply assumptions; subtracting issuance alone does not calculate an investor's return.",
       "Predicting a token-price response from an outage. Record the incident's date, duration and affected services separately from any claim about adoption or price.",
     ],
@@ -152,7 +152,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "stocks-vs-crypto",
-    a: { symbol: "SPY", name: "Stocks (S&P 500)", tag: "Equity index" },
+    a: { symbol: "SPY", name: "Stocks (SPY fund)", tag: "Index-tracking fund" },
     b: { symbol: "BTC", name: "Crypto (Bitcoin)", tag: "Digital asset" },
     intro: "Equities and crypto represent very different kinds of exposure: equities are ownership claims on businesses, while crypto assets depend on network use, market structure and investor demand. This comparison focuses on those structural differences rather than prescribing an allocation.",
     verdict: "Broad equity indexes and crypto have very different risk profiles. Use the comparison to understand those differences rather than treating either allocation as a universal recommendation.",
@@ -191,7 +191,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
     ],
     deepDive: [
       "Hardware and software should be examined together. For a stated workload, check supported models, libraries, numerical precision, memory and deployment requirements in each vendor's documentation. Then separate those compatibility findings from company-level revenue, costs and customer risks in the filings. A benchmark result describes its test setup; it does not establish purchasing decisions, a permanent software advantage or future market share. Version and date the comparison because supported products and tools change.",
-      "A market-share hypothesis and a stock-price response are different propositions. Compare what was known before an announcement with alternative expectations and reported results. Customer spending, supply, competition, software compatibility and costs can affect both companies, but that does not establish a predictable asymmetric reaction. A price already reflects changing expectations, and a positive business development need not produce a gain. Use matched reporting periods and dated inputs when comparing valuation or profitability.",
+      "A market-share hypothesis and a stock-price response are different propositions. Compare what was known before an announcement with alternative expectations and reported results. Customer spending, supply, competition, software compatibility and costs can affect both companies, but that does not establish a predictable asymmetric reaction. Prices can reflect varying expectations and other market factors; a positive business development need not produce a gain. Use matched reporting periods and dated inputs when comparing valuation or profitability.",
     ],
     mistakes: [
       "Treating one benchmark as proof of market share. Check the workload, software version, availability and disclosed customer arrangements separately.",
@@ -208,7 +208,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "forex-vs-stocks",
-    a: { symbol: "FX", name: "Forex", tag: "24/5 currency markets" },
+    a: { symbol: "FX", name: "Forex", tag: "Currency-pair exposure" },
     b: { symbol: "Stocks", name: "Equities", tag: "Company ownership" },
     intro: "A currency pair quotes one currency relative to another; a share represents company ownership. Their trading arrangements and information differ. Neither category has a universally slower price path or rewards a particular skill set reliably.",
     verdict: "Practice comparison: distinguish relative currency prices from company ownership and cash flows. Neither instrument category guarantees wealth compounding or suits every short-term trader.",
@@ -285,7 +285,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Calling an aggregate provider mark a reserved exchange fill.",
       "Ignoring both buy and sell fees in the result."
     ],
-    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases.",
+    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review can help distinguish an asset's movement from the account return and preserve unfavorable as well as favorable cases.",
     "sources": [
       {
         "href": "https://bitcoin.org/en/bitcoin-paper",
@@ -304,7 +304,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
       "Use 0.5 ETH at an illustrative $3,200 quote to calculate $1,600 of virtual exposure and a $1.60 simulator entry fee. That is separate from real blockchain gas charges, which TradeHQ does not execute.",
       "Record a second hypothetical ETH price and calculate the change for the same 0.5 ETH. Check the page's quote timestamp; a price screenshot cannot reveal the gas or exchange costs of a real transfer.",
-      "After virtual practice, review changes in ETH units, cash and simulator fees. Keep real Ethereum network gas and staking separate: TradeHQ neither transfers nor stakes coins."
+      "For the fictional example, review changes in ETH units, cash and simulator fees. Keep real Ethereum network gas and staking separate: TradeHQ neither transfers nor stakes coins."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
     "risk": "Network fees, staking mechanics and ETH market-price exposure are different risks and activities. TradeHQ illustrates only the supported virtual spot accounting; it does not stake ETH, transfer coins or pay staking rewards. A correct network explanation cannot establish which direction the market price will move. Include the actual simulator fees when assessing a paper outcome.",
@@ -328,7 +328,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
         "label": "Ethereum.org — ether and the Ethereum network"
       },
       {
-        "href": "https://ethereum.org/gas/",
+        "href": "https://ethereum.org/developers/docs/gas/",
         "label": "Ethereum.org — transaction gas"
       }
     ]
@@ -450,11 +450,11 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Identify the instrument before doing any arithmetic: SOL is the token, a SOL/USD quote is a price per token, and an exchange venue's quoted price may differ from a separate source. Record the quote currency, source and observation time.",
       "Choose a hypothetical dollar budget and SOL unit price. Divide budget by unit price to calculate units, then add the simulator's stated 0.1% virtual order fee to estimate cash required. Use amounts solely for the worksheet, not as a recommended allocation.",
-      "On /trade/sol, inspect the quoted spot price and any data-status label. Submit a virtual market order only if you want to practise the supported interaction; there is no resting limit, stop, short or staking order in TradeHQ.",
+      "On /trade/sol, inspect the quoted spot price and any data-status label. No order is required for this worksheet; the simulator does not support resting limit or stop orders, short positions or staking.",
       "Write two different exit-price scenarios before reading a later quote. Calculate gross profit or loss as units times the change in dollars per SOL; subtract hypothetical buy and sell transaction fees separately.",
       "Review what the exercise could and could not show: quote observation versus actual fill, changes in SOL value versus whole-portfolio return, and missing real-world exchange costs, spread, slippage and custody."
     ],
-    "beginnerTip": "Spot SOL exposure is a claim about token-price changes, not a share in Solana Labs or a claim to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
+    "beginnerTip": "The simulated SOL holding represents exposure to token-price changes, not ownership in Solana Labs or an entitlement to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
     "risk": "SOL's token price can move rapidly in either direction. Exchange liquidity, order size, spread and execution terms affect an actual fill; network reliability and token supply information do not predict the next price. In a simulator, a displayed mark and a later virtual fill may not recreate exchange execution or custody risk. Never equate a hypothetical outcome with achievable returns.",
     "studentNote": "This example is entirely virtual and does not require a wallet, real funds or access to an exchange. Laws and access conditions vary by jurisdiction; a financial-education worksheet is not confirmation that a venue or product is available locally.",
     "drivers": [
@@ -511,7 +511,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "scalping",
     "name": "Scalping",
-    "oneLiner": "Capturing small price moves on the 1-5 minute timeframe.",
+    "oneLiner": "A short-horizon price and transaction-cost comparison; no fixed interval defines the concept.",
     "bestFor": "A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.",
     "worstFor": "Simplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.",
     "steps": [
@@ -521,7 +521,7 @@ export const STRATEGIES: Strategy[] = [
       "Record all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions."
     ],
     "example": "Hypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.",
-    "successRate": "No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.",
+    "successRate": "No universal win rate or sufficient sample size applies. Recorded hypothetical outcomes depend on the sample design, assumptions and costs.",
     "depth": {
       "context": "Scalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.",
       "regime": "Liquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.",
@@ -542,7 +542,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "swing-trading",
     "name": "Swing Trading",
-    "oneLiner": "Holding positions 2-10 days to capture intermediate moves.",
+    "oneLiner": "A comparison of multi-session price observations and overnight exposure.",
     "bestFor": "A worksheet comparing multi-day observation windows and overnight exposure; no work schedule establishes suitability.",
     "worstFor": "Manual review leaves exposure between observations, and an intended exit can be crossed by a gap.",
     "steps": [
@@ -551,10 +551,10 @@ export const STRATEGIES: Strategy[] = [
       "Compare different gap sizes and exit distances, including an unfilled or worse-than-planned exit.",
       "Keep fixed, partial and trailing exit rules in separate conceptual comparisons. TradeHQ does not place automatic stops."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: Bought NVDA at $145 after a pullback, stop $138, target $165 — risked $7 to make $20. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "Performance depends on market regime, entry/exit rules, costs and sample size. Use the simulator to measure your own distribution of outcomes.",
+    "example": "In a fictional multi-session price series, compare an initial observation with a later higher observation and a later lower observation. A price gap can cross an assumed review threshold. Neither a threshold nor a selected favorable case establishes actual execution or likely returns.",
+    "successRate": "The distribution of a hypothetical sample depends on its dates, observation rules, costs and assumptions. TradeHQ does not validate a method's performance.",
     "depth": {
-      "context": "Swing trading describes positions held across sessions, often over days or weeks. The label does not determine a suitable position size or make the decision less consequential. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
+      "context": "Swing trading describes positions held across sessions, often over days or weeks. The label does not determine a suitable position size or make the decision less consequential. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. Overnight gaps are possible when information arrives between sessions; a worksheet threshold is not an execution guarantee.",
       "regime": "An apparent trend or pullback is a description of selected past data. A later continuation and a reversal are both possible. Earnings and other announcements can introduce overnight gaps; a planned exit does not guarantee a fill at that price.",
       "mistakes": [
         "Treating a round-number exit or volatility multiple as guaranteed loss protection.",
@@ -582,7 +582,7 @@ export const STRATEGIES: Strategy[] = [
       "Calculate how repeated fees and worse fills change the same gross price outcome.",
       "Record whether the hypothetical exit occurred. Do not assume an outage or trading halt permits a closing transaction."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: Long SPY at VWAP reclaim, stop below VWAP, target the day's prior high. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "example": "In a fictional same-session dataset, compare an observed price with its volume-weighted average and with another observation later in the session. Compare positive and negative differences, then record the extra cost of repeated transactions. No indicator-based order is required.",
     "successRate": "There is no dependable universal win-rate range. Evaluate the method by expectancy, drawdown, costs and consistency across a larger sample.",
     "depth": {
       "context": "Day trading usually means opening and closing positions within the same trading day. If a position is fully closed, it has no later overnight exposure, but an intended close is not guaranteed during a halt, outage or loss of liquidity. A short holding period does not make a position low risk. Frequency, costs, execution and behavior all affect the outcome.",
@@ -645,7 +645,7 @@ export const STRATEGIES: Strategy[] = [
       "Compare later continuation and reversal cases under the same sampling and cost assumptions.",
       "Treat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "example": "In a fictional price dataset, an oscillator crosses a selected descriptive threshold. Compare a later continuation and a later reversal. Neither the reading nor a candlestick label establishes a price prediction or an instruction to transact.",
     "successRate": "RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.",
     "depth": {
       "context": "RSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.",
@@ -667,7 +667,7 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "macd-strategy",
     "name": "MACD Crossover",
-    "oneLiner": "Trading the signal-line cross on the MACD indicator.",
+    "oneLiner": "A conceptual study of historical indicator crossings and their limitations.",
     "bestFor": "Studying differences between moving averages, signal-line crossings and alternative exit assumptions.",
     "worstFor": "Lag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.",
     "steps": [
@@ -676,11 +676,11 @@ export const STRATEGIES: Strategy[] = [
       "Choose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.",
       "Compare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.",
+    "example": "In a fictional indicator sequence, mark a crossing and compare two alternative subsequent price paths. A selected favorable path is not an observed return, an execution guarantee or a rule for an actual order.",
+    "successRate": "MACD results vary by timeframe, market and exit rule. A selected sample's payoff distribution and drawdown describe those assumptions, not expected future performance.",
     "depth": {
       "context": "MACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.",
-      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.",
+      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. When calculated from closing prices alone, the indicator does not directly incorporate bid-ask spreads, execution priority or transaction fees.",
       "mistakes": [
         "Reporting only favorable crossings while excluding costly reversals.",
         "Treating a planned reward-to-risk ratio as a realized payoff.",

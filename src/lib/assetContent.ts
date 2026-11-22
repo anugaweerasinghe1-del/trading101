@@ -66,8 +66,8 @@ interface AssetContent {
 export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   btc: [
     { question: "How can I practice trading Bitcoin without losing money?", answer: "TradeHQ uses $100,000 in virtual funds for simulated Bitcoin orders. A practice loss does not spend real money; simulated results do not predict real trading outcomes." },
-    { question: "What is a free Bitcoin trading simulator?", answer: "TradeHQ offers a free BTC simulator with $100K virtual cash, candlestick charts, and educational mentor explanations. No signup or credit card required — start in seconds." },
-    { question: "How to practice Bitcoin trading in Colombo as a student?", answer: "Students in Sri Lanka can use TradeHQ's free simulator to practice BTC trading with virtual money. Learn chart reading and risk management before using real capital." },
+    { question: "What is a free Bitcoin trading simulator?", answer: "TradeHQ offers a free BTC simulator with $100K virtual cash, candlestick charts, and educational mentor explanations. Core guest practice requires no signup or credit card." },
+    { question: "How to practice Bitcoin trading in Colombo as a student?", answer: "Students in Sri Lanka can use TradeHQ's free simulator to practice BTC trading with virtual money. The worksheet does not require real capital and does not establish readiness for real trading." },
     { question: "Is Bitcoin a good asset for beginner traders to practice?", answer: "BTC is one available practice market. Its price can be volatile and chart levels can fail; suitability depends on what mechanics the learner wants to study." }
   ],
   eth: [
@@ -77,7 +77,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "What indicators can be studied for Ethereum trading practice?", answer: "Gas fees, network activity and relative-price measures can be studied as different inputs. No indicator is universally best, and none establishes a future ETH price." }
   ],
   nvda: [
-    { question: "How do I trade the AI boom with a simulator?", answer: "NVDA is one company example in the simulator. Use $100K virtual cash to study how price changes affect a position, and distinguish AI-sector narratives from evidence about future returns." },
+    { question: "How can a simulator illustrate fictional exposure to an AI-related company?", answer: "NVDA is one company example in the simulator. Use $100K virtual cash to study how price changes affect a position, and distinguish AI-sector narratives from evidence about future returns." },
     { question: "Is NVIDIA stock good for beginner stock trading practice?", answer: "NVDA is one company example for a virtual practice exercise. News narratives and historical trends do not establish its suitability for a beginner or predict the next move." },
     { question: "How to practice NVIDIA stock trading as a student in Sri Lanka?", answer: "Use TradeHQ to study NVDA position values with $100K virtual cash. No US brokerage is needed for this practice; it does not establish readiness for real trading." },
     { question: "What factors can affect NVIDIA stock price?", answer: "Data-centre revenue, AI-chip demand, quarterly results, guidance and broader market conditions are among the factors investors monitor. Their effect on NVDA can vary by period and is not mechanically predictable." }
@@ -104,7 +104,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "Is Solana trading harder than Bitcoin?", answer: "The difficulty of a practice exercise depends on the period, chosen assumptions and what is being studied. SOL and BTC can show different volatility over different windows, so compare them over the same stated interval rather than assume a permanent ranking." },
     { question: "How to practice Solana trading for free?", answer: "TradeHQ offers SOL practice with $100K virtual cash. Use it to compare how different price changes affect position value without assuming that past volatility will persist." },
     { question: "What factors can affect Solana price movements?", answer: "Network activity, application usage, liquidity, ecosystem developments and broader crypto-market conditions are among the factors observers track. Their relationship with SOL price can change over time." },
-    { question: "Is Solana suitable for beginner crypto traders?", answer: "Use virtual cash to compare how different price shocks affect a SOL position. A tight exit setting is a practice assumption, not a universal risk rule." }
+    { question: "Is Solana suitable for beginner crypto traders?", answer: "Use virtual cash to compare how different price shocks affect a SOL position. A chosen worksheet threshold is not an executable stop or a universal risk rule." }
   ],
   gold: [
     { question: "How does Gold react during market crashes?", answer: "Gold and stock prices can respond differently across periods. A practice chart is simulated and does not establish an inverse relationship or reproduce a market crash." },
@@ -121,7 +121,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   eurusd: [
     { question: "How do I learn Forex trading for free?", answer: "Use a $100,000 demo account to trade the EUR/USD pair. Compare session schedules as a learning exercise. Practice data does not reproduce actual session liquidity or execution." },
     { question: "What is a free forex simulator for beginners?", answer: "TradeHQ offers EUR/USD practice with $100K virtual cash. Use it for currency-pair arithmetic and pip calculations; simulated charts do not reproduce actual session liquidity." },
-    { question: "How to practice forex trading without money in Sri Lanka?", answer: "TradeHQ is free for students in Sri Lanka and worldwide. Practice EUR/USD and GBP/USD with simulated charts — no deposit or signup required." },
+    { question: "How to practice forex trading without money in Sri Lanka?", answer: "Guest practice requires no subscription where the site is available. Practice EUR/USD and GBP/USD with simulated charts — no deposit or signup required." },
     { question: "What factors can affect EUR/USD?", answer: "ECB and Federal Reserve policy, inflation, employment data, growth expectations and broader risk conditions can affect EUR/USD. No single release guarantees a particular currency move." }
   ],
   gbpusd: [
@@ -140,7 +140,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "How to practice Microsoft stock trading for free?", answer: "TradeHQ offers MSFT practice with $100K virtual cash. Compare hypothetical position sizes and observed volatility over a stated period without assuming MSFT is inherently steadier than other technology stocks." },
     { question: "What factors can affect Microsoft stock price?", answer: "Azure growth, software subscriptions, AI-related spending and adoption, guidance and broader market conditions are among the factors investors monitor. Their effects vary by period." },
     { question: "Is MSFT good for learning stock trading basics?", answer: "MSFT is one available company example for learning order mechanics and business analysis. Its volatility depends on the period examined and is not inherently suitable for every beginner." },
-    { question: "Can I practice trading US tech stocks from Sri Lanka?", answer: "Yes. TradeHQ simulates US stocks including MSFT, AAPL, and NVDA. Students anywhere can practice free with $100K virtual cash." }
+    { question: "Can I practice trading US tech stocks from Sri Lanka?", answer: "Yes. TradeHQ simulates US stocks including MSFT, AAPL, and NVDA. Where available, guest practice uses $100K in virtual cash without a subscription." }
   ],
   googl: [
     { question: "How to practice Alphabet stock with virtual money?", answer: "Use TradeHQ to practise GOOGL with $100K virtual cash. Study hypothetical price changes and chart patterns; simulated charts do not reproduce actual announcement reactions or traded volume." },
@@ -151,14 +151,14 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   meta: [
     { question: "How to practice META stock trading for free?", answer: "TradeHQ offers META practice with $100K virtual cash. Compare hypothetical price and quantity changes; an engagement metric alone does not predict share-price performance." },
     { question: "What factors can affect Meta Platforms stock price?", answer: "Advertising revenue, engagement, capital spending, Reality Labs results, guidance and broader market conditions are among the factors investors monitor. Their effect on META is not mechanically predictable." },
-    { question: "Can META be used to study earnings reactions?", answer: "Actual META earnings reactions can be studied with separately sourced historical prices and company reports. TradeHQ charts are simulated; use hypothetical gaps for practice rather than infer a repeatable earnings strategy." },
+    { question: "Can META be used to study earnings reactions?", answer: "Actual META earnings reactions can be studied with separately sourced historical prices and company reports. Check the chart's data-source label. Generated candles are not historical evidence; hypothetical gaps cannot establish a repeatable earnings strategy." },
     { question: "How can I study a social-media company in the simulator?", answer: "Use Meta as a company research example, with engagement, advertising and spending figures from its published reports. Keep that research separate from simulated price changes, which cannot establish how the market reacted." }
   ],
   xrp: [
     { question: "How to practice XRP trading for free?", answer: "TradeHQ provides $100K virtual cash for XRP practice. Compare legal, regulatory, network and broader crypto-market developments with price changes without assuming a fixed relationship." },
     { question: "Why does XRP move on regulatory news?", answer: "Regulatory developments, company announcements and wider crypto conditions can affect XRP sentiment. Compare hypothetical gains and losses with virtual cash; a headline does not determine the next price move." },
     { question: "Can XRP be used to study news reactions?", answer: "Study legal or project-related announcements separately from simulated charts. Use hypothetical XRP price changes to compare gains and losses; neither a headline nor a practice result predicts a future response." },
-    { question: "How to practice crypto trading in Colombo?", answer: "Use TradeHQ's free simulator. Students in Colombo can trade XRP, BTC, ETH and 30+ cryptos with $100K virtual cash — no signup needed." }
+    { question: "How to practice crypto trading in Colombo?", answer: "Use TradeHQ's free simulator. Core guest education includes virtual cryptocurrency examples without signup or real funds; availability may depend on service and network conditions." }
   ],
   bnb: [
     { question: "How to practice BNB trading for free?", answer: "Use TradeHQ to practise BNB with $100K virtual cash. Compare exchange activity, token-burn announcements and broader crypto conditions with price changes without assuming causation." },
@@ -168,7 +168,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   ],
   qqq: [
     { question: "How to practice Nasdaq-100 ETF trading for free?", answer: "Use TradeHQ's $100K virtual cash to compare QQQ with another ETF example. Record changes in value and concentration; neither past relative performance nor sector exposure guarantees future returns." },
-    { question: "What is the difference between SPY and QQQ for practice?", answer: "SPY tracks the broad S&P 500 while QQQ is tech-heavy (Nasdaq-100). Practice comparing both to learn how sector concentration affects returns." },
+    { question: "What is the difference between SPY and QQQ for practice?", answer: "SPY seeks to track the S&P 500 and QQQ the Nasdaq-100. Their sector weights differ and change; compare dated issuer disclosures without assuming a fixed effect on returns." },
     { question: "Is QQQ good for beginners learning ETF trading?", answer: "QQQ can illustrate Nasdaq-100 index concentration and how fund exposure differs from a broad-market example. A QQQ/SPY ratio does not establish a reliable risk-on signal." },
     { question: "How to learn tech sector trading as a student?", answer: "Compare the fund's published holdings and weighting method with individual companies. Use virtual cash to study concentration effects rather than assume a technology narrative predicts prices." }
   ]
@@ -286,7 +286,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   // ===== CRYPTOCURRENCIES =====
   btc: {
     whatIs: "Bitcoin is a peer-to-peer payment network whose native asset is BTC. Its proof-of-work protocol has a scheduled issuance limit of 21 million coins under the current consensus rules. A fixed issuance schedule does not guarantee purchasing power or investment returns.",
-    strategy: "Educational example: Simulate a HODL approach or test swing trades around long-term moving averages. Practice identifying key support/resistance levels at psychological price points. (Educational simulation only — not financial advice.)",
+    strategy: "Compare fictional price observations, quantity and account values using explicit fee assumptions. Historical chart labels do not establish future prices. (Educational simulation only — not financial advice.)",
     category: "Cryptocurrency",
     keywords: ["Bitcoin trading", "BTC simulator", "crypto practice", "digital gold", "store of value", "blockchain"],
     stats: {
@@ -409,7 +409,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   amzn: {
     whatIs: "Amazon operates online and physical stores, advertising services and Amazon Web Services, among other activities. Its segment reporting helps distinguish sales from operating income; the contribution of each segment changes over reporting periods.",
-    strategy: "Practice calculating risk-reward around earnings reports and Prime Day events. Monitor AWS growth and advertising revenue as key performance indicators. (Educational simulation only — not financial advice.)",
+    strategy: "Compare fictional gain and loss scenarios with clearly labelled assumptions. Study dated AWS and advertising disclosures separately from price observations. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Amazon stock trading", "AMZN practice", "e-commerce giant", "AWS", "cloud computing"],
     stats: {
@@ -433,7 +433,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   meta: {
     whatIs: "Meta operates services including Facebook, Instagram and WhatsApp and reports its Family of Apps and Reality Labs activities. Advertising revenue and investment spending are different accounting measures. User activity alone does not determine share value.",
-    strategy: "Practice correlating ad revenue metrics and user growth with price action during earnings. Monitor Reels engagement and AI ad targeting improvements. (Educational simulation only — not financial advice.)",
+    strategy: "Compare dated revenue and user metrics with separately sourced historical observations. Generated practice charts do not establish earnings reactions or causation. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Meta stock trading", "META simulator", "social media", "VR", "advertising", "AI"],
     stats: {
@@ -473,7 +473,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   // ===== COMMODITIES =====
   oil: {
     whatIs: "West Texas Intermediate (WTI) is a crude-oil benchmark. Oil is refined into petroleum products, and supply, inventories, refining and consumption are different parts of its market. TradeHQ uses a simplified WTI-labelled practice instrument and does not execute a deliverable oil contract.",
-    strategy: "Analyze price action around OPEC+ meetings, EIA inventory reports, and geopolitical tensions. Practice understanding supply-demand dynamics. (Educational simulation only — not financial advice.)",
+    strategy: "Distinguish dated production announcements, inventories and consumption estimates from price observations. The simplified fictional instrument does not reproduce actual oil contracts or establish news reactions. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["oil trading", "WTI practice", "crude oil", "energy", "OPEC"],
     stats: {
@@ -729,7 +729,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   eurusd: {
     whatIs: "EUR/USD expresses the number of US dollars per euro. A rise from 1.10 to 1.12 means the euro buys more dollars in that quotation. An ECB reference rate is a published reference observation, not a guaranteed executable broker quote.",
-    strategy: "EUR/USD moves on ECB and Fed policy divergence. Compare dated ECB and Federal Reserve releases with separately sourced exchange-rate observations. A coincident move does not establish causation. (Educational simulation only — not financial advice.)",
+    strategy: "Differences in central-bank policy are one possible research topic for EUR/USD. Compare dated ECB and Federal Reserve releases with separately sourced exchange-rate observations. A coincident move does not establish causation. (Educational simulation only — not financial advice.)",
     category: "Forex",
     keywords: ["EUR/USD trading", "forex practice", "currency pair", "euro dollar"],
     stats: {
@@ -777,7 +777,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   gold: {
     whatIs: "Gold is a precious metal used in jewellery, industry and official reserves. TradeHQ's gold-labelled practice instrument can use CoinGecko PAX Gold (PAXG) token quotes as a price proxy, rather than a dedicated XAU/USD spot feed. PAXG volume and market cap refer to the token, not the global physical-gold market. Fixed fallback prices and separately labelled generated charts may also appear. A virtual holding acquires no physical gold, fund units or tokens.",
-    strategy: "Educational example: Analyze gold price action during periods of high CPI data, Fed policy shifts, or stock market volatility. Focus on real yields as a key driver. (Educational simulation only — not financial advice.)",
+    strategy: "Compare dated inflation or interest-rate publications with separately sourced observations. The fictional gold price input cannot establish a historical relationship or rank the causes of changes. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["gold trading", "XAU practice", "precious metals", "safe haven", "inflation hedge"],
     stats: {
