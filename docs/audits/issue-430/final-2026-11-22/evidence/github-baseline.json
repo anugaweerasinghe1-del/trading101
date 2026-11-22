@@ -1,0 +1,229 @@
+{
+  "sha": "0e5db6f9c4ab22e0f8ed38663c484c92afa4f48b",
+  "protected": true,
+  "requiredChecks": [
+    "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+    "TradeHQ Phase 3 tests",
+    "TradeHQ Required validation"
+  ],
+  "prs": [
+    {
+      "number": 518,
+      "title": "Integrate all eight editorial correction batches for combined validation",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "1387ff84f57cb8a4c63ad179f9ecf36d7bc7314b",
+      "head": "83d2d95bd0e0ae818428ce6cc8e1bad595b0b9fd",
+      "body": "Reconciles #509, #510 and #512–#517 against common base 5ebd32f826f75f6c9612841c031bfc8024a72f84. Seven shared files merged with exact replay of each independent source change; remaining files retained byte-for-byte via original blob identities. 40 original changed paths + integration note. Preserve original PRs until combined exact-head validation and protected release verification. Do not merge individual overlapping PRs in parallel. This is 163/163 first-pass editorial coverage, not strict #430 completion; remaining second-pass evidence and human/source/interactive checks are open. No ad activation, account or database changes."
+    },
+    {
+      "number": 520,
+      "title": "Verify review moderation hash privacy with disposable PostgreSQL fixtures",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "6375830a2ac1c8ee5d095cbf5728aa0393c32d37",
+      "head": "313c034b0e393f21d663e32c957e3a2845098d2d",
+      "body": "Addresses #519. Stages narrowly scoped privilege SQL and expands existing mandatory review engagement regression to deny anon and authenticated SELECT on moderation hash and wildcard projections, while retaining exact public display fields, likes, hidden/deleted state and service role access. SQL is not yet applied to production; gated database migration and post-change metadata verification follow exact-head CI. No production user records accessed. No advertising or account changes."
+    },
+    {
+      "number": 521,
+      "title": "Second-pass editorial precision and moderation sampling disclosures",
+      "state": "open",
+      "merged": false,
+      "mergeCommit": "230fab74fe391567591f186b750a9948130574a2",
+      "head": "b39933742f590ae76623ebbe1a6b6f8696e07aec",
+      "body": "Follow-up to #430 and merged #518. Twelve complete extracted public publisher bodies reviewed skeptically; Privacy extraction truncated and excluded. Eleven narrow copy fixes for unsubstantiated moderation/correction/feedback claims, explicit review sample cap, mobile reliability and definition precision. Includes bounded evidence table; not a claim of full second pass or deployment. No private records accessed, no financial recommendations, no account/ad changes. All normal release gates apply."
+    },
+    {
+      "number": 525,
+      "title": "Reconcile second-pass disclosures and editorial evidence on current protected main",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "362b98f5cbd9f595edbfd632ad2e255c30fed059",
+      "head": "d4052c46949902664ea06dc2415e6c3167b8680e",
+      "body": "Supersedes #521 only after fresh CI and verified merge. Carries its 11 edits without overwriting concurrent paths, plus precise review hashing, public duel visibility, leaderboard cap, Daily schedule, local feedback, glossary and article corrections. Coverage ledger lists distinct second-pass extracted bodies, not full editorial closures. No real account data, no ad activation, no new financial recommendations. Exact-head protected validation required."
+    },
+    {
+      "number": 528,
+      "title": "Reconcile 163 second-pass publisher bodies and stage course disclosure fixes",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "006b735e64103881de7edb9e134aef2e405cf778",
+      "head": "cf27b531da61c16cd63de37f41e226ca17e1e3a8",
+      "body": "136 live extracted bodies + 27 source bodies. 19 narrow source/overlay transparency edits; no production course republishing or account changes. Exact canonical route reconciliation; no full-page/asset/source/block closure claimed. Retain #430 open. Full required checks and independent production verification required."
+    },
+    {
+      "number": 529,
+      "title": "Produce auditable 163-page source-block hashes without claiming review closure",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "f963b3557b0dd996d5b1bc34911ae73b0dea9d6c",
+      "head": "292b5157407f4f1b154b8d4a1a16478b07888be6",
+      "body": "Reproducible exact-source publisher block inventory for issue #430. Reads 151 static crawler-visible pages and the 12 already-approved public dynamic-course bodies from dated audit-only snapshot; applies existing display corrections, hashes each block and exports review status NOT_ATTESTED_PER_BLOCK and CSV. Required CI validates inventory and uploads artifact. No customer data, course publication, account or ad changes. This does NOT satisfy full live / media / policy release gates."
+    },
+    {
+      "number": 531,
+      "title": "Fresh privacy-minimised production URL audit on current protected main",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "7051744afa21cc925a1cdccbe6129d1ce23df8c5",
+      "head": "fd9cde8ddf06b4bf2518e3673bc66cd3d1c26d9b",
+      "body": "Supersedes PR #530, which passed all its own exact-head CI and live-sitemap jobs but was blocked by fresh required-status checks after the intervening #529 merge. Source script unchanged between prior main and new base; same narrow audit-only two-file changes transplanted onto current main. Must re-run fresh required workflows; no branch protection bypass, account records or ad changes."
+    },
+    {
+      "number": 532,
+      "title": "Verify native Cloudflare production SHA independently of stricter release-readiness gate",
+      "state": "closed",
+      "merged": true,
+      "mergeCommit": "0e5db6f9c4ab22e0f8ed38663c484c92afa4f48b",
+      "head": "c0534e0a01269ee618a39c8045527f47768369c8",
+      "body": "Main-only, after required validation. Reuses existing read-only exact-SHA Cloudflare Pages verifier with provider secret already referenced in existing release-signals workflow. Does NOT edit/deploy the site, weaken Vercel/recovery gate, alter DNS, touch user data or activate ads. Runs automatically on a protected main push if merged, and fails closed when provider receipt is missing."
+    },
+    {
+      "number": 533,
+      "title": "Reconcile historical 480 URLs against fresh privacy-minimised responses",
+      "state": "open",
+      "merged": false,
+      "mergeCommit": "f1c39097fb59a6d04d8dc42a0a0e9103fc705e2b",
+      "head": "e54f3b07e61401a8e046c23bf2fdeaf40829479e",
+      "body": "Read-only technical audit: seed all 480 original URLs, re-fetch statuses, HEAD only for opted-in public profiles, pseudonymize identifiers, preserve existing UGC redaction. Report actual new count, not inherited 480 outcomes. This is technical coverage, not a Google approval or full editorial certification. Different files from Cloudflare receipt PR #532. No ad, account, market or provider writes."
+    }
+  ],
+  "openPRs": [
+    {
+      "number": 533,
+      "title": "Reconcile historical 480 URLs against fresh privacy-minimised responses",
+      "head": "e54f3b07e61401a8e046c23bf2fdeaf40829479e"
+    },
+    {
+      "number": 527,
+      "title": "Document second-pass review coverage for all 163 publisher routes",
+      "head": "d7bd49322fcaf90546ca5ee3f8e346a5f73245e1"
+    },
+    {
+      "number": 524,
+      "title": "Audit: reconcile second publisher-body reading of all 163 URLs",
+      "head": "ab337faa745c20e9b78decde605746578d05a03e"
+    },
+    {
+      "number": 523,
+      "title": "Correct review and community privacy disclosures and utility claims",
+      "head": "bc02a11f15b584a71ab42a64a8deb84f2526384f"
+    },
+    {
+      "number": 522,
+      "title": "Record applied review moderation privacy migration",
+      "head": "dc7db1ae78257cc6eb587d2342baa6ce4f8af5e7"
+    },
+    {
+      "number": 521,
+      "title": "Second-pass editorial precision and moderation sampling disclosures",
+      "head": "b39933742f590ae76623ebbe1a6b6f8696e07aec"
+    },
+    {
+      "number": 517,
+      "title": "fix(editorial): reconcile final application-page disclosures",
+      "head": "990b45a6f75481e01ff8780d6eaff980a03cd571"
+    },
+    {
+      "number": 516,
+      "title": "Clarify educational asset page claims and execution disclosures",
+      "head": "7c8434f75d8f9e34daef4cbf921173aa5f57c571"
+    },
+    {
+      "number": 515,
+      "title": "fix(editorial): align asset and strategy guides with educational worksheet scope",
+      "head": "d1d52e46dd2f28643a8c12a0101de41c7a4f692a"
+    },
+    {
+      "number": 514,
+      "title": "fix(editorial): clarify all bundled course definitions and educational scope",
+      "head": "567a53da28da5b18abf08656dd92fa51a7165c38"
+    },
+    {
+      "number": 513,
+      "title": "fix(editorial): narrow country-guide availability and regulatory claims",
+      "head": "d01b290bf3b2757936d470d90fe88578f7013db2"
+    },
+    {
+      "number": 512,
+      "title": "fix(publisher): clarify newsletter confirmation, review privacy and contact retention",
+      "head": "3e2572153c1db0062864d11797fdd5041cd1f610"
+    },
+    {
+      "number": 510,
+      "title": "fix(editorial): tighten nine Learning Center articles and simulator disclosures",
+      "head": "9858a2783ea58ef9493179737c379c8d67cbcb7e"
+    },
+    {
+      "number": 509,
+      "title": "fix(editorial): tighten reference scope and educational disclosures",
+      "head": "6318160f2f4dac10ba62c74a0f59b71c23f90119"
+    },
+    {
+      "number": 487,
+      "title": "docs(audit): record full Daily bank text review and six verified fixes",
+      "head": "28a03d7d9263b325c2c5d10a7d26a3e3276533a8"
+    },
+    {
+      "number": 104,
+      "title": "[Fixture] Synthetic styling review — NOT a production repair",
+      "head": "94958cdcccefd64302c4d0a7ca3a77482f680d75"
+    },
+    {
+      "number": 97,
+      "title": "docs: verify October 11 operations and design safe control prerequisites",
+      "head": "ae5c46b85ec215e6994deef6a3f922ceae4cdef1"
+    },
+    {
+      "number": 95,
+      "title": "AI proposal: responsive About heading — owner approval evidence test",
+      "head": "d6e6bae150bce536d5ce5596fb285e8cb72d27e9"
+    },
+    {
+      "number": 72,
+      "title": "AI smoke-test proposal: mobile spacing on About page",
+      "head": "2acd46c99481f7c9bb1aca90ba0d7a019f9db5aa"
+    },
+    {
+      "number": 23,
+      "title": "Verified L04, L05 and L06 cleanup",
+      "head": "237c47a5fc000dd5f819702e2831f1a2f0559c0e"
+    },
+    {
+      "number": 7,
+      "title": "Phase 3 High severity remediation — validation",
+      "head": "9035aee85d514e714a12bd390fcfb5ce7a6bdef5"
+    },
+    {
+      "number": 3,
+      "title": "Second-pass site audit: routing, privacy, content trust and security fixes",
+      "head": "e3697641ee49d27c513b9e16bd14288721a31ca7"
+    },
+    {
+      "number": 1,
+      "title": "Enable Vercel Web Analytics in your project",
+      "head": "558c59c612aa2e503dd002d40f0a6628ffb3df09"
+    }
+  ],
+  "mainWorkflowRuns": [
+    {
+      "id": 45009871201,
+      "name": "Disposable repair-control validation",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45009871201"
+    },
+    {
+      "id": 45009871234,
+      "name": "TradeHQ Cloudflare Production Verified",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45009871234"
+    },
+    {
+      "id": 45009871224,
+      "name": "Phase 3 High Validation",
+      "conclusion": "failure",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45009871224"
+    }
+  ]
+}
