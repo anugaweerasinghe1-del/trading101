@@ -159,7 +159,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "ETFs: funds with stated holdings and objectives. Diversification, concentration, leverage and product structure affect risk.",
           "Crypto: digital assets traded on venues with varying operating schedules, liquidity and risks. No fixed volatility or price relationship is implied.",
           "Forex: relative pricing of two currencies; central-bank announcements, economic data and other conditions are possible research topics.",
-          "Commodities: exposures linked to physical goods, supply, demand and seasonal conditions. Company earnings and equity prices can also have seasonal influences.",
+          "Commodities: exposures linked to physical goods, supply, demand and seasonal conditions.",
         ],
       },
     ],
