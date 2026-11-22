@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LEADERBOARD_FUNNEL_MARKER_KEY } from "@/lib/leaderboardFunnelTelemetry";
+import { LEARNING_VISIT_KEY } from "@/lib/learningTelemetry";
 
 /**
  * Privacy-first optional measurement. Legacy v1 acceptances are deliberately
@@ -54,6 +55,9 @@ export function ConsentBanner() {
   const [choice, setChoice] = useState<ConsentChoice | null>(readChoice);
 
   useEffect(() => {
+    // Previous learning measurement exceeded the existing v3 scope. Its
+    // local visit marker is obsolete regardless of the current choice.
+    try { window.localStorage.removeItem(LEARNING_VISIT_KEY); } catch { /* Storage may be unavailable. */ }
     if (choice === "accepted") loadConsentedAnalytics();
   }, [choice]);
 
@@ -73,6 +77,7 @@ export function ConsentBanner() {
       if (next === "rejected") {
         window.localStorage.removeItem(ARENA_VISIT_KEY);
         window.localStorage.removeItem(LEADERBOARD_FUNNEL_MARKER_KEY);
+        window.localStorage.removeItem(LEARNING_VISIT_KEY);
       }
     } catch {
       // If consent cannot be persisted, optional tracking must remain off.

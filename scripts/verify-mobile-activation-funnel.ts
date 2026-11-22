@@ -85,16 +85,10 @@ trackLearningMilestone("Mobile Order Panel Opened");
 trackLearningMilestone("Virtual Practice Order Rejected");
 trackLearningMilestone("Learning Hub Viewed");
 recordConsentedLearningVisit(new Date("2026-11-21T06:00:00Z"));
-assert.deepEqual(emitted, [
-  "TradeHQ Bitcoin Simulator Viewed",
-  "TradeHQ Mobile Order Panel Opened",
-  "TradeHQ Virtual Practice Order Rejected",
-  "TradeHQ Learning Hub Viewed",
-  "TradeHQ Learning Viewed"
-]);
+assert.equal(emitted.length, 0, "v3 consent is insufficient for newly introduced mobile/learning funnel events");
 store.set(ARENA_ANALYTICS_CONSENT_KEY, "rejected");
 trackLearningMilestone("Virtual Practice Order Confirmed");
-assert.equal(emitted.length,5,"Consent withdrawal blocks future funnel tracking");
+assert.equal(emitted.length,0,"Consent withdrawal cannot enable new funnel tracking");
 (globalThis as {window?: unknown}).window = previousWindow;
 
-console.log("PASS mobile activation: accessible early CTA, failed-order recovery, consented minimal funnel tracking");
+console.log("PASS mobile activation: accessible early CTA, failed-order recovery, out-of-scope funnel tracking suspended");
