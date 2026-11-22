@@ -1,0 +1,15 @@
+# Detailed glossary review — 2026-11-22
+Source baseline d0dda08389e1b95a180cd4f13205196082dc854d. Public extraction independently queried with ttl=0 (origin cache may still apply). Compared against Google Publisher Policies and site readiness guidance: https://support.google.com/publisherpolicies/answer/10502938 and https://support.google.com/adsense/answer/7299563.
+ 
+## Coverage and results
+- /wiki: read WikiIndex.tsx and corresponding scripts/content.ts section; live index states 49 entries, source enumerates 49, all 49 respective URLs present in extracted links. Index copy distinguishes worksheet concepts from simulator features. Category summaries show at most eight items, linked directory contains all entries.
+- /wiki/paper-trading: read full definition, expert explanation, key points, learning perspective, worksheet and related references. Arithmetic checked; simulated practice and costs clearly distinguished from real outcomes.
+- /wiki/drawdown: same fields reviewed. Percentage example and distinction between loss and recovery checked; general investor-risk reference reachable but does not directly substantiate Calmar ratio wording. Citation-specific enhancement open, not a proven Google violation.
+- /wiki/slippage: same fields reviewed. Hypothetical calculations and distinction between quote and execution checked; orders reference reachable and relevant.
+- /wiki/market-maker: same fields reviewed. Conditional example distinguishes quoted spread from guaranteed profit; market participants reference reachable, direct claim-specific depth not fully established.
+- /wiki/flash-crash: same fields reviewed. No guarantee of recovery; no unverified historical numbers. General orders source supports order limitations rather than cause of a specific crash; specific source enhancement open.
+- /wiki/circuit-breaker: same fields reviewed. NYSE and LULD Plan reference fetched and compared; time-specific rules, distinct individual-security pauses, and hypothetical arithmetic checked.
+
+All six term routes: 7 authored text blocks each, 42/42 normalized exact matches with extracted live copy. All seven routes return expected self canonical and index/follow. Five unique external destinations fetched successfully (Investor.gov order types, risk, participants; NYSE resiliency; LULD Plan). Shared WikiTerm.tsx reviewed for template attribution, metadata, worksheet/trading boundary and links. Not a hydrated browser, originality, image rights or professional review certification.
+
+No confirmed new AdSense policy violation in these seven routes. No code correction released in this batch. Two reference scope observations retained above; the general index sentence about practising anything should be narrowed to supported features when next editorial change is made. Prior 19 first detailed route reviews + 7 = 26 of 163; 137 still awaiting first page-specific detailed review. All 163 have previously undergone preliminary screening. Full site certification remains open. No user data modified and no advertising enabled.
