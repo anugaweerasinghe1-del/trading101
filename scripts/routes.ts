@@ -571,7 +571,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Free Trading Courses — Options, Futures, Macro & Psychology | TradeHQ",
     description: `Four structured trading courses with original lessons, quizzes and completion badges. Practise concepts with ${BALANCE} virtual cash.`,
     h1: "Structured Trading Courses",
-    summary: `Four structured tracks — options, futures, macro reading, and trading psychology — each with quizzes and a completion badge. Practise supported spot instruments with ${BALANCE} in virtual cash; derivatives contract exercises are conceptual.`,
+    summary: `Four bundled tracks cover options, futures, macro reading and trading psychology, with quizzes and completion badges. Additional approved courses may appear in the catalogue. Practise supported spot instruments with ${BALANCE} in virtual cash; derivatives contract exercises are conceptual.`,
     priority: "0.8",
     changefreq: "weekly",
   });

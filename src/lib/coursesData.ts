@@ -67,7 +67,7 @@ const optionsTrack: CourseTrack = {
   prerequisites:
     "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. Familiarity with the terminology on a virtual order ticket is helpful. No prior trade or minimum practice time is required.",
   progression:
-    "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
+    "The track moves from object to behaviour to structure. The first lesson defines the contract itself before later examples introduce additional assumptions. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
   notFor:
     "This is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you.",
   lessons: [
@@ -112,7 +112,7 @@ const optionsTrack: CourseTrack = {
       slug: "the-greeks-delta-gamma-theta-vega",
       title: "The Greeks — Delta, Gamma, Theta & Vega",
       summary:
-        "The four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.",
+        "These four Greeks describe model-based sensitivities to underlying prices, time and implied volatility; they do not guarantee realized price changes.",
       readingMinutes: 10,
       body: [
         "## Why Greeks matter",
@@ -194,7 +194,7 @@ const optionsTrack: CourseTrack = {
         "## What implied volatility actually is",
         "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.",
         "## IV rank vs IV percentile",
-        "A quoted IV value needs context before comparisons can be interpreted. IV rank commonly compares current IV with the highest and lowest observations over a specified lookback, often 52 weeks, on a 0–100 scale. A constant series has no high-low range, so the usual calculation is undefined. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
+        "A quoted IV value needs context before comparisons can be interpreted. IV rank commonly compares current IV with the highest and lowest observations over a specified lookback, often 52 weeks, on a 0–100 scale. A constant series has no high-low range, so the usual calculation is undefined. Under one common convention, IV percentile is the fraction of observations below the current value over a stated lookback. Check the provider's treatment of equal observations and the chosen series. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
         "## The earnings trap",
         "Implied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.",
         "## Comparing hypothetical earnings payoffs",
@@ -467,8 +467,8 @@ const macroTrack: CourseTrack = {
     "Read a CPI release and identify which component drove the surprise, rather than reacting to the headline number.",
     "Explain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.",
     "Interpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.",
-    "Connect dollar strength to the behaviour of commodities, emerging markets and large exporters.",
-    "Combine several macro signals into one written view instead of trading each release in isolation.",
+    "Explain possible currency-translation and debt-exposure effects without inferring a fixed market response.",
+    "Compare several dated macroeconomic observations and document alternative explanations.",
   ],
   prerequisites:
     "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Lessons link to selected official statistics, central-bank publications and index-provider documentation. Check the scope and date of each source; the links do not independently validate every claim.",
@@ -579,7 +579,7 @@ const macroTrack: CourseTrack = {
       ],
       quiz: [
         { question: "Inverted curve =", options: ["Short < long", "Short > long", "Flat", "Negative yields"], correctAnswer: 1, explanation: "Short-term exceeds long-term." },
-        { question: "Which spread does the linked NY Fed recession model use?", options: ["10Y-2Y", "10Y-3M", "30Y-5Y", "2Y-Fed Funds"], correctAnswer: 1, explanation: "10Y-3M used in official model." },
+        { question: "Which spread does the linked NY Fed recession model use?", options: ["10Y-2Y", "10Y-3M", "30Y-5Y", "2Y-Fed Funds"], correctAnswer: 1, explanation: "The linked New York Fed research model uses the 10-year minus 3-month Treasury spread; its estimates are not official Federal Reserve forecasts." },
         { question: "What is the safest interpretation of a yield-curve inversion?", options: ["It guarantees a recession", "It is one historical recession-risk indicator with uncertain timing", "It predicts the exact market bottom", "It only matters for day traders"], correctAnswer: 1, explanation: "Yield-curve inversion is informative context, but it is not a guaranteed or precisely timed forecast." },
         { question: "The yield curve by itself provides:", options: ["An exact entry time", "A dated description of yields across maturities", "Guaranteed equity returns", "One required asset allocation"], correctAnswer: 1, explanation: "A curve describes relative yields; any forecast requires additional assumptions and remains uncertain." },
       ],
