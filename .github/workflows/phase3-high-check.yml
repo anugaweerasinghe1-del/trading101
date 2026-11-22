@@ -59,6 +59,16 @@ jobs:
       - run: node --import tsx scripts/verify-editorial-ui.ts
       - run: npm run verify:backend
       - run: npm run build
+      - name: Generate bounded publisher source-block receipt
+        run: node --import tsx scripts/generate-editorial-block-receipt.mjs
+      - name: Attach publisher source-block receipt (not a compliance attestation)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tradehq-editorial-block-receipt-${{ github.run_id }}
+          path: docs/audits/adsense-2026-11-22-exhaustive/generated-block-receipt/*
+          if-no-files-found: ignore
+          retention-days: 14
       - run: node scripts/verify-course-node.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts
 
