@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import YAML from "yaml";
 import { readFileSync } from 'node:fs';
 import { verifyReleaseWitness, checkPublicRoute, waitForReleaseWitness } from "./agent-release-recovery-readiness.mjs";
 import { collectCloudflareAccountEvidence } from './cloudflare-account-evidence.mjs';
@@ -192,6 +193,22 @@ await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken
 console.log('CLOUDFLARE_READONLY_ACCOUNT_FIXTURE_PASS: exact production identity, bounded history/usage, token and private fields omitted, denied/redirect/oversized/truncated evidence cannot authorize quota or rollback.');
 const workflow=readFileSync('.github/workflows/phase3-high-check.yml','utf8');
 const secretBinding='CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}';
-assert.equal(workflow.split(secretBinding).length-1,2,'Account secret must have only the two main-only observer bindings');
-const accountJob=workflow.slice(workflow.indexOf('  release-readiness:'));
-assert.ok(accountJob.includes(secretBinding) && accountJob.includes("(github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success'"), 'Provider secret is restricted to successfully validated protected main, never PR execution');
+assert.equal(workflow.split(secretBinding).length-1,3,'Cloudflare secret must be scoped to precisely three existing, main-only read observers');
+const mainGate="(github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success'";
+const jobs=YAML.parse(workflow).jobs;
+for(const key of ['native-cloudflare-receipt','release-signals','release-readiness']){
+  const job=jobs[key];
+  assert.ok(job?.if?.includes(mainGate),'Provider secret restricted to validated protected main: '+key);
+  assert.ok(job.steps.some(step=>step.env?.CLOUDFLARE_API_TOKEN==='\${{ secrets.CLOUDFLARE_API_TOKEN }}'),
+    'Provider secret may be bound only inside the intended main-only job: '+key);
+}
+const native=jobs['native-cloudflare-receipt'];
+assert.deepEqual(native.needs,['validation'],'Independent native receipt requires prior protected validation');
+assert.deepEqual(native.permissions,{contents:'read'},'Native receipt must not acquire repo write permissions');
+assert.ok(native.steps.some(step=>step.run==='node scripts/verify-cloudflare-production-main.mjs'&&
+  step.env?.GITHUB_SHA==='\${{ github.sha }}' && step.env?.GITHUB_REF==='\${{ github.ref }}'),
+  'Native receipt must invoke the existing strict exact-main read-only verifier');
+assert.ok(jobs['release-signals'].steps.some(step=>step.run==='node scripts/agent-release-recovery-readiness.mjs'),
+  'Existing Vercel/provider gate cannot be disabled');
+assert.ok(jobs['release-readiness'].steps.some(step=>String(step.run||'').includes('node scripts/agent-release-recovery-readiness.mjs')),
+  'Existing strict release and recovery gate cannot be disabled');
