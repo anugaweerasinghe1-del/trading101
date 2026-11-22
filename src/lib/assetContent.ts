@@ -121,7 +121,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   eurusd: [
     { question: "How do I learn Forex trading for free?", answer: "Use a $100,000 demo account to trade the EUR/USD pair. Compare session schedules as a learning exercise. Practice data does not reproduce actual session liquidity or execution." },
     { question: "What is a free forex simulator for beginners?", answer: "TradeHQ offers EUR/USD practice with $100K virtual cash. Use it for currency-pair arithmetic and pip calculations; simulated charts do not reproduce actual session liquidity." },
-    { question: "How to practice forex trading without money in Sri Lanka?", answer: "TradeHQ is free for students in Sri Lanka and worldwide. Practice EUR/USD and GBP/USD with simulated charts — no deposit or signup required." },
+    { question: "How to practice forex trading without money in Sri Lanka?", answer: "Guest practice requires no subscription where the site is available. Practice EUR/USD and GBP/USD with simulated charts — no deposit or signup required." },
     { question: "What factors can affect EUR/USD?", answer: "ECB and Federal Reserve policy, inflation, employment data, growth expectations and broader risk conditions can affect EUR/USD. No single release guarantees a particular currency move." }
   ],
   gbpusd: [
@@ -168,7 +168,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   ],
   qqq: [
     { question: "How to practice Nasdaq-100 ETF trading for free?", answer: "Use TradeHQ's $100K virtual cash to compare QQQ with another ETF example. Record changes in value and concentration; neither past relative performance nor sector exposure guarantees future returns." },
-    { question: "What is the difference between SPY and QQQ for practice?", answer: "SPY tracks the broad S&P 500 while QQQ is tech-heavy (Nasdaq-100). Practice comparing both to learn how sector concentration affects returns." },
+    { question: "What is the difference between SPY and QQQ for practice?", answer: "SPY seeks to track the S&P 500 and QQQ the Nasdaq-100. Their sector weights differ and change; compare dated issuer disclosures without assuming a fixed effect on returns." },
     { question: "Is QQQ good for beginners learning ETF trading?", answer: "QQQ can illustrate Nasdaq-100 index concentration and how fund exposure differs from a broad-market example. A QQQ/SPY ratio does not establish a reliable risk-on signal." },
     { question: "How to learn tech sector trading as a student?", answer: "Compare the fund's published holdings and weighting method with individual companies. Use virtual cash to study concentration effects rather than assume a technology narrative predicts prices." }
   ]
@@ -729,7 +729,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   eurusd: {
     whatIs: "EUR/USD expresses the number of US dollars per euro. A rise from 1.10 to 1.12 means the euro buys more dollars in that quotation. An ECB reference rate is a published reference observation, not a guaranteed executable broker quote.",
-    strategy: "EUR/USD moves on ECB and Fed policy divergence. Compare dated ECB and Federal Reserve releases with separately sourced exchange-rate observations. A coincident move does not establish causation. (Educational simulation only — not financial advice.)",
+    strategy: "Differences in central-bank policy are one possible research topic for EUR/USD. Compare dated ECB and Federal Reserve releases with separately sourced exchange-rate observations. A coincident move does not establish causation. (Educational simulation only — not financial advice.)",
     category: "Forex",
     keywords: ["EUR/USD trading", "forex practice", "currency pair", "euro dollar"],
     stats: {
@@ -777,7 +777,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   gold: {
     whatIs: "Gold is a precious metal used in jewellery, industry and official reserves. TradeHQ's gold-labelled practice instrument can use CoinGecko PAX Gold (PAXG) token quotes as a price proxy, rather than a dedicated XAU/USD spot feed. PAXG volume and market cap refer to the token, not the global physical-gold market. Fixed fallback prices and separately labelled generated charts may also appear. A virtual holding acquires no physical gold, fund units or tokens.",
-    strategy: "Educational example: Analyze gold price action during periods of high CPI data, Fed policy shifts, or stock market volatility. Focus on real yields as a key driver. (Educational simulation only — not financial advice.)",
+    strategy: "Compare dated inflation or interest-rate publications with separately sourced observations. The fictional gold price input cannot establish a historical relationship or rank the causes of changes. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["gold trading", "XAU practice", "precious metals", "safe haven", "inflation hedge"],
     stats: {
