@@ -77,7 +77,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "What indicators can be studied for Ethereum trading practice?", answer: "Gas fees, network activity and relative-price measures can be studied as different inputs. No indicator is universally best, and none establishes a future ETH price." }
   ],
   nvda: [
-    { question: "How do I trade the AI boom with a simulator?", answer: "NVDA is one company example in the simulator. Use $100K virtual cash to study how price changes affect a position, and distinguish AI-sector narratives from evidence about future returns." },
+    { question: "How can a simulator illustrate fictional exposure to an AI-related company?", answer: "NVDA is one company example in the simulator. Use $100K virtual cash to study how price changes affect a position, and distinguish AI-sector narratives from evidence about future returns." },
     { question: "Is NVIDIA stock good for beginner stock trading practice?", answer: "NVDA is one company example for a virtual practice exercise. News narratives and historical trends do not establish its suitability for a beginner or predict the next move." },
     { question: "How to practice NVIDIA stock trading as a student in Sri Lanka?", answer: "Use TradeHQ to study NVDA position values with $100K virtual cash. No US brokerage is needed for this practice; it does not establish readiness for real trading." },
     { question: "What factors can affect NVIDIA stock price?", answer: "Data-centre revenue, AI-chip demand, quarterly results, guidance and broader market conditions are among the factors investors monitor. Their effect on NVDA can vary by period and is not mechanically predictable." }
@@ -140,7 +140,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "How to practice Microsoft stock trading for free?", answer: "TradeHQ offers MSFT practice with $100K virtual cash. Compare hypothetical position sizes and observed volatility over a stated period without assuming MSFT is inherently steadier than other technology stocks." },
     { question: "What factors can affect Microsoft stock price?", answer: "Azure growth, software subscriptions, AI-related spending and adoption, guidance and broader market conditions are among the factors investors monitor. Their effects vary by period." },
     { question: "Is MSFT good for learning stock trading basics?", answer: "MSFT is one available company example for learning order mechanics and business analysis. Its volatility depends on the period examined and is not inherently suitable for every beginner." },
-    { question: "Can I practice trading US tech stocks from Sri Lanka?", answer: "Yes. TradeHQ simulates US stocks including MSFT, AAPL, and NVDA. Students anywhere can practice free with $100K virtual cash." }
+    { question: "Can I practice trading US tech stocks from Sri Lanka?", answer: "Yes. TradeHQ simulates US stocks including MSFT, AAPL, and NVDA. Where available, guest practice uses $100K in virtual cash without a subscription." }
   ],
   googl: [
     { question: "How to practice Alphabet stock with virtual money?", answer: "Use TradeHQ to practise GOOGL with $100K virtual cash. Study hypothetical price changes and chart patterns; simulated charts do not reproduce actual announcement reactions or traded volume." },
@@ -151,7 +151,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   meta: [
     { question: "How to practice META stock trading for free?", answer: "TradeHQ offers META practice with $100K virtual cash. Compare hypothetical price and quantity changes; an engagement metric alone does not predict share-price performance." },
     { question: "What factors can affect Meta Platforms stock price?", answer: "Advertising revenue, engagement, capital spending, Reality Labs results, guidance and broader market conditions are among the factors investors monitor. Their effect on META is not mechanically predictable." },
-    { question: "Can META be used to study earnings reactions?", answer: "Actual META earnings reactions can be studied with separately sourced historical prices and company reports. TradeHQ charts are simulated; use hypothetical gaps for practice rather than infer a repeatable earnings strategy." },
+    { question: "Can META be used to study earnings reactions?", answer: "Actual META earnings reactions can be studied with separately sourced historical prices and company reports. Check the chart's data-source label. Generated candles are not historical evidence; hypothetical gaps cannot establish a repeatable earnings strategy." },
     { question: "How can I study a social-media company in the simulator?", answer: "Use Meta as a company research example, with engagement, advertising and spending figures from its published reports. Keep that research separate from simulated price changes, which cannot establish how the market reacted." }
   ],
   xrp: [
@@ -409,7 +409,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   amzn: {
     whatIs: "Amazon operates online and physical stores, advertising services and Amazon Web Services, among other activities. Its segment reporting helps distinguish sales from operating income; the contribution of each segment changes over reporting periods.",
-    strategy: "Practice calculating risk-reward around earnings reports and Prime Day events. Monitor AWS growth and advertising revenue as key performance indicators. (Educational simulation only — not financial advice.)",
+    strategy: "Compare fictional gain and loss scenarios with clearly labelled assumptions. Study dated AWS and advertising disclosures separately from price observations. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Amazon stock trading", "AMZN practice", "e-commerce giant", "AWS", "cloud computing"],
     stats: {
@@ -433,7 +433,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   meta: {
     whatIs: "Meta operates services including Facebook, Instagram and WhatsApp and reports its Family of Apps and Reality Labs activities. Advertising revenue and investment spending are different accounting measures. User activity alone does not determine share value.",
-    strategy: "Practice correlating ad revenue metrics and user growth with price action during earnings. Monitor Reels engagement and AI ad targeting improvements. (Educational simulation only — not financial advice.)",
+    strategy: "Compare dated revenue and user metrics with separately sourced historical observations. Generated practice charts do not establish earnings reactions or causation. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Meta stock trading", "META simulator", "social media", "VR", "advertising", "AI"],
     stats: {
