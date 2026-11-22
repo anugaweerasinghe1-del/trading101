@@ -672,11 +672,11 @@ const psychologyTrack: CourseTrack = {
   level: "Beginner",
   badge: { name: "Trading Psychology Completion", description: "Awarded after completing every lesson in the Trading Decisions and Behaviour track." },
   outcomes: [
-    "Name the specific biases most likely to affect your own decisions, with an example from your own trade log.",
+    "Explain examples of decision biases using fictional observations, without inferring which bias a particular person has.",
     "Recognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.",
     "Keep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.",
     "Create an optional preparation and review checklist with no fixed time requirement.",
-    "Distinguish between a losing trade that followed the plan and a winning trade that broke it.",
+    "Distinguish a hypothetical outcome from whether the recorded assumptions were followed.",
   ],
   prerequisites:
     "No previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions.",
@@ -713,7 +713,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "Tversky & Kahneman — Cumulative Prospect Theory (1992)", url: "https://doi.org/10.1007/BF00122574" },
-        { label: "Walasek, Mullett & Stewart — A Meta-analysis of Loss Aversion in Risky Contexts (2024)", url: "https://wrap.warwick.ac.uk/id/eprint/185745/13/1-s2.0-S0167487024000485-main.pdf" },
+        { label: "Walasek, Mullett & Stewart — A Meta-analysis of Loss Aversion in Risky Contexts (2024)", url: "https://doi.org/10.1016/j.joep.2024.102740" },
       ],
       quiz: [
         { question: "Loss aversion describes:", options: ["Identical reactions from everyone", "Giving losses more weight than comparable gains relative to a reference point", "Preferring losses to gains", "Avoiding all trades"], correctAnswer: 1, explanation: "The concept concerns asymmetric evaluation around a reference point. Its magnitude varies and is not a universal two-times emotional ratio." },
@@ -725,7 +725,7 @@ const psychologyTrack: CourseTrack = {
     {
       slug: "revenge-trading-and-tilt",
       title: "Revenge Trading & Tilt — Recognising Unplanned Decisions",
-      summary: "Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.",
+      summary: "This lesson examines how frustration or other reactions to recent outcomes may influence decisions; a transaction pattern alone does not reveal someone's emotional state.",
       readingMinutes: 8,
       body: [
         "## What tilt actually is",
@@ -747,12 +747,12 @@ const psychologyTrack: CourseTrack = {
         "TradeHQ’s cooldown permits proceeding after five seconds; it is not a daily-loss lockout.",
       ],
       sources: [
-        { label: "TradeHQ — Revenge Trading Blocker", url: "/portfolio" },
+        { label: "TradeHQ — practice review tools", url: "/portfolio" },
         { label: "Kahneman and Tversky — decision-making under uncertainty", url: "https://doi.org/10.1007/BF00122574" },
         { label: "FINRA — Social sentiment and impulsive-investment risks", url: "https://www.finra.org/investors/insights/social-sentiment-investing-tools" },
       ],
       quiz: [
-        { question: "Tilt is:", options: ["A strategy", "Emotional state driving reckless trades", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Post-loss unplanned oversized trading." },
+        { question: "In this lesson, what does tilt describe?", options: ["A strategy", "A reaction to an outcome that may disrupt a plan", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Tilt describes a possible reaction to outcomes; an individual transaction does not establish someone's emotional state." },
         { question: "In the hypothetical worksheet, 3% of $100,000 is:", options: ["$100", "$3,000", "$25,000", "$30,000"], correctAnswer: 1, explanation: "100,000 × 0.03 = $3,000. This is arithmetic, not an industry-standard limit." },
         { question: "What does TradeHQ’s cooldown allow after five seconds?", options: ["Guaranteed recovery", "Proceeding with or cancelling the trade", "Automatic account reset", "A mandatory 24-hour lockout"], correctAnswer: 1, explanation: "The prompt allows a choice after the pause; it does not enforce a daily drawdown limit." },
         { question: "Which journal entry helps review a changed decision?", options: ["Only the final price", "The intended size, actual size and reason for changing it", "A guaranteed profit target", "Another trader’s ranking"], correctAnswer: 1, explanation: "Recording the original plan and the change makes the decision reviewable." },
@@ -786,7 +786,7 @@ const psychologyTrack: CourseTrack = {
           "A journal is a record, not proof of an investment edge.",
           "Distinguish virtual transactions, observed price marks, interpretation and hypothetical future fills.",
           "Use dated assumptions and include unfavorable observations when reviewing a sample.",
-          "No universal trade count validates future performance."
+          "No universal observation count validates future performance."
         ],
         "sources": [
           {
@@ -800,7 +800,7 @@ const psychologyTrack: CourseTrack = {
         ],
         "quiz": [
           {
-            "question": "What does a journal prove on its own?",
+            "question": "What can a journal document on its own?",
             "options": [
               "A profitable edge",
               "Why the market moved",
