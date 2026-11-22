@@ -65,7 +65,7 @@ const optionsTrack: CourseTrack = {
     "Compare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable.",
   ],
   prerequisites:
-    "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket.",
+    "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. Familiarity with the terminology on a virtual order ticket is helpful. No prior trade or minimum practice time is required.",
   progression:
     "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
   notFor:
@@ -80,14 +80,14 @@ const optionsTrack: CourseTrack = {
       body: [
         "## The core definition",
         "This lesson focuses on standard unadjusted US equity options, which generally cover 100 shares. A call gives its buyer a right to buy and a put a right to sell at the strike under the contract terms. American-style options can be exercised before expiry; European-style options have a different exercise schedule. Adjusted contracts and cash-settled index options can have different deliverables. The writer takes the corresponding obligation. Read the specific contract and OCC risk disclosure rather than assume every option is identical.",
-        "Because one contract controls 100 shares, a call option quoted at $2.50 actually costs $250 to buy. That single number embeds four separate ideas: the direction you expect (up for calls, down for puts), how far you expect the move to go (the strike), how much time you're giving it (the expiration), and how much volatility the market currently prices in.",
+        "For a standard unadjusted 100-share contract, the quoted premium is stated per share. An option premium depends on multiple pricing inputs, including the underlying price, strike, remaining time, implied volatility, interest rates and dividends. It is not a direct measure of an individual participant's expectations.",
         "## Why options exist",
         "A share holder can buy a put to offset some losses below its strike during the option term, at the cost of its premium. A covered call adds premium income but limits upside and retains substantial share-price risk. These examples illustrate different payoffs; neither is a guaranteed return or a universally suitable position.",
         "## A simple worked example",
-        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. If it closes between $185 and $188 you're partially in-the-money but net negative. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. These are hypothetical expiration payoffs before costs for the purchased option alone. Exercise can create a stock position with separate funding and market risk. Short options have different obligations, and an uncovered short call can have unlimited loss.",
+        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. An expiration price strictly between $185 and $188 gives the call intrinsic value but a net loss before costs; $188 is gross break-even. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. These are hypothetical expiration payoffs before costs for the purchased option alone. Exercise can create a stock position with separate funding and market risk. Short options have different obligations, and an uncovered short call can have unlimited loss.",
         "## What you can practise on TradeHQ",
         "TradeHQ supports spot instruments, including shares and ETFs, with $100,000 virtual capital. It does not model option strikes, expirations or premiums. Use this lesson's worked examples to calculate hypothetical contract payoffs on paper; buying an underlying share in the simulator is a different transaction from buying an option on it.",
-        "> Options are contracts, not shares. You are trading a right that decays with time.",
+        "> Options are contracts, not shares. Time value generally erodes as expiry approaches, but the total premium can rise or fall with other pricing inputs.",
         DISC,
       ],
       keyTakeaways: [
@@ -143,7 +143,7 @@ const optionsTrack: CourseTrack = {
       quiz: [
         { question: "What does theta measure?", options: ["Directional exposure", "Time decay per day", "Volatility sensitivity", "Interest-rate risk"], correctAnswer: 1, explanation: "Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated." },
         { question: "In the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects?", options: ["$0.10", "$0.30", "$0.50", "$0.90"], correctAnswer: 2, explanation: "0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability." },
-        { question: "'IV crush' typically happens:", options: ["Right before earnings", "Right after earnings", "On Fed decision day", "At market open"], correctAnswer: 1, explanation: "A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release." },
+        { question: "Which event can be followed by a sharp decline in implied volatility?", options: ["A fixed time every morning", "An earnings announcement resolving uncertainty", "Every market opening without exception", "Every dividend payment without exception"], correctAnswer: 1, explanation: "A sharp post-announcement decline in implied volatility is sometimes called IV crush. It is not confined to earnings and is not inevitable after an announcement." },
         { question: "Which Greek measures the rate of change of delta?", options: ["Vega", "Theta", "Gamma", "Rho"], correctAnswer: 2, explanation: "Gamma tells you how quickly delta itself changes." },
       ],
     },
@@ -194,7 +194,7 @@ const optionsTrack: CourseTrack = {
         "## What implied volatility actually is",
         "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.",
         "## IV rank vs IV percentile",
-        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
+        "A quoted IV value needs context before comparisons can be interpreted. IV rank commonly compares current IV with the highest and lowest observations over a specified lookback, often 52 weeks, on a 0–100 scale. A constant series has no high-low range, so the usual calculation is undefined. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
         "## The earnings trap",
         "Implied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.",
         "## Comparing hypothetical earnings payoffs",
@@ -214,7 +214,7 @@ const optionsTrack: CourseTrack = {
         { label: "OIC — IV rank and percentile definitions", url: "https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy" },
       ],
       quiz: [
-        { question: "IV rank of 80 means:", options: ["IV is at 80%", "IV is near a 12-month high", "IV is near a 12-month low", "80% of options are profitable"], correctAnswer: 1, explanation: "IV rank normalises IV against the last year on a 0-100 scale." },
+        { question: "Under the lesson's 52-week high-low convention, what does IV rank of 80 describe?", options: ["IV is at 80%", "IV is toward the upper end of its observed range", "IV is near a 12-month low", "80% of options are profitable"], correctAnswer: 1, explanation: "IV rank describes relative location within a specified high-low range, not the fraction of days below the current value." },
         { question: "Why can a long option lose even if the price moves in the expected direction after earnings?", options: ["Because options never follow the underlying", "A drop in implied volatility and time value can offset the directional gain", "Because earnings cancel the contract", "Because all options are illiquid"], correctAnswer: 1, explanation: "Option value depends on more than direction; implied volatility and time value can change sharply after earnings." },
         { question: "What does a high IV rank tell you?", options: ["A premium-selling trade is guaranteed to work", "Current implied volatility is high relative to its own recent range", "The stock must fall", "The next move will be small"], correctAnswer: 1, explanation: "IV rank is context about relative option pricing, not a standalone buy or sell signal." },
         { question: "Implied volatility is:", options: ["Historical vol over 30 days", "An exchange forecast", "The volatility that makes model = market price", "The stock's beta"], correctAnswer: 2, explanation: "IV is the vol input that reconciles a pricing model with the live option price." },
@@ -227,10 +227,10 @@ const optionsTrack: CourseTrack = {
       readingMinutes: 9,
       body: [
         "## Illustrative 1% budget for a defined-risk worksheet",
-        "For simulation, choose a small predefined risk budget before entering a position and compare how different limits affect drawdown. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
+        "The worksheet uses a hypothetical loss assumption for arithmetic comparison; it does not require entering any position. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
         "## Testing a hypothetical loss multiplier",
         "Naked puts and short strangles can create losses far larger than the premium collected. In a paper worksheet, model adverse moves explicitly and compare the resulting losses with a hypothetical risk budget rather than relying on one fixed multiplier. TradeHQ does not execute these option positions.",
-        "## Rolling — extending, not doubling down",
+        "## Rolling — definition and limitations",
         "Rolling means closing an existing option and opening another with a different expiry and sometimes a different strike. A credit or debit alone does not determine whether the adjustment makes sense; compare the new maximum loss, break-even points, time remaining and total capital at risk in a worked example. Rolling options is not supported by TradeHQ's order engine.",
         "## When to cut a loss",
         "Predefined exits can prevent open-ended decision-making, but no single percentage works for every option structure. In a worksheet with appropriate historical option prices, compare several hypothetical exit rules and record drawdown, average loss and opportunity cost. Account for execution assumptions and costs; TradeHQ's spot simulator cannot perform this options backtest.",
@@ -242,7 +242,7 @@ const optionsTrack: CourseTrack = {
         "Use a predefined practice risk budget and record the effect on drawdown.",
         "Model adverse scenarios for structures whose losses can exceed the premium collected.",
         "Evaluate a roll by its full risk profile, not only by whether it creates a credit or debit.",
-        "Test predefined exits in simulation rather than treating one threshold as universal.",
+        "Compare hypothetical exit assumptions in a separate worksheet; the TradeHQ spot simulator cannot backtest options.",
       ],
       sources: [
         { label: "OCC — Options Risk Disclosure", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
