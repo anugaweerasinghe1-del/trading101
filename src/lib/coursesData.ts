@@ -261,7 +261,7 @@ const optionsTrack: CourseTrack = {
 const futuresTrack: CourseTrack = {
   slug: "futures-and-derivatives",
   title: "Futures & Derivatives",
-  tagline: "Contracts, margin, contango and hedging — the trader's toolkit.",
+  tagline: "Contract definitions, collateral, term structure and risk — conceptual worksheets only.",
   description:
     "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.",
   hero: futuresHero,
@@ -269,7 +269,7 @@ const futuresTrack: CourseTrack = {
   badge: { name: "Futures Fundamentals Completion", description: "Awarded after completing every lesson in the Futures & Derivatives track." },
   outcomes: [
     "Explain what a futures contract standardises and who the natural counterparties in a market are.",
-    "Calculate the notional value behind a contract and the margin actually required to hold it.",
+    "Distinguish contract notional from hypothetical collateral and explain why actual requirements vary.",
     "Read a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.",
     "Describe how a producer or consumer uses futures to hedge a real-world exposure.",
     "Compare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk.",
@@ -298,20 +298,19 @@ const futuresTrack: CourseTrack = {
         DISC,
       ],
       keyTakeaways: [
-        "A futures contract is a standardised exchange agreement to transact a fixed asset at a future date.",
+        "A futures contract is a standardised exchange agreement with a specified underlying or reference and settlement terms.",
         "The clearing house manages counterparty risk through safeguards; it does not eliminate all risk.",
         "Both long and short futures positions remain subject to margin, permissions and exchange rules.",
         "Every contract has a spec sheet — always read it.",
       ],
       sources: [
         { label: "CME — Futures introduction and participant roles", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
-        { label: "CME — Introduction to Futures", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
         { label: "CME — E-mini S&P 500 contract specifications", url: "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" },
         { label: "CME — Clearing safeguards", url: "https://www.cmegroup.com/solutions/risk-management/financial-safeguards.html" },
         { label: "CME — Position limits overview", url: "https://www.cmegroup.com/education/courses/market-regulation/position-limits/position-limits-overview" },
       ],
       quiz: [
-        { question: "The central counterparty on a US futures exchange is:", options: ["The buyer", "The seller", "The exchange's clearing house", "The broker"], correctAnswer: 2, explanation: "The clearing house novates every trade." },
+        { question: "The central counterparty on a US futures exchange is:", options: ["The buyer", "The seller", "The exchange's clearing house", "The broker"], correctAnswer: 2, explanation: "The clearing house becomes the central counterparty to cleared transactions under its rules." },
         { question: "Notional value of one E-mini S&P at index 5,000 ≈", options: ["$5,000", "$50,000", "$250,000", "$1,000,000"], correctAnswer: 2, explanation: "$50 × 5,000 = $250,000." },
         { question: "Which statement about opening a short futures position is correct?", options: ["It removes margin requirements", "It is exempt from exchange rules", "It does not require borrowing the underlying asset first", "It guarantees a maximum loss"], correctAnswer: 2, explanation: "Selling a futures contract creates short exposure, subject to margin and applicable trading rules." },
         { question: "A producer uses a short futures position to offset falling sale prices. This is an example of:", options: ["Guaranteed profit", "Eliminating default risk", "Hedging price exposure", "Avoiding all settlement obligations"], correctAnswer: 2, explanation: "The futures position can offset some price exposure, but a hedge need not remove every risk." },
@@ -347,7 +346,7 @@ const futuresTrack: CourseTrack = {
         { question: "Futures margin is best described as:", options: ["A loan", "A performance bond", "A fee", "A tax"], correctAnswer: 1, explanation: "It is collateral supporting the position, not a loan or a cap on losses." },
         { question: "Futures accounts are marked-to-market:", options: ["Yearly", "Monthly", "Every trading day", "Only at expiration"], correctAnswer: 2, explanation: "Daily settlement moves cash in/out." },
         { question: "In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:", options: ["1%", "5%", "~19%", "50%"], correctAnswer: 2, explanation: "$2,500 on $13,000 ≈ 19%." },
-        { question: "A margin call means:", options: ["You made money", "Deposit more or be liquidated", "Exchange closed", "Broker owes interest"], correctAnswer: 1, explanation: "The broker may require additional funds or reduce or liquidate positions under its rules." },
+        { question: "A margin call means:", options: ["You made money", "A collateral shortfall may require funds or position reduction", "Exchange closed", "Broker owes interest"], correctAnswer: 1, explanation: "The broker may require additional funds or reduce or liquidate positions under its rules." },
       ],
     },
     {
@@ -376,10 +375,11 @@ const futuresTrack: CourseTrack = {
       ],
       sources: [
         { label: "CME — Contango/Backwardation", url: "https://www.cmegroup.com/education/courses/introduction-to-precious-metals/what-is-contango-and-backwardation" },
-        { label: "FRED — WTI", url: "https://fred.stlouisfed.org/series/DCOILWTICO" },
+        { label: "FRED — WTI spot-price series (not a futures curve)", url: "https://fred.stlouisfed.org/series/DCOILWTICO" },
+        { label: "CFTC — terminology and basis risk", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" },
       ],
       quiz: [
-        { question: "Further-dated below front month =", options: ["Contango", "Backwardation", "Equilibrium", "Rollover"], correctAnswer: 1, explanation: "Backwardation describes relative delivery prices; it does not by itself prove a shortage." },
+        { question: "For two stated delivery months, what describes a lower price for the later delivery?", options: ["Contango", "Backwardation", "Equilibrium", "Rollover"], correctAnswer: 1, explanation: "Backwardation describes relative delivery prices; it does not by itself prove a shortage." },
         { question: "Which factor can make a futures fund differ from spot performance?", options: ["Guaranteed gains", "Contract selection and rolling methodology", "No costs", "Identical exposure"], correctAnswer: 1, explanation: "Methodology, contract price changes, collateral returns and costs affect fund performance." },
         { question: "Which factor can contribute to contango in a storable-commodity example?", options: ["A guaranteed shortage", "Carrying costs", "The ticker symbol alone", "A universal price rule"], correctAnswer: 1, explanation: "Carrying costs can contribute to higher deferred futures prices. Convenience yield and other conditions can offset those costs; storable commodities are not always in contango." },
         { question: "Which condition can contribute to backwardation, without being proven by the curve alone?", options: ["Quiet market", "Physical shortage", "Delisting", "Low vol"], correctAnswer: 1, explanation: "Immediate demand for physical supply and convenience yield can contribute to backwardation. The curve alone does not prove a shortage or identify participants’ motives." },
@@ -403,19 +403,19 @@ const futuresTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "Hedging uses a position to offset a specified exposure; it need not eliminate every risk.",
-        "Producers sell; consumers buy.",
-        "Equity funds hedge beta by shorting index futures.",
+        "Hedge direction depends on the specific price exposure being offset.",
+        "A conceptual index-futures hedge can reduce some equity-market exposure; mismatch and other risks remain.",
         "Basis changes, cash-flow needs and mismatched quantities can affect a hedge.",
       ],
       sources: [
         { label: "CME — Hedging", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
-        { label: "CME — Hedgers and futures mechanics", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
+        { label: "CFTC — definitions of hedging and basis risk", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" },
       ],
       quiz: [
         { question: "Which conceptual futures direction offsets some exposure to a falling wheat sale price?", options: ["Buy wheat futures", "Sell wheat futures", "Buy corn futures", "Buy S&P"], correctAnswer: 1, explanation: "A short wheat future can gain when its futures price falls, but basis, quantity and costs affect the combined result." },
-        { question: "Which conceptual crude futures position gains if its futures price rises?", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "Buying futures profits if crude rises." },
+        { question: "Which conceptual crude futures position gains if its futures price rises?", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "The hypothetical price exposure has a positive gross change if its referenced futures price rises. Costs and the separate fuel expense still matter." },
         { question: "Basis risk is:", options: ["Exchange default", "Futures vs physical don't move perfectly together", "Rate risk", "FX risk"], correctAnswer: 1, explanation: "Basis fluctuates." },
-        { question: "Hedge $50M with $250K notional contracts →", options: ["20", "200", "500", "1,000"], correctAnswer: 1, explanation: "$50M / $250K = 200." },
+        { question: "In the simplified one-for-one notional worksheet, what is the count represented by $50 million divided by $250,000?", options: ["20", "200", "500", "1,000"], correctAnswer: 1, explanation: "The quotient is 200 under the specified arithmetic assumption; this is not an actual hedge-size recommendation." },
       ],
     },
     {
@@ -435,9 +435,9 @@ const futuresTrack: CourseTrack = {
         DISC,
       ],
       keyTakeaways: [
-        "The four Micro E-mini equity-index contracts are one-tenth their respective E-mini contract sizes.",
+        "The four named example Micro E-mini equity-index contracts use one-tenth the multipliers of their respective E-mini counterparts; this is not a complete product catalogue.",
         "Check each contract’s multiplier, tick value, fees, liquidity and margin requirements.",
-        "Micros let beginners scale one contract at a time.",
+        "Smaller multipliers change notional exposure, not whether a contract is suitable or safe.",
         "TradeHQ offers spot practice; futures margin and settlement remain worksheet exercises.",
       ],
       sources: [
