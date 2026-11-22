@@ -83,3 +83,13 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+
+const assetGuideRoutes = routes.filter(route => route.path.startsWith("/how-to-trade/"));
+assert.equal(assetGuideRoutes.length, 6);
+for (const route of assetGuideRoutes) {
+  assert.match(route.title, /Virtual Practice Guide/);
+  assert.match(route.description, /No real-money transactions/i);
+  assert.ok(content.get(route.path)?.sections.some(section => section.h === "Worked hypothetical accounting example"));
+}
+assert.match(routes.find(route => route.path === "/how-to-trade")!.summary, /No transaction is required/);
