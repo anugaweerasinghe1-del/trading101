@@ -190,7 +190,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
           "Look a term up the first time you meet it rather than guessing from context.",
           "Use a worksheet or an appropriate external dataset for the concept. Check supported chart features first: TradeHQ does not provide every indicator, and generated candles are not historical market evidence.",
           "Use the related-terms links at the bottom of each entry to build a map of the topic.",
-          `Practise anything you learn with ${BALANCE} in virtual cash — ${DISCLAIMER}`,
+          `Use the virtual simulator for supported spot-order concepts only; other exercises are classroom worksheets — ${DISCLAIMER}`,
         ],
       },
     ],

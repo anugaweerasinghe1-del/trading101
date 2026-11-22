@@ -384,7 +384,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Emotional response to seeing rapid price increases",
       "Emotion alone does not establish where a market top is or a measured loss probability",
-      "Combat FOMO with pre-defined trading plans and alerts"
+      "A written record separates the available information from later outcomes; it does not establish emotional or investment benefits"
     ],
     studentPerspective: "Compare the recorded reason for a virtual decision with the information available at that time. The exercise does not diagnose a person or distinguish professionals from amateurs.",
     relatedTerms: ["fud", "bull-trap", "hodl-strategy"]
@@ -437,7 +437,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Wallet attribution and estimated holdings are uncertain; no exact ownership total is asserted here",
       "True identity remains unknown — one of tech's biggest mysteries"
     ],
-    studentPerspective: "Satoshi's creation of Bitcoin introduced the concept of decentralized money. Understanding the origin story contextualizes the entire crypto ecosystem.",
+    studentPerspective: "Bitcoin's 2008 proposal drew on earlier cryptographic research. Reading the dated announcement and its references helps distinguish the documented protocol from later claims about the author's identity and holdings.",
     relatedTerms: ["hodl-strategy", "leverage-trading", "liquidation-cascade"]
   },
   // === TERMS 26-50 ===
@@ -812,7 +812,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Observed peak-to-trough decline under the specified valuation and sampling method",
       "50% drawdown requires 100% gain to recover — math is asymmetric",
-      "Calmar ratio compares a defined annualised return with maximum drawdown; the sample and assumptions matter"
+      "Sampling frequency and cash-flow treatment can affect a measured drawdown; state the method before comparing results"
     ],
     studentPerspective: "Calculate the decline from the relevant peak and state the observation period. Historical maximum drawdown is not an upper bound on future loss, and no universal percentage is a suitable limit for everyone.",
     relatedTerms: ["risk-reward-ratio", "leverage-trading", "paper-trading"]

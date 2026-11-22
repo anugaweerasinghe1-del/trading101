@@ -317,7 +317,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Education-first positioning: illustrations of market indicators or price scenarios do not constitute verified trade signals, profitable strategies or personal financial recommendations.",
         "No invented statistics, testimonials, credentials or performance figures.",
         "Numbers in lessons are worked examples and are labelled as such.",
-        "Every page states that the platform is educational and simulated.",
+        "Educational content distinguishes simulation from real financial activity; some account and utility screens do not repeat the full educational disclaimer.",
         "Corrections are made promptly when a factual error is reported.",
       ],
     },
