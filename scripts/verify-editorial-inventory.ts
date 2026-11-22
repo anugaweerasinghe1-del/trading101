@@ -124,3 +124,23 @@ assert.ok(checkedMacroCurve);
 assert.match(checkedMacroCurve.body.join(" "), /one month through thirty years/);
 assert.match(checkedMacroCurve.body.join(" "), /twelve months ahead/);
 assert.match(checkedMacroCurve.body.join(" "), /official Federal Reserve forecasts/);
+
+
+const reviewedBehaviourTrack = data.courseTracks.find(track => track.slug === "trading-psychology-mastery");
+assert.ok(reviewedBehaviourTrack);
+assert.equal(reviewedBehaviourTrack.lessons.length, 5);
+const reviewedReminder = reviewedBehaviourTrack.lessons.find(lesson => lesson.slug === "revenge-trading-and-tilt");
+assert.ok(reviewedReminder);
+assert.match(reviewedReminder.summary, /does not reveal someone's emotional state/);
+assert.equal(reviewedReminder.quiz[0].correctAnswer, 1);
+const reviewedFuturesTrack = data.courseTracks.find(track => track.slug === "futures-and-derivatives");
+assert.ok(reviewedFuturesTrack);
+assert.equal(reviewedFuturesTrack.lessons.length, 5);
+for (const lesson of reviewedFuturesTrack.lessons) {
+  assert.equal(lesson.quiz.length, 4);
+  assert.equal(new Set(lesson.sources.map(s => s.url)).size, lesson.sources.length);
+}
+const reviewedMicro = reviewedFuturesTrack.lessons.find(lesson => lesson.slug === "micro-futures-for-beginners");
+assert.ok(reviewedMicro);
+assert.match(reviewedMicro.keyTakeaways.join(" "), /not a complete product catalogue/);
+assert.doesNotMatch(reviewedMicro.keyTakeaways.join(" "), /let beginners scale/);
