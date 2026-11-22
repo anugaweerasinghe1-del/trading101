@@ -1,0 +1,454 @@
+{
+  "observedUniqueInternal": 81,
+  "alreadyExtractedInScope": [
+    "https://www.thetradehq.com/courses",
+    "https://www.thetradehq.com/wiki",
+    "https://www.thetradehq.com/about",
+    "https://www.thetradehq.com/contact",
+    "https://www.thetradehq.com/privacy",
+    "https://www.thetradehq.com/terms",
+    "https://www.thetradehq.com/roadmap",
+    "https://www.thetradehq.com/whats-new",
+    "https://www.thetradehq.com/wiki/fomo",
+    "https://www.thetradehq.com/wiki/fud",
+    "https://www.thetradehq.com/wiki/satoshi-nakamoto",
+    "https://www.thetradehq.com/wiki/market-maker",
+    "https://www.thetradehq.com/wiki/slippage",
+    "https://www.thetradehq.com/wiki/flash-crash",
+    "https://www.thetradehq.com/wiki/circuit-breaker",
+    "https://www.thetradehq.com/wiki/pump-and-dump",
+    "https://www.thetradehq.com/wiki/paper-trading",
+    "https://www.thetradehq.com/wiki/drawdown",
+    "https://www.thetradehq.com/wiki/backtesting",
+    "https://www.thetradehq.com/wiki/correlation-trading",
+    "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment",
+    "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator",
+    "https://www.thetradehq.com/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns",
+    "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+    "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+    "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+    "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+    "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
+    "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash"
+  ],
+  "additionalDestinationChecks": [
+    {
+      "url": "https://www.thetradehq.com/",
+      "final": "https://www.thetradehq.com/",
+      "canonical": "https://www.thetradehq.com/",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 5613,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/markets",
+      "final": "https://www.thetradehq.com/markets",
+      "canonical": "https://www.thetradehq.com/markets",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3796,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "final": "https://www.thetradehq.com/trade",
+      "canonical": "https://www.thetradehq.com/trade",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3620,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/learn",
+      "final": "https://www.thetradehq.com/learn",
+      "canonical": "https://www.thetradehq.com/learn",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3646,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade",
+      "final": "https://www.thetradehq.com/how-to-trade",
+      "canonical": "https://www.thetradehq.com/how-to-trade",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3671,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy",
+      "final": "https://www.thetradehq.com/strategy",
+      "canonical": "https://www.thetradehq.com/strategy",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3809,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/compare",
+      "final": "https://www.thetradehq.com/compare",
+      "canonical": "https://www.thetradehq.com/compare",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 4165,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country",
+      "final": "https://www.thetradehq.com/learn/country",
+      "canonical": "https://www.thetradehq.com/learn/country",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3409,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/daily",
+      "final": "https://www.thetradehq.com/daily",
+      "canonical": "https://www.thetradehq.com/daily",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 4867,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/portfolio",
+      "final": "https://www.thetradehq.com/portfolio",
+      "canonical": "https://www.thetradehq.com/portfolio",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3820,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/achievements",
+      "final": "https://www.thetradehq.com/achievements",
+      "canonical": "https://www.thetradehq.com/achievements",
+      "robots": "noindex, follow",
+      "chars": 125,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "final": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 4441,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "final": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3863,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "final": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "canonical": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3867,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "final": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3487,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/short-squeeze",
+      "final": "https://www.thetradehq.com/wiki/short-squeeze",
+      "canonical": "https://www.thetradehq.com/wiki/short-squeeze",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2983,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/golden-cross",
+      "final": "https://www.thetradehq.com/wiki/golden-cross",
+      "canonical": "https://www.thetradehq.com/wiki/golden-cross",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2303,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/death-cross",
+      "final": "https://www.thetradehq.com/wiki/death-cross",
+      "canonical": "https://www.thetradehq.com/wiki/death-cross",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2307,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "final": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "canonical": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2375,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "final": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "canonical": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2304,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "final": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "canonical": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2720,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd-histogram",
+      "final": "https://www.thetradehq.com/wiki/macd-histogram",
+      "canonical": "https://www.thetradehq.com/wiki/macd-histogram",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2174,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "final": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "canonical": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2331,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/order-block",
+      "final": "https://www.thetradehq.com/wiki/order-block",
+      "canonical": "https://www.thetradehq.com/wiki/order-block",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2314,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "final": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "canonical": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2493,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bull-trap",
+      "final": "https://www.thetradehq.com/wiki/bull-trap",
+      "canonical": "https://www.thetradehq.com/wiki/bull-trap",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2247,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bear-trap",
+      "final": "https://www.thetradehq.com/wiki/bear-trap",
+      "canonical": "https://www.thetradehq.com/wiki/bear-trap",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2232,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "final": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "canonical": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2371,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "final": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "canonical": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2347,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "final": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "canonical": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2281,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "final": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "canonical": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3467,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/double-bottom",
+      "final": "https://www.thetradehq.com/wiki/double-bottom",
+      "canonical": "https://www.thetradehq.com/wiki/double-bottom",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3498,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd",
+      "final": "https://www.thetradehq.com/wiki/macd",
+      "canonical": "https://www.thetradehq.com/wiki/macd",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2250,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "final": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "canonical": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2591,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "final": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "canonical": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3933,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/leverage-trading",
+      "final": "https://www.thetradehq.com/wiki/leverage-trading",
+      "canonical": "https://www.thetradehq.com/wiki/leverage-trading",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3010,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "final": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "canonical": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2255,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/margin-call",
+      "final": "https://www.thetradehq.com/wiki/margin-call",
+      "canonical": "https://www.thetradehq.com/wiki/margin-call",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2598,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-price",
+      "final": "https://www.thetradehq.com/wiki/liquidation-price",
+      "canonical": "https://www.thetradehq.com/wiki/liquidation-price",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2399,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "final": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "canonical": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3146,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/swing-trading",
+      "final": "https://www.thetradehq.com/wiki/swing-trading",
+      "canonical": "https://www.thetradehq.com/wiki/swing-trading",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2244,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/day-trading",
+      "final": "https://www.thetradehq.com/wiki/day-trading",
+      "canonical": "https://www.thetradehq.com/wiki/day-trading",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2418,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/scalping",
+      "final": "https://www.thetradehq.com/wiki/scalping",
+      "canonical": "https://www.thetradehq.com/wiki/scalping",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2240,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/volume-profile",
+      "final": "https://www.thetradehq.com/wiki/volume-profile",
+      "canonical": "https://www.thetradehq.com/wiki/volume-profile",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2359,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/vwap",
+      "final": "https://www.thetradehq.com/wiki/vwap",
+      "canonical": "https://www.thetradehq.com/wiki/vwap",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2282,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "final": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "canonical": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3055,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "final": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "canonical": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2426,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "final": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "canonical": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2371,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dark-pool",
+      "final": "https://www.thetradehq.com/wiki/dark-pool",
+      "canonical": "https://www.thetradehq.com/wiki/dark-pool",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2422,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "final": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2468,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/yield-farming",
+      "final": "https://www.thetradehq.com/wiki/yield-farming",
+      "canonical": "https://www.thetradehq.com/wiki/yield-farming",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 2737,
+      "errorText": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "final": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "canonical": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "chars": 3387,
+      "errorText": false
+    }
+  ],
+  "errors": [],
+  "limit": "Destination extraction, not all interactive navigation or authenticated flows. Additional destination URLs not credited as new detailed reviews."
+}
