@@ -104,3 +104,23 @@ const reviewedGreeks = reviewedOptionsLessons.find(lesson => lesson.slug === "th
 assert.ok(reviewedGreeks);
 assert.equal(reviewedGreeks.quiz[2].correctAnswer, 1);
 assert.match(reviewedGreeks.quiz[2].explanation, /not inevitable/);
+
+
+const reviewedMacroTrack = data.courseTracks.find(track => track.slug === "macro-reading-for-traders");
+assert.ok(reviewedMacroTrack);
+assert.equal(reviewedMacroTrack.lessons.length, 5);
+assert.ok(reviewedMacroTrack.lessons.every(lesson => lesson.quiz.length === 4));
+const checkedMacroCpi = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "reading-cpi-and-inflation");
+assert.ok(checkedMacroCpi);
+assert.match(checkedMacroCpi.body.join(" "), /sampled prices and expenditure weights/);
+assert.ok(checkedMacroCpi.sources.some(source => source.url === "https://www.bls.gov/schedule/news_release/cpi.htm"));
+const checkedMacroFed = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-fed-and-fomc-cycle");
+assert.ok(checkedMacroFed);
+assert.match(checkedMacroFed.body.join(" "), /strategy-only meeting/);
+assert.match(checkedMacroFed.body.join(" "), /November 12, 2026/);
+assert.ok(checkedMacroFed.sources.some(source => source.url.endsWith("monetary20261112a.htm")));
+const checkedMacroCurve = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-yield-curve-and-recession");
+assert.ok(checkedMacroCurve);
+assert.match(checkedMacroCurve.body.join(" "), /one month through thirty years/);
+assert.match(checkedMacroCurve.body.join(" "), /twelve months ahead/);
+assert.match(checkedMacroCurve.body.join(" "), /official Federal Reserve forecasts/);
