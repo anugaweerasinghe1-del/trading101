@@ -473,7 +473,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   // ===== COMMODITIES =====
   oil: {
     whatIs: "West Texas Intermediate (WTI) is a crude-oil benchmark. Oil is refined into petroleum products, and supply, inventories, refining and consumption are different parts of its market. TradeHQ uses a simplified WTI-labelled practice instrument and does not execute a deliverable oil contract.",
-    strategy: "Analyze price action around OPEC+ meetings, EIA inventory reports, and geopolitical tensions. Practice understanding supply-demand dynamics. (Educational simulation only — not financial advice.)",
+    strategy: "Distinguish dated production announcements, inventories and consumption estimates from price observations. The simplified fictional instrument does not reproduce actual oil contracts or establish news reactions. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["oil trading", "WTI practice", "crude oil", "energy", "OPEC"],
     stats: {
