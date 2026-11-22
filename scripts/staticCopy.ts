@@ -401,7 +401,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How subscribing and unsubscribing work",
         p: [
-          "To request the newsletter, enter an email address and explicitly agree to receive the lessons. TradeHQ sends a confirmation link to the address supplied. The subscription is not active until the recipient confirms using that link. An unconfirmed email address is not placed into the confirmed delivery list. This double opt-in process is intended to reduce unwanted mail and accidental sign-ups.",
+          "To request the newsletter, enter an email address and explicitly agree to receive the lessons. TradeHQ sends a confirmation link and a six-digit verification code to eligible addresses. The subscription is not active until the recipient confirms using either method. An unconfirmed email address is not placed into the confirmed delivery list. This double opt-in process is intended to reduce unwanted mail and accidental sign-ups.",
           "Every confirmed recipient can unsubscribe using the link in an email. The unsubscribe page does not require a TradeHQ account. Unsubscribing stops future educational mailings through this list; it does not erase an unrelated account or a browser-held virtual portfolio. If you want more information about how newsletter contact data and service providers are handled, read the Privacy Policy.",
         ],
       },
