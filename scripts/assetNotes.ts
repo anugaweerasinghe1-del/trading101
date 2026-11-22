@@ -14,18 +14,18 @@ export interface AssetNote {
 export const ASSET_NOTES: Record<string, AssetNote> = {
   btc: {
     why: "Bitcoin provides a case study in a currency with a published issuance schedule and no company earnings. Comparing it with another token can help separate network design from observed price changes. A shared move does not prove that Bitcoin caused another asset to move.",
-    watch: "Its supply schedule is fixed in code and the issuance rate halves roughly every four years, so long-term narratives often revolve around those halving dates. In the short term, spot ETF flows, US dollar strength and broad risk appetite are the forces commentators cite most often.",
-    gap: "TradeHQ fills a Bitcoin practice order at the displayed price and deducts a 0.1% simulated fee on each buy or sell. A real exchange can also involve spreads, slippage, network fees and custody risk. Compare gross price movement with the fee-inclusive practice result; the simulator does not reproduce every real cost.",
+    watch: "Bitcoin's current consensus rules specify its issuance schedule. ETF flows, exchange conditions and broad risk appetite are possible research topics, not a verified ranking of causes.",
+    gap: "TradeHQ records a virtual execution price and a 0.1% simulated transaction fee. An earlier displayed quote need not equal the recorded fill. A real exchange can also involve spreads, slippage, network fees and custody risk. Compare gross price movement with the fee-inclusive practice result; the simulator does not reproduce every real cost.",
     checklist: [
       "Mark the previous week's high and low before you look at today's candles.",
-      "Decide whether you are reacting to a weekend move — Bitcoin trades 24/7 and weekend volume is often thinner.",
+      "Distinguish the observation date and venue; digital-asset market access and available liquidity can vary.",
       "Write down what a 15% drop would do to your practice balance before you size the order.",
     ],
   },
   eth: {
-    why: "Ethereum is a programmable network, so its price reflects both speculation and demand for block space used by applications. Practising on it teaches you how a platform asset differs from a pure store-of-value narrative.",
+    why: "Ethereum is a programmable network. Demand for block space and the market price of ether are distinct observations; neither alone identifies the cause of a price change.",
     watch: "Network upgrades, staking participation and fee activity are recurring themes in Ethereum news. Compare ETH and BTC over matching dated observations; neither their direction nor relative volatility has a fixed relationship.",
-    gap: "Real Ethereum transactions require gas fees that vary with network congestion, and staking locks capital in ways a simulator cannot represent. Treat practice results as evidence about your decision process, not your expected returns.",
+    gap: "Ethereum network transactions use gas fees, whose costs vary. Staking has distinct terms and risks; the simulator performs neither network transactions nor staking. Treat practice results as evidence about your decision process, not your expected returns.",
     checklist: [
       "Compare the day's ETH move with BTC's before deciding the cause is Ethereum news.",
       "Note any scheduled network upgrade dates in your journal.",
@@ -34,8 +34,8 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   sol: {
     why: "Solana is a blockchain designed for high transaction throughput. SOL provides a case study in network usage, token ownership and operational risk. Compare observed price variation over a stated interval instead of assuming a permanent volatility ranking against other tokens.",
-    watch: "Ecosystem activity, network reliability and broader appetite for speculative crypto assets are the themes most often discussed. Past network outages are part of its history and are a reminder that technical risk exists alongside price risk.",
-    gap: "Smaller-cap crypto assets can have thinner order books on some venues, so a real market order may fill noticeably worse than the quoted price. The simulator fills at the displayed price; real life often does not.",
+    watch: "Ecosystem activity, network reliability and broad market conditions are possible research topics; no measured ranking is asserted. Past network outages are part of its history and are a reminder that technical risk exists alongside price risk.",
+    gap: "Smaller-cap crypto assets can have thinner order books on some venues, so a real market order may fill noticeably worse than the quoted price. A displayed simulator quote is not a reserved fill price, and the recorded virtual execution does not reproduce venue liquidity.",
     checklist: [
       "Compare several chosen hypothetical sizes and calculate the dollar effect of the same percentage move.",
       "Check whether the whole crypto market moved or only SOL.",
@@ -43,8 +43,8 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   xrp: {
-    why: "XRP is closely associated with cross-border payments and has a long history of price reactions to legal and regulatory headlines. Practising on it shows how news-driven an asset can be compared with one driven mainly by flows.",
-    watch: "Regulatory developments, particularly in the United States, have historically produced some of XRP's sharpest moves. Large holder activity and exchange listings are other topics that appear frequently in coverage.",
+    why: "XRP is the native asset of the XRP Ledger, which supports payments and other transactions. A worksheet can distinguish a dated regulatory announcement from market observations without assuming causation.",
+    watch: "Regulatory developments are one possible topic for dated research; this guide does not quantify or rank their historical price effects. Large holder activity and exchange listings are other topics that appear frequently in coverage.",
     gap: "Headline-driven gaps are hard to simulate. A real stop can execute beyond its trigger price during a news spike. TradeHQ has no resting stop orders: exits are manual market orders, so a planned exit is not an implemented loss limit.",
     checklist: [
       "Look up whether any legal or regulatory event is scheduled this week.",
@@ -53,9 +53,9 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   bnb: {
-    why: "BNB is tied to a single large exchange ecosystem and its own chain, which makes it an instructive example of how company-specific developments can move a crypto asset.",
-    watch: "Exchange-related news, token burn announcements and activity on BNB Chain are the recurring talking points. Because its fortunes are linked to one organisation, concentration risk is part of the learning point.",
-    gap: "Depending on where you live, access to the associated exchange may be restricted, and fees differ between venues. The simulator ignores jurisdiction; real trading does not.",
+    why: "BNB provides an example of the distinction between a native network token, exchange-related services and company ownership. A company development does not establish a token-price response.",
+    watch: "Exchange-related news, token burn announcements and activity on BNB Chain are the recurring talking points. The relationships between organizations, network activity and token exposure require separate evidence.",
+    gap: "Depending on where you live, access to the associated exchange may be restricted, and fees differ between venues. The educational simulator does not establish legal eligibility, geographic availability or access to real financial services.",
     checklist: [
       "Write down which organisation-level risk could affect the price before entering.",
       "Compare its weekly move against BTC to see how independent it really is.",
