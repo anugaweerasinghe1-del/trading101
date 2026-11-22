@@ -58,7 +58,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "3 min",
     category: "Technical Analysis",
     keyPoints: [
-      "50-day MA crossing below the 200-day MA triggers the signal",
+      "A 50-day average crossing below a 200-day average fits the conventional definition",
       "A description of selected historical prices, not a validated prediction of a downturn",
       "Compare price and volume observations without assuming confirmation predicts returns"
     ],
@@ -77,7 +77,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Feedback depends on leverage, collateral rules and available liquidity",
       "Forced reductions can amplify an adverse move; totals require event-specific evidence",
-      "Often creates wicking patterns on candlestick charts"
+      "Candle wicks alone cannot establish whether a cascade occurred"
     ],
     studentPerspective: "Compare a hypothetical price shock with documented margin rules. A cascade label does not establish exact liquidation levels. TradeHQ does not implement leveraged positions or margin calls.",
     relatedTerms: ["leverage-trading", "stop-loss-hunting", "whale-manipulation"]
@@ -153,7 +153,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "order-block",
     term: "Order Block",
-    definition: "An order block is a chart-defined zone used in some technical-analysis frameworks; candles alone do not establish actual institutional orders. Identified as the last opposing candle before an impulsive move.",
+    definition: "An order block is a chart-defined zone used in some technical-analysis frameworks; candles alone do not establish actual institutional orders. Some frameworks use the last opposing candle before a selected directional move; definitions vary.",
     expertDefinition: "An order block is a chart-zone label used in some trading frameworks, often for the last opposing candle before a selected directional move. Definitions differ between authors. Candles aggregate transactions and do not identify a particular institution, an unfilled order or a hidden inventory position. Terms such as mitigation and accumulation remain interpretations unless separately supported by order or participant evidence. A useful worksheet fixes the zone criteria in advance, records every revisit and includes failures. The order-mechanics reference explains actual order instructions; it does not validate an order-block forecasting method.",
     proTip: "Label the candle zone and the rule used to select it. Price candles alone cannot identify a particular institution's orders, remaining inventory or future buying intentions.",
     difficulty: "Pro",
@@ -161,7 +161,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Smart Money Concepts",
     keyPoints: [
       "Interprets price zones without proving institutional accumulation or distribution",
-      "Bullish OB: last red candle before impulsive move up",
+      "Some frameworks label the last opposing candle before a selected rise; the label does not establish actual orders",
       "Price may revisit or move away from a marked block; continuation is uncertain"
     ],
     studentPerspective: "Label the candle zone and the rule used to select it. Price candles alone cannot identify a particular institution's orders, remaining inventory or future buying intentions.",
@@ -170,14 +170,14 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "fair-value-gap",
     term: "Fair Value Gap (FVG)",
-    definition: "A Fair Value Gap is a three-candle chart pattern where the wicks of the first and third candles do not overlap. The range need not be revisited and does not establish economic fair value or unfilled orders.",
+    definition: "A Fair Value Gap is a three-candle chart pattern where the full price ranges of the first and third candles do not overlap. The range need not be revisited and does not establish economic fair value or unfilled orders.",
     expertDefinition: "A Fair Value Gap (FVG) is a three-candle chart label used in Smart Money Concepts (SMC) and Inner Circle Trader (ICT) frameworks. For an upward example, candle one’s high is below candle three’s low; for a downward example, candle one’s low is above candle three’s high. The marked range depends on the selected candles, interval and data source. It does not establish economic fair value, a market-efficiency violation, unfilled orders or the identity and intentions of participants. To study it, freeze the selection rules before inspecting later prices and record both revisited and unvisited ranges. Neither a longer candle interval, accompanying volume nor overlapping chart labels establishes a measured chance of a revisit or a profitable entry. Use the invented worksheet below to compare two possible later paths without treating either as a forecast.",
     proTip: "Identify the three candles and the non-overlapping price range. Compare examples where price revisits the range with examples where it does not; a gap need not fill or act as support.",
     difficulty: "Pro",
     readTime: "5 min",
     category: "Smart Money Concepts",
     keyPoints: [
-      "Created by a 3-candle sequence with non-overlapping wicks",
+      "A selected three-candle sequence with non-overlapping first and third price ranges",
       "Labels a non-overlapping candle range that need not be revisited",
       "Not a validated entry rule or guarantee that a gap will fill"
     ],
@@ -196,7 +196,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "False breakout above resistance that reverses quickly",
       "Define the resistance area and reversal window before counting examples or claiming a frequency",
-      "Confirmed when price closes back below the broken resistance"
+      "A later close below a chosen level can satisfy a stated retrospective rule; definitions vary"
     ],
     studentPerspective: "Record both a breakout and its later reversal using fixed definitions. A confirmation filter changes the rule being tested; it cannot remove every failed signal.",
     relatedTerms: ["bear-trap", "support-and-resistance", "stop-loss-hunting"]
@@ -273,7 +273,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "head-and-shoulders",
     term: "Head and Shoulders",
     definition: "A head and shoulders pattern has three peaks, with a higher central peak and two lower shoulders. A neckline connects the intervening lows; breaking it is a chart observation, not a confirmed future decline or guaranteed target.",
-    expertDefinition: "The head and shoulders pattern is a commonly described reversal formation in technical analysis. It consists of three distinct peaks: a left shoulder, a higher central peak (the head), and a right shoulder that is approximately equal in height to the left shoulder. The troughs between these peaks are connected by a line called the neckline, and a break below this neckline completes the conventional pattern description; continued decline is a hypothesis that can fail. The conventional description follows five price phases; these observations do not establish participant motives. Phase one: the market trends upward and creates the left shoulder, a normal swing high. Phase two: a pullback creates the first neckline touch. Phase three: renewed buying pushes price to a higher high (the head), suggesting the uptrend is accelerating. Phase four: another pullback returns to the neckline area, and bulls attempt one more push higher. Phase five: the rally fails to reach the head's height, forming the right shoulder — a lower peak that some analysts interpret as weakening upward momentum. The measured move technique provides a price target: measure the vertical distance from the head to the neckline, then subtract that distance from the neckline breakout point. Volume adds a separate historical observation; it does not validate a forecast. Some descriptions compare volume across the shoulders, head and neckline break. State the observation window and volume source; a lower volume does not by itself establish participants’ conviction or predict the next move. Volume alone does not establish the probability that a neckline break will persist. The inverse pattern uses three troughs rather than peaks and is commonly interpreted as a bullish hypothesis, which can fail.",
+    expertDefinition: "The head and shoulders pattern is a commonly described reversal formation in technical analysis. It consists of three distinct peaks: a left shoulder, a higher central peak (the head), and a right shoulder that is approximately equal in height to the left shoulder. The troughs between these peaks are connected by a line called the neckline, and a break below this neckline completes the conventional pattern description; continued decline is a hypothesis that can fail. The conventional description follows five price phases; these observations do not establish participant motives. Phase one: the market trends upward and creates the left shoulder, a normal swing high. Phase two: a pullback creates the first neckline touch. Phase three: renewed buying pushes price to a higher high (the head), recording a higher observed peak, without establishing acceleration or future direction. Phase four: another pullback returns to the neckline area, and bulls attempt one more push higher. Phase five: the rally fails to reach the head's height, forming the right shoulder — a lower peak that some analysts interpret as weakening upward momentum. The measured move technique provides a price target: measure the vertical distance from the head to the neckline, then subtract that distance from the neckline breakout point. Volume adds a separate historical observation; it does not validate a forecast. Some descriptions compare volume across the shoulders, head and neckline break. State the observation window and volume source; a lower volume does not by itself establish participants’ conviction or predict the next move. Volume alone does not establish the probability that a neckline break will persist. The inverse pattern uses three troughs rather than peaks and is commonly interpreted as a bullish hypothesis, which can fail.",
     proTip: "Draw the three peaks and neckline, then distinguish the pattern's measured-move convention from the actual later price. A projected target is a hypothesis rather than an expected payout.",
     difficulty: "Intermediate",
     readTime: "4 min",
@@ -290,14 +290,14 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "double-bottom",
     term: "Double Bottom",
     definition: "A double bottom is a W-shaped chart pattern with two troughs near a similar level. A later move above the intervening peak fits the pattern, but does not ensure that a rally continues.",
-    expertDefinition: "The double bottom is a bullish reversal pattern that forms after a sustained downtrend, characterized by two consecutive troughs at approximately the same price level separated by a moderate peak (the neckline). The pattern resembles the letter 'W' on a chart and is commonly interpreted as a possible reversal near a repeated price low; the chart alone cannot establish that selling pressure has been exhausted. The conventional description records a sequence of price observations. The first bottom forms as the existing downtrend reaches a point where buyers emerge, creating a bounce. The subsequent rally creates the neckline — the intermediate peak between the two bottoms. However, the rally loses momentum and price declines again to retest the support level established by the first bottom. The second bottom is the critical test: if price rises again from the low, it records another bounce at that level without proving the cause or durability. Pattern confirmation occurs when price breaks above the neckline (the peak between the two bottoms). The measured move target equals the depth of the pattern — the distance from the bottoms to the neckline — projected upward from the neckline breakout point. Volume characteristics provide context but do not establish predictive reliability. Some descriptions compare volume during the two declines and the neckline break. Lower reported volume is an observation, not proof of reduced selling conviction or a future rebound. A volume observation does not establish a measured breakout failure rate. RSI divergence is another description of the selected historical data, not evidence of a dramatically higher success rate. If the RSI makes a higher low while price makes an equal or lower low at the second bottom, the oscillator records a smaller decline in its selected inputs; this does not validate a subsequent reversal.",
+    expertDefinition: "The double bottom is a bullish reversal pattern that forms after a sustained downtrend, characterized by two consecutive troughs at approximately the same price level separated by a moderate peak (the neckline). The pattern resembles the letter 'W' on a chart and is commonly interpreted as a possible reversal near a repeated price low; the chart alone cannot establish that selling pressure has been exhausted. The conventional description records a sequence of price observations. The first bottom forms as the existing downtrend reaches a point where buyers emerge, creating a bounce. The subsequent rally creates the neckline — the intermediate peak between the two bottoms. However, the rally loses momentum and price declines again to retest the support level established by the first bottom. The second bottom is the critical test: if price rises again from the low, it records another bounce at that level without proving the cause or durability. In the conventional chart description, a later move above the intervening peak completes the pattern; it does not confirm a lasting reversal. The measured move target equals the depth of the pattern — the distance from the bottoms to the neckline — projected upward from the neckline breakout point. Volume characteristics provide context but do not establish predictive reliability. Some descriptions compare volume during the two declines and the neckline break. Lower reported volume is an observation, not proof of reduced selling conviction or a future rebound. A volume observation does not establish a measured breakout failure rate. RSI divergence is another description of the selected historical data, not evidence of a dramatically higher success rate. If the RSI makes a higher low while price makes an equal or lower low at the second bottom, the oscillator records a smaller decline in its selected inputs; this does not validate a subsequent reversal.",
     proTip: "Identify the two lows and intervening high with consistent rules. Compare completed and failed examples; two similar lows alone do not establish a trend reversal.",
     difficulty: "Novice",
     readTime: "3 min",
     category: "Chart Patterns",
     keyPoints: [
       "W-shaped pattern with two tests of the same support level",
-      "Confirmed when price breaks above the neckline (middle peak)",
+      "A later move above the middle peak completes the conventional description, not a confirmed forecast",
       "RSI divergence is another historical observation, not independent proof of a profitable reversal"
     ],
     studentPerspective: "Identify the two lows and the intervening high under fixed rules, including failed examples. A familiar pattern does not establish a beginner’s readiness or confidence level.",
@@ -331,7 +331,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Market orders request execution at available prices; fills and price depend on liquidity",
-      "Limit orders: exact price control, but may not fill",
+      "Limit orders: a price boundary, not an exact fill price; they may remain unfilled",
       "Limit prices constrain execution price, without ensuring a fill or preventing loss"
     ],
     studentPerspective: "Compare price control with execution uncertainty. A market order prioritises execution at available prices; a limit order sets a price boundary but may not fill. TradeHQ currently executes market practice orders only.",
@@ -357,14 +357,14 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "leverage-trading",
     term: "Leverage Trading",
-    definition: "Control a larger market position with borrowed funds or margin. At 10x leverage, $1,000 of margin controls roughly $10,000 of exposure. Leverage amplifies both gains and losses.",
+    definition: "Leverage is exposure greater than the supporting equity or collateral; losses can exceed the initial investment. At 10x leverage, $1,000 of margin controls roughly $10,000 of exposure. Leverage amplifies both gains and losses.",
     expertDefinition: "Leverage describes notional exposure relative to the equity or collateral supporting it. A hypothetical $1,000 margin amount supporting $10,000 exposure gives a 10-to-one ratio. A 10% adverse price move on that exposure is $1,000 before costs, but this is not a liquidation formula. Initial and maintenance requirements, eligible collateral, other positions, fees and venue rules all matter. A loan-funded share purchase differs from a futures performance bond or a perpetual contract. Product eligibility and maximum permitted exposure vary by jurisdiction, customer category, broker and instrument. An advertised maximum is neither permission for a particular user nor a recommendation. TradeHQ’s ordinary spot practice orders do not borrow money or reproduce a leveraged account. A worksheet can compare price shocks, account equity and cash-flow demands while keeping legal eligibility and actual margin terms as separate questions. Hypothetical worksheet: an account with $1,500 equity and $10,000 exposure loses $300 on a 3% adverse move before fees. Equity becomes $1,200. The initial exposure-to-account-equity ratio was about 6.67, even if only $1,000 had been labelled posted margin. This is why the denominator and eligible collateral must be stated; no exchange liquidation threshold is supplied by that arithmetic.",
     proTip: "Compare notional exposure with posted margin and calculate hypothetical gains and losses before costs. Maintenance margin, funding, fees and venue rules affect liquidation; leverage alone is insufficient.",
     difficulty: "Intermediate",
     readTime: "5 min",
     category: "Trading Fundamentals",
     keyPoints: [
-      "Amplifies both gains and losses by the leverage multiplier",
+      "Greater exposure relative to equity magnifies linear gains and losses before costs; actual product outcomes can differ",
       "Liquidation depends on maintenance requirements and venue rules and can occur before the deposit is exhausted",
       "No universal professional leverage limit is established here"
     ],
@@ -418,7 +418,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Originated from a 2013 Bitcoin forum typo ('HODL' instead of 'HOLD')",
       "Fewer transactions may reduce trading costs while price and timing risks remain",
-      "Requires strong conviction and tolerance for drawdowns"
+      "A holding period does not protect against permanent loss, custody failure or illiquidity"
     ],
     studentPerspective: "Compare a hypothetical holding period with an exit case, including permanent loss. Holding longer does not remove emotional decisions or guarantee a recovery.",
     relatedTerms: ["fomo", "fud", "dollar-cost-averaging"]
@@ -451,7 +451,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "4 min",
     category: "Trading Fundamentals",
     keyPoints: [
-      "Triggered when account equity falls below maintenance margin",
+      "Collateral obligations depend on the account agreement and maintenance rules; forced closing can occur without a prior call",
       "A broker may reduce or liquidate positions under its agreement; no guaranteed warning or response window is implied",
       "Multiple simultaneous margin calls can amplify market crashes"
     ],
@@ -468,7 +468,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "4 min",
     category: "Trading Fundamentals",
     keyPoints: [
-      "Higher leverage brings the liquidation price closer to entry",
+      "With other inputs fixed, greater exposure leaves less collateral buffer; an exact threshold depends on the applicable rules",
       "Isolated-margin treatment depends on the platform rules; it is not a universal loss guarantee",
       "Mark price vs last price affects when liquidation triggers"
     ],
@@ -520,7 +520,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "All positions opened and closed within the same trading day",
-      "Published research and broker disclosures often report high loss rates among retail day traders; the exact rate varies by market, time period, and sample",
+      "Regulator education warns that intraday trading can cause substantial losses in a short period; no universal loss rate is asserted",
       "Real account margin and day-trading requirements depend on current rules, broker and jurisdiction"
     ],
     studentPerspective: "Compare the time demands and assumptions of swing and intraday examples; practice profit alone does not establish readiness for real-money trading.",
@@ -536,7 +536,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "4 min",
     category: "Trading Fundamentals",
     keyPoints: [
-      "Captures tiny price movements over seconds to minutes",
+      "Attempts to profit from small movements over short periods; actual net results can be negative",
       "Short-horizon price targets can be overwhelmed by spread, fees, slippage and slow execution",
       "Break-even win rate depends on realized win and loss amounts plus costs"
     ],
@@ -587,7 +587,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "6 min",
     category: "Technical Analysis",
     keyPoints: [
-      "Five components that show trend, momentum, and support/resistance",
+      "Five historical-price calculations with different lookbacks and plotting offsets",
       "The cloud plots calculated historical values with a chosen displacement",
       "Component alignment describes related calculations without proving predictive strength"
     ],
@@ -787,7 +787,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "risk-reward-ratio",
     term: "Risk-Reward Ratio",
     definition: "The risk-reward ratio compares a trade's planned loss with its planned gain. A 1:3 ratio means a planned $1 loss for a potential $3 gain; it does not guarantee those fills or establish a universal professional minimum.",
-    expertDefinition: "The risk-reward ratio (R:R or RRR) is a measurement that compares the potential loss on a trade (from entry to stop loss) against the potential gain (from entry to take profit target). Expressed as a ratio like 1:2 or 1:3, it quantifies the trade's payoff structure before entry, enabling traders to make mathematically informed decisions about which trades are worth taking. A 1:2 risk-reward ratio means that for every dollar risked, two dollars of profit are targeted. A 1:3 ratio means three dollars of potential profit for each dollar of risk. A planned ratio describes selected entry and exit assumptions. A break-even calculation requires realised payoff sizes and costs; the planned ratio alone does not determine profitability. For fixed realised payoffs before costs, a 1:1 ratio breaks even at 50% wins; profitability requires more than 50%. Planned exits do not ensure those realised payoffs. With fixed realized +2R/−1R before costs, the exact break-even rate is one third; profitability requires a higher rate. At 1:3 with fixed realised gains and losses, a win rate above 25% is required before costs; exactly 25% breaks even. Under stated fixed-payoff assumptions, expected value combines the frequency and size of gains and losses. Costs and dependence also matter, and an estimate from one historical sample does not establish a future positive expectancy. A chosen planned payoff ratio is not a universal fund rule or evidence of positive realised expectancy. The calculation is straightforward: divide the distance to your take-profit target by the distance to your stop loss. If your stop loss is $5 below entry and your target is $15 above entry, the R:R is 1:3.",
+    expertDefinition: "The risk-reward ratio (R:R or RRR) is a measurement that compares the potential loss on a trade (from entry to stop loss) against the potential gain (from entry to take profit target). Expressed as a ratio like 1:2 or 1:3, it quantifies the trade's payoff structure before entry, describing a hypothetical payoff structure, not determining whether a real transaction is suitable. A 1:2 risk-reward ratio means that for every dollar risked, two dollars of profit are targeted. A 1:3 ratio means three dollars of potential profit for each dollar of risk. A planned ratio describes selected entry and exit assumptions. A break-even calculation requires realised payoff sizes and costs; the planned ratio alone does not determine profitability. For fixed realised payoffs before costs, a 1:1 ratio breaks even at 50% wins; profitability requires more than 50%. Planned exits do not ensure those realised payoffs. With fixed realized +2R/−1R before costs, the exact break-even rate is one third; profitability requires a higher rate. At 1:3 with fixed realised gains and losses, a win rate above 25% is required before costs; exactly 25% breaks even. Under stated fixed-payoff assumptions, expected value combines the frequency and size of gains and losses. Costs and dependence also matter, and an estimate from one historical sample does not establish a future positive expectancy. A chosen planned payoff ratio is not a universal fund rule or evidence of positive realised expectancy. Use the same monetary units for the two assumed outcomes and state the convention. A hypothetical $5 loss and $15 gain give risk:reward of 1:3; gain divided by loss is instead the reward-to-risk multiple of 3. Neither describes an assured outcome.",
     proTip: "Compare planned risk and reward with realised outcomes and costs. A positive average in one sample can be luck or overfitting; a ratio alone does not prove an edge.",
     difficulty: "Novice",
     readTime: "3 min",

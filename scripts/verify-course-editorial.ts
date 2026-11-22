@@ -85,3 +85,22 @@ for (const row of rows) {
   assert.equal(applyCourseEditorialCorrections(later).lessons[0].body[2], later.lessons[0].body[2]);
 }
 console.log("PASS exact fee-aware targets, explicit course exclusion heading and preservation of later paragraph edits");
+
+// Independent audit: both legacy source fixtures must retain accurate completion
+// labels and purely hypothetical mathematical meaning after display correction.
+for (const row of rows) {
+  const doc = applyCourseEditorialCorrections(row.document);
+  assert.match(doc.badge.name, /Course Completion$/);
+  assert.match(doc.badge.description, /Records completion/);
+  if (doc.slug === "cryptocurrency-price-feeds-and-valuation") {
+    assert.match(doc.lessons[1].body[4], /all marked holdings and remaining cash/);
+    assert.match(doc.lessons[1].body[5], /does not necessarily determine the recorded practice execution price/);
+  }
+  if (doc.slug === "diversification-and-position-sizing") {
+    assert.match(doc.lessons[0].body[5], /two marked holdings and a virtual cash balance/);
+    assert.match(doc.lessons[2].quiz[0].explanation, /does not by itself require a transaction/);
+    assert.match(doc.lessons[2].quiz[3].explanation, /exercise assumption/);
+  }
+}
+assert.doesNotMatch(readFileSync("src/pages/Courses.tsx", "utf8"), /free forever/i);
+console.log("PASS independent course accuracy and completion-only badge regressions");
