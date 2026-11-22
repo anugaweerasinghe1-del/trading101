@@ -83,3 +83,24 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+
+const reviewedOptionsTrack = data.courseTracks.find(track => track.slug === "options-trading-fundamentals");
+assert.ok(reviewedOptionsTrack);
+assert.match(reviewedOptionsTrack.prerequisites, /No prior trade or minimum practice time is required/);
+const reviewedOptionsLessons = reviewedOptionsTrack.lessons;
+assert.equal(reviewedOptionsLessons.length, 5);
+assert.ok(reviewedOptionsLessons.every(lesson => lesson.quiz.length === 4));
+const reviewedIntro = reviewedOptionsLessons.find(lesson => lesson.slug === "what-is-an-option");
+assert.ok(reviewedIntro);
+assert.match(reviewedIntro.body.join(" "), /total premium can rise or fall/);
+assert.match(reviewedIntro.body.join(" "), /gross break-even/);
+const reviewedIV = reviewedOptionsLessons.find(lesson => lesson.slug === "implied-volatility-and-earnings");
+assert.ok(reviewedIV);
+assert.match(reviewedIV.body.join(" "), /usual calculation is undefined/);
+assert.equal(reviewedIV.quiz[0].correctAnswer, 1);
+assert.match(reviewedIV.quiz[0].options[1], /observed range/);
+const reviewedGreeks = reviewedOptionsLessons.find(lesson => lesson.slug === "the-greeks-delta-gamma-theta-vega");
+assert.ok(reviewedGreeks);
+assert.equal(reviewedGreeks.quiz[2].correctAnswer, 1);
+assert.match(reviewedGreeks.quiz[2].explanation, /not inevitable/);
