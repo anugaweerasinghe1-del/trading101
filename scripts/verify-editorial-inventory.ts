@@ -83,3 +83,12 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+const reviewedAssetIds = ["btc","eth","sol","bnb","xrp","aapl","msft","googl","amzn","nvda","tsla","meta","spy","qqq","eurusd","gbpusd","gold","oil"];
+for (const id of reviewedAssetIds) {
+  const page = content.get(`/trade/${id}`);
+  assert.ok(page, `${id}: reviewed asset exists`);
+  const serialized = JSON.stringify(page.sections);
+  assert.doesNotMatch(serialized, /fills at the displayed practice price|Students anywhere can practice|free for students in Sri Lanka and worldwide/i, `${id}: avoid unsupported execution or availability guarantee`);
+}
+console.log("PASS asset education copy guards");
