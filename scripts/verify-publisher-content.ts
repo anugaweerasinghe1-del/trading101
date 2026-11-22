@@ -45,3 +45,18 @@ console.log(`PASS publisher content equivalence: ${checked} indexable snapshots 
 
 // Exercise the deployed fallback handler and hosting rules against this actual build.
 await import("./verify-public-fallbacks");
+
+
+/** Guard against editorial claims that exceed the actual consent and review flow. */
+const newsletterHtml = readFileSync("dist/newsletter/index.html", "utf8");
+const reviewsHtml = readFileSync("dist/reviews/index.html", "utf8");
+const newsletterPage = readFileSync("src/pages/NewsletterPage.tsx", "utf8");
+const reviewPage = readFileSync("src/pages/Reviews.tsx", "utf8");
+assert.match(newsletterHtml, /six-digit verification code/);
+assert.match(newsletterHtml, /confirms using either method/);
+assert.match(newsletterPage, /This link is missing a valid token/);
+assert.doesNotMatch(reviewsHtml, /Read honest reviews|The only thing at stake is your time/);
+assert.match(reviewsHtml, /Reviewer identity and usage are not independently verified/);
+assert.match(reviewPage, /Do not include private or identifying information/);
+assert.match(reviewPage, /displayed review/);
+assert.doesNotMatch(readFileSync("dist/privacy/index.html", "utf8"), /Contact messages: kept only as long as needed to answer you/);
