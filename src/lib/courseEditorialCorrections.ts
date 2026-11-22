@@ -689,7 +689,7 @@ corrections.push(...[
       8
     ],
     "expected": "Additionally, paper trading platforms execute trades using market orders at the current snapshot price, ignoring the liquidity constraints of real-world order books. In actual markets, executing a large buy order can cause slippage, pushing the execution price higher and distorting your intended target weight. Recognizing these differences helps you maintain a realistic perspective on your simulated performance, ensuring you do not develop false confidence when transitioning from a zero-slippage virtual environment to highly volatile, real-world financial markets.",
-    "replacement": "TradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes."
+    "replacement": "Guest orders use browser price inputs, while signed-in orders use server-selected eligible quotes; a displayed estimate can differ from the recorded fill. Neither path models exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes."
   },
   {
     "slug": "diversification-and-position-sizing",
@@ -1099,7 +1099,7 @@ corrections.push(...[
       "lessons",
       1,
       "body",
-      6
+      7
     ],
     "expected": "A virtual market sale reduces the recorded Bitcoin quantity and adds net proceeds to the remaining practice cash balance after a 0.1% sale fee. The simulator uses its displayed practice input, not an order-book fill from a real venue. A sale may be used to practise reconciling cash and positions, calculating a gain or loss, or comparing hypothetical outcomes under different prices. The calculation does not prove that comparable real liquidity would be available or that an actual sale would execute instantly. Keep virtual accounting and real market execution as different questions.",
     "replacement": "A completed virtual sale reduces the recorded fictional holding and adds net simulated proceeds after the fee. Guest and signed-in pricing paths differ; neither represents an actual venue order-book fill. This record can illustrate a cash-ledger reconciliation but cannot establish real execution price, timing or liquidity."
@@ -1164,6 +1164,23 @@ corrections.push(...[
     "replacement": "Study hypothetical portfolio weights, cash-inclusive valuation and the limits of fixed-price accounting examples."
   }
 ]);
+
+// Keep the remaining execution summaries aligned with the two pricing paths.
+// These display patches neither republish nor mutate the approved document.
+corrections.push(
+  {
+    slug: "bitcoin-simulator-practice-trading",
+    path: ["lessons", 1, "body", 10],
+    expected: "TradeHQ simplifies actual market execution. Its market orders use a displayed practice input, and each virtual buy and sale charges a 0.1% fee. The simulator does not model order-book depth, queue priority, partial fills or calibrated slippage. For a second worksheet, selling 0.1 BTC at an assumed $51,000 produces $5,100 notional less a $5.10 sale fee, or $5,094.90 proceeds. Subtracting the original $5,005 acquisition cost gives an illustrative $89.90 gain. A $49,000 sale instead gives $4,895.10 proceeds and a $109.90 loss; neither scenario predicts market outcomes.",
+    replacement: "TradeHQ simplifies actual market execution. Guest orders use a browser price input; signed-in orders use a server-selected eligible quote, so a displayed estimate can differ from the recorded fill. Each virtual buy and sale charges a 0.1% fee. The simulator does not model order-book depth, queue priority, partial fills or calibrated slippage. For a second worksheet, selling 0.1 BTC at an assumed $51,000 produces $5,100 notional less a $5.10 sale fee, or $5,094.90 proceeds. Subtracting the original $5,005 acquisition cost gives an illustrative $89.90 gain. A $49,000 sale instead gives $4,895.10 proceeds and a $109.90 loss; neither scenario predicts market outcomes.",
+  },
+  {
+    slug: "diversification-and-position-sizing",
+    path: ["lessons", 0, "quiz", 3, "explanation"],
+    expected: "TradeHQ uses displayed practice price inputs, which may be provider observations, cached or delayed values, or fixed simulator values. Its market-order engine does not model real exchange order-book liquidity or calibrated slippage.",
+    replacement: "Guest and signed-in orders use different pricing paths: browser price inputs and server-selected eligible quotes respectively. The earlier displayed estimate can differ from the recorded fill. Price inputs may be provider observations, cached or delayed values, or fixed simulator values. Neither path models real exchange order-book liquidity or calibrated slippage.",
+  },
+);
 
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
