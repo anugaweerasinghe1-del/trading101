@@ -5,6 +5,36 @@ import { renderApprovedCourse, escapeCourseHtml } from "../src/lib/courseHtml";
 import { courseMetaDescription, coursePageTitle } from "../src/lib/courseOverviewPresentation";
 import { validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument";
 const rows = JSON.parse(readFileSync("scripts/fixtures/published-course-editorial.json", "utf8")) as {slug: string; document: CourseDocument}[];
+// The historical two-course fixtures predate the current Bitcoin publication.
+// Exercise the already-public snapshot so a shifted heading cannot make an
+// exact-text correction silently disappear while the legacy fixtures pass.
+const currentRows = JSON.parse(readFileSync("docs/audits/adsense-2026-11-22-exhaustive/approved-public-course-source-2026-11-22.json", "utf8")).docs as {slug: string; document: CourseDocument}[];
+for (const row of currentRows) {
+  const original = JSON.stringify(row.document);
+  const corrected = applyCourseEditorialCorrections(row.document);
+  assert.equal(JSON.stringify(row.document), original, "Published source must remain unchanged");
+  assert.deepEqual(applyCourseEditorialCorrections(corrected), corrected);
+  if (row.slug === "bitcoin-simulator-practice-trading") {
+    const lesson = corrected.lessons[1];
+    assert.equal(lesson.body[6], "## Executing Market Sell Orders", "Preserve the heading beside the corrected sale paragraph");
+    assert.match(lesson.body[7], /Guest and signed-in pricing paths differ/);
+    assert.match(lesson.body[10], /server-selected eligible quote/);
+    assert.doesNotMatch(lesson.body.join(" "), /uses its displayed practice input|market orders use a displayed practice input/);
+    assert.deepEqual(lesson.quiz, row.document.lessons[1].quiz, "Pricing disclosure must not change quiz answers");
+    const html = renderApprovedCourse('<html><head></head><body><div id="root"></div></body></html>', row.document, lesson.slug)!;
+    const bootstrap = JSON.parse(html.match(/id="approved-course-bootstrap" type="application\/json">([\s\S]*?)<\/script>/)![1]);
+    assert.deepEqual(bootstrap, corrected, "Native HTML and hydrated course must receive identical corrections");
+    assert.match(html, /server-selected eligible quote/);
+    const later = structuredClone(row.document);
+    later.lessons[1].body[7] = "A later owner-authored sale description.";
+    assert.equal(applyCourseEditorialCorrections(later).lessons[1].body[7], later.lessons[1].body[7]);
+  }
+  if (row.slug === "diversification-and-position-sizing") {
+    assert.match(corrected.lessons[0].body[8], /server-selected eligible quotes/);
+    assert.match(corrected.lessons[0].quiz[3].explanation, /Guest and signed-in/);
+    assert.deepEqual(corrected.lessons[0].quiz[3].options, row.document.lessons[0].quiz[3].options);
+  }
+}
 for (const row of rows) {
   const original = JSON.stringify(row.document);
   const candidate = applyCourseEditorialCorrections(row.document);
