@@ -285,7 +285,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Calling an aggregate provider mark a reserved exchange fill.",
       "Ignoring both buy and sell fees in the result."
     ],
-    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases.",
+    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review can help distinguish an asset's movement from the account return and preserve unfavorable as well as favorable cases.",
     "sources": [
       {
         "href": "https://bitcoin.org/en/bitcoin-paper",
@@ -304,7 +304,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
       "Use 0.5 ETH at an illustrative $3,200 quote to calculate $1,600 of virtual exposure and a $1.60 simulator entry fee. That is separate from real blockchain gas charges, which TradeHQ does not execute.",
       "Record a second hypothetical ETH price and calculate the change for the same 0.5 ETH. Check the page's quote timestamp; a price screenshot cannot reveal the gas or exchange costs of a real transfer.",
-      "After virtual practice, review changes in ETH units, cash and simulator fees. Keep real Ethereum network gas and staking separate: TradeHQ neither transfers nor stakes coins."
+      "For the fictional example, review changes in ETH units, cash and simulator fees. Keep real Ethereum network gas and staking separate: TradeHQ neither transfers nor stakes coins."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
     "risk": "Network fees, staking mechanics and ETH market-price exposure are different risks and activities. TradeHQ illustrates only the supported virtual spot accounting; it does not stake ETH, transfer coins or pay staking rewards. A correct network explanation cannot establish which direction the market price will move. Include the actual simulator fees when assessing a paper outcome.",
@@ -328,7 +328,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
         "label": "Ethereum.org — ether and the Ethereum network"
       },
       {
-        "href": "https://ethereum.org/gas/",
+        "href": "https://ethereum.org/developers/docs/gas/",
         "label": "Ethereum.org — transaction gas"
       }
     ]
@@ -450,11 +450,11 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Identify the instrument before doing any arithmetic: SOL is the token, a SOL/USD quote is a price per token, and an exchange venue's quoted price may differ from a separate source. Record the quote currency, source and observation time.",
       "Choose a hypothetical dollar budget and SOL unit price. Divide budget by unit price to calculate units, then add the simulator's stated 0.1% virtual order fee to estimate cash required. Use amounts solely for the worksheet, not as a recommended allocation.",
-      "On /trade/sol, inspect the quoted spot price and any data-status label. Submit a virtual market order only if you want to practise the supported interaction; there is no resting limit, stop, short or staking order in TradeHQ.",
+      "On /trade/sol, inspect the quoted spot price and any data-status label. No order is required for this worksheet; the simulator does not support resting limit or stop orders, short positions or staking.",
       "Write two different exit-price scenarios before reading a later quote. Calculate gross profit or loss as units times the change in dollars per SOL; subtract hypothetical buy and sell transaction fees separately.",
       "Review what the exercise could and could not show: quote observation versus actual fill, changes in SOL value versus whole-portfolio return, and missing real-world exchange costs, spread, slippage and custody."
     ],
-    "beginnerTip": "Spot SOL exposure is a claim about token-price changes, not a share in Solana Labs or a claim to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
+    "beginnerTip": "The simulated SOL holding represents exposure to token-price changes, not ownership in Solana Labs or an entitlement to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
     "risk": "SOL's token price can move rapidly in either direction. Exchange liquidity, order size, spread and execution terms affect an actual fill; network reliability and token supply information do not predict the next price. In a simulator, a displayed mark and a later virtual fill may not recreate exchange execution or custody risk. Never equate a hypothetical outcome with achievable returns.",
     "studentNote": "This example is entirely virtual and does not require a wallet, real funds or access to an exchange. Laws and access conditions vary by jurisdiction; a financial-education worksheet is not confirmation that a venue or product is available locally.",
     "drivers": [
