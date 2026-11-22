@@ -65,7 +65,7 @@ const optionsTrack: CourseTrack = {
     "Compare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable.",
   ],
   prerequisites:
-    "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket.",
+    "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. Familiarity with the terminology on a virtual order ticket is helpful. No prior trade or minimum practice time is required.",
   progression:
     "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
   notFor:
@@ -80,14 +80,14 @@ const optionsTrack: CourseTrack = {
       body: [
         "## The core definition",
         "This lesson focuses on standard unadjusted US equity options, which generally cover 100 shares. A call gives its buyer a right to buy and a put a right to sell at the strike under the contract terms. American-style options can be exercised before expiry; European-style options have a different exercise schedule. Adjusted contracts and cash-settled index options can have different deliverables. The writer takes the corresponding obligation. Read the specific contract and OCC risk disclosure rather than assume every option is identical.",
-        "Because one contract controls 100 shares, a call option quoted at $2.50 actually costs $250 to buy. That single number embeds four separate ideas: the direction you expect (up for calls, down for puts), how far you expect the move to go (the strike), how much time you're giving it (the expiration), and how much volatility the market currently prices in.",
+        "For a standard unadjusted 100-share contract, the quoted premium is stated per share. An option premium depends on multiple pricing inputs, including the underlying price, strike, remaining time, implied volatility, interest rates and dividends. It is not a direct measure of an individual participant's expectations.",
         "## Why options exist",
         "A share holder can buy a put to offset some losses below its strike during the option term, at the cost of its premium. A covered call adds premium income but limits upside and retains substantial share-price risk. These examples illustrate different payoffs; neither is a guaranteed return or a universally suitable position.",
         "## A simple worked example",
-        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. If it closes between $185 and $188 you're partially in-the-money but net negative. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. These are hypothetical expiration payoffs before costs for the purchased option alone. Exercise can create a stock position with separate funding and market risk. Short options have different obligations, and an uncovered short call can have unlimited loss.",
+        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. An expiration price strictly between $185 and $188 gives the call intrinsic value but a net loss before costs; $188 is gross break-even. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. These are hypothetical expiration payoffs before costs for the purchased option alone. Exercise can create a stock position with separate funding and market risk. Short options have different obligations, and an uncovered short call can have unlimited loss.",
         "## What you can practise on TradeHQ",
         "TradeHQ supports spot instruments, including shares and ETFs, with $100,000 virtual capital. It does not model option strikes, expirations or premiums. Use this lesson's worked examples to calculate hypothetical contract payoffs on paper; buying an underlying share in the simulator is a different transaction from buying an option on it.",
-        "> Options are contracts, not shares. You are trading a right that decays with time.",
+        "> Options are contracts, not shares. Time value generally erodes as expiry approaches, but the total premium can rise or fall with other pricing inputs.",
         DISC,
       ],
       keyTakeaways: [
@@ -143,7 +143,7 @@ const optionsTrack: CourseTrack = {
       quiz: [
         { question: "What does theta measure?", options: ["Directional exposure", "Time decay per day", "Volatility sensitivity", "Interest-rate risk"], correctAnswer: 1, explanation: "Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated." },
         { question: "In the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects?", options: ["$0.10", "$0.30", "$0.50", "$0.90"], correctAnswer: 2, explanation: "0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability." },
-        { question: "'IV crush' typically happens:", options: ["Right before earnings", "Right after earnings", "On Fed decision day", "At market open"], correctAnswer: 1, explanation: "A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release." },
+        { question: "Which event can be followed by a sharp decline in implied volatility?", options: ["A fixed time every morning", "An earnings announcement resolving uncertainty", "Every market opening without exception", "Every dividend payment without exception"], correctAnswer: 1, explanation: "A sharp post-announcement decline in implied volatility is sometimes called IV crush. It is not confined to earnings and is not inevitable after an announcement." },
         { question: "Which Greek measures the rate of change of delta?", options: ["Vega", "Theta", "Gamma", "Rho"], correctAnswer: 2, explanation: "Gamma tells you how quickly delta itself changes." },
       ],
     },
@@ -194,7 +194,7 @@ const optionsTrack: CourseTrack = {
         "## What implied volatility actually is",
         "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.",
         "## IV rank vs IV percentile",
-        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
+        "A quoted IV value needs context before comparisons can be interpreted. IV rank commonly compares current IV with the highest and lowest observations over a specified lookback, often 52 weeks, on a 0–100 scale. A constant series has no high-low range, so the usual calculation is undefined. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
         "## The earnings trap",
         "Implied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.",
         "## Comparing hypothetical earnings payoffs",
@@ -214,7 +214,7 @@ const optionsTrack: CourseTrack = {
         { label: "OIC — IV rank and percentile definitions", url: "https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy" },
       ],
       quiz: [
-        { question: "IV rank of 80 means:", options: ["IV is at 80%", "IV is near a 12-month high", "IV is near a 12-month low", "80% of options are profitable"], correctAnswer: 1, explanation: "IV rank normalises IV against the last year on a 0-100 scale." },
+        { question: "Under the lesson's 52-week high-low convention, what does IV rank of 80 describe?", options: ["IV is at 80%", "IV is toward the upper end of its observed range", "IV is near a 12-month low", "80% of options are profitable"], correctAnswer: 1, explanation: "IV rank describes relative location within a specified high-low range, not the fraction of days below the current value." },
         { question: "Why can a long option lose even if the price moves in the expected direction after earnings?", options: ["Because options never follow the underlying", "A drop in implied volatility and time value can offset the directional gain", "Because earnings cancel the contract", "Because all options are illiquid"], correctAnswer: 1, explanation: "Option value depends on more than direction; implied volatility and time value can change sharply after earnings." },
         { question: "What does a high IV rank tell you?", options: ["A premium-selling trade is guaranteed to work", "Current implied volatility is high relative to its own recent range", "The stock must fall", "The next move will be small"], correctAnswer: 1, explanation: "IV rank is context about relative option pricing, not a standalone buy or sell signal." },
         { question: "Implied volatility is:", options: ["Historical vol over 30 days", "An exchange forecast", "The volatility that makes model = market price", "The stock's beta"], correctAnswer: 2, explanation: "IV is the vol input that reconciles a pricing model with the live option price." },
@@ -227,10 +227,10 @@ const optionsTrack: CourseTrack = {
       readingMinutes: 9,
       body: [
         "## Illustrative 1% budget for a defined-risk worksheet",
-        "For simulation, choose a small predefined risk budget before entering a position and compare how different limits affect drawdown. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
+        "The worksheet uses a hypothetical loss assumption for arithmetic comparison; it does not require entering any position. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
         "## Testing a hypothetical loss multiplier",
         "Naked puts and short strangles can create losses far larger than the premium collected. In a paper worksheet, model adverse moves explicitly and compare the resulting losses with a hypothetical risk budget rather than relying on one fixed multiplier. TradeHQ does not execute these option positions.",
-        "## Rolling — extending, not doubling down",
+        "## Rolling — definition and limitations",
         "Rolling means closing an existing option and opening another with a different expiry and sometimes a different strike. A credit or debit alone does not determine whether the adjustment makes sense; compare the new maximum loss, break-even points, time remaining and total capital at risk in a worked example. Rolling options is not supported by TradeHQ's order engine.",
         "## When to cut a loss",
         "Predefined exits can prevent open-ended decision-making, but no single percentage works for every option structure. In a worksheet with appropriate historical option prices, compare several hypothetical exit rules and record drawdown, average loss and opportunity cost. Account for execution assumptions and costs; TradeHQ's spot simulator cannot perform this options backtest.",
@@ -242,7 +242,7 @@ const optionsTrack: CourseTrack = {
         "Use a predefined practice risk budget and record the effect on drawdown.",
         "Model adverse scenarios for structures whose losses can exceed the premium collected.",
         "Evaluate a roll by its full risk profile, not only by whether it creates a credit or debit.",
-        "Test predefined exits in simulation rather than treating one threshold as universal.",
+        "Compare hypothetical exit assumptions in a separate worksheet; the TradeHQ spot simulator cannot backtest options.",
       ],
       sources: [
         { label: "OCC — Options Risk Disclosure", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
@@ -261,7 +261,7 @@ const optionsTrack: CourseTrack = {
 const futuresTrack: CourseTrack = {
   slug: "futures-and-derivatives",
   title: "Futures & Derivatives",
-  tagline: "Contracts, margin, contango and hedging — the trader's toolkit.",
+  tagline: "Futures definitions, collateral, term structure and risk.",
   description:
     "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.",
   hero: futuresHero,
@@ -269,7 +269,7 @@ const futuresTrack: CourseTrack = {
   badge: { name: "Futures Fundamentals Completion", description: "Awarded after completing every lesson in the Futures & Derivatives track." },
   outcomes: [
     "Explain what a futures contract standardises and who the natural counterparties in a market are.",
-    "Calculate the notional value behind a contract and the margin actually required to hold it.",
+    "Distinguish contract notional from hypothetical collateral and explain why actual requirements vary.",
     "Read a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.",
     "Describe how a producer or consumer uses futures to hedge a real-world exposure.",
     "Compare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk.",
@@ -298,20 +298,19 @@ const futuresTrack: CourseTrack = {
         DISC,
       ],
       keyTakeaways: [
-        "A futures contract is a standardised exchange agreement to transact a fixed asset at a future date.",
+        "A futures contract is a standardised exchange agreement with a specified underlying or reference and settlement terms.",
         "The clearing house manages counterparty risk through safeguards; it does not eliminate all risk.",
         "Both long and short futures positions remain subject to margin, permissions and exchange rules.",
         "Every contract has a spec sheet — always read it.",
       ],
       sources: [
         { label: "CME — Futures introduction and participant roles", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
-        { label: "CME — Introduction to Futures", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
         { label: "CME — E-mini S&P 500 contract specifications", url: "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" },
         { label: "CME — Clearing safeguards", url: "https://www.cmegroup.com/solutions/risk-management/financial-safeguards.html" },
         { label: "CME — Position limits overview", url: "https://www.cmegroup.com/education/courses/market-regulation/position-limits/position-limits-overview" },
       ],
       quiz: [
-        { question: "The central counterparty on a US futures exchange is:", options: ["The buyer", "The seller", "The exchange's clearing house", "The broker"], correctAnswer: 2, explanation: "The clearing house novates every trade." },
+        { question: "The central counterparty on a US futures exchange is:", options: ["The buyer", "The seller", "The exchange's clearing house", "The broker"], correctAnswer: 2, explanation: "The clearing house becomes the central counterparty to cleared transactions under its rules." },
         { question: "Notional value of one E-mini S&P at index 5,000 ≈", options: ["$5,000", "$50,000", "$250,000", "$1,000,000"], correctAnswer: 2, explanation: "$50 × 5,000 = $250,000." },
         { question: "Which statement about opening a short futures position is correct?", options: ["It removes margin requirements", "It is exempt from exchange rules", "It does not require borrowing the underlying asset first", "It guarantees a maximum loss"], correctAnswer: 2, explanation: "Selling a futures contract creates short exposure, subject to margin and applicable trading rules." },
         { question: "A producer uses a short futures position to offset falling sale prices. This is an example of:", options: ["Guaranteed profit", "Eliminating default risk", "Hedging price exposure", "Avoiding all settlement obligations"], correctAnswer: 2, explanation: "The futures position can offset some price exposure, but a hedge need not remove every risk." },
@@ -347,7 +346,7 @@ const futuresTrack: CourseTrack = {
         { question: "Futures margin is best described as:", options: ["A loan", "A performance bond", "A fee", "A tax"], correctAnswer: 1, explanation: "It is collateral supporting the position, not a loan or a cap on losses." },
         { question: "Futures accounts are marked-to-market:", options: ["Yearly", "Monthly", "Every trading day", "Only at expiration"], correctAnswer: 2, explanation: "Daily settlement moves cash in/out." },
         { question: "In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:", options: ["1%", "5%", "~19%", "50%"], correctAnswer: 2, explanation: "$2,500 on $13,000 ≈ 19%." },
-        { question: "A margin call means:", options: ["You made money", "Deposit more or be liquidated", "Exchange closed", "Broker owes interest"], correctAnswer: 1, explanation: "The broker may require additional funds or reduce or liquidate positions under its rules." },
+        { question: "A margin call means:", options: ["You made money", "A collateral shortfall may require funds or position reduction", "Exchange closed", "Broker owes interest"], correctAnswer: 1, explanation: "The broker may require additional funds or reduce or liquidate positions under its rules." },
       ],
     },
     {
@@ -376,10 +375,11 @@ const futuresTrack: CourseTrack = {
       ],
       sources: [
         { label: "CME — Contango/Backwardation", url: "https://www.cmegroup.com/education/courses/introduction-to-precious-metals/what-is-contango-and-backwardation" },
-        { label: "FRED — WTI", url: "https://fred.stlouisfed.org/series/DCOILWTICO" },
+        { label: "FRED — WTI spot-price series (not a futures curve)", url: "https://fred.stlouisfed.org/series/DCOILWTICO" },
+        { label: "CFTC — terminology and basis risk", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" },
       ],
       quiz: [
-        { question: "Further-dated below front month =", options: ["Contango", "Backwardation", "Equilibrium", "Rollover"], correctAnswer: 1, explanation: "Backwardation describes relative delivery prices; it does not by itself prove a shortage." },
+        { question: "For two stated delivery months, what describes a lower price for the later delivery?", options: ["Contango", "Backwardation", "Equilibrium", "Rollover"], correctAnswer: 1, explanation: "Backwardation describes relative delivery prices; it does not by itself prove a shortage." },
         { question: "Which factor can make a futures fund differ from spot performance?", options: ["Guaranteed gains", "Contract selection and rolling methodology", "No costs", "Identical exposure"], correctAnswer: 1, explanation: "Methodology, contract price changes, collateral returns and costs affect fund performance." },
         { question: "Which factor can contribute to contango in a storable-commodity example?", options: ["A guaranteed shortage", "Carrying costs", "The ticker symbol alone", "A universal price rule"], correctAnswer: 1, explanation: "Carrying costs can contribute to higher deferred futures prices. Convenience yield and other conditions can offset those costs; storable commodities are not always in contango." },
         { question: "Which condition can contribute to backwardation, without being proven by the curve alone?", options: ["Quiet market", "Physical shortage", "Delisting", "Low vol"], correctAnswer: 1, explanation: "Immediate demand for physical supply and convenience yield can contribute to backwardation. The curve alone does not prove a shortage or identify participants’ motives." },
@@ -403,19 +403,19 @@ const futuresTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "Hedging uses a position to offset a specified exposure; it need not eliminate every risk.",
-        "Producers sell; consumers buy.",
-        "Equity funds hedge beta by shorting index futures.",
+        "Hedge direction depends on the specific price exposure being offset.",
+        "A conceptual index-futures hedge can reduce some equity-market exposure; mismatch and other risks remain.",
         "Basis changes, cash-flow needs and mismatched quantities can affect a hedge.",
       ],
       sources: [
         { label: "CME — Hedging", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
-        { label: "CME — Hedgers and futures mechanics", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
+        { label: "CFTC — definitions of hedging and basis risk", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CFTCGlossary/index.htm" },
       ],
       quiz: [
         { question: "Which conceptual futures direction offsets some exposure to a falling wheat sale price?", options: ["Buy wheat futures", "Sell wheat futures", "Buy corn futures", "Buy S&P"], correctAnswer: 1, explanation: "A short wheat future can gain when its futures price falls, but basis, quantity and costs affect the combined result." },
-        { question: "Which conceptual crude futures position gains if its futures price rises?", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "Buying futures profits if crude rises." },
+        { question: "Which conceptual crude futures position gains if its futures price rises?", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "The hypothetical price exposure has a positive gross change if its referenced futures price rises. Costs and the separate fuel expense still matter." },
         { question: "Basis risk is:", options: ["Exchange default", "Futures vs physical don't move perfectly together", "Rate risk", "FX risk"], correctAnswer: 1, explanation: "Basis fluctuates." },
-        { question: "Hedge $50M with $250K notional contracts →", options: ["20", "200", "500", "1,000"], correctAnswer: 1, explanation: "$50M / $250K = 200." },
+        { question: "In the simplified one-for-one notional worksheet, what is the count represented by $50 million divided by $250,000?", options: ["20", "200", "500", "1,000"], correctAnswer: 1, explanation: "The quotient is 200 under the specified arithmetic assumption; this is not an actual hedge-size recommendation." },
       ],
     },
     {
@@ -435,9 +435,9 @@ const futuresTrack: CourseTrack = {
         DISC,
       ],
       keyTakeaways: [
-        "The four Micro E-mini equity-index contracts are one-tenth their respective E-mini contract sizes.",
+        "The four named example Micro E-mini equity-index contracts use one-tenth the multipliers of their respective E-mini counterparts; this is not a complete product catalogue.",
         "Check each contract’s multiplier, tick value, fees, liquidity and margin requirements.",
-        "Micros let beginners scale one contract at a time.",
+        "Smaller multipliers change notional exposure, not whether a contract is suitable or safe.",
         "TradeHQ offers spot practice; futures margin and settlement remain worksheet exercises.",
       ],
       sources: [
@@ -471,7 +471,7 @@ const macroTrack: CourseTrack = {
     "Combine several macro signals into one written view instead of trading each release in isolation.",
   ],
   prerequisites:
-    "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself.",
+    "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Lessons link to selected official statistics, central-bank publications and index-provider documentation. Check the scope and date of each source; the links do not independently validate every claim.",
   progression:
     "Start by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations.",
   notFor:
@@ -484,7 +484,7 @@ const macroTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## What CPI actually measures",
-        "The Consumer Price Index is a monthly Bureau of Labor Statistics survey of prices paid by urban consumers for a basket of goods and services. It has two headline flavours: headline CPI (includes food and energy) and core CPI (excludes them, because they're volatile). Core readings are used to study trends, while the FOMC states its longer-run 2% inflation goal in terms of the annual change in the PCE price index.",
+        "The US Bureau of Labor Statistics publishes CPI indexes measuring changes in consumer prices over time using sampled prices and expenditure weights. This lesson focuses on the all-urban-consumers index (CPI-U) and its all-items and all-items-less-food-and-energy measures, often called headline and core CPI. Core readings are used to study trends, while the FOMC states its longer-run 2% inflation goal in terms of the annual change in the PCE price index.",
         "## The release mechanics",
         "Check the current BLS release calendar for CPI timing; scheduled releases are generally at 8:30 AM Eastern. Market reactions depend on expectations and other information. No fixed first-minute percentage move or single class of participant is established by this lesson.",
         "## Consensus, surprise and market reaction",
@@ -502,10 +502,13 @@ const macroTrack: CourseTrack = {
       sources: [
         { label: "BLS — CPI", url: "https://www.bls.gov/cpi/" },
         { label: "FRED — CPI-U", url: "https://fred.stlouisfed.org/series/CPIAUCSL" },
+        { label: "BLS — CPI definitions and limitations", url: "https://www.bls.gov/cpi/questions-and-answers.htm" },
+        { label: "BLS — CPI release calendar", url: "https://www.bls.gov/schedule/news_release/cpi.htm" },
+        { label: "Federal Reserve — PCE inflation goal", url: "https://www.federalreserve.gov/economy-at-a-glance-inflation-pce.htm" },
       ],
       quiz: [
         { question: "The Fed's 2% longer-run inflation goal is measured using:", options: ["Headline CPI", "Core CPI", "PCE price index", "PPI"], correctAnswer: 2, explanation: "The FOMC states its 2% longer-run inflation goal in terms of the annual change in the PCE price index." },
-        { question: "CPI is released at:", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "8:30 AM Eastern." },
+        { question: "What release time is generally listed on the BLS CPI release calendar?", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "The published calendar generally lists 8:30 AM Eastern. Consult the current calendar because schedules can change." },
         { question: "What distinguishes core CPI from headline CPI?", options: ["Core is always higher", "Core excludes food and energy", "Headline CPI is not reported", "Core predicts future inflation"], correctAnswer: 1, explanation: "Core CPI excludes food and energy, whose prices can be volatile. It offers one view of underlying inflation; headline CPI covers the full specified basket. Neither series alone establishes future inflation." },
         { question: "A CPI result above one survey’s median forecast establishes:", options: ["The next stock return", "A difference from that specified forecast", "A guaranteed rate increase", "Which participant moved the market"], correctAnswer: 1, explanation: "A forecast difference alone does not identify market participants or determine the next price move." },
       ],
@@ -519,7 +522,7 @@ const macroTrack: CourseTrack = {
         "## The mandate",
         "The Federal Reserve conducts monetary policy under statutory goals that include maximum employment and stable prices. The FOMC states a 2% longer-run inflation goal measured by the annual change in the PCE price index and considers a wide range of economic information when making decisions.",
         "## The eight-meeting cycle",
-        "The Federal Open Market Committee (FOMC) schedules eight regular meetings a year and can hold additional meetings when needed. A policy statement follows each regular meeting, and the Chair holds a press briefing after each meeting. Economic projections are discussed four times a year.",
+        "The Federal Open Market Committee (FOMC) schedules eight regular meetings a year and can hold additional meetings when needed. In 2026, regular policy-setting meetings have been followed by a policy statement and Chair press conference, with four scheduled projection releases. The Federal Reserve's November 12, 2026 revised tentative 2027 calendar designates October 26–27 as a strategy-only meeting; a policy decision is not scheduled for that meeting. Use the current official calendar for meeting types, statements and projection dates.",
         "## Market pricing of Fed decisions",
         "The CME FedWatch Tool converts federal-funds futures prices into implied probabilities for possible policy outcomes. Those probabilities describe market pricing, not certainty. Market reactions depend on the decision, accompanying statement, economic outlook and what participants had already expected.",
         "## Reading the statement vs the presser",
@@ -530,17 +533,18 @@ const macroTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "The Fed pursues its statutory employment and price-stability goals; the FOMC states a 2% longer-run PCE inflation goal.",
-        "FOMC schedules 8 regular meetings a year; economic projections are discussed four times a year.",
+        "The FOMC schedules eight regular meetings a year; meeting types and projection release schedules can change. The revised tentative 2027 calendar includes a strategy-only meeting.",
         "CME FedWatch shows futures-implied probabilities, not certain outcomes.",
         "The press conference can add information beyond the written statement.",
       ],
       sources: [
         { label: "Federal Reserve — FOMC", url: "https://www.federalreserve.gov/monetarypolicy/fomc.htm" },
+        { label: "Federal Reserve — revised tentative 2027 FOMC schedule (November 12, 2026)", url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm" },
         { label: "Federal Reserve — projections and participant policy assessments (September 2026)", url: "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm" },
         { label: "CME — FedWatch", url: "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" },
       ],
       quiz: [
-        { question: "How many FOMC meetings per year?", options: ["4", "6", "8", "12"], correctAnswer: 2, explanation: "Eight scheduled." },
+        { question: "How many regularly scheduled FOMC meetings are ordinarily planned per year?", options: ["4", "6", "8", "12"], correctAnswer: 2, explanation: "Eight regularly scheduled meetings are ordinarily planned; extra meetings are possible, and not every scheduled meeting is necessarily a policy-setting meeting." },
         { question: "Fed's dual mandate:", options: ["Low rates + growth", "Max employment + price stability", "Full employment + stock gains", "Low inflation + strong dollar"], correctAnswer: 1, explanation: "Set by Congress." },
         { question: "The 'dot plot' shows:", options: ["Historical rates", "Each participant's assessment of appropriate policy", "Balance sheet", "Sentiment"], correctAnswer: 1, explanation: "The dots record individual participants’ assessments of an appropriate policy path, not only voting members and not a Committee promise." },
         { question: "FedWatch derives probabilities from:", options: ["Analyst surveys", "Fed funds futures pricing", "Twitter", "Reuters polls"], correctAnswer: 1, explanation: "Fed funds futures embed implied rate probabilities." },
@@ -553,17 +557,17 @@ const macroTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## What the yield curve is",
-        "The yield curve plots the yield on US Treasury securities across maturities — from 3 months out to 30 years. In normal times it's upward-sloping: you get paid more for lending longer. When short-term yields exceed long-term yields, the curve is inverted.",
-        "## Why inversion signals recession",
+        "A Treasury yield curve describes yields across maturities at a stated time. The US Treasury currently publishes daily estimated par yields for maturities from one month through thirty years. An upward-sloping curve has higher longer-term yields than shorter-term yields; a selected spread is inverted when the shorter-term yield exceeds the longer-term yield. The shape can vary over time and across maturity pairs.",
+        "## Why inversion can indicate recession risk",
         "An inverted curve can reflect expectations for slower growth, lower future policy rates, or changing term premia. Historically, commonly watched Treasury-curve inversions have often preceded US recessions, but the lead time varies and the relationship is not a deterministic forecast.",
         "## The 10Y-2Y vs 10Y-3M",
-        "The linked New York Fed model uses the ten-year minus three-month Treasury yield spread to estimate a probability for a stated future horizon. The ten-year minus two-year spread is a different series. Model probabilities depend on the model and sample and are not certain outcomes; the two spreads need not invert on the same date.",
+        "The linked New York Fed research model uses the ten-year minus three-month Treasury yield spread to estimate recession probability twelve months ahead; the researchers explicitly distinguish these estimates from official Federal Reserve forecasts. The ten-year minus two-year spread is a different series. Model probabilities depend on the model and sample and are not certain outcomes; the two spreads need not invert on the same date.",
         "## Trading around the curve",
         "The curve is a slow-moving macro indicator. Treat it as one piece of economic context rather than as an intraday timing tool or an automatic instruction to change a portfolio.",
         DISC,
       ],
       keyTakeaways: [
-        "The yield curve is normally upward-sloping.",
+        "An upward-sloping curve has higher longer-term yields than shorter-term yields; curve shapes can vary.",
         "Inversions have historically been associated with elevated recession risk, with timing that varies across cycles.",
         "The linked NY Fed recession model uses the ten-year minus three-month Treasury yield spread.",
         "Use the curve as one macro indicator alongside other evidence.",
@@ -571,6 +575,7 @@ const macroTrack: CourseTrack = {
       sources: [
         { label: "NY Fed — Yield Curve Recession Probability", url: "https://www.newyorkfed.org/research/capital_markets/ycfaq" },
         { label: "FRED — T10Y2Y", url: "https://fred.stlouisfed.org/series/T10Y2Y" },
+        { label: "US Treasury — daily par yield curve and methodology", url: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=yield" },
       ],
       quiz: [
         { question: "Inverted curve =", options: ["Short < long", "Short > long", "Flat", "Negative yields"], correctAnswer: 1, explanation: "Short-term exceeds long-term." },
@@ -606,7 +611,7 @@ const macroTrack: CourseTrack = {
         "Dollar debt exposure depends on the borrower's income currency and hedges.",
       ],
       sources: [
-        { label: "ICE — US Dollar Index Composition", url: "https://www.ice.com/insights/indexation-and-etfs/managing-us-dollar-risk-in-uncertain-times" },
+        { label: "ICE — US Dollar Index Composition", url: "https://www.ice.com/insights/indexation-and-etfs/managing-us-dollar-risk-in-uncertain_times" },
         { label: "Federal Reserve — Dollar Appreciation and Corporate Profits (2015)", url: "https://www.federalreserve.gov/econresdata/notes/ifdp-notes/2015/how-much-has-dollar-appreciation-affected-us-corporate-profits-20150717.html" },
         { label: "BIS — Exchange Rates and Financial Conditions in EMEs (2023)", url: "https://www.bis.org/publications/bulletin-79-lessons-recent-experiences-exchange-rates-capital-flows-and-financial-conditions-emes" },
         { label: "FRED — Broad Trade-Weighted US Dollar Index", url: "https://fred.stlouisfed.org/series/DTWEXBGS" },
@@ -630,7 +635,7 @@ const macroTrack: CourseTrack = {
         "## Building a personal dashboard",
         "FRED provides economic time series and links to their sources and releases. Start a practice dashboard by selecting a few series relevant to a specific question, then record each series' units, frequency, observation date and release date. Check revisions and definitions before comparing values. A dashboard is an aid to study; no measured percentage of useful information or advantage over other traders is established here.",
         "## The weekly ritual",
-        "For a hypothetical study, choose a review date and record selected yields, exchange rates and price indices. Keep observation dates separate from release dates: GDP is not measured weekly, and later revisions can change the growth story. Record what was actually available at the time. Comparing a later revised series with an earlier trading decision can introduce look-ahead bias.",
+        "For a hypothetical study, choose a review date and record selected yields, exchange rates and price indices. Keep observation dates separate from release dates: GDP is not measured weekly, and later revisions can change the growth story. Record what was actually available at the time. Later revised data can introduce look-ahead bias in a historical analysis; ALFRED archives data vintages where available.",
         "## Don't over-trade macro",
         "A macro label cannot determine an appropriate position size or entry time. Scheduled releases can affect prices quickly even when the underlying economic series changes slowly. Compare alternative explanations and unfavorable cases; a dashboard neither proves causation nor guarantees investment outcomes.",
         DISC,
@@ -643,6 +648,7 @@ const macroTrack: CourseTrack = {
       ],
       sources: [
         { label: "FRED", url: "https://fred.stlouisfed.org/" },
+        { label: "St. Louis Fed — ALFRED archival data vintages", url: "https://fred.stlouisfed.org/docs/api/fred/alfred.html" },
         { label: "BEA — GDP", url: "https://www.bea.gov/data/gdp/gross-domestic-product" },
         { label: "BLS — Consumer Price Index", url: "https://www.bls.gov/cpi/" },
       ],
@@ -666,11 +672,11 @@ const psychologyTrack: CourseTrack = {
   level: "Beginner",
   badge: { name: "Trading Psychology Completion", description: "Awarded after completing every lesson in the Trading Decisions and Behaviour track." },
   outcomes: [
-    "Name the specific biases most likely to affect your own decisions, with an example from your own trade log.",
+    "Explain examples of decision biases using fictional observations, without inferring which bias a particular person has.",
     "Recognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.",
     "Keep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.",
     "Create an optional preparation and review checklist with no fixed time requirement.",
-    "Distinguish between a losing trade that followed the plan and a winning trade that broke it.",
+    "Distinguish a hypothetical outcome from whether the recorded assumptions were followed.",
   ],
   prerequisites:
     "No previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions.",
@@ -707,7 +713,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "Tversky & Kahneman — Cumulative Prospect Theory (1992)", url: "https://doi.org/10.1007/BF00122574" },
-        { label: "Walasek, Mullett & Stewart — A Meta-analysis of Loss Aversion in Risky Contexts (2024)", url: "https://wrap.warwick.ac.uk/id/eprint/185745/13/1-s2.0-S0167487024000485-main.pdf" },
+        { label: "Walasek, Mullett & Stewart — A Meta-analysis of Loss Aversion in Risky Contexts (2024)", url: "https://doi.org/10.1016/j.joep.2024.102740" },
       ],
       quiz: [
         { question: "Loss aversion describes:", options: ["Identical reactions from everyone", "Giving losses more weight than comparable gains relative to a reference point", "Preferring losses to gains", "Avoiding all trades"], correctAnswer: 1, explanation: "The concept concerns asymmetric evaluation around a reference point. Its magnitude varies and is not a universal two-times emotional ratio." },
@@ -719,7 +725,7 @@ const psychologyTrack: CourseTrack = {
     {
       slug: "revenge-trading-and-tilt",
       title: "Revenge Trading & Tilt — Recognising Unplanned Decisions",
-      summary: "Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.",
+      summary: "This lesson examines how frustration or other reactions to recent outcomes may influence decisions; a transaction pattern alone does not reveal someone's emotional state.",
       readingMinutes: 8,
       body: [
         "## What tilt actually is",
@@ -741,12 +747,12 @@ const psychologyTrack: CourseTrack = {
         "TradeHQ’s cooldown permits proceeding after five seconds; it is not a daily-loss lockout.",
       ],
       sources: [
-        { label: "TradeHQ — Revenge Trading Blocker", url: "/portfolio" },
+        { label: "TradeHQ — practice review tools", url: "/portfolio" },
         { label: "Kahneman and Tversky — decision-making under uncertainty", url: "https://doi.org/10.1007/BF00122574" },
         { label: "FINRA — Social sentiment and impulsive-investment risks", url: "https://www.finra.org/investors/insights/social-sentiment-investing-tools" },
       ],
       quiz: [
-        { question: "Tilt is:", options: ["A strategy", "Emotional state driving reckless trades", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Post-loss unplanned oversized trading." },
+        { question: "In this lesson, what does tilt describe?", options: ["A strategy", "A reaction to an outcome that may disrupt a plan", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Tilt describes a possible reaction to outcomes; an individual transaction does not establish someone's emotional state." },
         { question: "In the hypothetical worksheet, 3% of $100,000 is:", options: ["$100", "$3,000", "$25,000", "$30,000"], correctAnswer: 1, explanation: "100,000 × 0.03 = $3,000. This is arithmetic, not an industry-standard limit." },
         { question: "What does TradeHQ’s cooldown allow after five seconds?", options: ["Guaranteed recovery", "Proceeding with or cancelling the trade", "Automatic account reset", "A mandatory 24-hour lockout"], correctAnswer: 1, explanation: "The prompt allows a choice after the pause; it does not enforce a daily drawdown limit." },
         { question: "Which journal entry helps review a changed decision?", options: ["Only the final price", "The intended size, actual size and reason for changing it", "A guaranteed profit target", "Another trader’s ranking"], correctAnswer: 1, explanation: "Recording the original plan and the change makes the decision reviewable." },
@@ -780,7 +786,7 @@ const psychologyTrack: CourseTrack = {
           "A journal is a record, not proof of an investment edge.",
           "Distinguish virtual transactions, observed price marks, interpretation and hypothetical future fills.",
           "Use dated assumptions and include unfavorable observations when reviewing a sample.",
-          "No universal trade count validates future performance."
+          "No universal observation count validates future performance."
         ],
         "sources": [
           {
@@ -794,7 +800,7 @@ const psychologyTrack: CourseTrack = {
         ],
         "quiz": [
           {
-            "question": "What does a journal prove on its own?",
+            "question": "What can a journal document on its own?",
             "options": [
               "A profitable edge",
               "Why the market moved",

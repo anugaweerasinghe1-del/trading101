@@ -193,7 +193,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Practice Markets — Stocks, Crypto, ETFs, Forex | TradeHQ",
     description: `Browse 170 simulated markets across stocks, crypto, ETFs, forex and commodities. Practice trading with ${BALANCE} virtual cash — free, no signup.`,
     h1: "Markets Overview",
-    summary: `Browse 170 simulated markets across major asset classes. Explore movers, sentiment-style indicators and sector groupings, then practise with ${BALANCE} virtual cash. Data may be simulated or delayed and is for education only.`,
+    summary: `Browse 170 simulated markets across major asset classes. Explore movers, sentiment-style indicators and sector groupings, then practise with ${BALANCE} virtual cash. This page uses generated display data for education, not live market observations.`,
     priority: "0.9",
     changefreq: "daily",
   });
@@ -328,7 +328,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/reviews",
     title: "TradeHQ Reviews — What Traders Are Saying | TradeHQ",
-    description: `Read honest reviews from TradeHQ practice traders. Free educational simulator with ${BALANCE} virtual cash — no signup.`,
+    description: `Read moderated, user-submitted reviews of the TradeHQ educational simulator. Reviewer identity and usage are not independently verified.`,
     h1: "TradeHQ Reviews",
     summary: `Community-submitted reviews of the TradeHQ practice simulator. Submissions are moderated and duplicate-limited but are not independently verified.`,
     priority: "0.6",
@@ -522,10 +522,10 @@ export function buildRoutes(): RouteMeta[] {
     const label = h.fullName || h.name || h.symbol.toUpperCase();
     routes.push({
       path: `/how-to-trade/${h.symbol}`,
-      title: `How to Trade ${label} — Step-by-Step Guide | TradeHQ`,
-      description: `Learn how to trade ${label} step-by-step with ${BALANCE} virtual cash. Free practice account, no signup. Educational simulation only.`,
-      h1: `How to Trade ${label}`,
-      summary: h.whyTrade || `Step-by-step guide to trading ${label}, followed by practice with virtual cash on the free ${BALANCE} simulator.`,
+      title: `Learn ${label} — Virtual Practice Guide | TradeHQ`,
+      description: `Study ${label} instrument mechanics, fictional accounting examples and quote limitations. Free educational worksheets; no real-money transactions.`,
+      h1: `Learn ${label} — Virtual Practice`,
+      summary: h.whyTrade || `An educational worksheet about ${label}, using fictional quantities and prices.`,
       priority: "0.7",
       changefreq: "weekly",
     });
@@ -533,10 +533,10 @@ export function buildRoutes(): RouteMeta[] {
 
   routes.push({
     path: "/how-to-trade",
-    title: "How to Trade — Step-by-Step Asset Guides | TradeHQ",
-    description: `Free step-by-step guides on how to trade Bitcoin, Ethereum, Tesla, Nvidia and more. Practise with ${BALANCE} virtual cash, no signup.`,
-    h1: "How to Trade — Guides",
-    summary: `Pick an asset and follow a step-by-step guide, then try it on the free simulator with ${BALANCE} virtual cash.`,
+    title: "Asset Learning Guides — Virtual Worksheets | TradeHQ",
+    description: `Free educational instrument guides with fictional accounting examples and quote-source limitations. No real-money transactions.`,
+    h1: "Asset Learning Guides",
+    summary: `Explore instrument definitions and fictional accounting examples. No transaction is required.`,
     priority: "0.7",
     changefreq: "weekly",
   });

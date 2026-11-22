@@ -213,7 +213,7 @@ export default function Reviews() {
               <div className="mt-5 inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-card border border-border">
                 <Stars value={Math.round(stats.avg)} size={20} />
                 <span className="font-bold text-lg tabular-nums">{stats.avg.toFixed(1)}</span>
-                <span className="text-sm text-muted-foreground">from {stats.count} review{stats.count > 1 ? "s" : ""}</span>
+                <span className="text-sm text-muted-foreground">from {stats.count} displayed review{stats.count > 1 ? "s" : ""}</span>
               </div>
             )}
           </header>
@@ -281,7 +281,7 @@ export default function Reviews() {
               <Card className="p-5">
                 <h2 className="font-semibold mb-1">Share your experience</h2>
                 <p className="text-xs text-muted-foreground mb-4">
-                  Duplicate submissions are limited using browser/server abuse controls. Name is optional; reviews are not independently verified.
+                  Duplicate submissions are limited using browser/server abuse controls. Name is optional; approved reviews are public. Do not include private or identifying information. Reviews are not independently verified.
                 </p>
 
                 {submitted ? (

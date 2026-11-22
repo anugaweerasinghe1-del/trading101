@@ -83,3 +83,120 @@ for (const slug of ["short-squeeze", "rsi-divergence"]) {
 }
 console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
+
+
+const countryPageSource = (await import("node:fs/promises")).readFile;
+const countryPageCopy = await countryPageSource("src/pages/CountryGuide.tsx", "utf8");
+assert.doesNotMatch(countryPageCopy, /no geo lock|accessible from \$\{locationName\} with no required signup/);
+assert.match(countryPageCopy, /availability can depend on location, network and service conditions/);
+for (const country of data.COUNTRY_GUIDES) {
+  assert.doesNotMatch(JSON.stringify(country), /no geo-restriction|100% free and simulated/);
+  for (const reference of country.sources) {
+    assert.ok(content.get(`/learn/country/${country.slug}`)?.links.some(link => link.href === reference.href), `${country.slug}: missing public reference`);
+  }
+}
+
+
+const reviewedOptionsTrack = data.courseTracks.find(track => track.slug === "options-trading-fundamentals");
+assert.ok(reviewedOptionsTrack);
+assert.match(reviewedOptionsTrack.prerequisites, /No prior trade or minimum practice time is required/);
+const reviewedOptionsLessons = reviewedOptionsTrack.lessons;
+assert.equal(reviewedOptionsLessons.length, 5);
+assert.ok(reviewedOptionsLessons.every(lesson => lesson.quiz.length === 4));
+const reviewedIntro = reviewedOptionsLessons.find(lesson => lesson.slug === "what-is-an-option");
+assert.ok(reviewedIntro);
+assert.match(reviewedIntro.body.join(" "), /total premium can rise or fall/);
+assert.match(reviewedIntro.body.join(" "), /gross break-even/);
+const reviewedIV = reviewedOptionsLessons.find(lesson => lesson.slug === "implied-volatility-and-earnings");
+assert.ok(reviewedIV);
+assert.match(reviewedIV.body.join(" "), /usual calculation is undefined/);
+assert.equal(reviewedIV.quiz[0].correctAnswer, 1);
+assert.match(reviewedIV.quiz[0].options[1], /observed range/);
+const reviewedGreeks = reviewedOptionsLessons.find(lesson => lesson.slug === "the-greeks-delta-gamma-theta-vega");
+assert.ok(reviewedGreeks);
+assert.equal(reviewedGreeks.quiz[2].correctAnswer, 1);
+assert.match(reviewedGreeks.quiz[2].explanation, /not inevitable/);
+
+
+const reviewedMacroTrack = data.courseTracks.find(track => track.slug === "macro-reading-for-traders");
+assert.ok(reviewedMacroTrack);
+assert.equal(reviewedMacroTrack.lessons.length, 5);
+assert.ok(reviewedMacroTrack.lessons.every(lesson => lesson.quiz.length === 4));
+const checkedMacroCpi = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "reading-cpi-and-inflation");
+assert.ok(checkedMacroCpi);
+assert.match(checkedMacroCpi.body.join(" "), /sampled prices and expenditure weights/);
+assert.ok(checkedMacroCpi.sources.some(source => source.url === "https://www.bls.gov/schedule/news_release/cpi.htm"));
+const checkedMacroFed = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-fed-and-fomc-cycle");
+assert.ok(checkedMacroFed);
+assert.match(checkedMacroFed.body.join(" "), /strategy-only meeting/);
+assert.match(checkedMacroFed.body.join(" "), /November 12, 2026/);
+assert.ok(checkedMacroFed.sources.some(source => source.url.endsWith("monetary20261112a.htm")));
+const checkedMacroCurve = reviewedMacroTrack.lessons.find(lesson => lesson.slug === "the-yield-curve-and-recession");
+assert.ok(checkedMacroCurve);
+assert.match(checkedMacroCurve.body.join(" "), /one month through thirty years/);
+assert.match(checkedMacroCurve.body.join(" "), /twelve months ahead/);
+assert.match(checkedMacroCurve.body.join(" "), /official Federal Reserve forecasts/);
+
+
+const reviewedBehaviourTrack = data.courseTracks.find(track => track.slug === "trading-psychology-mastery");
+assert.ok(reviewedBehaviourTrack);
+assert.equal(reviewedBehaviourTrack.lessons.length, 5);
+const reviewedReminder = reviewedBehaviourTrack.lessons.find(lesson => lesson.slug === "revenge-trading-and-tilt");
+assert.ok(reviewedReminder);
+assert.match(reviewedReminder.summary, /does not reveal someone's emotional state/);
+assert.equal(reviewedReminder.quiz[0].correctAnswer, 1);
+const reviewedFuturesTrack = data.courseTracks.find(track => track.slug === "futures-and-derivatives");
+assert.ok(reviewedFuturesTrack);
+assert.equal(reviewedFuturesTrack.lessons.length, 5);
+for (const lesson of reviewedFuturesTrack.lessons) {
+  assert.equal(lesson.quiz.length, 4);
+  assert.equal(new Set(lesson.sources.map(s => s.url)).size, lesson.sources.length);
+}
+const reviewedMicro = reviewedFuturesTrack.lessons.find(lesson => lesson.slug === "micro-futures-for-beginners");
+assert.ok(reviewedMicro);
+assert.match(reviewedMicro.keyTakeaways.join(" "), /not a complete product catalogue/);
+assert.doesNotMatch(reviewedMicro.keyTakeaways.join(" "), /let beginners scale/);
+
+
+const assetGuideRoutes = routes.filter(route => route.path.startsWith("/how-to-trade/"));
+assert.equal(assetGuideRoutes.length, 6);
+for (const route of assetGuideRoutes) {
+  assert.match(route.title, /Virtual Practice Guide/);
+  assert.match(route.description, /No real-money transactions/i);
+  assert.ok(content.get(route.path)?.sections.some(section => section.h === "Worked hypothetical accounting example"));
+}
+assert.match(routes.find(route => route.path === "/how-to-trade")!.summary, /No transaction is required/);
+
+
+const strategyRoutes = routes.filter(route => route.path.startsWith("/strategy/"));
+assert.equal(strategyRoutes.length, 6);
+for (const route of strategyRoutes) {
+  const notes = content.get(route.path);
+  const example = notes?.sections.find(section => section.h === "Worked example")?.p?.join(" ") ?? "";
+  assert.ok(example.length > 80);
+  assert.doesNotMatch(example, /VWAP reclaim|bullish engulfing — buy|MACD crosses up at|after a pullback, stop/i);
+  assert.match(notes?.sections.find(section => section.h === "Scope and source limitations")?.p?.join(" ") ?? "", /Educational simulation only/i);
+}
+
+const reviewedAssetIds = ["btc","eth","sol","bnb","xrp","aapl","msft","googl","amzn","nvda","tsla","meta","spy","qqq","eurusd","gbpusd","gold","oil"];
+for (const id of reviewedAssetIds) {
+  const page = content.get(`/trade/${id}`);
+  assert.ok(page, `${id}: reviewed asset exists`);
+  const serialized = JSON.stringify(page.sections);
+  assert.doesNotMatch(serialized, /fills at the displayed practice price|Students anywhere can practice|free for students in Sri Lanka and worldwide/i, `${id}: avoid unsupported execution or availability guarantee`);
+}
+console.log("PASS asset education copy guards");
+
+const finalUtilityPaths = ["/", "/trade", "/markets", "/portfolio", "/start", "/learn", "/learn-trading-guide", "/leaderboard", "/ai-mentor", "/daily", "/practice", "/newsletter", "/reviews", "/challenge"];
+for (const path of finalUtilityPaths) {
+  assert.ok(routes.some(route => route.path === path && !route.noindex), path + ": publisher route retained");
+  assert.ok(content.get(path)?.sections.length, path + ": publisher notes retained");
+}
+const publicBoardCopy = JSON.stringify(content.get("/leaderboard"));
+assert.match(publicBoardCopy, /up to 500/);
+assert.match(publicBoardCopy, /country if supplied/);
+assert.match(publicBoardCopy, /new leaderboard requests/);
+assert.match(JSON.stringify(content.get("/portfolio")), /server-recorded transactions can restore/);
+assert.match(JSON.stringify(content.get("/markets")), /generated practice price/);
+assert.match(JSON.stringify(content.get("/daily")), /target schedule is not a publication guarantee/);
+console.log("PASS application publisher disclosure scope");
