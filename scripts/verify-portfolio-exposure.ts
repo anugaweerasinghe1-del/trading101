@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { portfolioExposureSummary } from '../src/lib/portfolioExposure';
 import type { Portfolio } from '../src/lib/types';
 const position = {asset:{id:'aapl',symbol:'AAPL',name:'Example',type:'stock' as const,price:255.25,change:0,changePercent:0},quantity:1,avgPrice:255.25,currentValue:255.25,profitLoss:0,profitLossPercent:0};
@@ -15,3 +16,12 @@ assert.equal(portfolioExposureSummary({...small,cash:NaN}),null);
 assert.equal(portfolioExposureSummary({...small,cash:-1000}),null);
 assert.match(portfolioExposureSummary({...small,positions:[position,{...position,asset:{...position.asset,symbol:'OTHER'},currentValue:744.75}],cash:99000})!,/OTHER is 74.5% of invested holdings and 0.74% of total account/);
 console.log('PASS account-inclusive weights and independent hypothetical shock calculations; small, fully invested, empty and invalid accounts');
+
+const portfolioPage = readFileSync("src/pages/Portfolio.tsx", "utf8");
+const insightComponent = readFileSync("src/components/portfolio/AIInsightSummary.tsx", "utf8");
+assert.match(portfolioPage, /rule-based educational summary of current holdings and portfolio exposure/i);
+assert.doesNotMatch(portfolioPage, /automated growth summary/i);
+assert.match(insightComponent, /interface AIInsightSummaryProps\s*\{\s*portfolio: Portfolio;\s*\}/);
+assert.match(insightComponent, /function generateInsights\(portfolio: Portfolio\)/);
+assert.match(insightComponent, /portfolioExposureSummary\(portfolio\)/);
+console.log("PASS portfolio FAQ describes the current-holdings insight without claiming time-series growth analysis");
