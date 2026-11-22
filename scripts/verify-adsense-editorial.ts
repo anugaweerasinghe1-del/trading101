@@ -280,6 +280,14 @@ for (const [slug, expected] of [
 }
 console.log("PASS scoped source-fit regression: five asset classes, core hubs, portfolio articles and six glossary topics; no AdSense approval implied");
 
+// A higher RSI is a ratio observation, not proof of smaller absolute losses.
+const rsiFromAverages = (gain: number, loss: number) => 100 - 100 / (1 + gain / loss);
+assert.equal(rsiFromAverages(1, 3), 25);
+assert.ok(Math.abs(rsiFromAverages(48 / 17, 6) - 32) < 1e-10);
+const doubleBottom = tradingGlossary.find(term => term.slug === "double-bottom")!;
+assert.doesNotMatch(doubleBottom.expertDefinition, /records a smaller decline/);
+assert.match(doubleBottom.expertDefinition, /reading is higher than at the earlier low/);
+
 for (const route of ["/learn", "/challenge", "/about", "/trade"]) {
   assert.ok(map.get(route)?.sections.length, route + ": public support content required");
 }
