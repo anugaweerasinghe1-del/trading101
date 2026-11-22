@@ -17,7 +17,7 @@ export interface ComparePair {
 export const COMPARE_PAIRS: ComparePair[] = [
   {
     slug: "bitcoin-vs-ethereum",
-    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital gold" },
+    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital network asset" },
     b: { symbol: "ETH", name: "Ethereum", tag: "Smart-contract platform" },
     intro: "Bitcoin and Ethereum are digital networks with different transaction and application designs. Compare their supply rules, uses and costs without treating either token as a savings plan or predicting its price.",
     verdict: "Practice comparison: contrast Bitcoin supply rules and settlement design with Ethereum execution, issuance and staking mechanics. Neither profile establishes the better investment, an assured hedge or future upside.",
@@ -71,7 +71,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "bitcoin-vs-gold",
-    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital store of value" },
+    a: { symbol: "BTC", name: "Bitcoin", tag: "Digital network asset" },
     b: { symbol: "GLD", name: "Gold (GLD fund)", tag: "Gold fund exposure" },
     intro: "Gold and Bitcoin have different ownership, custody and market arrangements. A gold fund also differs from physical gold. Compare specified exposures over matching dates; neither a long history nor a digital supply rule guarantees a hedge.",
     verdict: "Practice comparison: contrast physical gold exposure, costs and custody with Bitcoin network and custody risks. Neither is assured currency-crisis insurance or a guarantee of asymmetric upside.",
@@ -92,7 +92,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
     ],
     worksheet: "Label the gold column GLD fund exposure, not a bar in a vault. Read the fund's expense and custody descriptions alongside Bitcoin's transaction and wallet documentation. Compare equal hypothetical starting values under both rising and falling price scenarios, with a separate column for costs excluded by the simulator. Do not label either result an inflation hedge without matching dated market and inflation data.",
     sources: [
-      { label: "SPDR Gold Shares: fund information", href: "https://www.spdrgoldshares.com/usa/" },
+      { label: "SPDR Gold Shares: fund information", href: "https://www.spdrgoldshares.com/usa/gld/" },
       { label: "Bitcoin: transactions and wallets", href: "https://bitcoin.org/en/how-it-works" },
     ],
   },
@@ -126,7 +126,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   {
     slug: "ethereum-vs-solana",
     a: { symbol: "ETH", name: "Ethereum", tag: "L1 + L2 ecosystem" },
-    b: { symbol: "SOL", name: "Solana", tag: "Monolithic high-throughput chain" },
+    b: { symbol: "SOL", name: "Solana", tag: "Integrated execution network" },
     intro: "Ethereum and Solana use different designs for processing transactions and supporting applications. Compare current network documentation, transaction definitions and fee measurements rather than assigning permanent leadership or token-price upside.",
     verdict: "Practice comparison: contrast network design, execution, reliability and supply assumptions using current Ethereum and Solana documentation. Throughput or a fee comparison does not establish token-price upside.",
     bullets: [
@@ -140,7 +140,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
       "Network activity and token returns are different measures. A comparison can examine where fees are charged, how supply changes and which security assumptions apply without presuming that greater activity raises price. Staking rewards are denominated in the token and can be affected by costs, issuance, protocol rules and market-price losses. Comparing nominal reward percentages alone does not establish an inflation-adjusted investment return. Document the source and period and separate the network’s design from a forecast of its token’s value.",
     ],
     mistakes: [
-      "Choosing on transactions per second alone. Sustained throughput under real load, and what happens when the chain is congested, matter far more than a benchmark figure.",
+      "Choosing on transactions per second alone. A benchmark describes its test conditions. Observed throughput, congestion and reliability must be compared using consistent definitions.",
       "Reading a token reward percentage as a cash return. State the period, token-price change, fees, penalties and supply assumptions; subtracting issuance alone does not calculate an investor's return.",
       "Predicting a token-price response from an outage. Record the incident's date, duration and affected services separately from any claim about adoption or price.",
     ],
@@ -152,7 +152,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "stocks-vs-crypto",
-    a: { symbol: "SPY", name: "Stocks (S&P 500)", tag: "Equity index" },
+    a: { symbol: "SPY", name: "Stocks (SPY fund)", tag: "Index-tracking fund" },
     b: { symbol: "BTC", name: "Crypto (Bitcoin)", tag: "Digital asset" },
     intro: "Equities and crypto represent very different kinds of exposure: equities are ownership claims on businesses, while crypto assets depend on network use, market structure and investor demand. This comparison focuses on those structural differences rather than prescribing an allocation.",
     verdict: "Broad equity indexes and crypto have very different risk profiles. Use the comparison to understand those differences rather than treating either allocation as a universal recommendation.",
@@ -191,7 +191,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
     ],
     deepDive: [
       "Hardware and software should be examined together. For a stated workload, check supported models, libraries, numerical precision, memory and deployment requirements in each vendor's documentation. Then separate those compatibility findings from company-level revenue, costs and customer risks in the filings. A benchmark result describes its test setup; it does not establish purchasing decisions, a permanent software advantage or future market share. Version and date the comparison because supported products and tools change.",
-      "A market-share hypothesis and a stock-price response are different propositions. Compare what was known before an announcement with alternative expectations and reported results. Customer spending, supply, competition, software compatibility and costs can affect both companies, but that does not establish a predictable asymmetric reaction. A price already reflects changing expectations, and a positive business development need not produce a gain. Use matched reporting periods and dated inputs when comparing valuation or profitability.",
+      "A market-share hypothesis and a stock-price response are different propositions. Compare what was known before an announcement with alternative expectations and reported results. Customer spending, supply, competition, software compatibility and costs can affect both companies, but that does not establish a predictable asymmetric reaction. Prices can reflect varying expectations and other market factors; a positive business development need not produce a gain. Use matched reporting periods and dated inputs when comparing valuation or profitability.",
     ],
     mistakes: [
       "Treating one benchmark as proof of market share. Check the workload, software version, availability and disclosed customer arrangements separately.",
@@ -208,7 +208,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
   },
   {
     slug: "forex-vs-stocks",
-    a: { symbol: "FX", name: "Forex", tag: "24/5 currency markets" },
+    a: { symbol: "FX", name: "Forex", tag: "Currency-pair exposure" },
     b: { symbol: "Stocks", name: "Equities", tag: "Company ownership" },
     intro: "A currency pair quotes one currency relative to another; a share represents company ownership. Their trading arrangements and information differ. Neither category has a universally slower price path or rewards a particular skill set reliably.",
     verdict: "Practice comparison: distinguish relative currency prices from company ownership and cash flows. Neither instrument category guarantees wealth compounding or suits every short-term trader.",

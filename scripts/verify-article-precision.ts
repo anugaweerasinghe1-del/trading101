@@ -1,0 +1,21 @@
+import { COMPARE_PAIRS } from "../src/lib/seoData";
+import assert from "node:assert/strict";
+import { LEARN_ARTICLES } from "../src/lib/learnArticles";
+import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
+const bySlug=new Map(LEARN_ARTICLES.map(a=>[a.slug,a]));
+const all=LEARN_ARTICLES.flatMap(a=>a.sections.flatMap(s=>s.paragraphs)).join("\n");
+assert.equal(LEARN_ARTICLES.length,9);
+assert.doesNotMatch(all,/Candlestick charts are the most popular|You can trade 170 assets/);
+assert.match(all,/hollow-candle conventions vary/);
+assert.match(all,/The Nasdaq-100 is a distinct index/);
+assert.match(all,/cancelled or expire before the quoted price/);
+for (const [slug,ref] of [["crypto-vs-stocks","https://www.nyse.com/trade/trading-information"],["stock-market-index-etfs","https://indexes.nasdaq.com/Index/Overview/NDX"],["market-orders-vs-limit-orders","https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-14"]]) assert.ok(ARTICLE_REFERENCES[slug].some(x=>x.href===ref),slug);
+assert.ok(bySlug.get("technical-indicators-rsi-macd-moving-averages")?.sections.some(s=>s.paragraphs.some(p=>p.includes("does not provide a MACD chart overlay"))));
+console.log("PASS learning article precision and primary source scope");
+
+assert.equal(COMPARE_PAIRS.length,8);
+assert.ok(COMPARE_PAIRS.filter(p=>p.a.symbol==="BTC").every(p=>p.a.tag==="Digital network asset"));
+assert.equal(COMPARE_PAIRS.find(p=>p.slug==="stocks-vs-crypto")?.a.tag,"Index-tracking fund");
+assert.equal(COMPARE_PAIRS.find(p=>p.slug==="forex-vs-stocks")?.a.tag,"Currency-pair exposure");
+assert.ok(COMPARE_PAIRS.find(p=>p.slug==="bitcoin-vs-gold")?.sources.some(s=>s.href==="https://www.spdrgoldshares.com/usa/gld/"));
+console.log("PASS neutral comparison labels and source scope");
