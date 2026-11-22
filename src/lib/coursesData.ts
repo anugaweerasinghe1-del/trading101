@@ -261,7 +261,7 @@ const optionsTrack: CourseTrack = {
 const futuresTrack: CourseTrack = {
   slug: "futures-and-derivatives",
   title: "Futures & Derivatives",
-  tagline: "Contract definitions, collateral, term structure and risk — conceptual worksheets only.",
+  tagline: "Futures definitions, collateral, term structure and risk.",
   description:
     "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.",
   hero: futuresHero,
