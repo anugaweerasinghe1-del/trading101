@@ -1,0 +1,59 @@
+Friday close, weekend, Monday open and DST transitions pass.
+SGX noon break, 12:59 wait and 13:00 reopening boundaries pass.
+{"routes":358,"sitemapURLs":151,"intentionallyNoindex":207,"internalLinks":738,"worksheets":49,"calculations":9,"checks":"PASS","scope":"compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof"}
+PASS both published course fixtures, six lesson render/bootstrap pairs, idempotence, later-edit preservation, fee-aware examples and corrected quiz wording; no database writes
+PASS exact fee-aware targets, explicit course exclusion heading and preservation of later paragraph edits
+PASS independent course accuracy and completion-only badge regressions
+PASS approved Bitcoin revisions: five SSR/bootstrap pairs, qualified emotional/valuation claims, validity, idempotence, immutable source and later-edit guards
+PASS word-number/digit/decimal inputs; vague prose and missing-operation negatives; existing missing-example and paragraph gates remain active
+{"event":"course_admin_failure","code":"COURSE_CHANGED"}
+{"event":"course_admin_failure","code":"COURSE_VALIDATION"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_BLOCKED"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_UNAVAILABLE"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_QUOTA"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_CONFIG"}
+{"event":"course_admin_failure","code":"COURSE_SOURCES_UNAVAILABLE"}
+{"event":"course_admin_failure","code":"COURSE_WRITE_FAILED"}
+PASS handler-to-browser failure categories: changed revision, validation, review rejection, unavailable review, quota, configuration, sources and sanitized unknown failure
+{"event":"course_review_blocked","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","reviewedAtUTC":"2026-11-22T11:45:23.956Z","model":"test-only","sourceURLs":[],"findings":["Lesson 2: qualify the statement about emotional stakes.","Lesson 3: verify the cited drawdown definition."]}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_BLOCKED"}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":17,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":15,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":15,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":47,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":58,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_VERDICT","outputCharacters":48,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"BLOCK_WITHOUT_FINDINGS","outputCharacters":46,"findingCount":0,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"PASS_WITH_FINDINGS","outputCharacters":65,"findingCount":1,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_FINDINGS","outputCharacters":50,"findingCount":1,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_FINDINGS","outputCharacters":54,"findingCount":1,"finishReason":"STOP"}}
+{"event":"course_review_failure","slug":"bitcoin-simulator-practice-trading","documentDigest":"deb5ccafe16204a206acae37bcba9d5fa6eede6fa626947adef1c09b1dc659a9","diagnostics":{"code":"INVALID_FINDINGS","outputCharacters":649,"findingCount":1,"finishReason":"STOP"}}
+{"event":"course_review_references","slug":"bitcoin-simulator-practice-trading","requested":["https://www.investor.gov/introduction-investing/getting-started/asset-allocation","https://www.finra.org/investors/investing/investment-products/crypto-assets","https://www.coingecko.com/en/methodology","https://docs.coingecko.com/reference/simple-price","https://www.morningstar.com/investing-terms/maximum-drawdown"],"available":["https://www.investor.gov/introduction-investing/getting-started/asset-allocation","https://www.finra.org/investors/investing/investment-products/crypto-assets","https://www.coingecko.com/en/methodology","https://docs.coingecko.com/reference/simple-price","https://www.morningstar.com/investing-terms/maximum-drawdown"],"unavailable":[],"unsupportedCitationCount":1}
+{"event":"course_review_references","slug":"bitcoin-simulator-practice-trading","requested":["https://moneysmart.gov.au/how-to-invest/investment-diversification","https://moneysmart.gov.au/how-to-invest/choose-your-investments"],"available":["https://moneysmart.gov.au/how-to-invest/investment-diversification","https://moneysmart.gov.au/how-to-invest/choose-your-investments"],"unavailable":[],"unsupportedCitationCount":1}
+{"event":"course_review_references","slug":"bitcoin-simulator-practice-trading","requested":["https://moneysmart.gov.au/how-to-invest/investment-diversification","https://moneysmart.gov.au/how-to-invest/choose-your-investments"],"available":[],"unavailable":["https://moneysmart.gov.au/how-to-invest/investment-diversification","https://moneysmart.gov.au/how-to-invest/choose-your-investments"],"unsupportedCitationCount":1}
+PASS structured reviewer findings reach owner adapter; malformed verdicts remain unavailable; exact-revision rejection survives; credentials/envelopes withheld; cited allowlisted references fetched with no SSRF; owner panel labels unverified concerns and clears on sign-out. Fixtures only; no model requests.
+{"event":"course_admin_failure","code":"COURSE_REVIEW_UNAVAILABLE"}
+PASS actual approved-probe mismatch reproduced; conditional schema separates PASS/empty and BLOCK/nonempty; contradictions, truncation and malformed data remain blocked; bounded diagnostics reach the browser without credentials. All tests offline; no model call.
+PASS live portfolio delivery boundaries and dynamic published-course journey with preserved partial progress
+PASS quote provenance: provider, close, delayed, stale and simulator fallback are distinct
+PASS daily FX reference: all 15 pairs, date/future/mixed/partial/duplicate validation, fixed private-header-free GET, cache/coalescing/cooldown, both hosting adapters; no trade-price writes or real provider calls.
+PASS private Daily test: real generator/source/schema checks, master+owner gates, explicit free-tier confirmation, one-call admission under racing callers, request byte cap, errors consume budget, no raw data/key disclosure or production-cycle writes; fixture network only.
+PASS private Daily diagnostics: envelope/JSON/schema/source/category/repetition stages, truncation/token metadata, no prose/keys in logs or UI data, unchanged allowance and validation gates.
+PASS Daily visual contract: caption/unit/count/label/value regressions at exercise 6, exact safe diagnostics, numeric boundary acceptance; fixture network only.
+PASS cross-device learning merge, saved drafts, completed steps and owner-only boundaries
+PASS beginner journey reflection stays on-device, completion syncs, and the database protects new and legacy records
+PASS concurrent account lesson progress: retry merges both devices and fails closed
+
+> vite_react_shadcn_ts@0.0.0 verify:practice-arena
+> node --import tsx scripts/verify-practice-arena.ts
+
+PASS Practice Arena: fictional data integrity, fees, no short sells, completed-state persistence, idempotence, privacy, route discovery, Newsletter rename, accessible UI, reduced motion.
+PASS consented leaderboard funnel: renewed adult opt-in, no old consent, no PII properties, verified new account only, same-browser TTL, dedupe, rejection, and auth wiring
+PASS learning activation, journey resume, course continuity, post-order education and privacy-safe mobile placement
+PASS contextual learning loop: durable quick reads, existing-trade review, voluntary spaced recall, no-order guardrails
+PASS BTC SEO consistency, educational on-ramp, varied recall and suspended out-of-scope learning telemetry
+PASS ETH existing-page search intent, truthful quote/fees, relevant internal link and preserved route
+PASS cross-asset GEO: truthful simulator-only schema, safe canonical and indexable routes
+PASS mobile activation: accessible early CTA, failed-order recovery, out-of-scope funnel tracking suspended
+Cloudflare preview prepared: prerendered static routes retained; narrow Functions routing.
+PASS Cloudflare flat output, 357 served route fixtures, slash redirects with query preservation, preview noindex, 404 and Vercel slash setting. Real Pages preview still required.

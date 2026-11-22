@@ -1,0 +1,19 @@
+{
+  "schema": "tradehq-editorial-source-inventory-v1",
+  "scope": "Source blocks only; no policy/rights/visual attestation",
+  "canonicalPages": 163,
+  "staticallyGenerated": 151,
+  "approvedDynamic": 12,
+  "sourceBlocks": 6098,
+  "attestedIndividualBlocks": 0,
+  "sourceSha256": "5d8271d30d1dba5b1e5ac8dbd1e8be4adbb1982f6656373b364396805002cd51",
+  "blockers": [
+    "Full hydrated and no-JS rendered body parity",
+    "Manual second reading per block",
+    "External URLs and source suitability",
+    "Licensed media provenance",
+    "480-URL independent current public crawl",
+    "Native deployment SHA of production provider",
+    "Owner/account verification and age-appropriate advertising eligibility"
+  ]
+}
