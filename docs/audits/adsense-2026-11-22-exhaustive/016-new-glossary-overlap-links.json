@@ -1,0 +1,437 @@
+{
+  "head": "6318160f2f4dac10ba62c74a0f59b71c23f90119",
+  "scope": "All 49 glossary terms, comparisons include at least one of the 37 newly reviewed terms. Authored normalized substantive source only, not full hydrated text.",
+  "newTerms": 37,
+  "uniqueRelatedRoutes": 147,
+  "brokenRelated": [],
+  "pairs": 1110,
+  "highestSimilarity": [
+    {
+      "a": "golden-cross",
+      "b": "death-cross",
+      "score": 0.014084507042253521
+    },
+    {
+      "a": "liquidation-cascade",
+      "b": "leverage-trading",
+      "score": 0.007142857142857143
+    },
+    {
+      "a": "macd-histogram",
+      "b": "macd",
+      "score": 0.007058823529411765
+    },
+    {
+      "a": "head-and-shoulders",
+      "b": "double-bottom",
+      "score": 0.004739336492890996
+    },
+    {
+      "a": "bull-trap",
+      "b": "bear-trap",
+      "score": 0.004545454545454545
+    },
+    {
+      "a": "day-trading",
+      "b": "paper-trading",
+      "score": 0.0041928721174004195
+    },
+    {
+      "a": "stop-loss-hunting",
+      "b": "swing-trading",
+      "score": 0.0029542097488921715
+    },
+    {
+      "a": "candlestick-patterns",
+      "b": "wyckoff-method",
+      "score": 0.0023094688221709007
+    },
+    {
+      "a": "elliott-wave-theory",
+      "b": "wyckoff-method",
+      "score": 0.002288329519450801
+    },
+    {
+      "a": "candlestick-patterns",
+      "b": "elliott-wave-theory",
+      "score": 0.0022271714922048997
+    }
+  ],
+  "repeated": [],
+  "rows": [
+    {
+      "slug": "short-squeeze",
+      "blocks": 7,
+      "related": [
+        "bull-trap",
+        "whale-manipulation",
+        "leverage-trading"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "golden-cross",
+      "blocks": 7,
+      "related": [
+        "death-cross",
+        "macd",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "death-cross",
+      "blocks": 7,
+      "related": [
+        "golden-cross",
+        "rsi-divergence",
+        "stop-loss-hunting"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "liquidation-cascade",
+      "blocks": 7,
+      "related": [
+        "leverage-trading",
+        "stop-loss-hunting",
+        "whale-manipulation"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "fibonacci-retracement",
+      "blocks": 7,
+      "related": [
+        "support-and-resistance",
+        "golden-cross",
+        "order-block"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "rsi-divergence",
+      "blocks": 7,
+      "related": [
+        "macd-histogram",
+        "bollinger-band-squeeze",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "macd-histogram",
+      "blocks": 7,
+      "related": [
+        "macd",
+        "rsi-divergence",
+        "golden-cross"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "bollinger-band-squeeze",
+      "blocks": 7,
+      "related": [
+        "rsi-divergence",
+        "support-and-resistance",
+        "candlestick-patterns"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "order-block",
+      "blocks": 7,
+      "related": [
+        "fair-value-gap",
+        "support-and-resistance",
+        "whale-manipulation"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "fair-value-gap",
+      "blocks": 7,
+      "related": [
+        "order-block",
+        "liquidation-cascade",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "bull-trap",
+      "blocks": 7,
+      "related": [
+        "bear-trap",
+        "support-and-resistance",
+        "stop-loss-hunting"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "bear-trap",
+      "blocks": 7,
+      "related": [
+        "bull-trap",
+        "short-squeeze",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "whale-manipulation",
+      "blocks": 7,
+      "related": [
+        "liquidation-cascade",
+        "stop-loss-hunting",
+        "order-block"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "support-and-resistance",
+      "blocks": 7,
+      "related": [
+        "fibonacci-retracement",
+        "order-block",
+        "candlestick-patterns"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "candlestick-patterns",
+      "blocks": 7,
+      "related": [
+        "support-and-resistance",
+        "head-and-shoulders",
+        "double-bottom"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "head-and-shoulders",
+      "blocks": 7,
+      "related": [
+        "double-bottom",
+        "support-and-resistance",
+        "candlestick-patterns"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "double-bottom",
+      "blocks": 7,
+      "related": [
+        "head-and-shoulders",
+        "support-and-resistance",
+        "bull-trap"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "macd",
+      "blocks": 7,
+      "related": [
+        "macd-histogram",
+        "golden-cross",
+        "rsi-divergence"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "limit-order-vs-market-order",
+      "blocks": 7,
+      "related": [
+        "stop-loss-hunting",
+        "leverage-trading",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "stop-loss-hunting",
+      "blocks": 7,
+      "related": [
+        "whale-manipulation",
+        "bull-trap",
+        "bear-trap"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "leverage-trading",
+      "blocks": 7,
+      "related": [
+        "liquidation-cascade",
+        "stop-loss-hunting",
+        "limit-order-vs-market-order"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "hodl-strategy",
+      "blocks": 7,
+      "related": [
+        "fomo",
+        "fud",
+        "dollar-cost-averaging"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "margin-call",
+      "blocks": 7,
+      "related": [
+        "leverage-trading",
+        "liquidation-cascade",
+        "stop-loss-hunting"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "liquidation-price",
+      "blocks": 7,
+      "related": [
+        "leverage-trading",
+        "margin-call",
+        "liquidation-cascade"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "dollar-cost-averaging",
+      "blocks": 7,
+      "related": [
+        "hodl-strategy",
+        "fomo",
+        "risk-reward-ratio"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "swing-trading",
+      "blocks": 7,
+      "related": [
+        "day-trading",
+        "scalping",
+        "support-and-resistance"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "day-trading",
+      "blocks": 7,
+      "related": [
+        "swing-trading",
+        "scalping",
+        "paper-trading"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "scalping",
+      "blocks": 7,
+      "related": [
+        "day-trading",
+        "swing-trading",
+        "limit-order-vs-market-order"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "volume-profile",
+      "blocks": 7,
+      "related": [
+        "support-and-resistance",
+        "order-block",
+        "vwap"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "vwap",
+      "blocks": 7,
+      "related": [
+        "volume-profile",
+        "support-and-resistance",
+        "day-trading"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "ichimoku-cloud",
+      "blocks": 7,
+      "related": [
+        "support-and-resistance",
+        "golden-cross",
+        "macd"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "elliott-wave-theory",
+      "blocks": 7,
+      "related": [
+        "fibonacci-retracement",
+        "support-and-resistance",
+        "ichimoku-cloud"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "wyckoff-method",
+      "blocks": 7,
+      "related": [
+        "order-block",
+        "whale-manipulation",
+        "volume-profile"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "dark-pool",
+      "blocks": 7,
+      "related": [
+        "market-maker",
+        "whale-manipulation",
+        "volume-profile"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "impermanent-loss",
+      "blocks": 7,
+      "related": [
+        "yield-farming",
+        "slippage",
+        "market-maker"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "yield-farming",
+      "blocks": 7,
+      "related": [
+        "impermanent-loss",
+        "slippage",
+        "leverage-trading"
+      ],
+      "missingRelated": []
+    },
+    {
+      "slug": "risk-reward-ratio",
+      "blocks": 7,
+      "related": [
+        "stop-loss-hunting",
+        "leverage-trading",
+        "drawdown"
+      ],
+      "missingRelated": []
+    }
+  ],
+  "templateLinkLines": [
+    "                {relatedTerms.map((rt) =>",
+    "                    <Link key={rt.slug} to={`/wiki/${rt.slug}`}>"
+  ]
+}
