@@ -1,0 +1,1072 @@
+{
+  "total_count": 8,
+  "check_runs": [
+    {
+      "id": 137199805129,
+      "name": "TradeHQ Release signals (read only)",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8b7iyQ",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "ea828f35-bfff-5472-a8a0-1bc656efbc1b",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199805129",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199805129",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199805129",
+      "status": "completed",
+      "conclusion": "skipped",
+      "started_at": "2026-11-22T11:56:35Z",
+      "completed_at": "2026-11-22T11:56:35Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199805129/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137199804707,
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8b7hIw",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "b641c27e-5bb6-55e6-a5dd-e2a6396e511d",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199804707",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199804707",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199804707",
+      "status": "completed",
+      "conclusion": "skipped",
+      "started_at": "2026-11-22T11:56:35Z",
+      "completed_at": "2026-11-22T11:56:35Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199804707/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137199804670,
+      "name": "TradeHQ Native Cloudflare production receipt (read only)",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8b7g_g",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "87a1f211-3b99-5715-b2ef-e19e6c26399e",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199804670",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199804670",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199804670",
+      "status": "completed",
+      "conclusion": "skipped",
+      "started_at": "2026-11-22T11:56:35Z",
+      "completed_at": "2026-11-22T11:56:35Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199804670/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137199772241,
+      "name": "TradeHQ Required validation",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8b5iUQ",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "5006279f-f5ea-517c-afce-bccf068a8579",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199772241",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199772241",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137199772241",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-22T11:56:28Z",
+      "completed_at": "2026-11-22T11:56:35Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137199772241/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137197521125,
+      "name": "Cloudflare Pages",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8ZwI5Q",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "c634ba18-9585-414a-8f8b-d2e6ec419916",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197521125",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/runs/137197521125",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/c634ba18-9585-414a-8f8b-d2e6ec419916",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-22T11:47:06Z",
+      "completed_at": "2026-11-22T11:47:06Z",
+      "output": {
+        "title": "Deployed successfully",
+        "summary": "<table><tr><td><strong>Latest commit:</strong> </td><td>\n<code>a7f2a39</code>\n</td></tr>\n<tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Deploy successful!</td></tr>\n<tr><td><strong>Preview URL:</strong></td><td>\n<a href='https://c634ba18.tradehq-preview.pages.dev'>https://c634ba18.tradehq-preview.pages.dev</a>\n</td></tr>\n<tr><td><strong>Branch Preview URL:</strong></td><td>\n<a href='https://audit-430-quality-continuati.tradehq-preview.pages.dev'>https://audit-430-quality-continuati.tradehq-preview.pages.dev</a>\n</td></tr>\n</table>\n\n[View logs](https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/c634ba18-9585-414a-8f8b-d2e6ec419916)\n",
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197521125/annotations"
+      },
+      "check_suite": {
+        "id": 121833609281
+      },
+      "app": {
+        "id": 85455,
+        "client_id": "Iv1.0879b6ff6c8f7a1a",
+        "slug": "cloudflare-workers-and-pages",
+        "node_id": "MDM6QXBwODU0NTU=",
+        "owner": {
+          "login": "cloudflare",
+          "id": 314135,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjMxNDEzNQ==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/314135?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/cloudflare",
+          "html_url": "https://github.com/cloudflare",
+          "followers_url": "https://api.github.com/users/cloudflare/followers",
+          "following_url": "https://api.github.com/users/cloudflare/following{/other_user}",
+          "gists_url": "https://api.github.com/users/cloudflare/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/cloudflare/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/cloudflare/subscriptions",
+          "organizations_url": "https://api.github.com/users/cloudflare/orgs",
+          "repos_url": "https://api.github.com/users/cloudflare/repos",
+          "events_url": "https://api.github.com/users/cloudflare/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/cloudflare/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "Cloudflare Workers and Pages",
+        "description": "The **Cloudflare GitHub App** automatically deploys your code to Cloudflare when you merge a pull request to your GitHub repository. It can also create a new repository on your GitHub account when you get started with a Cloudflare template. \r\n\r\n\r\nThis integration also:\r\n- Displays the status of your deployments as check runs\r\n- Posts links to preview URLs as comments on each pull request (Cloudflare Pages only)\r\n\r\n\r\n<img src=\"https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/b3c1fc84-7d73-4fc4-8835-69e85980df00/public\" width=67% >\r\n\r\n\r\n<img src=\"https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/e9a5ffb3-4ec3-4dd6-8bc8-ed0eec5ddb00/public\" width=67% >\r\n\r\n\r\nFor more information, refer to the [Cloudflare Workers docs](https://developers.cloudflare.com/workers/ci-cd/builds/) and [Cloudflare Pages docs](https://developers.cloudflare.com/pages/configuration/git-integration/).",
+        "external_url": "https://developers.cloudflare.com/workers/ci-cd/builds/",
+        "html_url": "https://github.com/apps/cloudflare-workers-and-pages",
+        "created_at": "2020-10-19T20:23:00Z",
+        "updated_at": "2026-10-30T00:49:56Z",
+        "permissions": {
+          "administration": "write",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "metadata": "read",
+          "pull_requests": "write"
+        },
+        "events": [
+          "pull_request",
+          "push"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137197318992,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8ZjzUA",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "49eb21e1-9fee-574d-b578-13c0b65ac905",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318992",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137197318992",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137197318992",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-22T11:46:18Z",
+      "completed_at": "2026-11-22T11:56:27Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318992/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137197318802,
+      "name": "TradeHQ Phase 3 tests",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8Zjykg",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "386beb32-b31b-5d0d-8b6e-b5f6d95e9bfc",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318802",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137197318802",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938221/job/137197318802",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-22T11:46:18Z",
+      "completed_at": "2026-11-22T11:49:07Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318802/annotations"
+      },
+      "check_suite": {
+        "id": 121833709142
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 137197318036,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "node_id": "CR_kwDOQ2ET_M8AAAAf8ZjvlA",
+      "head_sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+      "external_id": "fe731e7d-4b29-55e3-b4fd-1a4b2bb1029e",
+      "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318036",
+      "html_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938185/job/137197318036",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/45018938185/job/137197318036",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-22T11:46:19Z",
+      "completed_at": "2026-11-22T11:47:37Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/check-runs/137197318036/annotations"
+      },
+      "check_suite": {
+        "id": 121833709028
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/536",
+          "id": 5438658047,
+          "number": 536,
+          "head": {
+            "ref": "audit/430-quality-continuation-2026-11-22",
+            "sha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "a6d0cea14244d97558254b6c18f148e76cafe1bb",
+            "repo": {
+              "id": 1130435580,
+              "url": "https://api.github.com/repos/anugaweerasinghe1-del/trading101",
+              "name": "trading101"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

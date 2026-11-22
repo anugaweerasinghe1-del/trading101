@@ -1,0 +1,22 @@
+{
+  "source": "authenticated_cloudflare_pages_api",
+  "project": "tradehq-preview",
+  "sha": "810d1a975b138331d1a55f1760fb7474ea1295a4",
+  "deploymentId": "bff3c431-6f1a-4725-98b1-16b0ae1d90e2",
+  "customDomainBound": true,
+  "domainsReported": true,
+  "routesChecked": 5,
+  "verifiedMain": true,
+  "status": "CLOUDFLARE_PRODUCTION_VERIFIED",
+  "limitations": [],
+  "workflowRun": 45019906068,
+  "workflowJob": 137200284188,
+  "receiptTimestamp": "2026-11-22T12:00:47.1176743Z",
+  "validatedCandidate": "a7f2a39ea843883563d4f5c02220448a68f22597",
+  "ciRun": 45018938221,
+  "requiredChecks": "All three required exact-head checks passed before normal protected squash merge",
+  "publicNativeRoutes": 3,
+  "publicBrowserViews": 6,
+  "preservedQuizKeysOptions": 24,
+  "strictVercelRecoveryGate": "No current passing receipt; preceding baseline and correction gate failed. Not bypassed."
+}

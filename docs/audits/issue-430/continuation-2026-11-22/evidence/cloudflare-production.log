@@ -1,0 +1,166 @@
+﻿2026-11-22T11:58:37.4254474Z Current runner version: '2.338.2'
+2026-11-22T11:58:37.4274800Z ##[group]Runner Image Provisioner
+2026-11-22T11:58:37.4275543Z Hosted Compute Agent
+2026-11-22T11:58:37.4276067Z Version: 20261111.635
+2026-11-22T11:58:37.4276672Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-22T11:58:37.4277268Z Build Date: 2026-11-11T01:49:01Z
+2026-11-22T11:58:37.4278012Z Worker ID: {ef0a1fb6-f537-4d4f-ad85-4ff714fe0e29}
+2026-11-22T11:58:37.4278753Z Region: westus3
+2026-11-22T11:58:37.4279604Z Cloud: Azure
+2026-11-22T11:58:37.4280240Z ##[endgroup]
+2026-11-22T11:58:37.4281940Z ##[group]Operating System
+2026-11-22T11:58:37.4282542Z Ubuntu
+2026-11-22T11:58:37.4282984Z 26.04.1
+2026-11-22T11:58:37.4283423Z LTS
+2026-11-22T11:58:37.4283897Z ##[endgroup]
+2026-11-22T11:58:37.4284355Z ##[group]Runner Image
+2026-11-22T11:58:37.4284925Z Image: ubuntu-26.04
+2026-11-22T11:58:37.4285407Z Version: 20261116.202.1
+2026-11-22T11:58:37.4286880Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-22T11:58:37.4288151Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+2026-11-22T11:58:37.4288974Z ##[endgroup]
+2026-11-22T11:58:37.4290120Z ##[group]GITHUB_TOKEN Permissions
+2026-11-22T11:58:37.4292260Z Contents: read
+2026-11-22T11:58:37.4292746Z Metadata: read
+2026-11-22T11:58:37.4293216Z ##[endgroup]
+2026-11-22T11:58:37.4294995Z Secret source: Actions
+2026-11-22T11:58:37.4295794Z Cache mode: write
+2026-11-22T11:58:37.4296424Z Prepare workflow directory
+2026-11-22T11:58:37.4579618Z Prepare all required actions
+2026-11-22T11:58:37.4620991Z Getting action download info
+2026-11-22T11:58:37.7605396Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-11-22T11:58:37.9535572Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-22T11:58:38.1423539Z Complete job name: TradeHQ Cloudflare active production
+2026-11-22T11:58:38.2081539Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-11-22T11:58:38.2082379Z with:
+2026-11-22T11:58:38.2082914Z   ref: 810d1a975b138331d1a55f1760fb7474ea1295a4
+2026-11-22T11:58:38.2083534Z   persist-credentials: false
+2026-11-22T11:58:38.2084092Z   repository: anugaweerasinghe1-del/trading101
+2026-11-22T11:58:38.2087618Z   token: ***
+2026-11-22T11:58:38.2088055Z   ssh-strict: true
+2026-11-22T11:58:38.2088552Z   ssh-user: git
+2026-11-22T11:58:38.2088979Z   clean: true
+2026-11-22T11:58:38.2089737Z   sparse-checkout-cone-mode: true
+2026-11-22T11:58:38.2090305Z   fetch-depth: 1
+2026-11-22T11:58:38.2090743Z   fetch-tags: false
+2026-11-22T11:58:38.2091210Z   show-progress: true
+2026-11-22T11:58:38.2091693Z   lfs: false
+2026-11-22T11:58:38.2092121Z   submodules: false
+2026-11-22T11:58:38.2092607Z   set-safe-directory: true
+2026-11-22T11:58:38.2093287Z ##[endgroup]
+2026-11-22T11:58:38.4209482Z Syncing repository: anugaweerasinghe1-del/trading101
+2026-11-22T11:58:38.4211666Z ##[group]Getting Git version info
+2026-11-22T11:58:38.4212724Z Working directory is '/home/runner/work/trading101/trading101'
+2026-11-22T11:58:38.4214003Z [command]/usr/bin/git version
+2026-11-22T11:58:38.4218296Z git version 2.56.1
+2026-11-22T11:58:38.4237612Z ##[endgroup]
+2026-11-22T11:58:38.4250571Z Temporarily overriding HOME='/home/runner/work/_temp/173df808-f39e-417a-9fbf-310acf949a27' before making global git config changes
+2026-11-22T11:58:38.4252930Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-22T11:58:38.4256487Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/trading101/trading101
+2026-11-22T11:58:38.4311948Z Deleting the contents of '/home/runner/work/trading101/trading101'
+2026-11-22T11:58:38.4315503Z ##[group]Initializing the repository
+2026-11-22T11:58:38.4320057Z [command]/usr/bin/git init /home/runner/work/trading101/trading101
+2026-11-22T11:58:38.4391008Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-22T11:58:38.4393196Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-22T11:58:38.4394911Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-22T11:58:38.4396806Z hint: call:
+2026-11-22T11:58:38.4397857Z hint:
+2026-11-22T11:58:38.4398878Z hint: 	git config --global init.defaultBranch <name>
+2026-11-22T11:58:38.4400008Z hint:
+2026-11-22T11:58:38.4400947Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-22T11:58:38.4402166Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-22T11:58:38.4403149Z hint:
+2026-11-22T11:58:38.4403778Z hint: 	git branch -m <name>
+2026-11-22T11:58:38.4404536Z hint:
+2026-11-22T11:58:38.4405387Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-22T11:58:38.4406959Z Initialized empty Git repository in /home/runner/work/trading101/trading101/.git/
+2026-11-22T11:58:38.4409255Z [command]/usr/bin/git remote add origin https://github.com/anugaweerasinghe1-del/trading101
+2026-11-22T11:58:38.4445720Z ##[endgroup]
+2026-11-22T11:58:38.4447117Z ##[group]Disabling automatic garbage collection
+2026-11-22T11:58:38.4449174Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-22T11:58:38.4476371Z ##[endgroup]
+2026-11-22T11:58:38.4477620Z ##[group]Setting up auth
+2026-11-22T11:58:38.4481105Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-22T11:58:38.4505730Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-22T11:58:38.4852334Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-22T11:58:38.4898739Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-22T11:58:38.5109860Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-22T11:58:38.5157136Z ##[endgroup]
+2026-11-22T11:58:38.5170741Z ##[group]Fetching the repository
+2026-11-22T11:58:38.5172168Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 810d1a975b138331d1a55f1760fb7474ea1295a4
+2026-11-22T11:58:41.4377889Z From https://github.com/anugaweerasinghe1-del/trading101
+2026-11-22T11:58:41.4380251Z  * branch            810d1a975b138331d1a55f1760fb7474ea1295a4 -> FETCH_HEAD
+2026-11-22T11:58:41.4384503Z ##[endgroup]
+2026-11-22T11:58:41.4386120Z ##[group]Determining the checkout info
+2026-11-22T11:58:41.4396507Z ##[endgroup]
+2026-11-22T11:58:41.4397531Z [command]/usr/bin/git sparse-checkout disable
+2026-11-22T11:58:41.4444081Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-22T11:58:41.4471822Z ##[group]Checking out the ref
+2026-11-22T11:58:41.4474864Z [command]/usr/bin/git checkout --progress --force 810d1a975b138331d1a55f1760fb7474ea1295a4
+2026-11-22T11:58:41.9101026Z Note: switching to '810d1a975b138331d1a55f1760fb7474ea1295a4'.
+2026-11-22T11:58:41.9101747Z
+2026-11-22T11:58:41.9102090Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-22T11:58:41.9102689Z changes and commit them, and you can discard any commits you make in this
+2026-11-22T11:58:41.9103257Z state without impacting any branches by switching back to a branch.
+2026-11-22T11:58:41.9103596Z
+2026-11-22T11:58:41.9103847Z If you want to create a new branch to retain commits you create, you may
+2026-11-22T11:58:41.9109618Z do so (now or later) by using -c with the switch command. Example:
+2026-11-22T11:58:41.9110726Z
+2026-11-22T11:58:41.9110976Z   git switch -c <new-branch-name>
+2026-11-22T11:58:41.9111197Z
+2026-11-22T11:58:41.9111495Z Or undo this operation with:
+2026-11-22T11:58:41.9112092Z
+2026-11-22T11:58:41.9112310Z   git switch -
+2026-11-22T11:58:41.9112554Z
+2026-11-22T11:58:41.9112914Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-22T11:58:41.9113261Z
+2026-11-22T11:58:41.9113597Z HEAD is now at 810d1a9 Qualify simulator learning claims and correct RSI interpretation (#536)
+2026-11-22T11:58:41.9126937Z ##[endgroup]
+2026-11-22T11:58:41.9169454Z [command]/usr/bin/git log -1 --format=%H
+2026-11-22T11:58:41.9197340Z 810d1a975b138331d1a55f1760fb7474ea1295a4
+2026-11-22T11:58:41.9204559Z ##[group]Removing auth
+2026-11-22T11:58:41.9207709Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-22T11:58:41.9230154Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-22T11:58:41.9432547Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-22T11:58:41.9450502Z http.https://github.com/.extraheader
+2026-11-22T11:58:41.9456741Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-22T11:58:41.9480998Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-22T11:58:41.9679621Z ##[endgroup]
+2026-11-22T11:58:41.9922255Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+2026-11-22T11:58:41.9922812Z with:
+2026-11-22T11:58:41.9923152Z   node-version: 22
+2026-11-22T11:58:41.9923597Z   always-auth: false
+2026-11-22T11:58:41.9923952Z   check-latest: false
+2026-11-22T11:58:41.9926589Z   token: ***
+2026-11-22T11:58:41.9926953Z ##[endgroup]
+2026-11-22T11:58:42.1168286Z Found in cache @ /opt/hostedtoolcache/node/22.23.5/x64
+2026-11-22T11:58:42.1170861Z (node:2200) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-22T11:58:42.1172018Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-22T11:58:42.1173779Z ##[group]Environment details
+2026-11-22T11:58:42.4561769Z node: v22.23.5
+2026-11-22T11:58:42.4562303Z npm: 10.9.9
+2026-11-22T11:58:42.4562961Z yarn: 1.22.22
+2026-11-22T11:58:42.4565619Z ##[endgroup]
+2026-11-22T11:58:42.4699032Z ##[group]Run node scripts/verify-cloudflare-production-main.mjs
+2026-11-22T11:58:42.4700070Z [36;1mnode scripts/verify-cloudflare-production-main.mjs[0m
+2026-11-22T11:58:42.4732259Z shell: /usr/bin/bash -e {0}
+2026-11-22T11:58:42.4732722Z env:
+2026-11-22T11:58:42.4735472Z   GITHUB_TOKEN: ***
+2026-11-22T11:58:42.4735940Z   CLOUDFLARE_API_TOKEN: ***
+2026-11-22T11:58:42.4736264Z ##[endgroup]
+2026-11-22T12:00:47.1176743Z TRADEHQ_CLOUDFLARE_PRODUCTION_RECEIPT {"source":"authenticated_cloudflare_pages_api","project":"tradehq-preview","sha":"810d1a975b138331d1a55f1760fb7474ea1295a4","deploymentId":"bff3c431-6f1a-4725-98b1-16b0ae1d90e2","customDomainBound":true,"domainsReported":true,"routesChecked":5,"verifiedMain":true,"status":"CLOUDFLARE_PRODUCTION_VERIFIED","limitations":[]}
+2026-11-22T12:00:47.1325105Z Post job cleanup.
+2026-11-22T12:00:47.2402683Z (node:2291) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-22T12:00:47.2403836Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-22T12:00:47.2633209Z Post job cleanup.
+2026-11-22T12:00:47.3400786Z [command]/usr/bin/git version
+2026-11-22T12:00:47.3438914Z git version 2.56.1
+2026-11-22T12:00:47.3476098Z Temporarily overriding HOME='/home/runner/work/_temp/ed42c020-1ea2-4da6-95e3-464a154af370' before making global git config changes
+2026-11-22T12:00:47.3477873Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-22T12:00:47.3480951Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/trading101/trading101
+2026-11-22T12:00:47.3518102Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-22T12:00:47.3551219Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-22T12:00:47.3778796Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-22T12:00:47.3820829Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-22T12:00:47.4201780Z Cleaning up orphan processes
+2026-11-22T12:00:47.4468069Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
