@@ -31,9 +31,9 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "What Is Paper Trading?",
         paragraphs: [
-          "Paper trading is the practice of simulating trades without using real money. Instead of risking your hard-earned savings, you use virtual currency to buy and sell stocks, ETFs, cryptocurrencies, and other financial instruments. The term dates back to a time when aspiring traders would literally write their hypothetical trades on paper to track performance.",
+          "Paper trading is the practice of simulating trades without using real money. Instead of risking your hard-earned savings, you use virtual currency to buy and sell stocks, ETFs, cryptocurrencies, and other financial instruments. The name refers to recording hypothetical transactions rather than sending real orders.",
           "Today, paper trading is usually done digitally through simulated platforms. It can help beginners practise order entry, chart reading, record-keeping, and portfolio mechanics without risking real money. It is one practical way to learn how markets work, but it cannot reproduce every part of live trading, especially slippage, liquidity constraints, and the emotions attached to real losses.",
-          "On TradeHQ, every user starts with $100,000 in virtual cash. You can trade 170 assets including blue-chip stocks like Apple (AAPL), cryptocurrencies like Bitcoin (BTC), ETFs like SPY, forex pairs, and commodities like gold. Practice orders and resulting positions appear in the simulator's records, subject to its stated guest and account-data limitations. This is not a brokerage execution record."
+          "TradeHQ starts new practice portfolios with $100,000 in virtual cash. Its catalogue contains 170 instrument examples, including legacy entries; not every entry represents a currently available real-market instrument. Practice orders and resulting positions appear in the simulator's records, subject to its stated guest and account-data limitations. This is not a brokerage execution record."
         ]
       },
       {
@@ -71,8 +71,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "Understanding the Basics of Stock Charts",
         paragraphs: [
-          "A stock chart is a visual representation of a security's price movement over time. The x-axis shows time (minutes, hours, days, or years) and the y-axis shows price. The most common chart types are line charts, bar charts, and candlestick charts. Candlestick charts are the most popular among traders because they show four key data points: open, high, low, and close prices.",
-          "Each candlestick represents a specific time period. A green (or hollow) candle means the closing price was higher than the opening price — the asset went up. A red (or filled) candle means it went down. The body of the candle shows the open-to-close range, while the thin lines above and below (called wicks or shadows) show the high and low.",
+          "A stock chart is a visual representation of a security's price movement over time. The x-axis shows time (minutes, hours, days, or years) and the y-axis shows price. The most common chart types are line charts, bar charts, and candlestick charts. Candlesticks display four key observations: opening, high, low and closing prices.",
+          "Each candlestick represents a specific time period. Many chart themes use green for a close above the open and red for a close below it. Colours and hollow-candle conventions vary; use the chart legend and the actual open and close values. The body of the candle shows the open-to-close range, while the thin lines above and below (called wicks or shadows) show the high and low.",
           "Candlestick names such as Doji, Hammer and Engulfing describe shapes in an observed price series. They do not prove that a reversal or continuation will occur. On TradeHQ, inspect whether the chart uses provider candles or generated practice candles before interpreting the displayed shape."
         ]
       },
@@ -111,13 +111,13 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "The Key Differences Between Crypto and Stocks",
         paragraphs: [
-          "A listed company share represents an ownership interest rather than direct ownership of the issuer's underlying assets. U.S.-listed public companies such as Apple publish financial disclosures under applicable securities rules; some companies pay dividends, but payouts are not guaranteed. The NYSE normally operates Monday to Friday, 9:30 AM to 4:00 PM Eastern Time, subject to holidays and special sessions.",
+          "A listed company share represents an ownership interest rather than direct ownership of the issuer's underlying assets. U.S.-listed public companies such as Apple publish financial disclosures under applicable securities rules; some companies pay dividends, but payouts are not guaranteed. The NYSE core equity session normally runs on trading weekdays from 9:30 AM to 4:00 PM Eastern Time; holidays, shortened sessions and other trading sessions are separate.",
           "Cryptocurrency networks differ in governance, issuance and degree of decentralization. Many crypto trading venues operate around the clock, although maintenance, outages and provider restrictions can interrupt access. Prices can move outside stock-exchange sessions, including weekends and holidays; continuous market hours do not guarantee that a particular venue or order is available.",
           "Price variability depends on the asset, observation period and market conditions. A cryptocurrency and a company share can both have large gains or losses; a typical daily percentage is not a fixed risk classification. Compare percentage changes over the same sample rather than assume a permanent volatility ranking."
         ]
       },
       {
-        heading: "Advantages of Starting with Stocks",
+        heading: "Company Disclosures and Market Rules",
         paragraphs: [
           "Company reports provide information about revenue, expenses and business risks. Such information can inform an analysis without making a stock stable or its future return predictable. Any historical index return depends on the dates, reinvestment assumptions, inflation and costs used.",
           "Listed shares and cryptocurrencies can be subject to different disclosure, custody and market rules. These vary by jurisdiction and asset; regulation does not eliminate loss risk. Use dated company filings rather than assumptions about familiar brands when researching a historical price change.",
@@ -136,7 +136,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     relatedLinks: [
       { href: "/trade/btc", label: "Practice trading Bitcoin (BTC)" },
       { href: "/trade/aapl", label: "Practice trading Apple (AAPL)" },
-      { href: "/markets", label: "Explore all 170 tradeable assets" },
+      { href: "/markets", label: "Explore the virtual instrument catalogue" },
       { href: "/learn/article/how-to-build-a-portfolio", label: "How to build a balanced portfolio" },
     ],
   },
@@ -149,7 +149,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     readTime: "7 min read",
     sections: [
       {
-        heading: "1. Buy and Hold (The Warren Buffett Approach)",
+        heading: "1. Buy and Hold (A Holding-Period Hypothesis)",
         paragraphs: [
           "Buy and hold means retaining an investment over a longer period instead of trading each short-term move. A business can lose value permanently, and patience does not guarantee recovery. In a simulation, define the observation period and compare a hold with alternative rules under the same assumptions.",
           "A virtual holding can be marked at several assumed later prices to compare a hold with a different hypothetical rule. Results depend on the window, costs, source quotes and omitted distributions. A lower price might be a lasting loss rather than a temporary dip.",
@@ -176,15 +176,15 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     ],
     relatedLinks: [
       { href: "/trade", label: "Start testing strategies with $100K virtual cash" },
-      { href: "/trade/tsla", label: "Practice swing trading Tesla (TSLA)" },
-      { href: "/trade/sol", label: "Trade Solana (SOL) momentum" },
+      { href: "/trade/tsla", label: "Tesla virtual instrument example" },
+      { href: "/trade/sol", label: "Solana virtual instrument example" },
       { href: "/learn/article/how-to-read-stock-charts", label: "How to read stock charts" },
     ],
   },
   {
     slug: "stock-market-index-etfs",
     title: "What Is a Stock Market Index and How Do ETFs Work?",
-    summary: "Compare three different stock-index methodologies and learn how index-tracking ETFs provide specified exposure rather than ownership of an entire market.",
+    summary: "Compare different stock-index methodologies and learn how index-tracking ETFs provide specified exposure rather than ownership of an entire market.",
     metaDescription: "What are stock market indexes and ETFs? Learn about the S&P 500, Nasdaq, and Dow Jones. Practice trading SPY, QQQ on TradeHQ — free simulator.",
     sourceCheck: { date: "2026-10-31", scope: "Limited source check: ETF ownership, fund-diversification limitations and the distinction between an index and a fund were compared with SEC Investor.gov fund guidance. Named index methodology and current holdings require dated issuer documents." },
     readTime: "5 min read",
@@ -192,7 +192,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "What Is a Stock Market Index?",
         paragraphs: [
-          "A stock index summarizes a selected set of securities using published rules. The S&P 500 measures a large-company segment using float-adjusted market-capitalization weighting, the Nasdaq Composite measures eligible Nasdaq-listed securities, and the Dow Jones Industrial Average is a price-weighted index of 30 companies. These have different constituents and weighting methods; consult dated index methodology documents for current details.",
+          "A stock index summarizes a selected set of securities using published rules. The S&P 500 measures a large-company segment using float-adjusted market-capitalization weighting, the Nasdaq Composite covers eligible Nasdaq-listed common-type securities, and the Dow Jones Industrial Average is a price-weighted index of 30 companies. The Nasdaq-100 is a distinct index covering a selected group of large non-financial Nasdaq-listed companies. These have different constituents and weighting methods; consult dated index methodology documents for current details.",
           "An index is a calculation rather than a security purchased directly. Some exchange-traded funds seek to track named indexes using a specified portfolio and method. Fees, replication choices and distributions can cause a fund's return to differ from a reported index.",
           "When a report states that 'the market' rose, identify its index, interval, currency and dividend treatment. A price index, total-return index and tracking ETF are distinct observations."
         ]
@@ -256,8 +256,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     ],
     relatedLinks: [
       { href: "/portfolio", label: "View and manage your virtual portfolio" },
-      { href: "/trade/spy", label: "Add S&P 500 ETF (SPY) to your portfolio" },
-      { href: "/trade/btc", label: "Add Bitcoin (BTC) to your portfolio" },
+      { href: "/trade/spy", label: "Study the SPY virtual example" },
+      { href: "/trade/btc", label: "Study the Bitcoin virtual example" },
       { href: "/learn/article/stock-market-index-etfs", label: "Understanding ETFs and indexes" },
     ],
   },
@@ -282,7 +282,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         paragraphs: [
           "Position sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.",
           "For a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.",
-          "Smaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number."
+          "In a fixed-loss hypothetical model, smaller fractional losses reduce the cumulative decline relative to larger losses. Actual outcomes can exceed assumptions, particularly where fills, fees or simultaneous exposures differ. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number."
         ]
       },
       {
@@ -321,7 +321,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "What Is a Limit Order?",
         paragraphs: [
           "A limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.",
-          "In a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.",
+          "In a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. A limit instruction can also be cancelled or expire before the quoted price reaches its boundary; its lifetime depends on the specified conditions.",
           "Limit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity."
         ]
       },
@@ -360,7 +360,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "RSI: Measuring Momentum and Overbought/Oversold Conditions",
         paragraphs: [
-          "The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of 0 to 100. Developed by J. Welles Wilder, RSI compares the average gains and losses over a 14-period window to determine whether an asset is overbought (above 70) or oversold (below 30).",
+          "Standard RSI, introduced by J. Welles Wilder, expresses the relationship between smoothed gains and losses on a 0–100 scale. Fourteen periods is a common default; the conventional thresholds are descriptive labels rather than evidence of misvaluation or future direction.",
           "Readings above 70 or below 30 are conventional RSI descriptions rather than instructions to sell or buy. An extreme reading can persist. Divergence means price and oscillator observations differ; it does not prove a reversal or make one signal universally most reliable.",
           "Compare hypothetical RSI settings and record what each describes before looking at later prices. A pullback to 40–50 or a bounce to 50–60 is not a universal entry rule. TradeHQ's simplified RSI-style practice value should not be mistaken for a standard RSI calculation on historical provider closes."
         ]
@@ -378,7 +378,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI", label: "Fidelity — RSI definition and limitations" },
       { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd", label: "Fidelity — MACD calculation" },
       { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma", label: "Fidelity — simple moving average" },
-      { href: "/trade/eth", label: "Practice indicators on Ethereum (ETH)" },
+      { href: "/trade/eth", label: "Ethereum practice workspace — indicator examples are conceptual" },
       { href: "/trade/nvda", label: "NVDA practice workspace — indicator examples are conceptual" },
       { href: "/wiki/macd", label: "Glossary: MACD explained" },
       { href: "/wiki/rsi-divergence", label: "Glossary: RSI Divergence" },

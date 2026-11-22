@@ -571,7 +571,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         // Do not render it again as a crawler-visible Summary paragraph.
         ...(a.sourceCheck ? [{ h: "Source-check scope", p: [`Source check: ${a.sourceCheck.date}. ${a.sourceCheck.scope}`] }] : []),
         ...a.sections.map((s: any) => ({ h: s.heading, p: s.paragraphs })),
-        { h: "Practise what you just read", p: [`Apply this in the simulator with ${BALANCE} in virtual cash. ${DISCLAIMER}`] },
+        { h: "Practise what you just read", p: [`Use the simulator for supported concepts with ${BALANCE} in virtual cash; unsupported order types and indicators remain separate examples. ${DISCLAIMER}`] },
       ],
       links: [...(ARTICLE_REFERENCES[a.slug] || []), ...(a.relatedLinks || []).map((l: any) => ({ href: l.href, label: l.label })), { href: "/about", label: "Publisher and editorial approach" }, { href: "/learn", label: "All learn articles" }],
     });
