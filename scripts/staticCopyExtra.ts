@@ -229,7 +229,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "What we would rather you sent us",
       p: [
         "A specific bug report or a specific content correction is worth more to the project than a rating. If a lesson is wrong, if a page renders badly on your phone, or if a term is missing from the glossary, the contact page reaches the maintainer directly and those messages are what actually change the site.",
-        "If you are considering whether to use TradeHQ at all: it costs nothing, requires no account for the core features, and holds no money. The only thing at stake is your time.",
+        "Core educational features are free and require no account or real-money deposit. Optional account and community features involve separate data processing, described in the Privacy Policy.",
       ],
     },
     {
@@ -365,7 +365,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Data you can send us, and what happens to it",
       list: [
-        "Contact messages: kept only as long as needed to answer you.",
+        "Contact messages: contact delivery and retention depend on the email services and provider settings described in the full policy.",
         "Reviews: published with your chosen display name, and removable on request.",
         "Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes and Daily reflections remain browser-specific; signed-in lessons and beginner-journey progress can sync privately between devices when online.",
         "Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start private; you can make your profile public from your profile page.",

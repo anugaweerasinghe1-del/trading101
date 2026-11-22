@@ -328,7 +328,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/reviews",
     title: "TradeHQ Reviews — What Traders Are Saying | TradeHQ",
-    description: `Read honest reviews from TradeHQ practice traders. Free educational simulator with ${BALANCE} virtual cash — no signup.`,
+    description: `Read moderated, user-submitted reviews of the TradeHQ educational simulator. Reviewer identity and usage are not independently verified.`,
     h1: "TradeHQ Reviews",
     summary: `Community-submitted reviews of the TradeHQ practice simulator. Submissions are moderated and duplicate-limited but are not independently verified.`,
     priority: "0.6",
