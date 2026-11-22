@@ -4,6 +4,7 @@
  * originality, account eligibility or Google's private review outcome.
  */
 import {readFileSync, writeFileSync} from "node:fs";
+import {createHash} from "node:crypto";
 const ORIGIN = "https://www.thetradehq.com";
 const reportOnly = process.argv.includes("--report-only");
 const report = {checkedAt:new Date().toISOString(), sitemap:ORIGIN+"/sitemap.xml", count:0, pages:[], links:[], externalReferences:[], problems:[], warnings:[], limits:[
@@ -14,6 +15,9 @@ const report = {checkedAt:new Date().toISOString(), sitemap:ORIGIN+"/sitemap.xml
   "Word counts and link checks do not establish originality or guarantee AdSense approval"
 ]};
 const decode = value => value.replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&nbsp;/g," ").replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16)));
+const isPublicProfile = url => {try {return /^\/trader\/[^/]+$/i.test(new URL(url).pathname) && !/\/trader\/me$/i.test(new URL(url).pathname);}catch{return false;}};
+const publicProfileRef = url => ORIGIN+"/trader/[public-profile-"+createHash("sha256").update(url).digest("hex").slice(0,16)+"]";
+const isUserGenerated = url => {try{return /^\/(?:reviews|leaderboard|challenge)(?:\/|$)/i.test(new URL(url).pathname);}catch{return false;}};
 const clean = html => decode(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi," ").replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi," ").replace(/<[^>]+>/g," ")).replace(/\s+/g," ").trim();
 function attr(tag,name) {
   const match=tag.match(new RegExp("(?:^|\\s)"+name+"\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\s>]+))","i"));
@@ -75,7 +79,21 @@ try {
   }catch(error){report.problems.push({type:"historical-seeds-unavailable",detail:String(error.message)});}
   console.log("LIVE_SITEMAP_URL_COUNT "+report.count);
   for(let index=0;index<queue.length;index++) {
-    const url=queue[index], page={index:index+1,url,checkedAt:new Date().toISOString(),status:null,words:0,errors:[],warnings:[],title:"",canonical:"",h1Count:0,inSitemap:sitemapPages.has(url)};
+    const url=queue[index], member=isPublicProfile(url), page={index:index+1,url:member?publicProfileRef(url):url,checkedAt:new Date().toISOString(),status:null,words:0,errors:[],warnings:[],title:"",canonical:"",h1Count:0,inSitemap:sitemapPages.has(url)};
+    if(member){
+      // Technical HTTP status only; never collect named public profile bodies or identifiers.
+      try{
+        const response=await fetch(url,{method:"HEAD",redirect:"follow",headers:{"User-Agent":"TradeHQ-ReadOnly-Publisher-Audit/2.0"},signal:AbortSignal.timeout(15000)});
+        page.status=response.status;
+        page.accessScope="public profile: HEAD metadata only; body, titles, and member identity not collected";
+        page.indexable=null;page.robots="not inspected";page.finalUrl=publicProfileRef(response.url);
+        if(response.status!==200)page.warnings.push("public-profile-head-status:"+response.status);
+      }catch(error){page.warnings.push("public-profile-head-unavailable:"+String(error?.message??error).slice(0,120));}
+      report.pages.push(page);
+      for(const warning of page.warnings)report.warnings.push({url:page.url,type:warning});
+      console.log("PAGE_REVIEW "+JSON.stringify(page));
+      continue;
+    }
     try {
       const {response,html}=await get(url);page.status=response.status;page.finalUrl=response.url;
       if(response.status!==200)page.errors.push("unexpected-http-status:"+response.status);
@@ -96,15 +114,17 @@ try {
       page.description=attr(tag(html,"meta","name","description"),"content");
       page.h1Count=[...html.matchAll(/<h1\b/gi)].length;
       const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
-      page.content=clean(main?.[1]??"");
-      page.words=page.content.split(/\s+/).filter(Boolean).length;
-      page.headings=[...html.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/gi)].map(m=>clean(m[1]));
+      const visibleText=clean(main?.[1]??"");
+      page.words=visibleText.split(/\s+/).filter(Boolean).length;
+      page.content=isUserGenerated(url)?"[USER-GENERATED BODY REDACTED]":visibleText;
+      if(isUserGenerated(url))page.redactedContentSha256=createHash("sha256").update(visibleText).digest("hex");
+      page.headings=isUserGenerated(url)?["[USER-GENERATED HEADINGS REDACTED]"]:[...html.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/gi)].map(m=>clean(m[1]));
       if(page.indexable) {
         if(page.h1Count!==1)page.errors.push("unexpected-h1-count:"+page.h1Count);
         if(!main)page.errors.push("no-main-landmark");
         if(page.description.length<35)page.warnings.push("short-or-missing-meta-description");
         if(page.words<160)page.warnings.push("limited-initial-main-content:"+page.words);
-        if(/error loading|cannot load content|lorem ipsum|under construction/i.test(page.content.slice(0,1800)))page.warnings.push("possible-visible-error-or-placeholder-copy");
+        if(/error loading|cannot load content|lorem ipsum|under construction/i.test(visibleText.slice(0,1800)))page.warnings.push("possible-visible-error-or-placeholder-copy");
       }
       documentIds.set(url,new Set([...html.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)].map(m=>decode(m[1]))));
       for(const match of html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)) {
@@ -113,7 +133,7 @@ try {
         let destination;try{destination=new URL(href,response.url);}catch{page.errors.push("malformed-link:"+href);continue;}
         const target=normalize(destination.href);
         if(target) {
-          report.links.push({from:url,to:target,fragment:destination.hash.slice(1),label:clean(match[1])});
+          report.links.push({from:url,to:isPublicProfile(target)?publicProfileRef(target):target,fragment:destination.hash.slice(1),label:isPublicProfile(target)?"[PUBLIC PROFILE LABEL REDACTED]":clean(match[1])});
           enqueue(target,url);
         } else if(/^https?:$/.test(destination.protocol)&&!["www.thetradehq.com","thetradehq.com"].includes(destination.hostname))external.add(destination.href);
       }
@@ -125,6 +145,8 @@ try {
     console.log("PAGE_REVIEW "+JSON.stringify(page));
   }
   for(const link of report.links) {
+    // Public profile HEAD checks preserve status only; do not infer content/link/anchor coverage.
+    if(isPublicProfile(link.to))continue;
     const target=report.pages.find(page=>page.url===link.to);
     if(!target||target.status!==200)report.problems.push({type:"broken-internal-destination",...link,status:target?.status??null});
     if(link.fragment&&target?.indexable&&!documentIds.get(link.to)?.has(decodeURIComponent(link.fragment)))
