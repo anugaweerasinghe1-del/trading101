@@ -1,0 +1,14 @@
+# First-32 release follow-up — 2026-11-22
+
+## Course editorial release
+PR #507 merged as edd9cce22643a7290e3ebc5da35c8f2bc3419516. Authenticated Cloudflare production receipt from run 44981240696, job 137081977871: deployment 150e4c90-6a6a-4851-9e0d-e42a02d738e0, exact SHA, custom-domain bound, five routes checked, verifiedMain=true, limitations=[].
+Independent live extraction: seven affected course/catalog routes returned expected canonicals and index/follow. Revised body phrases for holding vs total marked holdings, distinct practice execution, two holdings and cash, and hypothetical review threshold matched current public output. The catalog initial notes did not include the free-access FAQ or card label; dynamic overview initial HTML does not render badge labels. Do not count those as independent live wording matches. Exact PR-head compatibility log job 137079154503 records completion-only badge regressions, browser matrix phases and course width/interaction checks passed; main source contains revised wording. Independent live hydrated label and quiz verification remain open. No user account access.
+
+## Reference follow-up
+Independently checked PR #509's seven exact added destinations: SEC Investor.gov fraud prevention (FOMO warning explicitly present), social-media stock scams alert (Feb 6, 2026), archived cryptography mailing-list post (Oct 31, 2008), SEC Market Participants and the May 6 Flash Crash (search returned relevant event-specific liquidity discussion, direct extractor unavailable), Morningstar maximum drawdown (direct web open 403; earlier independent extract gave definition, do not equate with universal accessibility), SEC Investor Bulletin Performance Claims (back-testing explicitly hypothetical), NIST sample correlation definition. Six destinations supported by current direct text or current search; Morningstar prior validated extract only. These sources substantiate scoped definitions and caveats, not learning outcomes or strategies. PR #509 pending protected checks and release.
+
+## Router release
+PR #508 original head f8a92ef731e74d186ea2e41a732e95dccc33fab0 passed required validation and actual Chromium missing-module test (job 137080481064, PASS at 03:32:00 UTC). Branch behind after #507. Integrated exact two upstream browser-test changes by verified three-way comparison and merge commit ad428a4c192567032f246cdf2450d00f0555b185. New exact-head checks required; no bypass. Not yet production.
+
+## Scope
+32 first detailed reviews, all 32 visible rendering checked in prior live browser runs, not complete exhaustive certification. Originality search is limited, image generation provenance tentative (013), live interaction/metadata gates remain. No new pages credited merely for source or link checks. No private data or ad serving changes.
