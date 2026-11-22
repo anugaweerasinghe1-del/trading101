@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {truncateMetaDescription, generateAssetMetaDescription} from '../src/lib/assetContent';
 import {ASSETS} from '../src/lib/assets';
 const euro = ASSETS.find(a => a.id === 'eurusd')!;
@@ -21,4 +22,15 @@ for (const asset of ASSETS) {
   assert.doesNotMatch(description, /\b(?:Inc|Corp|Co|Ltd)\.$/, asset.id + ': must not end at a corporate abbreviation');
   assert.doesNotMatch(description, /\.\.\.$/, asset.id + ': no midword ellipsis');
 }
+const marketsStaticCopy = readFileSync("scripts/staticCopy.ts", "utf8");
+const marketsSectionStart = marketsStaticCopy.indexOf('"\/markets": {');
+const marketsSectionEnd = marketsStaticCopy.indexOf('\n  "\/portfolio": {', marketsSectionStart);
+assert.ok(marketsSectionStart >= 0 && marketsSectionEnd > marketsSectionStart, "Markets static-copy section must be present");
+const marketsSection = marketsStaticCopy.slice(marketsSectionStart, marketsSectionEnd);
+const commodityBullet = marketsSection.match(/"Commodities: ([^"]+)"/)?.[1];
+assert.ok(commodityBullet, "Markets page must retain a commodities explanation");
+assert.match(commodityBullet, /physical goods, supply, demand and seasonal conditions/i);
+assert.doesNotMatch(commodityBullet, /company earnings|equity prices/i, "Commodities explanation must not include unrelated equity content");
+console.log("PASS markets commodity copy remains scoped to commodity exposures");
+
 console.log('PASS all170 asset descriptions plus corporate, acronym, decimal and long-fact boundary regressions');
