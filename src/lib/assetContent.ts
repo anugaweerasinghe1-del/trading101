@@ -66,8 +66,8 @@ interface AssetContent {
 export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
   btc: [
     { question: "How can I practice trading Bitcoin without losing money?", answer: "TradeHQ uses $100,000 in virtual funds for simulated Bitcoin orders. A practice loss does not spend real money; simulated results do not predict real trading outcomes." },
-    { question: "What is a free Bitcoin trading simulator?", answer: "TradeHQ offers a free BTC simulator with $100K virtual cash, candlestick charts, and educational mentor explanations. No signup or credit card required — start in seconds." },
-    { question: "How to practice Bitcoin trading in Colombo as a student?", answer: "Students in Sri Lanka can use TradeHQ's free simulator to practice BTC trading with virtual money. Learn chart reading and risk management before using real capital." },
+    { question: "What is a free Bitcoin trading simulator?", answer: "TradeHQ offers a free BTC simulator with $100K virtual cash, candlestick charts, and educational mentor explanations. Core guest practice requires no signup or credit card." },
+    { question: "How to practice Bitcoin trading in Colombo as a student?", answer: "Students in Sri Lanka can use TradeHQ's free simulator to practice BTC trading with virtual money. The worksheet does not require real capital and does not establish readiness for real trading." },
     { question: "Is Bitcoin a good asset for beginner traders to practice?", answer: "BTC is one available practice market. Its price can be volatile and chart levels can fail; suitability depends on what mechanics the learner wants to study." }
   ],
   eth: [
@@ -104,7 +104,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "Is Solana trading harder than Bitcoin?", answer: "The difficulty of a practice exercise depends on the period, chosen assumptions and what is being studied. SOL and BTC can show different volatility over different windows, so compare them over the same stated interval rather than assume a permanent ranking." },
     { question: "How to practice Solana trading for free?", answer: "TradeHQ offers SOL practice with $100K virtual cash. Use it to compare how different price changes affect position value without assuming that past volatility will persist." },
     { question: "What factors can affect Solana price movements?", answer: "Network activity, application usage, liquidity, ecosystem developments and broader crypto-market conditions are among the factors observers track. Their relationship with SOL price can change over time." },
-    { question: "Is Solana suitable for beginner crypto traders?", answer: "Use virtual cash to compare how different price shocks affect a SOL position. A tight exit setting is a practice assumption, not a universal risk rule." }
+    { question: "Is Solana suitable for beginner crypto traders?", answer: "Use virtual cash to compare how different price shocks affect a SOL position. A chosen worksheet threshold is not an executable stop or a universal risk rule." }
   ],
   gold: [
     { question: "How does Gold react during market crashes?", answer: "Gold and stock prices can respond differently across periods. A practice chart is simulated and does not establish an inverse relationship or reproduce a market crash." },
@@ -158,7 +158,7 @@ export const ASSET_FAQS: Record<string, AssetFAQ[]> = {
     { question: "How to practice XRP trading for free?", answer: "TradeHQ provides $100K virtual cash for XRP practice. Compare legal, regulatory, network and broader crypto-market developments with price changes without assuming a fixed relationship." },
     { question: "Why does XRP move on regulatory news?", answer: "Regulatory developments, company announcements and wider crypto conditions can affect XRP sentiment. Compare hypothetical gains and losses with virtual cash; a headline does not determine the next price move." },
     { question: "Can XRP be used to study news reactions?", answer: "Study legal or project-related announcements separately from simulated charts. Use hypothetical XRP price changes to compare gains and losses; neither a headline nor a practice result predicts a future response." },
-    { question: "How to practice crypto trading in Colombo?", answer: "Use TradeHQ's free simulator. Students in Colombo can trade XRP, BTC, ETH and 30+ cryptos with $100K virtual cash — no signup needed." }
+    { question: "How to practice crypto trading in Colombo?", answer: "Use TradeHQ's free simulator. Core guest education includes virtual cryptocurrency examples without signup or real funds; availability may depend on service and network conditions." }
   ],
   bnb: [
     { question: "How to practice BNB trading for free?", answer: "Use TradeHQ to practise BNB with $100K virtual cash. Compare exchange activity, token-burn announcements and broader crypto conditions with price changes without assuming causation." },
@@ -286,7 +286,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   // ===== CRYPTOCURRENCIES =====
   btc: {
     whatIs: "Bitcoin is a peer-to-peer payment network whose native asset is BTC. Its proof-of-work protocol has a scheduled issuance limit of 21 million coins under the current consensus rules. A fixed issuance schedule does not guarantee purchasing power or investment returns.",
-    strategy: "Educational example: Simulate a HODL approach or test swing trades around long-term moving averages. Practice identifying key support/resistance levels at psychological price points. (Educational simulation only — not financial advice.)",
+    strategy: "Compare fictional price observations, quantity and account values using explicit fee assumptions. Historical chart labels do not establish future prices. (Educational simulation only — not financial advice.)",
     category: "Cryptocurrency",
     keywords: ["Bitcoin trading", "BTC simulator", "crypto practice", "digital gold", "store of value", "blockchain"],
     stats: {
