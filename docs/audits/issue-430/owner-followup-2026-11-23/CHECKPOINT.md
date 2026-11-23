@@ -24,3 +24,7 @@ Controlled production authentication: 14 observations across seven case IDs usin
 6. The optional leaked-password protection improvement remains deferred; it is not described as a Google AdSense requirement.
 
 Do not certify readiness or close #430 while these checks remain incomplete. The finite full audit inventory and body-review history remain in `../completion-2026-11-22/`; this bounded correction batch does not replace them or claim a fresh whole-site audit on its future release SHA.
+
+## PR and regression follow-up
+
+PR #543 initially failed isolated trophy loading because new exports were256px while the UI and assertion require232px. Exports were corrected to232px without weakening tests. The full isolated compiled-auth/browser suite then passed locally, including trophy loading/sharing, and offline staging/live SEO headers passed. Protected CI and production verification remain required for the corrected head.
