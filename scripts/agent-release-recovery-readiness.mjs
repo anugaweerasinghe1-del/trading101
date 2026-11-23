@@ -1,17 +1,17 @@
 /**
  * Read-only release/recovery readiness. Operates after a protected main merge.
- * Checks exact main SHA and GitHub-reported deploy/check identities, identifies
- * previous known-good commit, and samples public routes.
- *
- * Does not establish Cloudflare rollback eligibility, deployment environment,
- * authenticated login, or Vercel scope ownership. Never rolls back anything.
+ * Production uses trusted GitHub CI plus native Cloudflare current/prior main,
+ * environment/domain and immutable/public compiled-entry witnesses. Legacy
+ * Vercel verification remains available for historical fixtures, not runtime.
+ * Does not establish rollback eligibility or authenticated visitor acceptance.
+ * Never grants release permission or rolls back anything.
  */
 import assert from "node:assert/strict";
-import { collectCloudflareAccountEvidence } from './cloudflare-account-evidence.mjs';
+import { collectCloudflareReleaseEvidence, assertCloudflareReleaseEvidence } from './cloudflare-release-evidence.mjs';
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
-import { collectVercelProductionEvidence, assertVercelProductionEvidence } from './vercel-production-evidence.mjs';
+import { assertVercelProductionEvidence } from './vercel-production-evidence.mjs';
 const REPO="anugaweerasinghe1-del/trading101";
 const SHA=/^[a-f0-9]{40}$/;
 const UUID=/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/;
@@ -27,7 +27,7 @@ function one(list, predicate, why) {
   assert.equal(matches.length,1,why+" must be unambiguous");
   return matches[0];
 }
-export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks,previousStatuses,vercelProvider}){
+export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks,previousStatuses,vercelProvider,cloudflareProvider}){
   assert.ok(head && SHA.test(head.commit?.sha||"") && head.protected===true,
     "Exact protected main identity required");
   const sha=head.commit.sha;
@@ -84,6 +84,17 @@ export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks
     assert.equal(url.origin,"https://dash.cloudflare.com","Unexpected Pages provider");
     assert.equal(url.searchParams.get("to")||url.pathname,CLOUDFLARE_PREFIX+check.external_id,
       "Pages project or deployment binding incorrect");
+  }
+  if(cloudflareProvider){
+    assertCloudflareReleaseEvidence(cloudflareProvider,sha,prior,pages.external_id,previousPages.external_id);
+    const report={schema:'tradehq-release-recovery-readiness-v2',currentSha:sha,priorSha:prior,
+      productionHost:'cloudflare',cloudflare:cloudflareProvider,requiredCheckCount:REQUIRED.length,
+      candidateStatus:'PREVIOUS_SUCCESSFUL_COMMIT_ONLY',providerRollbackEligible:false,
+      rollbackPerformed:false,ownerApproval:false,productionReleaseAuthorized:false,
+      limitations:['Previous native production is a candidate, not proof of rollback eligibility or permission.',
+        'Code rollback cannot reverse Supabase migrations or provider settings.',
+        'Vercel is owner-reported paused and is not the production witness; no provider or DNS setting is changed.']};
+    return {...report,sha256:createHash('sha256').update(JSON.stringify(report)).digest('hex')};
   }
   function findVercel(items) {
     const v=one(items,x=>x.context==="Vercel","Vercel commit status");
@@ -216,31 +227,25 @@ async function run(){
   assert.ok(Array.isArray(commit.parents)&&commit.parents.length===1,"Unrecognized parent history");
   const previous=commit.parents[0].sha;
   const previousProof=await collect(previous,token);
-  const report=await waitForReleaseWitness(async()=>{
+  assert.equal(process.env.GITHUB_REF,'refs/heads/main','Production witness is main-only');
+  const readWitness=async()=>{
     const currentHead=await github('/branches/main',token);
-    assert.equal(currentHead.commit?.sha,sha,'Main changed while waiting; stale release rejected');
+    assert.equal(currentHead.commit?.sha,sha,'Main changed during native production observation');
     const current=await collect(sha,token);
-    return {head:currentHead,commit,checks:current.checks,
-        statuses:current.statuses,previousChecks:previousProof.checks,
-        previousStatuses:previousProof.statuses};
-  },{readVercel:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN
-    ? ()=>collectVercelProductionEvidence({sha,token:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN}) : undefined});
+    const cloudflareProvider=await collectCloudflareReleaseEvidence({sha,priorSha:previous,token:process.env.CLOUDFLARE_API_TOKEN});
+    return {head:currentHead,commit,checks:current.checks,statuses:current.statuses,
+      previousChecks:previousProof.checks,previousStatuses:previousProof.statuses,cloudflareProvider};
+  };
+  verifyReleaseWitness(await readWitness());
   for(const path of ["/","/trade","/courses","/auth","/daily"]){
     await checkPublicRoute(path);
   }
   assert.equal((await github("/branches/main",token)).commit?.sha,sha,
     "Main changed during release witness; no valid readiness claim");
-  console.log("TRADEHQ_RELEASE_RECOVERY_READINESS_V1 "+JSON.stringify(report));
-  console.log("PUBLIC_RELEASE_ROUTES_PASS 5");
-  if(process.env.TRADEHQ_VERCEL_VERIFY_TOKEN){
-    const activeVercel=await collectVercelProductionEvidence({sha,token:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN});
-    console.log('TRADEHQ_VERCEL_ACTIVE_PRODUCTION_CONFIRMED '+JSON.stringify(activeVercel));
-  }
-  if(process.env.CLOUDFLARE_API_TOKEN){
-    const cloudflare=await collectCloudflareAccountEvidence({sha,token:process.env.CLOUDFLARE_API_TOKEN});
-    assert.equal((await github('/branches/main',token)).commit?.sha,sha,'Main changed during Cloudflare account verification');
-    console.log('TRADEHQ_CLOUDFLARE_ACCOUNT_OBSERVATION_V1 '+JSON.stringify(cloudflare));
-  }else console.log('CLOUDFLARE_ACCOUNT_OBSERVATION_NOT_CONFIGURED');
+  const report=verifyReleaseWitness(await readWitness());
+  assert.equal((await github('/branches/main',token)).commit?.sha,sha,'Main changed after final native witness');
+  console.log('TRADEHQ_RELEASE_RECOVERY_READINESS_V2 '+JSON.stringify(report));
+  console.log('PUBLIC_RELEASE_ROUTES_PASS 5');
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
   run().catch(error=>{const reason=String(error?.message||"Unknown check failure").replace(/\s+/g," ").slice(0,170);

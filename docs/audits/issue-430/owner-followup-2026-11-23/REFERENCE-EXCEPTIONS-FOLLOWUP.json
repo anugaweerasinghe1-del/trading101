@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-23",
+  "method": "Official-source web search and direct source opening; no login/challenge bypass",
+  "observations": [
+    {
+      "url": "https://fonts.google.com/faq#privacy",
+      "result": "EXCEPTION_REMAINS",
+      "evidence": "Direct official FAQ open returned no readable lines; no full privacy-processing statement certified."
+    },
+    {
+      "url": "https://www.newyorkfed.org/research/capital_markets/ycfaq",
+      "result": "EXCEPTION_REMAINS",
+      "evidence": "Search index corroborates non-official-forecast disclaimer, but direct current source opening still exposes site navigation/title without substantive FAQ body. Do not substitute a cached snippet for full direct reading."
+    },
+    {
+      "url": "https://incompetech.com/music/royalty-free/?isrc=USUAN1100588",
+      "result": "REMOVAL_PENDING_PRODUCTION",
+      "evidence": "Old track and attribution replaced in PR543; close the obsolete citation exception only after the current production source is confirmed."
+    }
+  ],
+  "limitations": "Bounded follow-up, not a fresh recheck of every reference or updated full-inventory count."
+}

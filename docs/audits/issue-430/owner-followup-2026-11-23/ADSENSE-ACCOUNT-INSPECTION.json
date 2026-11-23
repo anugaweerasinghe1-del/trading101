@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-11-23T12:32:09.356956+00:00",
+  "method": "TinyFish signed-in browser; read-only navigation",
+  "scope": "Existing AdSense account current UI only; no new application review or settings change",
+  "site": "https://www.thetradehq.com/",
+  "publisherIdentityMatchesSiteAdsTxt": true,
+  "accountStatus": "DISAPPROVED_GENERIC_NOTICE",
+  "messages": [
+    "You're almost there...",
+    "Your account wasn't approved.",
+    "You need to fix some issues before you can use AdSense.",
+    "To earn with AdSense you need to meet AdSense programme policies."
+  ],
+  "specificRejectionReasonVisible": false,
+  "navigation": {
+    "Home": "AVAILABLE",
+    "Reports": "AVAILABLE",
+    "Feedback": "AVAILABLE_FORM_OPENED_AND_CLOSED_WITHOUT_SUBMISSION",
+    "Payments": "DISABLED",
+    "AccountSettings": "DISABLED",
+    "Sites": "NOT_VISIBLE_IN_CURRENT_NAVIGATION",
+    "PolicyCenter": "NOT_VISIBLE_IN_CURRENT_NAVIGATION",
+    "PrivacyAndMessaging": "NOT_VISIBLE_IN_CURRENT_NAVIGATION"
+  },
+  "cmpConfiguration": "UNVERIFIED; current view exposes no CMP settings; absence is not proof no CMP exists",
+  "complianceAttestation": {
+    "text": "I confirm that I've read and am meeting AdSense programme policies",
+    "checked": false,
+    "changed": false
+  },
+  "resubmitButtonPresent": true,
+  "resubmissionPerformed": false,
+  "accountSettingsChanged": false,
+  "adsEnabled": false,
+  "noPaymentsBankTaxGmailDriveOrCredentialInspection": true,
+  "observedUrls": [
+    "https://adsense.google.com/adsense/u/0/pub-[redacted]/home",
+    "https://adsense.google.com/adsense/u/0/pub-[redacted]/reporting?rt=d"
+  ],
+  "policyLink": "https://support.google.com/adsense/answer/81904?hl=en_GB",
+  "limitations": [
+    "Navigation absence does not prove resubmission alone unlocks these panels.",
+    "Do not request the same unavailable-panel screenshot again.",
+    "This account state does not establish a specific violation or a Google verdict on the current site release.",
+    "Account-holder age and truthful payment identity remain owner-attested; private payment records were not inspected.",
+    "Remaining site-side/account-feature/reference/recovery work is not closed by this inspection."
+  ]
+}
