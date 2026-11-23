@@ -1,0 +1,326 @@
+[
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:172:11263",
+    "file": "src/lib/smartMentor.ts",
+    "line": 172,
+    "text": "Hey! I'm your Smart Mentor — a curated trading knowledge engine.\n\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:174:11367",
+    "file": "src/lib/smartMentor.ts",
+    "line": 174,
+    "text": "• Stop-losses, RSI, moving averages, candlesticks\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:175:11425",
+    "file": "src/lib/smartMentor.ts",
+    "line": 175,
+    "text": "• Bull/bear markets, leverage, position sizing\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:176:11480",
+    "file": "src/lib/smartMentor.ts",
+    "line": 176,
+    "text": "• Dollar-cost averaging, diversification, compounding\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:177:11542",
+    "file": "src/lib/smartMentor.ts",
+    "line": 177,
+    "text": "• Trading psychology, FOMO, revenge trading\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:181:11652",
+    "file": "src/lib/smartMentor.ts",
+    "line": 181,
+    "text": "I don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:182:11752",
+    "file": "src/lib/smartMentor.ts",
+    "line": 182,
+    "text": "Orders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:183:11860",
+    "file": "src/lib/smartMentor.ts",
+    "line": 183,
+    "text": "Technicals: RSI, moving averages, candlestick patterns, support/resistance.\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:184:11944",
+    "file": "src/lib/smartMentor.ts",
+    "line": 184,
+    "text": "Psychology: FOMO, revenge trading, discipline.\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:185:11999",
+    "file": "src/lib/smartMentor.ts",
+    "line": 185,
+    "text": "Markets: bull/bear markets, leverage, crypto, ETFs.\n\n"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:186:12061",
+    "file": "src/lib/smartMentor.ts",
+    "line": 186,
+    "text": "Try asking about one term from your lesson at a time"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:194:12503",
+    "file": "src/lib/smartMentor.ts",
+    "line": 194,
+    "text": "Type a topic or pick a suggestion below."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:216:13451",
+    "file": "src/lib/smartMentor.ts",
+    "line": 216,
+    "text": ", or use the Learning Center link to find a related guide."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:267:15464",
+    "file": "src/lib/smartMentor.ts",
+    "line": 267,
+    "text": "`Realized win rate: ${ctx.winRate.toFixed(0)}% (descriptive recorded sample)`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:268:15548",
+    "file": "src/lib/smartMentor.ts",
+    "line": 268,
+    "text": "Realized win rate: unavailable in this snapshot"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:270:15718",
+    "file": "src/lib/smartMentor.ts",
+    "line": 270,
+    "text": "`Price-only sell comparison: ${ctx.priceOnlySellComparisonPct.toFixed(0)}% of sales above their latest earlier buy; excludes fees and lot matching, not a realized win rate.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:273:15968",
+    "file": "src/lib/smartMentor.ts",
+    "line": 273,
+    "text": "Practice assumptions:\n\nMultiply the quantity by the displayed price to estimate the virtual order value. At $50 per unit, two units have an estimated value of $100. A 0.1% virtual fee is $0.10, giving an estimated buy cost of $100.10 or estimated sale proceeds of $99.90.\n\nRecord the quantity, quote source and fee. Compare the estimate with the recorded fill if you place a virtual order."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:280:16555",
+    "file": "src/lib/smartMentor.ts",
+    "line": 280,
+    "text": "`• Total value: ${fmt(ctx.totalValue)}`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:281:16602",
+    "file": "src/lib/smartMentor.ts",
+    "line": 281,
+    "text": "`• Cash: ${fmt(ctx.cash)} (${cashPct === null ? \"percentage unavailable\" : cashPct.toFixed(0) + \"% of book\"})`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:282:16720",
+    "file": "src/lib/smartMentor.ts",
+    "line": 282,
+    "text": "`• Positions: ${ctx.positionsCount}`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:283:16764",
+    "file": "src/lib/smartMentor.ts",
+    "line": 283,
+    "text": "`• Trades executed: ${ctx.tradesCount}`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:289:16944",
+    "file": "src/lib/smartMentor.ts",
+    "line": 289,
+    "text": "`\\nTop position: ${ctx.topPosition.symbol} — ${ctx.topPosition.weightPct.toFixed(0)}% of book, P&L ${ctx.topPosition.pnlPct >= 0 ? \"+\" : \"\"}${ctx.topPosition.pnlPct.toFixed(2)}%`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:292:17192",
+    "file": "src/lib/smartMentor.ts",
+    "line": 292,
+    "text": "`\\nObservation: You're sitting on heavy cash (${cashPct.toFixed(0)}%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:293:17446",
+    "file": "src/lib/smartMentor.ts",
+    "line": 293,
+    "text": "`\\nObservation: Cash is ${cashPct.toFixed(0)}% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:301:17852",
+    "file": "src/lib/smartMentor.ts",
+    "line": 301,
+    "text": "`• ${ctx.topPosition.symbol} is ${ctx.topPosition.weightPct.toFixed(0)}% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:303:18164",
+    "file": "src/lib/smartMentor.ts",
+    "line": 303,
+    "text": "• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:304:18391",
+    "file": "src/lib/smartMentor.ts",
+    "line": 304,
+    "text": "`• The portfolio has ${ctx.positionsCount} positions. Position count alone does not determine diversification; check weights and how strongly the holdings move together.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:305:18603",
+    "file": "src/lib/smartMentor.ts",
+    "line": 305,
+    "text": "• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:311:19017",
+    "file": "src/lib/smartMentor.ts",
+    "line": 311,
+    "text": "No recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:313:19284",
+    "file": "src/lib/smartMentor.ts",
+    "line": 313,
+    "text": "`Trade history review (${ctx.tradesCount} recorded ${tradeLabel}):\\n\\n${winSummary}.${priceSummary ? \"\\n\" + priceSummary : \"\"}\\n\\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:318:19880",
+    "file": "src/lib/smartMentor.ts",
+    "line": 318,
+    "text": "I won't give you specific buy/sell calls. For a simulation, you can instead:\n\n1. Write the idea or assumption you want to test.\n2. Choose a practice risk limit and record why you chose it; no single percentage is universally correct.\n3. Define the conditions that would make you exit, while remembering that real orders may not fill at the planned price.\n4. Journal the reasoning so you can compare the plan with the outcome later."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:324:20583",
+    "file": "src/lib/smartMentor.ts",
+    "line": 324,
+    "text": "Percentage change is unavailable in this snapshot."
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:324:20638",
+    "file": "src/lib/smartMentor.ts",
+    "line": 324,
+    "text": "`Snapshot percentage change: ${change >= 0 ? \"+\" : \"\"}${change.toFixed(2)}%. Check the displayed quote source and observation window; this is not a forecast.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:325:20809",
+    "file": "src/lib/smartMentor.ts",
+    "line": 325,
+    "text": "`${ctx.selectedSymbol} — ${observation}\\n\\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.`"
+  },
+  {
+    "id": "mentor-template:src/lib/smartMentor.ts:329:21149",
+    "file": "src/lib/smartMentor.ts",
+    "line": 329,
+    "text": "Built-in rule-based educational response:\n\n"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:19:552",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 19,
+    "text": "\n\n(Educational simulation only — not financial advice.)"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:76:4108",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 76,
+    "text": "What assumption would change the outcome of this example?"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:77:4204",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 77,
+    "text": "`\\n\\nCheck your understanding: ${check} Explain your answer in your own words.`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:78:4324",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 78,
+    "text": "`\\n\\nApply it: What would change in a hypothetical virtual trade if one assumption differed? Use the lesson's figures, and explain why.\\nSelf-check: ${check}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:79:4493",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 79,
+    "text": "`\\n\\nAdvanced review: Identify the assumptions, costs and failure cases; distinguish the observed result from a prediction.\\nSelf-check: ${check}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:90:4994",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 90,
+    "text": "Ask about a trading concept or choose a lesson question."
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:94:5241",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 94,
+    "text": "I don't have a verified authored answer to a future price or trade prediction. A historical example is not a forecast. Ask about risk, order mechanics or an assumption to test with virtual funds."
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:108:6339",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 108,
+    "text": "`From \"${lesson.lessonTitle}\" (authored course material):\\n\\nQuiz question: ${lesson.quiz.question}\\n\\nPublished explanation: ${lesson.quiz.explanation}\\n\\nI can explain the stated reasoning, but this library cannot independently judge every alternative answer.`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:112:6787",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 112,
+    "text": "`From \"${lesson.lessonTitle}\" in ${lesson.trackTitle}:`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:114:6919",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 114,
+    "text": "`Key takeaway: ${lesson.takeaways[0]}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:115:7000",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 115,
+    "text": "`Example from the published lesson: ${lesson.workedExample}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:116:7094",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 116,
+    "text": "`Quiz guidance: ${lesson.quiz.explanation}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:121:7301",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 121,
+    "text": "`In plain language — ${topic.title}:\\n\\n`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:122:7383",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 122,
+    "text": "`Concept and worked application — ${topic.title}:\\n\\n`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:123:7448",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 123,
+    "text": "`Advanced assumptions and limitations — ${topic.title}:\\n\\n`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:125:7549",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 125,
+    "text": "`\\n\\nRelated passage from the published \"${lesson!.lessonTitle}\" lesson: ${passage}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:127:7735",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 127,
+    "text": "`\\n\\nConnection to \"${lesson.lessonTitle}\": ${lesson.summary}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:131:7941",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 131,
+    "text": "`From the published \"${lesson.lessonTitle}\" lesson (this is an excerpt, not a newly generated answer):\\n\\n${passage}`"
+  },
+  {
+    "id": "mentor-template:src/lib/mentorTeaching.ts:134:8182",
+    "file": "src/lib/mentorTeaching.ts",
+    "line": 134,
+    "text": "`I don't have a verified authored answer to that exact question. The published \"${lesson.lessonTitle}\" lesson says: ${lesson.summary}\\n\\nTry naming a specific term, or ask \"Explain this lesson\" for its written example. I won't invent a missing explanation.`"
+  }
+]

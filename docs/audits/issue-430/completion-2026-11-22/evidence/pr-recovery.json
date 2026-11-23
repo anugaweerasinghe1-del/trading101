@@ -1,0 +1,110 @@
+[
+  {
+    "number": 518,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "1387ff84f57cb8a4c63ad179f9ecf36d7bc7314b",
+    "headSha": "83d2d95bd0e0ae818428ce6cc8e1bad595b0b9fd",
+    "mergedAt": "2026-11-22T05:17:03Z",
+    "title": "Integrate all eight editorial correction batches for combined validation"
+  },
+  {
+    "number": 520,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "6375830a2ac1c8ee5d095cbf5728aa0393c32d37",
+    "headSha": "313c034b0e393f21d663e32c957e3a2845098d2d",
+    "mergedAt": "2026-11-22T05:31:09Z",
+    "title": "Verify review moderation hash privacy with disposable PostgreSQL fixtures"
+  },
+  {
+    "number": 521,
+    "state": "open",
+    "merged": false,
+    "mergeSha": "230fab74fe391567591f186b750a9948130574a2",
+    "headSha": "b39933742f590ae76623ebbe1a6b6f8696e07aec",
+    "mergedAt": null,
+    "title": "Second-pass editorial precision and moderation sampling disclosures"
+  },
+  {
+    "number": 525,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "362b98f5cbd9f595edbfd632ad2e255c30fed059",
+    "headSha": "d4052c46949902664ea06dc2415e6c3167b8680e",
+    "mergedAt": "2026-11-22T08:28:50Z",
+    "title": "Reconcile second-pass disclosures and editorial evidence on current protected main"
+  },
+  {
+    "number": 528,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "006b735e64103881de7edb9e134aef2e405cf778",
+    "headSha": "cf27b531da61c16cd63de37f41e226ca17e1e3a8",
+    "mergedAt": "2026-11-22T08:43:50Z",
+    "title": "Reconcile 163 second-pass publisher bodies and stage course disclosure fixes"
+  },
+  {
+    "number": 529,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "f963b3557b0dd996d5b1bc34911ae73b0dea9d6c",
+    "headSha": "292b5157407f4f1b154b8d4a1a16478b07888be6",
+    "mergedAt": "2026-11-22T09:01:15Z",
+    "title": "Produce auditable 163-page source-block hashes without claiming review closure"
+  },
+  {
+    "number": 531,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "7051744afa21cc925a1cdccbe6129d1ce23df8c5",
+    "headSha": "fd9cde8ddf06b4bf2518e3673bc66cd3d1c26d9b",
+    "mergedAt": "2026-11-22T09:39:08Z",
+    "title": "Fresh privacy-minimised production URL audit on current protected main"
+  },
+  {
+    "number": 532,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "0e5db6f9c4ab22e0f8ed38663c484c92afa4f48b",
+    "headSha": "c0534e0a01269ee618a39c8045527f47768369c8",
+    "mergedAt": "2026-11-22T09:55:16Z",
+    "title": "Verify native Cloudflare production SHA independently of stricter release-readiness gate"
+  },
+  {
+    "number": 534,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "d932fd9a7e9af3ef17372eb20a6087ca50789b36",
+    "headSha": "f9b5de54c0f0cfbd96bf9bebb6384b19ebfb63c2",
+    "mergedAt": "2026-11-22T10:56:06Z",
+    "title": "Fix skipped course sale disclosure and inconsistent execution summaries"
+  },
+  {
+    "number": 536,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "810d1a975b138331d1a55f1760fb7474ea1295a4",
+    "headSha": "a7f2a39ea843883563d4f5c02220448a68f22597",
+    "mergedAt": "2026-11-22T11:58:32Z",
+    "title": "Qualify lesson learning claims and correct double-bottom RSI explanation"
+  },
+  {
+    "number": 538,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "6309b289b6e139aebeba94951f28238beb3d4634",
+    "headSha": "eb99f4eae2e570f2c7eab2ca8e7b20e8f953fd74",
+    "mergedAt": "2026-11-22T13:11:19Z",
+    "title": "Preserve completed publisher-source reading and explicit remaining audit gaps"
+  },
+  {
+    "number": 540,
+    "state": "closed",
+    "merged": true,
+    "mergeSha": "522bac0cd2fd956b61e84b92f892dd3edf7e14c6",
+    "headSha": "deebdec03473fc073a84d0fb79b25005575917c7",
+    "mergedAt": "2026-11-23T01:30:25Z",
+    "title": "Complete audit fixes for Daily, accessibility and educational clarity"
+  }
+]

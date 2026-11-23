@@ -1,0 +1,27 @@
+{
+  "sha": "522bac0cd2fd956b61e84b92f892dd3edf7e14c6",
+  "views": 806,
+  "distinctRoutes": 403,
+  "viewports": [
+    1280,
+    360
+  ],
+  "runtimeErrors": 0,
+  "horizontalOverflow": 0,
+  "brokenImages": 0,
+  "missingAltAttributes": 0,
+  "adRequestsAttempted": 0,
+  "genericHarnessExceptions": [
+    {
+      "path": "/admin/reviews",
+      "width": 1280,
+      "error": "TimeoutError: locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('main').first() to be visible\u001b[22m\n"
+    },
+    {
+      "path": "/admin/reviews",
+      "width": 360,
+      "error": "TimeoutError: locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('main').first() to be visible\u001b[22m\n"
+    }
+  ],
+  "exceptionsResolvedBy": "production-control-regressions.json; correct locked moderation form assertion, not generic main landmark"
+}

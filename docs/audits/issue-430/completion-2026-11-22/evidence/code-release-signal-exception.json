@@ -1,0 +1,10 @@
+{
+  "sha": "522bac0cd2fd956b61e84b92f892dd3edf7e14c6",
+  "run": 45094941731,
+  "job": 137435507406,
+  "conclusion": "failure",
+  "relevantLogLines": [
+    "2026-11-23T01:52:37.7368199Z Release/recovery NOT VERIFIED: Vercel commit status must be unambiguous 0 !== 1 . Do not release or rollback based on this report."
+  ],
+  "interpretation": "Strict Vercel commit-status condition fails separately from successful native Cloudflare production proof; no waiver or provider mutation."
+}

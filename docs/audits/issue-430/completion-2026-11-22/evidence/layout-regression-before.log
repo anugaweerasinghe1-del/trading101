@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: Route heading must exist before hydration
+
+0 !== 1
+
+    at /workspace/trading101/docs/audits/issue-430/completion-2026-11-22/browser-startup-regression.cjs:2:1216 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

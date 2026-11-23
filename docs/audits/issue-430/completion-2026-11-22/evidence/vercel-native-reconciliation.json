@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-11-23T01:58:55.832Z",
+  "source": "authenticated Vercel MCP, read-only metadata",
+  "project": "trading101",
+  "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+  "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+  "recentProductionDeployments": [
+    {
+      "id": "dpl_3rWXxNqjh4eyF8dD3g224zQJo2PK",
+      "state": "READY",
+      "target": "production",
+      "createdAt": "2026-11-21T16:10:34.642Z",
+      "branch": "main",
+      "sha": "81db1e42a8b4b484593983a1442ef36099821f52",
+      "repository": "anugaweerasinghe1-del/trading101"
+    },
+    {
+      "id": "dpl_F3bqqfe7HzGc1sRdJqWsWqP2g1Lb",
+      "state": "READY",
+      "target": "production",
+      "createdAt": "2026-11-21T14:42:20.360Z",
+      "branch": "main",
+      "sha": "ae5b0ed26c8b33bb0857cb79a2f72358b7ff7ea3",
+      "repository": "anugaweerasinghe1-del/trading101"
+    },
+    {
+      "id": "dpl_G8TQRe4zAwux6c3FyyP8r2MaFjqx",
+      "state": "READY",
+      "target": "production",
+      "createdAt": "2026-11-21T10:36:43.360Z",
+      "branch": "main",
+      "sha": "3f3bf7bd24e5dfd1732b2c176f1167f26d449bbf",
+      "repository": "anugaweerasinghe1-del/trading101"
+    },
+    {
+      "id": "dpl_AvWc8oJHodHgDrae7KoVXA37BFi1",
+      "state": "READY",
+      "target": "production",
+      "createdAt": "2026-11-21T07:40:17.204Z",
+      "branch": "main",
+      "sha": "bca65c8bb2c982b66e354c8874f3f3a3dc8f7918",
+      "repository": "anugaweerasinghe1-del/trading101"
+    },
+    {
+      "id": "dpl_2dVo6oRQzRFA26TPRp1kKeBTCeKT",
+      "state": "READY",
+      "target": "production",
+      "createdAt": "2026-11-21T06:44:47.997Z",
+      "branch": "main",
+      "sha": "55ce8209477c54d00bbeeb1a0806cf2f209109ea",
+      "repository": "anugaweerasinghe1-del/trading101"
+    }
+  ],
+  "domainConfiguration": {
+    "domain": "www.thetradehq.com",
+    "verified": true,
+    "limitation": "Vercel domain registration/configuration is not evidence that it currently serves the public domain"
+  },
+  "exactCodeReleaseQuery": {
+    "deployments": {
+      "pagination": {
+        "count": 0
+      },
+      "deployments": []
+    }
+  },
+  "assessment": "Latest listed Vercel production deployment is READY but older than current protected main; exact current-code SHA query returns no deployment. Cloudflare independently confirms active production main and bound public domain. Strict legacy Vercel/recovery status gate remains unresolved; no provider/DNS/settings mutations."
+}

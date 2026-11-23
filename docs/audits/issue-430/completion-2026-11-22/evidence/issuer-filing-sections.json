@@ -1,0 +1,233 @@
+[
+  {
+    "symbol": "aapl",
+    "company": "Apple Inc.",
+    "filingDate": "2026-11-03",
+    "reportDate": "2026-09-26",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm",
+    "status": 200,
+    "sha256": "a01cf138895bdaa85a04e68aee9f49f9e6972c048e4242af6730380eb05b9942",
+    "words": 32091,
+    "sections": [
+      {
+        "term": "iPhone",
+        "found": true,
+        "position": 8727,
+        "boundedQuote": "r.ProductsiPhoneiPhone\u00ae is the Company\u2019s line of smartphones based on its iOS operating system. The iPhone lin"
+      },
+      {
+        "term": "Services",
+        "found": true,
+        "position": 8520,
+        "reviewedPassageHash": "6c03a79486acb1496719ab5e9b2a43b5af4f84e12ac73dc304051f9403217bb9",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      },
+      {
+        "term": "Mac",
+        "found": true,
+        "position": 8919,
+        "reviewedPassageHash": "069b501f2bfc30ea25514797a569b93f9a3013c8b28444cf82dda634085f48b1",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:10.651225+00:00",
+    "assessment": "Business/Product descriptions identify iPhone, Mac and iPad and related services; these are operating descriptions, not share-price forecasts.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "msft",
+    "company": "MICROSOFT CORP",
+    "filingDate": "2026-07-29",
+    "reportDate": "2026-06-30",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "status": 200,
+    "sha256": "587add7176f4f38877015232e122981ac188e9258873c7004c8b3d652ca11728",
+    "words": 47525,
+    "sections": [
+      {
+        "term": "Microsoft 365",
+        "found": true,
+        "position": 12281,
+        "boundedQuote": "tionize many types of work and business processes, and provide substantive productivity gains using Microsoft "
+      },
+      {
+        "term": "Azure",
+        "found": true,
+        "position": 20847,
+        "reviewedPassageHash": "67c2748b2af20d9e465f58cde5893af396bc8a7b1e416f086b69c217596d3091",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:12.799352+00:00",
+    "assessment": "Productivity/cloud descriptions identify Microsoft365 and Azure; supports distinct product/service research inputs.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "googl",
+    "company": "Alphabet Inc.",
+    "filingDate": "2026-02-05",
+    "reportDate": "2025-12-31",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+    "status": 200,
+    "sha256": "e2ff387de8e344a0ffe1f15d34d4efd40cb00db39d0a0d08fe8b43b54236d0fa",
+    "words": 48520,
+    "sections": [
+      {
+        "term": "Google Services",
+        "found": true,
+        "position": 11354,
+        "boundedQuote": "t is a collection of businesses \u2014 the largest of which is Google. We report Google in two segments, Google Ser"
+      },
+      {
+        "term": "Google Cloud",
+        "found": true,
+        "position": 11374,
+        "reviewedPassageHash": "b3e777cf2d3da56f45950eec1af2fda1f978f2a4e63bf0b861bfb6c9d25947a2",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      },
+      {
+        "term": "Other Bets",
+        "found": true,
+        "position": 11434,
+        "reviewedPassageHash": "35cacf0ffe0f93384bd7aff2da53be9afd493a0b1a7fd0afed8cd687483bedc4",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:10.891166+00:00",
+    "assessment": "Alphabet explicitly reports Google Services, Google Cloud and Other Bets; no return inference.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "amzn",
+    "company": "AMAZON COM INC",
+    "filingDate": "2026-02-06",
+    "reportDate": "2025-12-31",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+    "status": 200,
+    "sha256": "e9558d2080b3156a8465f054d5de4e3d61a35a32444988334329c85a4cdd661c",
+    "words": 39695,
+    "sections": [
+      {
+        "term": "online stores",
+        "found": true,
+        "position": 90686,
+        "boundedQuote": "ecessary to build and run our technology infrastructure; to build, enhance, and add features to our online sto"
+      },
+      {
+        "term": "AWS",
+        "found": true,
+        "position": 6806,
+        "reviewedPassageHash": "b2df2c861b9014a4aefd0cdbef4c698a8e69b13306db9d3cf2f8ef2c55e0020f",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      },
+      {
+        "term": "advertising",
+        "found": true,
+        "position": 9209,
+        "reviewedPassageHash": "599292b0d585a05380ae9563c80be0c46213038d2842fc99ba9bc37e578e2c03",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:11.276175+00:00",
+    "assessment": "Company identifies online and physical stores, advertising and AWS; segment accounting distinct from share returns.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "nvda",
+    "company": "NVIDIA CORP",
+    "filingDate": "2026-02-25",
+    "reportDate": "2026-01-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "status": 200,
+    "sha256": "768b3c2a59d80ded54e27e895c2f76113dbc2e9c0b591aa5140d10238c613d1b",
+    "words": 48496,
+    "sections": [
+      {
+        "term": "GPU",
+        "found": true,
+        "position": 11634,
+        "boundedQuote": " needed for the development and deployment of modern AI and accelerated computing applications. The GPU was in"
+      },
+      {
+        "term": "Data Center",
+        "found": true,
+        "position": 10357,
+        "reviewedPassageHash": "34c27aee44afc64b5eede480b846c999bba02e8f07c36c919099837543700303",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      },
+      {
+        "term": "Gaming",
+        "found": true,
+        "position": 13590,
+        "reviewedPassageHash": "5e15cd2a62ff670f1cc19abbb1d188a9a2f33e1eaa573508b870359389109eec",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:11.491259+00:00",
+    "assessment": "Accelerated computing/GPU, CUDA, data center and gaming descriptions corroborate general business scope.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "tsla",
+    "company": "Tesla, Inc.",
+    "filingDate": "2026-01-29",
+    "reportDate": "2025-12-31",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+    "status": 200,
+    "sha256": "3c8e941858012d0cc63548fb272b495f5018ca120d493fae14bfe5e778147238",
+    "words": 56726,
+    "sections": [
+      {
+        "term": "energy generation and storage",
+        "found": true,
+        "position": 8589,
+        "boundedQuote": " which we design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy gen"
+      },
+      {
+        "term": "automotive",
+        "found": true,
+        "position": 9649,
+        "reviewedPassageHash": "676b02ddac06e06398c73242035a02b527835203d594bbffbf67bfc0d9fa80c4",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:12.068520+00:00",
+    "assessment": "Automotive and energy generation/storage are explicitly separate reportable segments.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  },
+  {
+    "symbol": "meta",
+    "company": "Meta Platforms, Inc.",
+    "filingDate": "2026-01-29",
+    "reportDate": "2025-12-31",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+    "status": 200,
+    "sha256": "96b337d2315581f7e7f40152d128fc614f90826cdb084e348898d1e55bbf6a98",
+    "words": 76302,
+    "sections": [
+      {
+        "term": "Family of Apps",
+        "found": true,
+        "position": 18563,
+        "boundedQuote": "cial intelligence (AI) technologies to build transformative experiences and capabilities across our Family of "
+      },
+      {
+        "term": "Reality Labs",
+        "found": true,
+        "position": 22374,
+        "reviewedPassageHash": "e79acebace154c6f7adeb30e7eddb0e5f99996f647a8486992795ba170d59412",
+        "verbatimTextOmitted": "See exact filing URL/term/position; full text read in local cache, not republished."
+      }
+    ],
+    "checkedAt": "2026-11-23T01:15:12.196395+00:00",
+    "assessment": "Family of Apps and Reality Labs products/descriptions corroborate distinct operating activities; user activity not share valuation.",
+    "reviewMethod": "Codex read selected Business/Product descriptions, not the entire filing or audited financial opinion",
+    "result": "BOUNDED_BUSINESS_DESCRIPTION_CORROBORATED"
+  }
+]

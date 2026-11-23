@@ -1,0 +1,176 @@
+[
+  {
+    "hero": "/course-covers/trading-basics.jpg",
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "badge": {
+      "name": "Crypto Data Specialist",
+      "description": "Demonstrates an understanding of cryptocurrency price aggregation, volume-weighted pricing, and mock portfolio valuation."
+    },
+    "level": "Intermediate",
+    "title": "Understanding Cryptocurrency Price Feeds and Portfolio Valuation",
+    "notFor": "Individuals seeking real-time high-frequency trading execution strategies or automated arbitrage bots.",
+    "lessons": [
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "exchange-tickers-and-price-aggregation",
+        "title": "Exchange Tickers and Price Aggregation Foundations",
+        "sources": [],
+        "summary": "Learn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.",
+        "keyTakeaways": [],
+        "readingMinutes": 8
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "api-delays-and-portfolio-valuation",
+        "title": "API Delays and Portfolio Valuation Mechanics",
+        "sources": [],
+        "summary": "Examine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.",
+        "keyTakeaways": [],
+        "readingMinutes": 8
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "portfolio-rebalancing-and-cash-drag",
+        "title": "Portfolio Rebalancing and Cash Drag Dynamics",
+        "sources": [],
+        "summary": "Learn how to rebalance a virtual portfolio with cash components and manage the impact of transaction delays on asset allocation.",
+        "keyTakeaways": [],
+        "readingMinutes": 8
+      }
+    ],
+    "tagline": "Learn how digital asset prices are calculated, aggregated, and applied to virtual portfolios.",
+    "outcomes": [
+      "Calculate volume-weighted average prices using exchange ticker data",
+      "Explain why outlier filtering requires the provider\u2019s methodology and observation timestamps",
+      "Analyze the impact of API delays on virtual portfolio execution",
+      "Value a paper-trading portfolio using real-time and snapshot price feeds"
+    ],
+    "editorial": {
+      "assisted": true,
+      "reviewer": "TradeHQ owner (authenticated)",
+      "reviewedAt": "2026-11-15T11:35:40.193477+00:00"
+    },
+    "description": "Explore the mechanics behind cryptocurrency price feeds, from raw exchange tickers and volume-weighted averages to data aggregation methodologies, API delays, and paper-portfolio valuation techniques.",
+    "progression": "Start with venue tickers and a volume-weighted arithmetic example, then compare observation times and delayed portfolio marks. Finish with cash-inclusive allocation and a fee-aware rebalance. These lessons do not establish readiness for statistical trading or algorithmic execution.",
+    "prerequisites": "Basic understanding of spot trading concepts and simple mathematical averages."
+  },
+  {
+    "hero": "/course-covers/trading-basics.jpg",
+    "slug": "bitcoin-simulator-practice-trading",
+    "badge": {
+      "name": "Bitcoin Practice Course Completion",
+      "description": "Awarded for completing virtual Bitcoin trading lessons and quizzes; not a certification of trading competence."
+    },
+    "level": "Beginner",
+    "title": "Bitcoin Paper Trading: Price Snapshots, Virtual Orders and Portfolio Review",
+    "notFor": "Users seeking real money investment recommendations, exchange execution, futures, leverage, short selling, guaranteed returns or proof of trading competence.",
+    "lessons": [
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "setting-up-your-bitcoin-simulator-environment",
+        "title": "Setting Up Your Bitcoin Simulator Environment",
+        "sources": [],
+        "summary": "Learn how virtual cash, provider price snapshots and simulated order limitations work in TradeHQ.",
+        "keyTakeaways": [],
+        "readingMinutes": 6
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "executing-spot-trades-in-the-simulator",
+        "title": "Executing Spot Trades in the Simulator",
+        "sources": [],
+        "summary": "Learn step-by-step mechanics for placing market buy and sell orders within a virtual spot portfolio.",
+        "keyTakeaways": [],
+        "readingMinutes": 6
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "evaluating-performance-and-managing-drawdowns",
+        "title": "Evaluating Performance and Managing Drawdowns",
+        "sources": [],
+        "summary": "Analyze virtual trading results, calculate portfolio drawdowns, and evaluate the assumptions behind a hypothetical approach based on objective data.",
+        "keyTakeaways": [],
+        "readingMinutes": 6
+      }
+    ],
+    "tagline": "Understand Bitcoin spot simulation, 0.1% virtual transaction fees, quote freshness and drawdown exercises.",
+    "outcomes": [
+      "Calculate a virtual Bitcoin position and 0.1% buy/sell fees",
+      "Explain why source timestamps and simulated quotes are not guaranteed executable",
+      "Compare virtual marked holdings with remaining virtual cash",
+      "Calculate drawdown and distinguish it from returns without predicting real outcomes"
+    ],
+    "editorial": {
+      "assisted": true,
+      "reviewer": "TradeHQ owner (authenticated)",
+      "reviewedAt": "2026-11-15T11:28:21.242577+00:00"
+    },
+    "description": "Three progressive lessons on virtual Bitcoin trading: snapshots, hypothetical market buy/sell mechanics, fees and honest performance analysis. No live exchange orders or personal recommendations.",
+    "progression": "Understand virtual cash and price timestamps, calculate fee-inclusive buy/sell transactions, then distinguish total return from drawdown with a written practice debrief.",
+    "prerequisites": "Basic familiarity with web browsers and digital currencies."
+  },
+  {
+    "hero": "/course-covers/trading-basics.jpg",
+    "slug": "diversification-and-position-sizing",
+    "badge": {
+      "name": "Portfolio Architect Badge",
+      "description": "Demonstrated proficiency in calculating spot position sizes, managing concentration risk, and rebalancing virtual asset portfolios."
+    },
+    "level": "Beginner",
+    "title": "Diversification and Position Sizing for Spot Paper Trading",
+    "notFor": "Traders looking for options, futures, leverage, short selling, or real-money financial advice.",
+    "lessons": [
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "foundations-of-asset-allocation",
+        "title": "Foundations of Asset Allocation and Position Sizing",
+        "sources": [],
+        "summary": "Learn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.",
+        "keyTakeaways": [],
+        "readingMinutes": 5
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "managing-concentration-risk",
+        "title": "Managing Concentration Risk and Portfolio Drift",
+        "sources": [],
+        "summary": "Understand how concentration risk builds up and how price changes cause your portfolio to drift from its targets.",
+        "keyTakeaways": [],
+        "readingMinutes": 5
+      },
+      {
+        "body": [],
+        "quiz": [],
+        "slug": "executing-rebalancing-virtual-cash",
+        "title": "Executing Rebalancing with Virtual Cash",
+        "sources": [],
+        "summary": "Master the mechanics of buying and selling spot assets to realign your portfolio with target allocations.",
+        "keyTakeaways": [],
+        "readingMinutes": 5
+      }
+    ],
+    "tagline": "Master portfolio construction, position sizing, and rebalancing techniques using $100,000 in virtual cash.",
+    "outcomes": [
+      "Calculate exact position sizes in dollars and units based on target percentage weights.",
+      "Identify and mitigate concentration risk within a spot paper trading portfolio.",
+      "Execute systematic rebalancing using TradeHQ's virtual cash and market orders.",
+      "Formulate a target asset allocation plan suited for a $100,000 virtual balance."
+    ],
+    "editorial": {
+      "assisted": true,
+      "reviewer": "Anuga Weerasinghe",
+      "reviewedAt": "2026-10-09T15:45:01.003475+00:00"
+    },
+    "description": "Learn how to build balanced spot portfolios, manage concentration risk, calculate percentage weights, and systematically rebalance assets using TradeHQ's paper trading simulator.",
+    "progression": "This course prepares you to apply risk management principles to advanced trading and simulation scenarios.",
+    "prerequisites": "Basic understanding of spot market buying and selling."
+  }
+]

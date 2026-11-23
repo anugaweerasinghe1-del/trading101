@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-22T16:35:04.603008+00:00",
+  "source": "Production Supabase security advisor and catalog metadata; no user/moderation rows read",
+  "reviewIpHashSelect": {
+    "anon": false,
+    "authenticated": false,
+    "service_role": true
+  },
+  "advisorReview": {
+    "rlsEnabledNoPolicies": 38,
+    "interpretation": "RLS without public policies denies client access for service/private tables; not evidence of a privacy leak.",
+    "securityDefinerPublicFunction": "get_public_practice_trades requires is_public AND show_public_trades, returns no account identifiers, max20; fixed empty search_path.",
+    "authenticatedDefinerFunctions": [
+      "export_my_verified_practice_history",
+      "get_my_account_practice_snapshot",
+      "verify_my_practice_history_export"
+    ],
+    "authenticatedControls": "auth.uid() required; caller-owned snapshot only; export verification binds payload user_id to caller; secret not returned; fixed empty search_path.",
+    "leakedPasswordProtection": "Disabled; previously deferred optional owner improvement2, no configuration changed."
+  },
+  "sourceParagraphLengths": {
+    "maximumCurrentlyPublishedCourseParagraphChars": 849,
+    "mentorWorkedExampleCap": 900,
+    "mentorExcerptCap": 1050,
+    "result": "No current published course paragraph is truncated by either cap; hypothetical truncation concern not established."
+  },
+  "publicCourseSourceIdentity": "All three full published documents exactly equal already-read approved source snapshots. Catalog RPC intentionally strips lesson bodies/quizzes; not evidence of missing published lessons.",
+  "productionPriceSchedule": {
+    "jobname": "tradehq-portfolio-prices",
+    "schedule": "*/5 * * * *",
+    "active": true,
+    "checkedAt": "2026-11-23T01:17:25.061007+00:00",
+    "scope": "Schedule metadata only; no command read, no run-success assertion"
+  }
+}
