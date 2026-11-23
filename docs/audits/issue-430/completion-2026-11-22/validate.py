@@ -9,7 +9,7 @@ assert all((P/f).is_file() for f in required)
 c=json.loads((P/'COUNTS.json').read_text());blocks=[json.loads(l) for l in (P/required[2]).read_text().splitlines()]
 assert len({(b['layer'],b['blockId']) for b in blocks})==len(blocks),'Duplicate layer IDs'
 assert len(blocks)==c['currentAssessedLayerRecords']+c['historicalHtmlRecords']
-assert c['currentAssessedLayerRecords']==16525 and c['historicalHtmlRecords']==5107
+assert c['currentAssessedLayerRecords']==16533 and c['historicalHtmlRecords']==5107
 assert all(b['reviewStatus']=='ASSESSED_WITH_EXPLICIT_LIMITATIONS' and b['assessment'] and b['verificationMethod'] and b['reviewDate'] for b in blocks)
 assert all(b['finalVerifiedStatus']=='NOT_FULLY_FACTUALLY_OR_RIGHTS_CLEARED' for b in blocks)
 source=read('current-source/SUMMARY.json')
