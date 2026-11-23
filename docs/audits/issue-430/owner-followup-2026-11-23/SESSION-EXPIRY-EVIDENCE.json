@@ -1,0 +1,10 @@
+{
+  "id": "AUTH-04",
+  "checkedAt": "2026-11-23T11:57:33.855Z",
+  "procedure": "Original issuer-expired JWT rejected by actual Auth endpoint; real compiled UI automatically refreshes the same controlled account and shows signed-in navigation.",
+  "expiredStatus": 403,
+  "oldExpiry": "2026-11-23T11:56:37.000Z",
+  "newExpiry": "2026-11-23T12:57:33.000Z",
+  "refreshRequests": 1,
+  "scope": "Single new disposable account B; actual clock/issuer expiry, no forged token, no account/data mutation or trading. Not a full provider outage/revocation certification."
+}
