@@ -1,0 +1,18 @@
+{
+  "id": "AUTH-10",
+  "records": [
+    {
+      "action": "confirm",
+      "httpStatus": 200,
+      "verified": true,
+      "checkedAt": "2026-11-23T12:48:16.840Z"
+    },
+    {
+      "action": "unsubscribe",
+      "httpStatus": 200,
+      "verified": true,
+      "checkedAt": "2026-11-23T12:48:19.929Z"
+    }
+  ],
+  "scope": "Actual controlled opt-in email delivered, confirmation from own inbox link, normal public unsubscribe with own synthetic record management token. Only the new controlled row was read through privileged SQL to obtain the unsubscribe token because weekly delivery is editorially gated; no genuine contact records or broadcasts. Weekly issue delivery not tested."
+}

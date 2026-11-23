@@ -11,39 +11,62 @@ export type DownloadableCertificate = {
   programmeVersion: string;
 };
 
+// Original source-rendered backgrounds replace provenance-uncertain historical
+// PNG design references. Award records, names, dates and IDs are unchanged.
 const templates = {
-  "first-course": new URL("../../docs/phase5/first-course-certificate-preview.png", import.meta.url).href,
-  "core-studies": new URL("../../docs/phase5/core-studies-certificate-preview.png", import.meta.url).href,
-  foundations: new URL("../../docs/phase5/foundations-certificate-preview.png", import.meta.url).href,
+  "first-course": { title: "FIRST COURSE CERTIFICATE", achievement: "Completion of one course in the Foundations programme" },
+  "core-studies": { title: "CORE STUDIES CERTIFICATE", achievement: "Completion of three distinct courses in the Foundations programme" },
+  foundations: { title: "FOUNDATIONS COMPLETION CERTIFICATE", achievement: "Completion of all four courses and the required final assessment" },
 };
 const width = 1536;
 const height = 1024;
 const scale = 2;
 const encoder = new TextEncoder();
 
-function removeSampleText(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
-  // The approved files are retained verbatim. Restore only the darker sample
-  // glyphs in the three variable fields from the adjacent background colours.
-  const region = ctx.getImageData(x, y, w, h);
-  const pixels = region.data;
-  for (let row = 1; row < h - 1; row++) {
-    const weight = row / (h - 1);
-    for (let column = 0; column < w; column++) {
-      const start = column * 4;
-      const end = ((h - 1) * w + column) * 4;
-      const index = (row * w + column) * 4;
-      const background = [
-        pixels[start] * (1 - weight) + pixels[end] * weight,
-        pixels[start + 1] * (1 - weight) + pixels[end + 1] * weight,
-        pixels[start + 2] * (1 - weight) + pixels[end + 2] * weight,
-      ];
-      const difference = background.reduce((sum, channel, i) => sum + channel - pixels[index + i], 0);
-      if (difference > 2) {
-        pixels.set(background, index);
-      }
-    }
+function drawBackground(ctx: CanvasRenderingContext2D, logo: HTMLImageElement, milestone: CertificateMilestone) {
+  const template = templates[milestone];
+  ctx.fillStyle = "#fbfdfc";
+  ctx.fillRect(0, 0, width, height);
+  ctx.strokeStyle = "#147d72";
+  ctx.lineWidth = 6;
+  ctx.strokeRect(38, 38, width - 76, height - 76);
+  ctx.strokeStyle = "#beddd5";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(57, 57, width - 114, height - 114);
+  ctx.fillStyle = "#e3f3ee";
+  ctx.beginPath();ctx.moveTo(40, 40);ctx.lineTo(400, 40);ctx.lineTo(40, 270);ctx.closePath();ctx.fill();
+  ctx.drawImage(logo, 156, 112, 96, 96);
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#123d36";
+  ctx.font = "bold 52px Arial, sans-serif";
+  ctx.fillText("TradeHQ", 276, 177);
+  // Decorative, source-authored candles, not observed or forecast market data.
+  for (let i = 0; i < 5; i++) {
+    const x = 1130 + i * 40, y = 205 - i * 20;
+    ctx.strokeStyle = "#399e89";ctx.lineWidth = 3;
+    ctx.beginPath();ctx.moveTo(x, y - 35);ctx.lineTo(x, y + 40);ctx.stroke();
+    ctx.fillStyle = "#6fbca6";ctx.fillRect(x - 11, y - 10, 22, 34);
   }
-  ctx.putImageData(region, x, y);
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#12665d";
+  fitText(ctx, template.title, "Arial, sans-serif", 48, 1310, 768, 308);
+  ctx.font = "28px Arial, sans-serif";
+  ctx.fillText("FOUNDATIONS PROGRAMME · PERSONAL LEARNING RECORD", 768, 366);
+  ctx.fillStyle = "#344a45";ctx.font = "30px Georgia, serif";
+  ctx.fillText("Presented to", 768, 443);
+  ctx.strokeStyle = "#bdd8cf";ctx.lineWidth = 2;
+  ctx.beginPath();ctx.moveTo(263, 601);ctx.lineTo(1273, 601);ctx.stroke();
+  fitText(ctx, template.achievement, "Georgia, serif", 30, 1290, 768, 666);
+  ctx.font = "24px Arial, sans-serif";
+  ctx.fillText("Educational completion only · not an accredited qualification", 768, 720);
+  ctx.fillText("Not evidence of investment expertise, trading skill or real-market performance", 768, 755);
+  ctx.fillStyle = "#12665d";ctx.font = "bold 22px Arial, sans-serif";
+  ctx.fillText("ISSUE DATE", 385, 828);ctx.fillText("CERTIFICATE ID", 1170, 828);
+  ctx.fillStyle = "#dcefe7";ctx.strokeStyle = "#147d72";ctx.lineWidth = 4;
+  ctx.beginPath();ctx.arc(768, 858, 65, 0, Math.PI * 2);ctx.fill();ctx.stroke();
+  ctx.drawImage(logo, 736, 826, 64, 64);
+  ctx.fillStyle = "#50665f";ctx.font = "19px Arial, sans-serif";
+  ctx.fillText("TradeHQ · thetradehq.com", 768, 960);
 }
 
 function fitText(ctx: CanvasRenderingContext2D, value: string, family: string, maxSize: number,
@@ -57,7 +80,7 @@ function fitText(ctx: CanvasRenderingContext2D, value: string, family: string, m
   ctx.fillText(value, x, y, maxWidth);
 }
 
-function picturePdf(jpeg: ArrayBuffer): Blob {
+function picturePdf(jpeg: ArrayBuffer, textAlternative: string): Blob {
   const parts: BlobPart[] = [];
   const offsets = [0];
   let position = 0;
@@ -76,21 +99,27 @@ function picturePdf(jpeg: ArrayBuffer): Blob {
     }
     add("\nendobj\n");
   };
-  const command = "q\n841.89 0 0 561.26 0 17.01 cm\n/Artwork Do\nQ\n";
+  // Hex-encoded UTF-16 prevents PDF syntax injection and retains script names.
+  let actualText = "FEFF";
+  for (let i = 0; i < textAlternative.length; i++) actualText += textAlternative.charCodeAt(i).toString(16).padStart(4, "0");
+  const command = "q\n841.89 0 0 561.26 0 17.01 cm\n/Artwork Do\nQ\n"
+    + "/Span << /ActualText <" + actualText + "> >> BDC\n"
+    + "BT /F1 12 Tf 3 Tr 60 540 Td (Certificate text) Tj ET\nEMC\n";
   add("%PDF-1.4\n%\u00c2\u00a5\u00c2\u00a5\n");
   object(1, "<< /Type /Catalog /Pages 2 0 R >>");
   object(2, "<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
   object(3, "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 841.89 595.28] "
-    + "/Resources << /XObject << /Artwork 4 0 R >> >> /Contents 5 0 R >>");
+    + "/Resources << /XObject << /Artwork 4 0 R >> /Font << /F1 6 0 R >> >> /Contents 5 0 R >>");
   object(4, "<< /Type /XObject /Subtype /Image /Width " + width * scale
     + " /Height " + height * scale + " /ColorSpace /DeviceRGB /BitsPerComponent 8"
     + " /Filter /DCTDecode /Length " + jpeg.byteLength + " >>", jpeg);
   const commands = encoder.encode(command);
   object(5, "<< /Length " + commands.byteLength + " >>", commands.buffer);
+  object(6, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>");
   const xref = position;
-  add("xref\n0 6\n0000000000 65535 f \n");
+  add("xref\n0 7\n0000000000 65535 f \n");
   for (const offset of offsets.slice(1)) add(String(offset).padStart(10, "0") + " 00000 n \n");
-  add("trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF\n");
+  add("trailer\n<< /Size 7 /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF\n");
   return new Blob(parts, { type: "application/pdf" });
 }
 
@@ -122,20 +151,10 @@ export async function renderFoundationsCertificatePdf(certificate: DownloadableC
       || !recipientName || [...recipientName].length > 100 || !Number.isFinite(issuedDate.getTime())) {
     throw Error("Certificate details are unavailable.");
   }
-  const art = new Image();
-  art.src = templates[milestone];
-  const [font] = await Promise.all([recipientFont(recipientName), art.decode()]);
-  if (art.naturalWidth !== width || art.naturalHeight !== height) throw Error("Certificate artwork is unavailable.");
-
-  const source = document.createElement("canvas");
-  source.width = width;
-  source.height = height;
-  const original = source.getContext("2d", { willReadFrequently: true });
-  if (!original) throw Error("Certificate rendering is unavailable.");
-  original.drawImage(art, 0, 0);
-  removeSampleText(original, 488, 485, 562, 113);
-  removeSampleText(original, 278, 848, 222, 37);
-  removeSampleText(original, 1037, 848, 224, 37);
+  const logo = new Image();
+  logo.src = "/logo.svg";
+  const [font] = await Promise.all([recipientFont(recipientName), logo.decode()]);
+  if (!logo.naturalWidth || !logo.naturalHeight) throw Error("TradeHQ brand artwork is unavailable.");
 
   const canvas = document.createElement("canvas");
   canvas.width = width * scale;
@@ -144,7 +163,7 @@ export async function renderFoundationsCertificatePdf(certificate: DownloadableC
   if (!ctx) throw Error("Certificate rendering is unavailable.");
   ctx.scale(scale, scale);
   ctx.imageSmoothingQuality = "high";
-  ctx.drawImage(source, 0, 0);
+  drawBackground(ctx, logo, milestone);
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = "#090d14";
@@ -166,5 +185,9 @@ export async function renderFoundationsCertificatePdf(certificate: DownloadableC
   const jpeg = await new Promise<Blob>((resolve, reject) => {
     canvas.toBlob(blob => blob ? resolve(blob) : reject(Error("Certificate image encoding failed.")), "image/jpeg", 0.96);
   });
-  return picturePdf(await jpeg.arrayBuffer());
+  const textAlternative = ["TradeHQ", templates[milestone].title, "Presented to " + recipientName,
+    templates[milestone].achievement, "Issue date: " + date, "Certificate ID: " + id.toUpperCase(),
+    "Educational completion only, not an accredited qualification.",
+    "Not evidence of investment expertise, trading skill or real-market performance."].join("\n");
+  return picturePdf(await jpeg.arrayBuffer(), textAlternative);
 }

@@ -575,6 +575,7 @@ const macroTrack: CourseTrack = {
       ],
       sources: [
         { label: "NY Fed — Yield Curve Recession Probability", url: "https://www.newyorkfed.org/research/capital_markets/ycfaq" },
+        { label: "Arturo Estrella, NY Fed — Yield curve methodology FAQ (October 2005 PDF)", url: "https://www.newyorkfed.org/medialibrary/media/research/capital_markets/ycfaq.pdf" },
         { label: "FRED — T10Y2Y", url: "https://fred.stlouisfed.org/series/T10Y2Y" },
         { label: "US Treasury — daily par yield curve and methodology", url: "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=yield" },
       ],
@@ -715,6 +716,7 @@ const psychologyTrack: CourseTrack = {
       sources: [
         { label: "Tversky & Kahneman — Cumulative Prospect Theory (1992)", url: "https://doi.org/10.1007/BF00122574" },
         { label: "Walasek, Mullett & Stewart — A Meta-analysis of Loss Aversion in Risky Contexts (2024)", url: "https://doi.org/10.1016/j.joep.2024.102740" },
+        { label: "Same loss-aversion paper — open-access University of Warwick copy (PDF)", url: "https://wrap.warwick.ac.uk/id/eprint/185745/13/1-s2.0-S0167487024000485-main.pdf" },
       ],
       quiz: [
         { question: "Loss aversion describes:", options: ["Identical reactions from everyone", "Giving losses more weight than comparable gains relative to a reference point", "Preferring losses to gains", "Avoiding all trades"], correctAnswer: 1, explanation: "The concept concerns asymmetric evaluation around a reference point. Its magnitude varies and is not a universal two-times emotional ratio." },
