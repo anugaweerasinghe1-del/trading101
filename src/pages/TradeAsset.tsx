@@ -59,8 +59,8 @@ export default function TradeAsset() {
   // Find asset by symbol (case-insensitive)
   const findAssetBySymbol = useCallback((symbolParam: string): Asset | null => {
     const normalizedSymbol = symbolParam.toUpperCase().replace(/-/g, '/');
-    return ASSETS.find(a => 
-      a.symbol.toUpperCase() === normalizedSymbol || 
+    return ASSETS.find(a =>
+      a.symbol.toUpperCase() === normalizedSymbol ||
       a.id === symbolParam.toLowerCase()
     ) || null;
   }, []);
