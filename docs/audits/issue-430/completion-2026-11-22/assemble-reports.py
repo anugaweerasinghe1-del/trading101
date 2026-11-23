@@ -55,7 +55,9 @@ for category,(eventid,path) in scopes.items():
   records.append(record(page,'additional:'+key,text,'educational-source-leaf','ADDITIONAL_SOURCE','evidence/current-additional-educational-source.json#'+key,event['assessment'],'Direct full source reading: EXTENDED-READING-EVENTS.jsonl#'+eventid,date=event['date'][:10],pageUrls=templateUrls,scopeNote='Shared template and every enumerated substitution read; identifiers and labels included; not distinct paragraphs'))
 for b in json.loads((E/'mentor-template-blocks.json').read_text()):
  event=extended['mentor-teaching' if 'mentorTeaching' in b['file'] else 'mentor-library']
- records.append(record('https://www.thetradehq.com/ai-mentor',b['id'],b['text'],'authored-response-template','MENTOR_TEMPLATE',b['file']+':'+str(b['line']),event['assessment'],'Direct full-file source reading, including each response branch; template expressions are source, not rendered promises',date=event['date'][:10]))
+ portfolioBranch='smartMentor' in b['file'] and b['line']>=263
+ urls=['https://www.thetradehq.com/portfolio','https://www.thetradehq.com/trade']+['https://www.thetradehq.com/trade/'+x['id'] for x in additional['assetIndex']] if portfolioBranch else ['https://www.thetradehq.com/ai-mentor']
+ records.append(record(urls[0],b['id'],b['text'],'authored-response-template','MENTOR_TEMPLATE',b['file']+':'+str(b['line']),event['assessment'],'Direct full-file source reading, including each response branch; template expressions are source, not rendered promises',date=event['date'][:10],pageUrls=urls,conditionalUse='Portfolio branches require matching input/context; route association is source applicability, not an assertion of independently exercised replies at every URL.'))
 # Only display deltas are additional, not duplicate question banks.
 stored={x['id']:x for x in json.loads((E/'interactive-source.json').read_text())['bank']['exercises']}
 for exercise in additional['dailyDisplay']:
