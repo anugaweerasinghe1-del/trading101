@@ -56,6 +56,15 @@ function AssetIntelligenceWithLiveData({ asset }: { asset: Asset }) {
 
 export default function TradeAsset() {
   const { symbol } = useParams<{ symbol: string }>();
+  // Find asset by symbol (case-insensitive)
+  const findAssetBySymbol = useCallback((symbolParam: string): Asset | null => {
+    const normalizedSymbol = symbolParam.toUpperCase().replace(/-/g, '/');
+    return ASSETS.find(a => 
+      a.symbol.toUpperCase() === normalizedSymbol || 
+      a.id === symbolParam.toLowerCase()
+    ) || null;
+  }, []);
+
   const navigate = useNavigate();
   const [portfolio, setPortfolio] = useState(getPortfolio());
   const [postTradeLesson, setPostTradeLesson] = useState<{ symbol: string; side: "buy" | "sell" } | null>(null);
@@ -64,8 +73,8 @@ export default function TradeAsset() {
     window.addEventListener("tradehq:portfolio-updated", refresh);
     return () => window.removeEventListener("tradehq:portfolio-updated", refresh);
   }, []);
-  const [assets, setAssets] = useState<Asset[]>([]);
-  const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
+  const [assets, setAssets] = useState<Asset[]>(ASSETS);
+  const [selectedAsset, setSelectedAsset] = useState<Asset | null>(() => symbol ? findAssetBySymbol(symbol) : ASSETS[0]);
   useEffect(() => {
     if (selectedAsset?.id === "btc") trackLearningMilestone("Bitcoin Simulator Viewed");
   }, [selectedAsset?.id]);
@@ -77,15 +86,6 @@ export default function TradeAsset() {
   const { toast } = useToast();
    
   const isMounted = useRef(true);
-
-  // Find asset by symbol (case-insensitive)
-  const findAssetBySymbol = useCallback((symbolParam: string): Asset | null => {
-    const normalizedSymbol = symbolParam.toUpperCase().replace(/-/g, '/');
-    return ASSETS.find(a => 
-      a.symbol.toUpperCase() === normalizedSymbol || 
-      a.id === symbolParam.toLowerCase()
-    ) || null;
-  }, []);
 
   // Fetch live price for a single asset via edge function
   const fetchLivePrice = useCallback(async (asset: Asset): Promise<{ asset: Asset; status: 'live' | 'delayed' | 'simulated' | 'cached' }> => {

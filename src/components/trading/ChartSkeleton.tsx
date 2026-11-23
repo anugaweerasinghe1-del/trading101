@@ -25,7 +25,8 @@ export function ChartSkeleton() {
       {/* Chart Area Skeleton - Shimmer effect */}
       <div className="flex-1 p-4 flex items-end gap-1">
         {Array.from({ length: 50 }).map((_, i) => {
-          const height = 20 + Math.random() * 60;
+          // Keep decorative bars stable across quote/theme rerenders.
+          const height = 20 + ((i * 37) % 61);
           return (
             <Skeleton 
               key={i} 
