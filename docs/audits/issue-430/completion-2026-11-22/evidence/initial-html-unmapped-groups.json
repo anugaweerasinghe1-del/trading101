@@ -1,0 +1,1729 @@
+[
+  {
+    "group": 1,
+    "text": "Learning notes: TradeHQ \u2014 Free Paper Trading Simulator",
+    "ids": [
+      "/#html-0002"
+    ]
+  },
+  {
+    "group": 2,
+    "text": "Published by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.",
+    "ids": [
+      "/#html-0004",
+      "/trade#html-0004",
+      "/markets#html-0004",
+      "/portfolio#html-0004",
+      "/start#html-0004",
+      "/learn#html-0004",
+      "/learn-trading-guide#html-0004",
+      "/ai-mentor#html-0004",
+      "/daily#html-0004",
+      "/practice#html-0004",
+      "/newsletter#html-0004",
+      "/whats-new#html-0004",
+      "/roadmap#html-0004",
+      "/about#html-0004",
+      "/contact#html-0004",
+      "/privacy#html-0004",
+      "/terms#html-0004",
+      "/trade/btc#html-0004",
+      "/trade/eth#html-0004",
+      "/trade/sol#html-0004",
+      "/trade/bnb#html-0004",
+      "/trade/xrp#html-0004",
+      "/trade/aapl#html-0004",
+      "/trade/msft#html-0004",
+      "/trade/googl#html-0004",
+      "/trade/amzn#html-0004",
+      "/trade/nvda#html-0004",
+      "/trade/tsla#html-0004",
+      "/trade/meta#html-0004",
+      "/trade/spy#html-0004",
+      "/trade/qqq#html-0004",
+      "/trade/eurusd#html-0004",
+      "/trade/gbpusd#html-0004",
+      "/trade/gold#html-0004",
+      "/trade/oil#html-0004",
+      "/wiki#html-0004",
+      "/wiki/short-squeeze#html-0004",
+      "/wiki/golden-cross#html-0004",
+      "/wiki/death-cross#html-0004",
+      "/wiki/liquidation-cascade#html-0004",
+      "/wiki/fibonacci-retracement#html-0004",
+      "/wiki/rsi-divergence#html-0004",
+      "/wiki/macd-histogram#html-0004",
+      "/wiki/bollinger-band-squeeze#html-0004",
+      "/wiki/order-block#html-0004",
+      "/wiki/fair-value-gap#html-0004",
+      "/wiki/bull-trap#html-0004",
+      "/wiki/bear-trap#html-0004",
+      "/wiki/whale-manipulation#html-0004",
+      "/wiki/support-and-resistance#html-0004",
+      "/wiki/candlestick-patterns#html-0004",
+      "/wiki/head-and-shoulders#html-0004",
+      "/wiki/double-bottom#html-0004",
+      "/wiki/macd#html-0004",
+      "/wiki/limit-order-vs-market-order#html-0004",
+      "/wiki/stop-loss-hunting#html-0004",
+      "/wiki/leverage-trading#html-0004",
+      "/wiki/fomo#html-0004",
+      "/wiki/fud#html-0004",
+      "/wiki/hodl-strategy#html-0004",
+      "/wiki/satoshi-nakamoto#html-0004",
+      "/wiki/margin-call#html-0004",
+      "/wiki/liquidation-price#html-0004",
+      "/wiki/dollar-cost-averaging#html-0004",
+      "/wiki/swing-trading#html-0004",
+      "/wiki/day-trading#html-0004",
+      "/wiki/scalping#html-0004",
+      "/wiki/volume-profile#html-0004",
+      "/wiki/vwap#html-0004",
+      "/wiki/ichimoku-cloud#html-0004",
+      "/wiki/elliott-wave-theory#html-0004",
+      "/wiki/wyckoff-method#html-0004",
+      "/wiki/market-maker#html-0004",
+      "/wiki/dark-pool#html-0004",
+      "/wiki/slippage#html-0004",
+      "/wiki/impermanent-loss#html-0004",
+      "/wiki/yield-farming#html-0004",
+      "/wiki/flash-crash#html-0004",
+      "/wiki/circuit-breaker#html-0004",
+      "/wiki/pump-and-dump#html-0004",
+      "/wiki/paper-trading#html-0004",
+      "/wiki/risk-reward-ratio#html-0004",
+      "/wiki/drawdown#html-0004",
+      "/wiki/backtesting#html-0004",
+      "/wiki/correlation-trading#html-0004",
+      "/learn/article/what-is-paper-trading#html-0004",
+      "/learn/article/how-to-read-stock-charts#html-0004",
+      "/learn/article/crypto-vs-stocks#html-0004",
+      "/learn/article/trading-strategies-for-beginners#html-0004",
+      "/learn/article/stock-market-index-etfs#html-0004",
+      "/learn/article/how-to-build-a-portfolio#html-0004",
+      "/learn/article/risk-management-in-trading#html-0004",
+      "/learn/article/market-orders-vs-limit-orders#html-0004",
+      "/learn/article/technical-indicators-rsi-macd-moving-averages#html-0004",
+      "/compare/bitcoin-vs-ethereum#html-0004",
+      "/compare/tesla-vs-nvidia#html-0004",
+      "/compare/bitcoin-vs-gold#html-0004",
+      "/compare/apple-vs-microsoft#html-0004",
+      "/compare/ethereum-vs-solana#html-0004",
+      "/compare/stocks-vs-crypto#html-0004",
+      "/compare/nvidia-vs-amd#html-0004",
+      "/compare/forex-vs-stocks#html-0004",
+      "/compare#html-0004",
+      "/how-to-trade/btc#html-0004",
+      "/how-to-trade/eth#html-0004",
+      "/how-to-trade/tsla#html-0004",
+      "/how-to-trade/nvda#html-0004",
+      "/how-to-trade/spy#html-0004",
+      "/how-to-trade/sol#html-0004",
+      "/how-to-trade#html-0004",
+      "/strategy/scalping#html-0004",
+      "/strategy/swing-trading#html-0004",
+      "/strategy/day-trading#html-0004",
+      "/strategy/dca-dollar-cost-averaging#html-0004",
+      "/strategy/rsi-strategy#html-0004",
+      "/strategy/macd-strategy#html-0004",
+      "/strategy#html-0004",
+      "/courses#html-0004",
+      "/courses/options-trading-fundamentals#html-0004",
+      "/courses/options-trading-fundamentals/what-is-an-option#html-0004",
+      "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega#html-0004",
+      "/courses/options-trading-fundamentals/defined-risk-spreads#html-0004",
+      "/courses/options-trading-fundamentals/implied-volatility-and-earnings#html-0004",
+      "/courses/options-trading-fundamentals/options-risk-management#html-0004",
+      "/courses/futures-and-derivatives#html-0004",
+      "/courses/futures-and-derivatives/what-is-a-futures-contract#html-0004",
+      "/courses/futures-and-derivatives/margin-and-leverage-in-futures#html-0004",
+      "/courses/futures-and-derivatives/contango-and-backwardation#html-0004",
+      "/courses/futures-and-derivatives/hedging-with-futures#html-0004",
+      "/courses/futures-and-derivatives/micro-futures-for-beginners#html-0004",
+      "/courses/macro-reading-for-traders#html-0004",
+      "/courses/macro-reading-for-traders/reading-cpi-and-inflation#html-0004",
+      "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle#html-0004",
+      "/courses/macro-reading-for-traders/the-yield-curve-and-recession#html-0004",
+      "/courses/macro-reading-for-traders/the-dollar-index-dxy#html-0004",
+      "/courses/macro-reading-for-traders/putting-macro-signals-together#html-0004",
+      "/courses/trading-psychology-mastery#html-0004",
+      "/courses/trading-psychology-mastery/cognitive-biases-in-trading#html-0004",
+      "/courses/trading-psychology-mastery/revenge-trading-and-tilt#html-0004",
+      "/courses/trading-psychology-mastery/the-trading-journal#html-0004",
+      "/courses/trading-psychology-mastery/discipline-and-daily-rituals#html-0004",
+      "/courses/trading-psychology-mastery/handling-drawdowns#html-0004",
+      "/learn/country#html-0004",
+      "/learn/country/sri-lanka#html-0004",
+      "/learn/country/india#html-0004",
+      "/learn/country/philippines#html-0004",
+      "/learn/country/pakistan#html-0004",
+      "/learn/country/nigeria#html-0004"
+    ]
+  },
+  {
+    "group": 3,
+    "text": "References and related pages",
+    "ids": [
+      "/#html-0034",
+      "/trade#html-0022",
+      "/markets#html-0027",
+      "/portfolio#html-0024",
+      "/start#html-0017",
+      "/learn#html-0025",
+      "/learn-trading-guide#html-0029",
+      "/ai-mentor#html-0025",
+      "/daily#html-0028",
+      "/practice#html-0023",
+      "/newsletter#html-0019",
+      "/whats-new#html-0021",
+      "/roadmap#html-0022",
+      "/about#html-0026",
+      "/contact#html-0026",
+      "/privacy#html-0047",
+      "/terms#html-0025",
+      "/trade/btc#html-0031",
+      "/trade/eth#html-0030",
+      "/trade/sol#html-0029",
+      "/trade/bnb#html-0030",
+      "/trade/xrp#html-0030",
+      "/trade/aapl#html-0030",
+      "/trade/msft#html-0030",
+      "/trade/googl#html-0030",
+      "/trade/amzn#html-0030",
+      "/trade/nvda#html-0030",
+      "/trade/tsla#html-0030",
+      "/trade/meta#html-0030",
+      "/trade/spy#html-0030",
+      "/trade/qqq#html-0030",
+      "/trade/eurusd#html-0030",
+      "/trade/gbpusd#html-0030",
+      "/trade/gold#html-0030",
+      "/trade/oil#html-0031",
+      "/wiki#html-0025",
+      "/wiki/short-squeeze#html-0018",
+      "/wiki/golden-cross#html-0018",
+      "/wiki/death-cross#html-0018",
+      "/wiki/liquidation-cascade#html-0018",
+      "/wiki/fibonacci-retracement#html-0017",
+      "/wiki/rsi-divergence#html-0017",
+      "/wiki/macd-histogram#html-0017",
+      "/wiki/bollinger-band-squeeze#html-0017",
+      "/wiki/order-block#html-0017",
+      "/wiki/fair-value-gap#html-0018",
+      "/wiki/bull-trap#html-0018",
+      "/wiki/bear-trap#html-0017",
+      "/wiki/whale-manipulation#html-0018",
+      "/wiki/support-and-resistance#html-0018",
+      "/wiki/candlestick-patterns#html-0017",
+      "/wiki/head-and-shoulders#html-0020",
+      "/wiki/double-bottom#html-0019",
+      "/wiki/macd#html-0017",
+      "/wiki/limit-order-vs-market-order#html-0018",
+      "/wiki/stop-loss-hunting#html-0020",
+      "/wiki/leverage-trading#html-0019",
+      "/wiki/fomo#html-0017",
+      "/wiki/fud#html-0017",
+      "/wiki/hodl-strategy#html-0017",
+      "/wiki/satoshi-nakamoto#html-0017",
+      "/wiki/margin-call#html-0018",
+      "/wiki/liquidation-price#html-0018",
+      "/wiki/dollar-cost-averaging#html-0019",
+      "/wiki/swing-trading#html-0018",
+      "/wiki/day-trading#html-0018",
+      "/wiki/scalping#html-0017",
+      "/wiki/volume-profile#html-0017",
+      "/wiki/vwap#html-0018",
+      "/wiki/ichimoku-cloud#html-0019",
+      "/wiki/elliott-wave-theory#html-0018",
+      "/wiki/wyckoff-method#html-0018",
+      "/wiki/market-maker#html-0018",
+      "/wiki/dark-pool#html-0018",
+      "/wiki/slippage#html-0018",
+      "/wiki/impermanent-loss#html-0018",
+      "/wiki/yield-farming#html-0018",
+      "/wiki/flash-crash#html-0017",
+      "/wiki/circuit-breaker#html-0018",
+      "/wiki/pump-and-dump#html-0018",
+      "/wiki/paper-trading#html-0018",
+      "/wiki/risk-reward-ratio#html-0019",
+      "/wiki/drawdown#html-0017",
+      "/wiki/backtesting#html-0018",
+      "/wiki/correlation-trading#html-0018",
+      "/learn/article/what-is-paper-trading#html-0023",
+      "/learn/article/how-to-read-stock-charts#html-0023",
+      "/learn/article/crypto-vs-stocks#html-0023",
+      "/learn/article/trading-strategies-for-beginners#html-0024",
+      "/learn/article/stock-market-index-etfs#html-0023",
+      "/learn/article/how-to-build-a-portfolio#html-0023",
+      "/learn/article/risk-management-in-trading#html-0023",
+      "/learn/article/market-orders-vs-limit-orders#html-0023",
+      "/learn/article/technical-indicators-rsi-macd-moving-averages#html-0023",
+      "/compare/bitcoin-vs-ethereum#html-0021",
+      "/compare/tesla-vs-nvidia#html-0021",
+      "/compare/bitcoin-vs-gold#html-0021",
+      "/compare/apple-vs-microsoft#html-0021",
+      "/compare/ethereum-vs-solana#html-0021",
+      "/compare/stocks-vs-crypto#html-0021",
+      "/compare/nvidia-vs-amd#html-0021",
+      "/compare/forex-vs-stocks#html-0021",
+      "/compare#html-0028",
+      "/how-to-trade/btc#html-0032",
+      "/how-to-trade/eth#html-0032",
+      "/how-to-trade/tsla#html-0032",
+      "/how-to-trade/nvda#html-0032",
+      "/how-to-trade/spy#html-0032",
+      "/how-to-trade/sol#html-0032",
+      "/how-to-trade#html-0022",
+      "/strategy/scalping#html-0030",
+      "/strategy/swing-trading#html-0030",
+      "/strategy/day-trading#html-0030",
+      "/strategy/dca-dollar-cost-averaging#html-0031",
+      "/strategy/rsi-strategy#html-0030",
+      "/strategy/macd-strategy#html-0030",
+      "/strategy#html-0027",
+      "/courses#html-0040",
+      "/courses/options-trading-fundamentals#html-0028",
+      "/courses/options-trading-fundamentals/what-is-an-option#html-0034",
+      "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega#html-0036",
+      "/courses/options-trading-fundamentals/defined-risk-spreads#html-0036",
+      "/courses/options-trading-fundamentals/implied-volatility-and-earnings#html-0033",
+      "/courses/options-trading-fundamentals/options-risk-management#html-0033",
+      "/courses/futures-and-derivatives#html-0028",
+      "/courses/futures-and-derivatives/what-is-a-futures-contract#html-0033",
+      "/courses/futures-and-derivatives/margin-and-leverage-in-futures#html-0031",
+      "/courses/futures-and-derivatives/contango-and-backwardation#html-0034",
+      "/courses/futures-and-derivatives/hedging-with-futures#html-0031",
+      "/courses/futures-and-derivatives/micro-futures-for-beginners#html-0031",
+      "/courses/macro-reading-for-traders#html-0028",
+      "/courses/macro-reading-for-traders/reading-cpi-and-inflation#html-0034",
+      "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle#html-0035",
+      "/courses/macro-reading-for-traders/the-yield-curve-and-recession#html-0032",
+      "/courses/macro-reading-for-traders/the-dollar-index-dxy#html-0037",
+      "/courses/macro-reading-for-traders/putting-macro-signals-together#html-0035",
+      "/courses/trading-psychology-mastery#html-0028",
+      "/courses/trading-psychology-mastery/cognitive-biases-in-trading#html-0035",
+      "/courses/trading-psychology-mastery/revenge-trading-and-tilt#html-0034",
+      "/courses/trading-psychology-mastery/the-trading-journal#html-0037",
+      "/courses/trading-psychology-mastery/discipline-and-daily-rituals#html-0037",
+      "/courses/trading-psychology-mastery/handling-drawdowns#html-0037",
+      "/learn/country#html-0025",
+      "/learn/country/sri-lanka#html-0034",
+      "/learn/country/india#html-0034",
+      "/learn/country/philippines#html-0033",
+      "/learn/country/pakistan#html-0033",
+      "/learn/country/nigeria#html-0033"
+    ]
+  },
+  {
+    "group": 4,
+    "text": "Educational simulation only \u2014 not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+    "ids": [
+      "/#html-0041",
+      "/trade#html-0027",
+      "/markets#html-0032",
+      "/portfolio#html-0028",
+      "/start#html-0025",
+      "/learn#html-0030",
+      "/learn-trading-guide#html-0034",
+      "/ai-mentor#html-0029",
+      "/daily#html-0032",
+      "/practice#html-0029",
+      "/newsletter#html-0025",
+      "/whats-new#html-0030",
+      "/roadmap#html-0026",
+      "/about#html-0031",
+      "/contact#html-0032",
+      "/privacy#html-0056",
+      "/terms#html-0029",
+      "/trade/btc#html-0037",
+      "/trade/eth#html-0036",
+      "/trade/sol#html-0035",
+      "/trade/bnb#html-0035",
+      "/trade/xrp#html-0035",
+      "/trade/aapl#html-0035",
+      "/trade/msft#html-0035",
+      "/trade/googl#html-0035",
+      "/trade/amzn#html-0035",
+      "/trade/nvda#html-0036",
+      "/trade/tsla#html-0036",
+      "/trade/meta#html-0035",
+      "/trade/spy#html-0036",
+      "/trade/qqq#html-0035",
+      "/trade/eurusd#html-0035",
+      "/trade/gbpusd#html-0035",
+      "/trade/gold#html-0035",
+      "/trade/oil#html-0036",
+      "/wiki#html-0075",
+      "/wiki/short-squeeze#html-0028",
+      "/wiki/golden-cross#html-0026",
+      "/wiki/death-cross#html-0026",
+      "/wiki/liquidation-cascade#html-0026",
+      "/wiki/fibonacci-retracement#html-0026",
+      "/wiki/rsi-divergence#html-0025",
+      "/wiki/macd-histogram#html-0025",
+      "/wiki/bollinger-band-squeeze#html-0026",
+      "/wiki/order-block#html-0026",
+      "/wiki/fair-value-gap#html-0027",
+      "/wiki/bull-trap#html-0026",
+      "/wiki/bear-trap#html-0026",
+      "/wiki/whale-manipulation#html-0027",
+      "/wiki/support-and-resistance#html-0026",
+      "/wiki/candlestick-patterns#html-0025",
+      "/wiki/head-and-shoulders#html-0028",
+      "/wiki/double-bottom#html-0027",
+      "/wiki/macd#html-0025",
+      "/wiki/limit-order-vs-market-order#html-0026",
+      "/wiki/stop-loss-hunting#html-0028",
+      "/wiki/leverage-trading#html-0028",
+      "/wiki/fomo#html-0026",
+      "/wiki/fud#html-0026",
+      "/wiki/hodl-strategy#html-0027",
+      "/wiki/satoshi-nakamoto#html-0026",
+      "/wiki/margin-call#html-0026",
+      "/wiki/liquidation-price#html-0027",
+      "/wiki/dollar-cost-averaging#html-0027",
+      "/wiki/swing-trading#html-0026",
+      "/wiki/day-trading#html-0028",
+      "/wiki/scalping#html-0025",
+      "/wiki/volume-profile#html-0025",
+      "/wiki/vwap#html-0026",
+      "/wiki/ichimoku-cloud#html-0027",
+      "/wiki/elliott-wave-theory#html-0027",
+      "/wiki/wyckoff-method#html-0027",
+      "/wiki/market-maker#html-0026",
+      "/wiki/dark-pool#html-0027",
+      "/wiki/slippage#html-0026",
+      "/wiki/impermanent-loss#html-0026",
+      "/wiki/yield-farming#html-0026",
+      "/wiki/flash-crash#html-0026",
+      "/wiki/circuit-breaker#html-0028",
+      "/wiki/pump-and-dump#html-0028",
+      "/wiki/paper-trading#html-0026",
+      "/wiki/risk-reward-ratio#html-0027",
+      "/wiki/drawdown#html-0026",
+      "/wiki/backtesting#html-0027",
+      "/wiki/correlation-trading#html-0027",
+      "/learn/article/what-is-paper-trading#html-0032",
+      "/learn/article/how-to-read-stock-charts#html-0031",
+      "/learn/article/crypto-vs-stocks#html-0034",
+      "/learn/article/trading-strategies-for-beginners#html-0033",
+      "/learn/article/stock-market-index-etfs#html-0037",
+      "/learn/article/how-to-build-a-portfolio#html-0032",
+      "/learn/article/risk-management-in-trading#html-0032",
+      "/learn/article/market-orders-vs-limit-orders#html-0032",
+      "/learn/article/technical-indicators-rsi-macd-moving-averages#html-0034",
+      "/compare/bitcoin-vs-ethereum#html-0027",
+      "/compare/tesla-vs-nvidia#html-0027",
+      "/compare/bitcoin-vs-gold#html-0027",
+      "/compare/apple-vs-microsoft#html-0027",
+      "/compare/ethereum-vs-solana#html-0027",
+      "/compare/stocks-vs-crypto#html-0027",
+      "/compare/nvidia-vs-amd#html-0029",
+      "/compare/forex-vs-stocks#html-0027",
+      "/compare#html-0037",
+      "/how-to-trade/btc#html-0037",
+      "/how-to-trade/eth#html-0038",
+      "/how-to-trade/tsla#html-0037",
+      "/how-to-trade/nvda#html-0037",
+      "/how-to-trade/spy#html-0037",
+      "/how-to-trade/sol#html-0038",
+      "/how-to-trade#html-0029",
+      "/strategy/scalping#html-0035",
+      "/strategy/swing-trading#html-0035",
+      "/strategy/day-trading#html-0035",
+      "/strategy/dca-dollar-cost-averaging#html-0036",
+      "/strategy/rsi-strategy#html-0035",
+      "/strategy/macd-strategy#html-0035",
+      "/strategy#html-0034",
+      "/courses#html-0045",
+      "/courses/options-trading-fundamentals#html-0035",
+      "/courses/options-trading-fundamentals/what-is-an-option#html-0041",
+      "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega#html-0045",
+      "/courses/options-trading-fundamentals/defined-risk-spreads#html-0044",
+      "/courses/options-trading-fundamentals/implied-volatility-and-earnings#html-0040",
+      "/courses/options-trading-fundamentals/options-risk-management#html-0039",
+      "/courses/futures-and-derivatives#html-0035",
+      "/courses/futures-and-derivatives/what-is-a-futures-contract#html-0041",
+      "/courses/futures-and-derivatives/margin-and-leverage-in-futures#html-0038",
+      "/courses/futures-and-derivatives/contango-and-backwardation#html-0042",
+      "/courses/futures-and-derivatives/hedging-with-futures#html-0038",
+      "/courses/futures-and-derivatives/micro-futures-for-beginners#html-0037",
+      "/courses/macro-reading-for-traders#html-0035",
+      "/courses/macro-reading-for-traders/reading-cpi-and-inflation#html-0043",
+      "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle#html-0044",
+      "/courses/macro-reading-for-traders/the-yield-curve-and-recession#html-0040",
+      "/courses/macro-reading-for-traders/the-dollar-index-dxy#html-0046",
+      "/courses/macro-reading-for-traders/putting-macro-signals-together#html-0043",
+      "/courses/trading-psychology-mastery#html-0035",
+      "/courses/trading-psychology-mastery/cognitive-biases-in-trading#html-0041",
+      "/courses/trading-psychology-mastery/revenge-trading-and-tilt#html-0042",
+      "/courses/trading-psychology-mastery/the-trading-journal#html-0044",
+      "/courses/trading-psychology-mastery/discipline-and-daily-rituals#html-0044",
+      "/courses/trading-psychology-mastery/handling-drawdowns#html-0043",
+      "/learn/country#html-0031",
+      "/learn/country/sri-lanka#html-0039",
+      "/learn/country/india#html-0041",
+      "/learn/country/philippines#html-0039",
+      "/learn/country/pakistan#html-0039",
+      "/learn/country/nigeria#html-0039"
+    ]
+  },
+  {
+    "group": 5,
+    "text": "Learning notes: Paper Trade 170 Assets",
+    "ids": [
+      "/trade#html-0002"
+    ]
+  },
+  {
+    "group": 6,
+    "text": "Learning notes: Markets Overview",
+    "ids": [
+      "/markets#html-0002"
+    ]
+  },
+  {
+    "group": 7,
+    "text": "Learning notes: Practice Portfolio",
+    "ids": [
+      "/portfolio#html-0002"
+    ]
+  },
+  {
+    "group": 8,
+    "text": "Learning notes: Your First Virtual Trade, Explained",
+    "ids": [
+      "/start#html-0002"
+    ]
+  },
+  {
+    "group": 9,
+    "text": "Learning notes: Learn to Trade",
+    "ids": [
+      "/learn#html-0002"
+    ]
+  },
+  {
+    "group": 10,
+    "text": "Learning notes: Beginner Trading Practice Guide",
+    "ids": [
+      "/learn-trading-guide#html-0002"
+    ]
+  },
+  {
+    "group": 11,
+    "text": "Learning notes: Trading Mentor \u2014 Curated Knowledge",
+    "ids": [
+      "/ai-mentor#html-0002"
+    ]
+  },
+  {
+    "group": 12,
+    "text": "Learning notes: Daily Trading Challenge",
+    "ids": [
+      "/daily#html-0002"
+    ]
+  },
+  {
+    "group": 13,
+    "text": "Learning notes: TradeHQ Practice Arena",
+    "ids": [
+      "/practice#html-0002"
+    ]
+  },
+  {
+    "group": 14,
+    "text": "Learning notes: TradeHQ Newsletter",
+    "ids": [
+      "/newsletter#html-0002"
+    ]
+  },
+  {
+    "group": 15,
+    "text": "Learning notes: What\u2019s New",
+    "ids": [
+      "/whats-new#html-0002"
+    ]
+  },
+  {
+    "group": 16,
+    "text": "Learning notes: TradeHQ Roadmap",
+    "ids": [
+      "/roadmap#html-0002"
+    ]
+  },
+  {
+    "group": 17,
+    "text": "Learning notes: About TradeHQ",
+    "ids": [
+      "/about#html-0002"
+    ]
+  },
+  {
+    "group": 18,
+    "text": "Learning notes: Contact TradeHQ",
+    "ids": [
+      "/contact#html-0002"
+    ]
+  },
+  {
+    "group": 19,
+    "text": "Learning notes: Privacy Policy",
+    "ids": [
+      "/privacy#html-0002"
+    ]
+  },
+  {
+    "group": 20,
+    "text": "Learning notes: Terms of Service",
+    "ids": [
+      "/terms#html-0002"
+    ]
+  },
+  {
+    "group": 21,
+    "text": "Learning notes: Bitcoin Trading Simulator \u2014 Free Virtual Practice",
+    "ids": [
+      "/trade/btc#html-0002"
+    ]
+  },
+  {
+    "group": 22,
+    "text": "Learning notes: Paper Trade Ethereum (ETH)",
+    "ids": [
+      "/trade/eth#html-0002"
+    ]
+  },
+  {
+    "group": 23,
+    "text": "Learning notes: Paper Trade Solana (SOL)",
+    "ids": [
+      "/trade/sol#html-0002"
+    ]
+  },
+  {
+    "group": 24,
+    "text": "Learning notes: Paper Trade BNB (BNB)",
+    "ids": [
+      "/trade/bnb#html-0002"
+    ]
+  },
+  {
+    "group": 25,
+    "text": "Learning notes: Paper Trade XRP (XRP)",
+    "ids": [
+      "/trade/xrp#html-0002"
+    ]
+  },
+  {
+    "group": 26,
+    "text": "Learning notes: Paper Trade Apple Inc. (AAPL)",
+    "ids": [
+      "/trade/aapl#html-0002"
+    ]
+  },
+  {
+    "group": 27,
+    "text": "Learning notes: Paper Trade Microsoft Corporation (MSFT)",
+    "ids": [
+      "/trade/msft#html-0002"
+    ]
+  },
+  {
+    "group": 28,
+    "text": "Learning notes: Paper Trade Alphabet Inc. (GOOGL)",
+    "ids": [
+      "/trade/googl#html-0002"
+    ]
+  },
+  {
+    "group": 29,
+    "text": "Learning notes: Paper Trade Amazon.com Inc. (AMZN)",
+    "ids": [
+      "/trade/amzn#html-0002"
+    ]
+  },
+  {
+    "group": 30,
+    "text": "Learning notes: Paper Trade NVIDIA Corporation (NVDA)",
+    "ids": [
+      "/trade/nvda#html-0002"
+    ]
+  },
+  {
+    "group": 31,
+    "text": "Learning notes: Paper Trade Tesla Inc. (TSLA)",
+    "ids": [
+      "/trade/tsla#html-0002"
+    ]
+  },
+  {
+    "group": 32,
+    "text": "Learning notes: Paper Trade Meta Platforms Inc. (META)",
+    "ids": [
+      "/trade/meta#html-0002"
+    ]
+  },
+  {
+    "group": 33,
+    "text": "Learning notes: Paper Trade SPDR S&P 500 ETF (SPY)",
+    "ids": [
+      "/trade/spy#html-0002"
+    ]
+  },
+  {
+    "group": 34,
+    "text": "Learning notes: Paper Trade Invesco QQQ Trust (QQQ)",
+    "ids": [
+      "/trade/qqq#html-0002"
+    ]
+  },
+  {
+    "group": 35,
+    "text": "Learning notes: Paper Trade Euro / US Dollar (EUR/USD)",
+    "ids": [
+      "/trade/eurusd#html-0002"
+    ]
+  },
+  {
+    "group": 36,
+    "text": "Learning notes: Paper Trade British Pound / US Dollar (GBP/USD)",
+    "ids": [
+      "/trade/gbpusd#html-0002"
+    ]
+  },
+  {
+    "group": 37,
+    "text": "Learning notes: Paper Trade Gold (XAU)",
+    "ids": [
+      "/trade/gold#html-0002"
+    ]
+  },
+  {
+    "group": 38,
+    "text": "Learning notes: Paper Trade Crude Oil WTI (WTI)",
+    "ids": [
+      "/trade/oil#html-0002"
+    ]
+  },
+  {
+    "group": 39,
+    "text": "Learning notes: Trading Glossary",
+    "ids": [
+      "/wiki#html-0002"
+    ]
+  },
+  {
+    "group": 40,
+    "text": "Learning notes: Short Squeeze \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/short-squeeze#html-0002"
+    ]
+  },
+  {
+    "group": 41,
+    "text": "Learning notes: Golden Cross \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/golden-cross#html-0002"
+    ]
+  },
+  {
+    "group": 42,
+    "text": "Learning notes: Death Cross \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/death-cross#html-0002"
+    ]
+  },
+  {
+    "group": 43,
+    "text": "Learning notes: Liquidation Cascade \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/liquidation-cascade#html-0002"
+    ]
+  },
+  {
+    "group": 44,
+    "text": "Learning notes: Fibonacci Retracement \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/fibonacci-retracement#html-0002"
+    ]
+  },
+  {
+    "group": 45,
+    "text": "Learning notes: RSI Divergence \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/rsi-divergence#html-0002"
+    ]
+  },
+  {
+    "group": 46,
+    "text": "Learning notes: MACD Histogram \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/macd-histogram#html-0002"
+    ]
+  },
+  {
+    "group": 47,
+    "text": "Learning notes: Bollinger Band Squeeze \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/bollinger-band-squeeze#html-0002"
+    ]
+  },
+  {
+    "group": 48,
+    "text": "Learning notes: Order Block \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/order-block#html-0002"
+    ]
+  },
+  {
+    "group": 49,
+    "text": "Learning notes: Fair Value Gap (FVG) \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/fair-value-gap#html-0002"
+    ]
+  },
+  {
+    "group": 50,
+    "text": "Learning notes: Bull Trap \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/bull-trap#html-0002"
+    ]
+  },
+  {
+    "group": 51,
+    "text": "Learning notes: Bear Trap \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/bear-trap#html-0002"
+    ]
+  },
+  {
+    "group": 52,
+    "text": "Learning notes: Whale Manipulation \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/whale-manipulation#html-0002"
+    ]
+  },
+  {
+    "group": 53,
+    "text": "Learning notes: Support and Resistance \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/support-and-resistance#html-0002"
+    ]
+  },
+  {
+    "group": 54,
+    "text": "Learning notes: Candlestick Patterns \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/candlestick-patterns#html-0002"
+    ]
+  },
+  {
+    "group": 55,
+    "text": "Learning notes: Head and Shoulders \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/head-and-shoulders#html-0002"
+    ]
+  },
+  {
+    "group": 56,
+    "text": "Learning notes: Double Bottom \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/double-bottom#html-0002"
+    ]
+  },
+  {
+    "group": 57,
+    "text": "Volume characteristics provide context but do not establish predictive reliability. Some descriptions compare volume during the two declines and the neckline break. Lower reported volume is an observation, not proof of reduced selling conviction or a future rebound. A volume observation does not establish a measured breakout failure rate. RSI divergence is another description of the selected historical data, not evidence of a dramatically higher success rate. If the RSI makes a higher low while price makes an equal or lower low at the second bottom, the oscillator records a smaller decline in its selected inputs; this does not validate a subsequent reversal.",
+    "ids": [
+      "/wiki/double-bottom#html-0010"
+    ]
+  },
+  {
+    "group": 58,
+    "text": "Learning notes: Moving Average Convergence Divergence \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/macd#html-0002"
+    ]
+  },
+  {
+    "group": 59,
+    "text": "Learning notes: Limit Order vs Market Order \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/limit-order-vs-market-order#html-0002"
+    ]
+  },
+  {
+    "group": 60,
+    "text": "Learning notes: Stop Loss Hunting \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/stop-loss-hunting#html-0002"
+    ]
+  },
+  {
+    "group": 61,
+    "text": "Learning notes: Leverage Trading \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/leverage-trading#html-0002"
+    ]
+  },
+  {
+    "group": 62,
+    "text": "Learning notes: FOMO (Fear of Missing Out) \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/fomo#html-0002"
+    ]
+  },
+  {
+    "group": 63,
+    "text": "Learning notes: FUD (Fear, Uncertainty, Doubt) \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/fud#html-0002"
+    ]
+  },
+  {
+    "group": 64,
+    "text": "Learning notes: HODL Strategy \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/hodl-strategy#html-0002"
+    ]
+  },
+  {
+    "group": 65,
+    "text": "Learning notes: Satoshi Nakamoto \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/satoshi-nakamoto#html-0002"
+    ]
+  },
+  {
+    "group": 66,
+    "text": "Learning notes: Margin Call \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/margin-call#html-0002"
+    ]
+  },
+  {
+    "group": 67,
+    "text": "Learning notes: Liquidation Price \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/liquidation-price#html-0002"
+    ]
+  },
+  {
+    "group": 68,
+    "text": "Learning notes: Dollar Cost Averaging \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/dollar-cost-averaging#html-0002"
+    ]
+  },
+  {
+    "group": 69,
+    "text": "Learning notes: Swing Trading \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/swing-trading#html-0002"
+    ]
+  },
+  {
+    "group": 70,
+    "text": "Learning notes: Day Trading \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/day-trading#html-0002"
+    ]
+  },
+  {
+    "group": 71,
+    "text": "Learning notes: Scalping \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/scalping#html-0002"
+    ]
+  },
+  {
+    "group": 72,
+    "text": "Learning notes: Volume Profile \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/volume-profile#html-0002"
+    ]
+  },
+  {
+    "group": 73,
+    "text": "Learning notes: VWAP \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/vwap#html-0002"
+    ]
+  },
+  {
+    "group": 74,
+    "text": "Learning notes: Ichimoku Cloud \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/ichimoku-cloud#html-0002"
+    ]
+  },
+  {
+    "group": 75,
+    "text": "Learning notes: Elliott Wave Theory \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/elliott-wave-theory#html-0002"
+    ]
+  },
+  {
+    "group": 76,
+    "text": "Learning notes: Wyckoff Method \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/wyckoff-method#html-0002"
+    ]
+  },
+  {
+    "group": 77,
+    "text": "Learning notes: Market Maker \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/market-maker#html-0002"
+    ]
+  },
+  {
+    "group": 78,
+    "text": "Learning notes: Dark Pool \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/dark-pool#html-0002"
+    ]
+  },
+  {
+    "group": 79,
+    "text": "Learning notes: Slippage \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/slippage#html-0002"
+    ]
+  },
+  {
+    "group": 80,
+    "text": "Learning notes: Impermanent Loss \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/impermanent-loss#html-0002"
+    ]
+  },
+  {
+    "group": 81,
+    "text": "Learning notes: Yield Farming \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/yield-farming#html-0002"
+    ]
+  },
+  {
+    "group": 82,
+    "text": "Learning notes: Flash Crash \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/flash-crash#html-0002"
+    ]
+  },
+  {
+    "group": 83,
+    "text": "Learning notes: Circuit Breaker \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/circuit-breaker#html-0002"
+    ]
+  },
+  {
+    "group": 84,
+    "text": "Learning notes: Pump and Dump \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/pump-and-dump#html-0002"
+    ]
+  },
+  {
+    "group": 85,
+    "text": "Learning notes: Paper Trading \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/paper-trading#html-0002"
+    ]
+  },
+  {
+    "group": 86,
+    "text": "Learning notes: Risk-Reward Ratio \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/risk-reward-ratio#html-0002"
+    ]
+  },
+  {
+    "group": 87,
+    "text": "Learning notes: Drawdown \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/drawdown#html-0002"
+    ]
+  },
+  {
+    "group": 88,
+    "text": "Learning notes: Backtesting \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/backtesting#html-0002"
+    ]
+  },
+  {
+    "group": 89,
+    "text": "Learning notes: Correlation Trading \u2014 Trading Wiki",
+    "ids": [
+      "/wiki/correlation-trading#html-0002"
+    ]
+  },
+  {
+    "group": 90,
+    "text": "Learning notes: What Is Paper Trading? Practice, Uses and Limitations",
+    "ids": [
+      "/learn/article/what-is-paper-trading#html-0002"
+    ]
+  },
+  {
+    "group": 91,
+    "text": "Learning notes: How to Read a Stock Chart: A Beginner's Guide",
+    "ids": [
+      "/learn/article/how-to-read-stock-charts#html-0002"
+    ]
+  },
+  {
+    "group": 92,
+    "text": "Learning notes: Crypto vs Stocks: Which Should You Practice Trading First?",
+    "ids": [
+      "/learn/article/crypto-vs-stocks#html-0002"
+    ]
+  },
+  {
+    "group": 93,
+    "text": "Learning notes: 5 Trading Strategy Hypotheses to Study with Virtual Cash",
+    "ids": [
+      "/learn/article/trading-strategies-for-beginners#html-0002"
+    ]
+  },
+  {
+    "group": 94,
+    "text": "Learning notes: What Is a Stock Market Index and How Do ETFs Work?",
+    "ids": [
+      "/learn/article/stock-market-index-etfs#html-0002"
+    ]
+  },
+  {
+    "group": 95,
+    "text": "Learning notes: How to Build a Balanced Virtual Portfolio from Scratch",
+    "ids": [
+      "/learn/article/how-to-build-a-portfolio#html-0002"
+    ]
+  },
+  {
+    "group": 96,
+    "text": "Learning notes: Risk Management for Paper Trading: Risk Budgets and Exits",
+    "ids": [
+      "/learn/article/risk-management-in-trading#html-0002"
+    ]
+  },
+  {
+    "group": 97,
+    "text": "Learning notes: Market Orders vs Limit Orders: Price Control and Execution Uncertainty",
+    "ids": [
+      "/learn/article/market-orders-vs-limit-orders#html-0002"
+    ]
+  },
+  {
+    "group": 98,
+    "text": "Learning notes: Technical Indicators Explained: RSI, MACD and Moving Averages",
+    "ids": [
+      "/learn/article/technical-indicators-rsi-macd-moving-averages#html-0002"
+    ]
+  },
+  {
+    "group": 99,
+    "text": "Learning notes: Bitcoin vs Ethereum",
+    "ids": [
+      "/compare/bitcoin-vs-ethereum#html-0002"
+    ]
+  },
+  {
+    "group": 100,
+    "text": "Learning notes: Tesla vs Nvidia",
+    "ids": [
+      "/compare/tesla-vs-nvidia#html-0002"
+    ]
+  },
+  {
+    "group": 101,
+    "text": "Learning notes: Bitcoin vs Gold",
+    "ids": [
+      "/compare/bitcoin-vs-gold#html-0002"
+    ]
+  },
+  {
+    "group": 102,
+    "text": "Learning notes: Apple vs Microsoft",
+    "ids": [
+      "/compare/apple-vs-microsoft#html-0002"
+    ]
+  },
+  {
+    "group": 103,
+    "text": "Learning notes: Ethereum vs Solana",
+    "ids": [
+      "/compare/ethereum-vs-solana#html-0002"
+    ]
+  },
+  {
+    "group": 104,
+    "text": "Learning notes: Stocks vs Crypto",
+    "ids": [
+      "/compare/stocks-vs-crypto#html-0002"
+    ]
+  },
+  {
+    "group": 105,
+    "text": "Learning notes: Nvidia vs Amd",
+    "ids": [
+      "/compare/nvidia-vs-amd#html-0002"
+    ]
+  },
+  {
+    "group": 106,
+    "text": "Learning notes: Forex vs Stocks",
+    "ids": [
+      "/compare/forex-vs-stocks#html-0002"
+    ]
+  },
+  {
+    "group": 107,
+    "text": "Learning notes: Compare Assets",
+    "ids": [
+      "/compare#html-0002"
+    ]
+  },
+  {
+    "group": 108,
+    "text": "Learning notes: Learn Bitcoin \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/btc#html-0002"
+    ]
+  },
+  {
+    "group": 109,
+    "text": "Learning notes: Learn Ethereum \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/eth#html-0002"
+    ]
+  },
+  {
+    "group": 110,
+    "text": "Learning notes: Learn Tesla \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/tsla#html-0002"
+    ]
+  },
+  {
+    "group": 111,
+    "text": "Learning notes: Learn Nvidia \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/nvda#html-0002"
+    ]
+  },
+  {
+    "group": 112,
+    "text": "Learning notes: Learn S&P 500 ETF \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/spy#html-0002"
+    ]
+  },
+  {
+    "group": 113,
+    "text": "Learning notes: Learn Solana \u2014 Virtual Practice",
+    "ids": [
+      "/how-to-trade/sol#html-0002"
+    ]
+  },
+  {
+    "group": 114,
+    "text": "Learning notes: Asset Learning Guides",
+    "ids": [
+      "/how-to-trade#html-0002"
+    ]
+  },
+  {
+    "group": 115,
+    "text": "Learning notes: Scalping",
+    "ids": [
+      "/strategy/scalping#html-0002"
+    ]
+  },
+  {
+    "group": 116,
+    "text": "Learning notes: Swing Trading",
+    "ids": [
+      "/strategy/swing-trading#html-0002"
+    ]
+  },
+  {
+    "group": 117,
+    "text": "Learning notes: Day Trading",
+    "ids": [
+      "/strategy/day-trading#html-0002"
+    ]
+  },
+  {
+    "group": 118,
+    "text": "Learning notes: Dollar-Cost Averaging (DCA)",
+    "ids": [
+      "/strategy/dca-dollar-cost-averaging#html-0002"
+    ]
+  },
+  {
+    "group": 119,
+    "text": "Learning notes: RSI Mean-Reversion",
+    "ids": [
+      "/strategy/rsi-strategy#html-0002"
+    ]
+  },
+  {
+    "group": 120,
+    "text": "Learning notes: MACD Crossover",
+    "ids": [
+      "/strategy/macd-strategy#html-0002"
+    ]
+  },
+  {
+    "group": 121,
+    "text": "Learning notes: Trading Strategies",
+    "ids": [
+      "/strategy#html-0002"
+    ]
+  },
+  {
+    "group": 122,
+    "text": "Learning notes: Structured Trading Courses",
+    "ids": [
+      "/courses#html-0002"
+    ]
+  },
+  {
+    "group": 123,
+    "text": "Learning notes: Options Trading Fundamentals",
+    "ids": [
+      "/courses/options-trading-fundamentals#html-0002"
+    ]
+  },
+  {
+    "group": 124,
+    "text": "Learning notes: What Is an Option? Calls & Puts Explained",
+    "ids": [
+      "/courses/options-trading-fundamentals/what-is-an-option#html-0002"
+    ]
+  },
+  {
+    "group": 125,
+    "text": "Learning notes: The Greeks \u2014 Delta, Gamma, Theta & Vega",
+    "ids": [
+      "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega#html-0002"
+    ]
+  },
+  {
+    "group": 126,
+    "text": "Learning notes: Defined-Risk Spreads \u2014 Verticals & Iron Condors",
+    "ids": [
+      "/courses/options-trading-fundamentals/defined-risk-spreads#html-0002"
+    ]
+  },
+  {
+    "group": 127,
+    "text": "Learning notes: Implied Volatility & Trading Around Earnings",
+    "ids": [
+      "/courses/options-trading-fundamentals/implied-volatility-and-earnings#html-0002"
+    ]
+  },
+  {
+    "group": 128,
+    "text": "Learning notes: Options Risk Management \u2014 Sizing, Rolling & Cutting Losses",
+    "ids": [
+      "/courses/options-trading-fundamentals/options-risk-management#html-0002"
+    ]
+  },
+  {
+    "group": 129,
+    "text": "Learning notes: Futures & Derivatives",
+    "ids": [
+      "/courses/futures-and-derivatives#html-0002"
+    ]
+  },
+  {
+    "group": 130,
+    "text": "Learning notes: What Is a Futures Contract?",
+    "ids": [
+      "/courses/futures-and-derivatives/what-is-a-futures-contract#html-0002"
+    ]
+  },
+  {
+    "group": 131,
+    "text": "Learning notes: Margin & Leverage in Futures",
+    "ids": [
+      "/courses/futures-and-derivatives/margin-and-leverage-in-futures#html-0002"
+    ]
+  },
+  {
+    "group": 132,
+    "text": "Learning notes: Contango & Backwardation \u2014 Term Structure Explained",
+    "ids": [
+      "/courses/futures-and-derivatives/contango-and-backwardation#html-0002"
+    ]
+  },
+  {
+    "group": 133,
+    "text": "Learning notes: Hedging with Futures \u2014 The Original Use Case",
+    "ids": [
+      "/courses/futures-and-derivatives/hedging-with-futures#html-0002"
+    ]
+  },
+  {
+    "group": 134,
+    "text": "Learning notes: Micro Futures \u2014 Contract Size and Risk",
+    "ids": [
+      "/courses/futures-and-derivatives/micro-futures-for-beginners#html-0002"
+    ]
+  },
+  {
+    "group": 135,
+    "text": "Learning notes: Macro Reading for Traders",
+    "ids": [
+      "/courses/macro-reading-for-traders#html-0002"
+    ]
+  },
+  {
+    "group": 136,
+    "text": "Learning notes: Reading CPI and Inflation Data",
+    "ids": [
+      "/courses/macro-reading-for-traders/reading-cpi-and-inflation#html-0002"
+    ]
+  },
+  {
+    "group": 137,
+    "text": "Learning notes: The Fed & FOMC Cycle \u2014 How Rates Get Set",
+    "ids": [
+      "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle#html-0002"
+    ]
+  },
+  {
+    "group": 138,
+    "text": "Learning notes: The Yield Curve and Recession-Risk Research",
+    "ids": [
+      "/courses/macro-reading-for-traders/the-yield-curve-and-recession#html-0002"
+    ]
+  },
+  {
+    "group": 139,
+    "text": "Learning notes: The Dollar Index (DXY) \u2014 Reading Currency Context",
+    "ids": [
+      "/courses/macro-reading-for-traders/the-dollar-index-dxy#html-0002"
+    ]
+  },
+  {
+    "group": 140,
+    "text": "Learning notes: Putting It Together \u2014 A Macro Dashboard for Traders",
+    "ids": [
+      "/courses/macro-reading-for-traders/putting-macro-signals-together#html-0002"
+    ]
+  },
+  {
+    "group": 141,
+    "text": "Learning notes: Trading Decisions and Behaviour",
+    "ids": [
+      "/courses/trading-psychology-mastery#html-0002"
+    ]
+  },
+  {
+    "group": 142,
+    "text": "Learning notes: Cognitive Biases in Trading Decisions",
+    "ids": [
+      "/courses/trading-psychology-mastery/cognitive-biases-in-trading#html-0002"
+    ]
+  },
+  {
+    "group": 143,
+    "text": "Learning notes: Revenge Trading & Tilt \u2014 Recognising Unplanned Decisions",
+    "ids": [
+      "/courses/trading-psychology-mastery/revenge-trading-and-tilt#html-0002"
+    ]
+  },
+  {
+    "group": 144,
+    "text": "Learning notes: A Trading Journal: Observations and Limits",
+    "ids": [
+      "/courses/trading-psychology-mastery/the-trading-journal#html-0002"
+    ]
+  },
+  {
+    "group": 145,
+    "text": "Learning notes: Optional Checklists for Practice Sessions",
+    "ids": [
+      "/courses/trading-psychology-mastery/discipline-and-daily-rituals#html-0002"
+    ]
+  },
+  {
+    "group": 146,
+    "text": "Learning notes: Understanding Drawdowns in a Simulation",
+    "ids": [
+      "/courses/trading-psychology-mastery/handling-drawdowns#html-0002"
+    ]
+  },
+  {
+    "group": 147,
+    "text": "Learning notes: Country trading guides",
+    "ids": [
+      "/learn/country#html-0002"
+    ]
+  },
+  {
+    "group": 148,
+    "text": "Learning notes: Learn Trading in Sri Lanka",
+    "ids": [
+      "/learn/country/sri-lanka#html-0002"
+    ]
+  },
+  {
+    "group": 149,
+    "text": "Learning notes: Learn Trading in India",
+    "ids": [
+      "/learn/country/india#html-0002"
+    ]
+  },
+  {
+    "group": 150,
+    "text": "Learning notes: Learn Trading in the Philippines",
+    "ids": [
+      "/learn/country/philippines#html-0002"
+    ]
+  },
+  {
+    "group": 151,
+    "text": "Learning notes: Learn Trading in Pakistan",
+    "ids": [
+      "/learn/country/pakistan#html-0002"
+    ]
+  },
+  {
+    "group": 152,
+    "text": "Learning notes: Learn Trading in Nigeria",
+    "ids": [
+      "/learn/country/nigeria#html-0002"
+    ]
+  },
+  {
+    "group": 153,
+    "text": "Prepared with AI assistance \u00b7 Publication review recorded by TradeHQ owner (authenticated) \u00b7 2026-11-15",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0002",
+      "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation#html-0002",
+      "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation#html-0002",
+      "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag#html-0002",
+      "/courses/bitcoin-simulator-practice-trading#html-0002",
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0002",
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0002",
+      "/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns#html-0002"
+    ]
+  },
+  {
+    "group": 154,
+    "text": "Learning outcomes",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0004",
+      "/courses/bitcoin-simulator-practice-trading#html-0004",
+      "/courses/diversification-and-position-sizing#html-0004"
+    ]
+  },
+  {
+    "group": 155,
+    "text": "Before you start",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0009",
+      "/courses/bitcoin-simulator-practice-trading#html-0009",
+      "/courses/diversification-and-position-sizing#html-0009"
+    ]
+  },
+  {
+    "group": 156,
+    "text": "How the lessons build",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0011",
+      "/courses/bitcoin-simulator-practice-trading#html-0011",
+      "/courses/diversification-and-position-sizing#html-0011"
+    ]
+  },
+  {
+    "group": 157,
+    "text": "Who this course is not for",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0013",
+      "/courses/bitcoin-simulator-practice-trading#html-0013",
+      "/courses/diversification-and-position-sizing#html-0013"
+    ]
+  },
+  {
+    "group": 158,
+    "text": "Lessons",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0015",
+      "/courses/bitcoin-simulator-practice-trading#html-0015",
+      "/courses/diversification-and-position-sizing#html-0015"
+    ]
+  },
+  {
+    "group": 159,
+    "text": "Exchange Tickers and Price Aggregation FoundationsLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0016"
+    ]
+  },
+  {
+    "group": 160,
+    "text": "API Delays and Portfolio Valuation MechanicsExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0018"
+    ]
+  },
+  {
+    "group": 161,
+    "text": "Portfolio Rebalancing and Cash Drag DynamicsLearn how to rebalance a virtual portfolio with cash components and manage the impact of transaction delays on asset allocation.",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0020"
+    ]
+  },
+  {
+    "group": 162,
+    "text": "Educational only. Practice uses virtual cash; simulated performance does not predict real returns.",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation#html-0022",
+      "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation#html-0022",
+      "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation#html-0022",
+      "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag#html-0022",
+      "/courses/bitcoin-simulator-practice-trading#html-0022",
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0023",
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0022",
+      "/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns#html-0023",
+      "/courses/diversification-and-position-sizing#html-0022",
+      "/courses/diversification-and-position-sizing/foundations-of-asset-allocation#html-0022",
+      "/courses/diversification-and-position-sizing/managing-concentration-risk#html-0022",
+      "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash#html-0022"
+    ]
+  },
+  {
+    "group": 163,
+    "text": "Key takeaways",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation#html-0015",
+      "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation#html-0015",
+      "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag#html-0015",
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0015",
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0015",
+      "/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns#html-0015",
+      "/courses/diversification-and-position-sizing/foundations-of-asset-allocation#html-0015",
+      "/courses/diversification-and-position-sizing/managing-concentration-risk#html-0015",
+      "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash#html-0015"
+    ]
+  },
+  {
+    "group": 164,
+    "text": "Sources",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation#html-0019",
+      "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation#html-0019",
+      "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag#html-0019",
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0019",
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0019",
+      "/courses/bitcoin-simulator-practice-trading/evaluating-performance-and-managing-drawdowns#html-0019",
+      "/courses/diversification-and-position-sizing/foundations-of-asset-allocation#html-0019",
+      "/courses/diversification-and-position-sizing/managing-concentration-risk#html-0019",
+      "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash#html-0019"
+    ]
+  },
+  {
+    "group": 165,
+    "text": "To solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.",
+    "ids": [
+      "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation#html-0014"
+    ]
+  },
+  {
+    "group": 166,
+    "text": "Setting Up Your Bitcoin Simulator EnvironmentLearn how virtual cash, provider price snapshots and simulated order limitations work in TradeHQ.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading#html-0016"
+    ]
+  },
+  {
+    "group": 167,
+    "text": "Executing Spot Trades in the SimulatorLearn step-by-step mechanics for placing market buy and sell orders within a virtual spot portfolio.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading#html-0018"
+    ]
+  },
+  {
+    "group": 168,
+    "text": "Evaluating Performance and Managing DrawdownsAnalyze virtual trading results, calculate portfolio drawdowns, and evaluate the assumptions behind a hypothetical approach based on objective data.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading#html-0020"
+    ]
+  },
+  {
+    "group": 169,
+    "text": "When you first access a trading simulator, the platform typically provisions a fixed amount of virtual capital to enable practice without committing real funds. This starting balance serves as your primary accounting ledger for all subsequent buy and sell transactions across supported spot assets. Users must recognize that this currency holds no real-world monetary value and cannot be withdrawn or converted into fiat money under any circumstances. Understanding this foundational boundary ensures you treat the simulation strictly as an educational sandbox rather than a speculative wealth-generation tool.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0004"
+    ]
+  },
+  {
+    "group": 170,
+    "text": "Evaluating your simulator performance requires establishing clear benchmarks before executing your very first virtual trade order. Rather than focusing solely on raw portfolio growth, you should track metrics such as trade frequency, asset allocation balance, and drawdown depth. Documenting your strategic rationale for each simulated purchase creates a reliable historical record for subsequent performance reviews. This structured approach transforms casual experimentation into a rigorous, repeatable educational process.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading/setting-up-your-bitcoin-simulator-environment#html-0013"
+    ]
+  },
+  {
+    "group": 171,
+    "text": "A virtual market sale reduces the recorded Bitcoin quantity and adds net proceeds to the remaining practice cash balance after a 0.1% sale fee. The simulator uses its displayed practice input, not an order-book fill from a real venue. A sale may be used to practise reconciling cash and positions, calculating a gain or loss, or comparing hypothetical outcomes under different prices. The calculation does not prove that comparable real liquidity would be available or that an actual sale would execute instantly. Keep virtual accounting and real market execution as different questions.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0010"
+    ]
+  },
+  {
+    "group": 172,
+    "text": "TradeHQ simplifies actual market execution. Its market orders use a displayed practice input, and each virtual buy and sale charges a 0.1% fee. The simulator does not model order-book depth, queue priority, partial fills or calibrated slippage. For a second worksheet, selling 0.1 BTC at an assumed $51,000 produces $5,100 notional less a $5.10 sale fee, or $5,094.90 proceeds. Subtracting the original $5,005 acquisition cost gives an illustrative $89.90 gain. A $49,000 sale instead gives $4,895.10 proceeds and a $109.90 loss; neither scenario predicts market outcomes.",
+    "ids": [
+      "/courses/bitcoin-simulator-practice-trading/executing-spot-trades-in-the-simulator#html-0013"
+    ]
+  },
+  {
+    "group": 173,
+    "text": "Prepared with AI assistance \u00b7 Publication review recorded by Anuga Weerasinghe \u00b7 2026-10-09",
+    "ids": [
+      "/courses/diversification-and-position-sizing#html-0002",
+      "/courses/diversification-and-position-sizing/foundations-of-asset-allocation#html-0002",
+      "/courses/diversification-and-position-sizing/managing-concentration-risk#html-0002",
+      "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash#html-0002"
+    ]
+  },
+  {
+    "group": 174,
+    "text": "Foundations of Asset Allocation and Position SizingStudy hypothetical portfolio weights, cash-inclusive valuation and the limits of fixed-price accounting examples.",
+    "ids": [
+      "/courses/diversification-and-position-sizing#html-0016"
+    ]
+  },
+  {
+    "group": 175,
+    "text": "Managing Concentration Risk and Portfolio DriftUnderstand how concentration risk builds up and how price changes cause your portfolio to drift from its targets.",
+    "ids": [
+      "/courses/diversification-and-position-sizing#html-0018"
+    ]
+  },
+  {
+    "group": 176,
+    "text": "Executing Rebalancing with Virtual CashCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.",
+    "ids": [
+      "/courses/diversification-and-position-sizing#html-0020"
+    ]
+  },
+  {
+    "group": 177,
+    "text": "TradeHQ\u2019s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.",
+    "ids": [
+      "/courses/diversification-and-position-sizing/foundations-of-asset-allocation#html-0011"
+    ]
+  }
+]

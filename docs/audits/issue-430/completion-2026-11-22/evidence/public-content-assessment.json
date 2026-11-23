@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-11-23T02:25:48.023772+00:00",
+  "method": "Anonymous browser publishable-key REST, publicly visible fields only; no elevated SQL, names, IDs, rating, contact, trade, or private moderation fields selected.",
+  "visibleReviews": 4,
+  "publicTextBlocks": 8,
+  "reviewQueryScope": "select content,owner_reply; is_visible=true; limit100, matching public UIlimit",
+  "publicProfilesBioOnlyRows": 78,
+  "nonemptyPublicBios": 0,
+  "profileBodyScope": "bio column only, is_public=true; no usernames/IDs/contact/country/trades selected",
+  "rawContentPersistedToRepository": false,
+  "blocks": [
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-content-66cce1597832095a3ee0",
+      "contentHash": "66cce1597832095a3ee02f09b6b94ba26a107562fc37315c73b5323907620836",
+      "blockType": "published-review",
+      "assessment": "Subjective criticism of asset coverage/history access; consistent with a bounded simulator, no prohibited content established.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-owner_reply-8017035510186e613a31",
+      "contentHash": "8017035510186e613a3169601fc6f598926d8809d818a85c1a7380982691025a",
+      "blockType": "published-owner-reply",
+      "assessment": "Owner attributes historical-data limits to licensing restrictions; reason not independently corroborated. Retain OWNER EVIDENCE REQUIRED underG03/G04, do not rewrite genuine records.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": true
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-content-63b533740a0432ba1bf8",
+      "contentHash": "63b533740a0432ba1bf85512d47c17b5558c661a12c92f3f06f8eeecbcb848e1",
+      "blockType": "published-review",
+      "assessment": "Subjective learning/appreciation opinion, not an independently verified educational outcome.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-owner_reply-dae1a3f88fd94b479354",
+      "contentHash": "dae1a3f88fd94b479354d33891af185b05692b1d47b887a28cd8a8252dbda17a",
+      "blockType": "published-owner-reply",
+      "assessment": "General acknowledgement; no financial result promised.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-content-516b4e42561090df5c04",
+      "contentHash": "516b4e42561090df5c04222dbbf733c83bb45141f56c41a71a03c4e0d34c3283",
+      "blockType": "published-review",
+      "assessment": "Subjective learning/confidence recommendation; site disclosure says submissions are not independently verified.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-owner_reply-dc49424b3e79d6838424",
+      "contentHash": "dc49424b3e79d683842417bb30429ccfc5056925da63996252630b913d0ab44f",
+      "blockType": "published-owner-reply",
+      "assessment": "General thanks and aspiration to improve, no promised investment result.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-content-c444efd980c7dd3e12ac",
+      "contentHash": "c444efd980c7dd3e12ac70fd46306abcc3ac1fc03e4c069a078726d57f377220",
+      "blockType": "published-review",
+      "assessment": "Subjective confidence about future real investing; no real profit or certified competence claimed. Not adopted as verified skill evidence by this audit.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    },
+    {
+      "pageUrl": "https://www.thetradehq.com/reviews",
+      "blockId": "/reviews#public-owner_reply-d76823ac56a1d1073460",
+      "contentHash": "d76823ac56a1d1073460809fcf41a0ce7e082030c50ef2d14a1b543164abef14",
+      "blockType": "published-owner-reply",
+      "assessment": "General thanks; no promise or verification of investment readiness.",
+      "originalTextReference": "Public /reviews UI and anonymous REST reviews select=content,owner_reply with is_visible=true; match body by SHA256. No source IDs/names or raw text republished.",
+      "reviewDate": "2026-11-23",
+      "observedCodeSha": "d9edc4d95181101d280f0da5c1858c8621f189fe",
+      "ownerEvidenceRequired": false
+    }
+  ],
+  "limitations": "Snapshot of currently public text; not authenticated moderation/lifecycle acceptance, identity verification, testimonial truth or owner licensing-reason verification."
+}

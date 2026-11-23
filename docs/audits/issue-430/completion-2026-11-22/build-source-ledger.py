@@ -1,0 +1,193 @@
+"""Reconcile assessed destinations and media. HTTP success never supplies claim support."""
+from pathlib import Path
+import json,csv,collections,datetime
+P=Path(__file__).resolve().parent;E=P/'evidence'
+files=['reference-fetch-index.json','additional-reference-fetch.json','crawl-reference-fetch.json','final-source-reference-fetch.json','conditional-reference-fetch.json']
+groups=collections.defaultdict(list)
+for f in files:
+ for r in json.loads((E/f).read_text()):groups[r['url']].append({**r,'receipt':f})
+retired='https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/market-participants'
+exceptions={
+'https://fonts.google.com/faq#privacy':'JS-rendered FAQ body not accessible in direct extraction; official Google privacy context is separate. Do not certify every provider processing claim.',
+'https://myadcenter.google.com/':'Cookies-disabled wall in isolated retrieval; no preference/account settings changed. Owner accepts advertising choices separately.',
+'https://www.morningstar.com/investing-terms/maximum-drawdown':'HTTP403; not proved dead. Drawdown arithmetic independently recalculated; exact destination definition not retrieved.',
+'https://www.newyorkfed.org/research/capital_markets/ycfaq':'FAQ body unavailable. Official Prob_Rec.pdf corroborates10year-minus3month spread and12month horizon; official-forecast disclaimer not freshly read at this destination.',
+'https://doi.org/10.1016/j.joep.2024.102740':'Direct DOI retrieval unavailable; Warwick institutional abstract corroborates authors/date/title and variable estimates. Full paper not reread.',
+'https://incompetech.com/music/royalty-free/?isrc=USUAN1100588':'Track page remains JS loading in extraction. ISRC/title can be corroborated separately; recording/license chain requires owner evidence.',
+'https://eramp.sec.gov.ph/capital-market-participants':'HTTP403 maintenance response; registry function not exercised. No individual licensing/eligibility claim cleared.',
+'https://www.sec.gov.ph/':'HTTP403 challenge; no bypass attempted. Official authority identity is not individual legal eligibility.'}
+notes={
+'001':'Market/limit/stop definitions and execution-versus-price uncertainty read; worksheets independently recalculated.',
+'002':'Privacy-first section: no client-side state/fingerprinting for Cloudflare Web Analytics; distinct from optional Amplitude.',
+'007':'DAAWebChoicesparticipating-company browser opt-out entry point read; no selections submitted, and it is separate from GoogleCMP/account choices.',
+'008':'Bitcoin FAQ issuance passage supports scheduled21million under current consensus; does not support a return forecast.',
+'009':'ETH network currency/gas/staking description supports mechanism distinctions, not market returns.',
+'010':'Solana documentation entry point checked; specific fee/terminology corroboration is separate.',
+'011':'BNB ecosystem/chains description checked; no promotional issuer claims adopted as investment evidence.',
+'012':'XRP native ledger asset and Ripple/network distinction checked; no payment-time or investment guarantee adopted.',
+'020':'SPY fund objective and float-adjusted market-cap benchmark description read; no current portfolio weights adopted.',
+'021':'QQQ Nasdaq100 nonfinancial coverage and rebalancing context read; not a technology-only fund.',
+'022':'ECBreference rates informational, updated around16:00CETworkingdays; discouraged for transaction use.',
+'023':'BoEdatabase rates explicitly not official or more authoritative than commercial-bank rates.',
+'024':'Gold demand/supply overview provides background, not a safe-haven guarantee.',
+'025':'EIA crude/petroleum explanation read beyond navigation; commodity context, not simulated-price verification.',
+'026':'FINRA periodic short interest distinguished from short-sale volume; no universal squeeze threshold.',
+'027':'Days-to-cover formula short interest/average daily volume; publication lag and conventions noted.',
+'028':'SEC leverage/margin risk distinctions support collateral/loss limitations, not a liquidation formula.',
+'029':'Historical technical-analysis context only; no evidence of profitable chart patterns.',
+'031':'Fibonacci plotting/percentage conventions read; no predictive performance inferred.',
+'032':'RSI0–100, conventional70/30, persistence in trends and Wilder formula checked.',
+'033':'MACD12/26EMA and9EMA signal convention read; adjustment/whipsaw limitations retained.',
+'034':'Bollinger moving-average/standard-deviation construction read; no future volatility guarantee.',
+'035':'SEC manipulation definition; a chart alone does not establish wrongdoing.',
+'036':'CFTCspoofing enforcement explanation requires intent to cancel; no claim about a TradeHQ user.',
+'037':'Futures performance-bond margin distinguished from a securities loan.',
+'038':'Investment risk and potential loss definitions; no universal allocation recommendation.',
+'039':'Fraud red flags include unsupported high-return/low-risk promises.',
+'040':'SECsocial-stock-tip warning read; no decision based solely on social promotion.',
+'041':'Bitcoin white-paper abstract/protocol framing read; not a valuation or anonymity guarantee.',
+'042':'Crypto custody/volatility and exposure types checked; no universal regulatory-protection claim.',
+'043':'Archived announcement read; attribution/date is historical context, not identity proof.',
+'044':'Venue-specific margin call/liquidation explanation read; thresholds not transferred between products.',
+'045':'Day-trading substantial-loss warning and definition read; no universal retail loss rate.',
+'047':'Ichimoku historical calculations/offsets/limitations read; forward plotting is not future information.',
+'048':'Five-wave/three-wave conventions read as an interpretive framework, not validated prediction.',
+'049':'Wyckoff vocabulary/phase framework read; no institutional beneficial-ownership inference.',
+'051':'ATS/dark-pool/pretrade-versus-posttrade reporting distinctions checked.',
+'052':'Uniswapv2fee-free full-range relative-loss formula checked: r2about-5.72%,r5about-25.46%; not every pool.',
+'053':'SEC2010flash-crash event-specific liquidity account read; not a universal cause model.',
+'054':'NYSE7/13/20%,15minute/pre3:25ET rules and Level3restofday checked; old settlement paragraph not reused.',
+'055':'LULDreference-price and price-band plan sections read; distinct from market-wide halts.',
+'056':'SECpump/dump false-promotion and promoter-sale mechanism, not a guaranteed timeline.',
+'057':'CFTCvirtual-currency pump/dump advisory read; no named-token legal finding.',
+'058':'SECpump/dump definition corroborates mechanism, not price-chart proof.',
+'060':'SECbacktested returns hypothetical; past performance/cherry-picking limitations read.',
+'061':'NISTPearson sample-correlation formula/linear scope; zero variation undefined, no causation.',
+'062':'Official S&PUSindices PDF corroborates float-adjusted market-cap weighting; landing page is JS-only.',
+'063':'Official DowAverages PDF corroborates30-stock price weighting; landing page is JS-only.',
+'064':'Nasdaq100IndexDescription read:100large nonfinancial Nasdaq-listed companies.',
+'065':'NasdaqCompositeIndexDescription read: common-type listed stocks; not an investable fund.',
+'067':'SECETFstructure/ownership and limits checked; ETPscope explicitly narrower than all products.',
+'068':'Allocation/diversification definitions read; loss prevention not promised.',
+'069':'Order lifetime/day/GTC/stop instructions read with broker differences.',
+'070':'Bitcoin transactions/mining context read; simulator makes no blockchain transfer.',
+'071':'Staking validator/third-party/custody risks read; no promised return adopted.',
+'073':'GLDobjective is bullion price less expenses; distinct from physical ownership and PAXG proxy.',
+'074':'Ethereumrollup-centric scaling description read; throughput not price evidence.',
+'075':'SECstock ownership/rights and business risks checked; virtual positions confer no legal share rights.',
+'077':'CUDAdocumentation entry point supports software/platform identity only.',
+'078':'ROCmofficial open-source GPU-computing platform description checked.',
+'079':'Bitcoin paper entry point corresponds to separately read original PDF abstract.',
+'080':'Gas computational units/fees read; network fees separate from virtual order fee.',
+'082':'Solana base/prioritization fee distinction read; no network transaction performed.',
+'083':'Solana terminology entries read for account/transaction/finality context.',
+'084':'FINRA2026intraday trading basics/risk warning read; no outdated universal margin threshold asserted.',
+'085':'OCCODDlanding identifiesJune2024version and option-risk purpose; full booklet not reread.',
+'086':'OICcalls/puts/right-versus-obligation and usual100shares with adjustments checked.',
+'087':'OptionsInstitute educational entry point checked; not a professional endorsement of TradeHQ.',
+'088':'Delta theoretical local sensitivity read; probability shorthand is not calibrated real-world probability.',
+'089':'Theta theoretical perday decay/nonlinear/model dependence read.',
+'090':'Vegasensitivity perone percentage point IV checked; not realized volatility.',
+'091':'Current Cboe page offers options-pricing tools; inaccurate dedicated-Greeks label corrected.',
+'092':'Vertical spread bounded expiration payoffs and assignment/expiration risk sections read.',
+'093':'Iron-condor construction and exercise/assignment uncertainty read.',
+'094':'OIC2026IVrank high-low range versus percentile fractionofdays distinction checked.',
+'095':'CMEcourse entry point lists contract/margin/hedger topics; specific definitions checked elsewhere.',
+'096':'CMEEScontract page entry point checked; official CME notional-value education corroborates$50point/$12.50quarterpoint.',
+'097':'Clearing settlement variation/performance-bond/default safeguards checked; no elimination of all counterparty risk.',
+'098':'Contract-specific position limits/netfutures equivalence and exemptions read.',
+'099':'Contango/backwardation curve examples read; no shortage or future-price guarantee inferred.',
+'100':'FREDWTI is a dated spot series, not a futures curve.',
+'101':'CFTCglossary BasisRisk/Hedger entries read, not the entire glossary.',
+'102':'CMEMES$5multiplier/.25index tick corroborated; separate contract risk remains.',
+'103':'CFTCfuture agreement/settlement/hedger risk basics read.',
+'104':'BLSCPIbasket/urban population scope checked; no invented current inflation number adopted.',
+'105':'FREDCPIAUCSLunits/frequency/seasonal adjustment checked.',
+'106':'BLSCPIpopulation/measurement limitations read; not every household inflation.',
+'107':'BLSrelease calendar destination checked; releases generally8:30ET, dates must remain current.',
+'108':'Fed2%longer-runPCEgoal read; CPI is different.',
+'109':'FOMCeightregular meetings description read with schedule changes qualified.',
+'110':'12Nov2026revised tentative2027schedule/strategy-onlyOctmeeting read.',
+'111':'Sept2026SEPindividual participant assessments read; not a promised rate path.',
+'114':'FRED10year-minus2year spread identified; not NYFed10year-minus3month model.',
+'115':'ICEDXYsixcurrency weights read inclEUR57.6%; not all currencies.',
+'117':'Fed2015translation/competitiveness channels read as historical research, not fixed earnings impact.',
+'118':'BIS2023EMEregional divergence read; not a universal dollar/risk relationship.',
+'119':'FREDnominal broad dollar index distinguished from DXY.',
+'120':'FREDdata catalog entry point checked; no live macro forecast implied.',
+'121':'ALFREDoriginal/revised vintages explanation read.',
+'122':'BEAGDPrelease/real annualized measure scope checked; dated observations not adopted as forecasts.',
+'123':'1992cumulative prospect theory abstract read; not a universal psychological coefficient.',
+'125':'FINRAsocial sentiment inaccuracy/staleness/hidden-agenda limitations read.',
+'126':'SECtransaction record-keeping guidance read; not proof of broker records in TradeHQ.',
+'127':'SECrisk uncertainty definition read.',
+'128':'SECpast-fund-performance warning read.',
+'129':'SriLankaSEClicensing activity description read; no individual eligibility determination.',
+'130':'SEBIofficial entry point checked; not a compliance certificate.',
+'131':'SEBI23Sept2024study landing plus embeddedPDFexecutive summary92.8%FY22–FY24 rounded93%; not every trading population.',
+'133':'RBIofficial guidance entry point checked; no fixed remittance permission claimed.',
+'135':'PSEindex series definition read; exchange identity not brokerage eligibility.',
+'136':'SECPcapital-market licensing explanation read; no individual entitlement.',
+'137':'PSXKSE100free-float/KSE30liquidity descriptions read.',
+'138':'NigerianSECregistered-operator entry point checked; no specific operator recommendation.',
+'139':'NigerianSECMay2026unregistered-scheme warning read.',
+'140':'CoinGeckoaggregation/outlier/trust-score context read; not all provider output verified.',
+'141':'SimplePriceinclude_last_updated_at/stalechange behavior read; no executable quote guarantee.',
+'142':'SECdiversification/rebalancing discussion read; not universal weights/frequency.',
+'143':'Owner-linked Instagram entry point/title checked; account identity/ownership not independently certified.',
+'146':'CCBY4.0permission/attribution terms read; does not prove this recording is licensed.',
+'147':'Investor.govintro education context read; not a return estimate adopted by TradeHQ.',
+'148':'FINRAcrypto asset types/custody/regulatory differences read.',
+'149':'SECspecificsingle-stockETFconcentration definition checked.',
+'150':'Nasdaqequity rulebook entry point checked; NYSEcorehours corroboration is separate.',
+'151':'FidelitySMAarithmetic mean/lag definition checked.',
+'152':'CboeVIXnear-term SPXoption-implied volatility description read; not directional prediction.',
+'153':'Cboedaily statistics entry point checked; sample put/call1.5 is independently calculated, not a live statistic.',
+'154':'Cloudflareperformance beacon/RUMpurpose read; distinct provider from optional analytics.',
+'155':'Treasurypar-yield methodology/date/maturity definitions checked; not execution rates.',
+'156':'Googlepartner-site automatic request-data disclosure read; no active-ad consent clearance.',
+'157':'CMEFedWatchfutures-implied probabilities and nonadvice disclaimer read.',
+'158':'FINRAstatement/confirmation review guidance read; no real account records retrieved.',
+'159':'SECDCAequal portions/regular intervals definition read; no guaranteed superiority.',
+'161':'NYSEcore9:30–16:00ETand separateearly/late sessions read.',
+'162':'PAXGissuer identifies gold-backed token; TradeHQ explicitly uses proxy, not physicalgold/XAUfeed. Issuer safety marketing not adopted.',
+'163':'Contact draft opens Gmail entry point; sign-in expected. No email drafted/sent or account accessed.',
+'164':'BlockIRtitle identifiesXYZ. ExistingSQlegacy disclosure disproves a presumed current-ticker misrepresentation; no holdings renamed.',
+'165':'Restricted admin API-key help link reachesGoogle sign-in. No account/key retrieved; not publisher evidence.',
+'166':'Frankfurterreference rates, official sources and nonlive nature read.',
+'167':'TradingViewattribution link reaches provider homepage; third-party community ideas not TradeHQ content.',
+'168':'AMDFY2025annual report business/graphics/AIcompute sections read; metadata and rawXBRL are not a body assessment.',
+'169':'Netflixofficial profile identifies series/films/games/live programming.',
+'170':'Coinbaseofficial filing catalog checked as research entry point; no current revenue numbers asserted.',
+'171':'IWMissuer objective Russell2000/U.S.smallcap exposure read.',
+'172':'BroadcomFY2025filing metadata checked; dated2segmentdescription corroborated with official2025report excerpt.',
+'173':'SriLankaSECofficial home entry point checked.',
+'175':'SECPofficial licensing/regulatory entry point checked.',
+'176':'NigerianSECofficial statutory regulator entry point checked.',
+'177':'SECfocused market-maker definition read; worksheet spread$2checked independently.',
+'178':'SonicLabsFTMtoSmigration description read; existinglegacy disclaimer retained; no conversion performed.',
+'179':'PolygonMATICtoPOLnativegas/staking/migration description read; existinglegacy disclaimer retained.'}
+issuers={x['symbol']:x for x in json.loads((E/'issuer-filing-sections.json').read_text())}
+issuerIds={'013':'aapl','014':'googl','016':'amzn','017':'nvda','018':'tsla','019':'meta','072':'nvda','076':'amd','081':'nvda','160':'msft'}
+rows=[]
+for url,versions in groups.items():
+ if url==retired:continue
+ r=max(versions,key=lambda x:(x['status']==200,x['words']));ids=sorted({x['id'] for x in versions});note=next((notes[i] for i in ids if i in notes),'')
+ for i in ids:
+  if i in issuerIds:
+   sym=issuerIds[i];note='Official investor reporting entry point checked. '+(issuers[sym]['assessment'] if sym in issuers else 'Dated AMDannual report separately read.');break
+ assert note or url in exceptions,(url,ids)
+ uses=list(dict.fromkeys((u['page'],u['label']) for v in versions for u in v['uses']))
+ rows.append({'type':'REFERENCE','identifier':'REF-'+ids[0],'urlOrPath':url,'discovery':'PUBLIC_RENDERED_OR_SOURCE_DECLARED; restrictedutility flagged in purpose','httpStatus':r['status'],'finalUrl':r['finalUrl'],'title':' '.join(r['title'].split()),'reviewMethod':'Codex bounded destination/section reading, specific corroboration stated; not entire-source certification','assessment':exceptions.get(url,note),'result':'CHECKED_WITH_ACCESS_OR_SUPPORT_EXCEPTION' if url in exceptions else 'BOUNDED_REFERENCE_CHECKED','provenance':'Third-party source; no blanket rights/accuracy clearance','evidence':';'.join(v['receipt']+'#'+v['id'] for v in versions),'uses':json.dumps(uses),'sha256':r['sha256'],'observedAt':r['fetchedAt']})
+media=json.loads((E/'current-media.json').read_text());old={x['path']:x for x in json.loads((P.parent/'final-2026-11-22/evidence/repository-media.json').read_text())};hashes=collections.defaultdict(list)
+for x in media:hashes[x['sha256']].append(x['path'])
+for x in media:
+ audio=x['path'].endswith('.mp3');rows.append({'type':'MEDIA','identifier':x['path'],'urlOrPath':x['path'],'discovery':'Current public/srcassets material-file inventory, reconciled by byteidentity','httpStatus':'See browser resource checks','finalUrl':'','title':'','reviewMethod':'Audioformat/duration/control source review' if audio else 'Directvisual screening; 50rasters same-day exactidentity reuse +3SVGs/20symbols now screened','assessment':('146.07675seconds;5.85MBoptional preloadnone; recordinglicenseidentity remains owner gate.' if audio else 'No evident fabricated performance evidence/protected thirdparty artwork established by visual screening; not legal clearance.')+' Duplicatebyteuses: '+','.join(hashes[x['sha256']]),'result':'OWNER_EVIDENCE_REQUIRED','provenance':'Owner reports AIgeneratedimages; creation/licensechain independently unverified. Musicrequiresrecordingspecificlicense.','evidence':'current-media.json; EXTENDED-READING-EVENTS.jsonl; ../final-2026-11-22/evidence/repository-media.json','uses':'','sha256':x['sha256'],'observedAt':datetime.datetime.now(datetime.UTC).isoformat()})
+meta={r['path']:r for r in json.loads((E/'media-technical-metadata.json').read_text())}
+for r in rows:
+ if r['type']=='MEDIA':
+  m=meta[r['urlOrPath']];r.update(bytes=m['bytes'],format=m['format'],width=m.get('width',''),height=m.get('height',''),viewBox=m.get('viewBox',''),durationSeconds=m.get('durationSeconds',''))
+keys=list(dict.fromkeys(k for r in rows for k in r))
+with (P/'SOURCE-AND-MEDIA-LEDGER.csv').open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=keys,lineterminator='\n');w.writeheader();w.writerows(rows)
+summary={'currentDiscoveredDestinations':len(groups)-1,'retiredReplacedDestinations':1,'boundedReferenceChecks':sum(r['type']=='REFERENCE' and r['result']=='BOUNDED_REFERENCE_CHECKED' for r in rows),'referenceExceptions':len(exceptions),'mediaFiles':len(media),'imageFilesVisuallyScreened':53,'mediaRightsCleared':0,'sourceRecordDuplicatesCollapsed':sum(len(v)-1 for v in groups.values()),'scope':'Concrete public/source-declared destinations; includes one restricted admin utility. Dynamic admin URLprefix templates are excluded from citation totals.'}
+(E/'source-media-counts.json').write_text(json.dumps(summary,indent=2));print(summary)

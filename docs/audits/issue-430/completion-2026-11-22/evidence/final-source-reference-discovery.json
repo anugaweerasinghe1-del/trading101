@@ -1,0 +1,99 @@
+[
+  {
+    "url": "https://www.paxos.com/pax-gold",
+    "uses": [
+      "src/components/AssetIntelligence.tsx"
+    ]
+  },
+  {
+    "url": "https://mail.google.com/",
+    "uses": [
+      "src/pages/Contact.tsx"
+    ]
+  },
+  {
+    "url": "https://investors.block.xyz/stock-info/default.aspx",
+    "uses": [
+      "src/pages/NicheAsset.tsx",
+      "src/pages/TradeAsset.tsx"
+    ]
+  },
+  {
+    "url": "https://aistudio.google.com/apikey",
+    "uses": [
+      "src/components/courses/CourseGenerationSettings.tsx"
+    ]
+  },
+  {
+    "url": "https://frankfurter.dev/",
+    "uses": [
+      "src/components/trading/DailyFxReference.tsx"
+    ]
+  },
+  {
+    "url": "https://www.tradingview.com/",
+    "uses": [
+      "src/components/trading/NeuralPulseChart.tsx"
+    ]
+  },
+  {
+    "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000018/amd-20251227.htm",
+    "uses": [
+      "src/lib/assetReferences.ts"
+    ]
+  },
+  {
+    "url": "https://ir.netflix.net/ir-overview/profile/",
+    "uses": [
+      "src/lib/assetReferences.ts"
+    ]
+  },
+  {
+    "url": "https://investor.coinbase.com/financials/sec-filings/",
+    "uses": [
+      "src/lib/assetReferences.ts"
+    ]
+  },
+  {
+    "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+    "uses": [
+      "src/lib/assetReferences.ts"
+    ]
+  },
+  {
+    "url": "https://investors.broadcom.com/sec-filings/sec-filing/10-k/0001730168-25-000121",
+    "uses": [
+      "src/lib/assetReferences.ts"
+    ]
+  },
+  {
+    "url": "https://www.sec.gov.lk/",
+    "uses": [
+      "src/lib/countryGuides.ts"
+    ]
+  },
+  {
+    "url": "https://www.sec.gov.ph/",
+    "uses": [
+      "src/lib/countryGuides.ts"
+    ]
+  },
+  {
+    "url": "https://www.secp.gov.pk/",
+    "uses": [
+      "src/lib/countryGuides.ts"
+    ]
+  },
+  {
+    "url": "https://sec.gov.ng/",
+    "uses": [
+      "src/lib/countryGuides.ts"
+    ]
+  },
+  {
+    "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/market-makers",
+    "uses": [
+      "src/lib/glossaryWorksheets.ts"
+    ]
+  }
+]

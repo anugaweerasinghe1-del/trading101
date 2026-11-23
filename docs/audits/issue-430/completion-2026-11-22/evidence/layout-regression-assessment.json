@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-11-23T01:57:45.850224+00:00",
+  "candidateHead": "dce1a8b193fa2642ba0be865ee8dee32034dfed3",
+  "beforeRelease": "522bac0cd2fd956b61e84b92f892dd3edf7e14c6",
+  "before": "Expected assertion failure: zero route H1 before600ms hydration",
+  "after": "All6localroute/width tests passed, exit0; JSON observations authoritative. Chart y displacement0\u201310px; observed movement0.0019\u20130.0086.",
+  "harnessCorrection": "An initial fixture used /trade/jpy, which is not a catalog ID; corrected to /trade/usdjpy. Its chart timeout was a fixture error, not a website defect. Two overlapping local runs shared a log; their exitcodes and complete6-record JSON distinguish the final pass.",
+  "noProductionTransactions": true
+}
