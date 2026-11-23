@@ -532,6 +532,13 @@ export const STATIC_COPY: Record<string, PageContent> = {
   "/about": {
     sections: [
       {
+        h: "Media credits",
+        p: [
+          "Course-cover illustrations were generated for TradeHQ with OpenAI image generation. Lesson diagrams and completion-token artwork were created from project source code. They illustrate hypothetical concepts, not actual market observations or verified investment outcomes. The existing TradeHQ brand mark is retained.",
+          "The optional ambient track, TradeHQ Practice Reflections, was synthesized for this project without third-party recordings or samples. Creation records identify the sources and methods; AI generation does not guarantee exclusive rights or freedom from all third-party claims.",
+        ],
+      },
+      {
         h: "Who builds TradeHQ",
         p: [
           "TradeHQ is maintained as an independent educational project to help learners explore market mechanics with virtual balances. The simulator does not require or enable real-money trading.",

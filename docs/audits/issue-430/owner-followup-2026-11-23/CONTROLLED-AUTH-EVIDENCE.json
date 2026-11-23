@@ -1,0 +1,102 @@
+{
+  "baseProductionSha": "ed35a1bf5d7de9d9a06ececabf250905ab7cb3da",
+  "observations": [
+    {
+      "id": "AUTH-01",
+      "procedure": "Actual signup email confirmed and signed-in profile shown",
+      "test": "a",
+      "checkedAt": "2026-11-23T11:17:06.656Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-05",
+      "procedure": "New profile and trade-history permission default private/off",
+      "test": "a",
+      "checkedAt": "2026-11-23T11:17:06.890Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-06",
+      "procedure": "UI lesson step saved to actual own authenticated progress row",
+      "test": "a",
+      "checkedAt": "2026-11-23T11:17:10.658Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-01",
+      "procedure": "Actual signup email confirmed and signed-in profile shown",
+      "test": "b",
+      "checkedAt": "2026-11-23T11:17:13.440Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-05",
+      "procedure": "New profile and trade-history permission default private/off",
+      "test": "b",
+      "checkedAt": "2026-11-23T11:17:13.642Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-06",
+      "procedure": "UI lesson step saved to actual own authenticated progress row",
+      "test": "b",
+      "checkedAt": "2026-11-23T11:17:17.148Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-13",
+      "procedure": "Other disposable account private profile/progress unreadable and unmodifiable",
+      "actor": "a",
+      "target": "b",
+      "checkedAt": "2026-11-23T11:17:17.747Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-13",
+      "procedure": "Other disposable account private profile/progress unreadable and unmodifiable",
+      "actor": "b",
+      "target": "a",
+      "checkedAt": "2026-11-23T11:17:18.293Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-12",
+      "procedure": "Authenticated review moderation hash column denied without reading any rows",
+      "test": "a",
+      "checkedAt": "2026-11-23T11:17:18.513Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-12",
+      "procedure": "Authenticated review moderation hash column denied without reading any rows",
+      "test": "b",
+      "checkedAt": "2026-11-23T11:17:18.697Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-05",
+      "procedure": "Actual public toggle exposes only own synthetic profile, private toggle hides it from anonymous readers",
+      "checkedAt": "2026-11-23T11:17:22.220Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-03",
+      "procedure": "Actual UI signout clears local auth and returns signed-out navigation",
+      "checkedAt": "2026-11-23T11:17:23.403Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-02",
+      "procedure": "Actual password login succeeds after confirmed account logout",
+      "checkedAt": "2026-11-23T11:17:25.384Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    },
+    {
+      "id": "AUTH-06",
+      "procedure": "Own progress retained across signout/password signin",
+      "checkedAt": "2026-11-23T11:17:25.581Z",
+      "scope": "Only two newly created disposable TradeHQ identities; no Google-account changes, genuine customer rows, trades or unsolicited messages"
+    }
+  ],
+  "limitations": "Seven case IDs have bounded observations, not 14 completed end-to-end workflows. Session expiry, certificate sharing, moderation acceptance, challenge, newsletter, privacy-request fulfilment and consent/account-owner acceptance still require follow-up. Both synthetic public profiles restored private. No existing accounts deleted."
+}

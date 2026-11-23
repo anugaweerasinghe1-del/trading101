@@ -43,6 +43,7 @@ const productionApproved = process.env.TRADEHQ_CLOUDFLARE_LIVE === "1";
 // main and per-deployment pages.dev mirrors noindex after custom-domain launch.
 // Pages Functions do not inherit these rules and must set their own headers.
 const pagesDevNoindex =
+  "/media-credits.json\n  X-Robots-Tag: noindex\n" +
   "https://:project.pages.dev/*\n  X-Robots-Tag: noindex\n" +
   "https://:version.:project.pages.dev/*\n  X-Robots-Tag: noindex\n";
 writeFileSync(resolve(dir, "_headers"), productionApproved

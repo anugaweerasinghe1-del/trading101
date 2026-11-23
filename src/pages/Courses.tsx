@@ -1,3 +1,4 @@
+import { CourseBrand } from "@/components/brand/CourseBrand";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
@@ -280,6 +281,7 @@ export default function Courses() {
                   >
                     <Link to={`/courses/${track.slug}`}>
                       <div className="aspect-[16/9] overflow-hidden bg-black relative">
+                        <CourseBrand />
                         <img
                           src={track.hero}
                           alt={`${track.title} — TradeHQ course cover`}

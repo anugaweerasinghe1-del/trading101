@@ -1,4 +1,5 @@
 import futuresHero from "@/assets/courses/futures-hero.jpg";
+import optionsHero from "@/assets/courses/options-hero.jpg";
 import macroHero from "@/assets/courses/macro-hero.jpg";
 import psychologyHero from "@/assets/courses/psychology-hero.jpg";
 
@@ -50,7 +51,7 @@ const optionsTrack: CourseTrack = {
   tagline: "Intermediate options theory — contract and payoff worksheets, not executable orders.",
   description:
     "A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.",
-  hero: futuresHero,
+  hero: optionsHero,
   level: "Intermediate",
   badge: {
     name: "Options Fundamentals Completion",
