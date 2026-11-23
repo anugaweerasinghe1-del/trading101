@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 
 /**
  * Floating ambient-music toggle. Persists user preference in localStorage.
- * Track: "Long Road Ahead" by Kevin MacLeod — incompetech.com (CC BY 4.0).
+ * Track: "TradeHQ Practice Reflections" — project-generated synthesized tones.
+ * Creation source: scripts/media/generate-project-media.py; no external samples.
  * Bundled locally so playback is reliable and no third-party request is needed.
  */
-const TRACK_URL = "/audio/long-road-ahead-kevin-macleod.mp3";
-const TRACK_TITLE = "Long Road Ahead · Kevin MacLeod (CC BY 4.0)";
+const TRACK_URL = "/audio/tradehq-practice-reflections.mp3";
+const TRACK_TITLE = "TradeHQ Practice Reflections · original synthesized ambient loop";
 const STORAGE_KEY = "tradehq:bg-music-on";
 
 export function BackgroundMusic() {

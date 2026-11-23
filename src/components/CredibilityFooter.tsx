@@ -121,8 +121,7 @@ export function CredibilityFooter() {
             investment decisions. © {new Date().getFullYear()} TradeHQ.
           </p>
           <p className="mt-3 text-xs text-muted-foreground text-center">
-            Music: <a href="https://incompetech.com/music/royalty-free/?isrc=USUAN1100588" className="underline hover:text-primary">Long Road Ahead by Kevin MacLeod (incompetech.com)</a>
-            {" · "}<a href="https://creativecommons.org/licenses/by/4.0/" className="underline hover:text-primary">Creative Commons Attribution 4.0</a>.
+            Music: <a href="/about#media-credits" className="underline hover:text-primary">TradeHQ Practice Reflections</a> · Project-generated ambient audio.
           </p>
         </div>
       </div>

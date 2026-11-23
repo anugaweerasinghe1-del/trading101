@@ -1,3 +1,4 @@
+import { CourseBrand } from "@/components/brand/CourseBrand";
 import NotFound from "./NotFound";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -81,6 +82,7 @@ function CourseTrackContent({ track }: { track: Track }) {
           />
 
           <div className="rounded-3xl overflow-hidden mb-8 bg-black relative flex items-end min-h-56 md:min-h-96">
+            <CourseBrand />
             <img src={track.hero} alt={`${track.title} — cover`} width={1200} height={525} className="absolute inset-0 w-full h-full object-cover opacity-70" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             <div className="relative w-full p-6 md:p-8">

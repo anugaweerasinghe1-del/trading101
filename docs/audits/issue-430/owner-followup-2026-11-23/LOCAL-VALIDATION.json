@@ -1,0 +1,23 @@
+{
+  "baseSha": "ed35a1bf5d7de9d9a06ececabf250905ab7cb3da",
+  "fullCloudflareBuild": "PASS",
+  "servedRouteFixtures": 357,
+  "typeScript": "PASS",
+  "brandSourceUnchanged": [
+    "src/components/brand/BrandMark.tsx",
+    "public/logo.svg"
+  ],
+  "staticAboutMediaCredits": true,
+  "creditsJsonNoindexOutput": true,
+  "oldAudioRemovedFromBuild": true,
+  "audio": {
+    "durationSeconds": 48.065306,
+    "bytes": 577269,
+    "codec": "mp3",
+    "sampleRate": 22050,
+    "channels": 1,
+    "meanDb": -21.3,
+    "peakDb": -9.2
+  },
+  "limitations": "Local output and representative rendered browser checks; protected CI and native production verification still required."
+}

@@ -44,14 +44,14 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-trading-workspace.jpg",
-            "alt": "Professional trading workspace with multiple monitors",
-            "caption": "Illustration for understanding stocks, etfs & securities."
+            "alt": "Illustrative layout of a hypothetical chart, practice input and virtual ledger",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "image",
             "data": "/src/assets/lesson-etf-diversification.jpg",
-            "alt": "ETF diversification network visualization",
-            "caption": "Illustration for understanding stocks, etfs & securities."
+            "alt": "Schematic showing a direct asset holding overlapping with holdings inside a fund",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -93,8 +93,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-candlestick.jpg",
-            "alt": "Understanding candlestick chart patterns",
-            "caption": "Illustration for how to read stock quotes & charts."
+            "alt": "Two hypothetical candles illustrating conventional open, high, low and close positions",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -301,8 +301,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-risk-shield.jpg",
-            "alt": "Financial risk protection shield",
-            "caption": "Illustration for position sizing & the 2% rule."
+            "alt": "Hypothetical price gap moving past a planned exit level",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -488,14 +488,14 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-technical-indicators.jpg",
-            "alt": "Technical analysis indicators and trend lines",
-            "caption": "Illustration for candlestick patterns."
+            "alt": "Illustrative panels separating a price path, volume and a calculated series",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "image",
             "data": "/src/assets/lesson-candlestick.jpg",
-            "alt": "Candlestick pattern analysis",
-            "caption": "Illustration for candlestick patterns."
+            "alt": "Two hypothetical candles illustrating conventional open, high, low and close positions",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -550,8 +550,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-moving-averages.jpg",
-            "alt": "Understanding moving averages",
-            "caption": "Illustration for moving averages (sma & ema)."
+            "alt": "Hypothetical observations and their three-observation arithmetic moving average",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -674,8 +674,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-asset-allocation-chart.jpg",
-            "alt": "Portfolio asset allocation visualization",
-            "caption": "Illustration of portfolio weights, not a recommended allocation."
+            "alt": "Schematic showing how a direct holding and a fund can share exposure",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -855,8 +855,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-goals-roadmap.jpg",
-            "alt": "Trading goals roadmap with milestones",
-            "caption": "Illustration for short-term vs long-term strategies."
+            "alt": "A learning roadmap: read, describe, calculate and reflect",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
@@ -1033,8 +1033,8 @@ export const lessonData: Lesson[] = [
           {
             "type": "image",
             "data": "/src/assets/lesson-market-trends-arrows.jpg",
-            "alt": "Market trend analysis with directional arrows",
-            "caption": "Illustration for bull markets vs bear markets."
+            "alt": "Three hypothetical paths illustrating rising, falling and sideways intervals",
+            "caption": "Project-created illustrative diagram; not live market data."
           },
           {
             "type": "text",
