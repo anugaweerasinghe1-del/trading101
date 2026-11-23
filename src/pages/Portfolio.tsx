@@ -637,7 +637,7 @@ export default function Portfolio() {
                 {
                   question: "What does the TradeHQ portfolio tracker show?",
                   answer:
-                    "It tracks simulated positions, realized and unrealized P&L, change from a saved snapshot, maximum drawdown, open-position P&L dispersion, allocation snapshots and an automated growth summary. Asset prices may be live, cached, delayed or simulated depending on data availability.",
+                    "It tracks simulated positions, realized and unrealized P&L, change from a saved snapshot, maximum drawdown, open-position P&L dispersion, allocation snapshots and a rule-based educational summary of current holdings and portfolio exposure. Asset prices may be live, cached, delayed or simulated depending on data availability.",
                 },
                 {
                   question: "Are the portfolio statistics based on real prices?",
