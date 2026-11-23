@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-23T14:10:08.159Z",
+  "results": [
+    {
+      "milestone": "first-course",
+      "pdfBytes": 448466,
+      "repeatIdentical": true,
+      "sha256": "060fe4ed2281907b753657dba02a1a351cf9b16600d86d7d8d80617e40222e00",
+      "type": "CLEARLY_LABELLED_SYNTHETIC_DESIGN_PREVIEW_NOT_ISSUANCE"
+    },
+    {
+      "milestone": "core-studies",
+      "pdfBytes": 454002,
+      "repeatIdentical": true,
+      "sha256": "5dd53ae41d0de029b29e0886db1134742a0910578fc0119208671da6346b22a2",
+      "type": "CLEARLY_LABELLED_SYNTHETIC_DESIGN_PREVIEW_NOT_ISSUANCE"
+    },
+    {
+      "milestone": "foundations",
+      "pdfBytes": 469199,
+      "repeatIdentical": true,
+      "sha256": "704a32a7a94fcff8e95e3c53610333eb37bc10da72240715f90ce8adb0539e8f",
+      "type": "CLEARLY_LABELLED_SYNTHETIC_DESIGN_PREVIEW_NOT_ISSUANCE"
+    }
+  ],
+  "localSinhalaTamilFontsLoaded": true,
+  "scope": "Final compiled renderer: synthetic design previews, all three variants; separate controlled production issuance evidence. Runtime actual artwork uses preserved site logo.",
+  "extractableText": "All three actual generated PDFs extracted correct recipient, title, milestone, issue date, ID and educational qualifiers using pdftotext. No claim of PDF/UA certification."
+}

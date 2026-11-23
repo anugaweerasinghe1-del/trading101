@@ -1,0 +1,6 @@
+{
+  "id": "AUTH-09",
+  "checkedAt": "2026-11-23T13:33:17.293Z",
+  "procedure": "Actual UI denies create/join while private, accepts controlled A/B while explicitly public, anonymous controlled duel visible only while both public, withdrawal hides it. Both restored private; no orders/positions/trades created.",
+  "scope": "One new two-account duel; no genuine user records or invitations, no ranking outcomes, deadline settlement not tested in production; source/fixture verification separately."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "AUTH-07",
+  "checkedAt": "2026-11-23T13:26:10.958Z",
+  "procedure": "Two actual5/5 server-graded checkpoints, first-course issuance to explicit synthetic recipient, two byte-identical PDF downloads, opt-in anonymous verification omitting recipient name, actual withdrawal invalidating link.",
+  "milestone": "first-course",
+  "repeatPdfIdentical": true,
+  "pdfBytes": 871459,
+  "verificationWithdrawn": true,
+  "scope": "One controlled account and one certificate milestone; other milestones and Unicode/download failure paths have separate isolated fixture coverage. No other learner records, simulated trades or Google-account changes."
+}
