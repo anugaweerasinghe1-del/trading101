@@ -39,7 +39,7 @@ interface InstitutionalDrivers {
 
 // Category intro text for SEO multiplier
 export const CATEGORY_INTROS: Record<string, string> = {
-  crypto: "Cryptocurrencies are decentralized digital assets known for 24/7 market cycles and high volatility.",
+  crypto: "Digital assets differ in network governance, issuance and custody. Many crypto venues operate around the clock, but access and price risk vary.",
   stock: "Equities represent ownership in public companies and are driven by earnings, macro trends, and sector performance.",
   etf: "ETFs pool exposure according to a fund objective; concentration, leverage and the underlying holdings determine their risks.",
   forex: "Global currencies reflect macroeconomic health and geopolitical shifts, trading 24/5 across global markets.",
@@ -692,7 +692,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   dia: {
-    whatIs: "SPDR Dow Jones Industrial Average ETF tracks the 30 blue-chip stocks in the Dow Jones. It represents established, dividend-paying companies across diverse sectors.",
+    whatIs: "SPDR Dow Jones Industrial Average ETF Trust seeks to track the price and yield performance of the Dow Jones Industrial Average. Consult dated fund holdings and distribution disclosures; index membership does not promise dividends, diversification or future returns.",
     strategy: "Compare the Dow index weighting with the Nasdaq-100 weighting and record how composition affects practice results. DIA is not inherently defensive in every market. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["DIA ETF trading", "Dow Jones practice", "blue chips"],
@@ -741,7 +741,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   usdjpy: {
     whatIs: "USD/JPY quotes Japanese yen per US dollar. Changes can be compared with stated interest-rate assumptions, but the pair alone does not identify carry positions or establish market-wide risk sentiment.",
-    strategy: "Practice understanding how interest rate differentials drive currency flows. Monitor BOJ intervention levels and Fed policy statements. (Educational simulation only — not financial advice.)",
+    strategy: "Compare dated US and Japanese policy statements with exchange-rate observations over a stated period. The pair alone does not establish an intervention threshold, a cause of a price move or a future return. Educational simulation only; not financial advice.",
     category: "Forex",
     keywords: ["USD/JPY trading", "Yen practice", "carry trade", "BOJ"],
     stats: {
@@ -765,7 +765,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   audusd: {
     whatIs: "AUD/USD represents the Australian Dollar against the US Dollar. It's heavily influenced by commodity prices, especially iron ore and coal, and Chinese economic data.",
-    strategy: "AUD/USD tracks commodity cycles. Practice correlating it with gold and iron ore prices to develop cross-asset analysis skills. (Educational simulation only — not financial advice.)",
+    strategy: "Compare AUD/USD with a stated commodity-price series over matching dates, noting the currency, observation interval and alternative explanations. An observed correlation can change and does not establish causation or a forecast. Educational simulation only; not financial advice.",
     category: "Forex",
     keywords: ["AUD/USD trading", "Aussie practice", "commodity currency"],
     stats: {

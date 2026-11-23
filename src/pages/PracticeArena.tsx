@@ -241,8 +241,7 @@ export default function PracticeArena() {
                   {ARENA_SCENARIOS.map((item, i) => {
                     const past = stored.completions[item.id];
                     return <motion.button key={item.id} type="button" whileHover={reducedMotion ? undefined : { y: -4 }} whileTap={reducedMotion ? undefined : { scale: .99 }}
-                      onClick={() => begin(item.id)} className="arena-track group relative flex flex-col text-left rounded-[1.6rem] border border-border bg-card/80 p-6 sm:p-7 min-h-[280px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-                      aria-label={"Start " + item.title + (past ? ", previously completed " + past.count + " times" : "")}>
+                      onClick={() => begin(item.id)} className="arena-track group relative flex flex-col text-left rounded-[1.6rem] border border-border bg-card/80 p-6 sm:p-7 min-h-[280px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
                       <div className="flex items-center justify-between">
                         <span className="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">{item.level}</span>
                         <span className="text-xs text-muted-foreground">0{i + 1} / 03</span>

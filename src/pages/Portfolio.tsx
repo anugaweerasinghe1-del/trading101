@@ -449,7 +449,8 @@ export default function Portfolio() {
                     size="sm"
                     variant="outline"
                     className="gap-1.5 text-xs"
-                    aria-label="Refresh portfolio and available quotes"
+                    data-testid="portfolio-refresh"
+                    aria-label={refreshing ? "Refreshing…" : "Refresh now: portfolio and available quotes"}
                   >
                     <RefreshCw className={cn("w-4 h-4", refreshing && "animate-spin")} />
                     {refreshing ? "Refreshing…" : "Refresh now"}

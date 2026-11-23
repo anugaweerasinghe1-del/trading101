@@ -91,7 +91,7 @@ export default function ResetPassword() {
                   required
                 />
               </div>
-              <Button type="submit" disabled={busy} className="w-full !text-black font-bold">
+              <Button type="submit" disabled={busy} className="w-full !text-primary-foreground font-bold">
                 {busy && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                 Update password
               </Button>

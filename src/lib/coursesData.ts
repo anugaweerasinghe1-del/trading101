@@ -138,7 +138,7 @@ const optionsTrack: CourseTrack = {
         { label: "OIC — Delta", url: "https://www.optionseducation.org/advancedconcepts/delta" },
         { label: "OIC — Theta", url: "https://www.optionseducation.org/advancedconcepts/theta" },
         { label: "OIC — Vega", url: "https://www.optionseducation.org/advancedconcepts/vega" },
-        { label: "Cboe — The Greeks", url: "https://www.cboe.com/education/tools/" },
+        { label: "Cboe — options-pricing tools", url: "https://www.cboe.com/education/tools/" },
       ],
       quiz: [
         { question: "What does theta measure?", options: ["Directional exposure", "Time decay per day", "Volatility sensitivity", "Interest-rate risk"], correctAnswer: 1, explanation: "Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated." },

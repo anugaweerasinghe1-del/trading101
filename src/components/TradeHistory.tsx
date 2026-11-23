@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Table,
   TableBody,
@@ -80,13 +79,12 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
             className="pl-10"
           />
         </div>
-        <Tabs value={filterType} onValueChange={(v) => setFilterType(v as any)} className="w-auto">
-          <TabsList>
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="buy">Buys</TabsTrigger>
-            <TabsTrigger value="sell">Sells</TabsTrigger>
-          </TabsList>
-        </Tabs>
+        <div role="group" aria-label="Filter trade history by side" className="inline-flex items-center gap-1">
+          {([['all', 'All'], ['buy', 'Buys'], ['sell', 'Sells']] as const).map(([value, label]) => (
+            <Button key={value} type="button" size="sm" variant={filterType === value ? 'default' : 'outline'}
+              aria-pressed={filterType === value} onClick={() => setFilterType(value)}>{label}</Button>
+          ))}
+        </div>
       </div>
 
       {sortedTrades.length === 0 ? (

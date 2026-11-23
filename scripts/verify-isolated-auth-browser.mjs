@@ -741,7 +741,7 @@ async function main(){
     })()`});
     const chartValue = "document.querySelector('[data-portfolio-chart-value]')?.textContent";
     const accountValue = "document.querySelector('[data-portfolio-total-value]')?.textContent";
-    const refreshPortfolio = () => devtools.evaluate("document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.click()");
+    const refreshPortfolio = () => devtools.evaluate("document.querySelector('[data-testid=\"portfolio-refresh\"]')?.click()");
     await devtools.evaluate("localStorage.removeItem('tradehq:account-portfolio-history:v1:" + USER_ID + ":fixture')");
     portfolioReadFailure=true;
     await loadDocument(origin+"/portfolio");
@@ -778,7 +778,7 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('[data-portfolio-reference-status]')?.textContent.includes('below this chart') && document.querySelector('button[aria-label=\"Toggle 10% downside reference\"]')?.getAttribute('aria-pressed')==='true'"),'Downside reference restores its actual value and status');
 
     portfolioPrice=100;portfolioQuoteVersion=0;await refreshPortfolio();
-    await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.disabled"),'Old quote response settled');
+    await wait(()=>devtools.evaluate("!document.querySelector('[data-testid=\"portfolio-refresh\"]')?.disabled"),'Old quote response settled');
     assert.equal(await devtools.evaluate(chartValue),'$100004.85','Delayed quote must not roll back the account valuation');
     assert.equal(portfolioInitialized,initCount,'An existing portfolio refresh must not call the initializer');
     portfolioPrice=110;portfolioQuoteVersion=10;
@@ -1851,7 +1851,7 @@ async function main(){
     assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('1.234567') && "+fxPanel+".querySelector('time').dateTime==="+JSON.stringify(fxDate)), 'Actual source date and rate are visible');
     assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('does not set trade prices or portfolio values')"));
     const readsBeforeNavigation=fxReferenceReads;
-    await devtools.evaluate("document.querySelector('[aria-label^=\"Choose an asset\"]').click()");
+    await devtools.evaluate("document.querySelector('[data-testid=\"asset-search-trigger\"]').click()");
     await wait(()=>devtools.evaluate("!!document.querySelector('#asset-search-panel input')"),'FX asset chooser');
     await adminInput('#asset-search-panel input','GBP/USD');
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('#asset-search-panel button')].some(e=>e.textContent.includes('GBP/USD'))"),'GBP choice');

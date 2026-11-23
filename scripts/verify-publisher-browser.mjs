@@ -346,8 +346,8 @@ try {
   // Selecting an instrument on a dedicated route must update the route and
   // its publisher notes as well as the visible instrument; no order is placed.
   await send('Page.navigate', {url:origin+'/trade/btc'});
-  await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Bitcoin Trading Simulator — Free Virtual Practice') && document.querySelector('h1')?.textContent.trim() === 'Bitcoin Trading Simulator — Free Virtual Practice'`, 'Bitcoin route must mount before selection');
-  await waitUntil(`!!document.querySelector('[data-testid="asset-mobile-order-launcher"] button[aria-label="Open BTC virtual practice order"]')`, 'Mobile Bitcoin simulator offers a clearly labelled virtual-order entry before the chart');
+  await waitUntil(`document.querySelector('button[data-testid="asset-search-trigger"][data-asset-id="btc"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Bitcoin Trading Simulator — Free Virtual Practice') && document.querySelector('h1')?.textContent.trim() === 'Bitcoin Trading Simulator — Free Virtual Practice'`, 'Bitcoin route must mount before selection');
+  await waitUntil(`!!document.querySelector('[data-testid="asset-mobile-order-launcher"] button[aria-label="Practice BTC (virtual): open order panel"]')`, 'Mobile Bitcoin simulator offers a clearly labelled virtual-order entry before the chart');
   assert.equal(await evaluate(`(() => {
     const trigger = document.querySelector('[data-testid="asset-mobile-order-launcher"]');
     const chart = document.querySelector('[data-testid="asset-chart"]');

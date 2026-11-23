@@ -41,7 +41,7 @@ export function PriceTicker({ assets }: PriceTickerProps) {
           type="button"
           variant="ghost"
           size="sm"
-          aria-label={moving ? "Stop price ticker motion" : "Start price ticker motion"}
+          aria-label={moving ? "Stop scrolling: price ticker motion" : "Start scrolling: price ticker motion"}
           onClick={() => {
             setOffset(0);
             setMotionChoice(!moving);

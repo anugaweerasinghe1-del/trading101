@@ -150,7 +150,7 @@ export default function PublicTrader() {
               <p className="text-sm text-muted-foreground mb-6">
                 The trader may have set their profile to private, or the username does not exist.
               </p>
-              <Button className="!text-black font-bold rounded-xl" asChild>
+              <Button className="!text-primary-foreground font-bold rounded-xl" asChild>
 <Link to="/leaderboard">Back to leaderboard</Link>
 </Button>
             </div>

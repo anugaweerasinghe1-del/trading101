@@ -270,7 +270,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* Sector (for stocks) */}
             {stats?.sector && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">Sector</span>
+                <span className="text-muted-foreground text-sm">Site grouping</span>
                 <span className="text-foreground font-medium">{stats.sector}</span>
               </div>
             )}
@@ -278,7 +278,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* Primary Driver */}
             {stats?.primaryDriver && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">Primary Driver</span>
+                <span className="text-muted-foreground text-sm">Research topic</span>
                 <span className="text-foreground font-medium">{stats.primaryDriver}</span>
               </div>
             )}
@@ -286,7 +286,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* Consensus (for crypto) */}
             {stats?.consensus && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">Consensus</span>
+                <span className="text-muted-foreground text-sm">Network description</span>
                 <span className="text-foreground font-medium">{stats.consensus}</span>
               </div>
             )}

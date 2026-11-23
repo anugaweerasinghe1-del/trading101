@@ -41,11 +41,11 @@ export function GEOKeyTakeaways({ asset }: GEOKeyTakeawaysProps) {
         ))}
       </ul>
 
-      <p className="text-xs text-muted-foreground/70 mt-4 italic pl-6">
+      <p className="text-xs text-muted-foreground mt-4 italic pl-6">
         {studentPerspective}
       </p>
 
-      <p className="text-[10px] text-muted-foreground/40 mt-2 italic pl-6">
+      <p className="text-[10px] text-muted-foreground mt-2 italic pl-6">
         (Educational simulation only — not financial advice.)
       </p>
     </section>
@@ -61,7 +61,7 @@ function getInfluencersBullet(asset: Asset, content: ReturnType<typeof getAssetC
   const sector = content.stats?.sector;
 
   if (driver) {
-    return `Primary market driver: ${driver}. ${sector ? `Sector: ${sector}.` : ''} Price influenced by macroeconomic conditions and sector-specific catalysts.`;
+    return `Research topic: ${driver}. ${sector ? `Site grouping: ${sector}.` : ''} These navigation labels do not rank price causes or forecast returns.`;
   }
   if (asset.type === 'crypto') {
     return `Cryptocurrency influenced by network adoption, regulatory developments, and broader digital asset sentiment.`;

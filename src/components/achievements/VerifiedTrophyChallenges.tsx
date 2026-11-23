@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { CheckCircle2, LockKeyhole, ShieldCheck, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { trophyEvidenceKey, trophyRequest, useVerifiedTrophyState, type ScoredChallenge } from "@/lib/trophyEvidenceClient";
+import { dailyPracticeDisplayText } from "@/lib/dailyPracticeEditorial";
 
 const challengeGroups = [
   { label: "Scored learning cases", ids: [
@@ -185,7 +186,7 @@ export function VerifiedTrophyChallenges() {
               <h3 className="text-lg font-semibold">{challenge?.title??selectedLabel}</h3>
               {working&&!challenge?<p role="status">Loading scored challenge…</p>:null}
               {challenge && <>
-                <p className="text-sm text-muted-foreground whitespace-pre-line">{challenge.detail}</p>
+                <p className="text-sm text-muted-foreground whitespace-pre-line">{dailyPracticeDisplayText(challenge.detail)}</p>
                 {challenge.questions.map((question,i)=>(
                   <fieldset key={i} disabled={working||!!grade} className="space-y-2">
                     <legend className="font-medium text-sm">{i+1}. {question.prompt}</legend>
@@ -208,7 +209,7 @@ export function VerifiedTrophyChallenges() {
                     <p className="font-semibold"><CheckCircle2 className="inline h-4 w-4 mr-1 text-primary" />
                       {grade.points} / {grade.possible} correct · {grade.passed ? selected==="second-look-initial"?"A miss recorded for a new follow-up":"Scored requirement passed":"Review the explanations and try again"}
                     </p>
-                    {grade.explanations.map((ex,i)=><p key={i} className="text-sm text-muted-foreground">{i+1}. {ex}</p>)}
+                    {grade.explanations.map((ex,i)=><p key={i} className="text-sm text-muted-foreground">{i+1}. {dailyPracticeDisplayText(ex)}</p>)}
                     <div className="flex flex-wrap gap-3 pt-2">
                       <button type="button" onClick={()=>void open(challenge.id)} className="text-sm underline">Try another attempt</button>
                       {grade.next&&<button type="button" className="text-sm font-semibold underline text-primary" onClick={()=>void open(grade.next!)}>Open different follow-up</button>}

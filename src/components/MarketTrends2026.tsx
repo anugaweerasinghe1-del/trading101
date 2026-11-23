@@ -87,7 +87,7 @@ return (
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                     {trend.title}
                   </h3>
-                  <p className="text-sm text-primary/80 mb-4">{trend.subtitle}</p>
+                  <p className="text-sm text-primary mb-4">{trend.subtitle}</p>
                   <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                     {trend.description}
                   </p>

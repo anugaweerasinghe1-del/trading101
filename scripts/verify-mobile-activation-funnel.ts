@@ -40,7 +40,7 @@ assert.match(mobile, /role="alert"/, "A failed order must explain that it was no
 assert.match(mobile, /setConfirmationFailed\(true\)/);
 assert.match(mobile, /submittingRef\.current/, "Rapid taps must not duplicate in-flight orders");
 assert.match(mobile, /\[asset\?\.id\]/, "Switching assets resets stale inputs and drawer");
-assert.match(mobile, /Open \$\{asset\.symbol\} virtual practice order/,
+assert.match(mobile, /Practice \$\{asset\.symbol\} \(virtual\): open order panel/,
   "Accessible label states it is a virtual order");
 assert.match(mobile, /trackLearningMilestone\("Mobile Order Panel Opened"\)/);
 assert.match(mobile, /<RevengeTradingBlocker/, "Existing risk guardrails remain in place");

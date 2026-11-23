@@ -443,12 +443,29 @@ function isYesterday(prev: string, todayKey: string): boolean {
 // Back-compat alias (older callers)
 const utcDateKey = dayKey;
 
+function isStoredStreak(value: unknown): value is StreakState {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const state = value as Partial<StreakState>;
+  const validDate = (date: unknown): date is string => typeof date === "string"
+    && /^\d{4}-\d{2}-\d{2}$/.test(date)
+    && Number.isFinite(Date.parse(date))
+    && new Date(date).toISOString().slice(0, 10) === date;
+  return [state.current, state.longest, state.totalCompleted].every(
+    count => typeof count === "number" && Number.isSafeInteger(count) && count >= 0,
+  ) && (state.lastCompletedDate === null || validDate(state.lastCompletedDate))
+    && Array.isArray(state.history) && state.history.length <= 100
+    && state.history.every(entry => entry && typeof entry === "object"
+      && validDate(entry.date) && Number.isSafeInteger(entry.challengeId) && entry.challengeId >= 0
+      && ["long", "short", "hold"].includes(entry.decision));
+}
+
 export function getStreak(): StreakState {
   try {
     if (typeof window === "undefined") return DEFAULT_STATE;
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return DEFAULT_STATE;
-    const parsed = JSON.parse(raw) as StreakState;
+    if (!raw || raw.length > 50_000) return DEFAULT_STATE;
+    const parsed: unknown = JSON.parse(raw);
+    if (!isStoredStreak(parsed)) return DEFAULT_STATE;
     // If user missed yesterday, current streak resets when they next view
     const todayKey = utcDateKey();
     if (parsed.lastCompletedDate && parsed.lastCompletedDate !== todayKey && !isYesterday(parsed.lastCompletedDate, todayKey)) {
@@ -549,7 +566,7 @@ const BONUS_BANK: BonusQuestion[] = [
     id: 2, prompt: "If RSI reads 80, the asset is generally considered…",
     options: [
       { label: "Oversold — likely bounce", correct: false, explain: "Oversold is RSI <30, not 80." },
-      { label: "Conventionally called overbought; not a forecast", correct: true, explain: "RSI >70 signals overbought; >80 is extreme." },
+      { label: "Conventionally called overbought; not a forecast", correct: true, explain: "Above 70 is a conventional overbought label under common RSI settings. A reading of 80 can persist and does not establish a reversal. TradeHQ's RSI-style value is not standard historical RSI." },
       { label: "Neutral — keep buying", correct: false, explain: "Neutral RSI is around 50." },
     ],
   },
@@ -566,7 +583,7 @@ const BONUS_BANK: BonusQuestion[] = [
     options: [
       { label: "It measures expected S&P 500 volatility (the 'fear gauge')", correct: true, explain: "VIX reflects option-implied S&P 500 volatility over roughly 30 days. It does not predict the direction of the next market move." },
       { label: "It tracks Bitcoin dominance", correct: false, explain: "That's BTC.D, not VIX." },
-      { label: "It signals interest-rate decisions", correct: false, explain: "Rate signals come from Fed funds futures." },
+      { label: "It signals interest-rate decisions", correct: false, explain: "Fed funds futures imply market-priced rate probabilities, not certain decisions. VIX measures a different quantity." },
     ],
   },
   {
@@ -578,17 +595,17 @@ const BONUS_BANK: BonusQuestion[] = [
     ],
   },
   {
-    id: 6, prompt: "What does 'diversification' protect you from?",
+    id: 6, prompt: "What can diversification reduce?",
     options: [
-      { label: "Single-asset blow-up risk", correct: true, explain: "Spreading exposure can reduce concentration in one asset, but correlated holdings can still lose together and no allocation prevents every loss." },
-      { label: "All market crashes", correct: false, explain: "In a broad crash, most assets fall together — diversification helps but isn't bulletproof." },
+      { label: "Concentration in a single asset", correct: true, explain: "Spreading exposure can reduce concentration in one asset, but correlated holdings can still lose together and no allocation prevents every loss." },
+      { label: "All market crashes", correct: false, explain: "Different holdings can decline together. Diversification can reduce concentration without preventing every market loss." },
       { label: "Inflation", correct: false, explain: "Diversification alone does not guarantee protection against inflation. Any proposed inflation-sensitive exposure needs its own assumptions, costs and risks." },
     ],
   },
   {
     id: 7, prompt: "What's 'slippage'?",
     options: [
-      { label: "Difference between expected price and actual fill", correct: true, explain: "Common in fast or thin markets — eats into edge." },
+      { label: "Difference between expected price and actual fill", correct: true, explain: "Slippage can be favorable or adverse. Compare a defined reference price with actual execution, separately from transaction fees." },
       { label: "A broker fee", correct: false, explain: "Fees are separate — slippage is execution cost." },
       { label: "Profit you didn't take", correct: false, explain: "That's opportunity cost, not slippage." },
     ],

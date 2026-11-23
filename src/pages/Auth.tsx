@@ -202,7 +202,7 @@ export default function Auth() {
                     />
                   </div>
 
-                  <Button type="submit" disabled={busy} className="w-full !text-black font-bold">
+                  <Button type="submit" disabled={busy} className="w-full !text-primary-foreground font-bold">
                     {busy && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                     {mode === "signin" ? "Sign in" : "Create account"}
                   </Button>

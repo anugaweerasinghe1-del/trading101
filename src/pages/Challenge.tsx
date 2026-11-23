@@ -278,7 +278,7 @@ export default function Challenge() {
                 The code does not match an existing duel. Double-check the link, or start a
                 fresh duel of your own.
               </p>
-              <Button className="!text-black font-bold rounded-xl" asChild>
+              <Button className="!text-primary-foreground font-bold rounded-xl" asChild>
 <Link to="/challenge">Create a challenge</Link>
 </Button>
             </Card>
@@ -305,7 +305,7 @@ export default function Challenge() {
                       This duel already has two traders. You can still watch the scoreboard below.
                     </p>
                   ) : (
-                    <Button onClick={goSignIn} className="!text-black font-bold rounded-xl px-8">
+                    <Button onClick={goSignIn} className="!text-primary-foreground font-bold rounded-xl px-8">
                       Sign in to accept
                     </Button>
                   )}
@@ -412,12 +412,12 @@ export default function Challenge() {
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
                   {!user ? (
                     !isFull && duel.score_mode === "server" && (
-                      <Button onClick={goSignIn} className="!text-black font-bold rounded-xl">
+                      <Button onClick={goSignIn} className="!text-primary-foreground font-bold rounded-xl">
                         Sign in to join
                       </Button>
                     )
                   ) : !isFull && !isMine ? (
-                    <Button onClick={joinDuel} disabled={busy} className="!text-black font-bold rounded-xl">
+                    <Button onClick={joinDuel} disabled={busy} className="!text-primary-foreground font-bold rounded-xl">
                       {busy && <Loader2 className="w-4 h-4 mr-2 animate-spin" />} Accept the challenge
                     </Button>
                   ) : isMine || amOpponent ? (
@@ -457,7 +457,7 @@ export default function Challenge() {
                       Signed in as <strong>{profile?.username ?? "you"}</strong>. Create a duel and
                       share the link with a friend.
                     </p>
-                    <Button onClick={createDuel} disabled={busy} className="!text-black font-bold rounded-xl px-8">
+                    <Button onClick={createDuel} disabled={busy} className="!text-primary-foreground font-bold rounded-xl px-8">
                       {busy && <Loader2 className="w-4 h-4 mr-2 animate-spin" />} Create a challenge link
                     </Button>
                   </>
@@ -467,7 +467,7 @@ export default function Challenge() {
                       Duels need a free account so both scores can be tracked. Core simulator and learning features
                       work without signing in; community profiles, ranked scores and duels require an account.
                     </p>
-                    <Button onClick={goSignIn} className="!text-black font-bold rounded-xl px-8">
+                    <Button onClick={goSignIn} className="!text-primary-foreground font-bold rounded-xl px-8">
                       Create a free account
                     </Button>
                   </>

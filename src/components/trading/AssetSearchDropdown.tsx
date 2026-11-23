@@ -87,9 +87,10 @@ export function AssetSearchDropdown({
       {/* Trigger Button */}
       <button
         ref={triggerRef}
+        data-testid="asset-search-trigger"
+        data-asset-id={selectedAsset?.id ?? ""}
         aria-expanded={isOpen}
         aria-controls="asset-search-panel"
-        aria-label={selectedAsset ? `Choose an asset, currently ${selectedAsset.symbol}` : "Choose an asset"}
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl glass-panel border border-white/10 hover:border-primary/30 transition-all"
       >

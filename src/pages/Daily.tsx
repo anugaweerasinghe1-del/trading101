@@ -28,6 +28,7 @@ const dailyDarkPalette = {
   "--foreground": "220 15% 93%",
   "--muted-foreground": "220 14% 68%",
   "--primary": "168 100% 50%",
+  "--primary-foreground": "0 0% 3%",
 } as CSSProperties;
 
 export default function Daily() {

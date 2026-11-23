@@ -210,13 +210,13 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
 
           {/* Key takeaways */}
           <Card className="p-6 mt-8 bg-emerald-500/5 border-emerald-500/20">
-            <h3 className="text-sm uppercase tracking-widest text-emerald-400 mb-3 inline-flex items-center gap-2">
+            <h3 className="text-sm uppercase tracking-widest text-emerald-400 [.light_&]:text-emerald-800 mb-3 inline-flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" /> Key Takeaways
             </h3>
             <ul className="space-y-2">
               {lesson.keyTakeaways.map((t, i) => (
                 <li key={i} className="flex gap-2 text-sm text-foreground/90">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 [.light_&]:text-emerald-800 mt-0.5 flex-shrink-0" />
                   <span>{t}</span>
                 </li>
               ))}
@@ -291,7 +291,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             ) : (
               <Card className="mt-6 p-5 bg-emerald-500/10 border-emerald-500/30">
                 <div className="flex items-center gap-3">
-                  <Award className="w-6 h-6 text-emerald-400" />
+                  <Award className="w-6 h-6 text-emerald-400 [.light_&]:text-emerald-800" />
                   <div className="flex-1">
                     <div className="font-semibold">Lesson complete — {score}/{lesson.quiz.length}</div>
                     <div className="text-xs text-muted-foreground">Progress saved to your browser. Come back anytime.</div>
