@@ -5,6 +5,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { resolve } from "node:path";
+import { RETIRED_MEDIA_PATHS } from "./retired-media.mjs";
 
 const dir = resolve(process.cwd(), "dist");
 const shellFile = resolve(dir, "app-shell.html");
@@ -53,7 +54,7 @@ const include = [
   "/auth", "/reset-password", "/admin", "/admin/*",
   "/trader/*", "/trade/*", "/challenge", "/challenge/*",
   "/courses/*", "/course-sitemap.xml", "/learn/article/*",
-  "/api/contact", "/api/fx-reference"
+  "/api/contact", "/api/fx-reference", ...RETIRED_MEDIA_PATHS
 ];
 if (include.length > 100 || include.some((x) => x.length > 100)) {
   throw new Error("Cloudflare Pages Functions routing limit exceeded.");

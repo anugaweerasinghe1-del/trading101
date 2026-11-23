@@ -135,7 +135,7 @@ export function MarketClusters({ assets }: MarketClustersProps) {
                   variant="outline" 
                   className={cn(
                     "text-xs",
-                    avgChange >= 0 ? "text-green-400 border-green-400/30" : "text-red-400 border-red-400/30"
+                    avgChange >= 0 ? "text-profit border-profit/30" : "text-foreground border-loss/30"
                   )}
                 >
                   {avgChange >= 0 ? "+" : ""}{avgChange.toFixed(1)}% <span className="sr-only">average simulated percentage change</span>

@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-11-23T14:44:59.179Z",
+  "observations": [
+    {
+      "path": "/admin/reviews",
+      "width": 360,
+      "mainLandmark": true,
+      "unlockGatePreserved": true,
+      "privilegedRequestMade": false,
+      "overflow": false,
+      "uncaughtErrors": []
+    },
+    {
+      "path": "/markets",
+      "width": 360,
+      "commodityScopeCorrect": true
+    },
+    {
+      "path": "/portfolio",
+      "width": 360,
+      "actualExpandedFaqMatchesCurrentHoldingsSummary": true
+    },
+    {
+      "path": "/admin/reviews",
+      "width": 1280,
+      "mainLandmark": true,
+      "unlockGatePreserved": true,
+      "privilegedRequestMade": false,
+      "overflow": false,
+      "uncaughtErrors": []
+    },
+    {
+      "path": "/markets",
+      "width": 1280,
+      "commodityScopeCorrect": true
+    },
+    {
+      "path": "/portfolio",
+      "width": 1280,
+      "actualExpandedFaqMatchesCurrentHoldingsSummary": true
+    }
+  ],
+  "scope": "Compiled local real UI, no trades/submissions/admin credentials; native deployed result still requires independent verification."
+}

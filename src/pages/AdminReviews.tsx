@@ -139,7 +139,7 @@ export default function AdminReviews() {
           <title>Admin Reviews — TradeHQ</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
-        <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <main className="min-h-screen bg-background flex items-center justify-center p-4">
           <form onSubmit={verify} className="w-full max-w-sm space-y-4 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
             <Link to="/admin" className="block text-sm text-primary mb-4">← Admin dashboard</Link>
             <div className="flex items-center gap-2 mb-2">
@@ -164,7 +164,7 @@ export default function AdminReviews() {
               {verifying ? "Verifying…" : "Unlock"}
             </button>
           </form>
-        </div>
+        </main>
       </>
     );
   }
@@ -175,7 +175,7 @@ export default function AdminReviews() {
         <title>Admin Reviews — TradeHQ</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <div className="min-h-screen bg-background p-4 md:p-8">
+      <main className="min-h-screen bg-background p-4 md:p-8">
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="flex items-center justify-between gap-3">
             <h1 className="text-xl font-bold">Reviews ({reviews.length})</h1>
@@ -271,7 +271,7 @@ export default function AdminReviews() {
             );
           })}
         </div>
-      </div>
+      </main>
     </>
   );
 }
