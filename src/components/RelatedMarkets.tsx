@@ -83,7 +83,7 @@ export function RelatedMarkets({ currentAsset }: RelatedMarketsProps) {
             </div>
 
             {/* Descriptive anchor text for SEO */}
-            <span className="text-2xs text-muted-foreground/50 mt-2 block group-hover:text-primary/60 transition-colors line-clamp-1">
+            <span className="text-2xs text-muted-foreground mt-2 block group-hover:text-primary transition-colors line-clamp-1">
               {getAnchorText(asset)}
             </span>
           </Link>

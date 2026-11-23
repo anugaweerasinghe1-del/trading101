@@ -105,7 +105,7 @@ function CourseTrackContent({ track }: { track: Track }) {
           <Card className="p-5 mb-6 bg-white/[0.02] border-white/10">
             <div className="flex items-center justify-between text-sm mb-2">
               <span className="text-muted-foreground">Your progress</span>
-              <span className="font-semibold text-emerald-400">{pct}%</span>
+              <span className="font-semibold text-emerald-400 [.light_&]:text-emerald-800">{pct}%</span>
             </div>
             <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
               <div className="h-full bg-emerald-500 transition-all" style={{ width: `${pct}%` }} />
@@ -123,7 +123,7 @@ function CourseTrackContent({ track }: { track: Track }) {
             <ul className="space-y-3">
               {track.outcomes.map((o) => (
                 <li key={o} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 [.light_&]:text-emerald-800 shrink-0 mt-0.5" />
                   <span>{o}</span>
                 </li>
               ))}
@@ -158,7 +158,7 @@ function CourseTrackContent({ track }: { track: Track }) {
                   <Card className="p-4 md:p-5 flex items-start gap-4 bg-white/[0.02] border-white/10 hover:border-emerald-500/40 hover:bg-white/[0.04] transition-all">
                     <div className="mt-1">
                       {done ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                        <CheckCircle2 className="w-5 h-5 text-emerald-400 [.light_&]:text-emerald-800" />
                       ) : (
                         <Circle className="w-5 h-5 text-muted-foreground" />
                       )}

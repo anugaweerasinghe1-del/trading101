@@ -73,7 +73,7 @@ export function ContextualLinks({ variant, asset, assetSymbols }: ContextualLink
         </h2>
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
           These general explainers cover trading concepts, not research or a valuation of {asset.name}. Use them alongside your simulated {asset.symbol} practice, then review positions in your{" "}
-          <Link to="/portfolio" className="text-primary underline-offset-4 hover:underline">
+          <Link to="/portfolio" className="text-primary underline underline-offset-4">
             portfolio dashboard
           </Link>
           .
@@ -116,18 +116,18 @@ export function ContextualLinks({ variant, asset, assetSymbols }: ContextualLink
           Browse 170 assets across stocks, crypto, ETFs, forex and commodities. Featured practice markets:{" "}
           {symbols.map((s, i) => (
             <span key={s}>
-              <Link to={`/trade/${s}`} className="text-primary underline-offset-4 hover:underline font-medium">
+              <Link to={`/trade/${s}`} className="text-primary underline underline-offset-4 font-medium">
                 {s.toUpperCase()}
               </Link>
               {i < symbols.length - 1 ? ", " : ""}
             </span>
           ))}
           . Want a structured plan? Visit the{" "}
-          <Link to="/learn" className="text-primary underline-offset-4 hover:underline">
+          <Link to="/learn" className="text-primary underline underline-offset-4">
             Learning Center
           </Link>{" "}
           or open your{" "}
-          <Link to="/portfolio" className="text-primary underline-offset-4 hover:underline">
+          <Link to="/portfolio" className="text-primary underline underline-offset-4">
             portfolio dashboard
           </Link>
           .
@@ -147,7 +147,7 @@ export function ContextualLinks({ variant, asset, assetSymbols }: ContextualLink
         </h2>
         <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
           Strengthen your simulated portfolio with these guides — then put them into practice on the{" "}
-          <Link to="/trade" className="text-primary underline-offset-4 hover:underline">
+          <Link to="/trade" className="text-primary underline underline-offset-4">
             trading simulator
           </Link>
           .
@@ -185,14 +185,14 @@ export function ContextualLinks({ variant, asset, assetSymbols }: ContextualLink
           . Practise with virtual cash using these asset examples:{" "}
           {symbols.map((s, i) => (
             <span key={s}>
-              <Link to={`/trade/${s}`} className="text-primary underline-offset-4 hover:underline font-medium">
+              <Link to={`/trade/${s}`} className="text-primary underline underline-offset-4 font-medium">
                 {s.toUpperCase()}
               </Link>
               {i < symbols.length - 1 ? ", " : ""}
             </span>
           ))}
           . Or scan the full{" "}
-          <Link to="/markets" className="text-primary underline-offset-4 hover:underline">
+          <Link to="/markets" className="text-primary underline underline-offset-4">
             markets dashboard
           </Link>{" "}
           for ideas.

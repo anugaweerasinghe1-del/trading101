@@ -107,7 +107,7 @@ export function ConsentBanner() {
           Reject
         </button>
         <button type="button" onClick={() => save("accepted", true)}
-          aria-label="I confirm I am 18 or older and consent to optional analytics"
+          aria-label="I'm 18+ · Accept analytics: I confirm I am 18 or older and consent to optional analytics"
           className="min-h-10 flex-[2] rounded-lg bg-primary px-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
           I'm 18+ · Accept analytics
         </button>

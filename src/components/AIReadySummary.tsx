@@ -92,7 +92,7 @@ export function AIReadySummary({ asset }: AIReadySummaryProps) {
             The chart refreshes separately, so its quoted change may differ.
           </p>
           
-          <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground/70">
+          <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
             <span>Simulated data — not real market conditions</span>
             <span>•</span>
             <span className="italic">Educational simulation only</span>

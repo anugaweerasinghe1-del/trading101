@@ -19,11 +19,11 @@
 
     /* Electric Neon primary */
     --primary: 168 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 3%;
 
     /* Sunset Coral secondary */
     --secondary: 12 90% 62%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 3%;
 
     --muted: 220 8% 11%;
     --muted-foreground: 220 14% 68%;
@@ -102,11 +102,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 31% 13%;
 
-    --primary: 169 80% 27%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 169 80% 22%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 12 85% 52%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 3%;
 
     --muted: 210 24% 94%;
     --muted-foreground: 215 15% 38%;
@@ -114,20 +114,20 @@
     --accent: 169 32% 90%;
     --accent-foreground: 170 71% 18%;
 
-    --success: 154 70% 29%;
+    --success: 154 70% 23%;
     --success-foreground: 0 0% 100%;
     
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --profit: 154 70% 29%;
+    --profit: 154 70% 23%;
     --loss: 0 75% 50%;
     --buy: 154 70% 29%;
     --sell: 0 75% 50%;
-    --warning: 36 86% 37%;
+    --warning: 36 86% 29%;
     --profit-foreground: 0 0% 100%;
     --loss-foreground: 0 0% 100%;
-    --warning-foreground: 0 0% 3%;
+    --warning-foreground: 0 0% 100%;
 
     --coral: 12 79% 45%;
     --neon: 169 80% 27%;

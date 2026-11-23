@@ -286,7 +286,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* Consensus (for crypto) */}
             {stats?.consensus && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">Consensus</span>
+                <span className="text-muted-foreground text-sm">Network description</span>
                 <span className="text-foreground font-medium">{stats.consensus}</span>
               </div>
             )}

@@ -139,9 +139,9 @@ export function MegaFooter() {
                     <li key={asset.symbol}>
                       <Link
                         to={asset.path}
-                        className="text-sm text-foreground/60 hover:text-primary transition-colors duration-200 flex items-center gap-2 group"
+                        className="text-sm text-foreground/80 hover:text-primary transition-colors duration-200 flex items-center gap-2 group"
                       >
-                        <span className="font-mono text-xs text-primary/60 group-hover:text-primary">
+                        <span className="font-mono text-xs text-primary group-hover:text-primary">
                           {asset.symbol}
                         </span>
                         <span className="hidden lg:inline text-muted-foreground group-hover:text-foreground">
@@ -167,7 +167,7 @@ export function MegaFooter() {
               <Link
                 key={term.slug}
                 to={`/wiki/${term.slug}`}
-                className="text-xs text-foreground/50 hover:text-primary bg-white/[0.02] border border-white/[0.04] px-3 py-1.5 rounded-lg transition-colors duration-200"
+                className="text-xs text-foreground/80 hover:text-primary bg-white/[0.02] border border-white/[0.04] px-3 py-1.5 rounded-lg transition-colors duration-200"
               >
                 {term.term}
               </Link>
@@ -314,7 +314,7 @@ export function MegaFooter() {
             <EducationalDisclaimer variant="footer" className="!p-0 !bg-transparent !border-0" />
           </div>
 
-          <p className="text-xs text-muted-foreground/60 text-center">
+          <p className="text-xs text-muted-foreground text-center">
             © {new Date().getFullYear()} TradeHQ · Built by Anuga Weerasinghe · Educational Use Only
           </p>
           <p className="mt-3 text-xs text-muted-foreground text-center">

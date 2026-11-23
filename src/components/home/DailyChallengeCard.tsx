@@ -110,9 +110,9 @@ export function DailyChallengeCard() {
             "w-full h-12 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.97]",
             played
               ? "bg-success/15 text-success border border-success/30"
-              : "bg-primary text-black hover:bg-primary/90",
+              : "bg-primary text-primary-foreground hover:bg-primary/90",
           )}
-          style={!played ? { color: "#000", boxShadow: "0 0 24px hsl(168 100% 50% / 0.3)" } : undefined}
+          style={!played ? { boxShadow: "0 0 24px hsl(168 100% 50% / 0.3)" } : undefined}
         >
           {played ? (
             <>

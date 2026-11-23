@@ -320,7 +320,7 @@ export default function Leaderboard() {
               <div className="flex flex-wrap items-center gap-2 lg:max-w-xs lg:justify-end">
                 {user ? (
                   <>
-                    <Button onClick={handleSync} disabled={syncing} size="sm" className="!text-black font-semibold rounded-xl">
+                    <Button onClick={handleSync} disabled={syncing} size="sm" className="!text-primary-foreground font-semibold rounded-xl">
                       {syncing ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <RefreshCw className="w-4 h-4 mr-2" />}
                       Refresh portfolio
                     </Button>
@@ -329,7 +329,7 @@ export default function Leaderboard() {
 </Button>
                   </>
                 ) : (
-                  <Button size="sm" className="!text-black font-semibold rounded-xl" asChild>
+                  <Button size="sm" className="!text-primary-foreground font-semibold rounded-xl" asChild>
 <Link to="/auth?mode=signup">Create a free account to join</Link>
 </Button>
                 )}
@@ -536,7 +536,7 @@ export default function Leaderboard() {
                       Both sides are compared by percentage change from their own recorded starting balance.
                       Scores are simulated practice statistics and are not independently verified.
                     </p>
-                    <Button className="!text-black font-bold rounded-xl" asChild>
+                    <Button className="!text-primary-foreground font-bold rounded-xl" asChild>
 <Link to="/challenge">
                         Challenge a friend <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>

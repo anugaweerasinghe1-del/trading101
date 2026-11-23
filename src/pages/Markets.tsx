@@ -403,7 +403,7 @@ export default function Markets() {
                   <Link
                     key={term.slug}
                     to={`/wiki/${term.slug}`}
-                    className="inline-flex items-center min-h-[36px] px-3 py-1.5 text-xs font-medium rounded-full bg-primary/5 border border-primary/15 text-primary/80 hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200"
+                    className="inline-flex items-center min-h-[36px] px-3 py-1.5 text-xs font-medium rounded-full bg-primary/5 border border-primary/15 text-primary hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200"
                   >
                     {term.label}
                   </Link>

@@ -222,7 +222,7 @@ const Index = () => {
               <h2 id="follow-tradehq-heading" className="mt-2 text-lg font-semibold text-foreground">Connect with the founder</h2>
               <p className="mt-1 text-sm text-muted-foreground">Follow the founder on his personal Instagram account.</p>
             </div>
-            <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Instagram, @anw_008"
+            <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Follow @anw_008 on the founder's personal Instagram"
               className="inline-flex min-h-11 w-full items-center justify-center gap-2 self-start rounded-xl border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto">
               <Instagram className="h-4 w-4" aria-hidden="true" />
               Follow @anw_008
@@ -313,7 +313,7 @@ const Index = () => {
                 <Link
                   key={term.slug}
                   to={`/wiki/${term.slug}`}
-                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-primary/5 border border-primary/15 text-primary/80 hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200"
+                  className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-primary/5 border border-primary/15 text-primary hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200"
                 >
                   {term.label}
                 </Link>

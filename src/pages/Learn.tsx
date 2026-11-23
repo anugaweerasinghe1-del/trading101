@@ -202,7 +202,7 @@ export default function Learn() {
             <Link to="/achievements" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between
               rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6
               hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary
-              transition-colors" aria-label="Open your private Trophy Cabinet and personal learning milestones">
+              transition-colors">
               <span className="flex gap-4 items-center">
                 <span className="shrink-0 rounded-xl bg-primary/10 p-3 text-primary">
                   <Trophy className="w-6 h-6" aria-hidden="true" />
@@ -278,7 +278,7 @@ export default function Learn() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Your quiz progress can be saved here too. Want a longer structured course? <Link to="/courses" className="text-emerald-400 [.light_&]:text-emerald-800 hover:underline">Take a course</Link>.</p>
+              <p className="text-xs text-muted-foreground">Follow the path below or jump to any quick read that fits your level. Your quiz progress can be saved here too. Want a longer structured course? <Link to="/courses" className="text-emerald-400 [.light_&]:text-emerald-800 underline underline-offset-2">Take a course</Link>.</p>
             </section>
 
             {/* Start Here CTA */}
@@ -287,7 +287,7 @@ export default function Learn() {
                 <h3 className="text-lg font-bold mb-1">New to trading?</h3>
                 <p className="text-sm text-muted-foreground">Start with Quick Read 1 for basic order mechanics. A trade is optional; you can also follow the guided first-trade journey.</p>
               </div>
-                <Button className="bg-primary hover:bg-primary/90 !text-black px-6 py-3 rounded-xl font-bold whitespace-nowrap shadow-[0_0_24px_hsl(168_100%_50%/0.3)]" asChild>
+                <Button className="bg-primary hover:bg-primary/90 !text-primary-foreground px-6 py-3 rounded-xl font-bold whitespace-nowrap shadow-[0_0_24px_hsl(168_100%_50%/0.3)]" asChild>
 <Link to="/learn/1">
                   Start Quick Read 1 <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
@@ -401,7 +401,7 @@ export default function Learn() {
               <p className="text-sm text-muted-foreground mb-6">Understand the terms that matter. Each entry explains a concept with examples and context so you can recognize it in real markets.</p>
               <div className="flex flex-wrap gap-2">
                 {WIKI_TERMS.map(term => (
-                  <Link key={term.slug} to={`/wiki/${term.slug}`} className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-primary/5 border border-primary/15 text-primary/80 hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200">
+                  <Link key={term.slug} to={`/wiki/${term.slug}`} className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-primary/5 border border-primary/15 text-primary hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-200">
                     {term.label}
                   </Link>
                 ))}
