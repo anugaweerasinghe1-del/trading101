@@ -1,0 +1,50 @@
+{
+  "run": 45312168382,
+  "job": 138174195305,
+  "receipt": {
+    "schema": "tradehq-release-recovery-readiness-v2",
+    "currentSha": "aec36c13f45dae7ec49372b9dd0cc83769a5abe2",
+    "priorSha": "4b2926ef7225fa97faebce701b5f1fd147ad5ddc",
+    "productionHost": "cloudflare",
+    "cloudflare": {
+      "source": "authenticated_cloudflare_pages_api",
+      "project": "tradehq-preview",
+      "domain": "www.thetradehq.com",
+      "environment": "production",
+      "branch": "main",
+      "currentSha": "aec36c13f45dae7ec49372b9dd0cc83769a5abe2",
+      "priorSha": "4b2926ef7225fa97faebce701b5f1fd147ad5ddc",
+      "currentDeploymentId": "cb270380-9bc6-4735-8ecb-8739dee620ca",
+      "priorDeploymentId": "de8a86a0-b96d-4771-90fa-f64447c8d9ba",
+      "priorCheckDeploymentId": "de8a86a0-b96d-4771-90fa-f64447c8d9ba",
+      "priorCheckBinding": {
+        "checkDeploymentId": "de8a86a0-b96d-4771-90fa-f64447c8d9ba",
+        "nativeProductionDeploymentId": "de8a86a0-b96d-4771-90fa-f64447c8d9ba",
+        "relation": "native_production",
+        "environment": "production",
+        "branch": "main"
+      },
+      "publicBundles": [
+        "/assets/index-AL9g_19F.js",
+        "/assets/index-D9mWrJ9R.css"
+      ],
+      "observedAt": 1795487705108,
+      "historyLimit": 25,
+      "providerRollbackEligible": false,
+      "rollbackPerformed": false,
+      "productionReleaseAuthorized": false
+    },
+    "requiredCheckCount": 3,
+    "candidateStatus": "PREVIOUS_SUCCESSFUL_COMMIT_ONLY",
+    "providerRollbackEligible": false,
+    "rollbackPerformed": false,
+    "ownerApproval": false,
+    "productionReleaseAuthorized": false,
+    "limitations": [
+      "Previous native production is a candidate, not proof of rollback eligibility or permission.",
+      "Code rollback cannot reverse Supabase migrations or provider settings.",
+      "Vercel is owner-reported paused and is not the production witness; no provider or DNS setting is changed."
+    ],
+    "sha256": "3af6b3b3c02419b73ddcf3465f240df9d67487348c30cec9e1740997e281d4b6"
+  }
+}

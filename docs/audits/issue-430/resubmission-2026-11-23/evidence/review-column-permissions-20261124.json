@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-24T02:30:51.989209+00:00",
+  "roles": [
+    {
+      "role": "anon",
+      "privateIdentifierSelect": false,
+      "publishedContentSelect": true
+    },
+    {
+      "role": "authenticated",
+      "privateIdentifierSelect": false,
+      "publishedContentSelect": true
+    },
+    {
+      "role": "service_role",
+      "privateIdentifierSelect": true,
+      "publishedContentSelect": true
+    }
+  ],
+  "anonymousLimitZeroProbe": {
+    "status": 401,
+    "sqlState": "42501",
+    "zeroRowsRequested": true,
+    "privateIdentifierValuesRead": false
+  },
+  "interpretation": "Anonymous PostgREST permission denial can be401; authenticated negative cases remain separately recorded. Generic error hint recommending tablewideSELECT was not followed; that would undo leastprivilege. No grants changed."
+}

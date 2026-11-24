@@ -1,0 +1,214 @@
+[
+  {
+    "path": "/admin/reviews",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 20
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 35
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 20
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 35
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  }
+]

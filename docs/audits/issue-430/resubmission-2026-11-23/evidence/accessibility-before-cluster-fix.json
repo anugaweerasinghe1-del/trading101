@@ -1,0 +1,302 @@
+[
+  {
+    "path": "/admin/reviews",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 1280,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 20
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 35
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 360,
+    "theme": "dark",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "target": [
+              ".bg-purple-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+1.8% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.44 (foreground color: #4ade80, background color: #ede7fa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-orange-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+2.8% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.47 (foreground color: #4ade80, background color: #f5eae3, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-blue-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+0.0% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.45 (foreground color: #4ade80, background color: #e2ebfa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-green-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+0.0% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.49 (foreground color: #4ade80, background color: #e0f2ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".border-red-400\\/30"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-red-400 border-red-400/30\">-0.6% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.42 (foreground color: #f87171, background color: #f4f0e2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 1280,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 20
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/admin/reviews",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/markets",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 35
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "target": [
+              ".bg-purple-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+1.8% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.44 (foreground color: #4ade80, background color: #ede7fa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-orange-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+2.8% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.47 (foreground color: #4ade80, background color: #f5eae3, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-blue-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+0.0% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.45 (foreground color: #4ade80, background color: #e2ebfa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".bg-green-500\\/10 > .mb-3.justify-between.flex > .border-green-400\\/30.text-green-400.transition-colors"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-green-400 border-green-400/30\">+0.0% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.49 (foreground color: #4ade80, background color: #e0f2ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "target": [
+              ".border-red-400\\/30"
+            ],
+            "html": "<div class=\"inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs text-red-400 border-red-400/30\">-0.6% <span class=\"sr-only\">average simulated percentage change</span></div>",
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.42 (foreground color: #f87171, background color: #f4f0e2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "namelessAccessibleButtons": 0
+  },
+  {
+    "path": "/portfolio",
+    "width": 360,
+    "theme": "light",
+    "version": "4.14.1",
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": [],
+    "namelessAccessibleButtons": 0
+  }
+]

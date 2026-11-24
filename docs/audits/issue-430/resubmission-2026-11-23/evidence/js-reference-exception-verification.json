@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://fonts.google.com/faq#privacy",
+    "title": "Google Fonts",
+    "renderedTextSha256": "2c34a4b4a504f54950d702ab987b67ee634bb4754b08fff5ad43728012bfe560",
+    "method": "TinyFish public JS fetch followed by direct relevant section reading",
+    "assessment": "FAQ privacy: separate unauthenticated request domains; IP/requestURL/headers; no Fonts cookies or targeting profiles; self-host avoids Fonts requests."
+  },
+  {
+    "url": "https://www.morningstar.com/investing-terms/maximum-drawdown",
+    "title": "Maximum Drawdown",
+    "renderedTextSha256": "71ee7e9de05956d92c743ef89a95daec15e0641573d13cbfaa615ecb2d595a98",
+    "method": "TinyFish public JS fetch followed by direct relevant section reading",
+    "assessment": "Definition concerns peak-to-trough investment decline during a specified interval; does not independently verify a particular portfolio."
+  }
+]
