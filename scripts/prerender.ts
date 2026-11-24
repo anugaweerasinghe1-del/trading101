@@ -257,7 +257,7 @@ async function main() {
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="strict-origin">
 <title>TradeHQ privacy message test</title>
 <meta name="google-adsense-account" content="ca-pub-4160578126993254">
 <script async id="tradehq-cmp-pilot" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254"></script>
