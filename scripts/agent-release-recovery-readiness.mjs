@@ -232,7 +232,8 @@ async function run(){
     const currentHead=await github('/branches/main',token);
     assert.equal(currentHead.commit?.sha,sha,'Main changed during native production observation');
     const current=await collect(sha,token);
-    const cloudflareProvider=await collectCloudflareReleaseEvidence({sha,priorSha:previous,token:process.env.CLOUDFLARE_API_TOKEN});
+    const cloudflareProvider=await collectCloudflareReleaseEvidence({sha,priorSha:previous,token:process.env.CLOUDFLARE_API_TOKEN,
+      priorCheckDeploymentId:one(previousProof.checks,x=>x.name==='Cloudflare Pages','Previous Cloudflare Pages').external_id});
     return {head:currentHead,commit,checks:current.checks,statuses:current.statuses,
       previousChecks:previousProof.checks,previousStatuses:previousProof.statuses,cloudflareProvider};
   };

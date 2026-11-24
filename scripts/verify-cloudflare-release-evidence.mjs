@@ -53,3 +53,43 @@ const report=verifyReleaseWitness(witness());assert.equal(report.productionHost,
 for(const change of [x=>x.head.protected=false,x=>x.checks[0].conclusion='failure',x=>x.checks[0].head_sha=priorSha,x=>x.previousChecks[0].external_id=id,x=>x.cloudflareProvider=JSON.parse(JSON.stringify(proof))]){const x=witness();change(x);assert.throws(()=>verifyReleaseWitness(x));}
 const retired=witness();retired.statuses=[{context:'Vercel',state:'failure'}];assert.equal(verifyReleaseWitness(retired).productionHost,'cloudflare','Retired provider status cannot stand in for authoritative native proof');
 console.log('PASS native Cloudflare current/prior/domain/main/CI bindings, immutable/public compiled entry matching, races, secret/size/time bounds and forged proof rejection; no rollback or publication authorized. Fixtures only.');
+
+// A branch preview at a previously released SHA replaces the GitHub badge,
+// but cannot replace the native production parent as the recovery candidate.
+const previewId='52884db1-9862-45d8-81b1-f57725347109';
+const previewData=()=>({...previous(),id:previewId,environment:'preview',
+ deployment_trigger:{metadata:{branch:'audit/same-commit-preview',commit_hash:priorSha}},
+ url:'https://'+previewId.slice(0,8)+'.tradehq-preview.pages.dev'});
+const makePreview=async(edit=()=>{})=>{
+ requests=[];
+ return collectCloudflareReleaseEvidence({sha,priorSha,token,priorCheckDeploymentId:previewId,
+  fetchImpl:fetcher((body,url,n)=>{
+   if(url===root+'/deployments/'+previewId){body.result=previewData();edit(body.result);}
+  })});
+};
+const mutable=await makePreview();
+assert.equal(requests.length,6);
+assert.equal(mutable.priorDeploymentId,old,'Preview must not become the native production candidate');
+assert.equal(mutable.priorCheckDeploymentId,previewId);
+assert.equal(mutable.priorCheckBinding.relation,'same_commit_preview_badge');
+assert.ok(Object.isFrozen(mutable.priorCheckBinding));
+assertCloudflareReleaseEvidence(mutable,sha,priorSha,id,previewId);
+const previewWitness=witness();previewWitness.cloudflareProvider=mutable;
+previewWitness.previousChecks=[cf(priorSha,previewId)];
+const previewReport=verifyReleaseWitness(previewWitness);
+assert.equal(previewReport.cloudflare.priorDeploymentId,old);
+for(const key of ['ownerApproval','productionReleaseAuthorized','providerRollbackEligible','rollbackPerformed'])assert.equal(previewReport[key],false);
+for(const change of [
+ d=>d.id=old,d=>d.project_id='other',d=>d.project_name='other',
+ d=>d.environment='production',d=>d.latest_stage.status='failure',
+ d=>d.deployment_trigger.metadata.commit_hash=sha,d=>d.deployment_trigger.metadata.branch='main',
+ d=>d.deployment_trigger.metadata.branch='',d=>d.deployment_trigger.metadata.branch='bad\nbranch',
+ d=>d.created_on='invalid',d=>d.created_on='2999-01-01T00:00:00Z',
+])await assert.rejects(makePreview(change));
+const wrongCurrent=witness();wrongCurrent.cloudflareProvider=mutable;
+wrongCurrent.previousChecks=[cf(priorSha,previewId)];wrongCurrent.checks[3]=cf(sha,previewId);
+assert.throws(()=>verifyReleaseWitness(wrongCurrent),/binding differs/,'Current production binding cannot be replaced by a preview');
+const wrongApp={...previewWitness,previousChecks:[{...cf(priorSha,previewId),app:{id:1,slug:'other'}}]};
+assert.throws(()=>verifyReleaseWitness(wrongApp),/Untrusted/);
+for(const value of [token,secret,'env_vars'])assert(!JSON.stringify(mutable).includes(value));
+console.log('PASS mutable prior GitHub preview badge independently verified without replacing native production; wrong SHA/project/environment/branch/current binding rejected. Fixtures only.');

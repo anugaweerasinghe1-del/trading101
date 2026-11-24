@@ -25,7 +25,7 @@ function bundles(html){
  assert.ok(result.some(x=>x.endsWith('.js'))&&result.some(x=>x.endsWith('.css'))&&result.length<=30,'Compiled entry script and stylesheet witness required');
  return result;
 }
-export async function collectCloudflareReleaseEvidence({sha,priorSha,token,fetchImpl=fetch,now=Date.now}={}){
+export async function collectCloudflareReleaseEvidence({sha,priorSha,token,priorCheckDeploymentId,fetchImpl=fetch,now=Date.now}={}){
  assert.ok(SHA.test(sha||'')&&SHA.test(priorSha||'')&&sha!==priorSha&&typeof token==='string'&&token.length>=20,'Exact current/prior SHA and native Cloudflare read credential required');
  const started=now();
  const project=await read(ROOT,token,fetchImpl);
@@ -47,16 +47,37 @@ export async function collectCloudflareReleaseEvidence({sha,priorSha,token,fetch
  const nativeBundles=bundles(await read(immutable.origin+'/',null,fetchImpl,false));
  const publicBundles=bundles(await read('https://'+DOMAIN+'/',null,fetchImpl,false));
  assert.deepEqual(publicBundles,nativeBundles,'Public compiled release differs from native immutable production');
+ // A new branch can redeploy an already protected-main commit as a preview,
+ // replacing Cloudflare's mutable per-SHA GitHub badge. Never use that preview
+ // as production: independently identify it and retain the native main parent.
+ const badgeId=priorCheckDeploymentId??prior.id;
+ assert.ok(UUID.test(badgeId||''),'Prior Cloudflare check deployment ID required');
+ let priorCheckBinding={checkDeploymentId:badgeId,nativeProductionDeploymentId:prior.id,relation:'native_production',environment:'production',branch:'main'};
+ if(badgeId!==prior.id){
+  const badge=await read(ROOT+'/deployments/'+badgeId,token,fetchImpl);
+  assert.ok(badge?.id===badgeId&&badge.project_id===project.id&&badge.project_name===PROJECT,
+   'Prior badge project/deployment identity differs');
+  const metadata=badge.deployment_trigger?.metadata;
+  assert.ok(badge.environment==='preview'&&badge.latest_stage?.status==='success'
+   &&metadata?.commit_hash===priorSha&&typeof metadata.branch==='string'
+   &&metadata.branch.length>0&&metadata.branch.length<=255&&metadata.branch!=='main'
+   &&!/[\x00-\x1f\x7f]/.test(metadata.branch),
+   'Prior badge must be an independently verified successful same-commit preview');
+  assert.ok(Number.isFinite(Date.parse(badge.created_on))&&Date.parse(badge.created_on)<=now()+60000,
+   'Prior preview badge timestamp invalid');
+  priorCheckBinding={...priorCheckBinding,relation:'same_commit_preview_badge',environment:'preview',branch:metadata.branch};
+ }
+ priorCheckBinding=Object.freeze(priorCheckBinding);
  const finalProject=await read(ROOT,token,fetchImpl);
  assert.equal(finalProject.id,project.id,'Native project changed during inspection');
  assert.ok(finalProject.name===PROJECT&&finalProject.production_branch==='main'&&finalProject.domains?.includes(DOMAIN),'Native domain/main binding changed during inspection');
  assert.equal(deployment(finalProject.canonical_deployment,project.id,sha).id,active.id,'Active deployment changed during inspection');
  assert.ok(now()>=started&&now()-started<=90000,'Native release evidence time budget exhausted');
- const proof=Object.freeze({source:'authenticated_cloudflare_pages_api',project:PROJECT,domain:DOMAIN,environment:'production',branch:'main',currentSha:sha,priorSha,currentDeploymentId:active.id,priorDeploymentId:prior.id,publicBundles:Object.freeze(publicBundles),observedAt:now(),historyLimit:25,providerRollbackEligible:false,rollbackPerformed:false,productionReleaseAuthorized:false});
+ const proof=Object.freeze({source:'authenticated_cloudflare_pages_api',project:PROJECT,domain:DOMAIN,environment:'production',branch:'main',currentSha:sha,priorSha,currentDeploymentId:active.id,priorDeploymentId:prior.id,priorCheckDeploymentId:badgeId,priorCheckBinding,publicBundles:Object.freeze(publicBundles),observedAt:now(),historyLimit:25,providerRollbackEligible:false,rollbackPerformed:false,productionReleaseAuthorized:false});
  issued.add(proof);return proof;
 }
 export function assertCloudflareReleaseEvidence(proof,sha,priorSha,currentId,priorId,now=Date.now()){
  assert.ok(proof&&issued.has(proof),'Native Cloudflare proof must be collected in-process; imported JSON is not trusted');
  assert.ok(now>=proof.observedAt&&now-proof.observedAt<=120000,'Native Cloudflare proof stale');
- assert.ok(proof.currentSha===sha&&proof.priorSha===priorSha&&proof.currentDeploymentId===currentId&&proof.priorDeploymentId===priorId,'Native Cloudflare/GitHub deployment binding differs');
+ assert.ok(proof.currentSha===sha&&proof.priorSha===priorSha&&proof.currentDeploymentId===currentId&&proof.priorCheckDeploymentId===priorId&&proof.priorCheckBinding?.nativeProductionDeploymentId===proof.priorDeploymentId,'Native Cloudflare/GitHub deployment binding differs');
 }
