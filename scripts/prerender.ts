@@ -246,6 +246,30 @@ async function main() {
     process.exit(1);
   }
   console.log("✅ Every indexable route has authored content; no arbitrary minimum word count");
+
+  // Isolated, opt-in privacy-message pilot. Never load the publisher tag in the
+  // shared SPA shell, account screens, certificate verification or error pages.
+  // An eligible account holder must confirm Auto ads are off before enabling
+  // this build flag, and review actual browser requests before broader rollout.
+  const pilotPath = path.join(DIST, "privacy-consent-test.html");
+  if (process.env.TRADEHQ_CMP_PILOT === "1") {
+    fs.writeFileSync(pilotPath, `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>TradeHQ privacy message test</title>
+<meta name="google-adsense-account" content="ca-pub-4160578126993254">
+<script async id="tradehq-cmp-pilot" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254"></script>
+</head><body><main>
+<h1>TradeHQ privacy message test</h1>
+<p>This isolated page tests Google's regional privacy messages. The Google tag may contact Google and process connection information or consent cookies. No manual advertising placements or optional analytics are included on this page.</p>
+<p><a href="/privacy">TradeHQ privacy policy</a> · <a href="/">Return to TradeHQ</a></p>
+</main></body></html>`, "utf8");
+  } else if (fs.existsSync(pilotPath)) {
+    fs.unlinkSync(pilotPath);
+  }
+
 }
 
 main();
