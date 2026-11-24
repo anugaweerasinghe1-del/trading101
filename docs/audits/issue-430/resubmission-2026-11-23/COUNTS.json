@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T02:43:24.336019+00:00",
+  "generatedAt": "2026-11-24T03:45:27.189265+00:00",
   "finiteKnownUrls": 821,
   "urlTypeCounts": {
     "publisher": 163,
@@ -39,15 +39,15 @@
   "proceduralCertificateVariants": 3,
   "applicableOrConditionalPolicyControls": 22,
   "policyControlResults": {
-    "PASS": 12,
-    "RISK": 8,
+    "PASS": 13,
+    "RISK": 7,
     "BLOCKED": 2,
     "NOT APPLICABLE": 3
   },
   "authenticatedTestCases": 14,
-  "boundedProductionAuthPass": 12,
-  "authPartialCases": 2,
-  "manualErasureVerified": false,
+  "boundedProductionAuthPass": 13,
+  "authPartialCases": 1,
+  "manualErasureVerified": true,
   "releaseControls": 6,
   "releaseControlsPassed": 6,
   "releaseControlsRemaining": 0,
@@ -61,9 +61,11 @@
     "CONFIRMED EDITORIAL ERROR": 1
   },
   "confirmedPolicyRelevantDefectsEstablished": 0,
-  "fixedVerifiedFindings": 30,
+  "fixedVerifiedFindings": 31,
   "falsePositives": 3,
-  "unresolvedFindingsIncludingConditionalAndOptional": 5,
-  "unresolvedExternalGates": 4,
-  "scope": "Finite known URL union; evidence layers overlap and retain actual reading/observation dates. Dated market quotes are examples of variable templates, not latest live values. No universal legal, factual, accessibility or approval certification."
+  "unresolvedFindingsIncludingConditionalAndOptional": 4,
+  "unresolvedExternalGates": 3,
+  "scope": "Finite known URL union; evidence layers overlap and retain actual reading/observation dates. Dated market quotes are examples of variable templates, not latest live values. No universal legal, factual, accessibility or approval certification.",
+  "ownerErasureClosureEvidence": "evidence/controlled-erasure-owner-acceptance.json",
+  "readinessVerdict": "READY FOR OWNER RESUBMISSION REVIEW"
 }

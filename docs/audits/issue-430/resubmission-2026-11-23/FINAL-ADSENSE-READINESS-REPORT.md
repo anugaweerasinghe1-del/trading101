@@ -4,7 +4,7 @@ Audit work: 22–24 November 2026. Current reconciliation: 24 November. This rep
 
 ## 1. Executive verdict
 
-**BLOCKED — INSUFFICIENT VERIFICATION.** The controlled manual account-erasure workflow remains unverified.
+**READY FOR OWNER RESUBMISSION REVIEW.** On24November the owner confirmed supported deletion of controlled accountA. Independent exact-ID database counts and denied original password/refresh grants close the manual-erasure acceptance gate. This supersedes the earlier blocked verdict; historical observations remain preserved in the append-only events.
 
 No confirmed Google policy violation has been established by the bounded review. That does not override the generic rejection notice or predict Google’s decision. There is no defensible approval percentage. The known source corrections, actual observations, exceptions and owner-only requirements are separated below.
 
@@ -18,7 +18,7 @@ No confirmed Google policy violation has been established by the bounded review.
 | Material media items — source, licence or retained-brand record | 59 | 59 | 0 unenumerated; rights limits below |
 | External references — bounded support without an explicit exception | 163 | 168 | 5 exceptions |
 | Applicable / conditional policy controls — evaluated | 22 | 22 | 0 unevaluated |
-| Authenticated cases — bounded production pass | 12 | 14 | 2 partial |
+| Authenticated cases — bounded production pass | 13 | 14 | 1 conditional/partial |
 | Final application release controls | 6 | 6 | 0 |
 
 **Denominators and limits.** The finite URL inventory is 821: 163 canonical publishers, 233 application/utility routes, seven legacy aliases, 78 pseudonymised public profile routes, 333 public build files, three public service responses and four explicitly tested retired resources. This expands the historical 481 page/alias/profile routes with identified resources; it does not claim discovery of every arbitrary query, token, wildcard or past deployment hash. Profiles received status-only checks; all 78 public bios were empty at the recorded check. No private profile or moderation bodies were collected.
@@ -29,7 +29,7 @@ The current source body inventory has 6,107 records. Actual prior individual rea
 
 The real-browser evidence includes 326 publisher and 480 utility/alias viewport observations. No uncaught JavaScript errors, horizontal overflow, broken loaded images, missing alt attributes or unlabelled visible inputs were captured. The review-admin main-landmark failures were independently diagnosed and fixed. Twelve focused axe theme/viewport scopes passed after the Markets contrast correction; 24 released route/theme/viewport observations confirmed the fixes. All 163 publisher regions were observed: 151 integrated/appended regions and twelve dynamic-course main variants. These tests are not an accessibility certification or exhaustive account/state/referrer acceptance.
 
-The 22 applicable/conditional policy rows have 12 bounded PASS, 8 RISK and 2 BLOCKED results; three additional rows are not applicable. RISK is not an adjudicated violation. The future regional advertising gate is conditional while ads remain disabled. The 24 November policy refresh reviewed the new Search Back-button FAQ and certified-CMP list changes. Actual desktop/mobile Back navigation passed; no promotional history trap was established in the source review or bounded browser test.
+The 22 applicable/conditional policy rows have 13 bounded PASS, 7 RISK and 2 BLOCKED results; three additional rows are not applicable. RISK is not an adjudicated violation. The future regional advertising gate is conditional while ads remain disabled. The 24 November policy refresh reviewed the new Search Back-button FAQ and certified-CMP list changes. Actual desktop/mobile Back navigation passed; no promotional history trap was established in the source review or bounded browser test.
 
 ## 3. Defects and policy risks
 
@@ -41,13 +41,13 @@ The 22 applicable/conditional policy rows have 12 bounded PASS, 8 RISK and 2 BLO
 | Plausible quality risks | 16 |
 | False positives | 3 |
 | Historical external gates | 6 |
-| Fixed and verified findings | 30 |
-| Unresolved findings, including conditional/optional/external items | 5 |
-| Unresolved external gates | 4 |
+| Fixed and verified findings | 31 |
+| Unresolved findings, including conditional/optional/external items | 4 |
+| Unresolved external gates | 3 |
 
 The deduplicated ledger has 38 findings. Event aliases are explicit in `evidence/finding-deduplication.json`; repeated manifestations are not counted as new findings. One trophy-size regression was caught by CI before release. All remaining status limits must be read per row rather than inferred from a green build.
 
-The remaining external/conditional items concern owner/account evidence, future ad-serving consent, manual privacy fulfilment and five reference exceptions. Optional leaked-password protection is deferred to owner configuration and is not presented as an AdSense requirement. Source/brand documentation is bounded evidence, not a guarantee against every third-party claim.
+The remaining external/conditional items concern owner/account evidence, future ad-serving consent and five reference exceptions. Manual controlled privacy fulfilment is now independently verified. Optional leaked-password protection is deferred to owner configuration and is not presented as an AdSense requirement. Source/brand documentation is bounded evidence, not a guarantee against every third-party claim.
 
 ## 4. Implemented changes and production evidence
 
@@ -61,7 +61,7 @@ See `RELEASE-VERIFICATION.md`, the native production/recovery JSON receipts, exa
 
 ## 5. Remaining actions and responsibility
 
-1. **Owner/provider privacy acceptance:** delete only the newly created disposable TradeHQ account A through the supported Supabase Auth user-delete control, following the exact steps already supplied. Its auth/profile/learning/portfolio rows were still present at the latest 24 November check. The auditor can then verify scoped row removal and denied new login/refresh. Do not delete Gmail/Google, an existing account or test B. The local Contact draft, privacy controls, cascade metadata and disposable fixtures do not manufacture successful manual fulfilment.
+1. **Owner/provider privacy acceptance — CLOSED24Nov:** the owner confirmed supported deletion of only the newly created controlled TradeHQ accountA. Independent read-only exact-ID checks found zero Auth/session/profile/learning/portfolio/backup rows. The known original password login and saved refresh were rejected; B Auth/profile remained present. See evidence/controlled-erasure-owner-acceptance.json and controlled-erasure-auth-denial.json. No Google/Gmail or existing account was deleted by the auditor. Contact draft/email-delivery limits and prior access-JWT expiry semantics remain explicit.
 2. **Account holder:** retain accurate adult account/payee responsibility and review any actual account or acquisition notices. Adult ownership is owner-attested, the publisher binding independently matches, and official guidance permits a parent/guardian account where applicable. No public age/family disclosure or identity-document certification is invented. Only the generic disapproval is available; no further detailed-notice or inaccessible-panel screenshot is requested.
 3. **Before future applicable ad serving:** verify regional certified-CMP/consent/age treatment and actual placements. The current analytics choice is separate. Ad serving remains disabled, and missing onboarding panels do not establish a present violation or a universal pre-application CMP requirement. Non-personalised delivery is not claimed to be universally exempt from consent obligations.
 4. **Reference exceptions:** My Ad Center preferences/cookies wall; Philippine SEC registry and main-site access constraints; inaccessible exact NY Fed HTML body and DOI while bounded support from primary PDF copies is recorded. These five are explicit exceptions, not invented dead links or full-source passes. The earlier Google Fonts and Morningstar exceptions were resolved through direct JS-body reading.
@@ -69,4 +69,4 @@ See `RELEASE-VERIFICATION.md`, the native production/recovery JSON receipts, exa
 
 ## 6. Final recommendation
 
-Obtain the missing manual privacy acceptance before resubmission. Keep master issue430 open while unresolved acceptance evidence remains. The policy attestation and Resubmit button have not been used. Only Google can decide approval; no probability or approval guarantee is offered.
+The missing controlled manual privacy acceptance is now verified. The site is ready for the eligible owner’s resubmission review within the documented audit scope. Keep master issue430 open for account/provider and future-ad-serving follow-up. No policy attestation or Resubmit action is claimed by this report update; any subsequent account action requires a separately observed receipt. Only Google can decide approval; no probability or approval guarantee is offered.
