@@ -1,0 +1,7 @@
+# TradeHQ current audit reconciliation, 23 November 2026
+
+This directory supersedes the count/status conclusions of the 22November completion checkpoint without rewriting its reading receipts. It preserves actual prior individual reading and revalidates exact unchanged content; new source/rendered differences and all40published Foundations questions were directly read separately. Source hashing is evidence of identity, not a substitute for reading. Layer totals overlap and must not be presented as unique paragraphs.
+
+The eight required reports are authoritative together with their explicit exceptions and release receipt references. No report is a Google policy adjudication, legal copyright clearance, accessibility certification or approval probability. Ads stay disabled. The actual TradeHQ logo/name remain unchanged. No genuine private moderation/customer rows, Google account deletion, real/simulated production trades, unsolicited broadcasts or DNS/provider changes were used.
+
+Private working caches contain designated synthetic credentials, confirmation/verification links and profile lookups. They are ignored and must never be committed. Public profile routes are deliberately pseudonymised; exact public lookup URLs remain only in the ignored cache. The inventory is a finite discovered universe, not every arbitrary wildcard/query/token combination or all previous deployment hashes.

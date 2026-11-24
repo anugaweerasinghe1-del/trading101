@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-23T14:28:56.559Z",
+  "sha": "d93a0ca72393734d204187a5987b351b5602589d",
+  "scope": "Actual production UI redownload of already-issued private controlled records, no reissuance or name/score changes.",
+  "results": [
+    {
+      "milestone": "first-course",
+      "repeatIdentical": true,
+      "extractableRecipientMilestoneDateIdQualifiers": true,
+      "verificationRemainedOff": true,
+      "bytes": 452602,
+      "sha256": "ae1af4409b43a8a72df6e9b90ebc898086fa861146001ae279223c999c1910c5"
+    },
+    {
+      "milestone": "core-studies",
+      "repeatIdentical": true,
+      "extractableRecipientMilestoneDateIdQualifiers": true,
+      "verificationRemainedOff": true,
+      "bytes": 459172,
+      "sha256": "25111a20d0f545c21f35199a7ff3a2c00e1677db24c2d2dffca58c738f229493"
+    },
+    {
+      "milestone": "foundations",
+      "repeatIdentical": true,
+      "extractableRecipientMilestoneDateIdQualifiers": true,
+      "verificationRemainedOff": true,
+      "bytes": 473464,
+      "sha256": "bfccc1102fe053d47402eff1b41b847e9934fc452df09b7e1e7997ff069eb6dc"
+    }
+  ],
+  "blocked": [
+    {
+      "path": "/functions/v1/trophy-evidence",
+      "method": "POST"
+    }
+  ]
+}

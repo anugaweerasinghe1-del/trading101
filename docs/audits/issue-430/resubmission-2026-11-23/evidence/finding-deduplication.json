@@ -1,0 +1,10 @@
+{
+  "distinctLedgerRows": 38,
+  "aliases": {
+    "MEDIA23-03": "FINAL22-G03",
+    "SOURCE23-01": "FINAL22-G05",
+    "AUTH23-01": "FINAL22-G04"
+  },
+  "reason": "These three events update existing provenance/reference/authentication gates; they are not three additional independent findings. Optionshero and stagedtrophyexportregression are separate findings and retained individually.",
+  "scope": "Ledger includes historical fixed findings and one caught-before-release CIregression; not a count of current live defects."
+}

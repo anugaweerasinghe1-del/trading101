@@ -1,0 +1,42 @@
+{
+  "run": 45193625438,
+  "job": 137765063742,
+  "receipt": {
+    "schema": "tradehq-release-recovery-readiness-v2",
+    "currentSha": "d93a0ca72393734d204187a5987b351b5602589d",
+    "priorSha": "cfc6db89b6c96e2ad1ef522743e95a0deca9f8c8",
+    "productionHost": "cloudflare",
+    "cloudflare": {
+      "source": "authenticated_cloudflare_pages_api",
+      "project": "tradehq-preview",
+      "domain": "www.thetradehq.com",
+      "environment": "production",
+      "branch": "main",
+      "currentSha": "d93a0ca72393734d204187a5987b351b5602589d",
+      "priorSha": "cfc6db89b6c96e2ad1ef522743e95a0deca9f8c8",
+      "currentDeploymentId": "68f135ed-dca4-495a-84e8-5d247d4ca0a4",
+      "priorDeploymentId": "d5790e55-f867-4393-afeb-13afbb54726b",
+      "publicBundles": [
+        "/assets/index-B7ogrz2b.js",
+        "/assets/index-ZK1Pfgrh.css"
+      ],
+      "observedAt": 1795444461421,
+      "historyLimit": 25,
+      "providerRollbackEligible": false,
+      "rollbackPerformed": false,
+      "productionReleaseAuthorized": false
+    },
+    "requiredCheckCount": 3,
+    "candidateStatus": "PREVIOUS_SUCCESSFUL_COMMIT_ONLY",
+    "providerRollbackEligible": false,
+    "rollbackPerformed": false,
+    "ownerApproval": false,
+    "productionReleaseAuthorized": false,
+    "limitations": [
+      "Previous native production is a candidate, not proof of rollback eligibility or permission.",
+      "Code rollback cannot reverse Supabase migrations or provider settings.",
+      "Vercel is owner-reported paused and is not the production witness; no provider or DNS setting is changed."
+    ],
+    "sha256": "bbfcf7bf21dd1adf75af870773c408f8de90a1b3fbdce5589b1b4c38eb6b9330"
+  }
+}
