@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-24T03:45:27.189265+00:00",
+  "applicationSha": "aec36c13f45dae7ec49372b9dd0cc83769a5abe2",
+  "documentationMainSha": "fdcd534f164ebedeaa1af0e2bf3a5264eaf39c5d",
+  "scope": "Only newly-created disposable TradeHQ account A; exact previously pinned UUID queried, not email-only matching. Owner confirmed supported Auth deletion. No Google/Gmail or existing account deletion by auditor.",
+  "verificationMethod": "Authenticated connected Supabase read-only SQL counts scoped to pinned controlled IDs; original controlled password grant and saved refresh grant tested separately using public key. No provider secret or privileged deletion function used.",
+  "controlledAAfterDeletion": {
+    "authRows": 0,
+    "sessionRows": 0,
+    "profileRows": 0,
+    "learningProgressRows": 0,
+    "practicePortfolioRows": 0,
+    "practicePortfolioBackupRows": 0
+  },
+  "controlledBPreserved": {
+    "authRows": 1,
+    "profileRows": 1
+  },
+  "authDenialEvidence": "controlled-erasure-auth-denial.json",
+  "previouslyIssuedAccessJwtImmediateRevocationClaimed": false,
+  "mailboxDeliverabilityOrUniversalAllTablesCertificationClaimed": false,
+  "result": "BOUNDED_PRODUCTION_PASS"
+}
