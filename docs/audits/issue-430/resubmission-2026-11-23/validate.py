@@ -19,6 +19,16 @@ assert sum(int(r['sourceBlocks']) for r in pages)==sum(r['layer']=='SOURCE' for 
 findings=readcsv(required[5]);assert len({r['id'] for r in findings})==len(findings)
 sm=readcsv(required[4]);assert len({r['urlOrPath'] for r in sm if r['type']=='REFERENCE'})==sum(r['type']=='REFERENCE' for r in sm)
 counts=json.loads((P/'COUNTS.json').read_text());assert counts['finiteKnownUrls']==len(urls);assert counts['canonicalPublisherPages']==len(pages);assert counts['individualAssessmentRecords']==len(rows);assert counts['distinctFindings']==len(findings)
+# Keep the human-readable policy matrix, compact evidence count and master report in lockstep.
+policy_results=[]
+for line in (P/'POLICY-REQUIREMENTS-MATRIX.md').read_text().splitlines():
+ if re.match(r'^\\| P\\d\\d \\|',line):
+  columns=line.split('|')
+  policy_results.append(columns[6].strip())
+policy_counts=dict(collections.Counter(policy_results))
+assert sum(policy_counts.values())==25,policy_counts
+assert policy_counts==json.loads((P/'evidence/policy-control-counts.json').read_text()),'Policy matrix/evidence count mismatch'
+assert policy_counts==counts['policyControlResults'],'Policy matrix/master report count mismatch'
 # Pins are private synthetic identities. Provider deployment UUIDs and content IDs are legitimate public evidence.
 private=[]
 cache=P.parent/'owner-followup-2026-11-23/.cache'
@@ -35,5 +45,5 @@ for p in P.rglob('*'):
  if not p.is_file() or '.cache' in p.parts:continue
  text=p.read_text(errors='replace')
  for value in private:assert value not in text,str(p)+' contains a private test pin'
- assert not re.search(r'eyJ[A-Za-z0-9_-]{30,}\.[A-Za-z0-9_-]{30,}\.',text),str(p)+' JWT-like value'
-print(json.dumps({'validation':'STRUCTURAL_AND_PRIVATE_PIN_CHECK_ONLY','urls':len(urls),'publisherPages':len(pages),'assessmentRecords':len(rows),'findings':len(findings),'contentAndPolicyPassNotInferred':True}))
+ assert not re.search(r'eyJ[A-Za-z0-9_-]{30,}\\.[A-Za-z0-9_-]{30,}\\.',text),str(p)+' JWT-like value'
+print(json.dumps({'validation':'STRUCTURAL_AND_PRIVATE_PIN_CHECK_ONLY','urls':len(urls),'publisherPages':len(pages),'assessmentRecords':len(rows),'findings':len(findings),'policyControls':policy_counts,'contentAndPolicyPassNotInferred':True}))
