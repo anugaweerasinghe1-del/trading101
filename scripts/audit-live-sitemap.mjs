@@ -77,6 +77,28 @@ try {
     report.historicalSeedCount=seeds.length;
     console.log("SEEDED_PAGE_COUNT "+queue.length);
   }catch(error){report.problems.push({type:"historical-seeds-unavailable",detail:String(error.message)});}
+  // The dated technical denominator included 480 individually enumerated URLs.
+  // Re-fetch every baseline route; no old status or review credit is inherited.
+  // Public profiles receive HEAD-only checks and hashed identifiers below.
+  try {
+    const baseline=readFileSync("docs/audits/issue-430/sequential-2026-11-15/page-queue.csv","utf8").trim().split(/\r?\n/).slice(1);
+    if(baseline.length!==480)throw Error("Historical technical baseline count changed");
+    const distinct=new Set();
+    for(let i=0;i<baseline.length;i++){
+      const fields=baseline[i].split(",");
+      if(fields.length<4||Number(fields[0])!==i+1||fields[1]!=="STRICT-"+String(i+1).padStart(4,"0")
+        ||!["CURRENT-SITEMAP","ADDITIONAL-DISCOVERED-SURFACE"].includes(fields[3]))throw Error("Malformed historical technical inventory row "+(i+1));
+      const value=normalize(fields[2]);
+      if(!value||distinct.has(value))throw Error("Invalid/duplicate historical technical inventory URL "+(i+1));
+      distinct.add(value);
+      enqueue(value,"historical-480-route-discovery");
+    }
+    report.historicalTechnicalBaselineCount=baseline.length;
+    report.historicalTechnicalProfileSeedCount=[...distinct].filter(isPublicProfile).length;
+    console.log("SEEDED_480_HISTORICAL_TECHNICAL_ROUTES "+baseline.length);
+  } catch(error) {
+    report.problems.push({type:"historical-480-technical-queue-unavailable",detail:String(error?.message??error).slice(0,160)});
+  }
   console.log("LIVE_SITEMAP_URL_COUNT "+report.count);
   for(let index=0;index<queue.length;index++) {
     const url=queue[index], member=isPublicProfile(url), page={index:index+1,url:member?publicProfileRef(url):url,checkedAt:new Date().toISOString(),status:null,words:0,errors:[],warnings:[],title:"",canonical:"",h1Count:0,inSitemap:sitemapPages.has(url)};
@@ -85,9 +107,23 @@ try {
       try{
         const response=await fetch(url,{method:"HEAD",redirect:"follow",headers:{"User-Agent":"TradeHQ-ReadOnly-Publisher-Audit/2.0"},signal:AbortSignal.timeout(15000)});
         page.status=response.status;
-        page.accessScope="public profile: HEAD metadata only; body, titles, and member identity not collected";
+        page.accessScope="public profile: HTTP status only; HEAD with conditional GET fallback; no body read";
         page.indexable=null;page.robots="not inspected";page.finalUrl=publicProfileRef(response.url);
-        if(response.status!==200)page.warnings.push("public-profile-head-status:"+response.status);
+        if(response.status!==200){
+          // Some public profile routes reject HEAD even when GET succeeds.
+          // Send a bodyless read-only GET request; cancel the response stream
+          // immediately without decoding, storing or logging member content.
+          const statusResponse=await fetch(url,{method:"GET",redirect:"manual",
+            headers:{"User-Agent":"TradeHQ-ReadOnly-Publisher-Audit/2.0","Accept":"text/html"},
+            signal:AbortSignal.timeout(15000)});
+          page.status=statusResponse.status;
+          const htmlType=/text\/html/i.test(statusResponse.headers.get("content-type")??"");
+          await statusResponse.body?.cancel();
+          page.finalUrl=publicProfileRef(url);
+          page.getFallbackUsed=true;page.headStatus=response.status;
+          if(page.status!==200)page.warnings.push("public-profile-status-only-get:"+page.status);
+          else if(!htmlType)page.warnings.push("public-profile-non-html-status-only");
+        }
       }catch(error){page.warnings.push("public-profile-head-unavailable:"+String(error?.message??error).slice(0,120));}
       report.pages.push(page);
       for(const warning of page.warnings)report.warnings.push({url:page.url,type:warning});
@@ -96,7 +132,12 @@ try {
     }
     try {
       const {response,html}=await get(url);page.status=response.status;page.finalUrl=response.url;
-      if(response.status!==200)page.errors.push("unexpected-http-status:"+response.status);
+      // The one intentionally missing historical probe is a negative test:
+      // HTTP 404 is success for that exact path, not a publisher defect.
+      if(url===ORIGIN+"/missing-adsense-audit-probe"){
+        page.expected404Probe=true;
+        if(response.status!==404)page.errors.push("missing-audit-probe-expected-404:"+response.status);
+      } else if(response.status!==200)page.errors.push("unexpected-http-status:"+response.status);
       if(!/text\/html/i.test(response.headers.get("content-type")??""))page.errors.push("non-html-response");
       if(normalize(response.url)===null)page.errors.push("unexpected-redirect-destination");
       page.title=clean(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]??"");
