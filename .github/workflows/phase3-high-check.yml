@@ -36,6 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - run: npm ci
+      - name: Validate Issue #430 audit evidence consistency
+        run: python3 docs/audits/issue-430/resubmission-2026-11-23/validate.py
       - run: node scripts/verify-ci-validation.mjs
       - run: node scripts/verify-release-recovery-readiness.mjs
       - run: node scripts/verify-cloudflare-production-main.test.mjs
