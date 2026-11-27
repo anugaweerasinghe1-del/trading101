@@ -62,6 +62,23 @@ for (const file of readdirSync(DIST, { recursive: true }).filter(file => file.en
   }
 }
 
+// E-06: all initial title variants must name the simulator duel, not a fixed balance.
+{
+  const challenge = readFileSync(resolve(DIST, "challenge/index.html"), "utf8");
+  const title = "Challenge a friend — 30-day practice trading duel | TradeHQ";
+  const titlePatterns = [
+    /<title>([^<]+)<\/title>/gi,
+    /<meta\s[^>]*property="og:title"\s+content="([^"]+)"/gi,
+    /<meta\s[^>]*name="twitter:title"\s+content="([^"]+)"/gi,
+  ];
+  if (titlePatterns.some(pattern => {
+    const values = [...challenge.matchAll(pattern)];
+    return values.length !== 1 || values[0][1] !== title;
+  })) {
+    throw new Error("Challenge document, Open Graph and Twitter titles must agree without a fixed starting balance");
+  }
+}
+
 const routes = [
   "/",
   "/markets",
