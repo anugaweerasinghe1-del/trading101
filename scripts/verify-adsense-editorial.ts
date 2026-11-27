@@ -352,8 +352,14 @@ assert.doesNotMatch(JSON.stringify(fomcLesson), /Each FOMC member.s rate forecas
 assert.match(JSON.stringify(fomcLesson.quiz), /participant/);
 const shellSource = readFileSync("index.html", "utf8");
 const { ASSETS } = await loadSiteData();
-assert.ok(shellSource.includes(`${ASSETS.length} simulated practice assets`), "Base structured data must agree with actual catalogue count");
+const renderedHome = readFileSync("dist/index.html", "utf8");
+const renderedApplication = renderedHome.match(/<script type="application\/ld\+json" data-static-head="homepage-application">([\s\S]*?)<\/script>/);
+assert.ok(renderedApplication, "Prerendered homepage application structured data must exist");
+const { featureList } = JSON.parse(renderedApplication[1]);
+assert.ok(Array.isArray(featureList) && featureList.some(feature => typeof feature === "string" && feature.startsWith(`${ASSETS.length} simulated practice assets`)),
+  "Homepage application structured data must agree with actual catalogue count");
 assert.doesNotMatch(shellSource, /149 assets|149 simulated practice assets/);
+assert.doesNotMatch(renderedApplication[1], /149 assets|149 simulated practice assets/);
 
 // Recalculate explicit published teaching examples rather than assume passing
 // string checks establish numerical accuracy. No order-engine logic is changed.

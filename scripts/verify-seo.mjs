@@ -6,11 +6,36 @@
  * Prints a per-route Markdown checklist and exits non-zero on failure.
  */
 
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { resolve } from "path";
 
 const DIST = resolve(process.cwd(), "dist");
 const DOMAIN = "https://www.thetradehq.com";
+
+// The product entity belongs to the homepage, not the universal HTML shell.
+// Other routes may still describe their own app with a different canonical URL.
+function homepageApps(value) {
+  if (!value || typeof value !== "object") return [];
+  if (Array.isArray(value)) return value.flatMap(homepageApps);
+  const types = [value["@type"]].flat();
+  const isHomepageApp = [DOMAIN, `${DOMAIN}/`].includes(value.url)
+    && types.some(type => type === "SoftwareApplication" || type === "WebApplication");
+  return [...(isHomepageApp ? [value] : []), ...Object.values(value).flatMap(homepageApps)];
+}
+
+for (const file of readdirSync(DIST, { recursive: true }).filter(file => file.endsWith(".html"))) {
+  const html = readFileSync(resolve(DIST, file), "utf8");
+  const apps = [...html.matchAll(/<script\b([^>]*\btype=["']application\/ld\+json["'][^>]*)>([\s\S]*?)<\/script>/gi)]
+    .flatMap(([, attributes, json]) => homepageApps(JSON.parse(json)).map(app => ({ attributes, app })));
+  if (file === "index.html") {
+    if (apps.length !== 1 || !apps[0].attributes.includes('data-static-head="homepage-application"')
+      || apps[0].app.offers?.price !== "0" || apps[0].app.offers?.priceCurrency !== "USD") {
+      throw new Error("Homepage must contain one removable static application schema with the existing free USD offer");
+    }
+  } else if (apps.length) {
+    throw new Error(`Homepage application schema must not appear in ${file}`);
+  }
+}
 
 // M19: unknown/utility URLs must never inherit the indexable homepage fallback.
 {
