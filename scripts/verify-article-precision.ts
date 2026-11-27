@@ -11,6 +11,16 @@ assert.match(all,/The Nasdaq-100 is a distinct index/);
 assert.match(all,/cancelled or expire before the quoted price/);
 for (const [slug,ref] of [["crypto-vs-stocks","https://www.nyse.com/trade/trading-information"],["stock-market-index-etfs","https://indexes.nasdaq.com/Index/Overview/NDX"],["market-orders-vs-limit-orders","https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-14"]]) assert.ok(ARTICLE_REFERENCES[slug].some(x=>x.href===ref),slug);
 assert.ok(bySlug.get("technical-indicators-rsi-macd-moving-averages")?.sections.some(s=>s.paragraphs.some(p=>p.includes("does not provide a MACD chart overlay"))));
+const examples = bySlug.get("technical-indicators-rsi-macd-moving-averages")!;
+assert.match(examples.sections[0].paragraphs.join(" "), /three-period SMA.*\(98 \+ 100 \+ 102\) \/ 3 = 100/);
+assert.match(examples.sections[1].paragraphs.join(" "), /already-smoothed inputs.*100 − 100 \/ \(1 \+ RS\).*RS is 3 and RSI is 75/);
+assert.match(examples.sections[1].paragraphs.join(" "), /not TradeHQ’s RSI-style practice value/);
+assert.match(examples.sections[2].paragraphs.join(" "), /104 − 100 = 4.*already-calculated signal line is 2\.5.*4 − 2\.5 = 1\.5/);
+const strategyCopy = bySlug.get("trading-strategies-for-beginners")!.sections[2].paragraphs.join(" ");
+assert.match(strategyCopy, /same fictional price path and start with \$120 in virtual cash/);
+assert.match(strategyCopy, /one purchase with all \$120 on the first date.*two \$60 purchases one week apart.*first date/);
+assert.match(strategyCopy, /include any unspent cash.*same observation dates.*ignore fees and interest/);
+assert.doesNotMatch(strategyCopy, /same total contribution and dates/);
 console.log("PASS learning article precision and primary source scope");
 
 assert.equal(COMPARE_PAIRS.length,8);
