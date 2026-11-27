@@ -129,12 +129,12 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
         </div>
       </div>
       {signedIn && userId && !authLoading && <VerifiedAccountRecovery userId={userId} />}
-      {!signedIn && !authLoading && <div className="grid md:grid-cols-2 gap-4">
+      {!signedIn && !authLoading && <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="rounded-xl border border-border bg-background/50 p-4 flex flex-col gap-3">
           <h3 className="font-semibold flex gap-2 items-center"><ArrowDownToLine className="h-4 w-4 text-primary"/> 1. Save a copy</h3>
           <p className="text-sm text-muted-foreground flex-1">Download your current local simulated cash, positions, trades and attached private journal. Store this file somewhere outside the browser, such as your device files.</p>
-          <Button type="button" variant="outline" size="lg" className="w-full" disabled={authLoading} onClick={download}>
-            <FileJson className="h-4 w-4 mr-2"/> Download .json backup
+          <Button type="button" variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal py-2" disabled={authLoading} onClick={download}>
+            <FileJson className="mr-2 h-4 w-4 shrink-0"/> Download .json backup
           </Button>
         </div>
         <div className="rounded-xl border border-border bg-background/50 p-4 flex flex-col gap-3">
@@ -147,9 +147,9 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
           <input ref={fileRef} id="portfolio-restore-file" type="file" aria-label="Select TradeHQ JSON backup file" accept=".json,application/json"
             onChange={e=>void selectBackup(e.currentTarget.files?.[0])}
             className="sr-only" disabled={authLoading || signedIn}/>
-          <Button type="button" variant="outline" size="lg" className="w-full"
+          <Button type="button" variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal py-2"
             disabled={authLoading || signedIn || busy} onClick={()=>fileRef.current?.click()}>
-            <Upload className="h-4 w-4 mr-2"/> Choose backup to restore
+            <Upload className="mr-2 h-4 w-4 shrink-0"/> Choose backup to restore
           </Button>
         </div>
       </div>}
