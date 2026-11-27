@@ -547,9 +547,9 @@ export function buildRoutes(): RouteMeta[] {
     routes.push({
       path: `/strategy/${s.slug}`,
       title: `${label} — Strategy Guide | TradeHQ`,
-      description: s.hook || s.intro || `Learn how ${label} works, then practise it with ${BALANCE} virtual cash.`,
+      description: s.hook || s.intro || `Study ${label} with a hypothetical worksheet. The separate simulator supports spot orders with ${BALANCE} in virtual cash.`,
       h1: label,
-      summary: s.hook || s.intro || `A step-by-step walkthrough of ${label} with practice on the free ${BALANCE} simulator.`,
+      summary: s.hook || s.intro || `Explore ${label} with a hypothetical worksheet. The separate simulator supports spot orders with ${BALANCE} in virtual cash but does not perform every calculation in the worksheet.`,
       priority: "0.7",
       changefreq: "weekly",
     });
@@ -558,7 +558,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/strategy",
     title: "Trading Strategies — Free Guides & Simulator | TradeHQ",
-    description: `Curated trading strategies with step-by-step examples. Practice each one with ${BALANCE} virtual cash — free, no signup.`,
+    description: `Explore six trading strategy worksheets. Use ${BALANCE} in virtual cash for spot orders in the free simulator, not to run every strategy described.`,
     h1: "Trading Strategies",
     summary: `Compare six strategy topics through conceptual worksheets and supported spot practice with ${BALANCE} in virtual cash. No strategy performance is validated.`,
     priority: "0.7",
