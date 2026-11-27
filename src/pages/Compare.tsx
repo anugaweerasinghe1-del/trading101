@@ -88,7 +88,7 @@ export default function Compare() {
           <Card className="p-6 mb-8 bg-gradient-to-br from-emerald-500/5 to-rose-500/5 border-white/10">
             <h2 className="text-xl font-semibold mb-2">What the comparison shows</h2>
             <p className="text-base text-muted-foreground">{pair.verdict}</p>
-            <p className="mt-3 text-xs text-muted-foreground/70 italic">(Educational simulation only — not financial advice.)</p>
+            <p className="mt-3 text-xs text-muted-foreground italic">(Educational simulation only — not financial advice.)</p>
           </Card>
 
           <section className="mb-8">
@@ -207,7 +207,7 @@ export function CompareIndex() {
               drawdown estimate is not a guaranteed future outcome. Separate documented market
               observations from TradeHQ's generated history and simplified fills.
             </p>
-            <p className="text-xs text-muted-foreground/70 italic">
+            <p className="text-xs text-muted-foreground italic">
               (Educational simulation only — not financial advice.)
             </p>
           </section>
