@@ -9,7 +9,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 import { DollarSign, Loader2, ChevronUp, ChevronDown } from "lucide-react";
 import {
-  Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger,
+  Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger,
 } from "@/components/ui/drawer";
 import { GhostJournalToggle } from "./GhostJournalToggle";
 import { trackLearningMilestone } from "@/lib/learningTelemetry";
@@ -126,7 +126,7 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
 
   return (
     <>
-      <Drawer open={isOpen} onOpenChange={(nextOpen) => {
+      <Drawer autoFocus open={isOpen} onOpenChange={(nextOpen) => {
         setIsOpen(nextOpen);
         if (nextOpen) {
           setConfirmationFailed(false);
@@ -151,10 +151,10 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
               </Button>
             </DrawerClose>
           </DrawerHeader>
-          <p className="px-4 pb-2 text-xs text-muted-foreground">
+          <DrawerDescription className="px-4 pb-2 text-xs text-muted-foreground">
             Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.
             {asset.type === "forex" && " The numeric pair rate is used as a USD cost per virtual unit; no currency conversion, delivery or leveraged FX contract is modeled."}
-          </p>
+          </DrawerDescription>
           <div className="px-4 pb-6 space-y-4 overflow-auto">
             <div className="grid grid-cols-2 gap-2">
               <Button
