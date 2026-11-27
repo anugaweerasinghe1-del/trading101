@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { BACKUP_FORMAT, exportPracticeBackup, parsePracticeBackup, parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from "../src/lib/portfolioRecovery.ts";
 import { JOURNEY_KEY, journeyStage, readJourney, saveJourney, markJourneyTrade } from "../src/lib/beginnerJourney.ts";
 import { chooseMasteryNextAction } from "../src/lib/masteryNextAction.ts";
+import { awardBadge, getTrackProgress, markLessonCompleted } from "../src/lib/courseProgress.ts";
 import { STATIC_COPY } from "./staticCopy";
 
 const memory = new Map<string,string>();
@@ -11,6 +12,7 @@ Object.defineProperty(globalThis, "localStorage", { configurable:true, value:{
   setItem:(k:string,v:string)=>{memory.set(k,v);},
   removeItem:(k:string)=>{memory.delete(k);}
 }});
+Object.defineProperty(globalThis, "window", { configurable:true, value:{ dispatchEvent:() => true } });
 const portfolio = {
  cash: 99749.75, totalValue: 99999.75,
  positions:[{asset:{id:"aapl",symbol:"AAPL",name:"Apple",type:"stock",price:250,change:0,changePercent:0},quantity:1,avgPrice:250,currentValue:250,profitLoss:0,profitLossPercent:0}],
@@ -78,7 +80,19 @@ assert.match(dailyPage,/Continue guided learning/, "The Daily next-step CTA is o
 assert.doesNotMatch(dailyPage,/Practice This Trade Now/, "Daily no longer offers conflicting trade-first CTA");
 const lessonPage=read("src/pages/CourseLesson.tsx");
 assert.match(lessonPage,/Continue to next lesson/, "Completed quizzes expose a prominent onward lesson action");
-assert.match(lessonPage,/doneCount === track\.lessons\.length && !progress\.badgeEarnedAt/, "Repeat completed MCQs must not celebrate an already-issued course badge");
+const badgeTrack="t09-fixture", badgeLessons=["first","second"];
+assert.equal(markLessonCompleted(badgeTrack,badgeLessons[0],2),true);
+assert.equal(awardBadge(badgeTrack,badgeLessons),"not-eligible","An incomplete course must not award a badge");
+assert.equal(markLessonCompleted(badgeTrack,badgeLessons[1],3),true);
+assert.equal(awardBadge(badgeTrack,badgeLessons),"earned");
+const originalBadge=getTrackProgress(badgeTrack).badgeEarnedAt;
+assert.ok(originalBadge,"The new award is persisted");
+assert.equal(markLessonCompleted(badgeTrack,badgeLessons[1],3),true);
+const beforeRepeatAward=[...memory];
+assert.equal(awardBadge(badgeTrack,badgeLessons),"already-earned","Repeating a completed quiz must not reissue the course badge");
+assert.equal(getTrackProgress(badgeTrack).badgeEarnedAt,originalBadge);
+assert.deepEqual([...memory],beforeRepeatAward,"An already-issued badge should not write to storage");
+assert.match(lessonPage,/if \(result === "earned"\) \{\s*toast\.success\(`🏆 Badge earned:/u,"Only a newly saved badge triggers a celebration");
 const appPage=read("src/App.tsx");
 assert.doesNotMatch(appPage,/<PushNotificationPrompt\s*\/>/, "No unsolicited permission popup for currently unavailable scheduled alerts");
 
