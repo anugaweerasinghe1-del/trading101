@@ -169,7 +169,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         paragraphs: [
           "Momentum methods use past price changes to define a rule for studying continuation. A trend may reverse after entry. Compare a precisely specified hypothetical rule with a simple baseline rather than treat a moving average or RSI reading as confirmation of the next move.",
           "Mean-reversion methods test whether deviations from a specified average tend to narrow in a chosen sample. A price may remain far from its average or continue moving away. Define the sample, exit assumption and costs before interpreting any simulated result.",
-          "Dollar-cost averaging means contributing a fixed amount at regular intervals. It changes purchase timing and units acquired, but it does not guarantee a lower average cost or remove loss risk. Compare scheduled hypothetical purchases with a lump-sum example using the same total contribution and dates.",
+          "Dollar-cost averaging means contributing a fixed amount at regular intervals. It changes purchase timing and units acquired, but it does not guarantee a lower average cost or remove loss risk. For a hypothetical comparison, use the same fictional price path and start with $120 in virtual cash in each example. The lump-sum example makes one purchase with all $120 on the first date. The staged example makes two $60 purchases one week apart, starting on that same first date. Track units held and include any unspent cash when valuing both examples on the same observation dates. For this worksheet, ignore fees and interest in both examples.",
           "Compare the five methods as educational hypotheses with a common starting balance, period and cost assumptions. Record failed assumptions as carefully as favourable outcomes. Neither a comfortable routine nor several successful practice weeks proves that a method will work with real money."
         ]
       }
@@ -353,6 +353,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Moving Averages: The Foundation of Trend Analysis",
         paragraphs: [
           "Moving averages smooth a selected price series rather than establish a hidden or future trend. Two commonly used calculations are the simple moving average (SMA), which weights observations in its window equally, and the exponential moving average (EMA), which gives greater weight to recent observations.",
+          "Hypothetical three-period SMA: for closing prices of 98, 100 and 102, add them and divide by three: (98 + 100 + 102) / 3 = 100. An EMA weights recent observations more heavily and generally gives a different result.",
           "A 50-period average crossing above a 200-period average is called a golden cross; the reverse is a death cross. The period might mean days or another chart interval. These lagging observations describe the selected series and do not establish that a rally or decline will follow.",
           "Shorter averages such as a 9-period or 21-period EMA react differently from longer averages. A price above an average describes its position relative to that calculation, not a guaranteed trend. TradeHQ chart controls include moving-average and volume overlays; indicator examples should match the actual chart features."
         ]
@@ -361,6 +362,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "RSI: Measuring Momentum and Overbought/Oversold Conditions",
         paragraphs: [
           "Standard RSI, introduced by J. Welles Wilder, expresses the relationship between smoothed gains and losses on a 0–100 scale. Fourteen periods is a common default; the conventional thresholds are descriptive labels rather than evidence of misvaluation or future direction.",
+          "To calculate RSI from already-smoothed inputs, divide average gain by the magnitude of average loss to get relative strength (RS), then compute 100 − 100 / (1 + RS). If average gain is 1.5 and average loss magnitude is 0.5, RS is 3 and RSI is 75. These are invented inputs, not TradeHQ’s RSI-style practice value.",
           "Readings above 70 or below 30 are conventional RSI descriptions rather than instructions to sell or buy. An extreme reading can persist. Divergence means price and oscillator observations differ; it does not prove a reversal or make one signal universally most reliable.",
           "Compare hypothetical RSI settings and record what each describes before looking at later prices. A pullback to 40–50 or a bounce to 50–60 is not a universal entry rule. TradeHQ's simplified RSI-style practice value should not be mistaken for a standard RSI calculation on historical provider closes."
         ]
@@ -369,6 +371,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "MACD: Combining Trend and Momentum Signals",
         paragraphs: [
           "The Moving Average Convergence Divergence (MACD) is a versatile indicator that shows the relationship between two exponential moving averages — typically the 12-period and 26-period EMAs. The MACD line is the difference between these two EMAs, and the signal line is a 9-period EMA of the MACD line. The histogram shows the gap between them.",
+          "Suppose the 12-period EMA is 104 and the 26-period EMA is 100. The MACD line is 104 − 100 = 4. If the already-calculated signal line is 2.5, the histogram is 4 − 2.5 = 1.5. That positive value describes this example; it does not predict a price move.",
           "A positive histogram means the MACD line is above its signal line; a negative histogram means it is below. Those relationships are often called bullish and bearish respectively, but describe the selected calculations rather than the next price move. Crossovers can reverse in both trending and sideways samples; performance depends on the rules, period, costs and comparison used.",
           "Combining indicators creates another hypothesis to evaluate, rather than guaranteeing the best results. Define each calculation, interval and decision rule, then compare against a simple baseline with the same costs and sample. TradeHQ does not provide a MACD chart overlay; journal examples are conceptual."
         ]
