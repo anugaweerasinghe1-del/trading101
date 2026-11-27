@@ -362,7 +362,7 @@ export default function Daily() {
                 </section>
               )}
 
-              <p className="text-[10px] text-foreground/45 text-center mt-6">
+              <p className="text-[10px] text-foreground/60 text-center mt-6">
                 Educational simulation only — not financial advice. Return another day for another rotating practice scenario.
               </p>
             </article>
@@ -410,7 +410,7 @@ export default function Daily() {
                   <p className="text-xs text-foreground/60 mt-0.5">Unlock as your streak grows</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold tabular-nums text-amber-400">{unlocked.length}<span className="text-foreground/40 text-base">/5</span></div>
+                  <div className="text-2xl font-bold tabular-nums text-amber-400">{unlocked.length}<span className="text-foreground/60 text-base">/5</span></div>
                   <div className="text-[10px] uppercase tracking-widest text-foreground/50">Unlocked</div>
                 </div>
               </div>
@@ -443,7 +443,7 @@ export default function Daily() {
                   Next: <strong className="text-foreground">{next.label}</strong> at {next.threshold}-day streak
                 </p>
               )}
-              <p className="text-[10px] text-foreground/45 text-center mt-2">
+              <p className="text-[10px] text-foreground/60 text-center mt-2">
                 {getChallengeCount()} unique scenarios in rotation
               </p>
             </section>
