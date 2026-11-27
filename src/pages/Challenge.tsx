@@ -15,6 +15,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { syncStats } from "@/lib/traderSync";
 import { setPendingPath } from "@/lib/pendingRedirect";
 import { SITE_DOMAIN, STARTING_BALANCE } from "@/lib/constants";
+import { CHALLENGE_SEO } from "@/lib/challengeSeo";
 
 interface Duel {
   id: string;
@@ -230,9 +231,10 @@ export default function Challenge() {
 
   const title = code
     ? "30-day practice trading duel | TradeHQ"
-    : "Challenge a friend — 30-day practice trading duel | TradeHQ";
-  const description =
-    "Challenge a friend to a 30-day paper-trading exercise on TradeHQ. Each side is measured from its own recorded starting value; scores use server-recorded simulated trades and are frozen at the deadline.";
+    : CHALLENGE_SEO.title;
+  const description = code
+    ? "Challenge a friend to a 30-day paper-trading exercise on TradeHQ. Each side is measured from its own recorded starting value; scores use server-recorded simulated trades and are frozen at the deadline."
+    : CHALLENGE_SEO.description;
 
   return (
     <>
@@ -244,6 +246,8 @@ export default function Challenge() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`${SITE_DOMAIN}/challenge`} />
+        {!code && <meta name="twitter:title" content={title} />}
+        {!code && <meta name="twitter:description" content={description} />}
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

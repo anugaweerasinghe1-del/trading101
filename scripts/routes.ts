@@ -20,6 +20,7 @@ import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
 import { countryLocationName } from "../src/lib/countryDisplay";
 import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
 import { BITCOIN_SIMULATOR_SEO } from "../src/lib/bitcoinSimulatorSeo";
+import { CHALLENGE_SEO } from "../src/lib/challengeSeo";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -377,8 +378,8 @@ export function buildRoutes(): RouteMeta[] {
 
   routes.push({
     path: "/challenge",
-    title: `Challenge a Friend — 30-Day ${BALANCE} Practice Duel | TradeHQ`,
-    description: `Challenge a friend to a 30-day simulated trading exercise. Each side is measured from its own recorded starting value; scores use server-recorded simulated trades and are frozen at the deadline.`,
+    title: CHALLENGE_SEO.title,
+    description: CHALLENGE_SEO.description,
     h1: "Challenge a Friend",
     summary: `Create a shareable invite for a 30-day practice duel. Each participant is measured from their own recorded starting value, using server-recorded trades and deadline-frozen simulated scores. Educational simulation only.`,
     priority: "0.6",
