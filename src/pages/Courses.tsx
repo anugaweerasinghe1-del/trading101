@@ -197,7 +197,7 @@ export default function Courses() {
               {" "}for supported spot instruments. Options and futures contract mechanics are
               taught through conceptual examples and worksheet exercises.
             </p>
-            <p className="mt-4 text-sm text-muted-foreground/80 max-w-2xl mx-auto italic">
+            <p className="mt-4 text-sm text-muted-foreground max-w-2xl mx-auto italic">
               Educational simulation only — not financial, investment, legal or tax advice.
             </p>
 
