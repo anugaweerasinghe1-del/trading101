@@ -399,7 +399,7 @@ export default function Courses() {
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                 TradeHQ course material is maintained by{" "}
-                <Link to="/about" className="text-emerald-400 hover:underline">
+                <Link to="/about" className="text-emerald-400 underline underline-offset-2">
                   Anuga Weerasinghe
                 </Link>
                 , the creator of TradeHQ. TradeHQ is a free educational simulator built for
@@ -409,7 +409,7 @@ export default function Courses() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 AI-assisted additions identify their preparation and owner publication review on their lesson pages.
                 This review does not imply independent financial-professional verification. Lessons link their
-                public sources for the scope described. If you spot an error, please <Link to="/contact" className="text-emerald-400 hover:underline">contact us</Link> — reported corrections are reviewed before publication.
+                public sources for the scope described. If you spot an error, please <Link to="/contact" className="text-emerald-400 underline underline-offset-2">contact us</Link> — reported corrections are reviewed before publication.
               </p>
             </Card>
           </section>
