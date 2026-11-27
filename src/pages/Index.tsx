@@ -19,6 +19,7 @@ import { LearningActivationCard } from "@/components/retention/LearningActivatio
 import { WatchlistAlerts } from "@/components/retention/WatchlistAlerts";
 import { WeeklyRecap } from "@/components/retention/WeeklyRecap";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
+import { homepageApplicationJsonLd } from "@/lib/homepageApplicationSchema";
 
 // ORIGINAL schemas — unchanged
 const homeFaqSchema = {
@@ -74,18 +75,6 @@ const orgSchema = {
   name: "TradeHQ",
   url: "https://www.thetradehq.com/",
   logo: "https://www.thetradehq.com/logo.png",
-};
-
-const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "TradeHQ — Free Paper Trading Simulator",
-  url: "https://www.thetradehq.com/",
-  applicationCategory: "FinanceApplication",
-  operatingSystem: "Web Browser",
-  creator: { "@type": "Person", name: "Anuga Weerasinghe", url: "https://www.thetradehq.com/about" },
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  description: "Practice stock & crypto trading free with $100,000 virtual cash. No signup needed. 170 assets, rule-based learning mentor, leaderboard.",
 };
 
 // WebSite identity schema. No SearchAction is declared because TradeHQ does not
@@ -164,7 +153,7 @@ const Index = () => {
         <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
         <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>
+        <script type="application/ld+json">{homepageApplicationJsonLd}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       </Helmet>
 

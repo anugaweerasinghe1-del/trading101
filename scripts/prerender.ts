@@ -21,6 +21,7 @@ import { buildContentMap, type PageContent } from "./content";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { PublisherNotes, type PublisherPage } from "../src/components/PublisherNotes";
+import { homepageApplicationJsonLd } from "../src/lib/homepageApplicationSchema";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
@@ -123,6 +124,11 @@ function renderHead(r: RouteMeta, template: string, body: string, page: Publishe
 
   html = html.replace(/<link\s+rel=["']canonical["'][^>]*>\s*/gi, "");
   html = html.replace(/<\/head>/i, `  <link rel="canonical" href="${url}" data-static-head />\n  </head>`);
+
+  if (r.path === "/") {
+    html = html.replace(/<\/head>/i, () =>
+      `  <script type="application/ld+json" data-static-head="homepage-application">${homepageApplicationJsonLd}</script>\n  </head>`);
+  }
 
   html = html.replace(
     /<meta\s[^>]*property=["']og:url["'][^>]*>/i,
