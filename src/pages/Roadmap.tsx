@@ -124,7 +124,7 @@ export default function Roadmap() {
               TradeHQ remains educational practice only. No real-money trading, guaranteed returns,
               personalized investment recommendations or buy/sell signals. Core practice does not require an account.
             </p>
-            <p className="text-xs text-muted-foreground/60 italic">Updated 31 October 2026 · Educational simulation only — not financial advice.</p>
+            <p className="text-xs text-muted-foreground italic">Updated 31 October 2026 · Educational simulation only — not financial advice.</p>
           </section>
 
           <Card className="mt-12 p-8 text-center bg-gradient-to-br from-emerald-500/10 via-transparent to-fuchsia-500/10 border-white/10 backdrop-blur-xl">
@@ -132,7 +132,7 @@ export default function Roadmap() {
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
               Share an idea through our <a href="/contact" className="text-emerald-400 underline-offset-4 hover:underline">contact page</a> or the <a href="/reviews" className="text-emerald-400 underline-offset-4 hover:underline">reviews page</a>. We use genuine feedback to prioritize changes.
             </p>
-            <p className="mt-4 text-xs text-muted-foreground/60 italic">(Educational simulation only — not financial advice.)</p>
+            <p className="mt-4 text-xs text-muted-foreground italic">(Educational simulation only — not financial advice.)</p>
           </Card>
         </main>
 
