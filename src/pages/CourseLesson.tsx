@@ -1,5 +1,5 @@
 import NotFound from "./NotFound";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Award, ArrowLeft, ArrowRight, CheckCircle2, XCircle, ExternalLink, Sparkles, Bot } from "lucide-react";
 import type { CourseTrack as Track, CourseLesson as Lesson } from "@/lib/coursesData";
 import { useCourseDocument } from "@/hooks/useCourseCatalog";
-import { markLessonStarted, markLessonCompleted, awardBadge, getTrackProgress, readLessonDraft, saveLessonDraft, saveLessonPosition } from "@/lib/courseProgress";
+import { markLessonStarted, markLessonCompleted, awardBadge, hasPendingBadge, getTrackProgress, readLessonDraft, saveLessonDraft, saveLessonPosition } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
@@ -35,6 +35,19 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
   const [answers, setAnswers] = useState<Record<number, number>>(() => readLessonDraft(track.slug, lesson.slug).answers);
   const [resumePct] = useState(() => readLessonDraft(track.slug, lesson.slug).scrolledPct);
   const [submitted, setSubmitted] = useState(false);
+  const [progressSaved, setProgressSaved] = useState(false);
+  const requiredLessons = track.lessons.map((item) => item.slug);
+  const [badgePending, setBadgePending] = useState(() => hasPendingBadge(track.slug, requiredLessons));
+  const [badgeRetryFeedback, setBadgeRetryFeedback] = useState<string>();
+  const quizReceiptRef = useRef<HTMLDivElement>(null);
+  const badgeFeedbackRef = useRef<HTMLParagraphElement>(null);
+  const pendingFocus = useRef<"quiz" | "badge" | null>(null);
+
+  useEffect(() => {
+    if (pendingFocus.current === "quiz") quizReceiptRef.current?.focus();
+    if (pendingFocus.current === "badge") badgeFeedbackRef.current?.focus();
+    pendingFocus.current = null;
+  }, [submitted, progressSaved, badgeRetryFeedback]);
   const score = useMemo(
     () => lesson.quiz.reduce((s, q, i) => (answers[i] === q.correctAnswer ? s + 1 : s), 0),
     [answers, lesson.quiz],
@@ -88,20 +101,33 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
     image: track.hero,
     timeRequired: `PT${lesson.readingMinutes}M`,
   };
-  const handleSubmit = () => {
-    setSubmitted(true);
-    markLessonCompleted(track.slug, lesson.slug, score);
-    // Check if all lessons of this track completed → award badge
-    const progress = getTrackProgress(track.slug);
-    const doneCount = track.lessons.filter(
-      (l) => l.slug === lesson.slug || progress.lessons[l.slug]?.status === "completed",
-    ).length;
-    if (doneCount === track.lessons.length && !progress.badgeEarnedAt) {
-      awardBadge(track.slug);
+  const tryAwardBadge = () => {
+    const result = awardBadge(track.slug, requiredLessons);
+    setBadgePending(result === "write-failed");
+    if (result === "earned") {
       toast.success(`🏆 Badge earned: ${track.badge.name}`, {
         description: "Great work — every lesson complete.",
       });
-    } else {
+    }
+    return result;
+  };
+
+  const handleBadgeRetry = () => {
+    const result = tryAwardBadge();
+    if (result === "write-failed") return;
+    pendingFocus.current = "badge";
+    setBadgeRetryFeedback(result === "not-eligible" ? "The course badge is not ready yet." : "Course badge saved to this browser.");
+  };
+
+  const handleSubmit = () => {
+    if (Object.keys(answers).length !== lesson.quiz.length || progressSaved) return;
+    const saved = markLessonCompleted(track.slug, lesson.slug, score);
+    if (!submitted || saved) pendingFocus.current = "quiz";
+    setSubmitted(true);
+    setProgressSaved(saved);
+    if (!saved) return;
+
+    if (tryAwardBadge() !== "earned") {
       toast.success(`Lesson complete — ${score}/${lesson.quiz.length} correct`);
     }
   };
@@ -292,17 +318,37 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
               <Card className="mt-6 p-5 bg-emerald-500/10 border-emerald-500/30">
                 <div className="flex items-center gap-3">
                   <Award className="w-6 h-6 text-emerald-400 [.light_&]:text-emerald-800" />
-                  <div className="flex-1">
-                    <div className="font-semibold">Lesson complete — {score}/{lesson.quiz.length}</div>
-                    <div className="text-xs text-muted-foreground">Progress saved to your browser. Come back anytime.</div>
+                  <div className="flex-1" ref={quizReceiptRef} tabIndex={-1} role="group" aria-labelledby="lesson-quiz-receipt-title" aria-describedby="lesson-quiz-save-status">
+                    <div id="lesson-quiz-receipt-title" className="font-semibold">
+                      {progressSaved ? "Lesson complete" : "Quiz score"} — {score}/{lesson.quiz.length}
+                    </div>
+                    {progressSaved ? (
+                      <div id="lesson-quiz-save-status" role="status" className="text-xs text-muted-foreground">Progress saved to your browser. Come back anytime.</div>
+                    ) : (
+                      <div>
+                        <p id="lesson-quiz-save-status" role="status" className="text-sm text-foreground">Your score was calculated, but your progress could not be saved to this browser.</p>
+                        <Button type="button" variant="outline" className="mt-2" onClick={handleSubmit}>Retry saving progress</Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>
             )}
           </div>
 
+          {badgePending && (
+            <div className="mt-5">
+              <p role="status" className="text-sm text-foreground">Your lessons are complete, but the course badge has not been saved.</p>
+              <Button type="button" variant="outline" className="mt-2" onClick={handleBadgeRetry}>Retry saving badge</Button>
+            </div>
+          )}
+
+          {badgeRetryFeedback && (
+            <p ref={badgeFeedbackRef} tabIndex={-1} className="mt-5 text-sm text-foreground">{badgeRetryFeedback}</p>
+          )}
+
           <div className="mt-5">
-            {submitted && (
+            {progressSaved && (
               <section aria-label="Next learning step" className="rounded-2xl border border-primary/35 bg-primary/5 p-5">
                 <p className="text-xs uppercase tracking-widest font-semibold text-primary mb-2">Your next step</p>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -348,7 +394,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
           <nav aria-label="Lesson navigation" className="mt-8 space-y-3">
             <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
               {prev ? <Link to={`/courses/${track.slug}/${prev.slug}`} className="text-muted-foreground hover:text-foreground underline underline-offset-4 inline-flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Previous lesson</Link> : <span />}
-              {!submitted && (next ? <Link to={`/courses/${track.slug}/${next.slug}`} className="text-primary underline underline-offset-4">Next lesson <ArrowRight className="w-4 h-4 inline" /></Link> : <Link to={`/courses/${track.slug}`} className="text-primary underline underline-offset-4">Back to course <ArrowRight className="w-4 h-4 inline" /></Link>)}
+              {!progressSaved && (next ? <Link to={`/courses/${track.slug}/${next.slug}`} className="text-primary underline underline-offset-4">Next lesson <ArrowRight className="w-4 h-4 inline" /></Link> : <Link to={`/courses/${track.slug}`} className="text-primary underline underline-offset-4">Back to course <ArrowRight className="w-4 h-4 inline" /></Link>)}
             </div>
           </nav>
 

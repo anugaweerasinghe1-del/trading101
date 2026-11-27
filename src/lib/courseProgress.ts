@@ -164,13 +164,25 @@ export function markLessonCompleted(track: string, lesson: string, score: number
   return save(s);
 }
 
-export function awardBadge(track: string) {
+export type BadgeSaveResult = "earned" | "already-earned" | "not-eligible" | "write-failed";
+
+function canAwardBadge(progress: TrackProgress, requiredLessons: readonly string[]): boolean {
+  return requiredLessons.length > 0
+    && requiredLessons.every((slug) => progress.lessons[slug]?.status === "completed");
+}
+
+export function hasPendingBadge(track: string, requiredLessons: readonly string[]): boolean {
+  const progress = getTrackProgress(track);
+  return !progress.badgeEarnedAt && canAwardBadge(progress, requiredLessons);
+}
+
+export function awardBadge(track: string, requiredLessons: readonly string[]): BadgeSaveResult {
   const s = loadProgress();
-  s.tracks[track] ??= emptyTrack();
-  if (!s.tracks[track].badgeEarnedAt) {
-    s.tracks[track].badgeEarnedAt = new Date().toISOString();
-    save(s);
-  }
+  const progress = s.tracks[track];
+  if (!progress || !canAwardBadge(progress, requiredLessons)) return "not-eligible";
+  if (progress.badgeEarnedAt) return "already-earned";
+  progress.badgeEarnedAt = new Date().toISOString();
+  return save(s) ? "earned" : "write-failed";
 }
 
 export function getTrackProgress(track: string, progress = loadProgress()): TrackProgress {
