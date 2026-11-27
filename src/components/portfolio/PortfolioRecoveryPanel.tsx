@@ -146,7 +146,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
           </p>
           <input ref={fileRef} id="portfolio-restore-file" type="file" aria-label="Select TradeHQ JSON backup file" accept=".json,application/json"
             onChange={e=>void selectBackup(e.currentTarget.files?.[0])}
-            className="sr-only" disabled={authLoading || signedIn}/>
+            hidden disabled={authLoading || signedIn}/>
           <Button type="button" variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal py-2"
             disabled={authLoading || signedIn || busy} onClick={()=>fileRef.current?.click()}>
             <Upload className="mr-2 h-4 w-4 shrink-0"/> Choose backup to restore
