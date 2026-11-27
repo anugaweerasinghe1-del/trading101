@@ -147,7 +147,7 @@ export default function Strategy() {
             faqs={[
               { question: `Does ${s.name} actually work?`, answer: s.successRate },
               { question: `What context does this ${s.name} worksheet examine?`, answer: s.bestFor },
-              { question: `Can I practise ${s.name} for free?`, answer: `Yes — TradeHQ supplies virtual order and accounting practice. Some ${s.name} calculations require a separate worksheet or data source.` },
+              { question: `What can I practise in the simulator while studying ${s.name}?`, answer: "The free simulator supports virtual spot orders and lets you review changes to virtual cash and holdings. Some calculations require a separate worksheet or data source." },
             ]}
             faqHeading={`${s.name} FAQ`}
           />
@@ -160,7 +160,7 @@ export default function Strategy() {
 
 export function StrategyIndex() {
   const title = "Trading Strategies — Scalping, Swing, DCA, RSI & More | TradeHQ";
-  const description = "Free trading strategy guides: scalping, swing trading, day trading, DCA, RSI, MACD. Example rules, limitations and hypothetical calculations. Practise on a $100K virtual account.";
+  const description = "Free worksheets: scalping, swing trading, day trading, DCA, RSI and MACD. Use the separate simulator for spot orders with $100,000 in virtual cash.";
   return (
     <>
       <Helmet>
