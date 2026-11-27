@@ -42,7 +42,7 @@ export default function Strategy() {
         <Navigation />
         <main data-publisher-notes={`/strategy/${s.slug}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
           <header className="mb-10">
-            <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3 flex items-center gap-2"><Target className="h-3 w-3" />Trading strategy</p>
+            <p className="text-xs uppercase tracking-widest text-emerald-400 [.light_&]:text-emerald-800 mb-3 flex items-center gap-2"><Target className="h-3 w-3" />Trading strategy</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{s.name}</h1>
             <p className="mt-3 text-sm text-muted-foreground">Published by TradeHQ. <Link to="/about" className="underline underline-offset-4">Site creator and editorial approach: Anuga Weerasinghe</Link>. No independent professional review is claimed.</p>
             <p className="mt-4 text-lg text-muted-foreground">{s.oneLiner}</p>
@@ -59,11 +59,11 @@ export default function Strategy() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <Card className="p-5 border-emerald-500/20">
-              <h3 className="text-sm font-semibold text-emerald-400 mb-2">Study context</h3>
+              <h3 className="text-sm font-semibold text-emerald-400 [.light_&]:text-emerald-800 mb-2">Study context</h3>
               <p className="text-sm">{s.bestFor}</p>
             </Card>
             <Card className="p-5 border-rose-500/20">
-              <h3 className="text-sm font-semibold text-rose-400 mb-2">Limitations</h3>
+              <h3 className="text-sm font-semibold text-rose-400 [.light_&]:text-rose-800 mb-2">Limitations</h3>
               <p className="text-sm">{s.worstFor}</p>
             </Card>
           </div>
@@ -73,7 +73,7 @@ export default function Strategy() {
             <ol className="space-y-4">
               {s.steps.map((step, i) => (
                 <li key={i} className="flex gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold text-sm">{i + 1}</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-400 [.light_&]:text-emerald-800 flex items-center justify-center font-bold text-sm">{i + 1}</span>
                   <span className="text-sm pt-1">{step}</span>
                 </li>
               ))}
@@ -111,7 +111,7 @@ export default function Strategy() {
             <Card className="p-6">
               <h2 className="text-xl font-semibold mb-3">Worked arithmetic</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{s.depth.math}</p>
-              <p className="mt-3 text-xs text-muted-foreground/70 italic">
+              <p className="mt-3 text-xs text-muted-foreground italic">
                 Figures are illustrative teaching examples, not projections of your results.
                 (Educational simulation only — not financial advice.)
               </p>
@@ -121,7 +121,7 @@ export default function Strategy() {
           <Card className="p-5 mb-8 bg-gradient-to-br from-emerald-500/5 to-transparent">
             <h3 className="text-sm font-semibold mb-1">Realistic expectations</h3>
             <p className="text-sm text-muted-foreground">{s.successRate}</p>
-            <p className="mt-2 text-xs text-muted-foreground/70 italic">(Educational simulation only — not financial advice.)</p>
+            <p className="mt-2 text-xs text-muted-foreground italic">(Educational simulation only — not financial advice.)</p>
           </Card>
 
           <section className="mb-8" aria-label="Primary references">
