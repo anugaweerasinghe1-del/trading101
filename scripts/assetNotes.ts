@@ -58,7 +58,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     gap: "Depending on where you live, access to the associated exchange may be restricted, and fees differ between venues. The educational simulator does not establish legal eligibility, geographic availability or access to real financial services.",
     checklist: [
       "Write down which organisation-level risk could affect the price before entering.",
-      "Compare its weekly move against BTC to see how independent it really is.",
+      "Record BNB’s and BTC’s percentage price changes for the same week as an illustration. One pair of weekly changes cannot give you a sample correlation or tell you whether they move independently over time.",
       "Calculate this hypothetical position as a share of the whole practice portfolio and compare different concentration scenarios.",
     ],
   },
