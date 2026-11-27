@@ -123,10 +123,10 @@ const WikiTerm = () => {
               <Badge variant="outline" data-wiki-difficulty={term.difficulty} className={`${difficultyColor} text-[10px] uppercase tracking-[0.15em] font-bold`}>
                 {term.difficulty}
               </Badge>
-              <Badge className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
+              <Badge variant="outline" className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
                 <Clock className="w-3 h-3 mr-1" /> {term.readTime}
               </Badge>
-              <Badge className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
+              <Badge variant="outline" className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
                 {term.category}
               </Badge>
             </div>
