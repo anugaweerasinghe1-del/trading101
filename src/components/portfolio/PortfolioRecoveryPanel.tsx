@@ -15,6 +15,7 @@ interface Candidate { filename: string; portfolio: Portfolio; date: string | nul
 
 export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId = null }: { signedIn: boolean; authLoading?: boolean; userId?: string | null }) {
   const fileRef = useRef<HTMLInputElement>(null);
+  const chooseBackupButtonRef = useRef<HTMLButtonElement>(null);
   const [warning, setWarning] = useState(false);
   const [unreadable] = useState(() => { try { return Boolean(localStorage.getItem(UNREADABLE_KEY)); } catch { return false; } });
   const [imported, setImported] = useState(isGuestImportUnverified);
@@ -82,6 +83,12 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
       setMessage(error instanceof Error ? error.message : "This file cannot be restored as a TradeHQ practice portfolio.");
     }
   };
+  const cancelBackupPreview = () => {
+    setCandidate(null);
+    if (fileRef.current) fileRef.current.value = "";
+    setMessage("Backup preview cancelled. Nothing was restored.");
+    chooseBackupButtonRef.current?.focus();
+  };
   const restore = () => {
     if (!candidate || signedIn || authLoading || busy) return;
     const previous = getPortfolio();
@@ -148,7 +155,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
             onChange={e=>void selectBackup(e.currentTarget.files?.[0])}
             hidden disabled={authLoading || signedIn}/>
           <Button type="button" variant="outline" size="lg" className="h-auto min-h-11 w-full whitespace-normal py-2"
-            disabled={authLoading || signedIn || busy} onClick={()=>fileRef.current?.click()}>
+            ref={chooseBackupButtonRef} disabled={authLoading || signedIn || busy} onClick={()=>fileRef.current?.click()}>
             <Upload className="mr-2 h-4 w-4 shrink-0"/> Choose backup to restore
           </Button>
         </div>
@@ -162,7 +169,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
           </div>
           <p className="text-xs text-amber-500 flex gap-2 items-start"><ShieldAlert className="h-4 w-4 shrink-0"/> File validation checks structure and arithmetic, NOT authenticity. Imported figures remain unverified and cannot create ranked server trades.</p>
           <Button type="button" disabled={busy} onClick={restore}>Confirm guest restore</Button>
-          <Button type="button" variant="ghost" onClick={()=>{setCandidate(null); if(fileRef.current) fileRef.current.value="";}}>Cancel</Button>
+          <Button type="button" variant="ghost" onClick={cancelBackupPreview}>Cancel</Button>
         </div>
       )}
       {warning && <p role="alert" className="mt-4 text-sm text-amber-500"><AlertTriangle className="h-4 w-4 inline mr-2"/> Browser storage is unavailable; practice changes might not survive closing this page.</p>}
