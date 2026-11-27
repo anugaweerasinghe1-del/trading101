@@ -31,6 +31,16 @@ for (const track of courseTracks) {
 
 const map = await buildContentMap();
 
+// E-12: one paired observation is illustrative, not a sample correlation.
+const bnbChecklist = map.get("/trade/bnb")?.sections.find(section => section.h === "A practice checklist for BNB")?.list;
+assert.ok(bnbChecklist, "BNB needs its own practice checklist");
+assert.ok(bnbChecklist.some(item =>
+  /BNB’s and BTC’s percentage price changes for the same week as an illustration/.test(item)
+  && /cannot give you a sample correlation or tell you whether they move independently over time/.test(item)),
+  "BNB's one-week comparison must not imply a correlation estimate or lasting independence",
+);
+assert.ok(bnbChecklist.every(item => !item.includes("see how independent it really is")));
+
 // Prevent search-visible learning notes from repeating the same introductory
 // summary as a second paragraph. Hydrated LearnArticle already displays one
 // natural introduction; all substantive teaching sections remain untouched.
